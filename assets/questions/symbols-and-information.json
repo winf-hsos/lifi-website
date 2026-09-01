@@ -1,0 +1,410 @@
+{
+ "konzept": "symbols-and-information",
+ "fragen": [
+  {
+   "id": "si-001",
+   "niveau": "erinnern",
+   "frage": "Was ist im Sinn dieses Konzepts ein Symbol?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein kleines Bild, etwa ein Icon auf dem Bildschirm.",
+     "begruendung": "Das ist die Alltagsbedeutung. Hier meint Symbol etwas Allgemeineres, das auch eine Farbe, ein Ton oder eine Handbewegung sein kann."
+    },
+    {
+     "kennung": "b",
+     "text": "Immer ein Buchstabe des Alphabets von A bis Z.",
+     "begruendung": "Buchstaben sind ein Beispiel für Symbole, aber nur eines. Eure Farben sind genauso Symbole, obwohl kein Buchstabe in Sicht ist."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein vereinbarter, unterscheidbarer Zustand.",
+     "begruendung": "Genau, und beide Wörter tragen: unterscheidbar (der Empfänger muss ihn sicher von allen anderen trennen können) und vereinbart (ohne Absprache trägt der Zustand keine Bedeutung)."
+    },
+    {
+     "kennung": "d",
+     "text": "Ein besonders heller Messwert des Sensors.",
+     "begruendung": "Ein Messwert ist erst einmal nur eine Zahl. Zum Symbol wird ein Bereich von Messwerten erst dadurch, dass ihr ihm gemeinsam eine Bedeutung gebt."
+    }
+   ]
+  },
+  {
+   "id": "si-002",
+   "niveau": "erinnern",
+   "frage": "Was ist ein Alphabet im Sinn dieses Konzepts?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die 26 Buchstaben von A bis Z.",
+     "begruendung": "Das ist ein Alphabet, aber nur ein Beispiel. Eure vier Farben bilden genauso eines, mit vier statt 26 Symbolen."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Menge aller Symbole, die Sender und Empfänger vereinbart haben.",
+     "begruendung": "Genau. Wie groß diese Menge sein darf, entscheidet ihr nicht allein: Eure Hardware und euer Raum entscheiden mit, das ist die Messfrage von Challenge 1."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Reihenfolge, in der die Symbole einer Nachricht gesendet werden.",
+     "begruendung": "Die Reihenfolge ist die Nachricht selbst. Das Alphabet ist der Vorrat, aus dem sie zusammengesetzt wird."
+    }
+   ]
+  },
+  {
+   "id": "si-003",
+   "niveau": "verstehen",
+   "frage": "Wer legt fest, dass auf eurer Strecke ein grünes Aufleuchten „A“ bedeutet?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Physik: Grün hat von Natur aus diese Bedeutung.",
+     "begruendung": "Licht trägt keine eingebaute Bedeutung, es ist nur ein unterscheidbarer Zustand. Bedeutung entsteht ausschließlich durch Vereinbarung."
+    },
+    {
+     "kennung": "b",
+     "text": "Sender und Empfänger gemeinsam, durch eine Vereinbarung vor der Übertragung.",
+     "begruendung": "Genau, und beide Seiten müssen exakt dieselbe Zuordnung benutzen. In eurem Team ist diese Vereinbarung ein Stück Dokumentation und zwei Stellen im Code, eine im Sender, eine im Empfänger."
+    },
+    {
+     "kennung": "c",
+     "text": "Eine internationale Norm für Lichtübertragung.",
+     "begruendung": "Für eure Strecke gibt es keine Norm, und genau das ist der Punkt: In den Challenges 1 bis 3 ist die Zuordnung eure freie Entwurfsentscheidung. Erst der Klassenstandard in Challenge 4 ist so etwas wie eine Norm, und auch der wird vereinbart, nicht gefunden."
+    },
+    {
+     "kennung": "d",
+     "text": "Der Empfänger allein, denn er muss das Signal ja deuten.",
+     "begruendung": "Ein Empfänger, der allein entscheidet, rät. Ohne dass der Sender dieselbe Zuordnung benutzt, kommt zuverlässig Unsinn heraus."
+    }
+   ]
+  },
+  {
+   "id": "si-004",
+   "niveau": "erinnern",
+   "frage": "Was ist ein Bit?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein kleines Bauteil im Computer.",
+     "begruendung": "Ein Bit ist kein Ding, sondern eine Maßeinheit. Es lässt sich in Bauteilen speichern, aber genauso in einem Lichtblitz oder einer Handbewegung."
+    },
+    {
+     "kennung": "b",
+     "text": "Ein anderes Wort für Byte.",
+     "begruendung": "Ein Byte ist eine Gruppe von acht Bit. Die Verwechslung ist verbreitet, kostet aber gleich den Faktor acht."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Informationsmenge einer Entscheidung zwischen zwei gleichberechtigten Möglichkeiten.",
+     "begruendung": "Genau: ein Ja oder Nein, ein An oder Aus. Das Bit ist die kleinste Währung, in der sich Information zählen lässt, und jede größere Menge wird in dieser Währung gemessen."
+    },
+    {
+     "kennung": "d",
+     "text": "Die kleinste Helligkeit, die der Sensor noch messen kann.",
+     "begruendung": "Das wäre eine Eigenschaft eures Sensors. Ein Bit ist von jeder Hardware unabhängig, es zählt Möglichkeiten, nicht Helligkeiten."
+    }
+   ]
+  },
+  {
+   "id": "si-005",
+   "niveau": "verstehen",
+   "frage": "Euer Alphabet hat vier Farben. Wie viel Information trägt ein einzelnes\nempfangenes Symbol, und warum?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "4 Bit, ein Bit je Farbe.",
+     "begruendung": "Bits zählen nicht die Farben, sondern die Ja/Nein-Entscheidungen, die nötig sind, um eine davon zu bestimmen. Das sind deutlich weniger."
+    },
+    {
+     "kennung": "b",
+     "text": "2 Bit, denn zwei Ja/Nein-Entscheidungen genügen, um eine von vier Farben sicher zu bestimmen.",
+     "begruendung": "Genau, und die Begründung kennt ihr aus Sitzung 1: Halbieren. Erste Frage teilt die vier in zwei Hälften, zweite Frage trifft die Farbe. Jede Verdopplung des Alphabets schenkt genau ein weiteres Bit je Symbol."
+    },
+    {
+     "kennung": "c",
+     "text": "1 Bit, denn es kommt ja nur ein Symbol an.",
+     "begruendung": "Ein Symbol ist nicht automatisch ein Bit. Wie viel es trägt, hängt davon ab, aus wie vielen Möglichkeiten es ausgewählt wurde."
+    },
+    {
+     "kennung": "d",
+     "text": "Das hängt davon ab, welche der vier Farben gesendet wurde.",
+     "begruendung": "Bei vier gleichberechtigten Farben trägt jede dieselbe Menge: Entscheidend ist die Zahl der Möglichkeiten, nicht die getroffene Wahl. (Dass seltene Symbole mehr überraschen, ist eine Verfeinerung, die hier nicht gebraucht wird.)"
+    }
+   ]
+  },
+  {
+   "id": "si-006",
+   "niveau": "anwenden",
+   "frage": "Ein Team wechselt von 2 auf 8 Farben und sendet weiterhin gleich viele\nSymbole pro Sekunde. Wie ändert sich die Übertragungsdauer derselben\nDatei?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie sinkt auf ein Viertel, denn 8 geteilt durch 2 ist 4.",
+     "begruendung": "Die Farbzahl teilt man nicht: Information wächst mit dem Verdoppeln. Von 2 auf 8 sind zwei Verdopplungen mehr, also von 1 auf 3 Bit je Symbol."
+    },
+    {
+     "kennung": "b",
+     "text": "Sie sinkt auf ein Drittel: Jedes Symbol trägt jetzt 3 Bit statt 1.",
+     "begruendung": "Genau: 2 Farben tragen 1 Bit je Symbol, 8 Farben tragen 3 (dreimal halbieren). Gleiche Symbolrate, dreifache Bitrate, ein Drittel der Zeit. Vorausgesetzt, die acht Farben bleiben unterscheidbar, und genau das ist die Grenze aus dem Konzept Analog und digital."
+    },
+    {
+     "kennung": "c",
+     "text": "Sie bleibt gleich, denn die Symbolrate hat sich nicht geändert.",
+     "begruendung": "Die Symbolrate ist gleich, aber jedes Symbol transportiert jetzt mehr. Zeit spart, wer mehr Bit je Symbol unterbringt, nicht nur, wer schneller blinkt."
+    },
+    {
+     "kennung": "d",
+     "text": "Sie sinkt auf ein Achtel, ein Achtel je Farbe.",
+     "begruendung": "Dann müsste jede zusätzliche Farbe gleich viel bringen. Information wächst aber nur mit jeder Verdopplung des Alphabets um ein Bit, nicht mit jeder einzelnen Farbe."
+    }
+   ]
+  },
+  {
+   "id": "si-007",
+   "niveau": "verstehen",
+   "frage": "Mehr Symbole je Alphabet heißt mehr Bit je Symbol. Warum macht man das\nAlphabet dann nicht einfach riesig, etwa 256 Farben?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil die LED nur wenige Farben erzeugen kann.",
+     "begruendung": "Die LED mischt aus drei Kanälen Millionen Farbtöne, am Senden scheitert es nicht. Das Nadelöhr sitzt auf der anderen Seite."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil der Computer mit so vielen Farben nicht rechnen kann.",
+     "begruendung": "256 Zustände sind für einen Rechner nichts, ein einzelnes Byte hat so viele. Die Grenze ist nicht rechnerisch."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil der Empfänger die Symbole noch sicher auseinanderhalten muss: Je mehr es sind, desto enger rücken ihre Messbereiche zusammen.",
+     "begruendung": "Genau, hier greifen die beiden Konzepte der Sitzung ineinander: Symbole und Information sagt, was ein größeres Alphabet bringt; Analog und digital sagt, was es kostet. Wo das Gleichgewicht liegt, entscheiden Rauschen, Umgebungslicht und eure Messreihe."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil lange Nachrichten sonst zu viele verschiedene Farben brauchen.",
+     "begruendung": "Die Nachrichtenlänge spielt fürs Alphabet keine Rolle: Auch mit zwei Symbolen lässt sich jede noch so lange Nachricht senden, sie dauert nur länger."
+    }
+   ]
+  },
+  {
+   "id": "si-008",
+   "niveau": "anwenden",
+   "frage": "Ein Team empfängt jede Farbe fehlerfrei, die Trefferquote der Erkennung\nliegt bei 100 Prozent. Trotzdem kommt als Text nur Unsinn heraus. Was ist\ndie wahrscheinlichste Ursache?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Der Sensor ist defekt.",
+     "begruendung": "Ein defekter Sensor würde schon die Farberkennung verderben. Die ist aber makellos, der Fehler liegt hinter ihr."
+    },
+    {
+     "kennung": "b",
+     "text": "Sender und Empfänger benutzen unterschiedliche Zuordnungen von Farben zu Zeichen.",
+     "begruendung": "Genau: Das Signal kommt perfekt an, aber die Vereinbarung ist gebrochen. Bedeutung steckt nicht im Licht, sondern in der Zuordnung, und die muss auf beiden Seiten identisch sein. Ein Klassiker nach getrenntem Arbeiten an Sender- und Empfängercode."
+    },
+    {
+     "kennung": "c",
+     "text": "Das Umgebungslicht stört die Übertragung.",
+     "begruendung": "Störungen würden sich zuerst in der Farberkennung zeigen. Die steht hier aber bei 100 Prozent."
+    },
+    {
+     "kennung": "d",
+     "text": "Das Alphabet ist zu klein für den Text.",
+     "begruendung": "Ein kleines Alphabet macht die Übertragung langsamer, nicht falscher: Man bildet Zeichen dann eben auf Gruppen von Symbolen ab."
+    }
+   ]
+  },
+  {
+   "id": "si-009",
+   "niveau": "anwenden",
+   "frage": "Ein Alphabet hat 16 Symbole. Wie viele Ja/Nein-Fragen braucht man\nhöchstens, um ein empfangenes Symbol sicher zu bestimmen?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "4, denn viermal halbieren führt von 16 Möglichkeiten auf eine.",
+     "begruendung": "Genau: 16, 8, 4, 2, 1. Dieselbe Rechnung wie beim Zahlenraten aus Sitzung 1, und zugleich die Aussage: Ein Symbol aus 16 trägt 4 Bit."
+    },
+    {
+     "kennung": "b",
+     "text": "8, die Hälfte von 16.",
+     "begruendung": "Halbieren heißt nicht, die Anzahl zu halbieren, sondern zu zählen, wie oft man halbieren kann. Das sind bei 16 nur vier Schritte."
+    },
+    {
+     "kennung": "c",
+     "text": "15, eine Frage je auszuschließendem Symbol.",
+     "begruendung": "So fragt, wer einzeln durchgeht. Das funktioniert, ist aber das langsame Verfahren aus Sitzung 1; mit geschickten Fragen fällt pro Antwort die Hälfte weg."
+    },
+    {
+     "kennung": "d",
+     "text": "2, denn jede Frage hat zwei Antworten.",
+     "begruendung": "Zwei Fragen trennen nur vier Möglichkeiten (zwei mal zwei). Für 16 braucht es vier Verdopplungen."
+    }
+   ]
+  },
+  {
+   "id": "si-010",
+   "niveau": "verstehen",
+   "frage": "Welche Aussagen über Bits treffen zu?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein Bit unterscheidet genau zwei Möglichkeiten.",
+     "begruendung": "Genau, das ist die Definition: an oder aus, ja oder nein, hell oder dunkel."
+    },
+    {
+     "kennung": "b",
+     "text": "Ein Bit ist dasselbe wie ein Byte.",
+     "begruendung": "Ein Byte sind acht Bit. Wer beides verwechselt, verrechnet sich bei jeder Größenangabe um den Faktor acht."
+    },
+    {
+     "kennung": "c",
+     "text": "Jede Information lässt sich als Folge von Bits darstellen.",
+     "begruendung": "Richtig, und das ist der Grund, warum ein und dieselbe Technik Texte, Bilder und Töne transportieren kann. Wie die Zuordnung im Einzelnen aussieht, behandeln die Codesysteme in einer späteren Sitzung."
+    },
+    {
+     "kennung": "d",
+     "text": "Bits gibt es nur in Computern.",
+     "begruendung": "Ein Lichtschalter, ein Münzwurf, eine hochgezogene Flagge: alles ein Bit, ganz ohne Computer. Bits zählen Möglichkeiten, egal worin sie stecken."
+    },
+    {
+     "kennung": "e",
+     "text": "Eine Nachricht enthält mehr Bits, wenn ihr Inhalt wichtiger ist.",
+     "begruendung": "Information misst Möglichkeiten, nicht Wichtigkeit. Ein „ja“ vor dem Traualtar und ein „ja“ an der Wursttheke tragen dasselbe eine Bit."
+    }
+   ]
+  },
+  {
+   "id": "si-011",
+   "niveau": "anwenden",
+   "frage": "Ein Team benutzt vier Farben, jedes Symbol trägt also 2 Bit. Es will eine\nKennung mit 12 Bit übertragen. Wie viele Symbole braucht das mindestens?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "12, ein Symbol je Bit.",
+     "begruendung": "So wäre es bei nur zwei Farben. Vier Farben packen zwei Bit in jedes Symbol, das halbiert die Länge."
+    },
+    {
+     "kennung": "b",
+     "text": "6, denn 12 Bit geteilt durch 2 Bit je Symbol.",
+     "begruendung": "Genau diese Division ist später die halbe Durchsatzrechnung: Bits geteilt durch Bits je Symbol ergibt die Symbolzahl, und mal Sekunden je Symbol die Dauer."
+    },
+    {
+     "kennung": "c",
+     "text": "3, denn 12 geteilt durch 4 Farben.",
+     "begruendung": "Geteilt wird durch die Bits je Symbol, nicht durch die Farbzahl. Vier Farben tragen 2 Bit, nicht 4."
+    },
+    {
+     "kennung": "d",
+     "text": "24, zur Sicherheit jedes Bit doppelt.",
+     "begruendung": "Absichern durch Wiederholung ist eine echte Technik, aber eine eigene Entscheidung (sie kommt bei Redundanz und Fehlern). Gefragt war das Minimum."
+    }
+   ]
+  },
+  {
+   "id": "si-012",
+   "niveau": "verstehen",
+   "frage": "Warum genügt im Prinzip ein Alphabet aus nur zwei Symbolen für jede noch\nso komplizierte Nachricht?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Es genügt nicht: Für Texte braucht man mindestens 26 Symbole.",
+     "begruendung": "Der Ausweg ist die Gruppe: Fünf Zweiersymbole ergeben 32 Kombinationen, mehr als genug für 26 Buchstaben."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil zwei Symbole besonders viel Information tragen.",
+     "begruendung": "Im Gegenteil, ein Zweiersymbol trägt mit einem Bit das Minimum. Zwei Symbole sind nicht stark, sie sind genügsam."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil sich jedes Symbol eines größeren Alphabets durch eine feste Gruppe von Zweiersymbolen ersetzen lässt; es kostet nur Länge.",
+     "begruendung": "Genau, und deshalb ist das Bit die Universalwährung: Alles lässt sich in Zweierentscheidungen wechseln. Aus demselben Grund wird der Klassenstandard in Challenge 4 in Bits definiert und nicht in Farben: Bits überleben sogar den Tausch des Trägers, etwa Ton statt Licht."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil Computer intern ohnehin nur Buchstaben speichern.",
+     "begruendung": "Es ist genau umgekehrt: Computer speichern Zustände in Zweiergruppen, und Buchstaben sind eine darübergelegte Vereinbarung."
+    }
+   ]
+  },
+  {
+   "id": "si-013",
+   "niveau": "verstehen",
+   "frage": "Was legt dieses Wörterbuch im Sinn des Konzepts fest?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "code": "ALPHABET = {\n    \"red\":    \"00\",\n    \"green\":  \"01\",\n    \"blue\":   \"10\",\n    \"yellow\": \"11\",\n}",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Welche Farben die LED physikalisch erzeugen kann.",
+     "begruendung": "Die LED kann weit mehr Farben, als hier stehen. Das Wörterbuch wählt aus und ordnet zu, es beschreibt keine Hardwaregrenze."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Vereinbarung: welches Symbol welche Bitgruppe trägt. Der Empfänger braucht exakt dieselbe Zuordnung, nur in Gegenrichtung.",
+     "begruendung": "Genau: Hier steht euer Alphabet als Code, vier Symbole, je 2 Bit. Diese Zeilen sind die eine Hälfte der Absprache; weichen Sender und Empfänger auch nur in einem Eintrag ab, wird aus perfektem Empfang perfekter Unsinn."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Reihenfolge, in der die Farben gesendet werden müssen.",
+     "begruendung": "Die Reihenfolge bestimmt die Nachricht, nicht das Wörterbuch. Hier steht nur, was jede Farbe bedeutet, wann sie drankommt, entscheidet der Text."
+    },
+    {
+     "kennung": "d",
+     "text": "Wie schnell die Symbole aufeinander folgen.",
+     "begruendung": "Über Zeit sagt das Wörterbuch nichts, und das ist Absicht: Die Bedeutung der Symbole und das Tempo der Übertragung sind getrennte Entscheidungen."
+    }
+   ]
+  }
+ ]
+}

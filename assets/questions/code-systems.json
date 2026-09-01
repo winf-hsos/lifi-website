@@ -1,0 +1,451 @@
+{
+ "konzept": "code-systems",
+ "fragen": [
+  {
+   "id": "cs-001",
+   "niveau": "erinnern",
+   "frage": "Was ist ein Codesystem?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein Verfahren, das Daten vor fremdem Zugriff schützt.",
+     "begruendung": "Das ist Verschlüsselung, ein eigenes Konzept. Ein Code verbirgt nichts, er ist im Gegenteil öffentlich, damit beide Seiten ihn benutzen können."
+    },
+    {
+     "kennung": "b",
+     "text": "Eine vereinbarte Zuordnung von Zeichen zu Folgen von Symbolen oder Bits.",
+     "begruendung": "Genau: eine Vorschrift, welche Bitfolge welches Zeichen bedeutet. Vereinbart, nicht naturgegeben, und deshalb gibt es mehrere davon."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein Verfahren, das Daten kleiner macht.",
+     "begruendung": "Das ist Kompression. Manche Codes sind nebenbei sparsam, aber kleiner machen ist nicht ihr Zweck."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Programmiersprache, in der ein Programm geschrieben ist.",
+     "begruendung": "Das Wort „Code“ hat im Alltag mehrere Bedeutungen. Hier geht es nicht um Quelltext, sondern um die Zuordnung von Zeichen zu Bitfolgen."
+    }
+   ]
+  },
+  {
+   "id": "cs-002",
+   "niveau": "erinnern",
+   "frage": "In ASCII steht das große A für die Zahl 65, B für 66, C für 67. Was\nfolgt daraus?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Dass Buchstaben im Rechner als Buchstaben gespeichert werden, nur mit einer Nummer daneben.",
+     "begruendung": "Gespeichert wird nur die Zahl. Ein Buchstabe existiert im Rechner nicht als Form, sondern erst dann, wenn ein Programm die Zahl nach derselben Vereinbarung wieder darstellt."
+    },
+    {
+     "kennung": "b",
+     "text": "Dass 65 die Position von A im Alphabet ist.",
+     "begruendung": "A ist der erste Buchstabe, nicht der 65. Die Zahl stammt aus der ASCII-Tabelle, deren Anfang für Steuerzeichen und Satzzeichen reserviert ist."
+    },
+    {
+     "kennung": "c",
+     "text": "Dass ein Buchstabe im Rechner nichts anderes ist als eine Zahl, der jemand diese Bedeutung zugewiesen hat.",
+     "begruendung": "Genau, und das ist die Pointe des ganzen Konzepts: Dieselben Bits sind Text, Bild oder Ton, je nachdem, welche Vereinbarung man auf sie anwendet."
+    },
+    {
+     "kennung": "d",
+     "text": "Dass ASCII die einzig mögliche Zuordnung ist.",
+     "begruendung": "Es gibt viele: UTF-8, ältere Zeichensätze, euer eigenes Farbalphabet. ASCII ist verbreitet, nicht notwendig."
+    }
+   ]
+  },
+  {
+   "id": "cs-003",
+   "niveau": "verstehen",
+   "frage": "Im Morsecode ist das E ein einzelner Punkt, das Q dagegen vier Zeichen\nlang. In ASCII ist jedes Zeichen genau ein Byte lang. Was ist der\nVorteil der festen Länge?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Nachricht wird kürzer.",
+     "begruendung": "Meistens umgekehrt: Variable Länge kann kürzer werden, weil häufige Zeichen kurze Codes bekommen. Feste Länge kauft etwas anderes ein."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Empfänger weiß immer, wo ein Zeichen endet, ohne Trennzeichen und ohne Nachdenken.",
+     "begruendung": "Genau: Er zählt einfach immer gleich viele Symbole ab. Bei variabler Länge muss aus dem Code selbst hervorgehen, wo Schluss ist, sonst braucht es Pausen oder Trennzeichen. Morse braucht sie deshalb wirklich."
+    },
+    {
+     "kennung": "c",
+     "text": "Feste Länge ist störungssicherer gegen Rauschen.",
+     "begruendung": "Gegen Rauschen hilft Abstand zwischen den Symbolen, nicht die Codelänge. Ein Fehler kann in beiden Systemen passieren, er wirkt bei variabler Länge nur schlimmer, weil danach alles verrutscht."
+    },
+    {
+     "kennung": "d",
+     "text": "Feste Länge braucht keine Vereinbarung zwischen Sender und Empfänger.",
+     "begruendung": "Auch feste Länge muss vereinbart werden: welche Länge, und welche Bitfolge welches Zeichen bedeutet. Ohne Absprache geht gar nichts."
+    }
+   ]
+  },
+  {
+   "id": "cs-004",
+   "niveau": "anwenden",
+   "frage": "Ein Team vereinbart: a = 0, b = 01, c = 10. Gesendet wird die Folge\n010. Warum ist dieser Code unbrauchbar?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil 010 keine gültige Zeichenfolge ist.",
+     "begruendung": "Sie ist sogar doppelt gültig, und genau darin liegt das Problem."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil die Folge zwei Lesarten hat: „a c“ und „b a“ passen beide.",
+     "begruendung": "Genau: 0 + 10 ergibt „a c“, 01 + 0 ergibt „b a“. Ein Code muss eindeutig decodierbar sein. Hier ist der Code von a der Anfang des Codes von b, deshalb weiß der Empfänger nie, ob ein Zeichen schon zu Ende ist. Abhilfe: feste Länge, ein Trennzeichen, oder Codewörter, von denen keines der Anfang eines anderen ist."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil 0 und 1 zu wenige Symbole sind.",
+     "begruendung": "Zwei Symbole genügen für jede Nachricht, wie ihr in Sitzung 4 gesehen habt. Der Fehler liegt nicht in der Anzahl, sondern in der Wahl der Codewörter."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil das Alphabet nur drei Zeichen umfasst.",
+     "begruendung": "Drei Zeichen sind vollkommen in Ordnung. Mit a = 00, b = 01, c = 10 wäre derselbe Vorrat eindeutig lesbar."
+    }
+   ]
+  },
+  {
+   "id": "cs-005",
+   "niveau": "anwenden",
+   "frage": "Euer Alphabet hat vier Farben, ihr wollt die 26 Buchstaben übertragen.\nWie viele Farbsymbole braucht ihr mindestens je Buchstabe, wenn alle\nBuchstaben gleich lang kodiert werden?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "2, weil 4 mal 2 gleich 8 ist.",
+     "begruendung": "Multipliziert wird nicht, potenziert: Zwei Symbole ergeben 4 mal 4 gleich 16 Kombinationen. Das reicht für 16 Buchstaben, nicht für 26."
+    },
+    {
+     "kennung": "b",
+     "text": "7, wie beim Zahlenraten von 1 bis 100.",
+     "begruendung": "Die 7 galt für Ja/Nein-Fragen, also für zwei Möglichkeiten je Schritt. Mit vier Farben je Schritt geht es schneller."
+    },
+    {
+     "kennung": "c",
+     "text": "3, denn 4 hoch 3 sind 64 Kombinationen, und 4 hoch 2 wären nur 16.",
+     "begruendung": "Genau, und allgemein ist das N = k hoch n: vier Symbole im Alphabet, drei je Zeichen, also 64 Möglichkeiten. In Bits gerechnet trägt jede Farbe 2 Bit, drei Farben also 6. Man verschenkt dabei 38 ungenutzte Kombinationen; die kann man für Ziffern, Leerzeichen oder Steuerzeichen gebrauchen."
+    },
+    {
+     "kennung": "d",
+     "text": "26, ein Symbol je Buchstabe.",
+     "begruendung": "Das ginge nur mit einem Alphabet aus 26 unterscheidbaren Farben. Genau daran scheitert ihr an der Streuung, deshalb setzt man Buchstaben aus mehreren Symbolen zusammen."
+    }
+   ]
+  },
+  {
+   "id": "cs-006",
+   "niveau": "verstehen",
+   "frage": "ASCII kennt 128 Zeichen. Warum gibt es trotzdem noch Unicode und UTF-8?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil 128 Zeichen für die Schriften der Welt bei weitem nicht reichen.",
+     "begruendung": "Richtig: Umlaute, Griechisch, Kyrillisch, Chinesisch, Emoji. Unicode vergibt für jedes Zeichen eine Nummer, aktuell über 100.000 Stück."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil ASCII zu langsam zu decodieren ist.",
+     "begruendung": "ASCII ist denkbar schnell zu decodieren, ein Byte je Zeichen. Der Grund für Unicode ist der Vorrat, nicht das Tempo."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil UTF-8 mit variabler Länge arbeitet: gängige Zeichen bleiben ein Byte, seltene brauchen mehr.",
+     "begruendung": "Richtig, und das ist derselbe Gedanke wie bei Morse: häufig heißt kurz. Deshalb ist ein englischer Text in UTF-8 fast so kompakt wie in ASCII, und deutsche Umlaute kosten je ein Byte mehr."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil Unicode Bilder und Töne mit kodieren kann.",
+     "begruendung": "Unicode kodiert Zeichen, auch Emoji, aber keine Bilder oder Töne. Dafür gibt es eigene Codesysteme, und die kommen im selben Input vor."
+    }
+   ]
+  },
+  {
+   "id": "cs-007",
+   "niveau": "verstehen",
+   "frage": "Auf einer Festplatte liegt die Bytefolge `48 65 6C 6C 6F`. Woher weiß\nein Programm, ob das ein Text, ein Bildausschnitt oder ein Stück Ton\nist?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Bytes selbst verraten es, Textbytes sehen anders aus als Bildbytes.",
+     "begruendung": "Dieselben Bytes können alles bedeuten. `48 65 6C 6C 6F` ist in ASCII „Hello“, könnte aber genauso fünf Grauwerte oder fünf Tonabtastwerte sein."
+    },
+    {
+     "kennung": "b",
+     "text": "Gar nicht, das ist reine Glückssache.",
+     "begruendung": "So schlimm ist es nicht: Es gibt Konventionen, nur stecken sie nicht in den Bytes selbst."
+    },
+    {
+     "kennung": "c",
+     "text": "Aus zusätzlichen Absprachen: Dateiendung, Kopfdaten der Datei, oder weil das Programm es schlicht voraussetzt.",
+     "begruendung": "Genau: Der Typ ist selbst wieder eine Vereinbarung, die mitgeliefert oder vorausgesetzt wird. Deshalb bekommt euer Rahmen in Challenge 3 ein Typfeld: Der Empfänger soll nicht raten müssen, was da kommt."
+    },
+    {
+     "kennung": "d",
+     "text": "Das Betriebssystem speichert zu jedem Byte, was es bedeutet.",
+     "begruendung": "Es speichert Bytes und einen Dateinamen, mehr nicht. Die Deutung passiert erst beim Öffnen, und dann kann sie auch schiefgehen: Wer ein Bild als Text öffnet, sieht Zeichensalat."
+    }
+   ]
+  },
+  {
+   "id": "cs-008",
+   "niveau": "verstehen",
+   "frage": "Ein Bildpunkt wird mit je einem Byte für Rot, Grün und Blau gespeichert.\nWie viele verschiedene Farben lassen sich damit darstellen?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "768, also 3 mal 256.",
+     "begruendung": "Addiert wird nicht: Jede der 256 Rotstufen lässt sich mit jeder Grün- und jeder Blaustufe kombinieren. Deshalb wird multipliziert."
+    },
+    {
+     "kennung": "b",
+     "text": "Rund 16,7 Millionen, also 256 mal 256 mal 256.",
+     "begruendung": "Genau, und in Bits gerechnet: 8 plus 8 plus 8 sind 24 Bit je Bildpunkt, also 2 hoch 24 Möglichkeiten. Genau diese Zahl steckt hinter der Angabe „24 Bit Farbtiefe“. Dieselben drei Kanäle steuert ihr mit led.set_color an, und euer Sensor misst sie wieder."
+    },
+    {
+     "kennung": "c",
+     "text": "256, ein Byte reicht ja für eine Farbe.",
+     "begruendung": "Ein Byte reicht für einen Kanal. Erst drei Kanäle zusammen ergeben die Farbe, und ihre Kombinationen multiplizieren sich."
+    },
+    {
+     "kennung": "d",
+     "text": "Unbegrenzt viele, weil Farbe stufenlos ist.",
+     "begruendung": "Farbe in der Welt ist stufenlos, im Speicher nicht: Drei Bytes ergeben endlich viele Zustände. Genau das ist die Digitalisierung aus Sitzung 4."
+    }
+   ]
+  },
+  {
+   "id": "cs-009",
+   "niveau": "erinnern",
+   "frage": "Eine Farbe wird als `#AC8909` notiert. Was ist das für eine Schreibweise\nund wozu dient sie?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein eigenes Codesystem für Farben, unabhängig von RGB.",
+     "begruendung": "Es sind dieselben drei RGB-Anteile, nur anders aufgeschrieben: AC ist 172 (viel Rot), 89 ist 137 (etwas weniger Grün), 09 ist 9 (fast kein Blau)."
+    },
+    {
+     "kennung": "b",
+     "text": "Hexadezimal: eine kompakte Schreibweise für Bytes, bei der zwei Stellen genau ein Byte ergeben.",
+     "begruendung": "Genau: 16 Ziffern (0 bis 9 und A bis F), also 4 Bit je Stelle und 8 Bit je Paar. Deshalb sind drei Paare genau die drei Farbbytes. Menschen lesen `AC` leichter als `10101100`."
+    },
+    {
+     "kennung": "c",
+     "text": "Eine Prüfsumme, die die Farbe gegen Fehler absichert.",
+     "begruendung": "Prüfsummen kommen später, in Challenge 3. Hier steht schlicht der Farbwert selbst, nur in anderer Basis."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Speicheradresse, an der die Farbe abgelegt ist.",
+     "begruendung": "Adressen schreibt man auch hexadezimal, daher die Verwechslung. Hier ist es aber der Inhalt, nicht der Ort."
+    }
+   ]
+  },
+  {
+   "id": "cs-010",
+   "niveau": "verstehen",
+   "frage": "Dasselbe Logo lässt sich als Bitmap (eine Farbe je Bildpunkt) oder als\nVektorgrafik (Anweisungen wie „Kreis, Mittelpunkt, Radius, Farbe“)\nspeichern. Welche Aussagen treffen zu?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Beides sind Codesysteme: Sie beschreiben dasselbe Bild nach verschiedenen Vereinbarungen.",
+     "begruendung": "Richtig, und das ist der Kern: Es gibt nicht die eine richtige Darstellung, sondern verschiedene Zuordnungen mit verschiedenen Stärken."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Vektorfassung ist immer kleiner.",
+     "begruendung": "Bei einfachen Formen meistens, bei einem Foto keineswegs: Ein Foto als Vektorgrafik zu beschreiben, wäre absurd aufwendig. Es hängt am Motiv."
+    },
+    {
+     "kennung": "c",
+     "text": "Nur die Vektorfassung lässt sich beliebig vergrößern, ohne dass Treppenstufen entstehen.",
+     "begruendung": "Richtig: Die Anweisung „Kreis mit Radius r“ lässt sich in jeder Größe neu zeichnen, ein Raster aus Bildpunkten dagegen nicht."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Bitmapfassung braucht keine Vereinbarung, weil sie das Bild direkt speichert.",
+     "begruendung": "Auch sie braucht Absprachen: Breite, Höhe, Reihenfolge der Bildpunkte, Farbtiefe, Kanalreihenfolge. Ohne die ist eine Bitmap nur eine Bytefolge."
+    }
+   ]
+  },
+  {
+   "id": "cs-011",
+   "niveau": "anwenden",
+   "frage": "`encode(\"cab\")` liefert eine Bitfolge. Wie lautet sie, und wie findet\nder Empfänger die Zeichen darin wieder?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "code": "CODE = {\"a\": \"00\", \"b\": \"01\", \"c\": \"10\", \"d\": \"11\"}\n\ndef encode(text):\n    return \"\".join(CODE[zeichen] for zeichen in text)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "100001, und der Empfänger schneidet die Folge einfach in Zweiergruppen.",
+     "begruendung": "Genau: c ist 10, a ist 00, b ist 01. Weil alle Codewörter gleich lang sind, genügt Abzählen; ein Trennzeichen ist überflüssig. Genau dieses Wörterbuch braucht ihr in Challenge 2 zweimal, einmal je Richtung."
+    },
+    {
+     "kennung": "b",
+     "text": "100001, aber ohne Trennzeichen ist die Folge nicht wieder lesbar.",
+     "begruendung": "Die Bitfolge stimmt. Trennzeichen braucht nur variable Länge; hier ist jedes Zeichen genau zwei Bit lang, das reicht als Regel."
+    },
+    {
+     "kennung": "c",
+     "text": "cab, denn die Funktion gibt den Text unverändert zurück.",
+     "begruendung": "Die Funktion schlägt jedes Zeichen im Wörterbuch nach und hängt die Codewörter aneinander. Zurück kommt eine Zeichenkette aus Nullen und Einsen."
+    },
+    {
+     "kennung": "d",
+     "text": "001001, die Reihenfolge im Wörterbuch entscheidet.",
+     "begruendung": "Die Reihenfolge im Wörterbuch spielt keine Rolle, nur die Zuordnung. Gelesen wird der Text von links nach rechts: c, a, b."
+    }
+   ]
+  },
+  {
+   "id": "cs-012",
+   "niveau": "verstehen",
+   "frage": "Welche der folgenden Dinge sind Codesysteme im Sinn dieses Konzepts?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein Strichcode auf einer Verpackung",
+     "begruendung": "Ja: Strichbreiten stehen für Ziffern, nach einer öffentlich festgelegten Vereinbarung."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Blindenschrift Braille",
+     "begruendung": "Ja: sechs Punktpositionen, jede gesetzt oder nicht. Das sind 6 Bit je Zeichen, tastbar statt sichtbar."
+    },
+    {
+     "kennung": "c",
+     "text": "Die DNA in einer Zelle",
+     "begruendung": "Ja, und der älteste Code von allen: Drei Basen in Folge stehen für eine Aminosäure, und diese Zuordnung ist bei allen Lebewesen dieselbe. Eine Vereinbarung, die niemand ausgehandelt hat und die trotzdem alle einhalten."
+    },
+    {
+     "kennung": "d",
+     "text": "Euer Farbalphabet aus Challenge 1",
+     "begruendung": "Ja, und das ist die Pointe: Ihr habt längst eines gebaut. Ein Codesystem braucht keinen Computer, nur eine Vereinbarung und unterscheidbare Zustände."
+    },
+    {
+     "kennung": "e",
+     "text": "Die Lautstärke eines Geräuschs",
+     "begruendung": "Nein: eine stufenlose physikalische Größe, ohne vereinbarte Zuordnung. Erst wenn ihr festlegt, was leise und laut bedeuten sollen, wird ein Code daraus."
+    }
+   ]
+  },
+  {
+   "id": "cs-013",
+   "niveau": "anwenden",
+   "frage": "Für die Zahl der codierbaren Zeichen gilt N = k^n, mit k Symbolen im\nAlphabet und n Symbolen je Zeichen. Ein Team hat nur zwei sicher\nunterscheidbare Farben und will 26 Buchstaben übertragen. Wie viele\nSymbole braucht ein Buchstabe?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "13, also 26 geteilt durch 2.",
+     "begruendung": "Geteilt wird hier nichts. Mit jedem zusätzlichen Symbol verdoppelt sich die Zahl der Möglichkeiten, sie wächst also viel schneller."
+    },
+    {
+     "kennung": "b",
+     "text": "4, denn 2 hoch 4 sind 16.",
+     "begruendung": "Die Rechnung stimmt, das Ergebnis reicht aber nicht: 16 Kombinationen für 26 Buchstaben lassen zehn Buchstaben ohne Code."
+    },
+    {
+     "kennung": "c",
+     "text": "5, denn 2 hoch 5 sind 32, und aufgerundet wird immer.",
+     "begruendung": "Genau: Der Logarithmus zur Basis 2 von 26 ist etwa 4,7, und weil es keine halben Symbole gibt, wird aufgerundet. Mit 32 Kombinationen bleiben sechs für Leerzeichen und Ziffern übrig. Nebenbei: Genau das ist der Preis eines kleinen Alphabets, mit vier Farben wären es nur drei Symbole."
+    },
+    {
+     "kennung": "d",
+     "text": "26, ein Symbol je Buchstabe.",
+     "begruendung": "Das wäre die Zahl der Buchstaben, nicht die Länge eines Codeworts. Mit zwei Farben lassen sich Buchstaben nur aus mehreren Symbolen zusammensetzen."
+    }
+   ]
+  },
+  {
+   "id": "cs-014",
+   "niveau": "verstehen",
+   "frage": "Diese Zeile lässt eure LED in einem warmen Gold leuchten. Was bedeuten\ndie drei Zahlen?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "code": "led.set_color(172, 137, 9)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Eine Nummer aus einer Tabelle aller darstellbaren Farben.",
+     "begruendung": "Es gibt keine solche Tabelle, und es wären auch drei Nummern statt einer. Die Farbe entsteht durch Mischen, nicht durch Nachschlagen."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Anteile der drei Grundfarben: viel Rot, etwas weniger Grün, fast kein Blau, jeder Anteil von 0 bis 255.",
+     "begruendung": "Genau, und dieselbe Vereinbarung benutzt jeder Bildschirm: drei Kanäle, je ein Byte, zusammen 16,7 Millionen Farben. Als Hex geschrieben ist das #AC8909."
+    },
+    {
+     "kennung": "c",
+     "text": "Helligkeit, Farbton und Sättigung.",
+     "begruendung": "Das wäre eine andere Vereinbarung, es gibt sie tatsächlich (HSV), aber `set_color` erwartet die drei Grundfarbenanteile. Wieder gilt: Zahlen bedeuten nur das, was vereinbart ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Wellenlänge des Lichts in Nanometern.",
+     "begruendung": "Eine Wellenlänge wäre eine einzige Zahl und läge bei sichtbarem Licht zwischen etwa 380 und 750. Eure LED erzeugt Farben nicht über die Wellenlänge, sondern durch Mischen dreier fester Grundfarben."
+    }
+   ]
+  }
+ ]
+}

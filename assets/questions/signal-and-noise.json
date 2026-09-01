@@ -1,0 +1,394 @@
+{
+ "konzept": "signal-and-noise",
+ "fragen": [
+  {
+   "id": "sn-001",
+   "niveau": "erinnern",
+   "frage": "Ihr messt zehnmal hintereinander dieselbe Farbe, ohne irgendetwas zu\nverändern, und bekommt zehn leicht verschiedene Zahlen. Was bedeutet das?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Der Sensor ist defekt und sollte getauscht werden.",
+     "begruendung": "Ein perfekt funktionierender Sensor verhält sich genauso. Jede Messung enthält Schwankungen, das ist Physik und keine Panne."
+    },
+    {
+     "kennung": "b",
+     "text": "Das ist normal: Jede Messung schwankt, und diese Schwankung heißt Rauschen.",
+     "begruendung": "Genau. Rauschen ist keine Störung von außen allein, sondern eine Eigenschaft jeder Messung. Interessant ist deshalb nicht, ob es rauscht, sondern wie stark."
+    },
+    {
+     "kennung": "c",
+     "text": "Euer Programm hat einen Fehler in der Ausleseschleife.",
+     "begruendung": "Auch ein fehlerfreies Programm liefert schwankende Werte, denn es liest ja nur ab, was der Sensor misst."
+    },
+    {
+     "kennung": "d",
+     "text": "Die LED ändert unbemerkt ihre Farbe.",
+     "begruendung": "Die LED hält ihren Wert. Selbst bei völlig konstanter Beleuchtung streuen die Messwerte, weil Sensor, Licht und Umgebung nie exakt gleich sind."
+    }
+   ]
+  },
+  {
+   "id": "sn-002",
+   "niveau": "verstehen",
+   "frage": "In allen vier Streifen liegt dasselbe Rohsignal, nur die Länge der\nMessfenster wächst nach unten. Was zeigt die Abbildung?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "bild": "signal-and-noise",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Dass ein besserer Sensor weniger rauscht.",
+     "begruendung": "Der Sensor ist in allen vier Streifen derselbe. Was sich ändert, ist allein die Messdauer."
+    },
+    {
+     "kennung": "b",
+     "text": "Dass das Rauschen mit der Zeit von selbst nachlässt.",
+     "begruendung": "Das Rohsignal oben rauscht durchgehend gleich stark. Ruhiger werden nur die daraus gebildeten Messwerte."
+    },
+    {
+     "kennung": "c",
+     "text": "Dass längere Messfenster die Schwankung glätten: Jeder Messwert liegt näher am wahren Pegel.",
+     "begruendung": "Genau: Über ein längeres Fenster mitteln sich die Ausreißer heraus. Der Preis steht auf der nächsten Seite dieses Konzepts: Längere Fenster bedeuten weniger Symbole pro Sekunde."
+    },
+    {
+     "kennung": "d",
+     "text": "Dass man mit genügend langer Messung jedes beliebige Alphabet sicher übertragen kann.",
+     "begruendung": "Glätten hilft, aber es kostet Zeit, und die Restschwankung verschwindet nie ganz. Wer beliebig viele Symbole will, braucht beliebig lange Messungen, und dann ist die Übertragung unbrauchbar langsam."
+    }
+   ]
+  },
+  {
+   "id": "sn-003",
+   "niveau": "verstehen",
+   "frage": "Im Wettbewerb erreicht ein Team ein sicheres Alphabet aus 16 Farben, ein\nanderes nur aus 4. Beide haben denselben Sensor und dieselbe LED. Woran\nliegt der Unterschied in erster Linie?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "An der Programmiersprache und der Qualität des Codes.",
+     "begruendung": "Der Code entscheidet, wo die Grenzen liegen, aber nicht, wie weit die Messwerte streuen. Sauberer Code allein vergrößert kein Alphabet."
+    },
+    {
+     "kennung": "b",
+     "text": "Am Glück bei der Abnahme.",
+     "begruendung": "Bei 20 Übertragungen mittelt sich Glück weitgehend heraus. Ein Unterschied von 16 zu 4 ist systematisch, nicht zufällig."
+    },
+    {
+     "kennung": "c",
+     "text": "Am Verhältnis von Abstand zwischen den Symbolen zu Streuung der Messwerte: Wer die Streuung kleiner bekommt, bringt mehr Symbole unter.",
+     "begruendung": "Genau: Die Alphabetgröße misst nichts anderes als dieses Verhältnis. Kleiner wird die Streuung durch Abschirmung gegen Umgebungslicht, saubere Optik, festen Abstand und längere Messfenster."
+    },
+    {
+     "kennung": "d",
+     "text": "Daran, dass das erste Team hellere Farben gewählt hat.",
+     "begruendung": "Helligkeit allein hilft wenig, wenn die Werte trotzdem breit streuen. Es zählt der Abstand zwischen den Symbolen im Verhältnis zur Streuung, nicht der absolute Pegel."
+    }
+   ]
+  },
+  {
+   "id": "sn-004",
+   "niveau": "verstehen",
+   "frage": "Längere Messfenster liefern ruhigere Werte. Warum stellt man die\nIntegrationszeit dann nicht einfach auf den höchsten Wert?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil der Sensor dann überhitzt.",
+     "begruendung": "Wärme ist hier kein Thema. Der Preis wird in einer anderen Währung bezahlt."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil jede Messung Zeit kostet: Längere Fenster bedeuten weniger Symbole pro Sekunde und damit weniger Durchsatz.",
+     "begruendung": "Genau, und das ist der zentrale Zielkonflikt des Projekts: Signalqualität gegen Symbolrate. Deshalb sind Integrationszeit und Verstärkung in eurer Schnittstelle sichtbar und nicht versteckt."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil die Werte bei langer Messung ungenau werden.",
+     "begruendung": "Umgekehrt: Sie werden genauer, das ist ja der Grund für längere Fenster. Nur eben langsamer."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil der Sensor bei langer Integrationszeit keine Farben mehr unterscheidet.",
+     "begruendung": "Die Farbkanäle arbeiten unabhängig von der Fensterlänge weiter. Was sich ändert, ist nur die Ruhe der Werte und die Zeit, die sie kosten."
+    }
+   ]
+  },
+  {
+   "id": "sn-005",
+   "niveau": "anwenden",
+   "frage": "Zwei eurer Farben liefern Messreihen, die sich überlappen: Farbe A\nstreut um 180 bis 240, Farbe B um 220 bis 280. Welche Maßnahmen greifen\ndas Problem an der Wurzel an?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Eine der beiden Farben durch eine weiter entfernte ersetzen.",
+     "begruendung": "Richtig: Das vergrößert den Abstand zwischen den Symbolen, also den Zähler im entscheidenden Verhältnis."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Grenze genau in die Mitte der Überlappung legen.",
+     "begruendung": "Das ist die beste Grenze für eine schlechte Lage, aber es beseitigt die Überlappung nicht: Ein Teil der Messungen fällt weiterhin auf die falsche Seite."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Integrationszeit erhöhen, damit die Streuung schrumpft.",
+     "begruendung": "Richtig, und das ist der Nenner desselben Verhältnisses. Es kostet Symbolrate, deshalb ist es eine Abwägung und keine Selbstverständlichkeit."
+    },
+    {
+     "kennung": "d",
+     "text": "Den optischen Aufbau verbessern: abschirmen, Röhre, fester Abstand.",
+     "begruendung": "Richtig: Weniger Fremdlicht und stabile Geometrie senken die Streuung, ohne einen einzigen Millisekunde Symbolrate zu kosten. Die beste Sorte Verbesserung."
+    },
+    {
+     "kennung": "e",
+     "text": "Mehr Farben ins Alphabet aufnehmen, damit die Überlappung weniger ins Gewicht fällt.",
+     "begruendung": "Das verschärft die Lage: Mehr Farben bedeuten kleinere Abstände, und die Überlappung nimmt zu statt ab."
+    }
+   ]
+  },
+  {
+   "id": "sn-006",
+   "niveau": "anwenden",
+   "frage": "Was bewirkt diese Funktion, verglichen mit einer einzelnen Messung?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "code": "def read_stable(n=10):\n    values = [sensor.get_clear() for _ in range(n)]\n    return sum(values) / n",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie macht den Sensor genauer, weil er zehnmal so viel Licht sammelt.",
+     "begruendung": "Der Sensor selbst bleibt unverändert; er misst zehnmal dasselbe. Verbessert wird nur, was das Programm aus den zehn Werten macht."
+    },
+    {
+     "kennung": "b",
+     "text": "Sie mittelt die Schwankung heraus: Der Rückgabewert streut weniger als eine Einzelmessung, und die Funktion dauert zehnmal so lang.",
+     "begruendung": "Genau, und beide Hälften gehören zusammen. Mitteln ist dasselbe Geschäft wie eine längere Integrationszeit: ruhigere Werte gegen Zeit. Wer nur die erste Hälfte sieht, wundert sich über den eingebrochenen Durchsatz."
+    },
+    {
+     "kennung": "c",
+     "text": "Sie entfernt Ausreißer vollständig.",
+     "begruendung": "Ein Mittelwert dämpft Ausreißer, aber er wirft sie nicht weg; ein einzelner starker Ausreißer zieht ihn mit. Wer Ausreißer wirklich verwerfen will, nimmt den Median."
+    },
+    {
+     "kennung": "d",
+     "text": "Sie sorgt dafür, dass immer dasselbe Symbol erkannt wird.",
+     "begruendung": "Sie verbessert die Chancen, garantiert aber nichts: Liegen zwei Symbole zu dicht beieinander, hilft auch ein ruhiger Mittelwert nicht mehr."
+    }
+   ]
+  },
+  {
+   "id": "sn-007",
+   "niveau": "verstehen",
+   "frage": "Zwei Wege sollen die Übertragung beschleunigen: mehr Symbole ins\nAlphabet aufnehmen oder schneller messen. Was haben beide gemeinsam?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Beide sind kostenlos, solange die Hardware mitspielt.",
+     "begruendung": "Beide kosten dasselbe, nämlich Sicherheitsabstand zwischen dem, was ankommt, und dem, was noch sicher unterscheidbar ist."
+    },
+    {
+     "kennung": "b",
+     "text": "Beide erfordern einen besseren Sensor.",
+     "begruendung": "Ein besserer Sensor verschöbe die Grenze, aber die Struktur des Problems bliebe dieselbe. Auch mit Spitzenhardware gibt es eine Wand, sie steht nur weiter hinten."
+    },
+    {
+     "kennung": "c",
+     "text": "Beide verkleinern den Sicherheitsabstand: einmal den Abstand zwischen den Symbolen, einmal durch mehr Streuung je Messung. Sie enden an derselben Wand.",
+     "begruendung": "Genau: Der eine Weg schiebt die Symbole zusammen, der andere macht die Messwerte unruhiger. In beiden Fällen schrumpft dasselbe Verhältnis, und deshalb begrenzen die beiden Konzepte gemeinsam euren Durchsatz."
+    },
+    {
+     "kennung": "d",
+     "text": "Beide funktionieren nur, wenn das Umgebungslicht konstant bleibt.",
+     "begruendung": "Konstantes Umgebungslicht hilft immer, ist aber nicht das Gemeinsame der beiden Wege. Ihr gemeinsamer Preis ist der schrumpfende Sicherheitsabstand."
+    }
+   ]
+  },
+  {
+   "id": "sn-008",
+   "niveau": "anwenden",
+   "frage": "Ein Team dokumentiert seine Farben mit je einem Mittelwert: rot 210,\norange 245, gelb 280. Warum genügt das für die Entscheidung über die\nAlphabetgröße nicht?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil die Mittelwerte nichts darüber sagen, wie weit die Einzelmessungen um sie herum streuen.",
+     "begruendung": "Genau: 35 Punkte Abstand sind reichlich, wenn die Werte um ±5 schwanken, und hoffnungslos bei ±30. Zu jedem Steckbrief gehört deshalb ein Streumaß, mindestens der kleinste und größte beobachtete Wert."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil Mittelwerte immer ungenau sind.",
+     "begruendung": "Ein Mittelwert aus vielen Messungen ist im Gegenteil recht verlässlich. Es fehlt nicht Genauigkeit, es fehlt die zweite Angabe."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil drei Farben zu wenig für ein Alphabet sind.",
+     "begruendung": "Drei Symbole sind ein gültiges Alphabet, es trägt knapp anderthalb Bit. Die Frage ist nicht die Anzahl, sondern ob die drei sicher trennbar sind."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil der Clear-Kanal für Farben ungeeignet ist.",
+     "begruendung": "Der Clear-Kanal ist eine legitime und oft robuste Wahl. Auch mit den Farbkanälen bliebe das Problem dasselbe: ohne Streumaß keine Aussage."
+    }
+   ]
+  },
+  {
+   "id": "sn-009",
+   "niveau": "verstehen",
+   "frage": "Was heißt es, dass zwei Zustände „sicher unterscheidbar“ sind?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ihre Mittelwerte sind verschieden.",
+     "begruendung": "Verschiedene Mittelwerte sind die Mindestbedingung, aber sie genügen nicht: Auch bei verschiedenen Mittelwerten können sich die Messreihen überlappen."
+    },
+    {
+     "kennung": "b",
+     "text": "Ihre Messreihen überlappen nicht: Auch die extremsten Werte des einen liegen noch klar auf seiner Seite der Grenze.",
+     "begruendung": "Genau, und das ist ein empirischer Befund, kein rechnerischer: Ihr seht es erst, wenn ihr oft genug gemessen habt. Zehn Messungen je Farbe sind das Minimum, mit dem sich das beurteilen lässt."
+    },
+    {
+     "kennung": "c",
+     "text": "Der Empfänger erkennt sie in mindestens der Hälfte der Fälle richtig.",
+     "begruendung": "Die Hälfte ist bei zwei Zuständen genau so gut wie Raten. Sicher heißt: praktisch immer, nicht öfter als zufällig."
+    },
+    {
+     "kennung": "d",
+     "text": "Die beiden Farben sehen für das menschliche Auge verschieden aus.",
+     "begruendung": "Euer Auge ist nicht der Empfänger. Zwei für euch deutlich verschiedene Farben können im Sensorwert dicht beieinanderliegen, und umgekehrt."
+    }
+   ]
+  },
+  {
+   "id": "sn-010",
+   "niveau": "anwenden",
+   "frage": "Euer optischer Aufbau darf nur passiv sein: Röhren, Blenden, Spiegel,\nhöchstens 10 Euro Material. Was bewirkt so ein Aufbau messtechnisch?",
+   "typ": "mc",
+   "richtig": [
+    "b",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Er macht das Licht der LED heller.",
+     "begruendung": "Passive Optik erzeugt kein Licht. Sie kann es bündeln und führen, aber die LED gibt nicht mehr her als vorher."
+    },
+    {
+     "kennung": "b",
+     "text": "Er hält Umgebungslicht fern, das sonst als Störanteil in jeder Messung landet.",
+     "begruendung": "Richtig, und das ist der größte Hebel im Raum HD0001 mit seiner Deckenbeleuchtung. Weniger Fremdlicht heißt kleinere Streuung, ohne Zeitverlust."
+    },
+    {
+     "kennung": "c",
+     "text": "Er stabilisiert die Geometrie: Abstand und Winkel bleiben zwischen zwei Messungen gleich.",
+     "begruendung": "Richtig: Ein verrutschtes Gerät verschiebt alle Werte, und eure sorgfältig vermessenen Steckbriefe stimmen nicht mehr. Reproduzierbarkeit ist der halbe Wettbewerb."
+    },
+    {
+     "kennung": "d",
+     "text": "Er ersetzt die Kalibrierung.",
+     "begruendung": "Im Gegenteil: Nach jeder Änderung am Aufbau muss neu kalibriert werden, weil sich alle Pegel verschieben. Deshalb gehören beide Messreihen in die Dokumentation, vorher und nachher."
+    }
+   ]
+  },
+  {
+   "id": "sn-011",
+   "niveau": "verstehen",
+   "frage": "Ein anderes Team empfiehlt euch seine Einstellungen: „Integrationszeit\n50 ms, Verstärkung 4x, damit haben wir 8 Farben geschafft.“ Wie geht ihr\ndamit um?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Übernehmen, das Team hat es ja bewiesen.",
+     "begruendung": "Bewiesen hat es etwas über seinen Aufbau: seine Optik, seinen Abstand, seinen Platz im Raum. Eure Werte können deutlich abweichen."
+    },
+    {
+     "kennung": "b",
+     "text": "Ignorieren, fremde Werte sind grundsätzlich wertlos.",
+     "begruendung": "Das andere Extrem und auch nicht klug: Als Startpunkt für eigene Messungen spart ein fremder Wert Zeit, er ersetzt sie nur nicht."
+    },
+    {
+     "kennung": "c",
+     "text": "Als Startpunkt nehmen und dann selbst messen: mehrere Einstellungen durchprobieren und die Trefferquote je Einstellung protokollieren.",
+     "begruendung": "Genau: Der Kanal ist die einzige verlässliche Instanz, und er ist bei jedem Aufbau ein anderer. Dasselbe gilt für Vorschläge des KI-Assistenten; auch die sind Hypothesen, keine Messwerte."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Verstärkung höher stellen als das andere Team, dann werden es mehr als 8 Farben.",
+     "begruendung": "Mehr Verstärkung verstärkt auch das Rauschen und kann in die Sättigung führen. Ob sie hilft, entscheidet eure Messreihe, nicht die Richtung des Reglers."
+    }
+   ]
+  },
+  {
+   "id": "sn-012",
+   "niveau": "verstehen",
+   "frage": "Welche Aussagen über Rauschen treffen zu?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Rauschen lässt sich verkleinern, aber nie ganz beseitigen.",
+     "begruendung": "Richtig: Abschirmung, Optik und längere Messfenster drücken es, aber jede Messung behält eine Restschwankung."
+    },
+    {
+     "kennung": "b",
+     "text": "Wie viel Rauschen stört, hängt vom Abstand zwischen den Symbolen ab.",
+     "begruendung": "Richtig, und deshalb ist die absolute Streuung allein nie die Antwort. Entscheidend ist immer das Verhältnis von Abstand zu Streuung."
+    },
+    {
+     "kennung": "c",
+     "text": "Rauschen entsteht nur durch Umgebungslicht.",
+     "begruendung": "Umgebungslicht ist ein großer Beitrag, aber nicht der einzige: Auch Sensor und Elektronik rauschen, und im Dunkeln bleibt eine Schwankung übrig."
+    },
+    {
+     "kennung": "d",
+     "text": "Wer schneller misst, bekommt unruhigere Werte.",
+     "begruendung": "Richtig, und das ist der Zielkonflikt in einem Satz: Ein kürzeres Messfenster sammelt weniger Licht und mittelt weniger, dafür passen mehr Symbole in dieselbe Sekunde."
+    },
+    {
+     "kennung": "e",
+     "text": "Ein fehlerkorrigierender Code macht Rauschen überflüssig zu betrachten.",
+     "begruendung": "Fehlerkorrektur (Challenge 2 und später) hilft gegen die Fehler, die trotzdem passieren, und sie kostet zusätzliche Bits. Sie ersetzt keinen sauberen Aufbau, sie ergänzt ihn."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,417 @@
+{
+ "konzept": "input-processing-output",
+ "fragen": [
+  {
+   "id": "ipo-001",
+   "niveau": "erinnern",
+   "frage": "Aus welchen drei Teilen besteht nach dem IPO-Modell jedes Teilproblem, das ein\nComputer lösen kann?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Planung, Umsetzung, Dokumentation",
+     "begruendung": "Das beschreibt euren Arbeitsprozess, nicht die Form des Problems selbst."
+    },
+    {
+     "kennung": "b",
+     "text": "Hardware, Software, Daten",
+     "begruendung": "Das sind Bestandteile eines Computersystems, aber nicht das Muster, nach dem ein lösbares Teilproblem aufgebaut ist."
+    },
+    {
+     "kennung": "c",
+     "text": "Eingabe, Verarbeitung, Ausgabe",
+     "begruendung": "Genau: Vorn geht etwas hinein, hinten kommt etwas heraus, dazwischen rechnet die Maschine. Input, processing, output, kurz IPO."
+    },
+    {
+     "kennung": "d",
+     "text": "Sender, Kanal, Empfänger",
+     "begruendung": "Das ist das Bild einer Übertragungsstrecke. Sie besteht ihrerseits aus IPO-Kästen, ist aber nicht das Grundmuster selbst."
+    }
+   ]
+  },
+  {
+   "id": "ipo-002",
+   "niveau": "verstehen",
+   "frage": "Warum bringt ein Kasten mit klarer Eingabe und klarer erwarteter Ausgabe seinen\nTest gleich mit?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil der Computer solche Kästen automatisch selbst testet.",
+     "begruendung": "Nichts testet sich von selbst. Der Test ist möglich, aber ausführen müsst ihr ihn."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil man eine bekannte Eingabe hineingeben und das Ergebnis mit der erwarteten Ausgabe vergleichen kann.",
+     "begruendung": "Genau das ist der Test: bekannte Eingabe, erwartete Ausgabe, Vergleich. Ja oder Nein, ohne Deutungsspielraum."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil klar geschnittene Kästen keine Fehler enthalten können.",
+     "begruendung": "Auch ein sauber geschnittener Kasten kann falsch rechnen. Der Schnitt macht den Fehler findbar, nicht unmöglich."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil die Verarbeitung im Kasten dann besonders einfach ist.",
+     "begruendung": "Die Verarbeitung kann beliebig kompliziert sein. Prüfbar ist der Kasten trotzdem, solange Ein- und Ausgabe klar sind."
+    }
+   ]
+  },
+  {
+   "id": "ipo-003",
+   "niveau": "anwenden",
+   "frage": "Vor dem Sensor leuchtet eine rote LED. Was ist die tatsächliche Eingabe, mit der\neuer Empfängerprogramm arbeitet?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "bild": "ipo-receiver",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Farbe Rot.",
+     "begruendung": "So erlebt es ein Mensch. Das Programm bekommt keine Farbe, sondern das, was der Sensor liefert."
+    },
+    {
+     "kennung": "b",
+     "text": "Das Wort 'red' als Text.",
+     "begruendung": "'red' ist die Ausgabe, die euer Programm erst erzeugen muss. Genau diese Entscheidung ist seine Verarbeitung."
+    },
+    {
+     "kennung": "c",
+     "text": "Vier Zahlen: die Anteile Rot, Grün, Blau und die Gesamthelligkeit.",
+     "begruendung": "Genau: Der Sensor liefert vier Messwerte, etwa r=203, g=41, b=57, c=310. Was davon 'Rot' bedeutet, muss das Programm aus den Zahlen entscheiden."
+    },
+    {
+     "kennung": "d",
+     "text": "Ein Foto der LED.",
+     "begruendung": "Der Farbsensor ist keine Kamera. Er misst Anteile des einfallenden Lichts und liefert genau vier Zahlen, kein Bild."
+    }
+   ]
+  },
+  {
+   "id": "ipo-004",
+   "niveau": "verstehen",
+   "frage": "Die Abbildung zeigt eure Übertragungsstrecke als gesteckte Kästen.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "d"
+   ],
+   "bild": "ipo-chain",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Ausgabe von encode() ist die Eingabe des nächsten Kastens.",
+     "begruendung": "Richtig, genau das heißt 'stecken': Kästen verbinden sich, indem Ausgabe zu Eingabe wird."
+    },
+    {
+     "kennung": "b",
+     "text": "An der Steckstelle Licht muss abgesprochen sein, welche Farbe welches Zeichen bedeutet.",
+     "begruendung": "Richtig: Die Steckstelle ist eine Absprache. Ohne sie kann decode() die Farben nicht deuten."
+    },
+    {
+     "kennung": "c",
+     "text": "decode() kann unabhängig davon arbeiten, was encode() tut.",
+     "begruendung": "Falsch: decode() muss exakt die Absprache umkehren, nach der encode() kodiert hat. Die beiden sind über die Steckstelle gekoppelt."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Kette zeigt, in welcher Reihenfolge Daten durch das System fließen.",
+     "begruendung": "Richtig: Kästen hintereinander zeigen den Datenfluss, von der Nachricht bis zur Nachricht."
+    },
+    {
+     "kennung": "e",
+     "text": "Die Kette zeigt die hierarchische Zerlegung des Problems in Unterprobleme.",
+     "begruendung": "Falsch: Das leisten Kästen ineinander (ein geöffneter Kasten enthält kleinere). Kästen hintereinander zeigen den Fluss, nicht die Hierarchie."
+    }
+   ]
+  },
+  {
+   "id": "ipo-005",
+   "niveau": "verstehen",
+   "frage": "Betrachtet diese Funktion als IPO-Kasten. Was sind Eingabe und Ausgabe?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "code": "def encode(text):\n    colours = []\n    for letter in text:\n        colours.append(colour_for(letter))\n    return colours",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Eingabe ist ein Text, Ausgabe ist eine Liste von Farben.",
+     "begruendung": "Richtig: 'text' geht hinein, für jedes Zeichen kommt eine Farbe in die Liste, und 'colours' kommt heraus. Das ist der Senderkasten."
+    },
+    {
+     "kennung": "b",
+     "text": "Eingabe ist eine Liste von Farben, Ausgabe ist ein Text.",
+     "begruendung": "Das wäre die Gegenrichtung, also decode() beim Empfänger. Hier steht es andersherum: Der Parameter ist der Text."
+    },
+    {
+     "kennung": "c",
+     "text": "Eingabe ist Licht, Ausgabe sind vier Sensorzahlen.",
+     "begruendung": "Das beschreibt den Sensor, einen ganz anderen Kasten der Strecke. Diese Funktion arbeitet nur mit Text und Farben."
+    }
+   ]
+  },
+  {
+   "id": "ipo-006",
+   "niveau": "anwenden",
+   "frage": "Ihr wollt euren Kasten classify() prüfen, der aus vier Sensorzahlen eine Farbe\nentscheidet. Welcher Test passt zum IPO-Modell?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "classify() eine Stunde laufen lassen und schauen, ob es durchhält.",
+     "begruendung": "Ein Dauerlauf prüft Stabilität, aber nicht, ob die Entscheidung stimmt. Ohne erwartete Ausgabe ist es kein IPO-Test."
+    },
+    {
+     "kennung": "b",
+     "text": "classify() mit zufälligen Zahlen aufrufen und prüfen, dass keine Fehlermeldung kommt.",
+     "begruendung": "'Keine Fehlermeldung' heißt nur, dass die Maschine ausführen konnte, was dastand. Ob die Farbe stimmt, sagt das nicht."
+    },
+    {
+     "kennung": "c",
+     "text": "Gespeicherte Messwerte, die sicher bei roter LED entstanden sind, hineingeben und prüfen, ob 'red' herauskommt.",
+     "begruendung": "Genau: bekannte Eingabe, erwartete Ausgabe, Vergleich. Der Kasten wird an Daten geprüft, deren Wahrheit ihr kennt."
+    },
+    {
+     "kennung": "d",
+     "text": "Den Quelltext von classify() Zeile für Zeile durchlesen.",
+     "begruendung": "Lesen hilft beim Verstehen, ersetzt aber keinen Test: Auch überzeugend aussehender Code kann falsch entscheiden."
+    }
+   ]
+  },
+  {
+   "id": "ipo-007",
+   "niveau": "verstehen",
+   "frage": "Aus dem IPO-Kasten fallen zwei Fragen: Wie arbeitet der Kasten, und wie stellen\nwir Eingabe und Ausgabe für die Maschine dar. Welche davon beantwortet ein\nProgramm?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Beide: Ein Programm legt auch fest, wie Farben und Zeichen dargestellt werden.",
+     "begruendung": "Verlockend, aber die Darstellung ist eine eigene Entscheidung (Symbole, Codes), die vor dem Programm getroffen wird. Das Programm setzt sie nur um."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Verarbeitungsfrage: Ein Programm beschreibt, wie der Kasten seine Arbeit tut.",
+     "begruendung": "Genau: Ein Programm ist das, was im Kasten passiert. Die Darstellungsfrage bleibt offen und wird mit Messwerten, Symbolen und Codesystemen beantwortet."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Darstellungsfrage: Ein Programm legt fest, wie Daten aussehen.",
+     "begruendung": "Andersherum: Wie Daten dargestellt werden, ist die Frage, die das Programm gerade nicht beantwortet. Es arbeitet mit einer Darstellung, die vorher vereinbart wurde."
+    },
+    {
+     "kennung": "d",
+     "text": "Keine von beiden: Programme sind ein eigenes, drittes Thema.",
+     "begruendung": "Programme sind kein drittes Thema, sondern die Antwort auf die erste Frage. Deshalb geht der Input nahtlos in 'Was ein Programm eigentlich ist' über."
+    }
+   ]
+  },
+  {
+   "id": "ipo-008",
+   "niveau": "anwenden",
+   "frage": "Die Abbildung zeigt dasselbe IPO-Modell auf mehreren Ebenen.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "d"
+   ],
+   "bild": "ipo-levels",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Von außen betrachtet ist der ganze Sender ein einziger Kasten: Nachricht hinein, Licht heraus.",
+     "begruendung": "Richtig: send() ist dann der Name für die gesamte Verarbeitung im Inneren."
+    },
+    {
+     "kennung": "b",
+     "text": "Öffnet man den Kasten, wird seine Verarbeitung zu einer Kette kleinerer Kästen mit eigenen Ein- und Ausgaben.",
+     "begruendung": "Richtig, und jeder dieser kleineren Kästen kann einzeln geprüft werden. Genau das macht die Ebenen so nützlich."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein einzelnes Logikgatter ist zu klein für das IPO-Modell.",
+     "begruendung": "Falsch: Auch ein UND-Gatter hat Eingaben (zwei Wahrheitswerte), eine feste Verarbeitungsregel und eine Ausgabe. Dieselbe Form, andere Auflösung."
+    },
+    {
+     "kennung": "d",
+     "text": "Welche Ebene die richtige ist, hängt von der Frage ab, die man gerade untersucht.",
+     "begruendung": "Richtig: Wer das Gesamtsystem testet, braucht andere Ein- und Ausgaben als jemand, der nur encode() untersucht."
+    }
+   ]
+  },
+  {
+   "id": "ipo-009",
+   "niveau": "anwenden",
+   "frage": "Eure Gesamtübertragung liefert am Ende falschen Text. Was ist nach dem\nKastenmodell der sinnvollste nächste Schritt?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Gesamtübertragung mehrfach wiederholen, bis der Text stimmt.",
+     "begruendung": "Wiederholen ohne Eingrenzung testet immer denselben großen Kasten. Selbst wenn es einmal klappt, wisst ihr nicht, was vorher falsch war."
+    },
+    {
+     "kennung": "b",
+     "text": "Den großen Kasten öffnen und einen inneren Kasten, etwa encode(), isoliert mit bekannter Eingabe prüfen.",
+     "begruendung": "Genau: Eine Ebene tiefer haben die kleinen Kästen eigene Ein- und Ausgaben und lassen sich einzeln prüfen. So wird aus 'irgendwo falsch' ein 'hier falsch'."
+    },
+    {
+     "kennung": "c",
+     "text": "Sender und Empfänger komplett neu schreiben, der Fehler steckt ja irgendwo darin.",
+     "begruendung": "Blindes Neubauen wirft auch die funktionierenden Kästen weg und liefert keine Erkenntnis, wo der Fehler lag."
+    },
+    {
+     "kennung": "d",
+     "text": "Den Abstand zwischen den Geräten verändern und erneut senden.",
+     "begruendung": "Das dreht an einer Umgebungsbedingung, prüft aber keinen Kasten. Wenn es zufällig hilft, bleibt die Ursache unbekannt."
+    }
+   ]
+  },
+  {
+   "id": "ipo-010",
+   "niveau": "verstehen",
+   "frage": "Warum \"sieht\" der Computer keine Farbe, sondern nur Zahlen?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil unser Farbsensor zu billig ist; ein besserer würde Farben direkt liefern.",
+     "begruendung": "Auch der beste Sensor liefert Messwerte, also Zahlen. Der Unterschied liegt in der Genauigkeit, nicht in der Art der Lieferung."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil eine Maschine nur mit Dingen arbeiten kann, die als verarbeitbare Darstellung vorliegen, meistens als Zahlen.",
+     "begruendung": "Genau die Kernaussage: Bevor ein Computer mit etwas arbeiten kann, muss es dargestellt sein. Eure Augen sehen Rot, der Kasten sieht 203, 41, 57, 310."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil Python keine Farben unterstützt.",
+     "begruendung": "Mit der Programmiersprache hat das nichts zu tun. Jede Sprache arbeitet am Ende mit Darstellungen, die Frage liegt tiefer als Python."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil die LED nie reines Rot leuchtet.",
+     "begruendung": "Das ist ein echtes Messproblem, erklärt aber nicht das Prinzip: Selbst reinstes Rot käme als Zahlen an."
+    },
+    {
+     "kennung": "e",
+     "text": "Er sieht die Farbe schon, zeigt sie nur nicht an.",
+     "begruendung": "Nein: 'Sehen' im menschlichen Sinn gibt es in der Maschine nicht. Es gibt nur die vier Zahlen und das, was das Programm daraus entscheidet."
+    }
+   ]
+  },
+  {
+   "id": "ipo-011",
+   "niveau": "verstehen",
+   "frage": "Auch der KI-Assistent ist ein IPO-Kasten: eure Worte hinein, Code heraus. Auf der\nFolie ist dieser Kasten als einziger gefüllt gezeichnet. Was bedeutet das, und\nwas folgt daraus?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Der Kasten ist fertig und muss nicht mehr geprüft werden.",
+     "begruendung": "Das Gegenteil ist gemeint: Gerade weil man nicht hineinschauen kann, muss die Ausgabe umso gründlicher geprüft werden."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Assistent arbeitet ohne Eingabe, er weiß von selbst, was zu tun ist.",
+     "begruendung": "Nein, die Eingabe seid ihr: Eure Worte bestimmen, was herauskommt. Deshalb lohnt es sich, Aufträge klein und prüfbar zu formulieren."
+    },
+    {
+     "kennung": "c",
+     "text": "Man kann nicht hineinschauen; deshalb kennt ihr die Eingabe und prüft die Ausgabe.",
+     "begruendung": "Genau: 'the box is not yours. the test is.' Die Verarbeitung ist unzugänglich, aber Ein- und Ausgabe gehören euch, und am Ausgang wird geprüft."
+    }
+   ]
+  },
+  {
+   "id": "ipo-012",
+   "niveau": "anwenden",
+   "frage": "Welcher der folgenden Aufrufe ist ein Test mit eingebauter Erwartung?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "code": "def to_signal(brightness):\n    if brightness > 100:\n        return \"on\"\n    return \"off\"",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "to_signal(150) aufrufen und prüfen, dass 'on' herauskommt.",
+     "begruendung": "Genau: bekannte Eingabe (150), erwartete Ausgabe ('on', denn 150 ist größer als 100), Vergleich. Ein Ja/Nein-Ergebnis ohne Deutung."
+    },
+    {
+     "kennung": "b",
+     "text": "to_signal(150) aufrufen und sich das Ergebnis ansehen.",
+     "begruendung": "Fast, aber die Erwartung fehlt: Wer vorher nicht festlegt, was herauskommen muss, nickt hinterher alles ab."
+    },
+    {
+     "kennung": "c",
+     "text": "to_signal() mit vielen verschiedenen Werten aufrufen, um die Funktion gut auszulasten.",
+     "begruendung": "Viele Aufrufe ohne Erwartungen sind viel Beschäftigung ohne Prüfung. Erst die erwartete Ausgabe je Eingabe macht daraus Tests."
+    },
+    {
+     "kennung": "d",
+     "text": "Prüfen, dass der Aufruf keine Fehlermeldung erzeugt.",
+     "begruendung": "'Läuft ohne Fehler' heißt nur: Die Maschine konnte ausführen, was dastand. Eine Funktion kann fehlerfrei das Falsche zurückgeben."
+    }
+   ]
+  },
+  {
+   "id": "ipo-013",
+   "niveau": "verstehen",
+   "frage": "Kreuzt alles an, was zur Eingabe des Kastens classify() gehört.\n(Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die erkannte Farbe, zum Beispiel 'red'.",
+     "begruendung": "Das ist die Ausgabe: Die Farbe ist das Ergebnis der Entscheidung, nicht ihr Ausgangsmaterial."
+    },
+    {
+     "kennung": "b",
+     "text": "Die vier Messwerte des Sensors.",
+     "begruendung": "Richtig, und zwar als einziges: Die vier Zahlen sind alles, was der Kasten hineinbekommt."
+    },
+    {
+     "kennung": "c",
+     "text": "Der Quelltext von classify().",
+     "begruendung": "Der Quelltext ist die Verarbeitung selbst, das Innere des Kastens, keine Eingabe."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Farbe, wie ein Mensch sie durch die Blende sieht.",
+     "begruendung": "Was Menschen sehen, erreicht den Kasten nie. Er bekommt nur die Darstellung, die der Sensor liefert: Zahlen."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,255 @@
+{
+ "konzept": "sampling-and-synchronization",
+ "fragen": [
+  {
+   "id": "ca-001",
+   "niveau": "verstehen",
+   "frage": "Bei einem Symbol pro Sekunde läuft eure Übertragung stabil, bei zehn pro\nSekunde bricht sie zusammen. Welche Ursachen stecken dahinter?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Uhren beider Rechner laufen auseinander, und der Fehler summiert sich über die Symbole.",
+     "begruendung": "Richtig: Zwei Uhren laufen nie exakt gleich. Bei zehn Symbolen pro Sekunde ist ein Symbol nur 100 ms lang, und schon eine kleine Abweichung je Symbol verschiebt den Messzeitpunkt nach wenigen Sekunden in den Nachbarbereich."
+    },
+    {
+     "kennung": "b",
+     "text": "Die LED kann so schnell nicht mehr umschalten.",
+     "begruendung": "Eine LED schaltet in Mikrosekunden, zehn Wechsel pro Sekunde sind für sie nichts. Die Grenze liegt beim Messen, nicht beim Leuchten."
+    },
+    {
+     "kennung": "c",
+     "text": "Wird das Symbol kürzer als das Messfenster des Sensors, mischt er zwei Symbole zu einem Wert.",
+     "begruendung": "Richtig, und das ist die zweite, oft übersehene Ursache: Der Sensor mittelt über seine Integrationszeit. Liegt in diesem Fenster ein Farbwechsel, entsteht ein Wert, der zu keinem Steckbrief passt."
+    },
+    {
+     "kennung": "d",
+     "text": "Der Rechner ist zu langsam für zehn Berechnungen pro Sekunde.",
+     "begruendung": "Zehn Vergleiche pro Sekunde sind für jeden Rechner nichts. Das Problem liegt in der Physik der Messung und im Auseinanderlaufen der Uhren."
+    }
+   ]
+  },
+  {
+   "id": "ca-002",
+   "niveau": "verstehen",
+   "frage": "Im Klatschexperiment klatscht der Saal nach einem gemeinsamen Start; nach\ndreißig Sekunden klatscht niemand mehr zusammen. Beim zweiten Versuch\nkommt alle fünf Sekunden ein Impuls von vorn, und es hält. Was zeigt das?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Der Saal hat beim ersten Mal nicht aufgepasst.",
+     "begruendung": "Auch bei bester Konzentration läuft es auseinander: Jeder hat seinen eigenen Rhythmus, und kleine Unterschiede summieren sich."
+    },
+    {
+     "kennung": "b",
+     "text": "Eine Absprache am Anfang reicht nicht; wiederkehrende Marken halten zwei Uhren zusammen.",
+     "begruendung": "Genau, und das gilt für Rechner genauso, nur langsamer: Ein gemeinsamer Start trägt eine Weile, dann braucht es entweder regelmäßige Synchronisationsmarken oder ein Verfahren, das ganz ohne gemeinsame Uhr auskommt."
+    },
+    {
+     "kennung": "c",
+     "text": "Menschen können keinen Takt halten, Rechner schon.",
+     "begruendung": "Rechneruhren driften ebenfalls, nur um Größenordnungen langsamer. Genau deshalb fällt es bei einem Symbol pro Sekunde nicht auf und bei zehn schon."
+    },
+    {
+     "kennung": "d",
+     "text": "Klatschen ist zu ungenau, mit einem Metronom hätte es geklappt.",
+     "begruendung": "Ein Metronom für alle wäre genau die wiederkehrende Marke aus dem zweiten Versuch. Damit bestätigt der Einwand die Aussage, statt sie zu widerlegen."
+    }
+   ]
+  },
+  {
+   "id": "ca-003",
+   "niveau": "anwenden",
+   "frage": "Euer Sensor misst mit 50 ms Integrationszeit. Ihr sendet 25 Symbole pro\nSekunde, jedes Symbol steht also 40 ms. Was beobachtet ihr?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Jede Messung enthält Anteile zweier Symbole; die Werte liegen zwischen den Referenzwerten und die Erkennung wird unzuverlässig.",
+     "begruendung": "Genau: Das Messfenster ist länger als ein Symbol, also fällt immer ein Farbwechsel hinein. Der Sensor mittelt darüber und liefert einen Wert, der zu keinem eurer Steckbriefe passt. Abhilfe: langsamer senden oder die Integrationszeit verkürzen, was wiederum die Streuung erhöht."
+    },
+    {
+     "kennung": "b",
+     "text": "Jedes zweite Symbol geht verloren, die übrigen kommen korrekt an.",
+     "begruendung": "So sauber verhält es sich nicht. Es gehen nicht einzelne Symbole verloren, sondern die Messwerte selbst werden zu Mischungen, die sich keinem Symbol zuordnen lassen."
+    },
+    {
+     "kennung": "c",
+     "text": "Nichts, solange Sender und Empfänger dieselbe Rate benutzen.",
+     "begruendung": "Dieselbe Rate hilft gegen das Auseinanderlaufen, aber nicht gegen ein zu langes Messfenster. Auch bei perfekt gleicher Rate mittelt der Sensor über den Wechsel hinweg."
+    },
+    {
+     "kennung": "d",
+     "text": "Der Sensor meldet einen Fehler.",
+     "begruendung": "Er meldet gar nichts, er liefert brav eine Zahl. Genau das macht diesen Fehler so tückisch: Die Messung sieht gültig aus und ist trotzdem sinnlos."
+    }
+   ]
+  },
+  {
+   "id": "ca-004",
+   "niveau": "anwenden",
+   "frage": "Ihr sendet 5 Symbole pro Sekunde mit einem Alphabet aus 4 Farben. Wie\nlange dauert eine Datei von 2 KB (16.000 Bit) mindestens?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Rund 53 Minuten.",
+     "begruendung": "Das wäre die Rechnung mit 1 Bit je Symbol, also mit nur zwei Farben. Vier Farben tragen 2 Bit."
+    },
+    {
+     "kennung": "b",
+     "text": "Rund 27 Minuten: 2 Bit je Symbol, also 10 bit/s.",
+     "begruendung": "Genau: Vier Farben tragen 2 Bit je Symbol, mal 5 Symbole pro Sekunde ergibt 10 bit/s. 16.000 Bit geteilt durch 10 sind 1600 Sekunden, also gut 26 Minuten. Diese Rechnung ist die Währung von Challenge 4, und sie hat genau zwei Stellschrauben: Bits je Symbol und Symbole je Sekunde."
+    },
+    {
+     "kennung": "c",
+     "text": "Rund 13 Minuten.",
+     "begruendung": "Das wäre die Rechnung mit 4 Bit je Symbol. Vier Farben tragen aber 2 Bit, nicht 4: Es zählt, wie oft man halbieren muss, nicht die Zahl der Farben selbst."
+    },
+    {
+     "kennung": "d",
+     "text": "Das lässt sich ohne die Fehlerrate nicht sagen.",
+     "begruendung": "Die Fehlerrate verlängert die Dauer durch Wiederholungen, gefragt war aber das Minimum. Und ohne diese Grundrechnung könnt ihr gar nicht beurteilen, ob sich eine Wiederholung lohnt."
+    }
+   ]
+  },
+  {
+   "id": "ca-005",
+   "niveau": "verstehen",
+   "frage": "Ein Team codiert ohne gemeinsame Uhr: Es benutzt drei Farben, und nicht\ndie Farbe selbst trägt die Information, sondern der Übergang zur\nnächsten. Von jeder Farbe aus sind zwei Nachfolger erlaubt, sie stehen\nfür 0 und 1. Was ist der Preis dieser Freiheit?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Nichts, das Verfahren ist in jeder Hinsicht besser.",
+     "begruendung": "Es gibt keinen kostenlosen Gewinn. Was hier gespart wird (die Synchronisation), wird woanders bezahlt."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Empfänger muss doppelt so schnell messen.",
+     "begruendung": "Er misst so oft er mag; gerade das ist ja der Gewinn. Häufiger messen schadet nicht, weil ohne Wechsel auch nichts decodiert wird."
+    },
+    {
+     "kennung": "c",
+     "text": "Jeder Übergang trägt nur 1 Bit statt der 1,58 Bit, die drei Zustände tragen könnten.",
+     "begruendung": "Genau: Die eigene Farbe scheidet als Nachfolger aus, von drei Farben bleiben also zwei Wahlmöglichkeiten, das ist 1 Bit. Allgemein trägt ein Übergang log2(k-1) Bit statt log2(k). Synchronisationsfreiheit wird mit Kapazität bezahlt, und das ist oft ein guter Handel."
+    },
+    {
+     "kennung": "d",
+     "text": "Es funktioniert nur mit genau drei Farben.",
+     "begruendung": "Es funktioniert ab drei Farben mit beliebig vielen; mehr Farben bringen sogar mehr Bit je Übergang. Bei fünf Farben sind es glatte 2 Bit."
+    }
+   ]
+  },
+  {
+   "id": "ca-006",
+   "niveau": "anwenden",
+   "frage": "Ein Team codiert über Farbübergänge (die eigene Farbe ist als Nachfolger\nausgeschlossen) und will 2 Bit je Übergang übertragen. Wie viele Farben\nbraucht sein Alphabet?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Zwei, eine Farbe je Bitwert.",
+     "begruendung": "Bei zwei Farben gibt es von jeder aus nur einen erlaubten Nachfolger. Der Übergang ist dann vorhersehbar und trägt gar keine Information."
+    },
+    {
+     "kennung": "b",
+     "text": "Vier, weil 4 gleich 2 hoch 2 ist.",
+     "begruendung": "Der Reflex zur Zweierpotenz führt hier in die Irre: Von vier Farben bleiben nur drei Nachfolger, das sind 1,58 Bit. Eine Farbe fehlt."
+    },
+    {
+     "kennung": "c",
+     "text": "Fünf, denn dann sind von jeder Farbe aus vier Nachfolger erlaubt.",
+     "begruendung": "Genau: Gebraucht werden 2 hoch 2 gleich vier Wahlmöglichkeiten, und weil die eigene Farbe wegfällt, braucht es eine mehr. Wer über Übergänge codiert, will also ein Alphabet der Größe 2 hoch n plus 1, nicht 2 hoch n. Der Preis dafür ist eine zusätzliche Farbe, die sicher unterscheidbar sein muss."
+    },
+    {
+     "kennung": "d",
+     "text": "Acht, wie bei einem gewöhnlichen Alphabet für 3 Bit.",
+     "begruendung": "Acht Farben wären reichlich (sieben Nachfolger, 2,8 Bit je Übergang), aber unnötig viele und damit unnötig schwer zu unterscheiden."
+    }
+   ]
+  },
+  {
+   "id": "ca-007",
+   "niveau": "verstehen",
+   "frage": "Ein Team codiert ebenfalls über Wechsel, aber anders: Jede Farbe ist ein\nSymbol, und ein Farbwechsel bedeutet nur „hier kommt das nächste\nSymbol“. Welches Problem hat dieses Verfahren?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Es ist langsamer als eine Übertragung mit festem Takt.",
+     "begruendung": "Langsamer ist es nicht; ohne Uhr kann sogar schneller gesendet werden, solange der Empfänger die Wechsel sicher sieht."
+    },
+    {
+     "kennung": "b",
+     "text": "Zwei gleiche Symbole hintereinander erzeugen keinen Wechsel und kommen als eines an.",
+     "begruendung": "Genau: „rot rot“ sieht für den Empfänger aus wie ein langes „rot“. Deshalb trägt bei diesem Ansatz nicht die Farbe die Information, sondern der Übergang: Schließt man die eigene Farbe als Nachfolger aus, kann der Fall gar nicht mehr auftreten."
+    },
+    {
+     "kennung": "c",
+     "text": "Der Empfänger braucht dafür trotzdem eine Uhr.",
+     "begruendung": "Eine Uhr im Sinne eines gemeinsamen Takts braucht er nicht. Eine Zeitentscheidung bleibt aber: Wie lange muss eine Farbe stabil anliegen, damit sie als neuer Zustand zählt und nicht als Zwischenwert während des Wechsels?"
+    },
+    {
+     "kennung": "d",
+     "text": "Es funktioniert nur bei genau zwei Farben.",
+     "begruendung": "Die Zahl der Farben ist nicht das Problem. Bei zwei Farben wäre es sogar besonders schlimm, weil sich Wechsel und Wiederholung dann gar nicht mehr trennen lassen."
+    }
+   ]
+  },
+  {
+   "id": "ca-008",
+   "niveau": "verstehen",
+   "frage": "Ein Team codiert uhrfrei über Farbübergänge und schließt daraus: „Wir\nmüssen über Zeit gar nicht mehr nachdenken.“ Warum stimmt das nicht?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Während eines Farbwechsels misst der Sensor Mischwerte; das Team muss festlegen, wie lange eine Farbe stabil anliegen muss, damit sie zählt.",
+     "begruendung": "Richtig: Ohne diese Schwelle zählt der Empfänger die Zwischenwerte des Wechsels als eigene Zustände und erfindet Symbole. Die Uhr ist weg, die Zeitentscheidung nicht."
+    },
+    {
+     "kennung": "b",
+     "text": "Ohne Uhr lässt sich die Reihenfolge der Symbole nicht mehr feststellen.",
+     "begruendung": "Die Reihenfolge ergibt sich aus der Reihenfolge der Wechsel, die bleibt erhalten. Das ist gerade die Stärke des Verfahrens."
+    },
+    {
+     "kennung": "c",
+     "text": "Wie viele Übergänge pro Sekunde möglich sind, entscheidet weiterhin über den Durchsatz, und dafür gelten Messfenster und Streuung wie bisher.",
+     "begruendung": "Richtig: Uhrfrei heißt nicht beliebig schnell. Der Sensor braucht je Messung seine Integrationszeit, und zu schnelle Wechsel verschwimmen genauso wie bei fester Rate."
+    },
+    {
+     "kennung": "d",
+     "text": "Der Empfänger muss trotzdem exakt zum selben Zeitpunkt messen wie der Sender sendet.",
+     "begruendung": "Genau das entfällt, und es ist der ganze Gewinn des Verfahrens. Der Empfänger darf messen, wann er will, er reagiert nur auf Änderungen."
+    }
+   ]
+  }
+ ]
+}

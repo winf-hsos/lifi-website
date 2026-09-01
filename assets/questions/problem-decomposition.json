@@ -1,0 +1,381 @@
+{
+ "konzept": "problem-decomposition",
+ "fragen": [
+  {
+   "id": "pd-001",
+   "niveau": "erinnern",
+   "frage": "Woran erkennt man, dass eine Teilaufgabe gut geschnitten ist?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie ist so klein wie möglich.",
+     "begruendung": "Kleinheit allein hilft nicht. Auch ein winziges Teil kann unprüfbar sein, und zu viele Kleinstteile erzeugen unnötigen Abstimmungsaufwand."
+    },
+    {
+     "kennung": "b",
+     "text": "Sie lässt sich in einer Stunde erledigen.",
+     "begruendung": "Die Bearbeitungszeit sagt nichts darüber, ob man hinterher weiß, ob das Teil sitzt."
+    },
+    {
+     "kennung": "c",
+     "text": "Sie hat einen eingebauten Test, der Ja oder Nein sagt.",
+     "begruendung": "Genau das ist der Kern: Ein gutes Teil ist eines, bei dem man nach dem Bearbeiten prüfen kann, ob es erledigt ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Sie kommt im Aufgabentext ausdrücklich vor.",
+     "begruendung": "Die Zerlegung ist eure eigene Entscheidung. Gute Schnitte stehen selten fertig in der Aufgabe."
+    }
+   ]
+  },
+  {
+   "id": "pd-002",
+   "niveau": "verstehen",
+   "frage": "Vier Teams beschreiben den Stand ihrer Arbeit. Welche Beschreibung ist prüfbar?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Übertragung funktioniert inzwischen ziemlich zuverlässig.",
+     "begruendung": "'Ziemlich zuverlässig' ist ein Gefühl. Es gibt keinen Test, der daraus Ja oder Nein macht."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Empfänger unterscheidet Rot und Blau in 50 von 50 Versuchen.",
+     "begruendung": "50 aus 50 ist ein Messwert: Man kann den Versuch ausführen und bekommt ein eindeutiges Ergebnis."
+    },
+    {
+     "kennung": "c",
+     "text": "Der Code für den Empfänger ist fertig geschrieben.",
+     "begruendung": "'Fertig geschrieben' sagt nichts über das Verhalten. Code kann vollständig aussehen und trotzdem das Falsche tun."
+    },
+    {
+     "kennung": "d",
+     "text": "Die LED ist hell genug für die Übertragung.",
+     "begruendung": "'Hell genug' ist ohne Messvorschrift kein Test: hell genug wofür, gemessen wie?"
+    }
+   ]
+  },
+  {
+   "id": "pd-003",
+   "niveau": "verstehen",
+   "frage": "Jemand denkt sich eine Zahl zwischen 1 und 100. Ihr dürft nur Ja/Nein-Fragen stellen.\nWie viele Fragen genügen im schlechtesten Fall sicher, wenn ihr geschickt fragt?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "6",
+     "begruendung": "Eine zu wenig: Sechs Halbierungen unterscheiden höchstens 64 Möglichkeiten, es gibt aber 100."
+    },
+    {
+     "kennung": "b",
+     "text": "7",
+     "begruendung": "Jede geschickte Frage halbiert den Bereich: 100, 50, 25, 13, 7, 4, 2, 1. Sieben Halbierungen unterscheiden bis zu 128 Möglichkeiten."
+    },
+    {
+     "kennung": "c",
+     "text": "50",
+     "begruendung": "Das wäre die halbe Liste, Zahl für Zahl geraten. Halbieren des Bereichs ist viel stärker als Abfragen einzelner Zahlen."
+    },
+    {
+     "kennung": "d",
+     "text": "99",
+     "begruendung": "So viele braucht nur, wer jede Zahl einzeln durchprobiert und nie halbiert."
+    }
+   ]
+  },
+  {
+   "id": "pd-004",
+   "niveau": "anwenden",
+   "frage": "Zu Hause ist das Internet ausgefallen. Die Kette der Verdächtigen: Laptop, WLAN,\nRouter, Anbieter. Ihr verbindet den Laptop mit dem Handy-Hotspot, und alles\nfunktioniert. Was wisst ihr jetzt?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Der Laptop scheidet als Ursache praktisch aus; das Problem liegt weiter hinten in der Kette.",
+     "begruendung": "Genau das leistet der Test: Er halbiert die Kette. Der Laptop kann ins Internet, also liegt es an WLAN, Router oder Anbieter."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Router ist defekt.",
+     "begruendung": "So genau ist der Test nicht. Er schließt den Laptop aus, unterscheidet aber nicht zwischen WLAN, Router und Anbieter."
+    },
+    {
+     "kennung": "c",
+     "text": "Der Anbieter hat eine Störung.",
+     "begruendung": "Auch das wäre nur geraten. Der Hotspot-Test sagt nichts darüber, welches der verbleibenden Glieder betroffen ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Nichts, der Hotspot nutzt ja einen ganz anderen Weg ins Internet.",
+     "begruendung": "Gerade weil der Weg ein anderer ist, ist der Test aussagekräftig: Er prüft den Laptop isoliert vom Rest der Kette."
+    }
+   ]
+  },
+  {
+   "id": "pd-005",
+   "niveau": "anwenden",
+   "frage": "Eure Übertragungsstrecke besteht aus Sender, LED, Luft, Sensor und Empfänger.\nDer Empfänger gibt nichts aus, und ihr wisst nicht, woran es liegt. Welcher\nerste Test grenzt das Problem am wirkungsvollsten ein?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Den Code des Senders komplett neu schreiben.",
+     "begruendung": "Das ist kein Test, sondern blindes Bauen. Vielleicht war der Sender nie das Problem."
+    },
+    {
+     "kennung": "b",
+     "text": "Beide Geräte neu starten und es noch einmal probieren.",
+     "begruendung": "Der Neustart-Reflex. Selbst wenn es danach geht, wisst ihr nicht, was kaputt war, und das Problem kommt wieder."
+    },
+    {
+     "kennung": "c",
+     "text": "Eine Taschenlampe vor den Sensor halten und schauen, ob sich die Messwerte ändern.",
+     "begruendung": "Ein Test in der Mitte der Kette: Reagiert der Sensor, ist die Empfängerhälfte in Ordnung, und ihr sucht nur noch bei Sender und LED. Reagiert er nicht, umgekehrt."
+    },
+    {
+     "kennung": "d",
+     "text": "Den Abstand zwischen den Geräten verringern.",
+     "begruendung": "Das verändert eine Bedingung, prüft aber kein Kettenglied gezielt. Wenn es hilft, wisst ihr immer noch nicht warum."
+    }
+   ]
+  },
+  {
+   "id": "pd-006",
+   "niveau": "verstehen",
+   "frage": "Zwei Personen bereiten das Essen für eine Party vor. Warum funktioniert die\nAufteilung \"du machst die Vorspeise, ich den Nachtisch\" besser als \"wir machen\nbeide irgendwie das Essen\"?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil dann jede Person weniger Arbeit hat.",
+     "begruendung": "Die Arbeitsmenge ist in beiden Fällen gleich. Der Unterschied liegt nicht in der Menge, sondern im Schnitt."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil die Grenze klar ist und kaum Abstimmung nötig wird.",
+     "begruendung": "Genau: Wo man schneidet, entscheidet, wie viel man reden muss. Klare Grenzen machen Teile unabhängig bearbeitbar."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil Vorspeise und Nachtisch leichter zu kochen sind als ein Hauptgericht.",
+     "begruendung": "Der Schwierigkeitsgrad der Gerichte hat mit der Qualität des Schnitts nichts zu tun."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil man sich bei zwei getrennten Aufgaben nicht mehr absprechen muss.",
+     "begruendung": "Fast, aber zu absolut: Was die Grenze überquert (Zeitplan, Ofen, Budget), muss weiterhin abgesprochen werden. Der gute Schnitt macht die Absprache klein, nicht überflüssig."
+    }
+   ]
+  },
+  {
+   "id": "pd-007",
+   "niveau": "anwenden",
+   "frage": "In einer alphabetisch sortierten Liste mit 1000 Namen sucht ihr einen bestimmten\nNamen, indem ihr immer in der Mitte des verbleibenden Bereichs nachschaut.\nWie oft müsst ihr höchstens nachschauen, ungefähr?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Etwa 10",
+     "begruendung": "Jeder Blick halbiert den Bereich, und zehn Halbierungen unterscheiden 1024 Möglichkeiten. Deshalb wächst der Aufwand nur um eins, wenn sich die Liste verdoppelt."
+    },
+    {
+     "kennung": "b",
+     "text": "Etwa 100",
+     "begruendung": "Das unterschätzt die Kraft des Halbierens: Schon 10 Halbierungen reichen für 1000 Einträge, nicht erst 100."
+    },
+    {
+     "kennung": "c",
+     "text": "Etwa 500",
+     "begruendung": "500 wäre der Erwartungswert, wenn man die Liste von vorn durchgeht, Name für Name, ohne zu halbieren."
+    },
+    {
+     "kennung": "d",
+     "text": "Etwa 1000",
+     "begruendung": "So oft schaut nur, wer die Sortierung ignoriert und schlimmstenfalls jeden Eintrag prüft."
+    }
+   ]
+  },
+  {
+   "id": "pd-008",
+   "niveau": "erinnern",
+   "frage": "Welches Vorgehen folgt dem Muster \"erst eine kleinere Version des Problems lösen\"?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sofort die vollständige Dateiübertragung bauen und danach die Fehler suchen.",
+     "begruendung": "Das ist der Big Bang: Wenn am Ende nichts funktioniert, weiß niemand, welcher der vielen Teile schuld ist."
+    },
+    {
+     "kennung": "b",
+     "text": "Mit allen Teilproblemen gleichzeitig anfangen, damit keine Zeit verloren geht.",
+     "begruendung": "Parallel anfangen ist kein Stufenplan. Ohne eine funktionierende kleine Version fehlt die Grundlage, auf der die nächste Stufe aufbaut."
+    },
+    {
+     "kennung": "c",
+     "text": "Erst das Licht an- und ausschalten, dann zwei Farben unterscheiden, dann Zeichen übertragen.",
+     "begruendung": "Genau die Treppe: Jede Stufe ist eine etwas größere Fassung desselben Problems, und jede funktioniert, bevor die nächste beginnt."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Aufgabe so lange verschieben, bis alle Grundlagen im Kurs behandelt wurden.",
+     "begruendung": "Warten ist keine Zerlegungsstrategie. Die kleine Version kann man sofort lösen, mit dem, was man schon kann."
+    }
+   ]
+  },
+  {
+   "id": "pd-009",
+   "niveau": "anwenden",
+   "frage": "Ihr arbeitet mit dem KI-Assistenten an eurem Empfänger. Welcher Auftrag passt\nzur Arbeitsteilung \"ihr schneidet, die Maschine löst Teile, ihr prüft\"?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Baue mir den kompletten Empfänger für unsere Lichtübertragung.",
+     "begruendung": "Der große Wunsch: Das Ergebnis wäre zu groß, um es zu prüfen, und die Zerlegung hätte die Maschine übernommen statt ihr."
+    },
+    {
+     "kennung": "b",
+     "text": "Schreibe eine Funktion, die den Sensor zehnmal liest und den Mittelwert zurückgibt. Ich teste sie mit LED aus und LED an.",
+     "begruendung": "Kleiner Auftrag, klare Ein- und Ausgabe, und der Test ist schon mitgedacht. Ihr bleibt Herr der Lage."
+    },
+    {
+     "kennung": "c",
+     "text": "Mach meinen Code besser.",
+     "begruendung": "'Besser' ist kein prüfbares Ziel. Ihr könntet hinterher nicht sagen, ob der Auftrag erfüllt wurde."
+    },
+    {
+     "kennung": "d",
+     "text": "Erkläre mir alles über Python, damit ich danach selbst weiterkomme.",
+     "begruendung": "Verständnisfragen sind erlaubt und gut, aber 'alles' ist kein geschnittenes Teil. Auch Lernaufträge werden besser, wenn sie klein und konkret sind."
+    }
+   ]
+  },
+  {
+   "id": "pd-010",
+   "niveau": "verstehen",
+   "frage": "Im Modul gilt die Werkstattregel \"fertig heißt: der Test läuft durch\".\nWann ist die Aufgabe \"die LED blinkt einmal pro Sekunde\" danach fertig?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Wenn das Programm ohne Fehlermeldung durchläuft.",
+     "begruendung": "Keine Fehlermeldung heißt nur: Die Maschine konnte ausführen, was dastand. Ob das Richtige passiert, sagt sie damit nicht."
+    },
+    {
+     "kennung": "b",
+     "text": "Wenn das Blinken auf den ersten Blick richtig aussieht.",
+     "begruendung": "'Sieht gut aus' ist ein Gefühl. Ob es wirklich eine Sekunde ist, verrät nur eine Messung."
+    },
+    {
+     "kennung": "c",
+     "text": "Wenn der vereinbarte Prüfschritt bestanden ist, etwa zehn Blinkzyklen in gemessenen zehn Sekunden.",
+     "begruendung": "Genau die Regel: Fertig ist, was seinen vereinbarten Test besteht, ausführbar von euch selbst, ohne auf jemanden zu warten."
+    },
+    {
+     "kennung": "d",
+     "text": "Wenn der KI-Assistent bestätigt, dass der Code korrekt ist.",
+     "begruendung": "Der Assistent hat keinen Zugang zur echten LED. Die Ground Truth liegt am Gerät, und geprüft wird dort, nicht im Chat."
+    }
+   ]
+  },
+  {
+   "id": "pd-011",
+   "niveau": "verstehen",
+   "frage": "Die Abbildung zeigt das Zahlenraten zwischen 1 und 100: Blau ist der Bereich, in dem\ndie gesuchte Zahl noch stecken kann, die rote Linie ist die gesuchte 73.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c",
+    "d"
+   ],
+   "bild": "halving-search",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Jede Frage halbiert ungefähr den blauen Bereich.",
+     "begruendung": "Richtig, das ist der Kern der Strategie: Jede geschickte Ja/Nein-Frage schließt etwa die Hälfte der verbleibenden Möglichkeiten aus."
+    },
+    {
+     "kennung": "b",
+     "text": "Die rote Linie wandert mit jeder Frage weiter nach rechts.",
+     "begruendung": "Falsch: Die gesuchte Zahl steht von Anfang an fest. Es bewegt sich nur der blaue Bereich, der auf sie zusammenschrumpft."
+    },
+    {
+     "kennung": "c",
+     "text": "Am Ende bleibt genau eine Zahl übrig.",
+     "begruendung": "Richtig: Halbieren endet erst, wenn der Bereich nur noch eine Möglichkeit enthält, und die ist dann die Antwort."
+    },
+    {
+     "kennung": "d",
+     "text": "Die erste Frage schließt die meisten Zahlen auf einmal aus.",
+     "begruendung": "Richtig: Die erste Halbierung streicht rund 50 Zahlen, die zweite noch 25, und so weiter. Absolut gesehen leistet der erste Schnitt am meisten."
+    },
+    {
+     "kennung": "e",
+     "text": "Eine Nein-Antwort liefert keine Information.",
+     "begruendung": "Falsch: Auch ein Nein halbiert den Bereich, nur eben zur anderen Seite. Beide Antworten sind gleich wertvoll."
+    }
+   ]
+  },
+  {
+   "id": "pd-012",
+   "niveau": "anwenden",
+   "frage": "Der KI-Assistent liefert euch diese Funktion. Welcher Umgang damit passt zur\nWerkstattregel?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "code": "def read_average():\n    values = []\n    for i in range(10):\n        values.append(sensor.read())\n    return sum(values) / 10",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Den Code lesen; wenn er schlüssig aussieht, übernehmen.",
+     "begruendung": "Lesen ist gut, reicht aber nicht: 'Sieht schlüssig aus' ist ein Gefühl, kein Test. Plausibler Code kann trotzdem das Falsche tun."
+    },
+    {
+     "kennung": "b",
+     "text": "Einmal mit LED an und einmal mit LED aus aufrufen und prüfen, ob sich die Rückgabe deutlich unterscheidet.",
+     "begruendung": "Genau: ein kleiner, selbst ausführbarer Test mit bekannter Eingabe und erwartbarer Ausgabe. Er prüft die Funktion am echten Gerät, der Ground Truth."
+    },
+    {
+     "kennung": "c",
+     "text": "Den Assistenten fragen, ob die Funktion korrekt ist, und die Antwort dokumentieren.",
+     "begruendung": "Der Assistent hat keinen Zugang zum echten Sensor. Er kann den Code erklären, aber nicht an der Wirklichkeit prüfen; das könnt nur ihr."
+    }
+   ]
+  }
+ ]
+}

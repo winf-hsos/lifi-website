@@ -1,0 +1,386 @@
+{
+ "konzept": "analog-and-digital",
+ "fragen": [
+  {
+   "id": "ad-001",
+   "niveau": "erinnern",
+   "frage": "Was bedeutet es, wenn eine Größe „analog“ ist?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie ändert sich stufenlos: Zwischen zwei Werten liegen immer noch weitere.",
+     "begruendung": "Genau: stufenlos heißt, es gibt keine kleinste Stufe. Die Helligkeit von Licht ist so eine Größe, und euer Sensor blickt genau auf so eine Welt."
+    },
+    {
+     "kennung": "b",
+     "text": "Sie stammt aus einem Gerät, das ohne Strom funktioniert.",
+     "begruendung": "Strom hat damit nichts zu tun. Es gibt jede Menge analoge Elektronik, ein Verstärker etwa arbeitet elektrisch und trotzdem stufenlos."
+    },
+    {
+     "kennung": "c",
+     "text": "Sie ist alt oder mechanisch.",
+     "begruendung": "Das ist die Alltagsbedeutung („analoge Fotografie“), nicht der Fachbegriff. Fachlich geht es nur um die Frage: stufenlos oder endlich viele Zustände?"
+    },
+    {
+     "kennung": "d",
+     "text": "Sie ist ungenau.",
+     "begruendung": "Eine analoge Größe kann beliebig genau sein, sie hat sogar unendlich viele Zwischenwerte. Das Problem ist nicht ihre Genauigkeit, sondern dass ein Computer sie so nicht fassen kann."
+    }
+   ]
+  },
+  {
+   "id": "ad-002",
+   "niveau": "erinnern",
+   "frage": "Was zeichnet ein digitales System aus?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Es rechnet mit Strom.",
+     "begruendung": "Strom ist nur der übliche Träger, nicht das Merkmal. Man kann digital auch mit Lichtblitzen, Flaggen oder Zetteln arbeiten, ihr macht im Semester nichts anderes."
+    },
+    {
+     "kennung": "b",
+     "text": "Es kennt nur endlich viele, klar voneinander getrennte Zustände.",
+     "begruendung": "Genau das ist die Definition. Alles Weitere in diesem Konzept folgt aus den zwei Wörtern „endlich“ und „getrennt“."
+    },
+    {
+     "kennung": "c",
+     "text": "Es ist automatisch genauer als ein analoges System.",
+     "begruendung": "Im Gegenteil: Beim Übergang ins Digitale wird Genauigkeit bewusst weggeworfen. Was digital besser wird, ist nicht die Genauigkeit, sondern die Zuverlässigkeit."
+    },
+    {
+     "kennung": "d",
+     "text": "Es speichert alle Informationen als Text.",
+     "begruendung": "Gespeichert werden Zustände, meistens als Folgen von zwei Zuständen. Ob die mal Text, Bild oder Ton bedeuten, ist eine Frage der Codierung, die kommt in einem späteren Konzept."
+    }
+   ]
+  },
+  {
+   "id": "ad-003",
+   "niveau": "verstehen",
+   "frage": "In allen vier Feldern liegt dasselbe Rauschen auf demselben Signal, nur die\nZahl der Bereiche wächst. Warum werden die Messungen trotzdem unsicherer,\nje mehr Bereiche es gibt?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "bild": "decision-levels",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil das Rauschen mit der Zahl der Bereiche zunimmt.",
+     "begruendung": "Nein, das Rauschen ist in allen vier Feldern identisch. Was sich ändert, steht auf der anderen Seite des Vergleichs."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil der Abstand zwischen den Bereichen schrumpft, bis dieselbe Störung in den Nachbarbereich reicht.",
+     "begruendung": "Genau: Nicht das Rauschen wächst, der Sicherheitsabstand schrumpft. Der Abstand zwischen den Bereichen ist eure Reserve gegen Störungen, und die verteilt sich auf immer mehr Grenzen."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil der Sensor bei feinen Stufen ungenauer misst.",
+     "begruendung": "Der Sensor weiß nichts von euren Bereichen, er liefert einfach Werte. Die Bereiche zieht ihr erst danach ein, im Programm."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil mehr Bereiche mehr Rechenzeit kosten und dabei Messungen verloren gehen.",
+     "begruendung": "Ein Vergleich mit sieben Grenzen statt einer ist für den Rechner kein messbarer Unterschied. Das Problem ist geometrisch, nicht rechnerisch."
+    }
+   ]
+  },
+  {
+   "id": "ad-004",
+   "niveau": "verstehen",
+   "frage": "Beim Digitalisieren wird ein stufenloser Wertebereich in endlich viele\nBereiche geteilt. Welche Aussagen treffen zu?",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Alle Werte innerhalb desselben Bereichs gelten danach als ein und derselbe Zustand.",
+     "begruendung": "Genau das ist der Kern: Die Unterschiede innerhalb eines Bereichs werden bewusst aufgegeben, damit die Unterschiede zwischen den Bereichen zählen."
+    },
+    {
+     "kennung": "b",
+     "text": "Mit genügend vielen Stufen verschwindet der Unterschied zur analogen Größe vollständig.",
+     "begruendung": "Er wird kleiner, aber er verschwindet nie: Endlich viele Stufen bleiben endlich viele. Und feinere Stufen erkauft man sich mit schrumpfendem Störabstand."
+    },
+    {
+     "kennung": "c",
+     "text": "Beim Digitalisieren wird das Signal von Störungen befreit.",
+     "begruendung": "Das Digitalisieren selbst reinigt nichts; eine Störung, die groß genug ist, landet mit im Bereich nebenan. Robust wird es nur, wenn die Bereiche weiter auseinanderliegen als die Störung."
+    },
+    {
+     "kennung": "d",
+     "text": "Aus der digitalen Fassung lässt sich der ursprüngliche exakte Wert nicht zurückgewinnen.",
+     "begruendung": "Richtig: Welcher der unendlich vielen Werte im Bereich es war, ist nach der Zuordnung nicht mehr feststellbar. Digitalisieren ist eine Einbahnstraße."
+    },
+    {
+     "kennung": "e",
+     "text": "Digitalisieren funktioniert nur bei Licht und Ton.",
+     "begruendung": "Es funktioniert bei allem, was sich messen lässt: Temperatur, Druck, Tastenwege, Mausbewegungen. Überall dieselben zwei Schritte: messen, einem Bereich zuordnen."
+    }
+   ]
+  },
+  {
+   "id": "ad-005",
+   "niveau": "verstehen",
+   "frage": "Digitale Technik wirft beim Digitalisieren Information weg und ist\ntrotzdem zuverlässiger als analoge. Warum?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil die wenigen Zustände weit auseinanderliegen: Eine kleine Störung ändert den Zustand nicht und ist beim nächsten Ablesen spurlos verschwunden.",
+     "begruendung": "Genau: Die weggeworfene Genauigkeit ist der Preis, der gekaufte Abstand ist die Reserve. Solange die Störung kleiner bleibt als der Abstand, wird sie bei jedem Ablesen komplett getilgt."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil digitale Bauteile nicht rauschen.",
+     "begruendung": "Auch digitale Schaltungen rauschen, die Physik macht keine Ausnahme. Der Unterschied ist, dass das Rauschen unterhalb des Zustandsabstands folgenlos bleibt."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil weniger Information übertragen wird und dadurch weniger Fehler passieren können.",
+     "begruendung": "Klingt plausibel, ist aber nicht der Mechanismus. Ein leises analoges Signal trägt auch wenig Information und ist trotzdem störanfällig. Entscheidend ist der Abstand zwischen den Zuständen, nicht die Menge."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil Computer Fehler automatisch erkennen und herausrechnen.",
+     "begruendung": "Fehlererkennung gibt es, aber sie ist eine eigene, zusätzliche Zutat (sie kommt später bei Redundanz und Prüfsummen). Die Grundrobustheit kommt schon vorher aus dem Zustandsabstand."
+    }
+   ]
+  },
+  {
+   "id": "ad-006",
+   "niveau": "anwenden",
+   "frage": "Ein Team misst mit dem Clear-Kanal: Die Werte seiner Farben liegen\nzwischen 100 und 400, jede Einzelmessung schwankt um bis zu ±40. Was\nfolgt daraus für die Zahl der Farben?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Zwei Farben (Bereiche à 150) sind sicher; bei acht Farben ist jeder Bereich schmaler als die Schwankung, einzelne Messungen landen im Nachbarbereich.",
+     "begruendung": "Genau die Rechnung, um die es geht: 300 geteilt durch 8 sind knapp 38 je Bereich, die Schwankung von ±40 sprengt das. Bei zwei Bereichen à 150 bleibt dagegen üppig Reserve. Wie viele dazwischen noch sicher sind, sagt euch nur eure eigene Messreihe."
+    },
+    {
+     "kennung": "b",
+     "text": "Acht Farben sind unproblematisch, denn 8 ist viel kleiner als 40.",
+     "begruendung": "Die beiden Zahlen messen verschiedene Dinge (Anzahl gegen Sensorwert), man kann sie nicht vergleichen. Verglichen werden muss die Breite eines Bereichs mit der Schwankung."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Schwankung spielt keine Rolle, weil der Sensor digital misst.",
+     "begruendung": "Dass der Sensor Zahlen liefert, macht die Schwankung nicht kleiner: Sie steckt schon im Licht und in der Messung selbst. Digital heißt nicht störungsfrei."
+    },
+    {
+     "kennung": "d",
+     "text": "Mehr als zwei Farben sind grundsätzlich unmöglich.",
+     "begruendung": "Mit diesem Wertebereich und dieser Schwankung sind drei oder vier Bereiche rechnerisch gut denkbar. Wo die Grenze wirklich liegt, ist eine Messfrage, und genau die entscheidet euren Wettbewerb."
+    }
+   ]
+  },
+  {
+   "id": "ad-007",
+   "niveau": "anwenden",
+   "frage": "Der Sensorwert ist bereits eine Zahl. Was leistet der Vergleich\n`value > 250` im Sinn dieses Konzepts?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "code": "value = sensor.get_clear()\nif value > 250:\n    symbol = \"bright\"\nelse:\n    symbol = \"dark\"",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Er wandelt das analoge Licht in einen digitalen Wert um.",
+     "begruendung": "Das ist schon passiert: `get_clear()` hat den Wert geliefert, die Wandlung steckt im Sensor. Hier wird nur noch mit Zahlen gearbeitet."
+    },
+    {
+     "kennung": "b",
+     "text": "Er misst die Helligkeit ein zweites Mal, zur Kontrolle.",
+     "begruendung": "Ein Vergleich misst nichts, er entscheidet nur über einen bereits vorhandenen Wert. Gemessen wird ausschließlich in der Zeile darüber."
+    },
+    {
+     "kennung": "c",
+     "text": "Er zieht die Grenze, die viele mögliche Zahlenwerte auf zwei bedeutungstragende Zustände reduziert: Hier entsteht euer Alphabet.",
+     "begruendung": "Genau: Der Sensor liefert Hunderte möglicher Werte, erst eure Grenze macht daraus Symbole. Wo sie liegt und wie viele es werden, ist die Entwurfsentscheidung von Challenge 1."
+    },
+    {
+     "kennung": "d",
+     "text": "Er erhöht die Genauigkeit des Messwerts.",
+     "begruendung": "Das Gegenteil: Aus vielen unterscheidbaren Werten werden zwei. Genau dieses bewusste Vergröbern kauft die Robustheit."
+    }
+   ]
+  },
+  {
+   "id": "ad-008",
+   "niveau": "verstehen",
+   "frage": "Eine Musikkassette verliert bei jedem Überspielen hörbar Qualität, eine\nkopierte Datei ist auch nach der tausendsten Kopie identisch. Warum?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil Dateien komprimiert sind und deshalb weniger kaputtgehen kann.",
+     "begruendung": "Kompression ist ein anderes Thema (und macht Daten eher empfindlicher gegen Fehler, nicht robuster). Auch eine unkomprimierte Datei kopiert sich perfekt."
+    },
+    {
+     "kennung": "b",
+     "text": "Beim digitalen Kopieren werden Zustände abgelesen und frisch neu gesetzt; kleine Störungen unterhalb des Zustandsabstands verschwinden dabei jedes Mal vollständig.",
+     "begruendung": "Genau: Jede digitale Kopie ist eine Neugeburt aus sauberen Zuständen. Die Kassette kopiert dagegen die stufenlose Wellenform mitsamt allem Rauschen und legt eigenes obendrauf, bei jeder Generation."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil Computer schneller kopieren, bleibt weniger Zeit für Fehler.",
+     "begruendung": "Die Geschwindigkeit hat damit nichts zu tun. Eine langsame digitale Kopie ist genauso perfekt wie eine schnelle."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil Dateien gar nicht wirklich kopiert, sondern nur verknüpft werden.",
+     "begruendung": "Verknüpfungen gibt es, aber eine echte Kopie ist eine echte zweite Folge von Zuständen, und die ist trotzdem identisch. Genau das ist die Pointe."
+    }
+   ]
+  },
+  {
+   "id": "ad-009",
+   "niveau": "erinnern",
+   "frage": "Was heißt es, ein Signal zu „digitalisieren“?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Es durch eine endliche Folge von Zahlen darstellen.",
+     "begruendung": "Genau. Mehr steckt nicht im Wort: messen und die Messwerte endlich vielen Zuständen zuordnen. Was die Zahlen bedeuten, regelt später die Codierung."
+    },
+    {
+     "kennung": "b",
+     "text": "Es über das Internet übertragen.",
+     "begruendung": "Übertragung ist ein eigener Schritt und setzt die Zahlenform meist schon voraus. Digitalisieren passiert davor, am Übergang von der Welt zur Zahl."
+    },
+    {
+     "kennung": "c",
+     "text": "Es verkleinern, damit es weniger Speicher braucht.",
+     "begruendung": "Das ist Kompression, ein späteres Konzept. Digitalisieren kann die Datenmenge sogar riesig machen, man denke an unkomprimiertes Video."
+    }
+   ]
+  },
+  {
+   "id": "ad-010",
+   "niveau": "verstehen",
+   "frage": "Auf eurer Übertragungsstrecke: Wo verläuft die Grenze zwischen analog und\ndigital?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Schon am Sender: Weil die LED mit Zahlen von 0 bis 255 angesteuert wird, ist auch ihr Licht digital.",
+     "begruendung": "Die Ansteuerung ist digital, das Licht selbst nicht: Seine Helligkeit ist stufenlos, sie hängt von Abstand und Winkel ab, und das Umgebungslicht addiert sich dazu. Zwischen den Geräten ist eure Strecke analog."
+    },
+    {
+     "kennung": "b",
+     "text": "Erst im Python-Programm, wenn ihr den Messwert mit einer Grenze vergleicht.",
+     "begruendung": "Da ist der Wert längst eine Zahl. Der Vergleich reduziert viele Zahlen auf wenige Symbole, das ist wichtig, aber digital war es schon vorher."
+    },
+    {
+     "kennung": "c",
+     "text": "Im Farbsensor: Er setzt das stufenlose Licht in Zahlen um, ab dort rechnet alles mit Zahlen.",
+     "begruendung": "Genau. Die ganze Strecke läuft digital, analog, digital: Der Sender macht aus Zahlen Licht, das Licht fliegt stufenlos und gestört durch den Raum, der Sensor macht daraus wieder Zahlen. Das analoge Mittelstück ist der Teil, den kein Programm kontrolliert, und genau dort entscheidet sich euer Wettbewerb."
+    },
+    {
+     "kennung": "d",
+     "text": "Nirgends: Die ganze Strecke ist digital, weil an beiden Enden Computer stehen.",
+     "begruendung": "Die Computer an den Enden ändern nichts daran, dass dazwischen Physik liegt. Wer das analoge Mittelstück vergisst, wundert sich später über jede Störung."
+    }
+   ]
+  },
+  {
+   "id": "ad-011",
+   "niveau": "verstehen",
+   "frage": "Welche dieser Dinge arbeiten im Sinn dieses Konzepts digital, also mit\nendlich vielen, klar getrennten Zuständen?",
+   "typ": "mc",
+   "richtig": [
+    "b",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein stufenloser Lichtdimmer",
+     "begruendung": "Stufenlos ist das Gegenteil von digital: Zwischen zwei Helligkeiten liegt immer noch eine dritte."
+    },
+    {
+     "kennung": "b",
+     "text": "Ein Lichtschalter mit an und aus",
+     "begruendung": "Zwei Zustände, nichts dazwischen gilt: Das ist digital in Reinform, ganz ohne Computer. Halb gedrückt ist kein gültiger Zustand, der Schalter schnappt in einen von beiden."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein Zeigerthermometer",
+     "begruendung": "Der Zeiger wandert stufenlos, jede Zwischenstellung ist möglich und gültig. Erst wer eine Skala mit Bereichen darüberlegt und abliest, digitalisiert."
+    },
+    {
+     "kennung": "d",
+     "text": "Ein Würfel",
+     "begruendung": "Sechs Zustände, und dazwischen gibt es nichts Gültiges: Ein Würfel auf der Kante kippt in eine Lage. Genau dieses Einrasten in getrennte Zustände macht digital aus."
+    },
+    {
+     "kennung": "e",
+     "text": "Eine Sanduhr",
+     "begruendung": "Der Sandstand sinkt stufenlos. (Wer mag, kann über die einzelnen Körner streiten, aber abgelesen wird der stufenlose Füllstand.)"
+    }
+   ]
+  },
+  {
+   "id": "ad-012",
+   "niveau": "verstehen",
+   "frage": "In Challenge 1 legt ihr fest, wie viele Farben euer Alphabet hat. Was ist\nder Kern dieser Entscheidung?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein Tauschgeschäft: Mehr Farben tragen mehr pro Messung, rücken die Bereiche aber enger zusammen; wie viele sicher sind, entscheidet eure Messreihe.",
+     "begruendung": "Genau: Es gibt keine allgemein richtige Zahl, es gibt nur die richtige Zahl für euren Aufbau, euer Licht und euer Rauschen. Deshalb gewinnt in Challenge 1 nicht das mutigste Team, sondern das bestvermessene."
+    },
+    {
+     "kennung": "b",
+     "text": "Mehr Farben sind immer besser, weil die Übertragung dann schneller ist.",
+     "begruendung": "Nur solange jede Messung noch stimmt. Ab einer gewissen Enge kosten die Erkennungsfehler mehr Zeit, als das größere Alphabet einspart."
+    },
+    {
+     "kennung": "c",
+     "text": "Zwei Farben sind immer die richtige Wahl, weil Sicherheit vorgeht.",
+     "begruendung": "Wer bei großem Störabstand trotzdem nur zwei Farben nutzt, verschenkt Tempo. Auch Vorsicht hat einen Preis, und ob er gerechtfertigt ist, zeigt wieder nur die Messung."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Zahl ist Geschmackssache, solange sauber kalibriert wird.",
+     "begruendung": "Kalibrieren verschiebt die Grenzen an die richtigen Stellen, aber es vergrößert nicht den Abstand zwischen ihnen. Gegen zu enge Bereiche hilft keine noch so gute Kalibrierung."
+    }
+   ]
+  }
+ ]
+}

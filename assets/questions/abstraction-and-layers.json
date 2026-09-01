@@ -1,0 +1,316 @@
+{
+ "konzept": "abstraction-and-layers",
+ "fragen": [
+  {
+   "id": "al-001",
+   "niveau": "erinnern",
+   "frage": "Was leistet eine Abstraktion?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie beschleunigt die Ausführung, weil häufige Abläufe der unteren Ebene vorbereitet bereitliegen.",
+     "begruendung": "Geschwindigkeit ist nicht ihr Zweck, eher im Gegenteil: Der Umweg über eine Schnittstelle kostet meist etwas Leistung. Bezahlt wird das mit dem eigentlichen Gewinn, der Unabhängigkeit vom Innenleben."
+    },
+    {
+     "kennung": "b",
+     "text": "Sie fängt Fehler der darunterliegenden Ebene ab, bevor sie nach oben durchschlagen.",
+     "begruendung": "Fehlerbehandlung kann eine Schnittstelle zusätzlich anbieten, sie ist aber nicht das Wesen der Abstraktion. Verborgen werden Einzelheiten, nicht Fehler; ein Defekt darunter bleibt ein Defekt."
+    },
+    {
+     "kennung": "c",
+     "text": "Sie verbirgt Einzelheiten hinter einer Schnittstelle, sodass man etwas benutzen kann, ohne sein Innenleben zu kennen.",
+     "begruendung": "Genau: Wer led.set_color aufruft, muss nichts über Strom und Chips wissen. Erst dieses Verbergen macht Systeme möglich, die größer sind, als eine Person überblicken kann."
+    },
+    {
+     "kennung": "d",
+     "text": "Sie beschreibt das Innenleben so genau, dass man es bei Bedarf schnell nachvollziehen kann.",
+     "begruendung": "Das leistet Dokumentation, und sie zeigt in die entgegengesetzte Richtung: Sie erklärt das Innenleben, die Abstraktion macht es entbehrlich."
+    }
+   ]
+  },
+  {
+   "id": "al-002",
+   "niveau": "verstehen",
+   "frage": "Eure Funktion, die Text in Bits übersetzt, weiß nichts über Farben. Warum\nist das eine Stärke und kein Versäumnis?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil Farbwissen in der Kodierung zusätzlichen Speicher belegen würde, der bei langen Texten fehlt.",
+     "begruendung": "Der Speicherbedarf wäre winzig und ist nicht der Punkt. Es geht um Abhängigkeit: Was die Kodierung nicht kennt, kann sie auch nicht an sich binden."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil das Farbalphabet dann austauschbar bleibt: Die Kodierung spricht nur mit der Bit-Schnittstelle und merkt von einem Wechsel darunter nichts.",
+     "begruendung": "Genau: Wechselt ihr von vier auf acht Farben oder von Licht auf Ton, bleibt die Kodierung unangetastet. Jede Schicht benutzt nur die unmittelbar darunter, das ist der ganze Trick."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil eine Funktion nach guter Praxis genau eine Aufgabe erfüllen soll und die Farbwahl eine zweite wäre.",
+     "begruendung": "Die Faustregel ist verwandt, begründet die Trennung aber nicht: Sie sagt nicht, welche Aufgaben zusammengehören. Die Antwort darauf gibt erst der Schichtgedanke: Farbwissen gehört in die Symbolschicht, weil es sich unabhängig vom Text ändert."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil die Kodierung so auch dann korrekt weiterläuft, wenn der Farbsensor gestört ist.",
+     "begruendung": "Gegen einen gestörten Sensor hilft die Unwissenheit der Kodierung nicht, die Nachricht kommt dann trotzdem falsch an. Schichten begrenzen Änderungsaufwand, keine Störungen."
+    }
+   ]
+  },
+  {
+   "id": "al-003",
+   "niveau": "anwenden",
+   "frage": "Ein Team erweitert sein Alphabet von vier auf acht Farben. Welche Teile\ndes Systems müssen sich ändern?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Alle Schichten, denn mit acht Farben trägt jedes Symbol mehr Bits, und diese Änderung zieht sich durch das ganze System.",
+     "begruendung": "Dass ein Symbol jetzt 3 Bit trägt, ist gerade das Geheimnis der Symbolschicht. Oben kommen weiter Bits an, nur schneller. Wer hier alles anfassen muss, hat die Schichten vorher vermischt."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Rahmen und die Symbolschicht, denn der Empfänger muss im Rahmen erfahren, mit wie vielen Farben gesendet wird.",
+     "begruendung": "Klingt fürsorglich, widerspricht aber der Vereinbarung: Der Rahmen ist in Bits definiert und weiß nichts von Farben. Die Farbzahl klären beide Enden in ihrer eigenen Symbolschicht, etwa über die Kalibrierung."
+    },
+    {
+     "kennung": "c",
+     "text": "Nur die Symbolschicht: Farbzuordnung, Kalibrierung und die Übersetzung zwischen Bits und Symbolen. Rahmen und Textkodierung bleiben unverändert.",
+     "begruendung": "Genau, und daran erkennt man saubere Schichten: Die Änderung bleibt dort eingesperrt, wo ihr Wissen liegt. Alles oberhalb der Bit-Schnittstelle profitiert nur vom höheren Durchsatz."
+    },
+    {
+     "kennung": "d",
+     "text": "Nur die Textkodierung, denn sie legt fest, wie viele verschiedene Zeichen gebraucht werden und damit auch die Farbzahl.",
+     "begruendung": "Die Richtung stimmt nicht: Die Farbzahl bestimmt nicht der Text, sondern die Physik der Strecke, nämlich wie viele Farben sicher unterscheidbar sind. Die Kodierung arbeitet mit Bits und bleibt von der Farbzahl unberührt."
+    }
+   ]
+  },
+  {
+   "id": "al-004",
+   "niveau": "verstehen",
+   "frage": "Ein Team ersetzt Licht durch Ton: Statt der LED sendet ein Lautsprecher\nTöne, statt des Farbsensors hört ein Mikrofon zu. Was muss sich am\nrestlichen System ändern, wenn die Schichten sauber getrennt sind?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Nichts oberhalb der Symbolschicht: Sobald aus Tönen wieder Bits werden, laufen Rahmen, Kodierung und Anwendung unverändert weiter.",
+     "begruendung": "Genau, und dieser Substrattausch ist der ehrlichste Prüfstein für saubere Schichten: Nur die unterste Schicht wird ersetzt. Deshalb steht im Rahmen auch nichts über Zeit oder Farben, beides ist Sache des Übertragungswegs."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Rahmen muss angepasst werden, weil Töne andere Anfangs- und Endmarkierungen brauchen als Farben.",
+     "begruendung": "Die Präambel des Rahmens ist ein Bitmuster, keine Farbe und kein Ton. Wie dieses Bitmuster physikalisch klingt oder leuchtet, entscheidet allein die Schicht darunter."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Textkodierung muss angepasst werden, weil Töne feiner abgestuft werden können als Farben und damit mehr Zeichen tragen.",
+     "begruendung": "Ob Töne feiner abstufbar sind, entscheidet über die Symbolrate der untersten Schicht, nicht über die Kodierung: Die übersetzt Zeichen in Bits und fragt nicht, wie die Bits reisen."
+    },
+    {
+     "kennung": "d",
+     "text": "Das gesamte System muss neu abgestimmt werden, denn Mikrofone rauschen anders als Farbsensoren.",
+     "begruendung": "Das andere Rauschen betrifft genau eine Schicht: die neue unterste. Dort werden Kalibrierung und Schwellen neu bestimmt, und genau dafür wurde die Grenze gezogen; darüber ändert sich nichts."
+    }
+   ]
+  },
+  {
+   "id": "al-005",
+   "niveau": "verstehen",
+   "frage": "Schichten bringen Austauschbarkeit und Arbeitsteilung. Was ist ihr\nPreis?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Es gibt keinen: Solange jede Schicht ihre Schnittstelle einhält, verhält sich das System wie ein einziges Programm.",
+     "begruendung": "Verhalten ja, Kosten nein: Auch bei perfekt eingehaltenen Schnittstellen bezahlt man mit Zusatzdaten und mit verlorenem Durchgriff. Kostenlose Struktur gibt es nicht."
+    },
+    {
+     "kennung": "b",
+     "text": "Zusatzaufwand und verlorener Durchgriff: Jede Schicht fügt eigene Daten hinzu, etwa den Rahmen, und verbirgt Stellschrauben, an die man gelegentlich doch heranmuss.",
+     "begruendung": "Genau: Der Rahmen kostet Bits, die keine Nutzdaten sind, und wer das Letzte aus der Strecke holen will, muss gelegentlich unter die bequeme Schnittstelle greifen. Deshalb zeigt euer lifi_hardware Integrationszeit und Verstärkung offen an."
+    },
+    {
+     "kennung": "c",
+     "text": "Deutlich mehr Code, weil jede Schicht die Funktionen der darunterliegenden noch einmal bereitstellen muss.",
+     "begruendung": "Eine Schicht reicht die untere nicht durch, sie übersetzt in eine neue, kleinere Sprache: aus set_color wird send_symbol, daraus send_bits. Der Code je Schicht ist meist kurz; teuer ist etwas anderes."
+    },
+    {
+     "kennung": "d",
+     "text": "Längere Entwicklungszeit am Anfang, die sich im Betrieb aber vollständig zurückzahlt.",
+     "begruendung": "Der Entwurfsaufwand ist real, aber die Rechnung geht so nicht auf: Auch im Betrieb bleibt der laufende Preis, jedes gesendete Rahmenbit und jeder Umweg über eine Schnittstelle. Man zahlt ihn gern, aber man zahlt ihn."
+    }
+   ]
+  },
+  {
+   "id": "al-006",
+   "niveau": "anwenden",
+   "frage": "Bei einem Team kommen falsche Buchstaben an. Ein Test zeigt: Die\nFarberkennung liefert die gesendeten Symbole zu 100 Prozent richtig.\nWo sucht ihr den Fehler zuerst?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Beim Sensor: Eine Trefferquote von 100 Prozent im Test schließt seltene Ausreißer im echten Lauf nicht aus.",
+     "begruendung": "Der Einwand ist methodisch berechtigt, beantwortet aber die Frage nach dem ersten Suchort falsch: Wenn die untere Schicht im Test besteht, sucht man zuerst dort, wo noch gar nicht geprüft wurde. Ausreißer wären außerdem gelegentliche Fehler, keine systematisch falschen Buchstaben."
+    },
+    {
+     "kennung": "b",
+     "text": "Auf der Strecke: Zwischen Senden und Messen kann Umgebungslicht einzelne Symbole verfälschen.",
+     "begruendung": "Verfälschte Symbole würden als falsche Farberkennungen auftauchen, und genau die hat der Test ausgeschlossen. Die Störung, die es laut Messung nicht gibt, kann nicht die Ursache sein."
+    },
+    {
+     "kennung": "c",
+     "text": "Oberhalb der Symbolschicht: In der Übersetzung von Symbolen zu Bits und Buchstaben, denn die untere Schicht ist durch den Test entlastet.",
+     "begruendung": "Genau, und das ist der praktische Wert der Schichten beim Fehlersuchen: Man prüft eine Schnittstelle nach der anderen und grenzt den Fehler ein, statt überall gleichzeitig zu suchen. Hier liegt er zwischen korrekt erkannten Symbolen und falschen Buchstaben, also in der Kodierung oder der Rahmung."
+    },
+    {
+     "kennung": "d",
+     "text": "Auf der Senderseite: Wahrscheinlich werden schon die falschen Symbole losgeschickt.",
+     "begruendung": "Möglich ist das, aber es ist derselbe Verdacht eine Etage höher: Auch dann läge der Fehler in einer Übersetzungsschicht, nur der des Senders. Der Test sagt zunächst nur, dass die Symbole unverfälscht ankommen; als Nächstes vergleicht man gesendete Bits mit empfangenen Bits."
+    }
+   ]
+  },
+  {
+   "id": "al-007",
+   "niveau": "verstehen",
+   "frage": "Der Klassenstandard für Challenge 4 definiert den Rahmen in Bits, nicht\nin Farben. Warum?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil sich Farben zwischen verschiedenen Geräten nie exakt gleich messen lassen und ein Standard exakte Werte braucht.",
+     "begruendung": "Die Beobachtung stimmt, nur zieht sie den falschen Schluss: Genau weil Farben Gerätesache sind, gehören sie in die Symbolschicht jedes Teams und nicht in den Standard. Der Standard weicht ihnen nicht aus Verlegenheit aus, sondern aus Prinzip."
+    },
+    {
+     "kennung": "b",
+     "text": "Damit der Rahmen über jeder Symbolschicht funktioniert: Jedes Team bleibt unterhalb der Bits frei, bis hin zum Tausch von Licht gegen Ton.",
+     "begruendung": "Genau: Bits sind die gemeinsame Sprache oberhalb aller Alphabete. Vier Farben, acht Farben, Helligkeitsstufen oder Töne, der Rahmen bleibt derselbe, und die Teams können unterhalb der Schnittstelle gegeneinander optimieren."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil die Prüfsumme des Rahmens mathematisch nur über Bitfolgen definiert ist und über Farben nicht berechnet werden kann.",
+     "begruendung": "Man könnte eine Prüfsumme auch über Farbnummern definieren, mathematisch spricht nichts dagegen. Die Bits sind nicht rechnerisch nötig, sondern architektonisch gewollt: als Grenze, unter der alles Teamsache ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil eine Bitfolge weniger Übertragungszeit braucht als die entsprechende Farbfolge.",
+     "begruendung": "Übertragen werden am Ende immer Farben, die Bits reisen in ihnen. Die Definitionsebene des Rahmens ändert an der Übertragungszeit nichts; sie legt nur fest, worüber gesprochen wird."
+    }
+   ]
+  },
+  {
+   "id": "al-008",
+   "niveau": "verstehen",
+   "frage": "Euer Modul lifi_hardware verbirgt vieles, zeigt aber Integrationszeit\nund Verstärkung offen in der Schnittstelle. Warum versteckt eine gute\nAbstraktion nicht einfach alles?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil sich Hardware-Einstellungen technisch nicht dauerhaft verbergen lassen, sie schlagen immer irgendwo durch.",
+     "begruendung": "Technisch ließe sich beides mühelos verstecken, ein fest verdrahteter Standardwert genügt. Dass es nicht geschieht, ist eine Entwurfsentscheidung, keine technische Notwendigkeit."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil ein fester Standardwert für beide Regler die Übertragung bei manchen Teams verlangsamen würde.",
+     "begruendung": "Das ist die halbe Wahrheit: Es geht nicht nur um Tempoverlust, sondern darum, dass genau an diesen zwei Reglern der zentrale Zielkonflikt des Projekts hängt. Wer sie versteckt, versteckt die Aufgabe."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil eine gute Abstraktion Nebensächliches verbirgt, nicht Wesentliches: Diese zwei Regler sind der Zielkonflikt, den ihr entscheiden sollt, also gehören sie in die Schnittstelle.",
+     "begruendung": "Genau: Registeradressen und Busprotokoll gehen euch nichts an, die Wahl zwischen ruhigen Werten und hoher Rate sehr wohl. Wo diese Grenze verläuft, ist die eigentliche Entwurfsarbeit an einer Schnittstelle."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil offene Einstellungen die Fehlersuche erleichtern: Man sieht im Code sofort, mit welchen Werten gemessen wurde.",
+     "begruendung": "Ein angenehmer Nebeneffekt, aber nicht der Grund: Fürs Nachvollziehen würde ein Auslesen der Werte genügen. Die Regler sind beschreibbar, weil ihr sie einstellen sollt, nicht nur ablesen."
+    }
+   ]
+  },
+  {
+   "id": "al-009",
+   "niveau": "verstehen",
+   "frage": "Woran erkennt man eine gute Schnittstelle zwischen zwei Schichten?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie bietet für jeden denkbaren Sonderfall eine eigene Funktion an, damit niemand an ihr vorbeiarbeiten muss.",
+     "begruendung": "Vollständigkeit klingt hilfreich, macht die Schnittstelle aber breit und träge: Jede zusätzliche Funktion ist ein Versprechen, das die Schicht für immer halten muss. Gute Schnittstellen versprechen wenig und halten das dafür verlässlich."
+    },
+    {
+     "kennung": "b",
+     "text": "Sie ist klein und stabil: Das Innenleben darunter kann sich ändern, ohne dass sich für die Nutzer darüber etwas ändert.",
+     "begruendung": "Genau: send_symbol(index) verrät nicht, ob dahinter vier Farben, acht Farben oder Töne stecken, und genau deshalb darf sich das alles ändern. Die Schnittstelle ist der Vertrag; je kleiner er ist, desto leichter ist er zu halten."
+    },
+    {
+     "kennung": "c",
+     "text": "Sie bildet den inneren Aufbau der Schicht getreu ab, damit Nutzer nachvollziehen können, was ihr Aufruf auslöst.",
+     "begruendung": "Das kehrt den Zweck um: Wer das Innenleben in die Schnittstelle spiegelt, kettet alle Nutzer daran, und jede innere Änderung bricht nach außen durch. Verbergen ist hier die Leistung, nicht ein Mangel an Transparenz."
+    },
+    {
+     "kennung": "d",
+     "text": "Sie wird bei jeder Verbesserung der Schicht mit angepasst, damit sie den aktuellen Stand widerspiegelt.",
+     "begruendung": "Aktualität klingt wie eine Tugend, ist an einer Schnittstelle aber eine Last: Jede Änderung zwingt alle Nutzer zum Nachziehen. Der Wert einer Schnittstelle liegt gerade darin, dass sie sich seltener ändert als das, was sie verbirgt."
+    }
+   ]
+  },
+  {
+   "id": "al-010",
+   "niveau": "anwenden",
+   "frage": "Drei Funktionen, drei Schichten. Welche davon darf led.set_color\ndirekt aufrufen?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "code": "def send_text(text):     # Zeichen -> Bits\n    ...\ndef send_frame(bits):    # Bits -> gerahmte Bits\n    ...\ndef send_symbols(bits):  # Bits -> Farben auf der LED\n    ...",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Jede, denn led.set_color gehört zum Modul lifi_hardware und steht damit dem ganzen Programm zur Verfügung.",
+     "begruendung": "Verfügbar ist nicht dasselbe wie erlaubt: Technisch hindert Python niemanden, aber sobald send_text selbst Farben setzt, kennt die oberste Schicht die unterste, und das Alphabet ist nicht mehr austauschbar. Die Disziplin ist die Architektur."
+    },
+    {
+     "kennung": "b",
+     "text": "send_frame, denn der Rahmen markiert Anfang und Ende und muss dafür die LED unmittelbar steuern können.",
+     "begruendung": "Der Rahmen markiert Anfang und Ende in Bits, etwa mit der Präambel, und reicht diese Bits nach unten weiter. Wie sie leuchten, entscheidet die Symbolschicht; würde send_frame selbst leuchten, wäre der Rahmen an Licht gebunden und der Substrattausch dahin."
+    },
+    {
+     "kennung": "c",
+     "text": "Nur send_symbols: Sie ist die unterste der drei Schichten, und nur dort ist bekannt, welche Farbe ein Symbol trägt.",
+     "begruendung": "Genau: Jede Schicht spricht nur mit der unmittelbar darunter. send_text kennt Bits, send_frame kennt Bits, und erst send_symbols übersetzt in die physische Welt. Deshalb bleibt oben alles stehen, wenn unten das Alphabet oder gleich das ganze Medium wechselt."
+    },
+    {
+     "kennung": "d",
+     "text": "send_text, denn sie stößt die Übertragung an und trägt damit die Verantwortung für das, was gesendet wird.",
+     "begruendung": "Verantwortung und Zugriff sind zweierlei: send_text verantwortet den Inhalt und delegiert die Ausführung nach unten, Schicht für Schicht. Wer oben anstößt, muss unten nichts anfassen, das ist der Sinn der Kette."
+    }
+   ]
+  }
+ ]
+}

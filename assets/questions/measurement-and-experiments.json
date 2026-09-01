@@ -1,0 +1,384 @@
+{
+ "konzept": "measurement-and-experiments",
+ "fragen": [
+  {
+   "id": "me-001",
+   "niveau": "verstehen",
+   "frage": "Der KI-Assistent schlägt vor, die Integrationszeit des Sensors zu verdoppeln,\n\"dann werden die Werte besser\". Warum genügt diese Auskunft nicht?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil die KI grundsätzlich falsche Vorschläge macht.",
+     "begruendung": "Der Vorschlag kann gut sein, oft ist er es sogar. Das Problem ist nicht seine Herkunft, sondern dass er unbelegt ist."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil man Einstellungen des Sensors nie ändern sollte.",
+     "begruendung": "Im Gegenteil: Integrationszeit und Verstärkung zu verstellen gehört zum Kern des Projekts. Nur eben gemessen, nicht geglaubt."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil niemand außer eurem Aufbau selbst weiß, wie euer Aufbau sich verhält; das entscheidet eine Messung.",
+     "begruendung": "Genau: Der physikalische Kanal ist die Ground Truth, zu der kein Sprachmodell Zugang hat. Ob 'besser' stimmt, zeigt nur die Messreihe vorher gegen nachher."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil 'verdoppeln' keine gültige Einstellung ist.",
+     "begruendung": "Verdoppeln ist technisch problemlos möglich. Die offene Frage ist nicht das Wie, sondern der belegbare Effekt."
+    }
+   ]
+  },
+  {
+   "id": "me-002",
+   "niveau": "anwenden",
+   "frage": "Ein Team verändert zwischen zwei Messreihen gleichzeitig den Abstand der Geräte\nund die Integrationszeit. Die zweite Reihe ist deutlich besser. Was wisst ihr\njetzt?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Beide Änderungen haben geholfen.",
+     "begruendung": "Möglich, aber nicht belegt: Es kann auch eine allein gewesen sein, und die andere hat sogar geschadet."
+    },
+    {
+     "kennung": "b",
+     "text": "Dass es besser wurde, aber nicht, woran es lag.",
+     "begruendung": "Genau das Problem: Zwei gleichzeitig veränderte Größen lassen sich im Ergebnis nicht mehr trennen. Deshalb je Messreihe nur eine Variable ändern."
+    },
+    {
+     "kennung": "c",
+     "text": "Der Abstand war entscheidend, denn er wirkt physikalisch stärker.",
+     "begruendung": "Das ist eine Vermutung im Gewand eines Ergebnisses. Welche Größe wie stark wirkt, war ja gerade die offene Frage."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Messung ist wertlos und muss gelöscht werden.",
+     "begruendung": "Wertlos ist sie nicht, sie zeigt, dass die Kombination hilft. Sie beantwortet nur nicht, welcher Anteil wofür steht; das klären zwei saubere Nachmessungen."
+    }
+   ]
+  },
+  {
+   "id": "me-003",
+   "niveau": "verstehen",
+   "frage": "Bevor ihr eure LED-Farben vermesst, sollt ihr eine Kontrollmessung machen:\nSensorwerte aufnehmen, während die eigene LED aus ist. Wozu?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Um zu prüfen, ob der Sensor überhaupt Strom hat.",
+     "begruendung": "Das sieht man nebenbei auch, aber dafür bräuchte es keine aufgezeichnete Messreihe."
+    },
+    {
+     "kennung": "b",
+     "text": "Damit im Protokoll auch eine langweilige Messung steht.",
+     "begruendung": "Die Kontrollmessung ist keine Pflichtübung, sondern die Bezugsgröße, ohne die die anderen Messungen nicht deutbar sind."
+    },
+    {
+     "kennung": "c",
+     "text": "Um zu wissen, was der Sensor durch Umgebungslicht ohnehin misst; erst dagegen lassen sich die LED-Werte deuten.",
+     "begruendung": "Genau: Der Sensor misst nie Null, Raumlicht ist immer da. Die Kontrollmessung ist der Nullpunkt, gegen den jede Farbmessung verglichen wird, und sie verrät, wenn sich die Umgebung ändert."
+    },
+    {
+     "kennung": "d",
+     "text": "Um die LED zu schonen, bevor die eigentlichen Messungen beginnen.",
+     "begruendung": "Die LED nimmt durch Messen keinen Schaden. Es geht um Information über die Umgebung, nicht um Schonung."
+    }
+   ]
+  },
+  {
+   "id": "me-004",
+   "niveau": "anwenden",
+   "frage": "Ihr messt fünfmal hintereinander dieselbe rote LED und bekommt für den Rotanteil:\n198, 205, 201, 195, 206. Was folgt daraus?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Der Sensor ist defekt, sonst käme fünfmal derselbe Wert.",
+     "begruendung": "Streuung ist der Normalfall jeder echten Messung: Rauschen von Sensor, Licht und Umgebung. Fünf identische Werte wären eher verdächtig."
+    },
+    {
+     "kennung": "b",
+     "text": "Messwerte streuen; wer einen stabilen Wert braucht, mittelt über mehrere Messungen.",
+     "begruendung": "Genau: Der Einzelwert springt, der Mittelwert (hier etwa 201) liegt ruhig. Deshalb liest man mehrfach und mittelt, statt einer einzelnen Messung zu glauben. Und die Streuung selbst ist ein Ergebnis: Sie gehört mit ins Protokoll, denn sie entscheidet später darüber, wie viele Farben ihr unterscheiden könnt (Signal und Rauschen, Sitzung 5)."
+    },
+    {
+     "kennung": "c",
+     "text": "Die LED wird beim Messen langsam schwächer.",
+     "begruendung": "Die Werte gehen rauf und runter, nicht stetig bergab. Das ist Rauschen, kein Trend."
+    },
+    {
+     "kennung": "d",
+     "text": "Nur der letzte Wert zählt, denn da war der Sensor eingeschwungen.",
+     "begruendung": "Auch der letzte Wert ist nur ein Wurf aus derselben Streuung. Er ist nicht wahrer als die anderen vier."
+    }
+   ]
+  },
+  {
+   "id": "me-005",
+   "niveau": "verstehen",
+   "frage": "Welche Aussagen über die Werte eures Farbsensors treffen zu?\n(Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "b",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Er liefert genau drei Werte: Rot, Grün und Blau.",
+     "begruendung": "Es sind vier: Zu Rot, Grün und Blau kommt der Clear-Kanal, der ungefiltert misst."
+    },
+    {
+     "kennung": "b",
+     "text": "Neben Rot, Grün und Blau gibt es einen vierten, ungefilterten Kanal (Clear).",
+     "begruendung": "Richtig: Clear misst das gesamte einfallende Licht ohne Farbfilter und ist dadurch empfindlicher als die drei Farbkanäle."
+    },
+    {
+     "kennung": "c",
+     "text": "Die gemessenen Werte entsprechen nicht einfach den RGB-Zahlen, die der Sender an seine LED schickt.",
+     "begruendung": "Richtig: Überlappende Farbfilter, Abstand und Umgebungslicht verschieben die Werte. Gesendetes (255, 0, 0) kommt nie als (255, 0, 0) an."
+    },
+    {
+     "kennung": "d",
+     "text": "Bei ausgeschalteter LED liefern alle vier Kanäle exakt Null.",
+     "begruendung": "Nein: Umgebungslicht ist immer da, und genau deshalb braucht es die Kontrollmessung als Bezugsgröße."
+    }
+   ]
+  },
+  {
+   "id": "me-006",
+   "niveau": "anwenden",
+   "frage": "Die Abbildung zeigt dasselbe Licht, gemessen mit langen, mittleren und kurzen\nAblesefenstern. Ein Team will schneller senden und verkürzt dafür die\nIntegrationszeit des Sensors stark. Was ist zu erwarten?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "bild": "signal-and-noise",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Nichts ändert sich, die Integrationszeit betrifft nur den Stromverbrauch.",
+     "begruendung": "Die Integrationszeit ist das Ablesefenster: Sie bestimmt, über wie viel Licht ein Messwert mittelt, und damit direkt seine Ruhe."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Werte werden ruhiger, weil der Sensor weniger Zeit hat zu rauschen.",
+     "begruendung": "Andersherum: Ein kurzes Fenster mittelt über weniger Licht, also schlägt das Rauschen stärker durch. Die Abbildung zeigt es an den kurzen Ablesungen, die in den Nachbarbereich rutschen."
+    },
+    {
+     "kennung": "c",
+     "text": "Mehr Messungen pro Sekunde, aber stärker streuende Werte; einzelne können in den falschen Bereich rutschen.",
+     "begruendung": "Genau der Zielkonflikt des Projekts: kurze Fenster für hohe Symbolrate gegen lange Fenster für ruhige Werte. Wo euer Aufbau die Grenze hat, klärt nur eine Messreihe."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Werte streuen stärker, dafür sinkt auch die Zahl der Messungen pro Sekunde.",
+     "begruendung": "Halb richtig, halb falsch: Die Streuung steigt, aber ein kürzeres Fenster erlaubt mehr Ablesungen pro Sekunde, nicht weniger. Sonst gäbe es keinen Zielkonflikt."
+    }
+   ]
+  },
+  {
+   "id": "me-007",
+   "niveau": "verstehen",
+   "frage": "Euer Sender schickt (255, 0, 0) an die LED, der Sensor misst aber\nr=203, g=41, b=57. Wie geht ihr damit um?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sensor reklamieren: Er müsste (255, 0, 0) anzeigen.",
+     "begruendung": "Der Sensor ist in Ordnung. Überlappende Farbfilter, Abstand und Umgebungslicht sorgen dafür, dass Messwerte nie den gesendeten Zahlen gleichen."
+    },
+    {
+     "kennung": "b",
+     "text": "Für jede Sendefarbe messen, wie sie ankommt, und künftige Messungen diesen gelernten Mustern zuordnen.",
+     "begruendung": "Genau: Kalibrieren und klassifizieren. Nicht zurückrechnen, was gesendet wurde, sondern je Farbe das typische Ankunftsmuster lernen und Neues dem nächstliegenden Muster zuordnen."
+    },
+    {
+     "kennung": "c",
+     "text": "Eine Umrechnungsformel herleiten, die aus den Messwerten die gesendeten RGB-Zahlen exakt zurückrechnet.",
+     "begruendung": "Verführerisch, aber brüchig: Die Verzerrung hängt von Abstand, Umgebungslicht und Streuung ab und ändert sich mit ihnen. Die Rückrechnung, die heute stimmt, stimmt morgen nicht mehr."
+    },
+    {
+     "kennung": "d",
+     "text": "Die LED heller einstellen, bis die Messwerte den Sendewerten entsprechen.",
+     "begruendung": "Die Zahlen leben in verschiedenen Welten: Ansteuerwerte der LED gegen Messwerte des Sensors. Keine Helligkeit macht sie deckungsgleich."
+    }
+   ]
+  },
+  {
+   "id": "me-008",
+   "niveau": "verstehen",
+   "frage": "Was gehört in das Protokoll einer Messreihe?\n(Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Was verändert wurde und was konstant blieb.",
+     "begruendung": "Richtig: Ohne diese Angabe lässt sich später nicht sagen, worauf ein Unterschied zurückgeht."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Aufbau: Abstand, Umgebungslicht, Sensoreinstellungen.",
+     "begruendung": "Richtig: Nur mit den Bedingungen ist eine Messung wiederholbar und mit anderen vergleichbar."
+    },
+    {
+     "kennung": "c",
+     "text": "Alle Messwerte, auch die unbequemen.",
+     "begruendung": "Richtig: Wer nur die schönen Werte notiert, misst nicht, sondern sammelt Belege für die eigene Hoffnung. Ausreißer sind oft die interessanteste Information."
+    },
+    {
+     "kennung": "d",
+     "text": "Wie oft gemessen wurde.",
+     "begruendung": "Richtig: Ob ein Ergebnis auf 5 oder auf 50 Wiederholungen steht, entscheidet darüber, wie belastbar es ist."
+    }
+   ]
+  },
+  {
+   "id": "me-009",
+   "niveau": "anwenden",
+   "frage": "Euer Empfänger soll Rot und Blau unterscheiden. Im Test liegt er 5-mal von 5\nrichtig. Euer Teammitglied sagt: \"Fertig, funktioniert.\" Was ist der Haken?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Nichts, fünf Treffer sind ein sauberer Beleg.",
+     "begruendung": "Bei zwei Farben schafft reines Raten fünf Treffer in Folge mit einer Wahrscheinlichkeit von rund drei Prozent. Das passiert im Semesterbetrieb ständig irgendwo."
+    },
+    {
+     "kennung": "b",
+     "text": "Fünf Treffer können bei zwei Farben noch Glück sein; erst viele Wiederholungen trennen Können von Zufall.",
+     "begruendung": "Genau: Raten trifft mit 50 Prozent je Versuch. 5 aus 5 gelingt dem Zufall in etwa jedem 32. Anlauf, 50 aus 50 praktisch nie. Deshalb sind die Abnahmen auf lange Serien geschnitten."
+    },
+    {
+     "kennung": "c",
+     "text": "Der Test hätte mit mehr als zwei Farben laufen müssen.",
+     "begruendung": "Die Aufgabe war Rot gegen Blau; mehr Farben sind eine andere, spätere Aufgabe. Der Haken liegt in der kleinen Zahl der Versuche, nicht in der Farbzahl."
+    },
+    {
+     "kennung": "d",
+     "text": "Tests am Vormittag zählen nicht, das Licht ist da anders.",
+     "begruendung": "Umgebungslicht ist ein echtes Thema, aber dafür gibt es die Kontrollmessung. Es erklärt nicht, warum fünf Versuche zu wenige sind."
+    }
+   ]
+  },
+  {
+   "id": "me-010",
+   "niveau": "verstehen",
+   "frage": "Warum legt man vor einer Messreihe fest, welches Ergebnis man erwartet, statt\neinfach zu messen und dann zu schauen?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil die Messung sonst technisch nicht funktioniert.",
+     "begruendung": "Der Sensor misst auch ohne Erwartung. Das Problem entsteht später, beim Deuten der Werte."
+    },
+    {
+     "kennung": "b",
+     "text": "Damit man weniger Messungen braucht.",
+     "begruendung": "Die nötige Zahl der Wiederholungen hängt an der Streuung und am Zufall, nicht an der Erwartung."
+    },
+    {
+     "kennung": "c",
+     "text": "Ohne vorher festgelegte Erwartung lässt sich fast jedes Ergebnis hinterher als Erfolg deuten.",
+     "begruendung": "Genau: Wer erst misst und dann entscheidet, was 'gut' heißt, biegt die Deutung unbemerkt zum Wunschergebnis. Die vorab notierte Erwartung macht aus der Messung einen ehrlichen Ja/Nein-Test."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil das Messprotokoll sonst unvollständig aussieht.",
+     "begruendung": "Es geht nicht um die Optik des Protokolls, sondern darum, sich selbst nicht zu täuschen."
+    }
+   ]
+  },
+  {
+   "id": "me-011",
+   "niveau": "erinnern",
+   "frage": "Was macht eine Messreihe aus, im Unterschied zu einer einzelnen Messung?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Dass besonders genau gemessen wird.",
+     "begruendung": "Auch eine Einzelmessung kann genau sein. Der Unterschied liegt in Wiederholung und festgehaltenen Bedingungen, nicht in der Sorgfalt des einen Blicks."
+    },
+    {
+     "kennung": "b",
+     "text": "Mehrere Messungen unter gleichen, festgehaltenen Bedingungen, bei denen gezielt höchstens eine Größe verändert wird.",
+     "begruendung": "Genau: Wiederholung fängt die Streuung ein, die dokumentierten Bedingungen machen sie wiederholbar, und die eine veränderte Größe macht Unterschiede deutbar."
+    },
+    {
+     "kennung": "c",
+     "text": "Viele Messungen von möglichst vielen verschiedenen Dingen.",
+     "begruendung": "Viel messen allein ergibt einen Datenhaufen. Ohne gleiche Bedingungen und gezielte Veränderung lässt sich daraus nichts folgern."
+    }
+   ]
+  },
+  {
+   "id": "me-012",
+   "niveau": "anwenden",
+   "frage": "Der KI-Assistent hat vorgeschlagen, die Verstärkung des Sensors zu erhöhen,\n\"das verbessert die Erkennung\". Eure saubere Messreihe zeigt das Gegenteil:\nDie Erkennungsrate sinkt. Wie geht ihr vor?\n(Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Messreihe samt Bedingungen dokumentieren.",
+     "begruendung": "Richtig: Ohne festgehaltene Bedingungen ist der Widerspruch später weder nachvollziehbar noch wiederholbar."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Messung misstrauen; die KI kennt solche Sensoren besser als ihr.",
+     "begruendung": "Falsch herum: Die KI kennt Sensoren dieser Art, aber nicht euren Aufbau. Die Messung am echten Gerät ist die Ground Truth, zu der kein Sprachmodell Zugang hat."
+    },
+    {
+     "kennung": "c",
+     "text": "Kurz prüfen, ob die Messreihe sauber war: nur eine Größe verändert, genug Wiederholungen, Kontrollmessung vorhanden.",
+     "begruendung": "Richtig: Bevor man einen Vorschlag als widerlegt ablegt, gehört die eigene Messung auf den Prüfstand. Erst eine saubere Reihe trägt den Widerspruch."
+    },
+    {
+     "kennung": "d",
+     "text": "Den Fall ins Irrtumsprotokoll aufnehmen: Vorschlag, Messung, Ergebnis.",
+     "begruendung": "Richtig: Genau dafür ist das Irrtumsprotokoll da. Dokumentierte Fälle, in denen eine Messung einen KI-Vorschlag widerlegt hat, sind Prüfungsstoff und Lernertrag zugleich."
+    },
+    {
+     "kennung": "e",
+     "text": "Die höhere Verstärkung trotzdem übernehmen, der Vorschlag klang fundiert.",
+     "begruendung": "'Klang fundiert' ist keine Evidenz. Wer gegen die eigene saubere Messung entscheidet, hat das Messen aufgegeben."
+    }
+   ]
+  }
+ ]
+}

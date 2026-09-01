@@ -1,0 +1,441 @@
+{
+ "konzept": "algorithms-and-programs",
+ "fragen": [
+  {
+   "id": "aa-001",
+   "niveau": "verstehen",
+   "frage": "Im Farbkarten-Experiment habt ihr empfangen: auf die Karte schauen, Farbe\nentscheiden, Zeichen notieren, warten. Was macht diese Anleitung zu einem\nAlgorithmus?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Dass sie mit einem Computer zu tun hat.",
+     "begruendung": "Ein Algorithmus braucht keinen Computer. Ihr habt ihn von Hand ausgeführt, und er war trotzdem einer."
+    },
+    {
+     "kennung": "b",
+     "text": "Dass die Schritte so genau beschrieben sind, dass man sie ausführen kann, ohne zu verstehen, worum es geht.",
+     "begruendung": "Genau die Definition: eine eindeutige Schrittfolge, bei der keine Frage offen bleibt. Ihr wart die Maschine."
+    },
+    {
+     "kennung": "c",
+     "text": "Dass sie kurz ist.",
+     "begruendung": "Länge ist egal. Auch tausend Schritte sind ein Algorithmus, solange jeder eindeutig ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Dass sie in einer Programmiersprache geschrieben ist.",
+     "begruendung": "Das wäre erst das Programm. Der Algorithmus kann auf einem Zettel stehen."
+    }
+   ]
+  },
+  {
+   "id": "aa-002",
+   "niveau": "verstehen",
+   "frage": "Worin liegt der Unterschied zwischen einem Algorithmus und einem Programm?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein Programm ist die schwierigere Version eines Algorithmus.",
+     "begruendung": "Es geht nicht um Schwierigkeit, sondern um den Adressaten: Mensch oder Maschine."
+    },
+    {
+     "kennung": "b",
+     "text": "Ein Algorithmus rechnet, ein Programm speichert Daten.",
+     "begruendung": "Beide beschreiben Abläufe. Die Unterscheidung Rechnen gegen Speichern trifft etwas anderes."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein Programm ist derselbe Ablauf, aber so vollständig aufgeschrieben, dass eine Maschine ihn ausführen kann.",
+     "begruendung": "Genau: Ein Mensch ergänzt beim Lesen, was offensichtlich gemeint war. Eine Maschine tut das nicht, deshalb muss das Programm vollständig sein."
+    },
+    {
+     "kennung": "d",
+     "text": "Es gibt keinen: Die Wörter bedeuten dasselbe.",
+     "begruendung": "Die Nähe ist echt, der Unterschied auch: Der Kartenlauf war ein Algorithmus, aber noch kein Programm."
+    }
+   ]
+  },
+  {
+   "id": "aa-003",
+   "niveau": "anwenden",
+   "frage": "Was seht ihr an der LED, wenn dieses Programm läuft?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "code": "led.set_color(255, 0, 0)\nwait(1)\nled.set_color(0, 0, 255)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Eine Sekunde Rot, danach Blau.",
+     "begruendung": "Richtig: Zeile für Zeile, von oben nach unten. Rot, eine Sekunde warten, Blau."
+    },
+    {
+     "kennung": "b",
+     "text": "Rot und Blau gleichzeitig, also Violett.",
+     "begruendung": "Ein Programm läuft nacheinander, nicht gleichzeitig. Die zweite Farbe ersetzt die erste."
+    },
+    {
+     "kennung": "c",
+     "text": "Nur Blau, die erste Zeile wird übersprungen.",
+     "begruendung": "Übersprungen wird nichts: Rot leuchtet wirklich, und dank wait(1) lange genug, um es zu sehen."
+    }
+   ]
+  },
+  {
+   "id": "aa-004",
+   "niveau": "anwenden",
+   "frage": "Ein Team wundert sich: \"Die LED wird nie rot, dabei steht es doch da!\"\nWas ist los?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "code": "led.set_color(255, 0, 0)\nled.set_color(0, 0, 255)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die erste Zeile hat einen Fehler, sonst würde Rot leuchten.",
+     "begruendung": "Die Zeile ist korrekt und wird ausgeführt. Das Problem liegt nicht im Code, sondern im Zeitmaßstab."
+    },
+    {
+     "kennung": "b",
+     "text": "Die zweite Zeile löscht die erste rückwirkend.",
+     "begruendung": "Nichts wird rückwirkend gelöscht. Rot war da, nur eben extrem kurz."
+    },
+    {
+     "kennung": "c",
+     "text": "Rot leuchtet, aber nur für etwa eine Millisekunde; ohne wait ist das für Augen unsichtbar.",
+     "begruendung": "Genau: Das Programm ist richtig, es ist nur zu schnell. Eure Augen sind langsam, die Maschine ist es nicht. Anweisungen kosten nur dann sichtbare Zeit, wenn es dasteht."
+    },
+    {
+     "kennung": "d",
+     "text": "Die LED kann nicht so schnell von Rot auf Blau wechseln.",
+     "begruendung": "Doch, die LED schaltet weit schneller als jedes Auge. Der Engpass ist die Wahrnehmung, nicht die Hardware."
+    }
+   ]
+  },
+  {
+   "id": "aa-005",
+   "niveau": "erinnern",
+   "frage": "Welche Rolle spielt der Teil (255, 0, 0) in dieser Zeile?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "code": "led.set_color(255, 0, 0)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Er sagt, welches Ding angesprochen wird.",
+     "begruendung": "Das leistet led vor dem Punkt. Die Klammern kommen erst danach."
+    },
+    {
+     "kennung": "b",
+     "text": "Er sagt, mit welchen Werten die Anweisung ausgeführt wird: voller Rotanteil, kein Grün, kein Blau.",
+     "begruendung": "Richtig: led sagt welches Ding, set_color sagt was es tun soll, die Klammer sagt mit welchen Werten. Andere Werte, anderes Ergebnis."
+    },
+    {
+     "kennung": "c",
+     "text": "Er ist ein Kommentar für Menschen und wird nicht ausgeführt.",
+     "begruendung": "Kommentare sehen anders aus (mit #). Diese Werte bestimmen unmittelbar, was die LED tut."
+    }
+   ]
+  },
+  {
+   "id": "aa-006",
+   "niveau": "anwenden",
+   "frage": "Welchen Vorteil bringt die erste Zeile bright = 255?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "code": "bright = 255\nled.set_color(bright, 0, 0)\nwait(1)\nled.set_color(bright, bright, 0)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Das Programm läuft dadurch schneller.",
+     "begruendung": "Auf das Tempo hat ein benannter Wert keinen messbaren Einfluss. Der Gewinn liegt woanders."
+    },
+    {
+     "kennung": "b",
+     "text": "Ohne sie würde die LED gar nicht leuchten.",
+     "begruendung": "Man könnte überall direkt 255 schreiben, und es leuchtete genauso. Der Name ist eine Entscheidung, keine Notwendigkeit."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Helligkeit lässt sich an genau einer Stelle ändern, statt an jeder Verwendung.",
+     "begruendung": "Genau: Ein Wert mit einem Namen. Wer dimmen will, ändert eine Zeile, und beide set_color-Aufrufe ziehen mit."
+    },
+    {
+     "kennung": "d",
+     "text": "Namen sind Pflicht: Zahlen dürfen nicht direkt in Klammern stehen.",
+     "begruendung": "Zahlen direkt sind erlaubt und oft in Ordnung. Der Name lohnt sich dort, wo derselbe Wert mehrfach vorkommt oder sich ändern soll."
+    }
+   ]
+  },
+  {
+   "id": "aa-007",
+   "niveau": "anwenden",
+   "frage": "Wie lange läuft dieses Programm ungefähr, und was zeigt die LED?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "code": "colours = [red, green, blue, yellow]\nfor colour in colours:\n    led.set_color(colour)\n    wait(1)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Eine Sekunde: Die Schleife zeigt alle vier Farben gleichzeitig.",
+     "begruendung": "Eine Schleife läuft nacheinander, nicht gleichzeitig: ein Durchlauf je Wert."
+    },
+    {
+     "kennung": "b",
+     "text": "Etwa vier Sekunden: vier Durchläufe, je eine Farbe für eine Sekunde.",
+     "begruendung": "Genau: Dieselben zwei Zeilen laufen viermal, mit jeweils dem nächsten Wert aus der Liste. Auch Wiederholung kostet Zeit."
+    },
+    {
+     "kennung": "c",
+     "text": "Unendlich: Eine for-Schleife läuft, bis man sie abbricht.",
+     "begruendung": "Diese Schleife hat ein eingebautes Ende: Sie läuft genau einmal je Listeneintrag, dann ist Schluss."
+    },
+    {
+     "kennung": "d",
+     "text": "Vier Sekunden, aber nur die letzte Farbe Gelb ist je zu sehen.",
+     "begruendung": "Dank wait(1) im Schleifenkörper bleibt jede Farbe eine volle Sekunde sichtbar, nicht nur die letzte."
+    }
+   ]
+  },
+  {
+   "id": "aa-008",
+   "niveau": "anwenden",
+   "frage": "Wie lange läuft dieses Programm insgesamt, ungefähr?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "code": "colours = [red, yellow, blue]\nfor colour in colours:\n    led.set_color(colour)\n    if colour == yellow:\n        wait(3)\n    else:\n        wait(1)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "3 Sekunden",
+     "begruendung": "Das wäre eine Sekunde je Durchlauf. Der Gelb-Durchlauf wartet aber drei."
+    },
+    {
+     "kennung": "b",
+     "text": "9 Sekunden",
+     "begruendung": "Das wären drei Sekunden je Durchlauf. Nur Gelb wartet drei, die anderen eine."
+    },
+    {
+     "kennung": "c",
+     "text": "5 Sekunden",
+     "begruendung": "Genau: Rot 1, Gelb 3, Blau 1. Die Bedingung entscheidet je Durchlauf, welcher wait-Zweig läuft."
+    },
+    {
+     "kennung": "d",
+     "text": "4 Sekunden",
+     "begruendung": "Fast: Wer if und else je einmal zählt, kommt auf 3 plus 1. Aber jeder der drei Durchläufe wartet, also 1 plus 3 plus 1."
+    }
+   ]
+  },
+  {
+   "id": "aa-009",
+   "niveau": "erinnern",
+   "frage": "Aus welchen Bausteinen ist jedes Programm gebaut? Kreuzt alle an, die dazugehören.\n(Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Anweisungen, die nacheinander laufen.",
+     "begruendung": "Richtig: die Grundlage. Zeile für Zeile, von oben nach unten."
+    },
+    {
+     "kennung": "b",
+     "text": "Werte, die einen Namen bekommen.",
+     "begruendung": "Richtig: eine Stelle zum Ändern statt vieler."
+    },
+    {
+     "kennung": "c",
+     "text": "Wiederholung.",
+     "begruendung": "Richtig: Dieselben Zeilen laufen mehrmals, mit jeweils dem nächsten Wert."
+    },
+    {
+     "kennung": "d",
+     "text": "Bedingungen: etwas passiert nur, wenn.",
+     "begruendung": "Richtig: Damit reagiert ein Programm, statt stur abzuspulen. Alle vier zusammen sind das ganze Baumaterial."
+    }
+   ]
+  },
+  {
+   "id": "aa-010",
+   "niveau": "verstehen",
+   "frage": "Euer Programm bricht mit dieser Meldung ab. Was fangt ihr damit an?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "code": "traceback (most recent call last):\n  file \"blink.py\", line 7, in <module>\n    led.set_colour(255, 0, 0)\nattributeerror: no attribute 'set_colour'",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Der Computer ist abgestürzt; neu starten und noch einmal probieren.",
+     "begruendung": "Nichts ist abgestürzt. Die Maschine hat geordnet gestoppt und präzise gemeldet, woran."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Meldung sagt Datei, Zeile und Ursache: In Zeile 7 steht set_colour, das es nicht gibt; gemeint war set_color.",
+     "begruendung": "Genau: Eine Fehlermeldung ist eine Auskunft, kein Urteil. Laut vorlesen, sie sagt meist wortwörtlich, was falsch ist."
+    },
+    {
+     "kennung": "c",
+     "text": "Das Programm ist zu schwer für den Rechner, es braucht bessere Hardware.",
+     "begruendung": "Mit Leistung hat das nichts zu tun. Es steht ein Name im Code, den es nicht gibt, mehr sagt die Meldung nicht."
+    },
+    {
+     "kennung": "d",
+     "text": "Solche Meldungen kann man ignorieren, wenn die LED trotzdem irgendwann leuchtet.",
+     "begruendung": "Nach diesem Abbruch leuchtet nichts mehr: Das Programm endet in Zeile 7. Die Meldung ist der schnellste Weg zur Lösung, nicht Lärm."
+    }
+   ]
+  },
+  {
+   "id": "aa-011",
+   "niveau": "anwenden",
+   "frage": "Wann endet dieses Programm?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "code": "while True:\n    led.set_color(255, 0, 0)\n    wait(1)\n    led.set_color(0, 0, 255)\n    wait(1)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Wenn beide Farben einmal gezeigt wurden.",
+     "begruendung": "Nach Blau springt die Schleife wieder an ihren Anfang. Ein Durchlauf ist kein Ende."
+    },
+    {
+     "kennung": "b",
+     "text": "Nach einer Weile von selbst, wenn der Rechner merkt, dass nichts Neues passiert.",
+     "begruendung": "Die Maschine merkt nichts und beurteilt nichts. Sie führt aus, was dasteht, und da steht: für immer."
+    },
+    {
+     "kennung": "c",
+     "text": "Nie: Die Bedingung ist immer wahr, und im Schleifenkörper gibt es keinen Ausweg.",
+     "begruendung": "Genau: Ein Ablauf endet nur, wenn sein Ende erreichbar ist. Diese Schleife blinkt, bis jemand von außen abbricht. Fürs Dauerblinken ist das sogar gewollt; als Empfänger-Hauptschleife braucht sie eine Abbruchbedingung."
+    },
+    {
+     "kennung": "d",
+     "text": "Nach genau 100 Wiederholungen, das ist die eingebaute Obergrenze.",
+     "begruendung": "Es gibt keine eingebaute Obergrenze. Was nicht dasteht, passiert nicht."
+    }
+   ]
+  },
+  {
+   "id": "aa-012",
+   "niveau": "verstehen",
+   "frage": "Beim Zahlenraten zwischen 1 und 100 führen zwei Verfahren sicher zum Ziel:\nalle Zahlen einzeln durchfragen (bis zu 99 Fragen) oder den Bereich halbieren\n(höchstens 7 Fragen). Was folgt daraus?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Nur das Halbieren ist ein richtiger Algorithmus.",
+     "begruendung": "Beide sind korrekte Algorithmen: eindeutige Schritte, sicheres Ende, richtiges Ergebnis. Sie unterscheiden sich woanders."
+    },
+    {
+     "kennung": "b",
+     "text": "Eine Lösung kann richtig und trotzdem unbrauchbar sein; Verfahren vergleicht man über ihren Aufwand.",
+     "begruendung": "Genau: Richtigkeit ist die Mindestanforderung, danach zählt der Aufwand, hier die Zahl der Fragen. Bei eurer Übertragung wird daraus die Frage, wie viele Sekunden eine Datei braucht."
+    },
+    {
+     "kennung": "c",
+     "text": "Bei modernen Computern spielt der Unterschied keine Rolle mehr.",
+     "begruendung": "Schnelle Rechner verschieben die Grenze, heben sie aber nicht auf: 99 gegen 7 wird bei 1000 Zahlen zu 999 gegen 10. Der Abstand wächst mit dem Problem."
+    },
+    {
+     "kennung": "d",
+     "text": "Das langsame Verfahren ist sicherer und deshalb vorzuziehen.",
+     "begruendung": "Beide sind gleich sicher, sie enden beide garantiert mit der richtigen Zahl. Langsamkeit ist hier kein Sicherheitsgewinn, nur Aufwand."
+    }
+   ]
+  },
+  {
+   "id": "aa-013",
+   "niveau": "verstehen",
+   "frage": "Beim Sortieren im Plenum galt: auf den rechten Nachbarn schauen, wer größer ist,\ntauscht, am Reihenende wieder von vorn. Woran erkennt dieser Ablauf, dass er\nfertig ist?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Nach genau einem Durchlauf durch die Reihe.",
+     "begruendung": "Ein Durchlauf schiebt nur die größte Person ganz nach rechts. Der Rest kann noch durcheinander stehen."
+    },
+    {
+     "kennung": "b",
+     "text": "Wenn die Ausführenden sehen, dass die Reihe sortiert aussieht.",
+     "begruendung": "'Sieht sortiert aus' ist ein Urteil, und Urteilen war verboten: Ihr wart Maschinen. Das Ende muss aus den Regeln selbst folgen."
+    },
+    {
+     "kennung": "c",
+     "text": "An einem kompletten Durchlauf, in dem niemand mehr getauscht hat.",
+     "begruendung": "Genau: Das ist die eingebaute Terminierungsbedingung. Kein Tausch im ganzen Durchlauf heißt: Es gibt nichts mehr zu sortieren. Ohne so eine Bedingung liefe der Ablauf ewig weiter."
+    },
+    {
+     "kennung": "d",
+     "text": "Gar nicht: Jemand von außen muss abbrechen.",
+     "begruendung": "Das wäre eine Schleife ohne Ausweg. Diese hier hat einen, und genau das unterscheidet sie von while True ohne Abbruchbedingung."
+    }
+   ]
+  },
+  {
+   "id": "aa-014",
+   "niveau": "anwenden",
+   "frage": "Was zeigt die LED, wenn dieses Programm läuft?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "code": "led.set_color(255, 0, 0)\nled.set_color(0, 0, 255)\nwait(1)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Eine Sekunde Rot, dann Blau: Das wait(1) gehört erkennbar zur roten Phase.",
+     "begruendung": "Die Maschine ordnet nichts zu und nichts um. Sie führt die Zeilen der Reihe nach aus, und die Pause steht nach beiden Farbwechseln."
+    },
+    {
+     "kennung": "b",
+     "text": "Eine Sekunde Blau, dann Rot.",
+     "begruendung": "Die Reihenfolge im Programm ist Rot vor Blau. Getauscht wird nur sichtbar, was im Code getauscht wird."
+    },
+    {
+     "kennung": "c",
+     "text": "Rot nur für einen Sekundenbruchteil, dann eine Sekunde Blau.",
+     "begruendung": "Genau: Rot wird sofort von Blau überschrieben, erst danach wartet die Maschine, mit blauer LED. Dieselben drei Zeilen mit der Pause in der Mitte wären ein anderes Programm: Die Reihenfolge ist Teil des Programms."
+    },
+    {
+     "kennung": "d",
+     "text": "Das Programm ist fehlerhaft und startet nicht, weil wait(1) als letzte Zeile nicht erlaubt ist.",
+     "begruendung": "Jede dieser Zeilen ist für sich gültig, in jeder Reihenfolge. Das Programm läuft; es tut nur nicht, was vielleicht gemeint war."
+    }
+   ]
+  }
+ ]
+}

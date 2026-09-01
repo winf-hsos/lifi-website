@@ -1,0 +1,377 @@
+{
+ "konzept": "number-systems",
+ "fragen": [
+  {
+   "id": "ns-001",
+   "niveau": "erinnern",
+   "frage": "Warum bedeutet die Ziffernfolge 123 einhundertdreiundzwanzig?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil die Ziffern zusammen ein festes Symbol für diese Zahl bilden.",
+     "begruendung": "Dann bräuchte jede Zahl ihr eigenes Symbol, und ihr müsstet unendlich viele lernen. Der Trick des Stellenwertsystems ist gerade, mit zehn Ziffern jede Zahl zu schreiben."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil jede Stelle eine Zehnerpotenz wert ist: 1 mal 100 plus 2 mal 10 plus 3 mal 1.",
+     "begruendung": "Genau: Die Ziffer sagt wie oft, die Stelle sagt was. Dieselbe Ziffer 1 ist vorn hundert wert und hinten eins. Diese Bauanleitung heißt Stellenwertsystem, und sie funktioniert mit jeder Basis, nicht nur mit der Zehn."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil die Ziffern der Größe nach aufsteigen.",
+     "begruendung": "Zufall dieses Beispiels. 321 funktioniert nach derselben Regel: 3 mal 100 plus 2 mal 10 plus 1 mal 1."
+    },
+    {
+     "kennung": "d",
+     "text": "Das lässt sich nicht begründen, es ist einfach so.",
+     "begruendung": "Es ist eine Vereinbarung, und die lässt sich vollständig erklären. Wer sie kennt, kann Zahlen zu jeder Basis lesen, auch zur Basis 2 oder 16."
+    }
+   ]
+  },
+  {
+   "id": "ns-002",
+   "niveau": "verstehen",
+   "frage": "Was ist an der Basis 10 unseres Zahlensystems besonders?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie ist mathematisch die beste Basis.",
+     "begruendung": "Mathematisch ist keine Basis ausgezeichnet. Jede Basis ab 2 kann jede Zahl darstellen, nach derselben Bauanleitung."
+    },
+    {
+     "kennung": "b",
+     "text": "Computer könnten mit anderen Basen nicht rechnen.",
+     "begruendung": "Computer rechnen sogar mit einer anderen: der Basis 2. Für sie ist die Zehn eher unpraktisch."
+    },
+    {
+     "kennung": "c",
+     "text": "Nichts, außer dass wir zehn Finger haben.",
+     "begruendung": "Genau: Die Zehn ist Anatomie, kein Naturgesetz. Ein Wesen mit acht Fingern würde zur Basis 8 zählen und käme genauso weit. Die Bauanleitung (Ziffer mal Stellenwert, aufsummiert) bleibt bei jeder Basis dieselbe."
+    },
+    {
+     "kennung": "d",
+     "text": "Nur zur Basis 10 gibt es die Ziffer 0.",
+     "begruendung": "Jede Basis braucht die Null, sonst ließe sich eine leere Stelle nicht von einer fehlenden unterscheiden. Zur Basis R gibt es die Ziffern 0 bis R minus 1."
+    }
+   ]
+  },
+  {
+   "id": "ns-003",
+   "niveau": "anwenden",
+   "frage": "Welche Zahl bedeutet die Binärfolge 110?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "110, die Schreibweise ändert nichts am Wert.",
+     "begruendung": "Die Schreibweise ändert alles: Dieselben Ziffern bedeuten je nach Basis verschiedene Zahlen. Binär gelesen sind die Stellen 4, 2 und 1 wert."
+    },
+    {
+     "kennung": "b",
+     "text": "6, denn 1 mal 4 plus 1 mal 2 plus 0 mal 1.",
+     "begruendung": "Genau, dieselbe Bauanleitung wie im Dezimalsystem, nur mit Zweierpotenzen als Stellenwerten: 4, 2, 1 statt 100, 10, 1."
+    },
+    {
+     "kennung": "c",
+     "text": "3, denn es sind drei Ziffern.",
+     "begruendung": "Die Länge einer Zahl ist nicht ihr Wert. 999 hat auch drei Ziffern und ist nicht 3."
+    },
+    {
+     "kennung": "d",
+     "text": "12, irgendetwas mit mal 2 wegen der Basis.",
+     "begruendung": "Geraten. Umgerechnet wird über die Stellenwerte: ganz rechts 1, dann 2, dann 4, dann 8 und so weiter, jede Stelle mal ihre Ziffer, alles aufsummiert."
+    }
+   ]
+  },
+  {
+   "id": "ns-004",
+   "niveau": "anwenden",
+   "frage": "Ihr zählt binär: 0, 1, 10, 11, 100, 101, und dann? Welche Zahl kommt als\nnächstes, und warum?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "102, die letzte Stelle zählt einfach weiter.",
+     "begruendung": "Zur Basis 2 gibt es nur die Ziffern 0 und 1. Eine 2 kann in keiner Binärzahl vorkommen, genau wie das Dezimalsystem keine eigene Ziffer für die Zehn hat."
+    },
+    {
+     "kennung": "b",
+     "text": "1000, nach 101 sind die Stellen voll.",
+     "begruendung": "Zu früh übergelaufen: 101 ist die 5, danach kommt die 6, und die braucht noch keine vierte Stelle. Erst nach 111 (der 7) geht es mit 1000 weiter."
+    },
+    {
+     "kennung": "c",
+     "text": "110: Die letzte Stelle läuft über und reicht eine 1 weiter, wie beim Zählen von 09 auf 10.",
+     "begruendung": "Genau: Zählen funktioniert in jeder Basis gleich. Ist die höchste Ziffer erreicht, springt die Stelle auf 0, und die nächste Stelle zählt eins hoch. Binär passiert das nur viel öfter, weil nach der 1 schon Schluss ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Das lässt sich nicht sagen, binär zählt man nicht der Reihe nach.",
+     "begruendung": "Doch, Zahlen sind Zahlen: Die Folge oben ist schlicht 0, 1, 2, 3, 4, 5, nur anders geschrieben."
+    }
+   ]
+  },
+  {
+   "id": "ns-005",
+   "niveau": "anwenden",
+   "frage": "Ein Comicwesen mit acht Fingern schreibt die Zahl 123 in seinem\nAchtersystem. Welche Zahl ist das in unserem Zehnersystem?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "123, Zahlen sind überall gleich.",
+     "begruendung": "Die Zahl dahinter ist überall gleich, ihre Schreibweise nicht. Dieselben Ziffern bedeuten zur Basis 8 etwas anderes, weil die Stellen 64, 8 und 1 wert sind."
+    },
+    {
+     "kennung": "b",
+     "text": "83, denn 1 mal 64 plus 2 mal 8 plus 3 mal 1.",
+     "begruendung": "Genau: gleiche Bauanleitung, andere Stellenwerte. Statt 100, 10, 1 sind die Stellen 64, 8, 1 wert, also Achterpotenzen. Wer das einmal gerechnet hat, kann jede Basis lesen."
+    },
+    {
+     "kennung": "c",
+     "text": "24, denn 1 plus 2 plus 3 mal die Basis 8 geteilt durch... irgendwie so.",
+     "begruendung": "Die Ziffern werden nicht addiert und dann mit der Basis verrechnet. Jede Ziffer wird einzeln mit ihrem Stellenwert multipliziert, dann wird summiert."
+    },
+    {
+     "kennung": "d",
+     "text": "Das Achtersystem kann die Zahl 123 gar nicht darstellen.",
+     "begruendung": "Jede Basis ab 2 kann jede Zahl darstellen. Die Ziffern 1, 2 und 3 sind zur Basis 8 sogar alle erlaubt, verboten wären erst 8 und 9."
+    }
+   ]
+  },
+  {
+   "id": "ns-006",
+   "niveau": "verstehen",
+   "frage": "Das Wort „Bit\" ist euch jetzt zweimal begegnet: als Maß für Information\n(eine Ja/Nein-Antwort) und als Binärziffer (eine 0 oder 1). Wie passen\ndie beiden zusammen?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Gar nicht, das Wort wird zufällig doppelt benutzt.",
+     "begruendung": "Kein Zufall: Eine Binärziffer kann genau zwei Werte annehmen und trägt damit genau die Information einer Ja/Nein-Antwort. Die Ziffer ist der Behälter, die Information der Inhalt."
+    },
+    {
+     "kennung": "b",
+     "text": "Eine Binärziffer hat zwei mögliche Werte und fasst darum genau eine Ja/Nein-Antwort: Der Behälter ist nach dem Inhalt benannt.",
+     "begruendung": "Genau. Und die Unterscheidung bleibt nützlich: Ein Behälter kann auch halbleer sein. Eine Binärziffer, deren Wert fast sicher feststeht, trägt weniger als ein Bit Information, das war die Pointe der schiefen Fragen."
+    },
+    {
+     "kennung": "c",
+     "text": "Das Informationsmaß ist veraltet, heute meint Bit nur noch die Ziffer.",
+     "begruendung": "Beide Bedeutungen sind lebendig. Wer Kompression verstehen will, braucht sogar beide gleichzeitig: Dort werden Ziffern gespart, weil sie weniger als ein Bit Information trugen."
+    },
+    {
+     "kennung": "d",
+     "text": "Ein Bit Information braucht immer mehrere Binärziffern.",
+     "begruendung": "Umgekehrt wird ein Schuh draus: Eine Ziffer fasst höchstens ein Bit. Mehrere Ziffern braucht, wer mehr als ein Bit übertragen will."
+    }
+   ]
+  },
+  {
+   "id": "ns-007",
+   "niveau": "erinnern",
+   "frage": "Was ist ein Byte, und wie viele verschiedene Werte kann es annehmen?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Acht Bit, also acht verschiedene Werte.",
+     "begruendung": "Acht Bit stimmt, aber die Werte multiplizieren sich: Jede der acht Stellen verdoppelt die Möglichkeiten. 2 hoch 8 sind 256, nicht 8."
+    },
+    {
+     "kennung": "b",
+     "text": "Die kleinste Zahl, die ein Computer speichern kann.",
+     "begruendung": "Das Byte ist eine Verpackungseinheit, keine Zahl. Es ist die übliche kleinste adressierbare Einheit im Speicher, und was die acht Bit darin bedeuten, entscheidet die Vereinbarung."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein Paket aus acht Bit, mit 2 hoch 8 gleich 256 möglichen Werten.",
+     "begruendung": "Genau: acht Stellen zur Basis 2, jede verdoppelt die Möglichkeiten, zusammen 256. Als Zahl gelesen reicht ein Byte von 0 bis 255, und genau deshalb laufen eure Farbkanäle von 0 bis 255."
+    },
+    {
+     "kennung": "d",
+     "text": "Tausend Bit, daher kommt das Kilobyte.",
+     "begruendung": "Ein Byte sind acht Bit. Das Kilobyte ist die nächste Verpackungsstufe darüber, tausend Byte."
+    }
+   ]
+  },
+  {
+   "id": "ns-008",
+   "niveau": "anwenden",
+   "frage": "Hexadezimal ist das Stellenwertsystem zur Basis 16 mit den Ziffern 0 bis\n9 und A bis F. Warum passt ein Byte in genau zwei Hexadezimalstellen?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Zufall der Geschichte, es hätte auch anders kommen können.",
+     "begruendung": "Es ist Arithmetik, kein Zufall: 16 mal 16 ist genau 256. Gerade deshalb hat sich die Basis 16 als Kurzschrift für Bytes durchgesetzt."
+    },
+    {
+     "kennung": "b",
+     "text": "Eine Hexziffer fasst 16 Werte, also genau 4 Bit; zwei Ziffern fassen 8 Bit, und 16 mal 16 ist 256.",
+     "begruendung": "Genau, und deshalb ist Hex die Kurzschrift für Bytes: Menschen lesen AC leichter als 10101100, und beides ist die 172. Die Farbe #AC8909 ist schlicht drei Bytes, je zwei Stellen."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil A bis F für die Bits stehen.",
+     "begruendung": "A bis F sind gewöhnliche Ziffern mit den Werten 10 bis 15. Sie werden gebraucht, weil die Basis 16 sechzehn verschiedene Ziffern verlangt und unsere zehn nicht reichen."
+    },
+    {
+     "kennung": "d",
+     "text": "Es passt nicht genau, es ist eine Näherung.",
+     "begruendung": "Es passt exakt: 2 hoch 8 gleich 256 gleich 16 hoch 2. Ganze Basen, ganze Bits, kein Rest."
+    }
+   ]
+  },
+  {
+   "id": "ns-009",
+   "niveau": "anwenden",
+   "frage": "Welchen Wert hat die Hexadezimalzahl FF?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "1515, denn F ist die 15.",
+     "begruendung": "Die Ziffernwerte werden nicht hintereinander geschrieben, sondern mit den Stellenwerten verrechnet: 15 mal 16 plus 15 mal 1."
+    },
+    {
+     "kennung": "b",
+     "text": "30, denn 15 plus 15.",
+     "begruendung": "Die linke Stelle ist Sechzehner wert, nicht Einer: 15 mal 16 plus 15 mal 1, nicht 15 plus 15."
+    },
+    {
+     "kennung": "c",
+     "text": "255, denn 15 mal 16 plus 15 mal 1, der größte Wert eines Bytes.",
+     "begruendung": "Genau. FF ist das volle Byte, binär 11111111. Deshalb bedeutet die Farbe #FF0000 volles Rot: erster Kanal auf Maximum, die anderen auf null."
+    },
+    {
+     "kennung": "d",
+     "text": "160, denn F liegt nahe an der 10, also ungefähr 10 mal 16.",
+     "begruendung": "F ist exakt die 15, nicht ungefähr die 10. Stellenwertsysteme runden nicht."
+    }
+   ]
+  },
+  {
+   "id": "ns-010",
+   "niveau": "verstehen",
+   "frage": "Warum rechnen Computer zur Basis 2 und nicht gleich zur Basis 10?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil Computer nur einfache Mathematik beherrschen.",
+     "begruendung": "Mit der Mathematik hat es nichts zu tun, die ist in jeder Basis dieselbe. Es geht um die Physik der Bauteile."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil zwei Zustände den größten Abstand haben und sich darum am zuverlässigsten unterscheiden lassen, milliardenfach und fehlerfrei.",
+     "begruendung": "Genau, und das kennt ihr von eurer Strecke: Je mehr Stufen auf denselben Wertebereich verteilt werden, desto kleiner die Abstände und desto eher schlägt das Rauschen zu. Basis 10 hieße zehn Spannungsstufen statt zwei, mit entsprechend mehr Fehlern. An und aus ist das robusteste Alphabet, das es gibt."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil sich zur Basis 2 kürzere Zahlen ergeben.",
+     "begruendung": "Das Gegenteil stimmt: Binärzahlen sind länger, die 255 braucht acht Stellen statt drei. Der Preis wird gern bezahlt, weil jede einzelne Stelle dafür fast unzerstörbar ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Historischer Zufall, erste Computer hatten eben zwei Zustände.",
+     "begruendung": "Es gab tatsächlich Dezimalrechner, und sie sind ausgestorben, weil sie fehleranfälliger und aufwendiger waren. Die Basis 2 hat sich aus einem physikalischen Grund durchgesetzt, nicht aus Gewohnheit."
+    }
+   ]
+  },
+  {
+   "id": "ns-011",
+   "niveau": "verstehen",
+   "frage": "Eine Festplatte ist mit 1 Terabyte beschriftet, das Betriebssystem zeigt\naber nur 931 Gigabyte an. Wo sind die restlichen 69 Gigabyte?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie sind defekt und wurden ausgeblendet.",
+     "begruendung": "Es fehlt kein einziges Byte. Beide Angaben beschreiben dieselbe Menge Speicher, nur mit verschiedenen Einheiten."
+    },
+    {
+     "kennung": "b",
+     "text": "Das Betriebssystem reserviert sie für sich.",
+     "begruendung": "Systemdateien kosten etwas Platz, aber nicht sieben Prozent einer leeren Platte. Der Unterschied steckt in den Einheiten."
+    },
+    {
+     "kennung": "c",
+     "text": "Nirgends: Der Hersteller rechnet mit 1000er-Schritten, das System mit 1024er-Schritten, und 1024 ist 2 hoch 10.",
+     "begruendung": "Genau: Kilo, Mega, Giga sind dezimal je Faktor 1000; Speicher wird aber binär organisiert, in Zweierpotenzen, und 2 hoch 10 gleich 1024 liegt nahe genug an 1000, um beide zu verwechseln. Über vier Stufen summiert sich der Unterschied auf rund sieben Prozent. Die sauberen Namen für die 1024er-Schritte sind Kibi, Mebi, Gibi."
+    },
+    {
+     "kennung": "d",
+     "text": "Der Hersteller gibt absichtlich zu viel an.",
+     "begruendung": "Die Angabe stimmt, sie benutzt nur die dezimale Lesart, die günstiger klingt. Beide Lesarten sind definiert, ärgerlich ist nur, dass sie denselben Namen tragen."
+    }
+   ]
+  },
+  {
+   "id": "ns-012",
+   "niveau": "verstehen",
+   "frage": "Euer Team überträgt Buchstaben als Folgen aus vier Farben, etwa\nrot-blau-grün. Inwiefern habt ihr damit bereits ein Stellenwertsystem\ngebaut?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Gar nicht, Farben sind keine Zahlen.",
+     "begruendung": "Ziffern müssen nicht wie Zahlen aussehen. Sobald jede Farbe für einen Wert steht und die Position zählt, ist es ein Stellenwertsystem, egal wie die Ziffern aussehen."
+    },
+    {
+     "kennung": "b",
+     "text": "Vier Farben sind vier Ziffern, also die Basis 4: Drei Stellen ergeben 4 hoch 3 gleich 64 Möglichkeiten, und die Position bestimmt den Stellenwert.",
+     "begruendung": "Genau, euer Farbalphabet ist ein Zahlensystem in Verkleidung: rot-blau-grün und grün-blau-rot sind verschiedene Codewörter, weil die Stelle zählt. Die Formel N gleich k hoch n aus den Codesystemen ist dieselbe Rechnung wie die Frage, wie viele Zahlen in n Stellen zur Basis k passen."
+    },
+    {
+     "kennung": "c",
+     "text": "Nur wenn die Farben in einer festen Reihenfolge gesendet werden.",
+     "begruendung": "Eine feste Reihenfolge wäre gerade kein Informationsträger. Das System lebt davon, dass jede Stelle jede Farbe tragen kann."
+    },
+    {
+     "kennung": "d",
+     "text": "Nur mit genau zwei Farben wäre es ein Stellenwertsystem.",
+     "begruendung": "Die Basis 2 ist ein Spezialfall, kein Privileg. Stellenwertsysteme funktionieren mit jeder Basis ab 2, eure vier Farben eingeschlossen."
+    }
+   ]
+  }
+ ]
+}
