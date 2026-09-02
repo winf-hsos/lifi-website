@@ -1283,7 +1283,7 @@
     "href": "concepts/number-systems.html#erläuterung-des-konzepts",
     "title": "Zahlensysteme",
     "section": "Erläuterung des Konzepts",
-    "text": "Erläuterung des Konzepts\nWarum bedeutet 123 einhundertdreiundzwanzig? Die Antwort steckt in einer Vereinbarung, die so selbstverständlich geworden ist, dass sie unsichtbar wurde, und wer sie einmal gesehen hat, kann Zahlen zu jeder Basis lesen, Bits eingeschlossen.\n\nDer Stellenwert-Trick\nIn 123 sagt die Ziffer, wie oft, und die Stelle sagt, was: 1 mal 100 plus 2 mal 10 plus 3 mal 1. Dieselbe Ziffer 1 ist vorn hundert wert und hinten eins. Diese Bauanleitung heißt Stellenwertsystem, und sie ist der einzige Grund, warum zehn Ziffern für unendlich viele Zahlen reichen. Und die Zehn selbst? Ist Anatomie: Wir haben zehn Finger. Ein Wesen mit acht Fingern hätte dieselbe Bauanleitung mit Achterpotenzen benutzt; seine 123 wäre 1 mal 64 plus 2 mal 8 plus 3 mal 1, unsere 83. Die Schreibweise einer Zahl und die Zahl selbst sind zwei verschiedene Dinge.\n\n\nZählen mit zwei Ziffern\nDie Basis 2 ist derselbe Trick am Anschlag: nur noch die Ziffern 0 und 1. Gezählt wird wie überall, nur läuft die Stelle ständig über, wie ein Kilometerzähler von 09 auf 10: 0, 1, 10, 11, 100, 101, 110, 111 ist schlicht die Folge 0 bis 7, anders geschrieben. Die Stellen sind 1, 2, 4, 8 wert, jede weitere verdoppelt. 110 ist also keine hundertzehn, sondern \\(1 \\cdot 4 + 1 \\cdot 2 + 0 \\cdot 1 = 6\\).\nWarum rechnen Computer ausgerechnet so? Nicht weil sie primitiv wären, sondern aus dem Grund, den ihr selbst gemessen habt: Je mehr Zustände auf denselben Wertebereich verteilt werden, desto kleiner die Abstände, desto eher schlägt das Rauschen zu (Signal und Rauschen). Zwei Zustände haben den größtmöglichen Abstand; an und aus ist das robusteste Alphabet, das es gibt.\n\n\nBit und Byte\nEine Binärstelle heißt Bit, kurz für binary digit, und dass ihr das Wort schon aus Symbole und Information kennt, ist kein Zufall: Eine Ziffer mit zwei möglichen Werten fasst genau eine Ja/Nein-Antwort. Der Behälter ist nach dem Inhalt benannt. Acht Bit im Paket heißen ein Byte, und weil jede Stelle die Möglichkeiten verdoppelt, kann ein Byte \\(2^8 = 256\\) Werte annehmen, als Zahl gelesen 0 bis 255. Genau deshalb laufen die Farbkanäle eurer LED von 0 bis 255: Ein Kanal ist ein Byte.\n\n\n\n\n\n\nAbbildung 16.1: Ein Byte, aufgeschnitten: acht Binärstellen mit ihren Stellenwerten. Im Beispiel sind die 64er- und die 1er-Stelle gesetzt, der Wert ist 65, und warum ausgerechnet die 65 interessant ist, verrät das Konzept Codesysteme.\n\n\n\nAm besten begreift ihr das Byte, indem ihr selbst schaltet: Im Byte Switchboard legt ihr die acht Bits einzeln um und seht live, wie die Zahl entsteht, dezimal und hexadezimal.\n\n\nHexadezimal: die Kurzschrift für Bytes\nHexadezimal ist dieselbe Bauanleitung zur Basis 16. Weil unsere zehn Ziffern nicht reichen, helfen die Buchstaben A bis F mit den Werten 10 bis 15 aus. Der Nutzen ist Arithmetik: \\(16 \\cdot 16 = 256\\), ein Byte passt also in exakt zwei Hexstellen, und Menschen lesen AC leichter als 10101100 (beides ist die 172). FF ist \\(15 \\cdot 16 + 15 = 255\\), das volle Byte. Die Farbschreibweise #AC8909 aus den Codesystemen könnt ihr damit nachrechnen: drei Bytes, je zwei Stellen.\n\n\nKilo gegen Kibi\nAuf der Festplattenpackung steht 1 Terabyte, der Rechner zeigt 931 Gigabyte an, und es fehlt trotzdem kein einziges Byte. Der Hersteller zählt dezimal in Tausenderschritten (Kilo, Mega, Giga, Tera), das Betriebssystem binär in 1024er-Schritten, denn \\(2^{10} = 1024\\) liegt verwechselbar nah an 1000. Über vier Stufen summiert sich der Unterschied auf rund sieben Prozent. Die sauberen Namen für die 1024er-Schritte sind Kibi, Mebi, Gibi und Tebi; ärgerlich ist nur, dass im Alltag beide Lesarten denselben Namen tragen.\nUnd die Pointe zum Schluss: Ihr habt längst ein Stellenwertsystem gebaut. Vier Farben sind vier Ziffern, die Position zählt, drei Stellen ergeben \\(4^3 = 64\\) Möglichkeiten. Rot-blau-grün und grün-blau-rot sind verschiedene Codewörter, aus genau demselben Grund, aus dem 123 und 321 verschiedene Zahlen sind.",
+    "text": "Erläuterung des Konzepts\nWarum bedeutet 123 einhundertdreiundzwanzig? Die Antwort steckt in einer Vereinbarung, die so selbstverständlich geworden ist, dass sie unsichtbar wurde, und wer sie einmal gesehen hat, kann Zahlen zu jeder Basis lesen, Bits eingeschlossen.\n\nDer Stellenwert-Trick\nIn 123 sagt die Ziffer, wie oft, und die Stelle sagt, was: 1 mal 100 plus 2 mal 10 plus 3 mal 1. Dieselbe Ziffer 1 ist vorn hundert wert und hinten eins. Diese Bauanleitung heißt Stellenwertsystem, und sie ist der einzige Grund, warum zehn Ziffern für unendlich viele Zahlen reichen. Und die Zehn selbst? Ist Anatomie: Wir haben zehn Finger. Ein Wesen mit acht Fingern hätte dieselbe Bauanleitung mit Achterpotenzen benutzt; seine 123 wäre 1 mal 64 plus 2 mal 8 plus 3 mal 1, unsere 83. Die Schreibweise einer Zahl und die Zahl selbst sind zwei verschiedene Dinge.\n\n\nZählen mit zwei Ziffern\nDie Basis 2 ist derselbe Trick am Anschlag: nur noch die Ziffern 0 und 1. Gezählt wird wie überall, nur läuft die Stelle ständig über, wie ein Kilometerzähler von 09 auf 10: 0, 1, 10, 11, 100, 101, 110, 111 ist schlicht die Folge 0 bis 7, anders geschrieben. Die Stellen sind 1, 2, 4, 8 wert, jede weitere verdoppelt. 110 ist also keine hundertzehn, sondern \\(1 \\cdot 4 + 1 \\cdot 2 + 0 \\cdot 1 = 6\\).\nWarum rechnen Computer ausgerechnet so? Nicht weil sie primitiv wären, sondern aus dem Grund, den ihr selbst gemessen habt: Je mehr Zustände auf denselben Wertebereich verteilt werden, desto kleiner die Abstände, desto eher schlägt das Rauschen zu (Signal und Rauschen). Zwei Zustände haben den größtmöglichen Abstand; an und aus ist das robusteste Alphabet, das es gibt.\n\n\nBit und Byte\nEine Binärstelle heißt Bit, kurz für binary digit, und dass ihr das Wort schon aus Symbole und Information kennt, ist kein Zufall: Eine Ziffer mit zwei möglichen Werten fasst genau eine Ja/Nein-Antwort. Der Behälter ist nach dem Inhalt benannt. Acht Bit im Paket heißen ein Byte, und weil jede Stelle die Möglichkeiten verdoppelt, kann ein Byte \\(2^8 = 256\\) Werte annehmen, als Zahl gelesen 0 bis 255. Genau deshalb laufen die Farbkanäle eurer LED von 0 bis 255: Ein Kanal ist ein Byte.\n\n\n\n\n\n\nAbbildung 16.1: Ein Byte, aufgeschnitten: acht Binärstellen mit ihren Stellenwerten. Im Beispiel sind die 64er- und die 1er-Stelle gesetzt, der Wert ist 65, und warum ausgerechnet die 65 interessant ist, verrät das Konzept Codesysteme.\n\n\n\nAm besten begreift ihr das Byte, indem ihr selbst schaltet: Im Byte Switchboard legt ihr die acht Bits einzeln um und seht live, wie die Zahl entsteht: die Summe der Stellenwerte, Dezimal, Hex und das ASCII-Zeichen dahinter. Mehr davon auf der Seite Demonstratoren.\n\n\nHexadezimal: die Kurzschrift für Bytes\nHexadezimal ist dieselbe Bauanleitung zur Basis 16. Weil unsere zehn Ziffern nicht reichen, helfen die Buchstaben A bis F mit den Werten 10 bis 15 aus. Der Nutzen ist Arithmetik: \\(16 \\cdot 16 = 256\\), ein Byte passt also in exakt zwei Hexstellen, und Menschen lesen AC leichter als 10101100 (beides ist die 172). FF ist \\(15 \\cdot 16 + 15 = 255\\), das volle Byte. Die Farbschreibweise #AC8909 aus den Codesystemen könnt ihr damit nachrechnen: drei Bytes, je zwei Stellen.\n\n\nKilo gegen Kibi\nAuf der Festplattenpackung steht 1 Terabyte, der Rechner zeigt 931 Gigabyte an, und es fehlt trotzdem kein einziges Byte. Der Hersteller zählt dezimal in Tausenderschritten (Kilo, Mega, Giga, Tera), das Betriebssystem binär in 1024er-Schritten, denn \\(2^{10} = 1024\\) liegt verwechselbar nah an 1000. Über vier Stufen summiert sich der Unterschied auf rund sieben Prozent. Die sauberen Namen für die 1024er-Schritte sind Kibi, Mebi, Gibi und Tebi; ärgerlich ist nur, dass im Alltag beide Lesarten denselben Namen tragen.\nUnd die Pointe zum Schluss: Ihr habt längst ein Stellenwertsystem gebaut. Vier Farben sind vier Ziffern, die Position zählt, drei Stellen ergeben \\(4^3 = 64\\) Möglichkeiten. Rot-blau-grün und grün-blau-rot sind verschiedene Codewörter, aus genau demselben Grund, aus dem 123 und 321 verschiedene Zahlen sind.",
     "crumbs": [
       "Konzepte",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Zahlensysteme</span>"
@@ -2386,13 +2386,33 @@
     ]
   },
   {
+    "objectID": "demos.html",
+    "href": "demos.html",
+    "title": "Demonstratoren",
+    "section": "",
+    "text": "Zahlensysteme\nKleine interaktive Anwendungen, die je ein Konzept des Kurses zum Anfassen machen. Jede läuft direkt im Browser, auch auf dem Handy, und eignet sich zum Ausprobieren neben den Übungsfragen. Die Sammlung wächst mit dem Semester; die Übersicht aller Demonstratoren liegt auf einer eigenen Seite.\nByte Switchboard: Acht Bits zum Umschalten, und alle Darstellungen entstehen live: die Summe der Stellenwerte, Binär in Nibbles, Dezimal, Hex und das ASCII-Zeichen dahinter. Probiert +1 bei 255 und seht den Übertrag durch alle acht Bits laufen. Passt zum Konzept Zahlensysteme.",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+    ]
+  },
+  {
+    "objectID": "demos.html#weitere-konzepte",
+    "href": "demos.html#weitere-konzepte",
+    "title": "Demonstratoren",
+    "section": "Weitere Konzepte",
+    "text": "Weitere Konzepte\nDemonstratoren zu Signal und Rauschen, zur Abtastung und zu den Codesystemen folgen, sobald sie fertig sind.",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Über dieses Projekt",
     "section": "",
     "text": "Kontakt\nDiese Website begleitet den Projektkurs im Modul Digitalisierung und Programmierung an der Hochschule Osnabrück. Ihr baut darin ein Gerät, das Daten mit sichtbarem Licht überträgt, und lernt daran, wie Computer Information darstellen, übertragen und verarbeiten, und wie man Probleme in prüfbare Teilschritte zerlegt.\nDas Modul und diese Website betreut Nicolas Meseth. Fehler auf der Website, kaputte Links oder unverständliche Erklärungen gern per Mail melden; auch Hinweise, welche Erklärung euch gefehlt hat, helfen beim Verbessern.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Über dieses Projekt</span>"
     ]
   },
   {
@@ -2402,7 +2422,7 @@
     "section": "Quellcode und Material",
     "text": "Quellcode und Material\nDie Website liegt auf GitHub: github.com/winf-hsos/lifi-website. Das 3D-Modell des Gehäuses samt OpenSCAD-Quelle findet ihr auf der Seite Das Gehäuse; es steht unter CC0 und darf ohne Bedingungen verwendet und verändert werden.\nEine ältere Fassung des LiFi-Projekts mit anderer Hardware ist unter docs.lifi-project.de dokumentiert. Sie diente dieser Neuauflage als Ideengeber, die Inhalte hier sind aber eigenständig.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Über dieses Projekt</span>"
     ]
   },
   {
@@ -2412,7 +2432,7 @@
     "section": "Lizenz und Transparenz",
     "text": "Lizenz und Transparenz\nDie Inhalte dieser Website stehen unter CC BY-SA 4.0: Ihr dürft sie teilen und weiterverwenden, mit Namensnennung und unter gleichen Bedingungen.\nBilder auf den Folien, die mit KI-Modellen erzeugt wurden, sind dort jeweils mit einer Fußnote gekennzeichnet. Auch beim Erstellen der Materialien dieses Kurses kommen KI-Assistenten zum Einsatz, so wie ihr sie im Kurs selbst benutzt; geprüft und verantwortet werden die Inhalte vom Lehrenden.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Über dieses Projekt</span>"
     ]
   }
 ]
