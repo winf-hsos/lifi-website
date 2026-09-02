@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -350,9 +379,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Auf dieser Seite</h2>
    
   <ul>
-  <li><a href="#signal-und-rauschen" id="toc-signal-und-rauschen" class="nav-link active" data-scroll-target="#signal-und-rauschen">Signal und Rauschen</a></li>
+  <li><a href="#symbole-und-information" id="toc-symbole-und-information" class="nav-link active" data-scroll-target="#symbole-und-information">Symbole und Information</a></li>
+  <li><a href="#signal-und-rauschen" id="toc-signal-und-rauschen" class="nav-link" data-scroll-target="#signal-und-rauschen">Signal und Rauschen</a></li>
   <li><a href="#abtastung-und-synchronisation" id="toc-abtastung-und-synchronisation" class="nav-link" data-scroll-target="#abtastung-und-synchronisation">Abtastung und Synchronisation</a></li>
   <li><a href="#zahlensysteme" id="toc-zahlensysteme" class="nav-link" data-scroll-target="#zahlensysteme">Zahlensysteme</a></li>
+  <li><a href="#codesysteme" id="toc-codesysteme" class="nav-link" data-scroll-target="#codesysteme">Codesysteme</a></li>
   <li><a href="#weitere-konzepte" id="toc-weitere-konzepte" class="nav-link" data-scroll-target="#weitere-konzepte">Weitere Konzepte</a></li>
   </ul>
 </nav>
@@ -380,6 +411,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Kleine interaktive Anwendungen, die je ein Konzept des Kurses zum Anfassen machen. Jede läuft direkt im Browser, auch auf dem Handy, und eignet sich zum Ausprobieren neben den Übungsfragen. Die Sammlung wächst mit dem Semester; die <a href="https://winf-hsos.github.io/lifi-concept-demos/">Übersicht aller Demonstratoren</a> liegt auf einer eigenen Seite.</p>
+<section id="symbole-und-information" class="level2">
+<h2 class="anchored" data-anchor-id="symbole-und-information">Symbole und Information</h2>
+<p><strong><a href="https://winf-hsos.github.io/lifi-concept-demos/question-game/">Question Game</a></strong>: Das Kinderspiel „Wer ist es?” als Informationsmessgerät. Eines von 16 Gesichtern ist das Geheimnis, also stecken <span class="math inline">\(H = \log_2(16) = 4\)</span> Bit Unsicherheit darin. Neun Merkmalfragen von Brille bis Haarfarbe stehen bereit; jede Antwort schrumpft die Menge, und ein Popup rechnet vor, was sie wert war: <span class="math inline">\(I = H_1 - H_2\)</span>, samt Erwartungswert der Frage. Wer die Gesichter zählt und immer nahe der Hälfte fragt, holt ein Bit je Frage und ist in vier Fragen fertig; wer rät, stellt meist die schlechteste aller Fragen. Passt zum Konzept <a href="./concepts/symbols-and-information.html">Symbole und Information</a>.</p>
+</section>
 <section id="signal-und-rauschen" class="level2">
 <h2 class="anchored" data-anchor-id="signal-und-rauschen">Signal und Rauschen</h2>
 <p><strong><a href="https://winf-hsos.github.io/lifi-concept-demos/distinguishability-lab/">Distinguishability Lab</a></strong>: Ihr seid der Sender auf einem verrauschten Kanal, das Signal kann Licht, Spannung oder Schall sein. Wählt ein Symbol, seht die Messkurve um seinen Pegel zittern, vergrößert das Alphabet Symbol für Symbol, dreht am Messfenster, und löst zwischendurch ein Störsignal aus. Die Fehlerquote und der Durchsatz laufen live mit: Ruhigere Werte kosten Rate, mehr Symbole kosten Abstand. Das Rauschen ist simuliert; eure echten Zahlen liefert eure eigene Strecke. Passt zum Konzept <a href="./concepts/signal-and-noise.html">Signal und Rauschen</a>.</p>
@@ -391,6 +426,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="zahlensysteme" class="level2">
 <h2 class="anchored" data-anchor-id="zahlensysteme">Zahlensysteme</h2>
 <p><strong><a href="https://winf-hsos.github.io/lifi-concept-demos/byte-switchboard/">Byte Switchboard</a></strong>: Acht Bits zum Umschalten, und alle Darstellungen entstehen live: die Summe der Stellenwerte, Binär in Nibbles, Dezimal, Hex und das ASCII-Zeichen dahinter. Probiert +1 bei 255 und seht den Übertrag durch alle acht Bits laufen. Passt zum Konzept <a href="./concepts/number-systems.html">Zahlensysteme</a>.</p>
+</section>
+<section id="codesysteme" class="level2">
+<h2 class="anchored" data-anchor-id="codesysteme">Codesysteme</h2>
+<p><strong><a href="https://winf-hsos.github.io/lifi-concept-demos/pixel-painter/">Pixel Painter</a></strong>: Ein 8×8-Bild mit einem Bit je Pixel, daneben die acht Bytes, binär und als editierbare Hexfelder. Malt, und die Bytes schreiben sich mit; tippt Hexwerte, und ihr malt mit Zahlen. Der Knopf „break a byte” kippt Bits in einem zufälligen Byte, und der Schaden trifft sichtbar genau eine Bildzeile. Passt zum Konzept <a href="./concepts/code-systems.html">Codesysteme</a>.</p>
 </section>
 <section id="weitere-konzepte" class="level2">
 <h2 class="anchored" data-anchor-id="weitere-konzepte">Weitere Konzepte</h2>

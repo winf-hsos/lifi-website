@@ -477,6 +477,7 @@ Abbildung&nbsp;17.2: Links die fertige Farbe, rechts ihre drei Anteile: viel Rot
 </figure>
 </div>
 <p>Weil sich jede Rotstufe mit jeder Grün- und Blaustufe kombinieren lässt, wird multipliziert: <span class="math inline">\(256 \cdot 256 \cdot 256 \approx 16{,}7\)</span> Millionen Farben, 24 Bit je Bildpunkt. Für euch ist das keine ferne Theorie, sondern die Schnittstelle eures Geräts: <code>led.set_color(172, 137, 9)</code> schreibt genau diese drei Anteile, eure LED mischt wie ein Bildschirm, und euer Sensor misst in denselben drei Kanälen zurück.</p>
+<p>Wie eng Bild und Bytes zusammenhängen, könnt ihr im <a href="https://winf-hsos.github.io/lifi-concept-demos/pixel-painter/">Pixel Painter</a> selbst ausprobieren, in der einfachsten Form mit einem Bit je Pixel: Malt im 8×8-Raster, und die acht Bytes schreiben sich daneben mit; tippt Hexwerte, und ihr malt mit Zahlen. Der Knopf „break a byte” zeigt nebenbei, dass ein kaputtes Byte genau eine Bildzeile trifft. Mehr davon auf der <a href="../demos.html">Übersicht aller Demonstratoren</a>.</p>
 </section>
 <section id="dieselben-bits-andere-bedeutung" class="level3">
 <h3 class="anchored" data-anchor-id="dieselben-bits-andere-bedeutung">Dieselben Bits, andere Bedeutung</h3>
