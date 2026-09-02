@@ -2384,5 +2384,35 @@
       "Python",
       "<span class='chapter-number'>33</span>  <span class='chapter-title'>Das Modul `lifi_hardware`</span>"
     ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Über dieses Projekt",
+    "section": "",
+    "text": "Kontakt\nDiese Website begleitet den Projektkurs im Modul Digitalisierung und Programmierung an der Hochschule Osnabrück. Ihr baut darin ein Gerät, das Daten mit sichtbarem Licht überträgt, und lernt daran, wie Computer Information darstellen, übertragen und verarbeiten, und wie man Probleme in prüfbare Teilschritte zerlegt.\nDas Modul und diese Website betreut Nicolas Meseth. Fehler auf der Website, kaputte Links oder unverständliche Erklärungen gern per Mail melden; auch Hinweise, welche Erklärung euch gefehlt hat, helfen beim Verbessern.",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+    ]
+  },
+  {
+    "objectID": "about.html#quellcode-und-material",
+    "href": "about.html#quellcode-und-material",
+    "title": "Über dieses Projekt",
+    "section": "Quellcode und Material",
+    "text": "Quellcode und Material\nDie Website liegt auf GitHub: github.com/winf-hsos/lifi-website. Das 3D-Modell des Gehäuses samt OpenSCAD-Quelle findet ihr auf der Seite Das Gehäuse; es steht unter CC0 und darf ohne Bedingungen verwendet und verändert werden.\nEine ältere Fassung des LiFi-Projekts mit anderer Hardware ist unter docs.lifi-project.de dokumentiert. Sie diente dieser Neuauflage als Ideengeber, die Inhalte hier sind aber eigenständig.",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+    ]
+  },
+  {
+    "objectID": "about.html#lizenz-und-transparenz",
+    "href": "about.html#lizenz-und-transparenz",
+    "title": "Über dieses Projekt",
+    "section": "Lizenz und Transparenz",
+    "text": "Lizenz und Transparenz\nDie Inhalte dieser Website stehen unter CC BY-SA 4.0: Ihr dürft sie teilen und weiterverwenden, mit Namensnennung und unter gleichen Bedingungen.\nBilder auf den Folien, die mit KI-Modellen erzeugt wurden, sind dort jeweils mit einer Fußnote gekennzeichnet. Auch beim Erstellen der Materialien dieses Kurses kommen KI-Assistenten zum Einsatz, so wie ihr sie im Kurs selbst benutzt; geprüft und verantwortet werden die Inhalte vom Lehrenden.",
+    "crumbs": [
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+    ]
   }
 ]
