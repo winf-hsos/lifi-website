@@ -421,7 +421,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Die Hardware, die ihr benutzt, stammt von der Firma Tinkerforge, und die liefert eine eigene Programmierschnittstelle mit. Damit könntet ihr direkt arbeiten. Ihr werdet es aber nicht tun, jedenfalls nicht am Anfang.</p>
+<p>Ein Modul ist in Python ein Stück fertiger Programmcode, den ihr mit einer einzigen <code>import</code>-Zeile in euer eigenes Programm hereinholt und benutzt. So arbeitet praktisch jedes Python-Programm: Für Mathematik, Zufallszahlen oder Zeitmessung schreibt niemand den Code selbst, man importiert das passende Modul. Das Wort hat übrigens nichts mit dem „Modul” aus eurem Studienplan zu tun, es ist im Studium leider doppelt belegt.</p>
+<p><code>lifi_hardware</code> ist so ein Python-Modul, geschrieben von Professor Meseth für diesen Kurs. Es enthält den Code, der mit eurem LiFi-Gerät spricht, und ihr arbeitet das ganze Semester damit.</p>
+<p>Die Hardware selbst stammt von der Firma Tinkerforge, und die liefert eine eigene Programmierschnittstelle mit. Damit könntet ihr direkt arbeiten. Ihr werdet es aber nicht tun, jedenfalls nicht am Anfang.</p>
 <section id="warum-es-das-modul-gibt" class="level2">
 <h2 class="anchored" data-anchor-id="warum-es-das-modul-gibt">Warum es das Modul gibt</h2>
 <p>So sieht ein Programm aus, das mit der Tinkerforge-Schnittstelle eine Farbe setzt und einen Messwert holt:</p>
