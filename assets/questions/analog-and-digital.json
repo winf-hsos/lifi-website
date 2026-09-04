@@ -381,6 +381,130 @@
      "begruendung": "Kalibrieren verschiebt die Grenzen an die richtigen Stellen, aber es vergrößert nicht den Abstand zwischen ihnen. Gegen zu enge Bereiche hilft keine noch so gute Kalibrierung."
     }
    ]
+  },
+  {
+   "id": "ad-013",
+   "niveau": "verstehen",
+   "frage": "Beim Digitalisieren eines Fotos entstehen aus dem stufenlosen Bild 64 × 64\nBildpunkte mit je 256 Helligkeitsstufen. Welcher der beiden Schritte ist\ndie Abtastung (sampling)?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Das Runden jeder Helligkeit auf eine der 256 vereinbarten Stufen.",
+     "begruendung": "Das ist der zweite Schnitt, die Quantisierung: Sie zerlegt den Wert. Die Abtastung zerlegt die Achse, hier also die Bildfläche."
+    },
+    {
+     "kennung": "b",
+     "text": "Das Umrechnen der fertigen Stufenwerte in Binärzahlen.",
+     "begruendung": "Die Binärdarstellung kommt erst nach beiden Schnitten; sie ändert nichts mehr daran, wie viele Punkte und Stufen es gibt."
+    },
+    {
+     "kennung": "c",
+     "text": "Das Zerlegen der stufenlosen Bildfläche in die 64 × 64 Messpunkte.",
+     "begruendung": "Genau: Die Abtastung zerlegt die Achse (Fläche oder Zeit) in endlich viele Messpunkte. Wie fein, das ist die Auflösung. Die Quantisierung zerlegt danach den gemessenen Wert in Stufen."
+    },
+    {
+     "kennung": "d",
+     "text": "Das Speichern der Bildpunkte in einer Datei mit Kopfdaten.",
+     "begruendung": "Das Speichern verpackt nur, was Abtastung und Quantisierung vorher erzeugt haben. Die beiden Schnitte sind da längst passiert."
+    }
+   ]
+  },
+  {
+   "id": "ad-014",
+   "niveau": "anwenden",
+   "frage": "Ein Graustufenbild wird mit 100 × 100 Bildpunkten und 8 Bit je Bildpunkt\ndigitalisiert. Wie groß ist die entstehende Datei?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "80.000 Byte, denn 100 · 100 · 8 ergibt 80.000.",
+     "begruendung": "Die Rechnung stimmt, aber ihr Ergebnis sind Bit, nicht Byte. Erst die Division durch 8 macht daraus die Dateigröße in Byte."
+    },
+    {
+     "kennung": "b",
+     "text": "10.000 Byte, denn 100 · 100 · 8 = 80.000 Bit, und 8 Bit sind ein Byte.",
+     "begruendung": "Genau: Punkte mal Bits je Punkt ergibt die Größe in Bit, geteilt durch 8 die Größe in Byte. Diese eine Rechnung trägt jede Dateigrößenabschätzung."
+    },
+    {
+     "kennung": "c",
+     "text": "30.000 Byte, denn jeder Bildpunkt braucht drei Farbkanäle zu je einem Byte.",
+     "begruendung": "Die drei Kanäle gehören zu Farbbildern mit 24 Bit je Punkt. Hier ist Graustufen mit 8 Bit vereinbart, also ein Byte je Punkt."
+    },
+    {
+     "kennung": "d",
+     "text": "1.250 Byte, denn die 100 · 100 Bit werden noch durch 8 geteilt.",
+     "begruendung": "Hier ist die Farbtiefe verloren gegangen: 100 · 100 zählt nur die Punkte. Jeder Punkt trägt aber 8 Bit, nicht eines."
+    }
+   ]
+  },
+  {
+   "id": "ad-015",
+   "niveau": "verstehen",
+   "frage": "Ein digitalisiertes Foto zeigt deutlich erkennbare Klötzchen, die Farben\ninnerhalb der Klötzchen wirken aber natürlich und fein abgestuft. Welcher\nSchritt der Digitalisierung war zu grob?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Abtastung: zu wenige Bildpunkte für die Fläche.",
+     "begruendung": "Genau: Klötzchen sind sichtbare Abtastpunkte. Die Farbtiefe war dagegen offenbar ausreichend, sonst wären Streifen in den Verläufen oder harte Farbsprünge zu sehen."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Quantisierung: zu wenige Stufen je Farbkanal.",
+     "begruendung": "Zu grobe Quantisierung zeigt sich anders: als Streifen in glatten Verläufen (Banding) oder als harte Farbsprünge, nicht als Klötzchen. Die Klötzchen kommen von der Abtastung."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Übertragung: Beim Kopieren der Datei hat sich Rauschen aufaddiert.",
+     "begruendung": "Digitale Kopien addieren kein Rauschen, das ist ja gerade ihr Vorteil. Aufaddiertes Rauschen wäre außerdem körnig und unregelmäßig, nicht ordentlich klötzchenförmig."
+    },
+    {
+     "kennung": "d",
+     "text": "Beide Schritte gleichermaßen: Klötzchen entstehen immer aus dem Zusammenspiel.",
+     "begruendung": "Die beiden Schnitte hinterlassen getrennte Spuren, und genau daran erkennt man sie: Klötzchen zeigen auf die Abtastung, Streifen auf die Quantisierung. Hier zeigt das Bild nur Klötzchen."
+    }
+   ]
+  },
+  {
+   "id": "ad-016",
+   "niveau": "verstehen",
+   "frage": "Warum digitalisiert man ein Bild für die Übertragung über die Lichtstrecke\nnicht einfach immer mit höchster Auflösung und 24 Bit Farbtiefe?",
+   "typ": "sc",
+   "richtig": [
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil der Farbsensor nur drei Kanäle misst und deshalb höchstens 3 Bit je Bildpunkt ankommen können.",
+     "begruendung": "Die drei Kanäle des Sensors begrenzen nicht, wie viele Bits je Bildpunkt übertragen werden können; die Bits werden ohnehin nacheinander als Symbole gesendet. Die Grenze liegt woanders."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil sich große Dateien beim Übertragen stärker verrauschen als kleine.",
+     "begruendung": "Die Fehlerwahrscheinlichkeit je Symbol hängt vom Kanal ab, nicht von der Dateigröße. Eine große Datei bietet nur mehr Gelegenheiten, sie kostet aber vor allem eines: Zeit."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil mehr als 8 Bit Farbtiefe auf dem Empfängerbildschirm nicht darstellbar sind.",
+     "begruendung": "Übliche Bildschirme zeigen gerade die 24 Bit (8 je Kanal). Die Darstellbarkeit ist nicht das Problem, sondern der Preis jedes behaltenen Bits auf dem Weg dorthin."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil jeder Bildpunkt und jede Stufe Bits kostet und die Übertragung bei 10 bis 50 bit/s sonst Stunden bis Tage dauert.",
+     "begruendung": "Genau: Punkte mal Bits je Punkt ergibt die Dateigröße, und die Symbolrate der Strecke macht daraus Übertragungszeit. Digitalisieren heißt deshalb abwägen, welches Detail die Zeit wert ist."
+    }
+   ]
   }
  ]
 }

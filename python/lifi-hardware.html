@@ -390,9 +390,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#installieren-und-aktualisieren" id="toc-installieren-und-aktualisieren" class="nav-link" data-scroll-target="#installieren-und-aktualisieren">Installieren und aktualisieren</a></li>
   <li><a href="#die-schnittstelle" id="toc-die-schnittstelle" class="nav-link" data-scroll-target="#die-schnittstelle">Die Schnittstelle</a>
   <ul class="collapse">
-  <li><a href="#led" id="toc-led" class="nav-link" data-scroll-target="#led">LED</a></li>
-  <li><a href="#sensor" id="toc-sensor" class="nav-link" data-scroll-target="#sensor">Sensor</a></li>
+  <li><a href="#die-led-der-sender" id="toc-die-led-der-sender" class="nav-link" data-scroll-target="#die-led-der-sender">Die LED (der Sender)</a></li>
+  <li><a href="#der-sensor-der-empfänger" id="toc-der-sensor-der-empfänger" class="nav-link" data-scroll-target="#der-sensor-der-empfänger">Der Sensor (der Empfänger)</a></li>
+  <li><a href="#mehr-kontrolle-wenn-ihr-sie-braucht" id="toc-mehr-kontrolle-wenn-ihr-sie-braucht" class="nav-link" data-scroll-target="#mehr-kontrolle-wenn-ihr-sie-braucht">Mehr Kontrolle, wenn ihr sie braucht</a></li>
   </ul></li>
+  <li><a href="#das-messprotokoll-und-das-cockpit" id="toc-das-messprotokoll-und-das-cockpit" class="nav-link" data-scroll-target="#das-messprotokoll-und-das-cockpit">Das Messprotokoll und das Cockpit</a></li>
   <li><a href="#schaut-hinein" id="toc-schaut-hinein" class="nav-link" data-scroll-target="#schaut-hinein">Schaut hinein</a></li>
   </ul>
 </nav>
@@ -458,26 +460,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="installieren-und-aktualisieren">Installieren und aktualisieren</h2>
 <p>Das Modul liegt in einem GitHub-Repository und wird von dort installiert:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install git+https://github.com/winf-hsos/lifi-hardware.git</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- TODO: echte GitHub-Adresse eintragen, sobald das Repository steht -->
 <p>Die Tinkerforge-Bibliothek kommt dabei als Abhängigkeit automatisch mit.</p>
 <p>Im Lauf des Semesters kann es neue Fassungen geben, etwa wenn eine Funktion dazukommt oder ein Fehler behoben wird. Den neuen Stand holt ihr euch so:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--upgrade</span> <span class="at">--force-reinstall</span> git+https://github.com/winf-hsos/lifi-hardware.git</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="die-schnittstelle" class="level2">
 <h2 class="anchored" data-anchor-id="die-schnittstelle">Die Schnittstelle</h2>
-<section id="led" class="level3">
-<h3 class="anchored" data-anchor-id="led">LED</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>led.set_color(r, g, b)          <span class="co"># Werte jeweils 0 bis 255</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Für den Einstieg genügt eine Zeile, die zwei Objekte hereinholt:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> led, sensor</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Beide verbinden sich beim ersten Gebrauch selbst mit eurem Gerät; ihr braucht keine Adressen, keine Kennungen, keine Konfiguration. Am Programmende geht die LED automatisch aus, und die Verbindung wird sauber getrennt.</p>
+<section id="die-led-der-sender" class="level3">
+<h3 class="anchored" data-anchor-id="die-led-der-sender">Die LED (der Sender)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>led.set_color(r, g, b)   <span class="co"># jeder Wert 0 bis 255</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>led.off()                <span class="co"># dasselbe wie led.set_color(0, 0, 0)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>led.color                <span class="co"># aktuelle Farbe als (r, g, b), von der Hardware gelesen</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Eine gesetzte Farbe bleibt an, bis etwas anderes kommt, auch über das Programmende eures Skripts hinaus, wenn ihr nicht aufräumt. <code>led.color</code> fragt die Hardware selbst, nicht einen gemerkten Wert; das hilft bei der Fehlersuche, wenn ihr wissen wollt, was gerade wirklich leuchtet.</p>
 </section>
-<section id="sensor" class="level3">
-<h3 class="anchored" data-anchor-id="sensor">Sensor</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>r, g, b, c <span class="op">=</span> sensor.read()      <span class="co"># vier Messwerte</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sensor.set_integration_time(ms) <span class="co"># wie lange je Messung gesammelt wird</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sensor.set_gain(factor)         <span class="co"># Empfindlichkeit</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<!-- TODO: Vollständige Referenz mit Wertebereichen, Rückgabetypen und Standardwerten
-     ergänzen, sobald das Modul steht -->
+<section id="der-sensor-der-empfänger" class="level3">
+<h3 class="anchored" data-anchor-id="der-sensor-der-empfänger">Der Sensor (der Empfänger)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>reading <span class="op">=</span> sensor.read()          <span class="co"># Reading(r, g, b, c), jeder Wert 0 bis 65535</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>r, g, b, c <span class="op">=</span> sensor.read()       <span class="co"># lässt sich direkt in vier Variablen auspacken</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sensor.set_integration_time(ms)  <span class="co"># erlaubt: 2.4, 24, 101, 154 oder 700</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>sensor.set_gain(factor)          <span class="co"># erlaubt: 1, 4, 16 oder 60</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>sensor.integration_time          <span class="co"># aktuelle Einstellung nachsehen</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>sensor.gain                      <span class="co"># aktuelle Einstellung nachsehen</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>sensor.set_light(<span class="va">True</span>)           <span class="co"># weiße Beleuchtungs-LED des Sensors</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vier Dinge muss man über den Sensor wissen. Erstens misst er vier Kanäle, nicht drei: Rot, Grün und Blau sind gefiltert, der vierte Kanal <code>c</code> (Clear) misst ungefiltert und ist deshalb der empfindlichste. Zweitens entsprechen die Messwerte nicht den gesendeten RGB-Werten; dazwischen liegen überlappende Filter, der Abstand und das Umgebungslicht, und genau deshalb kalibriert ihr. Drittens misst der Sensor in seinem eigenen Takt, eine Messung je Integrationszeit: <code>read()</code> holt die jüngste fertige Messung ab und wartet nicht. Wer öfter liest, als der Sensor misst, bekommt denselben Wert mehrfach; neue Information gibt es höchstens einmal je Integrationszeit. Viertens startet der Sensor immer in einem bekannten Zustand (Verstärkung 16, Integrationszeit 154 ms, Beleuchtungs-LED aus), damit Messreihen vergleichbar sind. Welche Einstellungen zu eurer Strecke passen, sagt euch nur eure eigene Messreihe.</p>
+<p>Die kleine weiße Beleuchtungs-LED am Sensor ist übrigens dafür gedacht, Gegenstände anzuleuchten, deren Oberflächenfarbe man messen will. Für eure Lichtstrecke stört sie nur, deshalb ist sie beim Start aus, und ihr lasst sie aus.</p>
 </section>
+<section id="mehr-kontrolle-wenn-ihr-sie-braucht" class="level3">
+<h3 class="anchored" data-anchor-id="mehr-kontrolle-wenn-ihr-sie-braucht">Mehr Kontrolle, wenn ihr sie braucht</h3>
+<p>Wer selbst bestimmen will, wann verbunden und getrennt wird, nimmt statt der zwei bequemen Objekte die Klasse dahinter:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> LifiDevice</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lifi <span class="op">=</span> LifiDevice.<span class="ex">connect</span>()      <span class="co"># findet LED und Sensor selbst</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>lifi.led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lifi.sensor.read())</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>lifi.close()                     <span class="co"># LED aus, Verbindung getrennt</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>connect()</code> kennt außerdem ein paar Optionen, etwa <code>log_file=None</code> (kein Messprotokoll) und <code>server=None</code> (kein Upload, dazu gleich mehr).</p>
+</section>
+</section>
+<section id="das-messprotokoll-und-das-cockpit" class="level2">
+<h2 class="anchored" data-anchor-id="das-messprotokoll-und-das-cockpit">Das Messprotokoll und das Cockpit</h2>
+<p>Alles, was euer Gerät tut, schreibt das Modul in eine Datei namens <code>lifi_log.jsonl</code> in dem Ordner, in dem euer Programm läuft: jede gesetzte Farbe, jede Messung, jede Einstellungsänderung, als eine Klartext-Zeile pro Ereignis. Das ist euer Messreihen-Gedächtnis, es gehört euch, und es funktioniert immer, auch ganz ohne Internet.</p>
+<p>Zusätzlich schickt das Modul dieselben Ereignisse an den Kursserver. Damit seht ihr eure eigene Strecke live im Browser, im <a href="https://lifi.uber.space/cockpit">Team-Cockpit</a>: oben, was eure LED sendet, darunter, was euer Sensor misst, auf einer gemeinsamen Zeitachse. Wenn die beiden nicht zusammenpassen, schaut ihr gerade auf euren Fehler; das Cockpit ist euer wichtigstes Werkzeug für die Fehlersuche an der Strecke. Ruft es mit eurem Teamnamen auf: <code>https://lifi.uber.space/cockpit?team=euer-team</code>.</p>
+<p>Dabei gilt volle Transparenz: Hochgeladen wird exakt das, was auch in eurer lokalen Datei steht, keine Zeile mehr. Stürzt euer Programm ab, geht zusätzlich der Fehlertyp mit einer bereinigten Meldung mit (Dateipfade werden vorher entfernt, euer Quelltext geht niemals mit); der Fehler erscheint dann als rote Marke in eurem Cockpit. Wer den Upload nicht möchte, schaltet ihn jederzeit und ohne Nachteil ab, mit <code>LifiDevice.connect(server=None)</code> oder der Umgebungsvariable <code>LIFI_SERVER=off</code>; das lokale Protokoll läuft davon unberührt weiter.</p>
 </section>
 <section id="schaut-hinein" class="level2">
 <h2 class="anchored" data-anchor-id="schaut-hinein">Schaut hinein</h2>

@@ -360,6 +360,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a>
   <ul class="collapse">
   <li><a href="#digital-heißt-nicht-elektronisch" id="toc-digital-heißt-nicht-elektronisch" class="nav-link" data-scroll-target="#digital-heißt-nicht-elektronisch">Digital heißt nicht elektronisch</a></li>
+  <li><a href="#abtasten-und-quantisieren-die-zwei-schnitte" id="toc-abtasten-und-quantisieren-die-zwei-schnitte" class="nav-link" data-scroll-target="#abtasten-und-quantisieren-die-zwei-schnitte">Abtasten und Quantisieren: die zwei Schnitte</a></li>
   <li><a href="#warum-der-umweg-sich-lohnt" id="toc-warum-der-umweg-sich-lohnt" class="nav-link" data-scroll-target="#warum-der-umweg-sich-lohnt">Warum der Umweg sich lohnt</a></li>
   </ul></li>
   <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
@@ -399,6 +400,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Was heißt eigentlich „digital“?</li>
 <li>Warum muss eine stufenlose Welt in Stufen zerlegt werden?</li>
 <li>Was geht dabei verloren?</li>
+<li>Was sind Abtastung und Quantisierung, und was kostet jedes behaltene Detail?</li>
 <li>Warum ist digitale Technik zuverlässiger als analoge, obwohl sie Information wegwirft?</li>
 </ul>
 <p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-1.html">Challenge 1</a> verstanden haben, damit ihr dort erfolgreich seid.</p>
@@ -422,9 +424,15 @@ Abbildung&nbsp;13.1: In allen vier Feldern liegt dasselbe Rauschen auf demselben
 <h3 class="anchored" data-anchor-id="digital-heißt-nicht-elektronisch">Digital heißt nicht elektronisch</h3>
 <p>Digital bedeutet nur: endlich viele, klar voneinander getrennte Zustände. Strom kommt in der Definition nicht vor. Die Fallblattanzeige im Bahnhof ist digital, obwohl sie klappert statt rechnet: Jedes Blatt zeigt genau ein Zeichen, Zwischenstellungen gibt es nicht, und genau deshalb ist sie aus zwanzig Metern ablesbar. Umgekehrt gibt es jede Menge analoge Elektronik, ein Verstärker etwa arbeitet elektrisch und trotzdem stufenlos. Ihr selbst arbeitet das ganze Semester digital mit Licht.</p>
 </section>
+<section id="abtasten-und-quantisieren-die-zwei-schnitte" class="level3">
+<h3 class="anchored" data-anchor-id="abtasten-und-quantisieren-die-zwei-schnitte">Abtasten und Quantisieren: die zwei Schnitte</h3>
+<p>Digitalisieren besteht immer aus zwei Schnitten, und beide könnt ihr an einem Foto sehen. Der erste Schnitt geht durch die Fläche: Das stufenlose Bild wird in einzelne Messpunkte zerlegt, etwa 64 mal 64 Bildpunkte. Diesen Schnitt nennt man <strong>Abtastung</strong> (englisch sampling), und wie fein er ausfällt, ist die <strong>Auflösung</strong>. Der zweite Schnitt geht durch den Wert: Die gemessene Helligkeit jedes Punkts wird auf eine der vereinbarten Stufen gerundet, zwei Stufen für Schwarz-Weiß, 256 für Graustufen, 16,7 Millionen für volle Farbe. Das ist die <strong>Quantisierung</strong>, und die Zahl der Stufen ist die <strong>Farbtiefe</strong>. Die Stufen kennt ihr schon: Es sind genau die Bereiche aus dem Abschnitt darüber.</p>
+<p>Beide Schnitte werfen Detail weg, mit Absicht, und beide hinterlassen unterschiedliche Spuren. Zu grobe Abtastung zeigt sich als Klötzchen, zu grobe Quantisierung als Streifen in glatten Verläufen. Und beides hat denselben Preis: Punkte mal Bits je Punkt ergibt die Dateigröße. Ein Bild mit 64 mal 64 Punkten in 24 Bit Farbe sind 98.304 Bit, also 12 KB; dasselbe Bild in Schwarz-Weiß sind 512 Byte. Über eure Lichtstrecke mit ihren 10 bis 50 bit/s heißt das: knapp eine Stunde gegen zwei Minuten. Digitalisieren ist deshalb keine Fleißaufgabe mit „so fein wie möglich”, sondern eine Abwägung, welches Detail die Übertragungszeit wert ist. Genau diese Abwägung könnt ihr in <a href="https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/">The Photo Digitiser</a> selbst durchspielen, von 256 mal 256 Punkten bis hinunter zum Extrem von einem einzigen Pixel, und mit Farbtiefen vom heutigen Standard bis zu den vier Graustufen des ersten Game Boy. Dieselben zwei Schnitte gelten für Ton: Dort zerlegt die Abtastrate die Zeit und die Bit-Tiefe die Lautstärke, und im <a href="https://winf-hsos.github.io/lifi-concept-demos/audio-digitiser/">Audio Digitiser</a> könnt ihr hören, was jeder Schnitt wegwirft.</p>
+</section>
 <section id="warum-der-umweg-sich-lohnt" class="level3">
 <h3 class="anchored" data-anchor-id="warum-der-umweg-sich-lohnt">Warum der Umweg sich lohnt</h3>
 <p>Beim Digitalisieren wird Genauigkeit absichtlich weggeworfen: Aus unendlich vielen Helligkeiten werden vier Farben. Was man dafür bekommt, ist Zuverlässigkeit. Eine Kopie einer Kopie einer Kassette rauscht hörbar mehr als das Original, weil sich analoge Fehler bei jedem Schritt aufaddieren. Eine kopierte Datei ist auch nach der tausendsten Kopie identisch, weil kleine Störungen bei jedem Schritt verschwinden: Solange der Wert in seinem Bereich bleibt, wird er wieder als derselbe Zustand gelesen, und der Fehler wird nicht mitgenommen, sondern gelöscht. Die Grenzziehung selbst ist am Ende eine <code>if</code>-Abfrage in eurem Code: Ihr entscheidet, wo die Bereiche liegen, und ab da gilt eure Entscheidung, nicht die Physik.</p>
+<p>Genau dieses Experiment könnt ihr in <a href="https://winf-hsos.github.io/lifi-concept-demos/copier/">The Copier</a> selbst durchführen: Jeder Druck auf „copy” hängt die nächste analoge Generation an die Wand, und ihr seht das Original Kopie um Kopie verschwinden; der Knopf „and as a file?” hängt zum Vergleich die Dateikopie dazu, die auch nach dreißig Kopien das Original ist. Und die Entscheidung, die am Anfang jeder Datei steht, zeigt <a href="https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/">The Photo Digitiser</a>: Auflösung und Farbtiefe wählen, das Bild sofort sehen, und die Dateigröße samt Übertragungsdauer über eure Lichtstrecke gleich mit. Mehr davon auf der <a href="../demos.html">Übersicht aller Demonstratoren</a>.</p>
 </section>
 </section>
 <section id="folien" class="level2">
