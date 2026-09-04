@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../demos.html" rel="next">
+<link href="../python/cockpit.html" rel="next">
 <link href="../python/first-steps.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -363,6 +363,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../python/lifi-hardware.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Das Modul <code>lifi_hardware</code></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/cockpit.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Team-Cockpit</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -506,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="das-messprotokoll-und-das-cockpit" class="level2">
 <h2 class="anchored" data-anchor-id="das-messprotokoll-und-das-cockpit">Das Messprotokoll und das Cockpit</h2>
 <p>Alles, was euer Gerät tut, schreibt das Modul in eine Datei namens <code>lifi_log.jsonl</code> in dem Ordner, in dem euer Programm läuft: jede gesetzte Farbe, jede Messung, jede Einstellungsänderung, als eine Klartext-Zeile pro Ereignis. Das ist euer Messreihen-Gedächtnis, es gehört euch, und es funktioniert immer, auch ganz ohne Internet.</p>
-<p>Zusätzlich schickt das Modul dieselben Ereignisse an den Kursserver. Damit seht ihr eure eigene Strecke live im Browser, im <a href="https://lifi.uber.space/cockpit">Team-Cockpit</a>: oben, was eure LED sendet, darunter, was euer Sensor misst, auf einer gemeinsamen Zeitachse. Wenn die beiden nicht zusammenpassen, schaut ihr gerade auf euren Fehler; das Cockpit ist euer wichtigstes Werkzeug für die Fehlersuche an der Strecke. Ruft es mit eurem Teamnamen auf: <code>https://lifi.uber.space/cockpit?team=euer-team</code>.</p>
+<p>Zusätzlich schickt das Modul dieselben Ereignisse an den Kursserver. Damit seht ihr eure eigene Strecke live im Browser, im <a href="https://lifi.uber.space/cockpit">Team-Cockpit</a>: oben, was eure LED sendet, darunter, was euer Sensor misst, auf einer gemeinsamen Zeitachse. Wenn die beiden nicht zusammenpassen, schaut ihr gerade auf euren Fehler; das Cockpit ist euer wichtigstes Werkzeug für die Fehlersuche an der Strecke. Wie ihr damit arbeitet, steht auf der eigenen Seite <a href="../python/cockpit.html">Das Team-Cockpit</a>.</p>
 <p>Dabei gilt volle Transparenz: Hochgeladen wird exakt das, was auch in eurer lokalen Datei steht, keine Zeile mehr. Stürzt euer Programm ab, geht zusätzlich der Fehlertyp mit einer bereinigten Meldung mit (Dateipfade werden vorher entfernt, euer Quelltext geht niemals mit); der Fehler erscheint dann als rote Marke in eurem Cockpit. Wer den Upload nicht möchte, schaltet ihn jederzeit und ohne Nachteil ab, mit <code>LifiDevice.connect(server=None)</code> oder der Umgebungsvariable <code>LIFI_SERVER=off</code>; das lokale Protokoll läuft davon unberührt weiter.</p>
 </section>
 <section id="schaut-hinein" class="level2">
@@ -1190,8 +1195,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../demos.html" class="pagination-link" aria-label="Demonstratoren">
-        <span class="nav-page-text"><span class="chapter-title">Demonstratoren</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../python/cockpit.html" class="pagination-link" aria-label="Das Team-Cockpit">
+        <span class="nav-page-text"><span class="chapter-title">Das Team-Cockpit</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

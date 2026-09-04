@@ -2379,7 +2379,7 @@
     "href": "python/lifi-hardware.html#das-messprotokoll-und-das-cockpit",
     "title": "Das Modul lifi_hardware",
     "section": "Das Messprotokoll und das Cockpit",
-    "text": "Das Messprotokoll und das Cockpit\nAlles, was euer Gerät tut, schreibt das Modul in eine Datei namens lifi_log.jsonl in dem Ordner, in dem euer Programm läuft: jede gesetzte Farbe, jede Messung, jede Einstellungsänderung, als eine Klartext-Zeile pro Ereignis. Das ist euer Messreihen-Gedächtnis, es gehört euch, und es funktioniert immer, auch ganz ohne Internet.\nZusätzlich schickt das Modul dieselben Ereignisse an den Kursserver. Damit seht ihr eure eigene Strecke live im Browser, im Team-Cockpit: oben, was eure LED sendet, darunter, was euer Sensor misst, auf einer gemeinsamen Zeitachse. Wenn die beiden nicht zusammenpassen, schaut ihr gerade auf euren Fehler; das Cockpit ist euer wichtigstes Werkzeug für die Fehlersuche an der Strecke. Ruft es mit eurem Teamnamen auf: https://lifi.uber.space/cockpit?team=euer-team.\nDabei gilt volle Transparenz: Hochgeladen wird exakt das, was auch in eurer lokalen Datei steht, keine Zeile mehr. Stürzt euer Programm ab, geht zusätzlich der Fehlertyp mit einer bereinigten Meldung mit (Dateipfade werden vorher entfernt, euer Quelltext geht niemals mit); der Fehler erscheint dann als rote Marke in eurem Cockpit. Wer den Upload nicht möchte, schaltet ihn jederzeit und ohne Nachteil ab, mit LifiDevice.connect(server=None) oder der Umgebungsvariable LIFI_SERVER=off; das lokale Protokoll läuft davon unberührt weiter.",
+    "text": "Das Messprotokoll und das Cockpit\nAlles, was euer Gerät tut, schreibt das Modul in eine Datei namens lifi_log.jsonl in dem Ordner, in dem euer Programm läuft: jede gesetzte Farbe, jede Messung, jede Einstellungsänderung, als eine Klartext-Zeile pro Ereignis. Das ist euer Messreihen-Gedächtnis, es gehört euch, und es funktioniert immer, auch ganz ohne Internet.\nZusätzlich schickt das Modul dieselben Ereignisse an den Kursserver. Damit seht ihr eure eigene Strecke live im Browser, im Team-Cockpit: oben, was eure LED sendet, darunter, was euer Sensor misst, auf einer gemeinsamen Zeitachse. Wenn die beiden nicht zusammenpassen, schaut ihr gerade auf euren Fehler; das Cockpit ist euer wichtigstes Werkzeug für die Fehlersuche an der Strecke. Wie ihr damit arbeitet, steht auf der eigenen Seite Das Team-Cockpit.\nDabei gilt volle Transparenz: Hochgeladen wird exakt das, was auch in eurer lokalen Datei steht, keine Zeile mehr. Stürzt euer Programm ab, geht zusätzlich der Fehlertyp mit einer bereinigten Meldung mit (Dateipfade werden vorher entfernt, euer Quelltext geht niemals mit); der Fehler erscheint dann als rote Marke in eurem Cockpit. Wer den Upload nicht möchte, schaltet ihn jederzeit und ohne Nachteil ab, mit LifiDevice.connect(server=None) oder der Umgebungsvariable LIFI_SERVER=off; das lokale Protokoll läuft davon unberührt weiter.",
     "crumbs": [
       "Python",
       "<span class='chapter-number'>33</span>  <span class='chapter-title'>Das Modul `lifi_hardware`</span>"
@@ -2397,13 +2397,79 @@
     ]
   },
   {
+    "objectID": "python/cockpit.html",
+    "href": "python/cockpit.html",
+    "title": "Das Team-Cockpit",
+    "section": "",
+    "text": "Öffnen\nDas Team-Cockpit zeigt eure Lichtstrecke live im Browser: oben, was eure LED sendet, darunter, was euer Sensor misst, beides auf einer gemeinsamen Zeitachse. Es ist euer wichtigstes Werkzeug für die Fehlersuche, denn die meisten Probleme sieht man hier auf einen Blick: Wechselt das Senderband korrekt, aber die Kurven rühren sich nicht, stimmt etwas an Ausrichtung oder Abstand. Zappeln die Kurven im Takt der Farben, aber euer Programm erkennt trotzdem nichts, liegt der Fehler in euren Schwellen oder eurem Timing.\nDas Cockpit läuft unter https://lifi.uber.space/cockpit. Beim ersten Aufruf fragt es nach eurem Teamnamen; danach steht er in der Adresse (etwa .../cockpit?team=team-07), ihr könnt euch die Seite also als Lesezeichen speichern oder den Link im Team teilen. Über „switch team” oben rechts wechselt ihr das Team.\nDie Daten kommen automatisch: Sobald euer Programm das Modul lifi_hardware benutzt, sendet es sein Messprotokoll an den Kursserver, und das Cockpit zeigt es an. Ihr müsst dafür nichts konfigurieren.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Das Team-Cockpit</span>"
+    ]
+  },
+  {
+    "objectID": "python/cockpit.html#die-statuszeile",
+    "href": "python/cockpit.html#die-statuszeile",
+    "title": "Das Team-Cockpit",
+    "section": "Die Statuszeile",
+    "text": "Die Statuszeile\nOben stehen sechs Werte, die sich laufend aktualisieren: ob gerade Daten ankommen („live”) oder wann zuletzt, die aktuelle LED-Farbe mit Farbmuster, die letzte Messung (die vier Kanäle r, g, b und c), die Messungen pro Sekunde, die eingestellte Verstärkung und Integrationszeit, und der letzte Fehler, falls euer Programm abgestürzt ist.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Das Team-Cockpit</span>"
+    ]
+  },
+  {
+    "objectID": "python/cockpit.html#die-zeitleiste-lesen",
+    "href": "python/cockpit.html#die-zeitleiste-lesen",
+    "title": "Das Team-Cockpit",
+    "section": "Die Zeitleiste lesen",
+    "text": "Die Zeitleiste lesen\nDie große Fläche ist eine Zeitleiste, die von Sekunden bis zum ganzen Semester reicht. Was sie zeigt, hängt vom Zoom ab:\nNah herangezoomt (bis etwa 15 Minuten Fensterbreite) seht ihr das Rohsignal: oben das Senderband, in dem jeder Block genau die Farbe hat, die die LED zu dieser Zeit gezeigt hat, darunter die vier Sensorkanäle als Kurven. Der Clear-Kanal (c, die helle Linie) ist der empfindlichste. Gestrichelte senkrechte Marken zeigen, wo eine Sitzung begann oder endete und wo Einstellungen geändert wurden; rote Marken sind Programmabstürze.\nWeit herausgezoomt wird dieselbe Fläche zur Aktivitätsübersicht: blaue Balken zeigen, wann und wie intensiv gearbeitet wurde (je höher und heller, desto mehr Messungen), rote Striche darüber markieren Zeiträume mit Fehlern. So findet ihr auch nach Tagen noch die Stelle wieder, an der etwas Interessantes passiert ist.\nUnter der Fläche läuft immer eine Achse mit Uhrzeit und Datum mit, und über der Fläche steht der sichtbar gemachte Zeitraum samt Dauer, damit ihr nie raten müsst, wo ihr euch gerade befindet.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Das Team-Cockpit</span>"
+    ]
+  },
+  {
+    "objectID": "python/cockpit.html#bewegen-und-zoomen",
+    "href": "python/cockpit.html#bewegen-und-zoomen",
+    "title": "Das Team-Cockpit",
+    "section": "Bewegen und Zoomen",
+    "text": "Bewegen und Zoomen\nDie Bedienung folgt dem, was ihr aus Videoschnitt- oder Kartenprogrammen kennt:\n\nScrollrad zoomt hinein und heraus, und zwar um die Stelle, auf die der Mauszeiger zeigt.\nDoppelklick auf einen blauen Aktivitätsbalken springt direkt in dessen Zeitraum; anderswo zoomt er kräftig um die Klickstelle.\nZiehen mit gedrückter Maustaste verschiebt das Fenster in der Zeit.\nMauszeiger darüberhalten zeigt Details: über dem Senderband die genauen RGB-Werte und seit wann die Farbe anliegt, über den Kurven die nächstgelegene Messung mit allen vier Werten und Zeitstempel, über Marken deren Bedeutung.\nDie Knöpfe 30 s / 5 min / 1 h / 24 h / all springen zu festen Fenstern, + / − zoomen schrittweise.\n\nSobald ihr in die Vergangenheit zoomt oder zieht, hält die Ansicht an. Der grüne Knopf „● live” bringt euch zurück ins Jetzt, wo die rechte Kante wieder mit der Uhr mitläuft.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Das Team-Cockpit</span>"
+    ]
+  },
+  {
+    "objectID": "python/cockpit.html#wenn-nichts-ankommt",
+    "href": "python/cockpit.html#wenn-nichts-ankommt",
+    "title": "Das Team-Cockpit",
+    "section": "Wenn nichts ankommt",
+    "text": "Wenn nichts ankommt\nSteht im Status dauerhaft „no data yet”, prüft der Reihe nach: Läuft euer Programm gerade, und benutzt es lifi_hardware? Stimmt der Teamname in der Adresse? Hat euer Rechner Internet? Ohne Netz arbeitet euer Programm übrigens völlig normal weiter, nur das Cockpit bleibt dann leer; alles Wichtige steht weiterhin in eurer lokalen Protokolldatei lifi_log.jsonl. Und falls euer Gerät noch keinem Team zugeordnet ist, meldet euch; das ist in einer Minute erledigt.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Das Team-Cockpit</span>"
+    ]
+  },
+  {
+    "objectID": "python/cockpit.html#was-noch-kommt",
+    "href": "python/cockpit.html#was-noch-kommt",
+    "title": "Das Team-Cockpit",
+    "section": "Was noch kommt",
+    "text": "Was noch kommt\nDas Cockpit wächst im Lauf des Semesters: Hier werden später eure Übungstests für die Challenges starten, und bei den Abnahmen läuft dieselbe Ansicht groß auf dem Beamer. Wie das funktioniert, ergänzen wir auf dieser Seite, sobald es so weit ist.",
+    "crumbs": [
+      "Python",
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Das Team-Cockpit</span>"
+    ]
+  },
+  {
     "objectID": "demos.html",
     "href": "demos.html",
     "title": "Demonstratoren",
     "section": "",
     "text": "Symbole und Information\nKleine interaktive Anwendungen, die je ein Konzept des Kurses zum Anfassen machen. Jede läuft direkt im Browser, auch auf dem Handy, und eignet sich zum Ausprobieren neben den Übungsfragen. Die Sammlung wächst mit dem Semester; die Übersicht aller Demonstratoren liegt auf einer eigenen Seite.\nQuestion Game: Das Kinderspiel „Wer ist es?” als Informationsmessgerät. Eines von 16 Gesichtern ist das Geheimnis, also stecken \\(H = \\log_2(16) = 4\\) Bit Unsicherheit darin. Neun Merkmalfragen von Brille bis Haarfarbe stehen bereit; jede Antwort schrumpft die Menge, und ein Popup rechnet vor, was sie wert war: \\(I = H_1 - H_2\\), samt Erwartungswert der Frage. Wer die Gesichter zählt und immer nahe der Hälfte fragt, holt ein Bit je Frage und ist in vier Fragen fertig; wer rät, stellt meist die schlechteste aller Fragen. Passt zum Konzept Symbole und Information.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Demonstratoren</span>"
     ]
   },
   {
@@ -2413,7 +2479,7 @@
     "section": "Analog und digital",
     "text": "Analog und digital\nThe Copier: Eine Kopienwand. Jeder Druck auf „copy” fotokopiert das letzte Bild an der Wand, mitsamt allem Rauschen, das schon drin steckt, und hängt die neue Generation daneben; die Bilder schrumpfen, damit die ganze Historie sichtbar bleibt. So seht ihr das Original Kopie um Kopie verschwinden, wahlweise sorgfältig oder schlampig kopiert. Der Knopf „and as a file?” hängt zum Vergleich die Dateikopie dazu: identisch mit dem Original, egal nach wie vielen Kopien. Passt zum Konzept Analog und digital.\nThe Photo Digitiser: Ein analoges Foto wird zu Zahlen; drei Motive stehen zur Wahl, dieselben wie im Copier. Wählt die Auflösung (von 256×256 bis hinunter zu einem einzigen Pixel) und die Farbtiefe (Schwarz-Weiß, Graustufen, 8, 16 oder 24 Bit Farbe) und seht sofort das Ergebnis, dazu die offene Rechnung: Pixel × Bits je Pixel = Dateigröße, und wie lange dieses Bild über eure Lichtstrecke bräuchte. Passt zum Konzept Analog und digital.\nThe Audio Digitiser: Dieselben zwei Schnitte, jetzt fürs Ohr. Wählt für fünf Klänge (Ode an die Freude, kleines Bandstück, Bassfigur, Vogelzwitschern und eine Sprachaufnahme) die Abtastrate (48 kHz bis 1 kHz) und die Bit-Tiefe (16 bis 1 Bit), seht die Treppenkurve über der glatten Welle, und hört Original und Digitalfassung im direkten Vergleich. Die Dateigrößenrechnung und die Dauer über eure Lichtstrecke laufen mit. Passt zum Konzept Analog und digital.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Demonstratoren</span>"
     ]
   },
   {
@@ -2423,7 +2489,7 @@
     "section": "Signal und Rauschen",
     "text": "Signal und Rauschen\nDistinguishability Lab: Ihr seid der Sender auf einem verrauschten Kanal, das Signal kann Licht, Spannung oder Schall sein. Wählt ein Symbol, seht die Messkurve um seinen Pegel zittern, vergrößert das Alphabet Symbol für Symbol, dreht am Messfenster, und löst zwischendurch ein Störsignal aus. Die Fehlerquote und der Durchsatz laufen live mit: Ruhigere Werte kosten Rate, mehr Symbole kosten Abstand. Das Rauschen ist simuliert; eure echten Zahlen liefert eure eigene Strecke. Passt zum Konzept Signal und Rauschen.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Demonstratoren</span>"
     ]
   },
   {
@@ -2433,7 +2499,7 @@
     "section": "Abtastung und Synchronisation",
     "text": "Abtastung und Synchronisation\nDrift Simulator: Der Sender legt eine Farbfolge Symbol für Symbol in feste Zeitschlitze, doch die Uhr des Empfängers geht um ein paar Prozent falsch. Seht zu, wie die Abtastpunkte aus den Schlitzen wandern, bis die Empfangszeile gegen die Sendezeile kippt, und schaltet dann die wiederkehrende Marke dazu, an der sich der Empfänger neu ausrichtet: Der Versatz springt auf null zurück, die Marke kostet Rate. Passt zum Konzept Abtastung und Synchronisation.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Demonstratoren</span>"
     ]
   },
   {
@@ -2443,7 +2509,7 @@
     "section": "Zahlensysteme",
     "text": "Zahlensysteme\nByte Switchboard: Acht Bits zum Umschalten, und alle Darstellungen entstehen live: die Summe der Stellenwerte, Binär in Nibbles, Dezimal, Hex und das ASCII-Zeichen dahinter. Probiert +1 bei 255 und seht den Übertrag durch alle acht Bits laufen. Passt zum Konzept Zahlensysteme.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Demonstratoren</span>"
     ]
   },
   {
@@ -2453,7 +2519,7 @@
     "section": "Codesysteme",
     "text": "Codesysteme\nPixel Painter: Ein 8×8-Bild mit einem Bit je Pixel, daneben die acht Bytes, binär und als editierbare Hexfelder. Malt, und die Bytes schreiben sich mit; tippt Hexwerte, und ihr malt mit Zahlen. Der Knopf „break a byte” kippt Bits in einem zufälligen Byte, und der Schaden trifft sichtbar genau eine Bildzeile. Passt zum Konzept Codesysteme.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Demonstratoren</span>"
     ]
   },
   {
@@ -2463,7 +2529,7 @@
     "section": "Weitere Konzepte",
     "text": "Weitere Konzepte\nWeitere Demonstratoren folgen mit dem Semester, als Nächstes voraussichtlich zu Fehlern und Redundanz.",
     "crumbs": [
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Demonstratoren</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Demonstratoren</span>"
     ]
   },
   {
@@ -2473,7 +2539,7 @@
     "section": "",
     "text": "Kontakt\nDiese Website begleitet den Projektkurs im Modul Digitalisierung und Programmierung an der Hochschule Osnabrück. Ihr baut darin ein Gerät, das Daten mit sichtbarem Licht überträgt, und lernt daran, wie Computer Information darstellen, übertragen und verarbeiten, und wie man Probleme in prüfbare Teilschritte zerlegt.\nDas Modul und diese Website betreut Nicolas Meseth. Fehler auf der Website, kaputte Links oder unverständliche Erklärungen gern per Mail melden; auch Hinweise, welche Erklärung euch gefehlt hat, helfen beim Verbessern.",
     "crumbs": [
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Über dieses Projekt</span>"
     ]
   },
   {
@@ -2483,7 +2549,7 @@
     "section": "Quellcode und Material",
     "text": "Quellcode und Material\nDie Website liegt auf GitHub: github.com/winf-hsos/lifi-website. Das 3D-Modell des Gehäuses samt OpenSCAD-Quelle findet ihr auf der Seite Das Gehäuse; es steht unter CC0 und darf ohne Bedingungen verwendet und verändert werden.\nEine ältere Fassung des LiFi-Projekts mit anderer Hardware ist unter docs.lifi-project.de dokumentiert. Sie diente dieser Neuauflage als Ideengeber, die Inhalte hier sind aber eigenständig.",
     "crumbs": [
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Über dieses Projekt</span>"
     ]
   },
   {
@@ -2493,7 +2559,7 @@
     "section": "Lizenz und Transparenz",
     "text": "Lizenz und Transparenz\nDie Inhalte dieser Website stehen unter CC BY-SA 4.0: Ihr dürft sie teilen und weiterverwenden, mit Namensnennung und unter gleichen Bedingungen.\nBilder auf den Folien, die mit KI-Modellen erzeugt wurden, sind dort jeweils mit einer Fußnote gekennzeichnet. Auch beim Erstellen der Materialien dieses Kurses kommen KI-Assistenten zum Einsatz, so wie ihr sie im Kurs selbst benutzt; geprüft und verantwortet werden die Inhalte vom Lehrenden.",
     "crumbs": [
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Über dieses Projekt</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Über dieses Projekt</span>"
     ]
   }
 ]
