@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -216,13 +181,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../software/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setup</span></a>
+ <span class="menu-text">Required Software</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ai/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Arbeiten mit dem KI-Assistenten</span></a>
+ <span class="menu-text">Working with your AI assistant</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -455,29 +420,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Auf dieser Seite</h2>
    
   <ul>
-  <li><a href="#die-led" id="toc-die-led" class="nav-link active" data-scroll-target="#die-led">Die LED</a>
+  <li><a href="#the-led" id="toc-the-led" class="nav-link active" data-scroll-target="#the-led">The LED</a></li>
+  <li><a href="#the-colour-sensor" id="toc-the-colour-sensor" class="nav-link" data-scroll-target="#the-colour-sensor">The colour sensor</a>
   <ul class="collapse">
-  <li><a href="#drei-lämpchen-in-einem" id="toc-drei-lämpchen-in-einem" class="nav-link" data-scroll-target="#drei-lämpchen-in-einem">Drei Lämpchen in einem</a></li>
+  <li><a href="#what-the-sensor-actually-measures" id="toc-what-the-sensor-actually-measures" class="nav-link" data-scroll-target="#what-the-sensor-actually-measures">What the sensor actually measures</a></li>
+  <li><a href="#four-channels-not-three" id="toc-four-channels-not-three" class="nav-link" data-scroll-target="#four-channels-not-three">Four channels, not three</a></li>
+  <li><a href="#the-lamp-on-the-sensor-board" id="toc-the-lamp-on-the-sensor-board" class="nav-link" data-scroll-target="#the-lamp-on-the-sensor-board">The lamp on the sensor board</a></li>
+  <li><a href="#integration-time-and-gain" id="toc-integration-time-and-gain" class="nav-link" data-scroll-target="#integration-time-and-gain">Integration time and gain</a></li>
+  <li><a href="#the-numbers-do-not-come-back-the-way-you-sent-them" id="toc-the-numbers-do-not-come-back-the-way-you-sent-them" class="nav-link" data-scroll-target="#the-numbers-do-not-come-back-the-way-you-sent-them">The numbers do not come back the way you sent them</a></li>
   </ul></li>
-  <li><a href="#der-farbsensor" id="toc-der-farbsensor" class="nav-link" data-scroll-target="#der-farbsensor">Der Farbsensor</a>
+  <li><a href="#optical-setup" id="toc-optical-setup" class="nav-link" data-scroll-target="#optical-setup">Optical setup</a>
   <ul class="collapse">
-  <li><a href="#was-der-sensor-überhaupt-misst" id="toc-was-der-sensor-überhaupt-misst" class="nav-link" data-scroll-target="#was-der-sensor-überhaupt-misst">Was der Sensor überhaupt misst</a></li>
-  <li><a href="#vier-kanäle-nicht-drei" id="toc-vier-kanäle-nicht-drei" class="nav-link" data-scroll-target="#vier-kanäle-nicht-drei">Vier Kanäle, nicht drei</a></li>
-  <li><a href="#integrationszeit-und-verstärkung" id="toc-integrationszeit-und-verstärkung" class="nav-link" data-scroll-target="#integrationszeit-und-verstärkung">Integrationszeit und Verstärkung</a></li>
-  <li><a href="#die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt" id="toc-die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt" class="nav-link" data-scroll-target="#die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt">Die Zahlen kommen nicht so an, wie ihr sie gesendet habt</a></li>
+  <li><a href="#rules" id="toc-rules" class="nav-link" data-scroll-target="#rules">Rules</a></li>
+  <li><a href="#the-fixed-distance" id="toc-the-fixed-distance" class="nav-link" data-scroll-target="#the-fixed-distance">The fixed distance</a></li>
+  <li><a href="#before-you-buy-anything" id="toc-before-you-buy-anything" class="nav-link" data-scroll-target="#before-you-buy-anything">Before you buy anything</a></li>
   </ul></li>
-  <li><a href="#optischer-aufbau" id="toc-optischer-aufbau" class="nav-link" data-scroll-target="#optischer-aufbau">Optischer Aufbau</a>
+  <li><a href="#the-case" id="toc-the-case" class="nav-link" data-scroll-target="#the-case">The case</a>
   <ul class="collapse">
-  <li><a href="#regeln" id="toc-regeln" class="nav-link" data-scroll-target="#regeln">Regeln</a></li>
-  <li><a href="#der-feste-abstand" id="toc-der-feste-abstand" class="nav-link" data-scroll-target="#der-feste-abstand">Der feste Abstand</a></li>
-  <li><a href="#bevor-ihr-etwas-kauft" id="toc-bevor-ihr-etwas-kauft" class="nav-link" data-scroll-target="#bevor-ihr-etwas-kauft">Bevor ihr etwas kauft</a></li>
-  </ul></li>
-  <li><a href="#das-gehäuse" id="toc-das-gehäuse" class="nav-link" data-scroll-target="#das-gehäuse">Das Gehäuse</a>
-  <ul class="collapse">
-  <li><a href="#bauteileliste" id="toc-bauteileliste" class="nav-link" data-scroll-target="#bauteileliste">Bauteileliste</a></li>
-  <li><a href="#das-3d-modell" id="toc-das-3d-modell" class="nav-link" data-scroll-target="#das-3d-modell">Das 3D-Modell</a></li>
-  <li><a href="#druck" id="toc-druck" class="nav-link" data-scroll-target="#druck">Druck</a></li>
-  <li><a href="#zusammenbau" id="toc-zusammenbau" class="nav-link" data-scroll-target="#zusammenbau">Zusammenbau</a></li>
+  <li><a href="#parts-list" id="toc-parts-list" class="nav-link" data-scroll-target="#parts-list">Parts list</a></li>
+  <li><a href="#the-3d-model" id="toc-the-3d-model" class="nav-link" data-scroll-target="#the-3d-model">The 3D model</a></li>
+  <li><a href="#printing" id="toc-printing" class="nav-link" data-scroll-target="#printing">Printing</a></li>
+  <li><a href="#assembly" id="toc-assembly" class="nav-link" data-scroll-target="#assembly">Assembly</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -504,155 +467,151 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Euer Gerät besteht aus drei Bauteilen in einem 3D-gedruckten Gehäuse:</p>
+<p>Your device is three parts in a 3D-printed case:</p>
 <ul>
-<li>ein <strong><a href="#die-led">RGB LED Bricklet 2.0</a></strong> als Sender,</li>
-<li>ein <strong><a href="#der-farbsensor">Color Bricklet 2.0</a></strong> als Empfänger,</li>
-<li>ein <strong>Master Brick</strong>, der beide mit dem Rechner verbindet.</li>
+<li>an <strong><a href="#the-led">RGB LED Bricklet 2.0</a></strong>, the lamp that sends,</li>
+<li>a <strong><a href="#the-colour-sensor">Color Bricklet 2.0</a></strong>, the eye that receives,</li>
+<li>a <strong><a href="https://www.tinkerforge.com/en/doc/Hardware/Bricks/Master_Brick.html">Master Brick</a></strong>, the small controller board that connects both to your laptop over USB.</li>
 </ul>
-<p>Jedes Team bekommt zwei solche Geräte, eines pro Person. Ihr habt damit beide Enden der Strecke selbst in der Hand.</p>
-<p>Die beiden Geräte stehen sich auf dem Tisch gegenüber. Weil LED und Sensor symmetrisch zur Mitte sitzen, steht beim um 180° gedrehten Gegenüber automatisch jede LED einem Sensor gegenüber. Ein Trennsteg zwischen beiden verhindert, dass eure eigene LED in euren eigenen Sensor leuchtet.</p>
-<p>Daraus folgt etwas, das euch erst spät im Semester nützt: Weil jedes Gerät senden <strong>und</strong> empfangen kann, ist die Strecke in beide Richtungen nutzbar. Bis einschließlich <a href="../challenges/challenge-3.html">Challenge 3</a> arbeitet ihr trotzdem nur in eine Richtung. Den Rückkanal gebt ihr erst in <a href="../challenges/challenge-4.html">Challenge 4</a> frei.</p>
+<p>All three come from Tinkerforge, a German maker of modular electronics. The two small boards, the Bricklets, sit on the front of the case, the Master Brick inside.</p>
+<p>You and your partner get two of these devices, one each. Between you, you hold both ends of the link.</p>
+<p>The two devices stand on the table facing each other. Because lamp and eye sit symmetrically to the middle of the front, turning one device around puts its lamp in front of the other’s eye, and its eye in front of the other’s lamp. A short wall between the two, the septum, keeps your own lamp out of your own eye.</p>
+<p>Something follows from this that you will only need late in the project: since every device can send <strong>and</strong> receive, the link works in both directions. Up to and including <a href="../challenges/challenge-3.html">Challenge 3</a> you use only one direction all the same. The way back is opened in <a href="../challenges/challenge-4.html">Challenge 4</a>.</p>
 <!-- TODO: Foto des aufgebauten Geräts -->
-<section id="die-led" class="level2">
-<h2 class="anchored" data-anchor-id="die-led">Die LED</h2>
-<p>RGB LED Bricklet 2.0.</p>
-<section id="drei-lämpchen-in-einem" class="level3">
-<h3 class="anchored" data-anchor-id="drei-lämpchen-in-einem">Drei Lämpchen in einem</h3>
-<p>Was aussieht wie eine einzelne Lampe, sind in Wirklichkeit drei: eine rote, eine grüne und eine blaue, dicht nebeneinander. Ihr gebt für jede an, wie hell sie leuchten soll, jeweils als Zahl von 0 (aus) bis 255 (volle Helligkeit). Weil die drei so eng beieinander sitzen, sieht euer Auge keine drei Lichter, sondern eine Mischfarbe.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)      <span class="co"># nur die rote Lampe, volle Helligkeit</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)        <span class="co"># alle aus</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>)  <span class="co"># alle voll, ergibt weiss</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">60</span>)     <span class="co"># rot, mit etwas Blau dazu</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Genau diese drei Zahlen sind euer Werkzeug: Jede Kombination, die ihr zuverlässig wiedererkennen könnt, ist ein Zeichen, das ihr übertragen könnt.</p>
-<!-- TODO: Schaltzeiten, kleinste sinnvolle Helligkeitsschritte, Verhalten bei schnellem
-     Umschalten -->
+<section id="the-led" class="level2">
+<h2 class="anchored" data-anchor-id="the-led">The LED</h2>
+<p>What looks like one lamp is really three: a red one, a green one and a blue one, packed so closely together that your eye cannot separate them. You tell each of the three how brightly to shine, as a number from 0 (off) to 255 (full brightness). Because they sit so close, you do not see three lights but one mixed colour.</p>
+<p>Three numbers, then, and every combination you can reliably recognise on the other side is a sign you can send. Red at full brightness with the other two off gives you red. All three at full gives you white. All three at zero is dark. Red at full with a little blue mixed in is a colour that has no everyday name, and it is just as good a sign as the others, provided the eye across the table can tell it from its neighbours.</p>
+<p>How fast the LED can switch from one colour to the next, and what the sensor sees during the switch, is not written in any datasheet you should trust. It is one of the first things worth measuring.</p>
+</section>
+<section id="the-colour-sensor" class="level2">
+<h2 class="anchored" data-anchor-id="the-colour-sensor">The colour sensor</h2>
+<section id="what-the-sensor-actually-measures" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-sensor-actually-measures">What the sensor actually measures</h3>
+<p>In front of the sensor sit tiny colour filters. One lets through mostly red light, one mostly green, one mostly blue. Behind each filter the light that gets through is counted. So you get three numbers that say how much red, green and blue is falling on the sensor right now.</p>
+<p>The word “mostly” matters. The filters do not separate cleanly. Some green light gets through the red filter too. That is why red light does not give you one high number and two zeros. All three values are above zero, just in different proportions.</p>
+</section>
+<section id="four-channels-not-three" class="level3">
+<h3 class="anchored" data-anchor-id="four-channels-not-three">Four channels, not three</h3>
+<p>Next to the three colour values there is a fourth, the <strong>clear channel</strong>. It sits behind no filter and simply counts all the light. That makes it more sensitive than the other three, and often the most useful of the four when all you want to tell apart is brightness.</p>
+<p>So every reading is four numbers: red, green, blue, clear. Keep the fourth one in view. Many teams ignore it and give away signal for nothing.</p>
+</section>
+<section id="the-lamp-on-the-sensor-board" class="level3">
+<h3 class="anchored" data-anchor-id="the-lamp-on-the-sensor-board">The lamp on the sensor board</h3>
+<p>The sensor board carries a small white lamp of its own. It is meant for measuring the colour of surfaces, where you have to light the object first. For your device it is a source of stray light and nothing else. Leave it off.</p>
+</section>
+<section id="integration-time-and-gain" class="level3">
+<h3 class="anchored" data-anchor-id="integration-time-and-gain">Integration time and gain</h3>
+<p>The sensor has two settings, and they are the central trade-off of the whole project.</p>
+<p>The <strong>integration time</strong> is how long the sensor collects light before it reports a number. You can choose between five values, from about 2 milliseconds to 700 milliseconds. A long time gives calm, steady numbers, because random flicker averages out. It also means fewer readings per second: at 700 milliseconds you get little more than one reading a second, and your symbols cannot come faster than that. A short time gives many readings per second, but each one is noisier.</p>
+<p>The <strong>gain</strong> is how strongly the sensor amplifies what it collects. You can choose between four steps, from 1 to 60. A high gain makes a weak signal visible, but it also makes the numbers hit the top of their range sooner, at which point bright and very bright look the same.</p>
+<p>Out of the box the module <code>lifi_hardware</code> sets a medium-long integration time and a gain of 16, which is a safe place to start and almost certainly not where you will end up. The two settings are deliberately easy to change, and you should change them and measure what happens. The <a href="../software/lifi-hardware.html">Software</a> page shows where.</p>
+</section>
+<section id="the-numbers-do-not-come-back-the-way-you-sent-them" class="level3">
+<h3 class="anchored" data-anchor-id="the-numbers-do-not-come-back-the-way-you-sent-them">The numbers do not come back the way you sent them</h3>
+<p>When you give the LED the values (255, 0, 60), the sensor reports something completely different. That is not a bug. Its numbers depend not only on the light that was sent but also on how far away it is, how bright the room is, and how you have set gain and integration time. There is no way to calculate backwards. How you transmit reliably all the same is the subject of <a href="../challenges/challenge-1.html">Challenge 1</a>.</p>
 </section>
 </section>
-<section id="der-farbsensor" class="level2">
-<h2 class="anchored" data-anchor-id="der-farbsensor">Der Farbsensor</h2>
-<p>Color Bricklet 2.0.</p>
-<section id="was-der-sensor-überhaupt-misst" class="level3">
-<h3 class="anchored" data-anchor-id="was-der-sensor-überhaupt-misst">Was der Sensor überhaupt misst</h3>
-<p>Vor dem Sensor sitzen kleine Farbfilter. Einer lässt vor allem rotes Licht durch, einer vor allem grünes, einer vor allem blaues. Hinter jedem Filter wird gezählt, wie viel Licht ankommt. Ihr bekommt also drei Zahlen, die beschreiben, wie viel Rot, Grün und Blau gerade auf den Sensor fällt.</p>
-<p>Wichtig ist das Wort „vor allem”: Die Filter trennen nicht sauber. Durch den Rotfilter kommt auch etwas grünes Licht. Deshalb hat rotes Licht nicht einfach eine hohe erste Zahl und zwei Nullen, sondern alle drei Werte sind ungleich null.</p>
+<section id="optical-setup" class="level2">
+<h2 class="anchored" data-anchor-id="optical-setup">Optical setup</h2>
+<p>Between the two devices you may build things yourself, and you should: tubes, apertures, reflectors, lenses. A good light channel is one of the most effective levers in the whole project.</p>
+<section id="rules" class="level3">
+<h3 class="anchored" data-anchor-id="rules">Rules</h3>
+<p><strong>Allowed</strong> is anything passive: pipes, cardboard, paint, aluminium foil, mirrors, lenses, acrylic rods, clamps, stands, 3D-printed parts.</p>
+<p><strong>Not allowed</strong> are additional sensors, additional light sources, lasers, or swapping out the LED or the colour sensor.</p>
+<p><strong>Budget:</strong> at most 10 euros worth of material, built by you, documented with a photo and a short explanation of why you built it that way.</p>
 </section>
-<section id="vier-kanäle-nicht-drei" class="level3">
-<h3 class="anchored" data-anchor-id="vier-kanäle-nicht-drei">Vier Kanäle, nicht drei</h3>
-<p>Zu den drei Farbwerten kommt ein vierter, der <strong>Clear-Kanal (C)</strong>. Er sitzt hinter keinem Filter und zählt einfach alles Licht zusammen. Dadurch ist er empfindlicher als die anderen drei und oft der nützlichste, wenn ihr nur Helligkeiten unterscheiden wollt.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>r, g, b, c <span class="op">=</span> sensor.read()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="integrationszeit-und-verstärkung" class="level3">
-<h3 class="anchored" data-anchor-id="integrationszeit-und-verstärkung">Integrationszeit und Verstärkung</h3>
-<!-- TODO: Der zentrale Zielkonflikt — lange Integration heißt sauberes Signal,
-     aber wenige Messungen pro Sekunde. -->
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sensor.set_integration_time(ms)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sensor.set_gain(factor)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt" class="level3">
-<h3 class="anchored" data-anchor-id="die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt">Die Zahlen kommen nicht so an, wie ihr sie gesendet habt</h3>
-<p>Wenn ihr der LED die Werte (255, 0, 60) gebt, meldet der Sensor etwas ganz anderes. Das ist kein Fehler. Seine Zahlen hängen außer vom gesendeten Licht auch davon ab, wie weit er entfernt ist, wie hell der Raum ist und wie ihr Verstärkung und Integrationszeit eingestellt habt. Zurückrechnen lässt sich das nicht. Wie ihr trotzdem zuverlässig übertragt, steht bei <a href="../challenges/challenge-1.html">Challenge 1</a>.</p>
-</section>
-</section>
-<section id="optischer-aufbau" class="level2">
-<h2 class="anchored" data-anchor-id="optischer-aufbau">Optischer Aufbau</h2>
-<p>Zwischen den beiden Geräten dürft ihr selbst bauen, und ihr solltet es auch: Röhren, Blenden, Reflektoren, Linsen. Ein guter Lichtkanal ist einer der wirksamsten Hebel im ganzen Projekt.</p>
-<section id="regeln" class="level3">
-<h3 class="anchored" data-anchor-id="regeln">Regeln</h3>
-<p><strong>Erlaubt</strong> ist alles Passive: Rohre, Pappe, Farbe, Alufolie, Spiegel, Linsen, Acrylstäbe, Klemmen, Stative, 3D-gedruckte Teile.</p>
-<p><strong>Nicht erlaubt</strong> sind zusätzliche Sensoren, zusätzliche Lichtquellen, Laser oder der Austausch von LED und Farbsensor.</p>
-<p><strong>Budget:</strong> höchstens 10 € Materialwert, selbst gebaut, mit Foto und kurzer Begründung dokumentiert.</p>
-</section>
-<section id="der-feste-abstand" class="level3">
-<h3 class="anchored" data-anchor-id="der-feste-abstand">Der feste Abstand</h3>
+<section id="the-fixed-distance" class="level3">
+<h3 class="anchored" data-anchor-id="the-fixed-distance">The fixed distance</h3>
+<p>The distance between the front of the lamp and the front of the eye is fixed and the same for everyone. It is chosen so that a bare device just about works and a good light channel makes a real difference.</p>
 <!-- TODO: Wert eintragen, sobald die Pilotmessung erfolgt ist -->
 </section>
-<section id="bevor-ihr-etwas-kauft" class="level3">
-<h3 class="anchored" data-anchor-id="bevor-ihr-etwas-kauft">Bevor ihr etwas kauft</h3>
-<p>Messt erst, was euer Aufbau ohne Hilfsmittel schafft. Erfahrungsgemäß bringt eine mattschwarz ausgemalte Innenwand mehr als eine gekaufte Linse.</p>
+<section id="before-you-buy-anything" class="level3">
+<h3 class="anchored" data-anchor-id="before-you-buy-anything">Before you buy anything</h3>
+<p>First measure what your setup manages without any aids. In our experience an inside wall painted matt black does more than a bought lens.</p>
 </section>
 </section>
-<section id="das-gehäuse" class="level2">
-<h2 class="anchored" data-anchor-id="das-gehäuse">Das Gehäuse</h2>
-<p>Das Gehäuse wird im 3D-Druck hergestellt und besteht aus zwei Druckteilen: der Wanne mit integrierter Frontwand und dem Deckel. Die Quelldatei ist parametrisch in OpenSCAD geschrieben: <a href="../assets/hardware/lifi-device-case.scad">lifi-device-case.scad</a>. Sie ist als CC0 freigegeben, ihr dürft sie also ohne Bedingungen verwenden und verändern.</p>
+<section id="the-case" class="level2">
+<h2 class="anchored" data-anchor-id="the-case">The case</h2>
+<p>The case is 3D-printed in two parts: the tray, with the front wall built in, and the lid. The source is a parametric OpenSCAD file: <a href="../assets/hardware/lifi-device-case.scad">lifi-device-case.scad</a>. It is released under CC0, so you may use and change it without any conditions.</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p><img src="../assets/cc-zero-88x31.png" class="img-fluid figure-img"></p>
 <figcaption>CC0 1.0</figcaption>
 </figure>
 </div>
-<section id="bauteileliste" class="level3">
-<h3 class="anchored" data-anchor-id="bauteileliste">Bauteileliste</h3>
-<p>Alles, was in einem Gerät steckt. Die Kits werden fertig gestellt; die Liste braucht ihr, wenn etwas ersetzt werden muss oder ihr das Gerät nachbauen wollt.</p>
+<section id="parts-list" class="level3">
+<h3 class="anchored" data-anchor-id="parts-list">Parts list</h3>
+<p>Everything that goes into one device. The kits come assembled. You need the list when something has to be replaced or you want to build a device of your own.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: right;">Anzahl</th>
-<th>Bauteil</th>
-<th>Anmerkung</th>
+<th style="text-align: right;">Qty</th>
+<th>Part</th>
+<th>Note</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td><a href="https://www.tinkerforge.com/de/shop/master-brick.html">Master Brick</a> (Tinkerforge)</td>
-<td>verbindet die Bricklets per USB-C mit dem Rechner</td>
+<td><a href="https://www.tinkerforge.com/en/shop/master-brick.html">Master Brick</a> (Tinkerforge)</td>
+<td>connects the Bricklets to the laptop over USB-C; <a href="https://www.tinkerforge.com/en/doc/Hardware/Bricks/Master_Brick.html">documentation</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td><a href="https://www.tinkerforge.com/de/shop/rgb-led-v2-bricklet.html">RGB LED Bricklet 2.0</a></td>
-<td>der Sender</td>
+<td><a href="https://www.tinkerforge.com/en/shop/rgb-led-v2-bricklet.html">RGB LED Bricklet 2.0</a></td>
+<td>the sender; <a href="https://www.tinkerforge.com/en/doc/Hardware/Bricklets/RGB_LED_V2.html">documentation</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td><a href="https://www.tinkerforge.com/de/shop/color-v2-bricklet.html">Color Bricklet 2.0</a></td>
-<td>der Empfänger, misst R, G, B und Clear</td>
+<td><a href="https://www.tinkerforge.com/en/shop/color-v2-bricklet.html">Color Bricklet 2.0</a></td>
+<td>the receiver, measures red, green, blue and clear; <a href="https://www.tinkerforge.com/en/doc/Hardware/Bricklets/Color_V2.html">documentation</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td><a href="https://www.tinkerforge.com/de/shop/accessories/cable/bricklet-cable-15cm-7p-7p.html">Bricklet-Kabel, 7-polig, 15 cm</a></td>
-<td>Bricklets an den Master Brick</td>
+<td><a href="https://www.tinkerforge.com/en/shop/accessories/cable/bricklet-cable-15cm-7p-7p.html">Bricklet cable, 7-pin, 15 cm</a></td>
+<td>Bricklets to the Master Brick</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td><a href="https://shop.tinkerforge.com/de/accessories/cable/usb-a-to-usb-c-cable-100cm.html">USB-A-auf-USB-C-Kabel, 100 cm</a> (Tinkerforge)</td>
-<td>Gerät an den Rechner; jedes andere USB-C-Datenkabel geht auch</td>
+<td><a href="https://shop.tinkerforge.com/en/accessories/cable/usb-a-to-usb-c-cable-100cm.html">USB-A to USB-C cable, 100 cm</a> (Tinkerforge)</td>
+<td>device to laptop; any other USB-C data cable works too</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
-<td><a href="https://www.tinkerforge.com/de/shop/accessories/mounting/mounting-kit-12mm.html">Montagekit 12 mm</a> (Tinkerforge)</td>
-<td>enthält alles Kleinteilige für Brick und Bricklets: die vier 10-mm-Abstandsbolzen (Gewinde beidseitig innen) für den Master Brick, acht M3-Schrauben (vier für die Bricklets vorn, vier für den Brick auf den Bolzen), acht Muttern und Unterlegscheiben</td>
+<td><a href="https://www.tinkerforge.com/en/shop/accessories/mounting/mounting-kit-12mm.html">Mounting kit 12 mm</a> (Tinkerforge)</td>
+<td>all the small parts for Brick and Bricklets: the four 10 mm spacers (threaded inside at both ends) for the Master Brick, eight M3 screws (four for the Bricklets at the front, four for the Brick on the spacers), eight nuts and washers</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
-<td>Schraube M3 × 8, Senkkopf DIN 965 (<a href="https://www.amazon.de/s?k=M3x8+Senkkopf+DIN+965">Suche</a>)</td>
-<td>von unten durch den Boden in die Bolzen; Senkkopf, damit die Köpfe bündig in den Senkungen sitzen (die Linsenkopf-Schrauben aus dem Kit stünden über)</td>
+<td>Screw M3 × 8, countersunk, DIN 965 (<a href="https://www.amazon.de/s?k=M3x8+Senkkopf+DIN+965">search</a>)</td>
+<td>from below through the floor into the spacers; countersunk so the heads sit flush in the recesses (the pan-head screws from the kit would stick out)</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td>Schneidschraube EJOT Delta PT WN 5454, Senkkopf 3,0 × 8, Torx (<a href="https://dw-bendler.de/shop/public/FE-Schraube-EJOT-Delta-PT-WN5454-Senkkopf-3-0x8-Innensechsrund-Antrieb-verzinkt/SW34172">DW Bendler, SW34172</a>)</td>
-<td>für den Deckel; gewindeformend für Thermoplaste, keine Blechschrauben</td>
+<td>Thread-forming screw EJOT Delta PT WN 5454, countersunk 3.0 × 8, Torx (<a href="https://dw-bendler.de/shop/public/FE-Schraube-EJOT-Delta-PT-WN5454-Senkkopf-3-0x8-Innensechsrund-Antrieb-verzinkt/SW34172">DW Bendler, SW34172</a>)</td>
+<td>for the lid; made to form their thread in plastic, not sheet-metal screws</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
-<td>Klebe-Gummifuß, Ø 10 × 3 mm, schwarz (<a href="https://www.reichelt.com/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081">Delock 18309 bei Reichelt</a>, 50er-Pack)</td>
-<td>in die Mulden an der Unterseite</td>
+<td>Self-adhesive rubber foot, Ø 10 × 3 mm, black (<a href="https://www.reichelt.com/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081">Delock 18309 at Reichelt</a>, pack of 50)</td>
+<td>into the recesses on the underside</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td>Druckteil Wanne und Deckel</td>
-<td>STL-Dateien unten, schwarzes mattes Filament</td>
+<td>Printed parts, tray and lid</td>
+<td>STL files below, black matt filament</td>
 </tr>
 </tbody>
 </table>
-<p>Die Tinkerforge-Links führen direkt zum Hersteller-Shop; die Suchlinks bei den Normteilen sind Beispiele, jeder Schrauben- oder Elektronikhandel führt sie.</p>
+<p>The Tinkerforge links go straight to the maker’s shop. The search links for the standard parts are examples; any hardware or electronics shop carries them.</p>
 </section>
-<section id="das-3d-modell" class="level3">
-<h3 class="anchored" data-anchor-id="das-3d-modell">Das 3D-Modell</h3>
-<p>Beide Druckteile zum Ansehen: Ziehen dreht, Scrollen zoomt.</p>
+<section id="the-3d-model" class="level3">
+<h3 class="anchored" data-anchor-id="the-3d-model">The 3D model</h3>
+<p>Both printed parts, to look at: drag to turn, scroll to zoom.</p>
 <div class="stl-zeile">
-  <figure class="figure"><div id="stl-wanne" class="stl-viewer"></div><figcaption>Wanne mit Frontwand und Trennsteg</figcaption></figure>
-  <figure class="figure"><div id="stl-deckel" class="stl-viewer"></div><figcaption>Deckel</figcaption></figure>
+  <figure class="figure"><div id="stl-wanne" class="stl-viewer"></div><figcaption>Tray with front wall and septum</figcaption></figure>
+  <figure class="figure"><div id="stl-deckel" class="stl-viewer"></div><figcaption>Lid</figcaption></figure>
 </div>
 <style>
   .stl-zeile { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -711,8 +670,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         renderer.render(szene, kamera);
       });
     }, undefined, () => {
-      wrap.textContent = "3D-Ansicht konnte nicht geladen werden. " +
-        "Die STL-Dateien gibt es unten zum Herunterladen.";
+      wrap.textContent = "The 3D view could not be loaded. " +
+        "The STL files are available for download below.";
     });
 
     new ResizeObserver(() => {
@@ -726,24 +685,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   zeige("stl-wanne", "../assets/hardware/lifi-device-case-wanne.stl");
   zeige("stl-deckel", "../assets/hardware/lifi-device-case-deckel.stl");
 </script>
-<p>Zum Herunterladen und Selberdrucken:</p>
+<p>To download and print yourself:</p>
 <ul>
-<li><a href="../assets/hardware/lifi-device-case-wanne.stl">Wanne (STL)</a></li>
-<li><a href="../assets/hardware/lifi-device-case-deckel.stl">Deckel (STL)</a></li>
+<li><a href="../assets/hardware/lifi-device-case-wanne.stl">Tray (STL)</a></li>
+<li><a href="../assets/hardware/lifi-device-case-deckel.stl">Lid (STL)</a></li>
 </ul>
 </section>
-<section id="druck" class="level3">
-<h3 class="anchored" data-anchor-id="druck">Druck</h3>
-<p>Wanne mit der offenen Seite nach oben drucken, den Deckel flach. Empfohlen: schwarzes, mattes Filament (PETG oder PLA), 0,2 mm Schichthöhe, mindestens 4 Perimeter, damit die Schraubdome stabil sind. Stützen braucht nur der vorstehende Trennsteg an der Front; im Inneren gibt es absichtlich keine Hohlräume, die der Slicer stützen müsste.</p>
+<section id="printing" class="level3">
+<h3 class="anchored" data-anchor-id="printing">Printing</h3>
+<p>Print the tray with the open side up, the lid flat. Recommended: black, matt filament (PETG or PLA), 0.2 mm layer height, at least 4 perimeters so the screw bosses are solid. Only the septum protruding from the front needs support. Inside there are deliberately no cavities the slicer would have to support.</p>
 </section>
-<section id="zusammenbau" class="level3">
-<h3 class="anchored" data-anchor-id="zusammenbau">Zusammenbau</h3>
+<section id="assembly" class="level3">
+<h3 class="anchored" data-anchor-id="assembly">Assembly</h3>
 <ol type="1">
-<li>Die vier 10-mm-Abstandsbolzen aus dem Montagekit von unten durch den Boden verschrauben (M3 × 8 Senkkopf, die Köpfe verschwinden in den Senkungen), den Master Brick mit vier Kit-Schrauben oben auf die Bolzen schrauben.</li>
-<li>LED- und Farbsensor-Bricklet von vorn in ihre Fassungen setzen und mit je zwei Kit-Schrauben verschrauben; die Kit-Muttern von innen mit den Fingern oder einem kleinen Schlüssel kontern. Der Innenraum ist dabei noch offen.</li>
-<li>Bricklet-Kabel durch die Schlitze unter den Fassungen zum Master Brick führen, USB-C-Kabel durch den Schlitz in der Rückwand anschließen.</li>
-<li>Deckel auflegen und mit den vier Schneidschrauben befestigen. Beim allerersten Zusammenbau die Schrauben von Hand eindrehen, nicht mit dem Akkuschrauber: Sie formen sich dabei ihr Gewinde in die Schraubdome.</li>
-<li>Gummifüße in die vier Mulden an der Unterseite kleben.</li>
+<li>Screw the four 10 mm spacers from the mounting kit in from below through the floor (M3 × 8 countersunk, the heads disappear into the recesses), then screw the Master Brick onto the spacers from above with four kit screws.</li>
+<li>Set the LED and colour sensor Bricklets into their mounts from the front and fasten each with two kit screws. Hold the kit nuts against them from inside, with your fingers or a small spanner. The inside is still open at this point.</li>
+<li>Run the Bricklet cables through the slots below the mounts to the Master Brick, and plug the USB-C cable in through the slot in the back wall.</li>
+<li>Put the lid on and fasten it with the four thread-forming screws. The very first time, turn them in by hand, not with a power screwdriver: they cut their own thread into the bosses as they go.</li>
+<li>Stick the rubber feet into the four recesses on the underside.</li>
 </ol>
 
 
@@ -1422,8 +1381,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../software/index.html" class="pagination-link" aria-label="Setup">
-        <span class="nav-page-text">Setup</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../software/index.html" class="pagination-link" aria-label="Required Software">
+        <span class="nav-page-text">Required Software</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
