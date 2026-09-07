@@ -1,0 +1,291 @@
+{
+ "konzept": "errors-and-redundancy",
+ "fragen": [
+  {
+   "id": "er-001",
+   "niveau": "verstehen",
+   "frage": "Eure Strecke überträgt zehn Zeichen fehlerfrei, hundertmal hintereinander.\nBei einer Datei von 2 KB kippt trotzdem ein Bit. Warum ist das kein\nWiderspruch?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil bei einer langen Datei der Sensor warm wird und gegen Ende ungenauer misst als am Anfang.",
+     "begruendung": "Für den Fehler braucht es keine Erwärmung. Die Streuung, die ihr seit Sitzung 5 kennt, ist von der ersten Sekunde an da; sie trifft nur selten, und selten mal sehr viele Symbole ergibt irgendwann einen Treffer."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil die Datei Bytes enthält, die als Farben schlechter zu unterscheiden sind als die Buchstaben der kurzen Tests.",
+     "begruendung": "Bytes und Buchstaben sind auf der Strecke dieselben Bits, und Bits werden mit demselben Alphabet gesendet. Der Unterschied liegt nicht im Inhalt, sondern in der Menge."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil jedes Symbol eine kleine Fehlerwahrscheinlichkeit hat; bei tausend Symbolen fällt sie nicht auf, bei zwanzigtausend schlägt sie zu.",
+     "begruendung": "Genau. Rauschen lässt sich verkleinern, aber nicht abschalten; bei genügend vielen Symbolen geht irgendwann eines daneben. Deshalb lautet die Frage nicht, wie man Fehler verhindert, sondern wie man sie bemerkt."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil der Empfänger bei langen Übertragungen den Takt verliert; kurze Tests sind vorbei, bevor die Uhren auseinanderlaufen.",
+     "begruendung": "Drift ist ein echtes Problem langer Übertragungen, aber ein anderes: Sie verschiebt ganze Symbolreihen und kippt nicht ein einzelnes Bit. Ein einzelner Kipp ist die Handschrift des Rauschens."
+    }
+   ]
+  },
+  {
+   "id": "er-002",
+   "niveau": "erinnern",
+   "frage": "Was bedeutet Redundanz bei einer Übertragung?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Bits, die zufällig doppelt in der Nachricht vorkommen und deshalb beim Komprimieren wegfallen können.",
+     "begruendung": "Das beschreibt, was Kompression entfernt, nämlich Wiederholungen im Inhalt. Redundanz im Sinn dieses Konzepts wird absichtlich hinzugefügt, nicht zufällig vorgefunden."
+    },
+    {
+     "kennung": "b",
+     "text": "Zusätzliche Bits, die keinen neuen Inhalt tragen, aber erkennbar machen, ob unterwegs etwas gekippt ist.",
+     "begruendung": "Genau. Ein Paritätsbit oder eine Prüfsumme sagt dem Empfänger nichts Neues über die Nachricht; sie sagt ihm, ob die Nachricht noch die ist, die losgeschickt wurde. Das kostet Übertragungszeit."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein zweiter Übertragungsweg, etwa Ton neben Licht, damit die Nachricht auch bei Ausfall eines Wegs ankommt.",
+     "begruendung": "Auch das nennt man Redundanz, aber in der Technik von Anlagen, nicht bei Bits. Hier geht es um Zusatzinformation im selben Bitstrom, die Fehler erkennbar macht."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Bits einer Nachricht, die der Empfänger schon kennt und deshalb nicht mehr empfangen muss.",
+     "begruendung": "Was der Empfänger schon kennt, muss tatsächlich nicht gesendet werden, aber das ist eine Frage der Kompression. Redundanz gegen Fehler wird gerade zusätzlich gesendet, obwohl sie nichts Neues sagt."
+    }
+   ]
+  },
+  {
+   "id": "er-003",
+   "niveau": "anwenden",
+   "frage": "Sender und Empfänger haben gerade Parität vereinbart: Byte plus\nParitätsbit enthalten zusammen eine gerade Zahl von Einsen. Es kommt an:\n10110010 mit Paritätsbit 1. Was weiß der Empfänger jetzt?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Dass das Paritätsbit gekippt ist, denn das Byte selbst hat vier Einsen und ist damit in Ordnung.",
+     "begruendung": "Vier Einsen im Byte sind das, was ankam, nicht das, was gesendet wurde. Ob das Byte oder das Paritätsbit gekippt ist, lässt sich aus den neun Bits nicht unterscheiden; beide Fälle sehen gleich aus."
+    },
+    {
+     "kennung": "b",
+     "text": "Dass mindestens ein Bit gekippt ist, aber nicht welches; er kann den Fehler melden, nicht reparieren.",
+     "begruendung": "Genau. Fünf Einsen in neun Bits verletzen die Vereinbarung, also ist unterwegs etwas passiert. Wo, sagt das Prüfbit nicht. Erkennen ist billig, ein Bit je Byte; Reparieren kostet mehr."
+    },
+    {
+     "kennung": "c",
+     "text": "Dass genau ein Bit gekippt ist, denn die Zahl der Einsen weicht um genau eins von einer geraden Zahl ab.",
+     "begruendung": "Ungerade heißt nur: eine ungerade Zahl von Kipps, also eins, drei oder fünf. Drei gekippte Bits sähen genauso aus. Parität zählt nicht, sie unterscheidet nur gerade von ungerade."
+    },
+    {
+     "kennung": "d",
+     "text": "Dass alles in Ordnung ist, denn das Byte hat vier Einsen und vier ist gerade, wie vereinbart.",
+     "begruendung": "Vereinbart war die Parität über Byte und Prüfbit zusammen, und das sind fünf Einsen. Wer das Prüfbit beim Zählen weglässt, prüft gar nichts."
+    }
+   ]
+  },
+  {
+   "id": "er-004",
+   "niveau": "verstehen",
+   "frage": "Ein Team sichert jedes Byte mit einem Paritätsbit. Welche Fehler bleiben\ndabei unbemerkt?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Fehler im Paritätsbit selbst, denn das Prüfbit kann sich nicht selbst prüfen.",
+     "begruendung": "Kippt das Prüfbit allein, stimmt die Parität nicht mehr, und der Empfänger meldet einen Fehler. Er weiß nur nicht, dass es das Prüfbit war; bemerkt wird der Fehler trotzdem."
+    },
+    {
+     "kennung": "b",
+     "text": "Fehler in den hohen Bits, denn die Parität zählt nur die niedrigen Stellen des Bytes.",
+     "begruendung": "Parität zählt Einsen, egal an welcher Stelle; ein Kipp im höchsten Bit ändert die Zahl der Einsen genauso wie einer im niedrigsten."
+    },
+    {
+     "kennung": "c",
+     "text": "Fehler, bei denen eine gerade Zahl von Bits kippt, etwa zwei, denn die Zahl der Einsen bleibt dann gerade.",
+     "begruendung": "Genau. Zwei Kipps im selben Byte heben sich in der Zählung auf, die Parität stimmt wieder, und das Byte gilt als in Ordnung. Ein Bit Redundanz erkennt jeden einzelnen Fehler, aber nicht jeden Doppelfehler. Mehr Sicherheit kostet mehr Bits."
+    },
+    {
+     "kennung": "d",
+     "text": "Keine, denn jeder Kipp verändert die Zahl der Einsen, und genau das misst die Parität.",
+     "begruendung": "Jeder einzelne Kipp verändert die Zahl, zwei Kipps können sie aber wieder zurückstellen: Eine 1 wird 0, eine 0 wird 1, die Summe bleibt. Die Parität misst nur gerade oder ungerade, nicht die Zahl selbst."
+    }
+   ]
+  },
+  {
+   "id": "er-005",
+   "niveau": "verstehen",
+   "frage": "Im Finale öffnet euer Empfänger das übertragene Bild, und es sieht\neinwandfrei aus. Gewertet wird trotzdem nur der Hash, eine Prüfsumme über\nalle Bytes. Warum reicht die Anzeige nicht als Beweis?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil ein Bildbetrachter auch gekippte Bytes meist noch anzeigt, nur leicht verdorben; der Hash dagegen ändert sich bei jedem einzelnen Byte.",
+     "begruendung": "Genau. Die Anzeige ist die Vorführung, der Hash der Beweis: Er ist so gebaut, dass schon ein einziges gekipptes Bit eine völlig andere Zahl ergibt. Das menschliche Auge übersieht ein falsches Pixel, die Prüfsumme nicht."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil der Hash zusätzlich zeigt, wie lange die Übertragung gedauert hat, und im Finale die Zeit gewertet wird.",
+     "begruendung": "Der Hash weiß nichts von Zeit; er hängt nur vom Inhalt der Datei ab. Die Dauer wird getrennt gemessen, und sie zählt erst, wenn der Hash stimmt."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil das Bild auf dem Empfängerrechner in einer anderen Auflösung angezeigt werden könnte als auf dem Sender.",
+     "begruendung": "Die Anzeige kann sich unterscheiden, ohne dass die Bytes es tun, und das ist gerade der Punkt: Verglichen werden die Bytes, nicht ihr Aussehen. Die Auflösung der Anzeige ist dafür ohne Belang."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil der Hash beweist, dass die Datei komprimiert übertragen wurde, was die Anzeige nicht zeigen kann.",
+     "begruendung": "Der Hash wird über die fertige Datei gebildet, egal wie sie unterwegs verpackt war. Ob komprimiert wurde, ist ihm gleichgültig; er sagt nur, ob am Ende dieselben Bytes dastehen wie am Anfang."
+    }
+   ]
+  },
+  {
+   "id": "er-006",
+   "niveau": "anwenden",
+   "frage": "Eine Datei von 2 KB hat 16.000 Bit. Ein Team hängt an jedes Byte ein\nParitätsbit. Wie viele Bits gehen über die Strecke?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "16.001, denn die Parität ist ein einzelnes Bit, das hinten an die Datei kommt.",
+     "begruendung": "Ein einziges Prüfbit über die ganze Datei gäbe es auch, aber vereinbart ist eins je Byte. 2.000 Bytes bekommen 2.000 Prüfbits."
+    },
+    {
+     "kennung": "b",
+     "text": "18.000, denn 2.000 Bytes bekommen je ein Bit dazu, also ein Achtel mehr.",
+     "begruendung": "Genau: 16.000 geteilt durch 8 sind 2.000 Bytes, jedes wird 9 Bit lang, also 18.000 Bit. Das ist das Preisschild der Parität: zwölfeinhalb Prozent mehr Übertragungszeit, und dafür wird jeder einzelne Kipp bemerkt."
+    },
+    {
+     "kennung": "c",
+     "text": "32.000, denn zum Prüfen muss der Empfänger jedes Byte doppelt bekommen, einmal zum Lesen und einmal zum Vergleichen.",
+     "begruendung": "Doppelt senden wäre ein anderes Verfahren und ein sehr teures. Die Parität fasst die acht Bits zu einem einzigen Prüfbit zusammen; darin liegt ihre Sparsamkeit."
+    },
+    {
+     "kennung": "d",
+     "text": "17.000, denn ein Bit je Byte sind bei 16.000 Bit ein Sechzehntel mehr.",
+     "begruendung": "Ein Byte hat acht Bit, nicht sechzehn. Ein Zusatzbit je Byte ist ein Achtel mehr, also 2.000 Bit, nicht 1.000."
+    }
+   ]
+  },
+  {
+   "id": "er-007",
+   "niveau": "verstehen",
+   "frage": "Ein Team sendet jedes Bit dreimal hintereinander, und der Empfänger nimmt\njeweils den Wert, der mindestens zweimal vorkommt. Was leistet dieses\nVerfahren, und was kostet es?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Es erkennt jeden Fehler, kann ihn aber nicht beheben; dafür wird die Übertragung dreimal so lang.",
+     "begruendung": "Der Preis stimmt, die Leistung ist unterschätzt: Wenn von drei Kopien eine kippt, gewinnt die Mehrheit, und das richtige Bit steht wieder da. Das Verfahren repariert, nicht nur erkennt."
+    },
+    {
+     "kennung": "b",
+     "text": "Es behebt jeden Fehler, egal wie viele Kopien kippen, denn die Mehrheit findet immer den richtigen Wert.",
+     "begruendung": "Kippen zwei von drei Kopien, gewinnt die falsche Mehrheit, und der Empfänger übernimmt den Fehler mit gutem Gewissen. Ein Kipp je Dreiergruppe ist die Grenze."
+    },
+    {
+     "kennung": "c",
+     "text": "Es behebt einen einzelnen Kipp je Dreiergruppe, ohne nachzufragen; dafür wird die Übertragung dreimal so lang.",
+     "begruendung": "Genau. Das ist der Unterschied zwischen Erkennen und Korrigieren: Korrigieren braucht viel mehr Redundanz (hier das Doppelte der Nutzdaten), lohnt sich aber, wenn Nachfragen nicht möglich ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Es macht die Übertragung sicherer und schneller zugleich, denn drei kurze Symbole sind leichter zu erkennen als ein langes.",
+     "begruendung": "Die drei Kopien sind drei ganze Symbole, nicht drei Drittel eines Symbols. Die Datei braucht dreimal so lange. Sicherheit gegen Fehler wird immer in Übertragungszeit bezahlt, nie geschenkt."
+    }
+   ]
+  },
+  {
+   "id": "er-008",
+   "niveau": "anwenden",
+   "frage": "Ab Challenge 4 darf der Empfänger antworten. Ein Team überlegt, wie es\nden Rückkanal gegen Übertragungsfehler einsetzt. Welche Kombination nutzt\nihn sinnvoll?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Jedes Bit dreimal senden und zusätzlich jeden Block quittieren lassen, damit doppelt abgesichert ist.",
+     "begruendung": "Doppelt abgesichert heißt doppelt bezahlt. Wer nachfragen kann, braucht die teure Korrektur im Voraus nicht; ein Block, der nicht stimmt, wird einfach noch einmal geschickt. Dreifach senden verschenkt zwei Drittel der Zeit."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Datei in Blöcke mit je einer Prüfsumme teilen; stimmt eine nicht, fordert der Empfänger nur diesen Block noch einmal an.",
+     "begruendung": "Genau. Mit Rückkanal genügt Erkennen, die Reparatur ist die Wiederholung. Die Prüfsumme je Block ist billig, und wiederholt wird nur, was kaputt war, nicht die ganze Datei. So arbeiten echte Netze."
+    },
+    {
+     "kennung": "c",
+     "text": "Auf Prüfsummen verzichten und stattdessen den Empfänger nach jedem Byte melden lassen, ob es angekommen ist.",
+     "begruendung": "Ob etwas angekommen ist, weiß der Empfänger ohne Prüfsumme nicht; er sieht nur, dass irgendein Byte kam, nicht, ob es das richtige war. Und eine Rückmeldung je Byte kostet mehr Zeit als jede Prüfsumme."
+    },
+    {
+     "kennung": "d",
+     "text": "Am Ende die ganze Datei per Hash prüfen und bei Abweichung die ganze Datei noch einmal senden.",
+     "begruendung": "Das nutzt den Rückkanal, aber schlecht: Ein einziger Kipp in Minute 20 kostet die ganze Übertragung noch einmal. Prüfsummen je Block machen die Wiederholung klein."
+    }
+   ]
+  },
+  {
+   "id": "er-009",
+   "niveau": "verstehen",
+   "frage": "Welche Aussagen über eine Prüfsumme treffen zu? (Mehrere richtige\nAntworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie wird nach einer festen Regel aus allen Bytes berechnet und ist viel kürzer als die Daten selbst.",
+     "begruendung": "Richtig, und genau darin liegt ihr Nutzen: wenige Bits Redundanz für eine Aussage über viele Bytes."
+    },
+    {
+     "kennung": "b",
+     "text": "Sie sagt dem Empfänger, dass etwas gekippt ist, aber nicht, welches Byte.",
+     "begruendung": "Richtig: Eine Prüfsumme erkennt, sie lokalisiert nicht. Wer wissen will, wo, braucht mehr Redundanz oder eine Wiederholung."
+    },
+    {
+     "kennung": "c",
+     "text": "Sie verhindert, dass Bits unterwegs kippen, weil der Sender die Daten vor dem Senden damit absichert.",
+     "begruendung": "Gegen das Kippen selbst hilft keine Rechnung; das Rauschen kennt die Prüfsumme nicht. Sie macht den Kipp nur bemerkbar, nachdem er passiert ist."
+    },
+    {
+     "kennung": "d",
+     "text": "Zwei verschiedene Dateien können dieselbe Prüfsumme haben, denn eine kurze Zahl kann nicht jede lange Datei eindeutig kennzeichnen.",
+     "begruendung": "Richtig: Es gibt mehr mögliche Dateien als mögliche Prüfsummen, also müssen sich welche eine teilen. Gute Verfahren wie der SHA-256 im Finale machen solche Zusammenstöße nur so unwahrscheinlich, dass sie praktisch nie vorkommen."
+    },
+    {
+     "kennung": "e",
+     "text": "Sie muss vor den Daten gesendet werden, damit der Empfänger beim Lesen jedes Byte sofort dagegen prüfen kann.",
+     "begruendung": "Geprüft wird erst, wenn alle Bytes da sind, denn die Prüfsumme hängt von allen ab. Ob sie vorn oder hinten im Rahmen steht, ist eine Vereinbarung der Klasse, keine Notwendigkeit."
+    }
+   ]
+  }
+ ]
+}

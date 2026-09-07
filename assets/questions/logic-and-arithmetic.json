@@ -1,0 +1,416 @@
+{
+ "konzept": "logic-and-arithmetic",
+ "fragen": [
+  {
+   "id": "pc-001",
+   "niveau": "erinnern",
+   "frage": "Speichern, Übertragen, Verarbeiten: Was unterscheidet das Verarbeiten von\nden beiden anderen?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Beim Verarbeiten werden die Bits von einem Ort an einen anderen gebracht, nur innerhalb des Rechners statt über eine Strecke.",
+     "begruendung": "Das ist Übertragen im Kleinen, kein Verarbeiten. Auch der Weg vom Speicher zum Prozessor ändert an den Bits nichts; sie kommen so an, wie sie losgingen."
+    },
+    {
+     "kennung": "b",
+     "text": "Beim Verarbeiten entstehen aus vorhandenen Bits nach festen Regeln neue Bits, die vorher nirgends standen.",
+     "begruendung": "Genau. Speichern bewahrt Bits auf, Übertragen reicht sie weiter, beides lässt sie unverändert. Erst das Verknüpfen und Verändern nach Regeln macht aus dem Rechner mehr als einen schnellen Boten."
+    },
+    {
+     "kennung": "c",
+     "text": "Beim Verarbeiten werden die Bits in Zahlen zurückverwandelt, damit der Rechner mit ihnen rechnen kann wie ein Mensch.",
+     "begruendung": "Der Rechner rechnet nie mit etwas anderem als Bits. Was wir als Zahl lesen, bleibt für die Maschine eine Bitfolge, und die Rechenregeln arbeiten direkt darauf."
+    },
+    {
+     "kennung": "d",
+     "text": "Beim Verarbeiten prüft der Rechner, ob die gespeicherten oder übertragenen Bits noch unversehrt sind.",
+     "begruendung": "Das ist eine Anwendung von Verarbeitung, die Prüfsumme, aber nicht ihre Definition. Verarbeitung umfasst genauso Rechnen, Komprimieren oder Verschlüsseln."
+    }
+   ]
+  },
+  {
+   "id": "pc-002",
+   "niveau": "anwenden",
+   "frage": "Die Verknüpfung XOR (exklusives Oder) liefert 1, wenn genau eine der\nbeiden Eingaben 1 ist. Was liefert sie für die Eingaben 1 und 1?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "0, denn beide Eingaben sind 1, also nicht genau eine.",
+     "begruendung": "Genau: XOR fragt nach 'verschieden oder gleich'. Zwei gleiche Eingaben ergeben 0, zwei verschiedene 1. Diese Eigenschaft macht XOR zum Baustein für Prüfsummen und Verschlüsselung."
+    },
+    {
+     "kennung": "b",
+     "text": "1, denn mindestens eine der beiden Eingaben ist 1.",
+     "begruendung": "Das ist das gewöhnliche Oder, das bei 'mindestens eine' 1 liefert. Das exklusive Oder verlangt 'genau eine', und bei zwei Einsen ist das verletzt."
+    },
+    {
+     "kennung": "c",
+     "text": "2, denn 1 plus 1 ergibt 2, und XOR ist die Addition einzelner Bits.",
+     "begruendung": "Ein Bit kann nur 0 oder 1 sein, eine 2 gibt es nicht. XOR liefert die Einerstelle der Bitaddition (0), den Übertrag (1) liefert eine andere Verknüpfung, das Und."
+    },
+    {
+     "kennung": "d",
+     "text": "10, denn 1 plus 1 ist binär 10, und genau das gibt XOR zurück.",
+     "begruendung": "Die Rechnung 1 plus 1 gleich binär 10 stimmt, aber XOR liefert nur ein einziges Bit, nicht zwei. Es gibt die 0 der Einerstelle zurück; die 1 davor ist der Übertrag aus dem Und."
+    }
+   ]
+  },
+  {
+   "id": "pc-003",
+   "niveau": "verstehen",
+   "frage": "Eine Maschine addiert zwei einzelne Bits. Das Ergebnis hat zwei Stellen:\ndie Summe (0 oder 1) und den Übertrag (0 oder 1). Welche Verknüpfungen\nliefern die beiden Stellen?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Summe liefert das Oder, den Übertrag das Und, denn Oder zählt zusammen und Und behält das Doppelte.",
+     "begruendung": "Fast: Der Übertrag stimmt, die Summe nicht. Bei 1 und 1 liefert das Oder eine 1, die Summenstelle muss aber 0 sein (1 plus 1 ist binär 10). Das gewöhnliche Oder zählt nicht, es vereinigt."
+    },
+    {
+     "kennung": "b",
+     "text": "Beide Stellen liefert das Und, einmal auf die Bits selbst und einmal auf ihre Umkehrung angewendet.",
+     "begruendung": "Das Und der Umkehrungen ist 1, wenn beide Bits 0 sind, also gerade nicht die Summe. Für die Summenstelle braucht es die Frage 'sind die Bits verschieden?', und die stellt XOR."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Summe liefert XOR, den Übertrag das Und, denn XOR ist 1 bei genau einer 1 und Und ist 1 bei zwei Einsen.",
+     "begruendung": "Genau, das ist der Halbaddierer: 0 plus 1 und 1 plus 0 ergeben Summe 1 ohne Übertrag, 1 plus 1 ergibt Summe 0 mit Übertrag 1. Aus vielen solcher Bausteine nebeneinander entsteht ein Addierwerk für ganze Zahlen."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Summe liefert das Und, den Übertrag XOR, denn der Übertrag entsteht nur, wenn sich die Bits unterscheiden.",
+     "begruendung": "Genau vertauscht. Ein Übertrag entsteht, wenn beide Bits 1 sind, also bei Gleichheit, nicht bei Unterschied. Das ist die Und-Frage; XOR beantwortet die Summenstelle."
+    }
+   ]
+  },
+  {
+   "id": "pc-004",
+   "niveau": "anwenden",
+   "frage": "Ein Team hängt an jedes Byte ein Paritätsbit, sodass die Zahl der Einsen\ninsgesamt gerade ist. Welches Paritätsbit bekommt das Byte 10110010?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "0, denn das Byte enthält vier Einsen, die Zahl ist schon gerade.",
+     "begruendung": "Genau. Und das ist nichts anderes als XOR über alle acht Bits: Es liefert 1 bei ungerader und 0 bei gerader Zahl von Einsen. Ein Baustein, acht Eingaben, ein Prüfbit."
+    },
+    {
+     "kennung": "b",
+     "text": "1, denn das Byte enthält vier Einsen, und mit dem Prüfbit werden es fünf, eine Zahl je Byte.",
+     "begruendung": "Die Zählung stimmt, der Schluss nicht: Das Prüfbit soll die Zahl der Einsen gerade machen, nicht um eins erhöhen. Bei vier Einsen bleibt es bei 0."
+    },
+    {
+     "kennung": "c",
+     "text": "1, denn das Byte hat den Wert 178, und 178 ist gerade, also wird eine 1 angehängt.",
+     "begruendung": "Der Zahlenwert 178 stimmt, spielt aber keine Rolle. Parität zählt Einsen, nicht den Wert des Bytes; 178 hat vier Einsen, also Prüfbit 0."
+    },
+    {
+     "kennung": "d",
+     "text": "4, denn das Prüfbit hält fest, wie viele Einsen das Byte enthält, damit der Empfänger nachzählen kann.",
+     "begruendung": "Ein Bit kann keine 4 speichern. Das ist gerade der Witz der Parität: Statt die Anzahl zu übertragen, wird nur ihre Eigenschaft gerade oder ungerade übertragen, ein einziges Bit."
+    }
+   ]
+  },
+  {
+   "id": "pc-005",
+   "niveau": "verstehen",
+   "frage": "Ein Team verschlüsselt, indem es jedes Bit der Nachricht per XOR mit dem\npassenden Bit eines Schlüssels verknüpft. Der Empfänger wendet auf das\nErgebnis noch einmal XOR mit demselben Schlüssel an. Was kommt heraus?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Der Schlüssel, denn zweimal XOR mit derselben Eingabe hebt die Nachricht auf und lässt den Schlüssel stehen.",
+     "begruendung": "Es hebt sich das auf, was zweimal vorkommt, und das ist der Schlüssel, nicht die Nachricht. Bit für Bit: Ein Bit XOR Schlüsselbit XOR Schlüsselbit ist das ursprüngliche Bit."
+    },
+    {
+     "kennung": "b",
+     "text": "Die ursprüngliche Nachricht, denn XOR mit demselben Bit zweimal hintereinander macht sich selbst rückgängig.",
+     "begruendung": "Genau: Ist das Schlüsselbit 0, ändert XOR nichts, zweimal nichts. Ist es 1, kippt XOR das Bit, und zweimal kippen ist wieder das Original. Dieselbe Verknüpfung ver- und entschlüsselt, mit demselben Schlüssel."
+    },
+    {
+     "kennung": "c",
+     "text": "Lauter Nullen, denn XOR zweier gleicher Werte ergibt 0, und der Schlüssel wurde zweimal angewendet.",
+     "begruendung": "Schlüssel XOR Schlüssel wäre tatsächlich 0. Aber die Nachricht steckt dazwischen, und 0 XOR Nachrichtenbit ist das Nachrichtenbit. Die Nullen bleiben nicht übrig, sie verschwinden gerade."
+    },
+    {
+     "kennung": "d",
+     "text": "Eine doppelt verschlüsselte Nachricht, die nur mit dem Schlüssel in umgekehrter Reihenfolge lesbar wird.",
+     "begruendung": "Das gilt für manche Verfahren, nicht für XOR. XOR ist sein eigenes Gegenteil; eine zweite Anwendung verschlüsselt nicht tiefer, sie entschlüsselt. Eine Reihenfolge gibt es bei einem einzelnen Schlüssel nicht."
+    }
+   ]
+  },
+  {
+   "id": "pc-006",
+   "niveau": "anwenden",
+   "frage": "Ein Team verschlüsselt per XOR und wählt als Schlüssel lauter Nullen,\n'damit es einfach bleibt'. Was passiert mit der Nachricht?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Sie wird zu lauter Nullen, denn jedes Bit wird mit 0 verknüpft und übernimmt diesen Wert.",
+     "begruendung": "XOR übernimmt keinen Wert, es vergleicht. Ein Bit XOR 0 ist 'unterscheidet sich das Bit von 0?', und das ist das Bit selbst. Die Nachricht bleibt, wie sie war."
+    },
+    {
+     "kennung": "b",
+     "text": "Sie wird verschlüsselt wie mit jedem anderen Schlüssel auch, denn das Verfahren ist dasselbe.",
+     "begruendung": "Das Verfahren ist dasselbe, das Ergebnis nicht. Die Sicherheit steckt nicht im Verfahren, sondern im Schlüssel; ein Schlüssel aus Nullen ist ein Schlüssel, der nichts kippt."
+    },
+    {
+     "kennung": "c",
+     "text": "Sie bleibt unverändert, denn ein Bit XOR 0 ergibt immer das Bit selbst; die Verschlüsselung tut nichts.",
+     "begruendung": "Genau. XOR kippt ein Bit dort, wo der Schlüssel eine 1 hat, und lässt es dort, wo er eine 0 hat. Ein Schlüssel ohne Einsen kippt nichts. Das Team sendet im Klartext und merkt es nicht."
+    },
+    {
+     "kennung": "d",
+     "text": "Sie wird zwar verschlüsselt, lässt sich aber nicht mehr entschlüsseln, weil XOR mit 0 nicht umkehrbar ist.",
+     "begruendung": "XOR ist mit jedem Schlüssel umkehrbar, auch mit 0. Nur ist hier nichts umzukehren: Die Nachricht ist nach dem Verschlüsseln dieselbe wie davor."
+    }
+   ]
+  },
+  {
+   "id": "pc-007",
+   "niveau": "anwenden",
+   "frage": "In Python verknüpft der Operator ^ zwei Zahlen bitweise per XOR. Was gibt\ndas Programm aus?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "code": "a = 0b1100\nb = 0b1010\nprint(a ^ b)",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "8, denn nur an der ersten Stelle haben beide Zahlen eine 1.",
+     "begruendung": "Das ist das bitweise Und (a & b): 1000, also 8. XOR fragt nicht, wo beide eine 1 haben, sondern wo sich die Bits unterscheiden."
+    },
+    {
+     "kennung": "b",
+     "text": "6, denn an der zweiten und dritten Stelle unterscheiden sich die Bits, das ergibt 0110.",
+     "begruendung": "Genau: 1100 XOR 1010, Stelle für Stelle: 1 und 1 ergibt 0, 1 und 0 ergibt 1, 0 und 1 ergibt 1, 0 und 0 ergibt 0. Das ist 0110, dezimal 6."
+    },
+    {
+     "kennung": "c",
+     "text": "14, denn an drei Stellen hat mindestens eine der Zahlen eine 1, das ergibt 1110.",
+     "begruendung": "Das ist das bitweise Oder (a | b): 1110, also 14. Beim exklusiven Oder fällt die Stelle weg, an der beide eine 1 haben."
+    },
+    {
+     "kennung": "d",
+     "text": "22, denn 12 plus 10 ergibt 22, und ^ ist die Addition der beiden Zahlen.",
+     "begruendung": "Die Werte 12 und 10 stimmen, aber ^ addiert nicht. XOR ist die Addition ohne Übertrag, Stelle für Stelle; die Überträge, die 22 erst ergeben würden, wirft es weg."
+    }
+   ]
+  },
+  {
+   "id": "pc-008",
+   "niveau": "verstehen",
+   "frage": "Welche dieser Schritte aus eurem Projekt sind Verarbeitung, also erzeugen\nnach festen Regeln neue Bits aus vorhandenen? (Mehrere richtige Antworten\nmöglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Prüfsumme über alle Bytes der Datei berechnen, bevor sie gesendet wird.",
+     "begruendung": "Richtig: Aus zweitausend Bytes entsteht nach einer festen Regel eine kurze Zahl, die vorher nirgends stand."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Bits der Datei als Farbfolge über die Lichtstrecke an den Empfänger schicken.",
+     "begruendung": "Das ist Übertragen. Die Bits sollen beim Empfänger exakt so ankommen, wie sie losgingen; entstehen darf dabei nichts Neues, sonst wäre es ein Fehler."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Datei vor dem Senden komprimieren, damit weniger Bits über die Strecke müssen.",
+     "begruendung": "Richtig: Aus der Datei entsteht nach festen Regeln eine kürzere Bitfolge, aus der sich die alte wieder herstellen lässt. Das ist Verarbeitung im Dienst der Übertragung."
+    },
+    {
+     "kennung": "d",
+     "text": "Aus den vier Sensorwerten r, g, b und c entscheiden, welches Symbol gerade anliegt.",
+     "begruendung": "Richtig: Vier Zahlen gehen hinein, ein Symbol kommt heraus, nach den Regeln eurer Kalibrierung. Das ist der Verarbeitungsschritt, den ihr seit Challenge 1 selbst schreibt."
+    },
+    {
+     "kennung": "e",
+     "text": "Die empfangene Datei auf der Festplatte ablegen, damit sie nach dem Lauf noch da ist.",
+     "begruendung": "Das ist Speichern. Die Bits werden aufbewahrt, nicht verändert; morgen liest man dieselben Bytes wieder heraus."
+    }
+   ]
+  },
+  {
+   "id": "pc-009",
+   "niveau": "anwenden",
+   "frage": "Ein Graustufenbild speichert jeden Bildpunkt als Byte, 0 ist schwarz, 255\nweiß. Ein Filter 'heller' addiert zu jedem Bildpunkt 40, mit einem\ngewöhnlichen 8-Bit-Addierer und ohne weitere Vorkehrung. Was wird aus einem\nBildpunkt mit dem Wert 230?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "255, denn heller als weiß geht nicht, und der Addierer bleibt beim größten darstellbaren Wert stehen.",
+     "begruendung": "So sollte es sein, aber dafür muss jemand sorgen: ein Vergleich (größer als 255?) und eine Entscheidung. Der Addierer allein kennt kein Maximum; er rechnet stur weiter und wirft den Übertrag weg."
+    },
+    {
+     "kennung": "b",
+     "text": "270, denn der Addierer rechnet richtig, und erst beim Anzeigen wird der Wert auf Weiß gerundet.",
+     "begruendung": "Die 270 existiert im Byte nicht; sie bräuchte neun Bits. Was der 8-Bit-Addierer ablegt, sind die unteren acht Bits von 270, und das ist nicht Weiß."
+    },
+    {
+     "kennung": "c",
+     "text": "14, denn 270 braucht neun Bits; der neunte Übertrag geht verloren, und 270 minus 256 bleibt übrig.",
+     "begruendung": "Genau. Das ist der Überlauf: Ein fast weißer Bildpunkt wird fast schwarz, und ein heller Himmel bekommt schwarze Sprenkel. Die Reparatur heißt Begrenzen (clamp): erst vergleichen, dann bei Bedarf 255 setzen."
+    },
+    {
+     "kennung": "d",
+     "text": "230, denn ein Addierer, der das Ergebnis nicht darstellen kann, lässt den Wert unverändert.",
+     "begruendung": "Ein Addierer lässt nichts unverändert; er hat kein Gedächtnis für den alten Wert und keine Meldung für 'passt nicht'. Er liefert immer ein Ergebnis, nur eben ein falsches."
+    }
+   ]
+  },
+  {
+   "id": "pc-010",
+   "niveau": "verstehen",
+   "frage": "Der Filter 'Negativ' ersetzt jeden Bildpunkt durch 255 minus seinen Wert.\nAus 178 (binär 10110010) wird 77 (binär 01001101). Welche Verknüpfung\nsteckt dahinter?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Eine Subtraktion mit Übertrag, die acht Volladdierer braucht, genau wie das Aufhellen.",
+     "begruendung": "So könnte man es bauen, aber es ist unnötig aufwendig: Bei 255 minus Wert entsteht nie ein Übertrag, denn 255 hat an jeder Stelle eine 1. Jede Stelle wird einzeln zu 1 minus Bit, und das ist ein Kippen."
+    },
+    {
+     "kennung": "b",
+     "text": "Ein Nicht auf jedem einzelnen Bit: Jede 1 wird 0, jede 0 wird 1, ganz ohne Übertrag.",
+     "begruendung": "Genau. 255 ist binär 11111111, und 1 minus Bit ist das gekippte Bit. Acht Nicht-Gatter nebeneinander, kein Übertrag, kein Addierer. Der Filter, der am dramatischsten aussieht, ist der einfachste."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein XOR jedes Bits mit dem entsprechenden Bit von 178, denn XOR eines Werts mit sich selbst kippt ihn.",
+     "begruendung": "XOR eines Werts mit sich selbst ergibt lauter Nullen, nicht das Gegenteil. Ein XOR mit lauter Einsen dagegen wäre tatsächlich ein Kippen; das ist nur ein anderer Name für das Nicht auf jedem Bit."
+    },
+    {
+     "kennung": "d",
+     "text": "Ein Vertauschen der Bitreihenfolge, denn 01001101 ist 10110010 von hinten gelesen.",
+     "begruendung": "Sieht auf den ersten Blick so aus, stimmt aber nicht: 10110010 rückwärts ist 01001101 nur zufällig ähnlich; an der zweiten und dritten Stelle passt es nicht. Stelle für Stelle gekippt passt es überall."
+    }
+   ]
+  },
+  {
+   "id": "pc-011",
+   "niveau": "verstehen",
+   "frage": "Eine Foto-App macht ein Bild mit einem Tastendruck heller. Was tut der\nRechner dabei?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Er erkennt die dunklen Bereiche des Bildes und hellt gezielt diese auf, damit die hellen nicht überstrahlen.",
+     "begruendung": "Für den einfachen Filter erkennt der Rechner gar nichts; er addiert zu jedem Bildpunkt dieselbe Zahl. Ob die hellen überstrahlen, hängt davon ab, ob jemand die Begrenzung bei 255 eingebaut hat, nicht von einem Verständnis des Bildes."
+    },
+    {
+     "kennung": "b",
+     "text": "Er erhöht die Leuchtkraft des Bildschirms an den Stellen, an denen das Bild angezeigt wird.",
+     "begruendung": "Der Bildschirm bleibt, wie er ist; geändert wird die Datei. Sonst wäre das hellere Bild nach dem Speichern wieder dunkel. Die Zahlen im Bild sind größer geworden, nicht die Lampe dahinter."
+    },
+    {
+     "kennung": "c",
+     "text": "Er addiert zu jedem einzelnen Bildpunkt dieselbe Zahl, zigtausendmal dieselbe Rechnung, ohne etwas vom Bild zu wissen.",
+     "begruendung": "Genau. Ein Bildpunkt ist ein Byte, heller heißt plus 40, und das für jeden Bildpunkt einzeln. Kein Schritt weiß, dass er Teil eines Bildes ist. Was den Filter mächtig wirken lässt, ist die Zahl der Wiederholungen und ihre Geschwindigkeit."
+    },
+    {
+     "kennung": "d",
+     "text": "Er verschiebt jeden Bildpunkt um eine Stufe in einer Farbtabelle, in der die helleren Farben weiter oben stehen.",
+     "begruendung": "Eine Tabelle braucht es nicht; der Wert selbst ist die Helligkeit, 0 schwarz, 255 weiß. Eine Stufe weiter wäre außerdem plus 1, kaum sichtbar. Heller ist eine Addition mit einer spürbaren Zahl, direkt auf dem Byte."
+    }
+   ]
+  },
+  {
+   "id": "pc-012",
+   "niveau": "verstehen",
+   "frage": "Die Werkzeugkiste zeigt vier Gatter: Und, Oder, Nicht und XOR. Ein Chip\nbesteht aber fast nur aus NAND-Gattern (Und mit anschließendem Nicht).\nWie passt das zusammen?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Es passt nicht: Ein Chip braucht für jede Verknüpfung ein eigenes Bauteil, und NAND ist nur das häufigste davon.",
+     "begruendung": "NAND ist nicht nur das häufigste, es genügt. Nicht ist ein NAND mit demselben Bit an beiden Eingängen, Und ist ein umgedrehtes NAND, Oder ein NAND mit vorher gekippten Eingängen. Eigene Bauteile je Verknüpfung sind nicht nötig."
+    },
+    {
+     "kennung": "b",
+     "text": "Aus NAND allein lassen sich Nicht, Und und Oder zusammensetzen; die vier Gatter sind Kurzschreibweisen für kleine NAND-Schaltungen.",
+     "begruendung": "Genau. Ein einziges Gatter genügt, um jede Verarbeitung zu bauen; die vier aus der Kiste sind das Vokabular, mit dem man bequemer spricht. NAND ist außerdem das, was ein Transistorpaar von sich aus tut, deshalb ist es auf dem Chip die Grundform."
+    },
+    {
+     "kennung": "c",
+     "text": "NAND ersetzt nur das Und; für Oder und Nicht braucht der Chip zusätzlich NOR-Gatter, sonst fehlt eine Hälfte der Kiste.",
+     "begruendung": "NOR könnte es genauso allein, aber nötig ist es nicht: Oder entsteht aus NAND, indem man beide Eingänge vorher mit NAND kippt. Beide Gatter sind je für sich vollständig."
+    },
+    {
+     "kennung": "d",
+     "text": "Die vier Gatter sind die Bausteine für Rechnen, NAND die für Speichern; ein Chip braucht beides, deshalb überwiegt NAND.",
+     "begruendung": "Speichern und Rechnen benutzen dieselben Gatter, nur anders verdrahtet; das Flip-Flop besteht aus zwei NOR oder zwei NAND, der Addierer aus XOR und Und. Es gibt keine Aufgabenteilung nach Gattersorte."
+    }
+   ]
+  },
+  {
+   "id": "pc-013",
+   "niveau": "verstehen",
+   "frage": "Ein Flip-Flop besteht aus zwei NOR-Gattern, deren Ausgänge über Kreuz in\nden jeweils anderen Eingang laufen. Man legt set kurz auf 1 und dann\nwieder auf 0. Was zeigt der Ausgang q danach?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "0, denn ohne Eingangssignal liefert ein Gatter nichts; sobald set weg ist, fällt q zurück.",
+     "begruendung": "Das gälte für ein einzelnes Gatter. Hier liefert das andere Gatter über die Rückkopplung weiter ein Eingangssignal, und genau das hält q oben. Die Schaltung braucht set nur zum Anstoßen."
+    },
+    {
+     "kennung": "b",
+     "text": "1 für einen Moment, dann 0, weil das Signal in der Schleife bei jedem Umlauf schwächer wird.",
+     "begruendung": "Ein Gatter gibt kein abgeschwächtes Signal weiter, es erzeugt jedes Mal eine frische 0 oder 1. Die Schleife nutzt sich nicht ab; sie hält, solange Strom fließt."
+    },
+    {
+     "kennung": "c",
+     "text": "1, und zwar so lange, bis reset kommt: Die Kreuzverbindung hält die Gatter gegenseitig in ihrem Zustand fest.",
+     "begruendung": "Genau. Die 1 des oberen Gatters hält das untere auf 0, die 0 des unteren hält das obere auf 1. Die Schaltung erinnert sich an den Impuls; das ist ein Bit Speicher aus zwei Gattern, und acht davon sind ein Register."
+    },
+    {
+     "kennung": "d",
+     "text": "Abwechselnd 0 und 1, weil die beiden Gatter sich über die Rückkopplung ständig gegenseitig umkippen.",
+     "begruendung": "Kippen würden sie sich bei einer Rückkopplung durch eine ungerade Zahl von Nicht-Gattern; das gibt einen Taktgeber. Zwei NOR über Kreuz stabilisieren sich gegenseitig, sie kippen nicht, sie halten."
+    }
+   ]
+  }
+ ]
+}

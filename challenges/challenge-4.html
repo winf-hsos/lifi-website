@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Projektkurs im Modul Digitalisierung und Programmierung">
 
-<title>Challenge 4: Das Paket – LiFi-Projekt</title>
+<title>Challenge 4: The Packet – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../concepts/index.html" rel="next">
+<link href="../hardware/index.html" rel="next">
 <link href="../challenges/challenge-3.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -45,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bb2601a8850b103bfb4593477cd94f6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3195b598eb1f03154f53c883785ef3f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LiFi-Projekt</span>
+    <span class="navbar-title">LiFi Project</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-end">
@@ -98,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/index.html">Challenges</a></li><li class="breadcrumb-item"><a href="../challenges/challenge-4.html"><span class="chapter-title">Challenge 4: Das Paket</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/index.html">LiFi Project</a></li><li class="breadcrumb-item"><a href="../challenges/challenge-4.html">Challenge 4: The Packet</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -112,23 +111,14 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LiFi-Projekt</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../organization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ablauf und Bewertung</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../ai/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Arbeiten mit dem KI-Assistenten</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Goal</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Challenges</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">LiFi Project</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -136,213 +126,285 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 0: Der Funke</span></a>
+  <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 1: Das Alphabet</span></a>
+  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 0: The Spark</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 2: Das Wort</span></a>
+  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 1: The Alphabet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 3: Der Horcher</span></a>
+  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 2: The Word</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Challenge 4: Das Paket</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Konzepte</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme zerlegen</span></a>
+  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 3: The Listener</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme lösen mit Computern</span></a>
+  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Challenge 4: The Packet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Messen und Experimentieren</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Algorithmen und Programme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Analog und digital</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbole und Information</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Signal und Rauschen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Zahlensysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Codesysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abtastung und Synchronisation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abstraktion und Schichten</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Information und ihr Träger</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Protokolle</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/processing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verarbeitung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fehler und Redundanz</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Kompression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verschlüsselung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Durchsatz und Grenzen</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/led.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Die LED</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/color-sensor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Der Farbsensor</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/case.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Gehäuse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/optics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optischer Aufbau</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../software/index.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../software/installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Installation</span></a>
+  <a href="../software/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ai/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbeiten mit dem KI-Assistenten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Modul <code>lifi_hardware</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/cockpit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Team-Cockpit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Concepts</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/first-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Erste Schritte</span></a>
+  <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Solving Problems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme zerlegen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/lifi-hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Modul <code>lifi_hardware</code></span></a>
+  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme lösen mit Computern</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/cockpit.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Team-Cockpit</span></a>
+  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Messen und Experimentieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstraktion und Schichten</span></a>
   </div>
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Representing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analog und digital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Symbole und Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zahlensysteme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Codesysteme</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Storing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dateien</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Transferring Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signal und Rauschen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abtastung und Synchronisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Protokolle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fehler und Redundanz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information und ihr Träger</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Durchsatz und Grenzen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Processing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmen und Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logik und Arithmetik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kompression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verschlüsselung</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../demos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Demonstratoren</span></a>
+  <a href="../links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Links</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Über dieses Projekt</span></a>
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
     </ul>
@@ -355,31 +417,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Auf dieser Seite</h2>
    
   <ul>
-  <li><a href="#die-aufgabe" id="toc-die-aufgabe" class="nav-link active" data-scroll-target="#die-aufgabe">Die Aufgabe</a></li>
-  <li><a href="#warum-nur-2-kb" id="toc-warum-nur-2-kb" class="nav-link" data-scroll-target="#warum-nur-2-kb">Warum nur 2 KB</a></li>
-  <li><a href="#der-gemeinsame-rahmen-und-was-euch-gehört" id="toc-der-gemeinsame-rahmen-und-was-euch-gehört" class="nav-link" data-scroll-target="#der-gemeinsame-rahmen-und-was-euch-gehört">Der gemeinsame Rahmen, und was euch gehört</a></li>
-  <li><a href="#das-typfeld-daten-allein-bedeuten-nichts" id="toc-das-typfeld-daten-allein-bedeuten-nichts" class="nav-link" data-scroll-target="#das-typfeld-daten-allein-bedeuten-nichts">Das Typfeld: Daten allein bedeuten nichts</a></li>
-  <li><a href="#im-rahmen-steht-nichts-über-zeit" id="toc-im-rahmen-steht-nichts-über-zeit" class="nav-link" data-scroll-target="#im-rahmen-steht-nichts-über-zeit">Im Rahmen steht nichts über Zeit</a></li>
-  <li><a href="#eure-entscheidung-wie-ihr-den-takt-haltet" id="toc-eure-entscheidung-wie-ihr-den-takt-haltet" class="nav-link" data-scroll-target="#eure-entscheidung-wie-ihr-den-takt-haltet">Eure Entscheidung: wie ihr den Takt haltet</a></li>
-  <li><a href="#was-daran-sonst-neu-ist" id="toc-was-daran-sonst-neu-ist" class="nav-link" data-scroll-target="#was-daran-sonst-neu-ist">Was daran sonst neu ist</a></li>
-  <li><a href="#gewertet-wird" id="toc-gewertet-wird" class="nav-link" data-scroll-target="#gewertet-wird">Gewertet wird</a></li>
-  <li><a href="#die-robustheitsrunde" id="toc-die-robustheitsrunde" class="nav-link" data-scroll-target="#die-robustheitsrunde">Die Robustheitsrunde</a></li>
-  <li><a href="#ablauf-der-abnahme" id="toc-ablauf-der-abnahme" class="nav-link" data-scroll-target="#ablauf-der-abnahme">Ablauf der Abnahme</a></li>
-  <li><a href="#was-ihr-abgebt" id="toc-was-ihr-abgebt" class="nav-link" data-scroll-target="#was-ihr-abgebt">Was ihr abgebt</a></li>
-  <li><a href="#konzepte-die-ihr-dafür-braucht" id="toc-konzepte-die-ihr-dafür-braucht" class="nav-link" data-scroll-target="#konzepte-die-ihr-dafür-braucht">Konzepte, die ihr dafür braucht</a></li>
-  <li><a href="#was-sich-jetzt-auszahlt" id="toc-was-sich-jetzt-auszahlt" class="nav-link" data-scroll-target="#was-sich-jetzt-auszahlt">Was sich jetzt auszahlt</a></li>
-  <li><a href="#typische-stolpersteine" id="toc-typische-stolpersteine" class="nav-link" data-scroll-target="#typische-stolpersteine">Typische Stolpersteine</a></li>
-  <li><a href="#wenn-ihr-früher-fertig-seid" id="toc-wenn-ihr-früher-fertig-seid" class="nav-link" data-scroll-target="#wenn-ihr-früher-fertig-seid">Wenn ihr früher fertig seid</a></li>
+  <li><a href="#the-task" id="toc-the-task" class="nav-link active" data-scroll-target="#the-task">The task</a></li>
+  <li><a href="#why-only-2-kb" id="toc-why-only-2-kb" class="nav-link" data-scroll-target="#why-only-2-kb">Why only 2 KB</a></li>
+  <li><a href="#the-shared-frame-and-what-is-yours" id="toc-the-shared-frame-and-what-is-yours" class="nav-link" data-scroll-target="#the-shared-frame-and-what-is-yours">The shared frame, and what is yours</a></li>
+  <li><a href="#the-type-field-data-alone-means-nothing" id="toc-the-type-field-data-alone-means-nothing" class="nav-link" data-scroll-target="#the-type-field-data-alone-means-nothing">The type field: data alone means nothing</a></li>
+  <li><a href="#nothing-in-the-frame-says-anything-about-time" id="toc-nothing-in-the-frame-says-anything-about-time" class="nav-link" data-scroll-target="#nothing-in-the-frame-says-anything-about-time">Nothing in the frame says anything about time</a></li>
+  <li><a href="#your-decision-how-you-keep-the-beat" id="toc-your-decision-how-you-keep-the-beat" class="nav-link" data-scroll-target="#your-decision-how-you-keep-the-beat">Your decision: how you keep the beat</a></li>
+  <li><a href="#what-else-is-new" id="toc-what-else-is-new" class="nav-link" data-scroll-target="#what-else-is-new">What else is new</a></li>
+  <li><a href="#what-is-measured" id="toc-what-is-measured" class="nav-link" data-scroll-target="#what-is-measured">What is measured</a></li>
+  <li><a href="#the-robustness-round" id="toc-the-robustness-round" class="nav-link" data-scroll-target="#the-robustness-round">The robustness round</a></li>
+  <li><a href="#showing-it-works" id="toc-showing-it-works" class="nav-link" data-scroll-target="#showing-it-works">Showing it works</a></li>
+  <li><a href="#what-you-hand-in" id="toc-what-you-hand-in" class="nav-link" data-scroll-target="#what-you-hand-in">What you hand in</a></li>
+  <li><a href="#concepts-you-need" id="toc-concepts-you-need" class="nav-link" data-scroll-target="#concepts-you-need">Concepts you need</a></li>
+  <li><a href="#what-pays-off-now" id="toc-what-pays-off-now" class="nav-link" data-scroll-target="#what-pays-off-now">What pays off now</a></li>
+  <li><a href="#traps-we-know-about" id="toc-traps-we-know-about" class="nav-link" data-scroll-target="#traps-we-know-about">Traps we know about</a></li>
+  <li><a href="#if-you-finish-early" id="toc-if-you-finish-early" class="nav-link" data-scroll-target="#if-you-finish-early">If you finish early</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/index.html">Challenges</a></li><li class="breadcrumb-item"><a href="../challenges/challenge-4.html"><span class="chapter-title">Challenge 4: Das Paket</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/index.html">LiFi Project</a></li><li class="breadcrumb-item"><a href="../challenges/challenge-4.html">Challenge 4: The Packet</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Challenge 4: Das Paket</span></h1>
-<p class="subtitle lead">Wochen 12 bis 14 · 50 Punkte · das Finale</p>
+<h1 class="title">Challenge 4: The Packet</h1>
+<p class="subtitle lead">The final: a real file, correct and fast</p>
 </div>
 
 
@@ -396,114 +458,113 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Alles, was ihr im Semester gebaut habt, kommt hier zusammen.</p>
+<p>Everything you built over the project comes together here.</p>
 <blockquote class="blockquote">
-<p><strong>Wie schnell bekommt ihr eine unbekannte Datei 1:1 auf den anderen Rechner?</strong></p>
+<p><strong>How fast can you get an unknown file onto the other computer, byte for byte?</strong></p>
 </blockquote>
-<p>Zum ersten Mal übertragt ihr etwas, dessen Inhalt ihr vorher nicht kennt, und zum ersten Mal zählt jede Sekunde.</p>
-<section id="die-aufgabe" class="level2">
-<h2 class="anchored" data-anchor-id="die-aufgabe">Die Aufgabe</h2>
-<p>Am Wettbewerbstermin bekommt ihr eine Datei von höchstens 2 KB. Was darin steht, wisst ihr nicht, und auch nicht, um welche Art von Datei es sich handelt. Es kann ein kleines Bild sein, ein Text oder etwas anderes aus dem Satz von Typen, auf den sich die Klasse geeinigt hat.</p>
-<p>Euer Programm muss den Typ also aus der Datei erkennen, ihn im Kopf der Übertragung mitschicken, und der Empfänger muss die Datei am Ende passend öffnen.</p>
-<p>Die Datei muss <strong>1:1</strong> ankommen, also exakt so, wie sie losgeschickt wurde, ohne ein einziges verändertes Zeichen. Verglichen wird über einen Hash, also eine Prüfsumme über die gesamte Datei. Fast richtig gilt nicht.</p>
-<p>Dass ihr den Inhalt nicht kennt, ist Absicht: Es zwingt euch, wirklich beliebige Daten zu übertragen, statt euch auf Buchstaben zu verlassen.</p>
+<p>For the first time you transmit something whose content you do not know in advance, and for the first time every second counts.</p>
+<section id="the-task" class="level2">
+<h2 class="anchored" data-anchor-id="the-task">The task</h2>
+<p>You get a file of at most 2 KB. You do not know what is in it, and you do not know what kind of file it is. It may be a small picture, a text, or something else from the set of types your class has agreed on.</p>
+<p>So your program has to recognise the type from the file, send it along in the header of the transmission, and the receiver has to open the file accordingly at the end.</p>
+<p>The file has to arrive <strong>byte for byte</strong>, exactly as it was sent, without a single changed character. The comparison is made with a hash, a checksum over the whole file. Almost right does not count.</p>
+<p>That you do not know the content is deliberate. It forces you to transmit truly arbitrary data instead of relying on letters.</p>
 </section>
-<section id="warum-nur-2-kb" class="level2">
-<h2 class="anchored" data-anchor-id="warum-nur-2-kb">Warum nur 2 KB</h2>
-<p>Euer Kanal schafft grob zwischen 10 und 50 Bit pro Sekunde. Ein Kilobyte dauert damit einige Minuten, ein echtes Foto würde Stunden brauchen. Die Grenze hält den Wettbewerbstermin durchführbar.</p>
+<section id="why-only-2-kb" class="level2">
+<h2 class="anchored" data-anchor-id="why-only-2-kb">Why only 2 KB</h2>
+<p>Your channel manages roughly between 10 and 50 bits per second. A kilobyte therefore takes a few minutes, and a real photo would take hours. The limit keeps a run short enough to sit through.</p>
 </section>
-<section id="der-gemeinsame-rahmen-und-was-euch-gehört" class="level2">
-<h2 class="anchored" data-anchor-id="der-gemeinsame-rahmen-und-was-euch-gehört">Der gemeinsame Rahmen, und was euch gehört</h2>
-<p>Ab dieser Challenge gilt der Klassenstandard aus der Normungssitzung am Ende von <a href="../challenges/challenge-3.html">Challenge 3</a>. Damit teilt sich eure Arbeit in zwei Schichten.</p>
-<p><strong>Vorgegeben, für alle gleich, definiert in Bits:</strong> Präambel, ein Feld für den Dateityp, Längenfeld, Nutzdaten als Bytes, Prüfsumme, Endmarkierung.</p>
-<p><strong>Frei, und das ist euer Wettbewerbsvorteil:</strong> wie viele Symbole ihr benutzt, welche Farben und Helligkeiten, Integrationszeit und Verstärkung, eure Symbolrate, euer Kalibrierverfahren, eure Taktstrategie, euer optischer Aufbau. Kurz: alles, was aus Bits Licht macht und wieder Bits daraus.</p>
-<p>Weil der Rahmen in Bits beschrieben ist und nicht in Symbolen, funktioniert er unverändert, egal ob ihr vier oder sechzehn Symbole benutzt und ob ihr zwei oder zwanzig davon pro Sekunde schafft.</p>
-<p>Genau darum geht es bei dieser Trennung: Ihr könnt die untere Schicht komplett austauschen, und alles darüber läuft weiter. Deshalb kommt dieselbe Webseite über WLAN, Glasfaser und Mobilfunk an. Mehr dazu bei <a href="../concepts/abstraction-and-layers.html">Abstraktion und Schichten</a>.</p>
+<section id="the-shared-frame-and-what-is-yours" class="level2">
+<h2 class="anchored" data-anchor-id="the-shared-frame-and-what-is-yours">The shared frame, and what is yours</h2>
+<p>From this challenge on, the class standard from the standards meeting at the end of <a href="../challenges/challenge-3.html">Challenge 3</a> applies. If you are working outside a class, define such a frame for yourselves with the fields below. Either way, your work now splits into two layers.</p>
+<p><strong>Given, the same for everyone, defined in bits:</strong> preamble, a field for the file type, a length field, the payload as bytes, a checksum, an end marker.</p>
+<p><strong>Free, and this is your competitive edge:</strong> how many symbols you use, which colours and brightnesses, integration time and gain, your symbol rate, your calibration method, your timing strategy, your optical setup. In short, everything that turns bits into light and light back into bits.</p>
+<p>Because the frame is described in bits and not in symbols, it works unchanged whether you use four symbols or sixteen, and whether you manage two of them per second or twenty.</p>
+<p>That is the whole point of the separation: you can swap out the lower layer completely, and everything above keeps running. It is why the same web page arrives over Wi-Fi, fibre and a mobile network. More under <a href="../concepts/abstraction-and-layers.html">Abstraction and layers</a>.</p>
 </section>
-<section id="das-typfeld-daten-allein-bedeuten-nichts" class="level2">
-<h2 class="anchored" data-anchor-id="das-typfeld-daten-allein-bedeuten-nichts">Das Typfeld: Daten allein bedeuten nichts</h2>
-<p>Dieselben 2000 Bytes können ein Bild sein, ein Text oder Krach. Was sie sind, steht nicht in den Daten selbst, sondern muss dazugesagt werden.</p>
-<p>Genau dafür ist das Typfeld im Kopf da. Der Sender trägt dort ein, um welche Art von Datei es sich handelt, und der Empfänger weiß dadurch, was er mit den Bytes anfangen soll. Welche Typen es gibt, legt die Klasse in der Normungssitzung gemeinsam fest, genau wie den Rest des Rahmens.</p>
-<p>Dasselbe Prinzip steckt hinter Dateiendungen wie <code>.png</code> und <code>.txt</code>. Auch die stehen nicht in der Datei, sondern daneben.</p>
-<p><strong>Und dann zeigt es der Empfänger an.</strong> Ist die Übertragung durch, öffnet euer Empfängerprogramm die Datei so, wie ihr Typ es verlangt: Text erscheint auf dem Bildschirm, ein Bild wird angezeigt. Das ist der Moment, auf den das ganze Semester zuläuft. Aus Licht sind Zahlen geworden, aus Zahlen Bytes, und aus Bytes wieder etwas, das ein Mensch versteht.</p>
-<p>Zur Klarheit: Gewertet wird trotzdem der Hash. Ein beschädigtes Bild wird oft trotzdem angezeigt, nur eben verzerrt. Die Anzeige ist die Vorführung, nicht der Beweis.</p>
+<section id="the-type-field-data-alone-means-nothing" class="level2">
+<h2 class="anchored" data-anchor-id="the-type-field-data-alone-means-nothing">The type field: data alone means nothing</h2>
+<p>The same 2000 bytes can be a picture, a text, or noise. What they are is not written in the data itself. It has to be said alongside.</p>
+<p>That is what the type field in the header is for. The sender writes there what kind of file it is, and the receiver knows from it what to do with the bytes. Which types exist is decided together at the standards meeting, like the rest of the frame.</p>
+<p>The same principle is behind file extensions such as <code>.png</code> and <code>.txt</code>. They are not in the file either. They stand next to it.</p>
+<p><strong>And then the receiver shows it.</strong> When the transmission is through, your receiver program opens the file the way its type demands: text appears on the screen, a picture is displayed. This is the moment the whole project has been heading for. Light has become numbers, numbers have become bytes, and bytes have become something a human understands again.</p>
+<p>To be clear: the hash is still what counts. A damaged picture is often displayed anyway, just distorted. The display is the show, not the proof.</p>
 </section>
-<section id="im-rahmen-steht-nichts-über-zeit" class="level2">
-<h2 class="anchored" data-anchor-id="im-rahmen-steht-nichts-über-zeit">Im Rahmen steht nichts über Zeit</h2>
-<p>Das fällt vielleicht auf: Es gibt kein Feld für die Geschwindigkeit. Das ist Absicht.</p>
-<p>Wie schnell gesendet wird und wie beide Seiten dabei zusammenbleiben, ist eine Eigenschaft eures Übertragungswegs, nicht der Nachricht. Eine Übertragung per Ton hätte dafür ganz andere Regeln. Wenn die Geschwindigkeit im Rahmen stünde, müsste auch eine Lösung sie mitschicken, die sie gar nicht braucht.</p>
-<p>Die Präambel im Rahmen ist deshalb nur ein Bitmuster, an dem ihr den Anfang erkennt. Ob eure Lösung darunter noch einen eigenen, langsameren Vorspann braucht, entscheidet ihr selbst.</p>
+<section id="nothing-in-the-frame-says-anything-about-time" class="level2">
+<h2 class="anchored" data-anchor-id="nothing-in-the-frame-says-anything-about-time">Nothing in the frame says anything about time</h2>
+<p>You may notice: there is no field for speed. That is intended.</p>
+<p>How fast you send and how the two sides stay together while doing so is a property of your transmission path, not of the message. A transmission by sound would have completely different rules for it. If the speed were in the frame, a solution that does not need it would have to send it along anyway.</p>
+<p>So the preamble in the frame is only a bit pattern by which you recognise the beginning. Whether your solution underneath needs its own, slower lead-in is up to you.</p>
 </section>
-<section id="eure-entscheidung-wie-ihr-den-takt-haltet" class="level2">
-<h2 class="anchored" data-anchor-id="eure-entscheidung-wie-ihr-den-takt-haltet">Eure Entscheidung: wie ihr den Takt haltet</h2>
-<p>Damit liegt die ganze Zeitfrage bei euch. Wie schnell ihr sendet, wie der Empfänger das erfährt, und wie ihr verhindert, dass beide Seiten über eine lange Übertragung auseinanderlaufen.</p>
-<p>Der letzte Teil ist der unangenehme. Zwei Rechner laufen weder exakt gleich schnell noch gleichmäßig: Wartebefehle sind ungenau, USB braucht mal länger, das Betriebssystem macht zwischendurch etwas anderes. Bei zehn Zeichen merkt man das nicht. Bei einer 2-KB-Datei, die viele Minuten unterwegs ist, ist es der häufigste Grund, warum ein Lauf scheitert.</p>
-<p>Wie ihr damit umgeht, schreiben wir euch <strong>nicht</strong> vor. Es gibt mehrere vertretbare Lösungen, sie unterscheiden sich in Aufwand und Zuverlässigkeit, und welche bei euch am besten funktioniert, hängt von eurer Hardware ab. Das ist eine der wichtigsten Entwurfsentscheidungen des Semesters, und sie gehört euch.</p>
-<p>Ein Tipp zur Herangehensweise: Messt zuerst, wie weit eure beiden Geräte über tausend Symbole auseinanderlaufen. Danach wisst ihr, wie groß euer Problem überhaupt ist, und könnt entscheiden, wie viel Aufwand sich lohnt.</p>
+<section id="your-decision-how-you-keep-the-beat" class="level2">
+<h2 class="anchored" data-anchor-id="your-decision-how-you-keep-the-beat">Your decision: how you keep the beat</h2>
+<p>That leaves the whole question of time with you. How fast you send, how the receiver learns that, and how you prevent the two sides from drifting apart over a long transmission.</p>
+<p>The last part is the unpleasant one. Two computers run neither at exactly the same speed nor evenly: wait commands are imprecise, USB sometimes takes longer, the operating system does something else in between. With ten characters you do not notice. With a 2 KB file that is under way for many minutes, it is the most common reason a run fails.</p>
+<p>How you deal with it we do <strong>not</strong> prescribe. There are several defensible solutions, they differ in effort and reliability, and which one works best for you depends on your hardware. This is one of the most important design decisions of the whole project, and it is yours.</p>
+<p>A tip on how to approach it: first measure how far your two devices drift apart over a thousand symbols. Then you know how big your problem actually is, and you can decide how much effort is worth it.</p>
 </section>
-<section id="was-daran-sonst-neu-ist" class="level2">
-<h2 class="anchored" data-anchor-id="was-daran-sonst-neu-ist">Was daran sonst neu ist</h2>
-<p><strong>Beliebige Daten.</strong> Bisher habt ihr Buchstaben übertragen. Jetzt kann jedes der 256 möglichen Byte-Werte vorkommen, auch solche, die zufällig wie euer Anfangsmuster aussehen.</p>
-<p><strong>Der Rückkanal.</strong> Bis hierher lief alles in eine Richtung. Ab jetzt darf die Gegenseite antworten. Beide Geräte tragen eine LED und einen Sensor, ihr könnt also in beide Richtungen senden. Damit wird möglich, was vorher ausgeschlossen war: Der Empfänger kann bestätigen, dass ein Stück angekommen ist. Er kann ein kaputtes Stück gezielt noch einmal anfordern, statt dass ihr die ganze Datei neu schickt. Und beide Seiten können das Tempo gemeinsam so weit hochdrehen, wie es gerade noch gutgeht.</p>
-<p>Ihr müsst den Rückkanal nicht nutzen. Wer einseitig überträgt, muss aber vorsichtiger senden, weil ein einziges gekipptes Bit den ganzen Lauf wertlos macht.</p>
-<p><strong>Zeitdruck.</strong> Gewertet wird die Dauer.</p>
+<section id="what-else-is-new" class="level2">
+<h2 class="anchored" data-anchor-id="what-else-is-new">What else is new</h2>
+<p><strong>Arbitrary data.</strong> Until now you transmitted letters. Now any of the 256 possible byte values can occur, including ones that happen to look like your starting pattern.</p>
+<p><strong>The way back.</strong> Until here everything ran in one direction. From now on the other side may answer. Both devices carry an LED and a sensor, so you can send both ways. That makes possible what was ruled out before: the receiver can confirm that a piece has arrived. It can ask for a broken piece again, specifically, instead of you sending the whole file anew. And both sides can turn the speed up together, as far as it still just works.</p>
+<p>You do not have to use the way back. But whoever transmits one-way has to send more carefully, because a single flipped bit makes the whole run worthless.</p>
+<p><strong>Time pressure.</strong> Duration is what is measured.</p>
 </section>
-<section id="gewertet-wird" class="level2">
-<h2 class="anchored" data-anchor-id="gewertet-wird">Gewertet wird</h2>
-<p><strong>Präzisionslauf.</strong> Stimmt der Hash nicht, gibt es null Punkte. Stimmt er, zählt die Dauer.</p>
-<p><strong>Robustheitsrunde.</strong> Derselbe Lauf unter erschwerten Bedingungen, siehe unten.</p>
-<p><strong>Dokumentation.</strong> Protokollspezifikation, Messdaten, Irrtumsprotokoll. Dieser Teil zählt auch für den Notenbonus.</p>
+<section id="what-is-measured" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-measured">What is measured</h2>
+<p><strong>The precision run.</strong> If the hash does not match, the run does not count. If it matches, the duration counts.</p>
+<p><strong>The robustness round.</strong> The same run under harder conditions, see below.</p>
+<p><strong>Documentation.</strong> Protocol specification, measurement data, log of mistakes.</p>
 </section>
-<section id="die-robustheitsrunde" class="level2">
-<h2 class="anchored" data-anchor-id="die-robustheitsrunde">Die Robustheitsrunde</h2>
-<p>Ein gut gebauter Lichtkanal macht den Test „Deckenlicht an” langweilig, und das ist die richtige Lektion: Ein Problem in der Hardware zu lösen statt in der Software ist eine legitime Ingenieursentscheidung. Geprüft wird deshalb entlang der Achsen, die eine Röhre nicht löst.</p>
-<p><strong>Dejustage.</strong> Euer Aufbau wird vor dem Lauf leicht verdreht oder seitlich versetzt. Eine enge Blende bringt Signal, macht aber empfindlich gegen Fehlausrichtung. Diesen Zielkonflikt müsst ihr selbst austarieren.</p>
-<p><strong>Störlicht von der Seite.</strong> Eine Schreibtischlampe zielt auf den Empfänger.</p>
-<p><strong>Transport.</strong> Der Wettbewerb findet am Testtisch statt, nicht an eurem Platz. Euer Aufbau muss getragen werden und danach noch funktionieren.</p>
+<section id="the-robustness-round" class="level2">
+<h2 class="anchored" data-anchor-id="the-robustness-round">The robustness round</h2>
+<p>A well-built light channel makes the test “ceiling light on” boring, and that is the right lesson: solving a problem in the hardware instead of the software is a legitimate engineering decision. So the test runs along the axes a tube does not solve.</p>
+<p><strong>Misalignment.</strong> Your setup is slightly turned or shifted sideways before the run. A narrow aperture brings signal but makes you sensitive to misalignment. That trade-off is yours to balance.</p>
+<p><strong>Stray light from the side.</strong> A desk lamp is aimed at the receiver.</p>
+<p><strong>Transport.</strong> The run happens at the test table, not at your desk. Your setup has to be carried and work afterwards.</p>
 </section>
-<section id="ablauf-der-abnahme" class="level2">
-<h2 class="anchored" data-anchor-id="ablauf-der-abnahme">Ablauf der Abnahme</h2>
-<p>Am Testtisch, vor den anderen Teams. Ihr baut auf, bekommt die Datei, und der Lauf beginnt.</p>
-<p>Ist er durch, passieren zwei Dinge: Der Hash wird verglichen, und euer Empfänger öffnet die Datei. Alle sehen dann auf eurem Bildschirm, was gerade durch die Luft gekommen ist.</p>
+<section id="showing-it-works" class="level2">
+<h2 class="anchored" data-anchor-id="showing-it-works">Showing it works</h2>
+<p>At the test table, in front of the other teams. You set up, you get the file, and the run begins.</p>
+<p>When it is through, two things happen: the hash is compared, and your receiver opens the file. Everyone then sees on your screen what has just come through the air.</p>
 </section>
-<section id="was-ihr-abgebt" class="level2">
-<h2 class="anchored" data-anchor-id="was-ihr-abgebt">Was ihr abgebt</h2>
+<section id="what-you-hand-in" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-hand-in">What you hand in</h2>
 <ul>
-<li>Vollständige Protokollspezifikation, auf dem Stand des Finales</li>
-<li>Alle Messdaten aus dem Semester, insbesondere zur Wahl eurer Symbolrate und Alphabetgröße</li>
-<li>Dokumentation und Foto eures optischen Aufbaus</li>
-<li>Irrtumsprotokoll</li>
-</ul>
-<p>Diese Unterlagen sind zugleich eure Grundlage für die mündliche Prüfung.</p>
-</section>
-<section id="konzepte-die-ihr-dafür-braucht" class="level2">
-<h2 class="anchored" data-anchor-id="konzepte-die-ihr-dafür-braucht">Konzepte, die ihr dafür braucht</h2>
-<ul>
-<li><a href="../concepts/processing.html">Verarbeitung</a></li>
-<li><a href="../concepts/errors-and-redundancy.html">Fehler und Redundanz</a></li>
-<li><a href="../concepts/compression.html">Kompression</a></li>
-<li><a href="../concepts/throughput-and-limits.html">Durchsatz und Grenzen</a></li>
-<li><a href="../concepts/encryption.html">Verschlüsselung</a>, für den Zusatzteil</li>
+<li>The complete protocol specification, as it stands at the final</li>
+<li>All measurement data from the project, in particular on the choice of your symbol rate and alphabet size</li>
+<li>Documentation and a photo of your optical setup</li>
+<li>Your log of mistakes</li>
 </ul>
 </section>
-<section id="was-sich-jetzt-auszahlt" class="level2">
-<h2 class="anchored" data-anchor-id="was-sich-jetzt-auszahlt">Was sich jetzt auszahlt</h2>
-<p>Wer in Challenge 1 sorgfältig gemessen hat, hat ein großes Alphabet und überträgt mehr Bit pro Symbol. Wer die Datei vor dem Senden komprimiert, muss weniger übertragen. Wer eine Prüfsumme einbaut, merkt Fehler, bevor der ganze Lauf verloren ist.</p>
-<p>Diese Challenge belohnt also rückwirkend gute Arbeit aus den Wochen davor.</p>
+<section id="concepts-you-need" class="level2">
+<h2 class="anchored" data-anchor-id="concepts-you-need">Concepts you need</h2>
+<ul>
+<li><a href="../concepts/logic-and-arithmetic.html">Logic and arithmetic</a></li>
+<li><a href="../concepts/errors-and-redundancy.html">Errors and redundancy</a></li>
+<li><a href="../concepts/compression.html">Compression</a></li>
+<li><a href="../concepts/throughput-and-limits.html">Throughput and limits</a></li>
+<li><a href="../concepts/encryption.html">Encryption</a>, for the extra part</li>
+</ul>
 </section>
-<section id="typische-stolpersteine" class="level2">
-<h2 class="anchored" data-anchor-id="typische-stolpersteine">Typische Stolpersteine</h2>
-<p><strong>Textannahmen im Code.</strong> Wer bisher mit Buchstaben gearbeitet hat, hat oft irgendwo eine Stelle, die nur mit lesbaren Zeichen funktioniert. Bei Binärdaten fällt das sofort auf.</p>
-<p><strong>Das Anfangsmuster kommt in den Daten vor.</strong> Bei beliebigen Bytes ist das nicht mehr unwahrscheinlich, sondern zu erwarten.</p>
-<p><strong>Zu ehrgeizig getaktet.</strong> Ein Lauf, der zu 90 Prozent durchläuft und dann am Hash scheitert, bringt genau null Punkte. Sicher und langsam schlägt schnell und kaputt.</p>
-<p><strong>Der Aufbau überlebt den Transport nicht.</strong> Klebeband hält nicht, was eine Klemme hält.</p>
+<section id="what-pays-off-now" class="level2">
+<h2 class="anchored" data-anchor-id="what-pays-off-now">What pays off now</h2>
+<p>Whoever measured carefully in Challenge 1 has a large alphabet and sends more bits per symbol. Whoever compresses the file before sending has less to transmit. Whoever builds in a checksum notices errors before the whole run is lost.</p>
+<p>So this challenge rewards, in hindsight, good work from the weeks before.</p>
 </section>
-<section id="wenn-ihr-früher-fertig-seid" class="level2">
-<h2 class="anchored" data-anchor-id="wenn-ihr-früher-fertig-seid">Wenn ihr früher fertig seid</h2>
-<p><strong>Verschlüsselt eure Nutzdaten.</strong> Licht ist öffentlich, jedes Nachbarteam kann seinen Sensor danebenstellen und mitlesen. Ob euer Verfahren hält, könnt ihr direkt ausprobieren, indem ihr ein anderes Team bittet, es zu versuchen.</p>
-<p><strong>Oder werft das Licht weg.</strong> Tauscht eure unterste Schicht gegen eine andere aus: Statt eine Farbe zu setzen, gebt ihr einen Ton aus, und statt den Farbsensor zu lesen, hört ihr mit dem Mikrofon. Lautsprecher und Mikrofon hat jeder Laptop.</p>
-<p>Alles darüber, also Präambel, Typfeld, Längenfeld und Prüfsumme, darf dabei unverändert bleiben. Wenn das klappt, habt ihr gezeigt, dass eure Information nicht am Licht hängt, sondern nur an den Bits. Mehr dazu bei <a href="../concepts/information-and-carrier.html">Information und ihr Träger</a>.</p>
-<p>Diese Aufgabe prüft sich selbst: Wer seine Schichten sauber getrennt hat, schafft den Tausch in kurzer Zeit. Wer Licht und Rahmen im Code vermischt hat, kommt nicht weit. Insofern ist es auch ein ehrlicher Test eurer eigenen Bauweise.</p>
+<section id="traps-we-know-about" class="level2">
+<h2 class="anchored" data-anchor-id="traps-we-know-about">Traps we know about</h2>
+<p><strong>Text assumptions in the code.</strong> Whoever has worked with letters so far often has a place somewhere that only works with readable characters. With binary data it shows immediately.</p>
+<p><strong>The starting pattern appears in the data.</strong> With arbitrary bytes this is no longer unlikely. It is to be expected.</p>
+<p><strong>Timed too ambitiously.</strong> A run that gets 90 percent through and then fails at the hash counts for nothing. Safe and slow beats fast and broken.</p>
+<p><strong>The setup does not survive transport.</strong> Tape does not hold what a clamp holds.</p>
+</section>
+<section id="if-you-finish-early" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-finish-early">If you finish early</h2>
+<p><strong>Encrypt your payload.</strong> Light is public. Any neighbouring team can put its sensor next to yours and read along. Whether your method holds, you can test directly by asking another team to try.</p>
+<p><strong>Or throw away the light.</strong> Swap your lowest layer for another one: instead of setting a colour, play a tone, and instead of reading the colour sensor, listen with the microphone. Every laptop has a speaker and a microphone.</p>
+<p>Everything above, preamble, type field, length field and checksum, may stay unchanged. If that works, you have shown that your information does not depend on the light, only on the bits. More under <a href="../concepts/information-and-carrier.html">Information and its carrier</a>.</p>
+<p>This task checks itself: whoever has separated the layers cleanly manages the swap in a short time. Whoever has mixed light and frame in the code does not get far. In that sense it is also an honest test of how you built.</p>
 
 
 </section>
@@ -1175,13 +1236,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../challenges/challenge-3.html" class="pagination-link" aria-label="Challenge 3: Der Horcher">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Challenge 3: Der Horcher</span></span>
+      <a href="../challenges/challenge-3.html" class="pagination-link" aria-label="Challenge 3: The Listener">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Challenge 3: The Listener</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../concepts/index.html" class="pagination-link" aria-label="Konzepte">
-        <span class="nav-page-text">Konzepte</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../hardware/index.html" class="pagination-link" aria-label="Hardware">
+        <span class="nav-page-text">Hardware</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,386 @@
+{
+ "konzept": "protocols",
+ "fragen": [
+  {
+   "id": "pr-001",
+   "niveau": "erinnern",
+   "frage": "Was gehört zu einem Protokoll, also zu der Absprache, die zwei Seiten vor\nder ersten Übertragung treffen müssen? (Mehrere richtige Antworten möglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Die Bedeutung der Symbole: welche Farbe für welche Bits oder welches Zeichen steht.",
+     "begruendung": "Richtig, das ist der Teil, an den jeder zuerst denkt. Er ist aber nur einer von mehreren."
+    },
+    {
+     "kennung": "b",
+     "text": "Woran der Empfänger den Anfang und das Ende einer Nachricht erkennt.",
+     "begruendung": "Richtig: Ohne Anfangs- und Endregel weiß ein laufender Empfänger nicht, welche Messwerte gemeint sind und welche nur das Zimmer zeigen."
+    },
+    {
+     "kennung": "c",
+     "text": "Was beide Seiten tun, wenn etwas schiefgeht, etwa wenn ein erwartetes Muster ausbleibt.",
+     "begruendung": "Richtig: Eine Absprache, die nur den Normalfall regelt, lässt den Empfänger im Fehlerfall raten. Dann verhält sich jede Umsetzung anders."
+    },
+    {
+     "kennung": "d",
+     "text": "Die Messwerte, die der Sensor beim Empfänger für jede Farbe liefert.",
+     "begruendung": "Die Messwerte hängen von Abstand, Raumlicht und Gerät ab und lassen sich nicht vereinbaren. Vereinbart wird, was der Sender tut und wie der Empfänger es deutet; die Zahlen findet jeder Empfänger durch seine eigene Kalibrierung."
+    },
+    {
+     "kennung": "e",
+     "text": "Die Programmiersprache, in der Sender und Empfänger geschrieben sind.",
+     "begruendung": "Ein Protokoll beschreibt das Verhalten auf der Strecke, nicht den Code dahinter. Genau deshalb kann ein anderes Team einen eigenen Empfänger dafür bauen, in welcher Sprache auch immer."
+    }
+   ]
+  },
+  {
+   "id": "pr-002",
+   "niveau": "verstehen",
+   "frage": "Im Experiment 'Der Horcher' sendet die Lehrperson erst zufällige Farben, dann\ndie Nachricht, dann wieder zufällige Farben; der Saal findet den Anfang nicht.\nIm zweiten Durchgang beginnt jede Nachricht mit dreimal Rot-Blau im\nWechsel, und der Saal erkennt den Anfang von selbst. Was hat der Saal damit\nerfunden?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Eine Kalibrierung: An Rot und Blau lernt der Saal, wie die beiden Farben von vorn aussehen.",
+     "begruendung": "Das könnte dieselbe Folge nebenbei leisten, erklärt aber nicht den Unterschied zum ersten Durchgang. Dort waren die Farben genauso gut sichtbar; was fehlte, war ein erkennbarer Anfang."
+    },
+    {
+     "kennung": "b",
+     "text": "Eine Prüfsumme: Die dreifache Wiederholung bestätigt, dass die Farben richtig gesehen wurden.",
+     "begruendung": "Die Wiederholung dient nicht der Kontrolle, sondern der Auffälligkeit: Dreimal Rot-Blau entsteht im Zufall praktisch nie. Ob die Nachricht danach richtig gesehen wurde, sagt das Muster nicht."
+    },
+    {
+     "kennung": "c",
+     "text": "Ein Anfangsmuster (Präambel): eine vereinbarte, auffällige Folge, die im Rauschen nicht vorkommt.",
+     "begruendung": "Genau. Der Saal hat das Muster erkannt, ohne dass jemand 'jetzt' gesagt hat. Das ist die Aufgabe einer Präambel: Sie ersetzt den Menschen, der bisher den Start gegeben hat."
+    },
+    {
+     "kennung": "d",
+     "text": "Einen Zeichencode: Dreimal Rot-Blau steht für das erste Zeichen der Nachricht.",
+     "begruendung": "Das Muster trägt keinen Inhalt, es sagt nur 'ab hier'. Würde es ein Zeichen bedeuten, könnte dasselbe Zeichen mitten im Text den Saal wieder von vorn anfangen lassen."
+    }
+   ]
+  },
+  {
+   "id": "pr-003",
+   "niveau": "anwenden",
+   "frage": "Vier Teams schlagen ein Anfangsmuster vor. Der Empfänger läuft bereits in\neinem beleuchteten Raum und sieht dauernd Messwerte. Welches Muster erkennt\ner am zuverlässigsten als Anfang?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein einzelnes Rot, damit die Nachricht selbst möglichst schnell beginnen kann.",
+     "begruendung": "Ein einzelnes Symbol entsteht zu leicht von selbst: eine Lampe, ein Schatten, eine Schwankung, und der Empfänger hält das Zimmer für den Anfang. Die gesparte Zeit ist klein, das Risiko groß."
+    },
+    {
+     "kennung": "b",
+     "text": "Rot und Blau im Wechsel, sechs Symbole lang, damit Zufallsschwankungen die Folge nicht nachbilden.",
+     "begruendung": "Genau: Je länger und je regelmäßiger das Muster, desto unwahrscheinlicher entsteht es zufällig, und der Wechsel zwischen zwei gut unterscheidbaren Farben ist auch bei Störlicht klar zu sehen. Die paar Symbole Vorlauf sind der Preis für einen sicheren Start."
+    },
+    {
+     "kennung": "c",
+     "text": "Das erste Zeichen der Nachricht doppelt senden, damit der Anfang keinen eigenen Vorlauf braucht.",
+     "begruendung": "Der Empfänger kennt das erste Zeichen nicht und kann deshalb nicht nach ihm suchen. Und ein doppeltes Zeichen kommt in jeder Nachricht vor, etwa in 'HALLO', der Anfang wäre also nicht eindeutig."
+    },
+    {
+     "kennung": "d",
+     "text": "Fünf Sekunden LED aus, dann die Nachricht, damit der Empfänger sich erst beruhigen kann.",
+     "begruendung": "LED aus sieht für den Empfänger genauso aus wie 'kein Sender da'. Er kann die Pause nicht von der Wartezeit davor unterscheiden, und die Nachricht beginnt dann so unangekündigt wie ganz ohne Muster."
+    }
+   ]
+  },
+  {
+   "id": "pr-004",
+   "niveau": "anwenden",
+   "frage": "Euer Empfänger meldet immer wieder 'Nachricht beginnt', obwohl der Sender\nnoch gar nicht läuft. Als Anfangsmuster benutzt ihr ein einzelnes Grün.\nWelche Änderung behebt das Problem an der Wurzel?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Das Anfangsmuster länger und auffälliger machen, damit zufällige Messwerte es nicht nachbilden.",
+     "begruendung": "Genau: Ein einzelnes Grün entsteht im Raumlicht ständig von selbst. Eine Folge aus mehreren Wechseln entsteht zufällig praktisch nie. Das Problem liegt in der Absprache, also wird die Absprache geändert."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Verstärkung des Sensors erhöhen, damit sich das echte Grün deutlicher vom Raumlicht abhebt.",
+     "begruendung": "Die Verstärkung hebt Raumlicht und Schwankungen genauso an wie das Signal. Der Empfänger sieht danach dieselben Fehlstarts, nur mit größeren Zahlen."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Integrationszeit verkürzen, damit der Empfänger schneller merkt, dass es doch kein Anfang war.",
+     "begruendung": "Kürzere Fenster machen die Werte unruhiger, also entstehen mehr zufällige Treffer, nicht weniger. Und ob es ein Anfang war, kann der Empfänger ohnehin erst an dem beurteilen, was danach kommt."
+    },
+    {
+     "kennung": "d",
+     "text": "Das Grün nur noch einmal ganz kurz senden, damit es seltener mit dem Raumlicht verwechselt wird.",
+     "begruendung": "Das ändert nichts daran, wie oft das Raumlicht zufällig grün aussieht, macht aber das echte Muster leichter zu verpassen. Die Richtung ist verkehrt: Das Muster muss seltener werden, nicht kürzer."
+    }
+   ]
+  },
+  {
+   "id": "pr-005",
+   "niveau": "verstehen",
+   "frage": "Die Vorlage für eure Protokollspezifikation fragt: 'Was passiert, wenn das\nAnfangsmuster zufällig auch mitten in einer Nachricht auftaucht?' Warum\nist diese Frage wichtig?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil das Muster in den Daten zeigt, dass die Nachricht verfälscht wurde und neu gesendet werden muss.",
+     "begruendung": "Das Muster in den Daten ist kein Fehler, sondern Zufall: Bei einem kurzen Muster und einer langen Nachricht ist es sogar wahrscheinlich. Die Nachricht ist in Ordnung, nur der Empfänger könnte sie missverstehen."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil ein Empfänger, der nach dem Muster sucht, Daten für einen neuen Anfang halten kann und die Nachricht mittendrin neu beginnt.",
+     "begruendung": "Genau. Die Spezifikation muss sagen, wie das verhindert oder behandelt wird, sonst verhält sich jeder Empfänger anders. Das Problem ist echt und hat in der Praxis einen Namen; die Lösung findet ihr in Challenge 3 selbst."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil der Sender dann für jede Nachricht ein anderes Anfangsmuster wählen muss, das nicht im Text vorkommt.",
+     "begruendung": "Ein wechselndes Muster kann der Empfänger nicht erkennen, denn er müsste es vorher kennen. Das Anfangsmuster ist fest vereinbart; die Spezifikation muss mit dem festen Muster umgehen."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil der Empfänger das Muster sonst als Teil des Textes liest und ein paar Zeichen zu viel ausgibt.",
+     "begruendung": "Die Verwechslung läuft andersherum: Nicht das Muster wird als Text gelesen, sondern Text wird als Muster gelesen. Die Folge ist kein Zeichen zu viel, sondern ein Empfänger, der die bisherige Nachricht verwirft."
+    }
+   ]
+  },
+  {
+   "id": "pr-006",
+   "niveau": "verstehen",
+   "frage": "Der Sender schickt zwei Nachrichten direkt hintereinander. Woran kann der\nEmpfänger erkennen, wo die erste aufhört? (Mehrere richtige Antworten\nmöglich.)",
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "An einem Längenfeld am Anfang, das sagt, wie viele Zeichen folgen.",
+     "begruendung": "Richtig: Der Empfänger zählt mit und weiß nach der angesagten Zahl, dass Schluss ist. Preis: Das Feld muss fehlerfrei ankommen, und die Länge ist durch die Feldgröße begrenzt."
+    },
+    {
+     "kennung": "b",
+     "text": "An einer vereinbarten Endmarkierung, die nach dem letzten Zeichen gesendet wird.",
+     "begruendung": "Richtig: Die Nachricht darf beliebig lang sein, und der Empfänger hört auf, sobald die Marke kommt. Preis: Die Marke darf nicht zufällig in den Daten vorkommen, dieselbe Frage wie beim Anfangsmuster."
+    },
+    {
+     "kennung": "c",
+     "text": "Daran, dass die Zeichen ein sinnvolles Wort ergeben; sobald es vollständig ist, beginnt die nächste Nachricht.",
+     "begruendung": "Der Empfänger kennt den Inhalt nicht und kann 'sinnvoll' nicht entscheiden: 'HALLO' könnte auch der Anfang von 'HALLOWEEN' sein. Das Ende muss aus der Absprache folgen, nicht aus dem Inhalt."
+    },
+    {
+     "kennung": "d",
+     "text": "Daran, dass die zweite Nachricht mit dem Anfangsmuster beginnt; sobald es wieder auftaucht, ist die erste beendet.",
+     "begruendung": "Klingt sparsam, hat aber eine Lücke: Die letzte Nachricht endet dann nie, denn nach ihr kommt kein Anfangsmuster mehr. Der Empfänger würde ewig auf ein Ende warten, das nur bei der vorletzten Nachricht funktioniert."
+    }
+   ]
+  },
+  {
+   "id": "pr-007",
+   "niveau": "anwenden",
+   "frage": "Team A beendet seine Nachrichten mit der Endmarkierung Blau-Rot-Blau.\nTeam B schickt stattdessen am Anfang ein Längenfeld mit 8 Bit, das die Zahl\nder Zeichen angibt. Welche Aussage über die beiden Verfahren trifft zu?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Bei Team B ist eine Nachricht höchstens 255 Zeichen lang, bei Team A gibt es keine solche Obergrenze.",
+     "begruendung": "Genau: 8 Bit zählen von 0 bis 255, mehr Zeichen kann das Feld nicht ansagen. Die Endmarkierung kennt keine Grenze, dafür muss sie sich von den Daten unterscheiden lassen. Beide Wege sind richtig, sie zahlen nur verschiedene Preise."
+    },
+    {
+     "kennung": "b",
+     "text": "Team A ist im Vorteil, denn ein Übertragungsfehler in der Endmarkierung kostet nur das letzte Zeichen, ein Fehler im Längenfeld die ganze Nachricht.",
+     "begruendung": "Halb richtig: Ein falsches Längenfeld verdirbt tatsächlich die ganze Nachricht. Aber eine verpasste Endmarkierung kostet nicht ein Zeichen, sondern das Ende: Der Empfänger liest weiter und hängt sich an allem auf, was danach kommt."
+    },
+    {
+     "kennung": "c",
+     "text": "Team B braucht zusätzlich eine Endmarkierung, denn das Längenfeld sagt dem Empfänger nur, wie lang die Nachricht ist, nicht wann sie aufhört.",
+     "begruendung": "Wer die Länge kennt und mitzählt, weiß genau, wann Schluss ist. Das Längenfeld ersetzt die Endmarkierung, es ergänzt sie nicht; eine Marke dazu wäre ein zweiter Weg für dieselbe Information."
+    },
+    {
+     "kennung": "d",
+     "text": "Team A muss die ganze Nachricht erst vollständig empfangen haben, bevor es das erste Zeichen anzeigen darf, Team B kann sofort ausgeben.",
+     "begruendung": "Ob Zeichen sofort oder erst am Ende angezeigt werden, entscheidet das Programm, nicht das Verfahren. Beide Empfänger können jedes Zeichen ausgeben, sobald es gelesen ist; das Ende brauchen sie nur, um zu wissen, wann sie aufhören."
+    }
+   ]
+  },
+  {
+   "id": "pr-008",
+   "niveau": "anwenden",
+   "frage": "So verarbeitet ein Empfänger seine Symbole. Bei der Abnahme kommt die\nLive-Änderung: 'Übertragt zwei Nachrichten hintereinander, ohne den\nEmpfänger neu zu starten.' Was passiert?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "code": "state = \"waiting\"\nmessage = \"\"\nwhile True:\n    symbol = read_symbol()\n    if state == \"waiting\":\n        if symbol == START_MARK:\n            state = \"reading\"\n    elif state == \"reading\":\n        if symbol == END_MARK:\n            print(message)\n            state = \"done\"\n        else:\n            message = message + symbol",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Beide Nachrichten kommen an, denn im Zustand 'done' wartet der Empfänger von selbst wieder auf das Anfangsmuster.",
+     "begruendung": "Von selbst passiert nichts. Für 'done' gibt es keinen Zweig, also läuft die Schleife weiter, liest Symbole und lässt sie fallen. Zurück nach 'waiting' kommt der Empfänger nur, wenn es jemand hinschreibt."
+    },
+    {
+     "kennung": "b",
+     "text": "Die zweite Nachricht wird an die erste angehängt und am Ende als eine lange Nachricht ausgegeben, weil message nie geleert wird.",
+     "begruendung": "Das wäre der Fehler, wenn der Empfänger nach 'done' wieder ins Lesen käme. So weit kommt er aber gar nicht: Nach der ersten Endmarkierung steckt er in 'done' fest, und dort wird nichts mehr angehängt und nichts mehr ausgegeben."
+    },
+    {
+     "kennung": "c",
+     "text": "Die erste Nachricht wird ausgegeben, dann bleibt der Empfänger im Zustand 'done' und übergeht die zweite vollständig.",
+     "begruendung": "Genau. Das Gedächtnis des Programms hat einen Zustand ohne Rückweg. Die Reparatur ist klein: nach der Ausgabe message leeren und zurück nach 'waiting', dann ist 'done' gar nicht nötig."
+    },
+    {
+     "kennung": "d",
+     "text": "Das Programm bricht mit einer Fehlermeldung ab, sobald es im Zustand 'done' ein weiteres Symbol liest, weil dieser Fall nicht behandelt ist.",
+     "begruendung": "Ein nicht behandelter Fall ist in Python kein Fehler. Trifft keine Bedingung zu, wird einfach nichts getan, und die Schleife geht zum nächsten Symbol. Das Programm läuft stumm weiter, und genau das macht den Fehler bei der Abnahme so unangenehm."
+    }
+   ]
+  },
+  {
+   "id": "pr-009",
+   "niveau": "verstehen",
+   "frage": "Euer Empfänger erkennt gerade das Symbol Rot. Warum genügt diese Messung\nallein nicht, um zu entscheiden, was das Programm damit tun soll?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Weil eine einzelne Messung zu unsicher ist; erst der Mittelwert mehrerer Messungen sagt, ob es wirklich Rot war.",
+     "begruendung": "Stimmt als Messregel, beantwortet aber eine andere Frage. Hier ist das Rot bereits sicher erkannt, und trotzdem bleibt offen, was es bedeutet: Das entscheidet nicht die Messung, sondern die Lage, in der der Empfänger gerade ist."
+    },
+    {
+     "kennung": "b",
+     "text": "Weil die Bedeutung vom Zustand abhängt: Beim Warten kann Rot Teil des Anfangsmusters oder Zufall sein, beim Lesen ist es ein Datensymbol.",
+     "begruendung": "Genau. Dieselbe Messung, verschiedene Reaktionen, je nachdem, was vorher war. Deshalb braucht der Empfänger ein Gedächtnis, meist eine Variable wie state, die festhält, wo er gerade steht."
+    },
+    {
+     "kennung": "c",
+     "text": "Weil Rot in jedem Protokoll für das Anfangsmuster reserviert ist und deshalb nie als Zeichen vorkommen darf.",
+     "begruendung": "Welche Farbe wofür steht, legt jedes Team selbst fest; es gibt keine allgemeine Reservierung. Und selbst wenn ein Team Rot für den Anfang reserviert, muss sein Empfänger trotzdem wissen, ob er gerade wartet oder liest."
+    },
+    {
+     "kennung": "d",
+     "text": "Weil der Empfänger zuerst prüfen muss, ob der Sender überhaupt eingeschaltet ist, bevor er ein Symbol deuten darf.",
+     "begruendung": "Genau das kann der Empfänger nicht: Er sieht nur Licht und weiß nie direkt, ob ein Sender dahintersteckt. Ob 'Sender da' gilt, schließt er aus dem Anfangsmuster, also wieder aus seinem Zustand, nicht aus einer eigenen Prüfung."
+    }
+   ]
+  },
+  {
+   "id": "pr-010",
+   "niveau": "anwenden",
+   "frage": "Ein Team gibt beim Interop-Test diese Spezifikation ab: 'Symbole: 0 ist Rot,\n1 ist Blau. Anfang: dreimal Rot-Blau. Zeichen: 8 Bit je Zeichen nach der\nASCII-Tabelle. Ende: dreimal Blau-Rot.' Was fehlt, damit ein anderes Team\ndanach einen Empfänger bauen kann?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Ein Teamname und eine Versionsnummer, damit das Partnerteam sicher ist, die aktuelle Fassung des Protokolls umzusetzen.",
+     "begruendung": "Ordentlich, aber nicht das, woran der Empfänger scheitert. Mit Namen und Version, aber ohne die fehlende Angabe kann das Partnerteam immer noch nichts bauen."
+    },
+    {
+     "kennung": "b",
+     "text": "Eine Prüfsumme, denn ohne sie kann das Partnerteam nicht feststellen, ob es das Protokoll richtig umgesetzt hat.",
+     "begruendung": "Ob die Umsetzung stimmt, prüft das Partnerteam, indem es eine bekannte Nachricht überträgt und vergleicht; dafür braucht es keine Prüfsumme. Die Prüfsumme wäre ein Zusatz für Challenge 4, kein Lückenfüller für diese Spezifikation."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Zeit: wie lange ein Symbol steht, sonst weiß der Empfänger weder, wann er messen soll, noch, wann das nächste Symbol beginnt.",
+     "begruendung": "Genau. Das Team hat die Symbolrate weggelassen, weil es sie selbst kennt. Das ist die klassische Lücke: Alles, was man weiß, aber nicht aufschreibt, fehlt dem, der danach bauen muss. Die Probe aus der Vorlage lautet deshalb: Streicht in Gedanken alles, was ihr wisst und nicht aufgeschrieben habt."
+    },
+    {
+     "kennung": "d",
+     "text": "Nichts, die Angaben genügen: Symbolbedeutung, Anfang, Zeichencode und Ende sind vollständig festgelegt.",
+     "begruendung": "Genau so liest sich die Spezifikation für das Team, das sie geschrieben hat. Für ein fremdes Team fehlt die Zeit: Ohne Symboldauer kann es nicht einmal das Anfangsmuster zuverlässig abtasten."
+    }
+   ]
+  },
+  {
+   "id": "pr-011",
+   "niveau": "verstehen",
+   "frage": "Beim Interop-Test baut das Partnerteam nach eurer Spezifikation einen\nEmpfänger, und er versteht eure Nachrichten nicht. Zwischen euren eigenen\nGeräten läuft alles. Was zeigt das zuerst?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Dass eure Spezifikation Lücken hat, die ihr selbst nie bemerkt habt, weil ihr sie stillschweigend aus dem eigenen Wissen gefüllt habt.",
+     "begruendung": "Genau. Eine Absprache, die nur zwischen euch beiden funktioniert, ist noch kein Protokoll. Der Interop-Test ist die einzige ehrliche Prüfung eurer Dokumentation, und ein Scheitern ist ihr Ergebnis, nicht ihr Versagen."
+    },
+    {
+     "kennung": "b",
+     "text": "Dass das Partnerteam die Spezifikation nicht sorgfältig gelesen hat; geprüft wird beim Interop-Test vor allem, wie genau jemand ein Dokument umsetzt.",
+     "begruendung": "Möglich, aber nicht die erste Erklärung und nicht der Zweck des Tests. Geprüft wird die Spezifikation, nicht der Leser. Wo ein sorgfältiger Leser scheitert, hat meist das Dokument etwas verschwiegen."
+    },
+    {
+     "kennung": "c",
+     "text": "Dass euer Verfahren technisch schwächer ist als das des Partnerteams und bei der Normung besser nicht zur Wahl steht.",
+     "begruendung": "Zwischen euren Geräten läuft es, das Verfahren funktioniert also. Gescheitert ist die Beschreibung, nicht die Technik. Für die Normung zählt beides, und ein gut beschriebenes einfaches Verfahren schlägt ein schlecht beschriebenes raffiniertes."
+    },
+    {
+     "kennung": "d",
+     "text": "Dass die Geräte der beiden Teams unterschiedlich kalibriert sind, und das lässt sich durch keine Spezifikation ausgleichen.",
+     "begruendung": "Verschiedene Geräte messen verschieden, das stimmt. Gerade deshalb gehört in die Spezifikation, wie die Kalibrierung abläuft: welche Farben wie lange in welcher Reihenfolge kommen. Fehlt das, ist es wieder eine Lücke im Dokument."
+    }
+   ]
+  },
+  {
+   "id": "pr-012",
+   "niveau": "erinnern",
+   "frage": "Am Ende von Challenge 3 einigt sich die Klasse in einer Normungssitzung auf\neinen gemeinsamen Rahmen. Was zeigt diese Sitzung darüber, wie Standards\nentstehen?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Standards werden von Fachleuten am Reißbrett entworfen, bevor jemand etwas baut, damit alle von Anfang an gleich arbeiten.",
+     "begruendung": "Genau umgekehrt: Erst haben alle Teams eigene Rahmen gebaut und im Interop-Test gemerkt, was fehlt. Der Standard entsteht aus dem Vergleich funktionierender Lösungen, und diese Reihenfolge ist Absicht."
+    },
+    {
+     "kennung": "b",
+     "text": "Ein Standard ist eine Vereinbarung zwischen Menschen: Aus mehreren funktionierenden Lösungen wird eine gewählt, damit alle dieselbe benutzen.",
+     "begruendung": "Genau. Wessen Präambel war robuster, wer hatte an ein Längenfeld gedacht? Daraus wird ein gemeinsamer Rahmen. So entstehen auch echte Standards: durch Vergleich und Einigung, nicht durch Notwendigkeit."
+    },
+    {
+     "kennung": "c",
+     "text": "Der Standard ist die technisch beste Lösung; die Abstimmung in der Klasse stellt nur fest, welche das ist.",
+     "begruendung": "Mehrere Rahmen können gleich gut funktionieren, etwa einer mit Längenfeld und einer mit Endmarkierung. Die Klasse wählt einen davon, weil alle denselben brauchen, nicht weil die anderen falsch wären."
+    },
+    {
+     "kennung": "d",
+     "text": "Ein Standard muss auch festlegen, wie aus Bits Licht wird, sonst wären die Übertragungen der Teams nicht vergleichbar.",
+     "begruendung": "Der Klassenstandard regelt nur den Rahmen des Bitstroms. Alles darunter, Farben, Tempo, Kalibrierung, bleibt jedem Team überlassen. Gerade dadurch bleibt der Wettbewerb in Challenge 4 offen."
+    }
+   ]
+  }
+ ]
+}

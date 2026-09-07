@@ -12,7 +12,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Sensor ist defekt und sollte getauscht werden.",
+     "text": "Der Sensor arbeitet fehlerhaft: Ein intakter Sensor liefert bei gleicher Farbe auch gleiche Zahlen.",
      "begruendung": "Ein perfekt funktionierender Sensor verhält sich genauso. Jede Messung enthält Schwankungen, das ist Physik und keine Panne."
     },
     {
@@ -22,12 +22,12 @@
     },
     {
      "kennung": "c",
-     "text": "Euer Programm hat einen Fehler in der Ausleseschleife.",
-     "begruendung": "Auch ein fehlerfreies Programm liefert schwankende Werte, denn es liest ja nur ab, was der Sensor misst."
+     "text": "Euer Programm hat einen Fehler, denn ein Computer liefert bei gleicher Eingabe dieselbe Ausgabe.",
+     "begruendung": "Für das Programm stimmt der Satz, für die Messung nicht: Die Eingabe ist hier das Licht am Sensor, und die ist nie zweimal exakt gleich. Auch ein fehlerfreies Programm gibt schwankende Werte weiter."
     },
     {
      "kennung": "d",
-     "text": "Die LED ändert unbemerkt ihre Farbe.",
+     "text": "Die LED flackert unmerklich, und der Sensor bildet dieses Flackern in seinen Werten ab.",
      "begruendung": "Die LED hält ihren Wert. Selbst bei völlig konstanter Beleuchtung streuen die Messwerte, weil Sensor, Licht und Umgebung nie exakt gleich sind."
     }
    ]
@@ -44,13 +44,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass ein besserer Sensor weniger rauscht.",
+     "text": "Dass ein besserer Sensor weniger rauscht: Die unteren Streifen stammen von einem genaueren Bauteil.",
      "begruendung": "Der Sensor ist in allen vier Streifen derselbe. Was sich ändert, ist allein die Messdauer."
     },
     {
      "kennung": "b",
-     "text": "Dass das Rauschen mit der Zeit von selbst nachlässt.",
-     "begruendung": "Das Rohsignal oben rauscht durchgehend gleich stark. Ruhiger werden nur die daraus gebildeten Messwerte."
+     "text": "Dass das Rauschen mit der Zeit von selbst nachlässt, weil sich der Sensor erst einpendeln muss.",
+     "begruendung": "Das Rohsignal oben rauscht durchgehend gleich stark, vom ersten bis zum letzten Moment. Ruhiger werden nur die daraus gebildeten Messwerte, und zwar wegen der längeren Fenster, nicht wegen der verstrichenen Zeit."
     },
     {
      "kennung": "c",
@@ -75,13 +75,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "An der Programmiersprache und der Qualität des Codes.",
+     "text": "An der Qualität des Codes, der die Grenzen zwischen den Farben zieht und die Messwerte zuordnet.",
      "begruendung": "Der Code entscheidet, wo die Grenzen liegen, aber nicht, wie weit die Messwerte streuen. Sauberer Code allein vergrößert kein Alphabet."
     },
     {
      "kennung": "b",
-     "text": "Am Glück bei der Abnahme.",
-     "begruendung": "Bei 20 Übertragungen mittelt sich Glück weitgehend heraus. Ein Unterschied von 16 zu 4 ist systematisch, nicht zufällig."
+     "text": "An der Verstärkung: Das erste Team hat sie höher gestellt, und mehr Verstärkung liefert feinere Abstufungen.",
+     "begruendung": "Verstärkung hebt Signal und Rauschen gemeinsam an; der Abstand zwischen den Symbolen wächst, die Streuung aber genauso. Das entscheidende Verhältnis bleibt dabei gleich, und bei zu viel Verstärkung läuft der Sensor in die Sättigung."
     },
     {
      "kennung": "c",
@@ -106,8 +106,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil der Sensor dann überhitzt.",
-     "begruendung": "Wärme ist hier kein Thema. Der Preis wird in einer anderen Währung bezahlt."
+     "text": "Weil sich bei langem Fenster so viel Licht ansammelt, dass jede Farbe den Höchstwert erreicht und nichts mehr unterscheidbar ist.",
+     "begruendung": "Sättigung kann vorkommen, ist aber kein Argument gegen lange Fenster an sich: Sie lässt sich über kleinere Verstärkung oder mehr Abstand vermeiden. Der eigentliche Preis wird in einer anderen Währung bezahlt: Zeit."
     },
     {
      "kennung": "b",
@@ -116,8 +116,8 @@
     },
     {
      "kennung": "c",
-     "text": "Weil die Werte bei langer Messung ungenau werden.",
-     "begruendung": "Umgekehrt: Sie werden genauer, das ist ja der Grund für längere Fenster. Nur eben langsamer."
+     "text": "Weil sich bei langer Messung mehr Störlicht ansammelt und die Werte dadurch ungenauer werden.",
+     "begruendung": "Störlicht sammelt sich mit, aber das Nutzlicht ebenso, und die Schwankung mittelt sich über das längere Fenster heraus. Die Werte werden ruhiger, nicht ungenauer; das ist ja der Grund für längere Fenster. Nur eben langsamer."
     },
     {
      "kennung": "d",
@@ -186,12 +186,12 @@
     },
     {
      "kennung": "c",
-     "text": "Sie entfernt Ausreißer vollständig.",
-     "begruendung": "Ein Mittelwert dämpft Ausreißer, aber er wirft sie nicht weg; ein einzelner starker Ausreißer zieht ihn mit. Wer Ausreißer wirklich verwerfen will, nimmt den Median."
+     "text": "Sie entfernt Ausreißer: Ein einzelner verrutschter Wert fällt im Mittel über zehn Messungen nicht mehr ins Gewicht.",
+     "begruendung": "Ein Mittelwert dämpft Ausreißer, aber er wirft sie nicht weg; ein einzelner starker Ausreißer zieht ihn spürbar mit. Wer Ausreißer wirklich verwerfen will, nimmt den Median."
     },
     {
      "kennung": "d",
-     "text": "Sie sorgt dafür, dass immer dasselbe Symbol erkannt wird.",
+     "text": "Sie sorgt dafür, dass das gesendete Symbol zuverlässig erkannt wird, weil der Mittelwert die Schwankung neutralisiert.",
      "begruendung": "Sie verbessert die Chancen, garantiert aber nichts: Liegen zwei Symbole zu dicht beieinander, hilft auch ein ruhiger Mittelwert nicht mehr."
     }
    ]
@@ -207,12 +207,12 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Beide sind kostenlos, solange die Hardware mitspielt.",
+     "text": "Beide sind kostenlos, solange die Hardware mitspielt, denn sie ändern nur, wie das Programm die Messwerte deutet.",
      "begruendung": "Beide kosten dasselbe, nämlich Sicherheitsabstand zwischen dem, was ankommt, und dem, was noch sicher unterscheidbar ist."
     },
     {
      "kennung": "b",
-     "text": "Beide erfordern einen besseren Sensor.",
+     "text": "Beide erfordern einen empfindlicheren Sensor, weil die vorhandene Hardware feinere Abstufungen nicht auflöst.",
      "begruendung": "Ein besserer Sensor verschöbe die Grenze, aber die Struktur des Problems bliebe dieselbe. Auch mit Spitzenhardware gibt es eine Wand, sie steht nur weiter hinten."
     },
     {
@@ -243,17 +243,17 @@
     },
     {
      "kennung": "b",
-     "text": "Weil Mittelwerte immer ungenau sind.",
-     "begruendung": "Ein Mittelwert aus vielen Messungen ist im Gegenteil recht verlässlich. Es fehlt nicht Genauigkeit, es fehlt die zweite Angabe."
+     "text": "Weil ein Mittelwert aus zu wenigen Messungen zufällig zu hoch oder zu tief liegen kann.",
+     "begruendung": "Das stimmt für kleine Messreihen, trifft aber nicht den Kern: Auch ein aus hundert Messungen ermittelter, verlässlicher Mittelwert sagt nichts über die Streuung. Es fehlt nicht Genauigkeit, es fehlt die zweite Angabe."
     },
     {
      "kennung": "c",
-     "text": "Weil drei Farben zu wenig für ein Alphabet sind.",
+     "text": "Weil drei Farben zu wenig für ein brauchbares Alphabet sind; erst ab vier trägt jedes Symbol zwei Bit.",
      "begruendung": "Drei Symbole sind ein gültiges Alphabet, es trägt knapp anderthalb Bit. Die Frage ist nicht die Anzahl, sondern ob die drei sicher trennbar sind."
     },
     {
      "kennung": "d",
-     "text": "Weil der Clear-Kanal für Farben ungeeignet ist.",
+     "text": "Weil die Werte offenbar aus dem Clear-Kanal stammen und der für Farben ungeeignet ist.",
      "begruendung": "Der Clear-Kanal ist eine legitime und oft robuste Wahl. Auch mit den Farbkanälen bliebe das Problem dasselbe: ohne Streumaß keine Aussage."
     }
    ]
@@ -269,7 +269,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ihre Mittelwerte sind verschieden.",
+     "text": "Ihre Mittelwerte sind verschieden, mit deutlichem Abstand, wenn man jede Farbe zehnmal misst.",
      "begruendung": "Verschiedene Mittelwerte sind die Mindestbedingung, aber sie genügen nicht: Auch bei verschiedenen Mittelwerten können sich die Messreihen überlappen."
     },
     {
@@ -279,12 +279,12 @@
     },
     {
      "kennung": "c",
-     "text": "Der Empfänger erkennt sie in mindestens der Hälfte der Fälle richtig.",
+     "text": "Der Empfänger ordnet sie in mindestens der Hälfte der Versuche der richtigen Seite der Grenze zu.",
      "begruendung": "Die Hälfte ist bei zwei Zuständen genau so gut wie Raten. Sicher heißt: praktisch immer, nicht öfter als zufällig."
     },
     {
      "kennung": "d",
-     "text": "Die beiden Farben sehen für das menschliche Auge verschieden aus.",
+     "text": "Die beiden Farben sehen für das menschliche Auge klar verschieden aus, etwa Rot gegen Grün.",
      "begruendung": "Euer Auge ist nicht der Empfänger. Zwei für euch deutlich verschiedene Farben können im Sensorwert dicht beieinanderliegen, und umgekehrt."
     }
    ]
@@ -301,8 +301,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er macht das Licht der LED heller.",
-     "begruendung": "Passive Optik erzeugt kein Licht. Sie kann es bündeln und führen, aber die LED gibt nicht mehr her als vorher."
+     "text": "Er verstärkt das Licht der LED, so wie eine höhere Verstärkung am Sensor die Messwerte anhebt.",
+     "begruendung": "Passive Optik erzeugt kein Licht und verstärkt es auch nicht. Sie kann es bündeln und führen, aber die LED gibt nicht mehr her als vorher. Ihr Nutzen liegt woanders: weniger Fremdlicht, feste Geometrie."
     },
     {
      "kennung": "b",
@@ -316,7 +316,7 @@
     },
     {
      "kennung": "d",
-     "text": "Er ersetzt die Kalibrierung.",
+     "text": "Er ersetzt die Kalibrierung, weil die Werte mit fester Röhre nicht mehr verrutschen können.",
      "begruendung": "Im Gegenteil: Nach jeder Änderung am Aufbau muss neu kalibriert werden, weil sich alle Pegel verschieben. Deshalb gehören beide Messreihen in die Dokumentation, vorher und nachher."
     }
    ]
@@ -332,13 +332,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Übernehmen, das Team hat es ja bewiesen.",
+     "text": "Übernehmen, denn mit derselben Hardware liefern dieselben Einstellungen auch dieselben Ergebnisse.",
      "begruendung": "Bewiesen hat es etwas über seinen Aufbau: seine Optik, seinen Abstand, seinen Platz im Raum. Eure Werte können deutlich abweichen."
     },
     {
      "kennung": "b",
-     "text": "Ignorieren, fremde Werte sind grundsätzlich wertlos.",
-     "begruendung": "Das andere Extrem und auch nicht klug: Als Startpunkt für eigene Messungen spart ein fremder Wert Zeit, er ersetzt sie nur nicht."
+     "text": "Nur die Verstärkung übernehmen, denn die hängt vom Sensor ab; die Integrationszeit dagegen vom eigenen Aufbau.",
+     "begruendung": "Die Trennung hält nicht: Auch die passende Verstärkung hängt davon ab, wie viel Licht am Sensor ankommt, also von Abstand, Optik und Raum. Beide Werte sind fremde Messergebnisse, die als Startpunkt Zeit sparen, aber eigene Messungen nicht ersetzen."
     },
     {
      "kennung": "c",
@@ -375,7 +375,7 @@
     },
     {
      "kennung": "c",
-     "text": "Rauschen entsteht nur durch Umgebungslicht.",
+     "text": "Rauschen stammt aus dem Umgebungslicht; in einem abgedunkelten Raum verschwindet es.",
      "begruendung": "Umgebungslicht ist ein großer Beitrag, aber nicht der einzige: Auch Sensor und Elektronik rauschen, und im Dunkeln bleibt eine Schwankung übrig."
     },
     {

@@ -22,13 +22,13 @@
     },
     {
      "kennung": "c",
-     "text": "Weil die Ziffern der Größe nach aufsteigen.",
+     "text": "Weil die Ziffern von links nach rechts der Größe nach aufsteigen und so die Zahl aufbauen.",
      "begruendung": "Zufall dieses Beispiels. 321 funktioniert nach derselben Regel: 3 mal 100 plus 2 mal 10 plus 1 mal 1."
     },
     {
      "kennung": "d",
-     "text": "Das lässt sich nicht begründen, es ist einfach so.",
-     "begruendung": "Es ist eine Vereinbarung, und die lässt sich vollständig erklären. Wer sie kennt, kann Zahlen zu jeder Basis lesen, auch zur Basis 2 oder 16."
+     "text": "Weil jede Stelle zehnmal so viel zählt wie die davor: 1 mal 1 plus 2 mal 10 plus 3 mal 100.",
+     "begruendung": "Die Zehnerpotenzen stimmen, die Richtung nicht: Diese Rechnung ergibt 321. Die Stellenwerte wachsen von rechts nach links, die Einer stehen ganz rechts."
     }
    ]
   },
@@ -43,13 +43,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie ist mathematisch die beste Basis.",
+     "text": "Sie ist die einzige Basis, mit der sich jede beliebige Zahl darstellen lässt.",
      "begruendung": "Mathematisch ist keine Basis ausgezeichnet. Jede Basis ab 2 kann jede Zahl darstellen, nach derselben Bauanleitung."
     },
     {
      "kennung": "b",
-     "text": "Computer könnten mit anderen Basen nicht rechnen.",
-     "begruendung": "Computer rechnen sogar mit einer anderen: der Basis 2. Für sie ist die Zehn eher unpraktisch."
+     "text": "Computer sind auf die Basis 10 angewiesen, weil ihre Eingaben und Ausgaben dezimal sind.",
+     "begruendung": "Dezimal ist nur die Oberfläche für Menschen. Innen rechnen Computer zur Basis 2 und übersetzen an Ein- und Ausgabe hin und her; für sie ist die Zehn eher unpraktisch."
     },
     {
      "kennung": "c",
@@ -58,7 +58,7 @@
     },
     {
      "kennung": "d",
-     "text": "Nur zur Basis 10 gibt es die Ziffer 0.",
+     "text": "Nur zur Basis 10 gibt es die Ziffer 0, die eine leere Stelle markiert.",
      "begruendung": "Jede Basis braucht die Null, sonst ließe sich eine leere Stelle nicht von einer fehlenden unterscheiden. Zur Basis R gibt es die Ziffern 0 bis R minus 1."
     }
    ]
@@ -84,13 +84,13 @@
     },
     {
      "kennung": "c",
-     "text": "3, denn es sind drei Ziffern.",
-     "begruendung": "Die Länge einer Zahl ist nicht ihr Wert. 999 hat auch drei Ziffern und ist nicht 3."
+     "text": "3, denn 1 mal 1 plus 1 mal 2 plus 0 mal 4.",
+     "begruendung": "Die Stellenwerte stimmen, die Richtung nicht: Die Einerstelle steht ganz rechts, nicht links. Von rechts gelesen sind die Stellen 1, 2 und 4 wert, also 0 plus 2 plus 4."
     },
     {
      "kennung": "d",
-     "text": "12, irgendetwas mit mal 2 wegen der Basis.",
-     "begruendung": "Geraten. Umgerechnet wird über die Stellenwerte: ganz rechts 1, dann 2, dann 4, dann 8 und so weiter, jede Stelle mal ihre Ziffer, alles aufsummiert."
+     "text": "220, denn jede Ziffer wird mit der Basis 2 multipliziert.",
+     "begruendung": "Nicht die Basis wird an jede Ziffer multipliziert, sondern der Stellenwert, und der ist je Stelle ein anderer: ganz rechts 1, dann 2, dann 4. Die Produkte werden anschließend addiert, nicht nebeneinander geschrieben."
     }
    ]
   },
@@ -105,12 +105,12 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "102, die letzte Stelle zählt einfach weiter.",
+     "text": "102, denn die letzte Stelle zählt wie im Zehnersystem eine Ziffer weiter.",
      "begruendung": "Zur Basis 2 gibt es nur die Ziffern 0 und 1. Eine 2 kann in keiner Binärzahl vorkommen, genau wie das Dezimalsystem keine eigene Ziffer für die Zehn hat."
     },
     {
      "kennung": "b",
-     "text": "1000, nach 101 sind die Stellen voll.",
+     "text": "1000, denn mit 101 sind die drei Stellen ausgeschöpft und eine vierte kommt hinzu.",
      "begruendung": "Zu früh übergelaufen: 101 ist die 5, danach kommt die 6, und die braucht noch keine vierte Stelle. Erst nach 111 (der 7) geht es mit 1000 weiter."
     },
     {
@@ -120,8 +120,8 @@
     },
     {
      "kennung": "d",
-     "text": "Das lässt sich nicht sagen, binär zählt man nicht der Reihe nach.",
-     "begruendung": "Doch, Zahlen sind Zahlen: Die Folge oben ist schlicht 0, 1, 2, 3, 4, 5, nur anders geschrieben."
+     "text": "111, denn nach 101 werden die verbliebenen Nullen der Reihe nach zu Einsen.",
+     "begruendung": "Damit wäre eine Zahl übersprungen: 111 ist die 7, gesucht ist die 6. Beim Zählen wird nur die letzte Stelle um eins erhöht, und die 1 dort läuft über: 101 wird 110."
     }
    ]
   },
@@ -136,7 +136,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "123, Zahlen sind überall gleich.",
+     "text": "123, denn eine Zahl bleibt dieselbe, egal mit wie vielen Fingern gezählt wird.",
      "begruendung": "Die Zahl dahinter ist überall gleich, ihre Schreibweise nicht. Dieselben Ziffern bedeuten zur Basis 8 etwas anderes, weil die Stellen 64, 8 und 1 wert sind."
     },
     {
@@ -146,8 +146,8 @@
     },
     {
      "kennung": "c",
-     "text": "24, denn 1 plus 2 plus 3 mal die Basis 8 geteilt durch... irgendwie so.",
-     "begruendung": "Die Ziffern werden nicht addiert und dann mit der Basis verrechnet. Jede Ziffer wird einzeln mit ihrem Stellenwert multipliziert, dann wird summiert."
+     "text": "48, denn die Ziffernsumme 1 plus 2 plus 3, multipliziert mit der Basis 8.",
+     "begruendung": "Die Ziffern werden nicht erst addiert und dann mit der Basis verrechnet. Jede Ziffer wird einzeln mit ihrem eigenen Stellenwert multipliziert (64, 8, 1), erst dann wird summiert."
     },
     {
      "kennung": "d",
@@ -167,7 +167,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Gar nicht, das Wort wird zufällig doppelt benutzt.",
+     "text": "Gar nicht: Das Maß stammt aus der Nachrichtentechnik, die Ziffer aus der Mathematik, und der gleiche Name ist Zufall.",
      "begruendung": "Kein Zufall: Eine Binärziffer kann genau zwei Werte annehmen und trägt damit genau die Information einer Ja/Nein-Antwort. Die Ziffer ist der Behälter, die Information der Inhalt."
     },
     {
@@ -177,13 +177,13 @@
     },
     {
      "kennung": "c",
-     "text": "Das Informationsmaß ist veraltet, heute meint Bit nur noch die Ziffer.",
+     "text": "Das Informationsmaß war die ursprüngliche Bedeutung; seit Computer in Binärziffern rechnen, meint Bit nur noch die Ziffer.",
      "begruendung": "Beide Bedeutungen sind lebendig. Wer Kompression verstehen will, braucht sogar beide gleichzeitig: Dort werden Ziffern gespart, weil sie weniger als ein Bit Information trugen."
     },
     {
      "kennung": "d",
-     "text": "Ein Bit Information braucht immer mehrere Binärziffern.",
-     "begruendung": "Umgekehrt wird ein Schuh draus: Eine Ziffer fasst höchstens ein Bit. Mehrere Ziffern braucht, wer mehr als ein Bit übertragen will."
+     "text": "Eine Ziffer speichert nur einen Zustand; für eine ganze Ja/Nein-Antwort braucht es zwei Ziffern, eine je Möglichkeit.",
+     "begruendung": "Eine Ziffer speichert nicht einen Zustand, sondern hat zwei mögliche Werte, und die decken die zwei Möglichkeiten der Antwort ab. Eine Ziffer fasst deshalb genau ein Bit; mehrere Ziffern braucht, wer mehr als ein Bit übertragen will."
     }
    ]
   },
@@ -198,13 +198,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Acht Bit, also acht verschiedene Werte.",
+     "text": "Ein Paket aus acht Bit, also acht verschiedene Werte, einer je Bit.",
      "begruendung": "Acht Bit stimmt, aber die Werte multiplizieren sich: Jede der acht Stellen verdoppelt die Möglichkeiten. 2 hoch 8 sind 256, nicht 8."
     },
     {
      "kennung": "b",
-     "text": "Die kleinste Zahl, die ein Computer speichern kann.",
-     "begruendung": "Das Byte ist eine Verpackungseinheit, keine Zahl. Es ist die übliche kleinste adressierbare Einheit im Speicher, und was die acht Bit darin bedeuten, entscheidet die Vereinbarung."
+     "text": "Die kleinste Zahl, die ein Computer speichern kann, mit 2 hoch 8 gleich 256 als größtem Wert.",
+     "begruendung": "Das Byte ist eine Verpackungseinheit, keine Zahl. Es ist die übliche kleinste adressierbare Einheit im Speicher, und was die acht Bit darin bedeuten, entscheidet die Vereinbarung. Als Zahl gelesen reicht es außerdem von 0 bis 255, nicht bis 256."
     },
     {
      "kennung": "c",
@@ -213,8 +213,8 @@
     },
     {
      "kennung": "d",
-     "text": "Tausend Bit, daher kommt das Kilobyte.",
-     "begruendung": "Ein Byte sind acht Bit. Das Kilobyte ist die nächste Verpackungsstufe darüber, tausend Byte."
+     "text": "Ein Paket aus tausend Bit, daher die Vorsilbe Kilo im Kilobyte, mit tausend möglichen Werten.",
+     "begruendung": "Ein Byte sind acht Bit. Das Kilobyte ist die nächste Verpackungsstufe darüber, tausend Byte, nicht tausend Bit. Und selbst bei tausend Bit wären die Werte 2 hoch 1000, nicht tausend."
     }
    ]
   },
@@ -229,7 +229,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Zufall der Geschichte, es hätte auch anders kommen können.",
+     "text": "Zufall der Geschichte: Die ersten Rechner hatten zweistellige Anzeigen, und die Basis 16 wurde daran angepasst.",
      "begruendung": "Es ist Arithmetik, kein Zufall: 16 mal 16 ist genau 256. Gerade deshalb hat sich die Basis 16 als Kurzschrift für Bytes durchgesetzt."
     },
     {
@@ -239,13 +239,13 @@
     },
     {
      "kennung": "c",
-     "text": "Weil A bis F für die Bits stehen.",
-     "begruendung": "A bis F sind gewöhnliche Ziffern mit den Werten 10 bis 15. Sie werden gebraucht, weil die Basis 16 sechzehn verschiedene Ziffern verlangt und unsere zehn nicht reichen."
+     "text": "Weil die sechs Buchstaben A bis F genau die Bits ergänzen, die den zehn Ziffern zum Byte fehlen.",
+     "begruendung": "A bis F sind keine Bits, sondern gewöhnliche Ziffern mit den Werten 10 bis 15. Sie werden gebraucht, weil die Basis 16 sechzehn verschiedene Ziffern verlangt und unsere zehn nicht reichen. Mit dem Byte hat ihre Anzahl nichts zu tun."
     },
     {
      "kennung": "d",
-     "text": "Es passt nicht genau, es ist eine Näherung.",
-     "begruendung": "Es passt exakt: 2 hoch 8 gleich 256 gleich 16 hoch 2. Ganze Basen, ganze Bits, kein Rest."
+     "text": "Weil eine Hexziffer ein halbes Byte darstellt, nämlich 8 Werte, und zwei Hälften ein Ganzes ergeben.",
+     "begruendung": "Das halbe Byte stimmt, die Zahl nicht: Ein halbes Byte sind 4 Bit, also 2 hoch 4 gleich 16 Werte, nicht 8. Mit 8 Werten je Ziffer kämen zwei Ziffern nur auf 64, und das Byte mit seinen 256 Werten passte nicht hinein."
     }
    ]
   },
@@ -260,12 +260,12 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "1515, denn F ist die 15.",
+     "text": "1515, denn F ist die 15, und beide Ziffernwerte werden hintereinander geschrieben.",
      "begruendung": "Die Ziffernwerte werden nicht hintereinander geschrieben, sondern mit den Stellenwerten verrechnet: 15 mal 16 plus 15 mal 1."
     },
     {
      "kennung": "b",
-     "text": "30, denn 15 plus 15.",
+     "text": "30, denn F ist die 15, und die beiden Stellen werden addiert.",
      "begruendung": "Die linke Stelle ist Sechzehner wert, nicht Einer: 15 mal 16 plus 15 mal 1, nicht 15 plus 15."
     },
     {
@@ -275,8 +275,8 @@
     },
     {
      "kennung": "d",
-     "text": "160, denn F liegt nahe an der 10, also ungefähr 10 mal 16.",
-     "begruendung": "F ist exakt die 15, nicht ungefähr die 10. Stellenwertsysteme runden nicht."
+     "text": "240, denn F ist die 15, und 15 mal 16 ergibt 240.",
+     "begruendung": "Die linke Stelle stimmt, die rechte fehlt: Das zweite F ist noch einmal 15 mal 1. Zusammen 240 plus 15 gleich 255."
     }
    ]
   },
@@ -291,8 +291,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil Computer nur einfache Mathematik beherrschen.",
-     "begruendung": "Mit der Mathematik hat es nichts zu tun, die ist in jeder Basis dieselbe. Es geht um die Physik der Bauteile."
+     "text": "Weil die Rechenwerke nur die einfachsten Rechenregeln beherrschen und das Einmaleins zur Basis 2 am kürzesten ist.",
+     "begruendung": "Das kurze Einmaleins ist eine angenehme Folge, nicht der Grund. Mathematisch ist jede Basis gleich mächtig; den Ausschlag gibt die Physik der Bauteile, die zwei Zustände am sichersten auseinanderhalten."
     },
     {
      "kennung": "b",
@@ -301,12 +301,12 @@
     },
     {
      "kennung": "c",
-     "text": "Weil sich zur Basis 2 kürzere Zahlen ergeben.",
+     "text": "Weil sich zur Basis 2 kürzere Zahlen ergeben und der Speicher dadurch weniger Stellen braucht.",
      "begruendung": "Das Gegenteil stimmt: Binärzahlen sind länger, die 255 braucht acht Stellen statt drei. Der Preis wird gern bezahlt, weil jede einzelne Stelle dafür fast unzerstörbar ist."
     },
     {
      "kennung": "d",
-     "text": "Historischer Zufall, erste Computer hatten eben zwei Zustände.",
+     "text": "Historischer Zufall: Die ersten Computer arbeiteten mit Relais, die nur zwei Stellungen kennen, und dabei ist es geblieben.",
      "begruendung": "Es gab tatsächlich Dezimalrechner, und sie sind ausgestorben, weil sie fehleranfälliger und aufwendiger waren. Die Basis 2 hat sich aus einem physikalischen Grund durchgesetzt, nicht aus Gewohnheit."
     }
    ]
@@ -322,12 +322,12 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie sind defekt und wurden ausgeblendet.",
-     "begruendung": "Es fehlt kein einziges Byte. Beide Angaben beschreiben dieselbe Menge Speicher, nur mit verschiedenen Einheiten."
+     "text": "Sie sind Reservebereiche, die der Hersteller für defekte Stellen vorhält und die das System ausblendet.",
+     "begruendung": "Solche Reserven gibt es, sie sind aber winzig und in keiner der beiden Zahlen enthalten. Es fehlt kein einziges Byte: Beide Angaben beschreiben dieselbe Menge Speicher, nur mit verschiedenen Einheiten."
     },
     {
      "kennung": "b",
-     "text": "Das Betriebssystem reserviert sie für sich.",
+     "text": "Das Betriebssystem reserviert sie für eigene Dateien, Auslagerung und Wiederherstellung.",
      "begruendung": "Systemdateien kosten etwas Platz, aber nicht sieben Prozent einer leeren Platte. Der Unterschied steckt in den Einheiten."
     },
     {
@@ -337,8 +337,8 @@
     },
     {
      "kennung": "d",
-     "text": "Der Hersteller gibt absichtlich zu viel an.",
-     "begruendung": "Die Angabe stimmt, sie benutzt nur die dezimale Lesart, die günstiger klingt. Beide Lesarten sind definiert, ärgerlich ist nur, dass sie denselben Namen tragen."
+     "text": "Der Hersteller rundet großzügig auf, damit auf der Verpackung eine glatte Zahl steht.",
+     "begruendung": "Gerundet wird nicht, die Angabe stimmt exakt. Sie benutzt nur die dezimale Lesart, die günstiger klingt. Beide Lesarten sind definiert, ärgerlich ist nur, dass sie denselben Namen tragen."
     }
    ]
   },
@@ -353,7 +353,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Gar nicht, Farben sind keine Zahlen.",
+     "text": "Gar nicht: Ein Stellenwertsystem braucht Ziffern mit Zahlenwerten, und Farben haben keinen Wert.",
      "begruendung": "Ziffern müssen nicht wie Zahlen aussehen. Sobald jede Farbe für einen Wert steht und die Position zählt, ist es ein Stellenwertsystem, egal wie die Ziffern aussehen."
     },
     {
@@ -363,12 +363,12 @@
     },
     {
      "kennung": "c",
-     "text": "Nur wenn die Farben in einer festen Reihenfolge gesendet werden.",
-     "begruendung": "Eine feste Reihenfolge wäre gerade kein Informationsträger. Das System lebt davon, dass jede Stelle jede Farbe tragen kann."
+     "text": "Nur zur Hälfte: Die Position zählt zwar, aber ohne eine Farbe für die Null fehlt dem System seine wichtigste Ziffer.",
+     "begruendung": "Die Null fehlt nicht, sie hat nur keine Sonderstellung: Welche der vier Farben für 0 steht, ist Vereinbarung, genau wie bei 1, 2 und 3. Vier Farben sind vier vollwertige Ziffern."
     },
     {
      "kennung": "d",
-     "text": "Nur mit genau zwei Farben wäre es ein Stellenwertsystem.",
+     "text": "Nur mit genau zwei Farben wäre es ein Stellenwertsystem, weil Computer intern mit Bits arbeiten.",
      "begruendung": "Die Basis 2 ist ein Spezialfall, kein Privileg. Stellenwertsysteme funktionieren mit jeder Basis ab 2, eure vier Farben eingeschlossen."
     }
    ]

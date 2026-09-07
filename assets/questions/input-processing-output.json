@@ -43,8 +43,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil der Computer solche Kästen automatisch selbst testet.",
-     "begruendung": "Nichts testet sich von selbst. Der Test ist möglich, aber ausführen müsst ihr ihn."
+     "text": "Weil der Computer bei jedem Aufruf selbst meldet, ob die gelieferte Ausgabe zur Eingabe passt.",
+     "begruendung": "Die Maschine kennt keine Erwartung. Sie führt aus, was dasteht, und meldet höchstens, dass sie es nicht konnte. Ob die Ausgabe passt, vergleicht ihr, nicht der Computer."
     },
     {
      "kennung": "b",
@@ -53,12 +53,12 @@
     },
     {
      "kennung": "c",
-     "text": "Weil klar geschnittene Kästen keine Fehler enthalten können.",
-     "begruendung": "Auch ein sauber geschnittener Kasten kann falsch rechnen. Der Schnitt macht den Fehler findbar, nicht unmöglich."
+     "text": "Weil man in einem klar geschnittenen Kasten beim Lesen des Codes sofort sieht, welche Zeile welchen Teil der Ausgabe erzeugt.",
+     "begruendung": "Lesen ist kein Test. Auch ein sauber geschnittener Kasten kann falsch rechnen, und überzeugend aussehender Code tut das besonders unauffällig. Der Schnitt macht den Fehler findbar, nicht sichtbar."
     },
     {
      "kennung": "d",
-     "text": "Weil die Verarbeitung im Kasten dann besonders einfach ist.",
+     "text": "Weil die Verarbeitung im Kasten dann so überschaubar ist, dass sie kaum noch falsch sein kann.",
      "begruendung": "Die Verarbeitung kann beliebig kompliziert sein. Prüfbar ist der Kasten trotzdem, solange Ein- und Ausgabe klar sind."
     }
    ]
@@ -75,13 +75,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Farbe Rot.",
-     "begruendung": "So erlebt es ein Mensch. Das Programm bekommt keine Farbe, sondern das, was der Sensor liefert."
+     "text": "Die Farbe Rot, so wie sie auch ein Mensch sieht, der neben dem Sensor steht.",
+     "begruendung": "So erlebt es ein Mensch. Das Programm bekommt keine Farbe, sondern das, was der Sensor liefert, und das sind Zahlen."
     },
     {
      "kennung": "b",
-     "text": "Das Wort 'red' als Text.",
-     "begruendung": "'red' ist die Ausgabe, die euer Programm erst erzeugen muss. Genau diese Entscheidung ist seine Verarbeitung."
+     "text": "Das Wort 'red', das der Sensor als erkannte Farbe an das Programm meldet.",
+     "begruendung": "Der Sensor erkennt nichts, er misst. 'red' ist die Ausgabe, die euer Programm aus den Messwerten erst erzeugen muss. Genau diese Entscheidung ist seine Verarbeitung."
     },
     {
      "kennung": "c",
@@ -90,8 +90,8 @@
     },
     {
      "kennung": "d",
-     "text": "Ein Foto der LED.",
-     "begruendung": "Der Farbsensor ist keine Kamera. Er misst Anteile des einfallenden Lichts und liefert genau vier Zahlen, kein Bild."
+     "text": "Ein kleines Bild der LED, aus dem das Programm die Farbe an der hellsten Stelle abliest.",
+     "begruendung": "Der Farbsensor ist keine Kamera. Er hat keine Bildpunkte, sondern misst Anteile des einfallenden Lichts als Ganzes und liefert genau vier Zahlen, kein Bild."
     }
    ]
   },
@@ -172,7 +172,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "classify() eine Stunde laufen lassen und schauen, ob es durchhält.",
+     "text": "classify() eine Stunde lang mit Live-Messwerten laufen lassen und schauen, ob es ohne Absturz durchhält.",
      "begruendung": "Ein Dauerlauf prüft Stabilität, aber nicht, ob die Entscheidung stimmt. Ohne erwartete Ausgabe ist es kein IPO-Test."
     },
     {
@@ -187,7 +187,7 @@
     },
     {
      "kennung": "d",
-     "text": "Den Quelltext von classify() Zeile für Zeile durchlesen.",
+     "text": "Den Quelltext von classify() Zeile für Zeile durchlesen und jede Bedingung im Kopf mit Beispielwerten nachvollziehen.",
      "begruendung": "Lesen hilft beim Verstehen, ersetzt aber keinen Test: Auch überzeugend aussehender Code kann falsch entscheiden."
     }
    ]
@@ -247,8 +247,8 @@
     },
     {
      "kennung": "c",
-     "text": "Ein einzelnes Logikgatter ist zu klein für das IPO-Modell.",
-     "begruendung": "Falsch: Auch ein UND-Gatter hat Eingaben (zwei Wahrheitswerte), eine feste Verarbeitungsregel und eine Ausgabe. Dieselbe Form, andere Auflösung."
+     "text": "Ein einzelnes Logikgatter ist zu klein für das IPO-Modell, weil es nichts verarbeitet, sondern nur Strom durchlässt oder sperrt.",
+     "begruendung": "Falsch: Durchlassen oder Sperren nach einer festen Regel ist bereits Verarbeitung. Ein UND-Gatter hat Eingaben (zwei Wahrheitswerte), eine Verarbeitungsregel und eine Ausgabe. Dieselbe Form, andere Auflösung."
     },
     {
      "kennung": "d",
@@ -278,8 +278,8 @@
     },
     {
      "kennung": "c",
-     "text": "Sender und Empfänger komplett neu schreiben, der Fehler steckt ja irgendwo darin.",
-     "begruendung": "Blindes Neubauen wirft auch die funktionierenden Kästen weg und liefert keine Erkenntnis, wo der Fehler lag."
+     "text": "Den Quelltext von Sender und Empfänger nebeneinanderlegen und die Stelle suchen, an der die Absprache nicht zusammenpasst.",
+     "begruendung": "Lesen kann helfen, ersetzt aber keine Prüfung: Ob encode() wirklich liefert, was im Code zu stehen scheint, zeigt erst ein Aufruf mit bekannter Eingabe. Und der Fehler kann in einem Kasten stecken, der gar kein Code ist, etwa im Sensor oder in der Kalibrierung."
     },
     {
      "kennung": "d",
@@ -309,8 +309,8 @@
     },
     {
      "kennung": "c",
-     "text": "Weil Python keine Farben unterstützt.",
-     "begruendung": "Mit der Programmiersprache hat das nichts zu tun. Jede Sprache arbeitet am Ende mit Darstellungen, die Frage liegt tiefer als Python."
+     "text": "Weil der Umweg über Zahlen eine Eigenheit der Programmiersprache ist; eine Sprache mit eingebautem Farbtyp würde die Farbe direkt sehen.",
+     "begruendung": "Mit der Programmiersprache hat das nichts zu tun. Auch ein eingebauter Farbtyp wäre nur eine Darstellung, im Inneren wieder Zahlen. Jede Sprache arbeitet am Ende mit Darstellungen; die Frage liegt tiefer als Python."
     },
     {
      "kennung": "d",
@@ -319,8 +319,8 @@
     },
     {
      "kennung": "e",
-     "text": "Er sieht die Farbe schon, zeigt sie nur nicht an.",
-     "begruendung": "Nein: 'Sehen' im menschlichen Sinn gibt es in der Maschine nicht. Es gibt nur die vier Zahlen und das, was das Programm daraus entscheidet."
+     "text": "Weil er die Farbe sehr wohl erkennt, sie intern aber als Zahlen ablegt und deshalb nur so weitergeben kann.",
+     "begruendung": "Die Reihenfolge stimmt nicht: Es gibt kein 'Erkennen', das vor den Zahlen läge. 'Sehen' im menschlichen Sinn gibt es in der Maschine nicht; es gibt nur die vier Zahlen und das, was das Programm daraus entscheidet."
     }
    ]
   },
@@ -340,8 +340,8 @@
     },
     {
      "kennung": "b",
-     "text": "Der Assistent arbeitet ohne Eingabe, er weiß von selbst, was zu tun ist.",
-     "begruendung": "Nein, die Eingabe seid ihr: Eure Worte bestimmen, was herauskommt. Deshalb lohnt es sich, Aufträge klein und prüfbar zu formulieren."
+     "text": "Die Eingabe spielt kaum eine Rolle: Der Assistent liefert zu jeder Frage ähnlich guten Code, egal wie ihr sie stellt.",
+     "begruendung": "Nein, die Eingabe seid ihr: Eure Worte bestimmen, was herauskommt, und ein vager Auftrag liefert vage Ergebnisse. Deshalb lohnt es sich, Aufträge klein und prüfbar zu formulieren."
     },
     {
      "kennung": "c",

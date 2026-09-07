@@ -17,8 +17,8 @@
     },
     {
      "kennung": "b",
-     "text": "Immer ein Buchstabe des Alphabets von A bis Z.",
-     "begruendung": "Buchstaben sind ein Beispiel für Symbole, aber nur eines. Eure Farben sind genauso Symbole, obwohl kein Buchstabe in Sicht ist."
+     "text": "Ein Schriftzeichen wie ein Buchstabe oder eine Ziffer, also etwas, das man aufschreiben kann.",
+     "begruendung": "Schriftzeichen sind ein Beispiel für Symbole, aber nur eines. Eure Farben sind genauso Symbole, obwohl sich keine davon aufschreiben lässt."
     },
     {
      "kennung": "c",
@@ -27,7 +27,7 @@
     },
     {
      "kennung": "d",
-     "text": "Ein besonders heller Messwert des Sensors.",
+     "text": "Ein einzelner Messwert des Sensors, etwa eine bestimmte Helligkeit.",
      "begruendung": "Ein Messwert ist erst einmal nur eine Zahl. Zum Symbol wird ein Bereich von Messwerten erst dadurch, dass ihr ihm gemeinsam eine Bedeutung gebt."
     }
    ]
@@ -43,7 +43,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die 26 Buchstaben von A bis Z.",
+     "text": "Die 26 Buchstaben von A bis Z, mit denen sich jeder Text schreiben lässt.",
      "begruendung": "Das ist ein Alphabet, aber nur ein Beispiel. Eure vier Farben bilden genauso eines, mit vier statt 26 Symbolen."
     },
     {
@@ -69,8 +69,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Physik: Grün hat von Natur aus diese Bedeutung.",
-     "begruendung": "Licht trägt keine eingebaute Bedeutung, es ist nur ein unterscheidbarer Zustand. Bedeutung entsteht ausschließlich durch Vereinbarung."
+     "text": "Die Physik des Lichts: Jede Farbe hat eine feste Wellenlänge, und an der erkennt der Empfänger, welches Zeichen gemeint ist.",
+     "begruendung": "Die Wellenlänge macht Grün unterscheidbar, mehr nicht. Welches Zeichen dahintersteht, steht nicht im Licht, sondern entsteht ausschließlich durch Vereinbarung."
     },
     {
      "kennung": "b",
@@ -79,12 +79,12 @@
     },
     {
      "kennung": "c",
-     "text": "Eine internationale Norm für Lichtübertragung.",
+     "text": "Eine Norm für Lichtübertragung, an die sich alle Teams halten, damit sich die Geräte untereinander verstehen.",
      "begruendung": "Für eure Strecke gibt es keine Norm, und genau das ist der Punkt: In den Challenges 1 bis 3 ist die Zuordnung eure freie Entwurfsentscheidung. Erst der Klassenstandard in Challenge 4 ist so etwas wie eine Norm, und auch der wird vereinbart, nicht gefunden."
     },
     {
      "kennung": "d",
-     "text": "Der Empfänger allein, denn er muss das Signal ja deuten.",
+     "text": "Der Empfänger allein, denn er ist die Seite, die aus Messwerten Zeichen machen muss.",
      "begruendung": "Ein Empfänger, der allein entscheidet, rät. Ohne dass der Sender dieselbe Zuordnung benutzt, kommt zuverlässig Unsinn heraus."
     }
    ]
@@ -100,13 +100,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein kleines Bauteil im Computer.",
+     "text": "Ein winziges Bauteil im Computer, das Strom entweder durchlässt oder sperrt.",
      "begruendung": "Ein Bit ist kein Ding, sondern eine Maßeinheit. Es lässt sich in Bauteilen speichern, aber genauso in einem Lichtblitz oder einer Handbewegung."
     },
     {
      "kennung": "b",
-     "text": "Ein anderes Wort für Byte.",
-     "begruendung": "Ein Byte ist eine Gruppe von acht Bit. Die Verwechslung ist verbreitet, kostet aber gleich den Faktor acht."
+     "text": "Die Speichermenge, die ein Computer für ein einzelnes Zeichen wie „A“ braucht.",
+     "begruendung": "Das beschreibt ein Byte, eine Gruppe von acht Bit. Die Verwechslung ist verbreitet, kostet aber gleich den Faktor acht."
     },
     {
      "kennung": "c",
@@ -131,8 +131,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "4 Bit, ein Bit je Farbe.",
-     "begruendung": "Bits zählen nicht die Farben, sondern die Ja/Nein-Entscheidungen, die nötig sind, um eine davon zu bestimmen. Das sind deutlich weniger."
+     "text": "4 Bit, denn jede der vier Farben ist eine eigene Möglichkeit, und jede Möglichkeit zählt ein Bit.",
+     "begruendung": "Bits zählen nicht die Möglichkeiten selbst, sondern die Ja/Nein-Entscheidungen, die nötig sind, um eine davon zu bestimmen. Das sind deutlich weniger: Bei vier Möglichkeiten zwei."
     },
     {
      "kennung": "b",
@@ -141,13 +141,13 @@
     },
     {
      "kennung": "c",
-     "text": "1 Bit, denn es kommt ja nur ein Symbol an.",
-     "begruendung": "Ein Symbol ist nicht automatisch ein Bit. Wie viel es trägt, hängt davon ab, aus wie vielen Möglichkeiten es ausgewählt wurde."
+     "text": "1 Bit, denn der Empfänger trifft je Symbol eine Entscheidung: Es ist angekommen oder nicht.",
+     "begruendung": "Ob etwas ankommt, ist nicht die Frage; welche der vier Farben es ist, ist sie. Ein Symbol ist nicht automatisch ein Bit: Wie viel es trägt, hängt davon ab, aus wie vielen Möglichkeiten es ausgewählt wurde."
     },
     {
      "kennung": "d",
-     "text": "Das hängt davon ab, welche der vier Farben gesendet wurde.",
-     "begruendung": "Bei vier gleichberechtigten Farben trägt jede dieselbe Menge: Entscheidend ist die Zahl der Möglichkeiten, nicht die getroffene Wahl. (Dass seltene Symbole mehr überraschen, ist eine Verfeinerung, die hier nicht gebraucht wird.)"
+     "text": "Das hängt von der gesendeten Farbe ab, denn eine gut erkennbare Farbe wie Rot trägt mehr als eine schwer erkennbare wie Gelb.",
+     "begruendung": "Erkennbarkeit betrifft die Zuverlässigkeit, nicht die Menge. Bei vier gleichberechtigten Farben trägt jede dieselbe Information: Entscheidend ist die Zahl der Möglichkeiten, nicht die getroffene Wahl."
     }
    ]
   },
@@ -193,13 +193,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die LED nur wenige Farben erzeugen kann.",
+     "text": "Weil die LED aus ihren drei Lämpchen nur eine begrenzte Zahl verschiedener Farben mischen kann.",
      "begruendung": "Die LED mischt aus drei Kanälen Millionen Farbtöne, am Senden scheitert es nicht. Das Nadelöhr sitzt auf der anderen Seite."
     },
     {
      "kennung": "b",
-     "text": "Weil der Computer mit so vielen Farben nicht rechnen kann.",
-     "begruendung": "256 Zustände sind für einen Rechner nichts, ein einzelnes Byte hat so viele. Die Grenze ist nicht rechnerisch."
+     "text": "Weil der Empfänger für 256 Farben eine Zuordnungstabelle bräuchte, deren Durchsuchen je Symbol zu lange dauert.",
+     "begruendung": "256 Einträge sind für einen Rechner nichts, ein einzelnes Byte hat so viele Werte, und das Nachschlagen dauert Bruchteile einer Mikrosekunde. Die Grenze ist nicht rechnerisch."
     },
     {
      "kennung": "c",
@@ -208,8 +208,8 @@
     },
     {
      "kennung": "d",
-     "text": "Weil lange Nachrichten sonst zu viele verschiedene Farben brauchen.",
-     "begruendung": "Die Nachrichtenlänge spielt fürs Alphabet keine Rolle: Auch mit zwei Symbolen lässt sich jede noch so lange Nachricht senden, sie dauert nur länger."
+     "text": "Weil ein Alphabet nur so viele Symbole braucht, wie der Text verschiedene Zeichen hat; weitere Farben blieben ungenutzt.",
+     "begruendung": "Zeichenvorrat und Alphabet hängen nicht so zusammen: Mehr Farben je Symbol heißt weniger Symbole je Zeichen, also schneller. Ungenutzt bliebe nichts; die Grenze liegt beim Empfänger, nicht beim Text."
     }
    ]
   },
@@ -224,8 +224,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Sensor ist defekt.",
-     "begruendung": "Ein defekter Sensor würde schon die Farberkennung verderben. Die ist aber makellos, der Fehler liegt hinter ihr."
+     "text": "Der Sensor liefert verfälschte Werte, etwa weil die Verstärkung zu hoch eingestellt ist.",
+     "begruendung": "Verfälschte Werte würden schon die Farberkennung verderben. Die ist aber makellos, der Fehler liegt hinter ihr."
     },
     {
      "kennung": "b",
@@ -234,13 +234,13 @@
     },
     {
      "kennung": "c",
-     "text": "Das Umgebungslicht stört die Übertragung.",
-     "begruendung": "Störungen würden sich zuerst in der Farberkennung zeigen. Die steht hier aber bei 100 Prozent."
+     "text": "Das Umgebungslicht verschiebt die Messwerte, sodass der Empfänger die Farben zwar sieht, aber falsch einsortiert.",
+     "begruendung": "Falsch einsortierte Farben wären Erkennungsfehler, und die stünden dann nicht bei null. Die Erkennung ist hier aber makellos; der Fehler liegt hinter ihr."
     },
     {
      "kennung": "d",
-     "text": "Das Alphabet ist zu klein für den Text.",
-     "begruendung": "Ein kleines Alphabet macht die Übertragung langsamer, nicht falscher: Man bildet Zeichen dann eben auf Gruppen von Symbolen ab."
+     "text": "Das Alphabet hat weniger Farben als der Text verschiedene Zeichen, deshalb landen mehrere Zeichen auf derselben Farbe.",
+     "begruendung": "So ordnet niemand zu. Ein kleines Alphabet bildet Zeichen auf Gruppen von Symbolen ab; das macht die Übertragung langsamer, nicht falscher."
     }
    ]
   },
@@ -260,17 +260,17 @@
     },
     {
      "kennung": "b",
-     "text": "8, die Hälfte von 16.",
+     "text": "8, denn jede Frage halbiert, und die Hälfte von 16 Möglichkeiten sind 8.",
      "begruendung": "Halbieren heißt nicht, die Anzahl zu halbieren, sondern zu zählen, wie oft man halbieren kann. Das sind bei 16 nur vier Schritte."
     },
     {
      "kennung": "c",
-     "text": "15, eine Frage je auszuschließendem Symbol.",
+     "text": "15, denn im schlechtesten Fall muss man 15 Symbole einzeln ausschließen.",
      "begruendung": "So fragt, wer einzeln durchgeht. Das funktioniert, ist aber das langsame Verfahren aus Sitzung 1; mit geschickten Fragen fällt pro Antwort die Hälfte weg."
     },
     {
      "kennung": "d",
-     "text": "2, denn jede Frage hat zwei Antworten.",
+     "text": "2, denn jede Frage hat zwei Antworten, und zweimal zwei Antworten decken 16 ab.",
      "begruendung": "Zwei Fragen trennen nur vier Möglichkeiten (zwei mal zwei). Für 16 braucht es vier Verdopplungen."
     }
    ]
@@ -292,7 +292,7 @@
     },
     {
      "kennung": "b",
-     "text": "Ein Bit ist dasselbe wie ein Byte.",
+     "text": "Ein Bit und ein Byte bezeichnen dieselbe Menge, nur in verschiedenen Zusammenhängen.",
      "begruendung": "Ein Byte sind acht Bit. Wer beides verwechselt, verrechnet sich bei jeder Größenangabe um den Faktor acht."
     },
     {
@@ -302,7 +302,7 @@
     },
     {
      "kennung": "d",
-     "text": "Bits gibt es nur in Computern.",
+     "text": "Bits gibt es nur in Computern, denn nur dort werden Zustände elektrisch gespeichert.",
      "begruendung": "Ein Lichtschalter, ein Münzwurf, eine hochgezogene Flagge: alles ein Bit, ganz ohne Computer. Bits zählen Möglichkeiten, egal worin sie stecken."
     },
     {
@@ -359,8 +359,8 @@
     },
     {
      "kennung": "b",
-     "text": "Weil zwei Symbole besonders viel Information tragen.",
-     "begruendung": "Im Gegenteil, ein Zweiersymbol trägt mit einem Bit das Minimum. Zwei Symbole sind nicht stark, sie sind genügsam."
+     "text": "Weil zwei Symbole im Signal am weitesten auseinanderliegen und der Empfänger sie deshalb nie verwechselt.",
+     "begruendung": "Das stimmt, beantwortet aber die Frage nicht: Robust erkennbar heißt nicht ausdrucksfähig. Dass zwei Symbole für jede Nachricht reichen, liegt am Gruppieren, nicht am Abstand."
     },
     {
      "kennung": "c",
@@ -369,8 +369,8 @@
     },
     {
      "kennung": "d",
-     "text": "Weil Computer intern ohnehin nur Buchstaben speichern.",
-     "begruendung": "Es ist genau umgekehrt: Computer speichern Zustände in Zweiergruppen, und Buchstaben sind eine darübergelegte Vereinbarung."
+     "text": "Weil Computer intern ohnehin mit zwei Zuständen arbeiten und jede Nachricht schon vor dem Senden in dieser Form vorliegt.",
+     "begruendung": "Das ist eine Beobachtung, keine Begründung: Computer arbeiten so, weil das Gruppieren funktioniert, nicht umgekehrt. Der Grund liegt darin, dass sich jedes größere Symbol durch eine feste Zweiergruppe ersetzen lässt."
     }
    ]
   },
@@ -386,8 +386,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Welche Farben die LED physikalisch erzeugen kann.",
-     "begruendung": "Die LED kann weit mehr Farben, als hier stehen. Das Wörterbuch wählt aus und ordnet zu, es beschreibt keine Hardwaregrenze."
+     "text": "Die vier Farben, die die LED erzeugen kann, jeweils mit dem Code, den der Hersteller dafür vorgesehen hat.",
+     "begruendung": "Die LED kann weit mehr Farben, als hier stehen, und die Codes stammen vom Team, nicht vom Hersteller. Das Wörterbuch wählt aus und ordnet zu, es beschreibt keine Hardwaregrenze."
     },
     {
      "kennung": "b",
@@ -396,13 +396,13 @@
     },
     {
      "kennung": "c",
-     "text": "Die Reihenfolge, in der die Farben gesendet werden müssen.",
+     "text": "Die Reihenfolge, in der die Farben gesendet werden: erst Rot, dann Grün, dann Blau, dann Gelb.",
      "begruendung": "Die Reihenfolge bestimmt die Nachricht, nicht das Wörterbuch. Hier steht nur, was jede Farbe bedeutet, wann sie drankommt, entscheidet der Text."
     },
     {
      "kennung": "d",
-     "text": "Wie schnell die Symbole aufeinander folgen.",
-     "begruendung": "Über Zeit sagt das Wörterbuch nichts, und das ist Absicht: Die Bedeutung der Symbole und das Tempo der Übertragung sind getrennte Entscheidungen."
+     "text": "Wie viele Symbole je Sekunde gesendet werden, denn zwei Bit je Symbol legen das Tempo der Übertragung fest.",
+     "begruendung": "Bits je Symbol sagen, wie viel ein Symbol trägt, nicht wie lange es dauert. Über Zeit sagt das Wörterbuch nichts, und das ist Absicht: Die Bedeutung der Symbole und das Tempo der Übertragung sind getrennte Entscheidungen."
     }
    ]
   }

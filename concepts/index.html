@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Projektkurs im Modul Digitalisierung und Programmierung">
 
-<title>Konzepte – LiFi-Projekt</title>
+<title>Concepts – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../concepts/problem-decomposition.html" rel="next">
-<link href="../challenges/challenge-4.html" rel="prev">
+<link href="../software/cockpit.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -45,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bb2601a8850b103bfb4593477cd94f6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3195b598eb1f03154f53c883785ef3f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LiFi-Projekt</span>
+    <span class="navbar-title">LiFi Project</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-end">
@@ -98,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Konzepte</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/index.html">The Map</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -112,160 +114,102 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LiFi-Projekt</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../organization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ablauf und Bewertung</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../ai/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Arbeiten mit dem KI-Assistenten</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Goal</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Challenges</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">LiFi Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 0: Der Funke</span></a>
+  <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 1: Das Alphabet</span></a>
+  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 0: The Spark</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 2: Das Wort</span></a>
+  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 1: The Alphabet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 3: Der Horcher</span></a>
+  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 2: The Word</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 4: Das Paket</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../concepts/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Konzepte</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme zerlegen</span></a>
+  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 3: The Listener</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme lösen mit Computern</span></a>
+  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 4: The Packet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Messen und Experimentieren</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Algorithmen und Programme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Analog und digital</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbole und Information</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Signal und Rauschen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Zahlensysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Codesysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abtastung und Synchronisation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abstraktion und Schichten</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Information und ihr Träger</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Protokolle</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/processing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verarbeitung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fehler und Redundanz</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Kompression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verschlüsselung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Durchsatz und Grenzen</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Software</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ai/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbeiten mit dem KI-Assistenten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Modul <code>lifi_hardware</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/cockpit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Team-Cockpit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Concepts</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -273,76 +217,197 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hardware/led.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Die LED</span></a>
+  <a href="../concepts/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">The Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Solving Problems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme zerlegen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hardware/color-sensor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Der Farbsensor</span></a>
+  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme lösen mit Computern</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hardware/case.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Gehäuse</span></a>
+  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Messen und Experimentieren</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hardware/optics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optischer Aufbau</span></a>
+  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstraktion und Schichten</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../software/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Representing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../software/installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Installation</span></a>
+  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analog und digital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Symbole und Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zahlensysteme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Codesysteme</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Storing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/first-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Erste Schritte</span></a>
+  <a href="../concepts/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/lifi-hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Modul <code>lifi_hardware</code></span></a>
+  <a href="../concepts/files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dateien</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Transferring Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signal und Rauschen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/cockpit.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Team-Cockpit</span></a>
+  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abtastung und Synchronisation</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Protokolle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fehler und Redundanz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information und ihr Träger</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Durchsatz und Grenzen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Processing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmen und Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logik und Arithmetik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kompression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verschlüsselung</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../demos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Demonstratoren</span></a>
+  <a href="../links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Links</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Über dieses Projekt</span></a>
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
     </ul>
@@ -355,17 +420,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Auf dieser Seite</h2>
    
   <ul>
-  <li><a href="#übersicht" id="toc-übersicht" class="nav-link active" data-scroll-target="#übersicht">Übersicht</a></li>
-  <li><a href="#nach-challenge-sortiert" id="toc-nach-challenge-sortiert" class="nav-link" data-scroll-target="#nach-challenge-sortiert">Nach Challenge sortiert</a></li>
+  <li><a href="#one-question-four-questions" id="toc-one-question-four-questions" class="nav-link active" data-scroll-target="#one-question-four-questions">One question, four questions</a></li>
+  <li><a href="#all-concepts" id="toc-all-concepts" class="nav-link" data-scroll-target="#all-concepts">All concepts</a></li>
+  <li><a href="#by-challenge" id="toc-by-challenge" class="nav-link" data-scroll-target="#by-challenge">By challenge</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/index.html">The Map</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Konzepte</h1>
+<h1 class="title">Concepts</h1>
 </div>
 
 
@@ -382,100 +448,172 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Das Gerät, das ihr baut, ist nicht das Ziel. Es ist der Gegenstand, an dem eine Reihe von Konzepten sichtbar wird, die sonst unsichtbar bleiben. Diese Seiten sammeln sie.</p>
-<p>Jedes Konzept begegnet euch an einer bestimmten Stelle im Projekt, meistens als Problem, bevor es als Begriff auftaucht. Das ist Absicht: Ihr sollt zuerst merken, dass etwas nicht funktioniert, und danach erfahren, wie das heißt und warum es so ist.</p>
-<p>Jede Seite beginnt mit einer Zusammenfassung und den Fragen, um die es geht. Danach wird das Konzept ausführlich erläutert, auch anhand der Schaubilder. Zum Nachsehen folgen die Folien aus der Sitzung und später weiterführende Literatur.</p>
-<p>Nehmt diesen Teil ernst: <strong>In der mündlichen Prüfung werden diese Konzepte geprüft.</strong> Euer Projekt ist dabei das Material, an dem ihr sie erklärt, aber es ersetzt nicht das Verständnis. Wer alle Challenges bestanden hat und trotzdem nicht sagen kann, warum digitale Übertragung Störungen verträgt, besteht die Prüfung nicht.</p>
-<section id="übersicht" class="level2">
-<h2 class="anchored" data-anchor-id="übersicht">Übersicht</h2>
+<p>The device you build is not the goal. It is the object on which a set of concepts becomes visible that would otherwise stay invisible. These pages collect them.</p>
+<p>Every concept meets you at a particular point in the project, usually as a problem before it appears as a term. That is deliberate: you are meant to notice first that something does not work, and to learn afterwards what it is called and why it behaves that way.</p>
+<p>Every page starts with a summary and the questions it is about. Then the concept is explained in full, with its diagrams. For looking things up again, the slides from the session follow, and later some further reading.</p>
+<p>Take this part seriously: <strong>the concepts are what the exam is about.</strong> Your project is the material on which you explain them, but it does not replace understanding them. Whoever has passed every challenge and still cannot say why digital transmission tolerates noise does not pass the exam.</p>
+<section id="one-question-four-questions" class="level2">
+<h2 class="anchored" data-anchor-id="one-question-four-questions">One question, four questions</h2>
+<p>The module has one big question: how can we solve complex problems with computers? Four questions about information sit underneath it, and every concept on these pages belongs to one of them. Above all four lie the ways of working that you need everywhere: cutting problems, the input-processing-output model, measuring, and thinking in layers. The colours on this map are the same on the slides: whenever a session works on one of the four questions, its colour tells you which.</p>
+<div id="fig-concept-map" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-concept-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/concept-map.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;1: The map of the module. One big question, four questions about information, and the project at the bottom: the file is stored, its bytes represent a picture, a checksum processes them, and the light transfers them."><img src="../assets/diagrams/concept-map.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-concept-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;1: The map of the module. One big question, four questions about information, and the project at the bottom: the file is stored, its bytes represent a picture, a checksum processes them, and the light transfers them.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="all-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="all-concepts">All concepts</h2>
+<p>The order inside each group is the order in which the concepts appear in the semester; the last column says where in the project you need them.</p>
+<p><strong>Solving problems</strong> (how you think and work, needed everywhere)</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Konzept</th>
-<th>Wo es auftaucht</th>
+<th>Concept</th>
+<th>Where you need it</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><a href="../concepts/problem-decomposition.html">Probleme zerlegen</a></td>
-<td>Challenge 0 bis 4</td>
+<td>C0 to C4</td>
 </tr>
 <tr class="even">
 <td><a href="../concepts/input-processing-output.html">Probleme lösen mit Computern</a></td>
-<td>Challenge 0 bis 4</td>
+<td>C0 to C4</td>
 </tr>
 <tr class="odd">
 <td><a href="../concepts/measurement-and-experiments.html">Messen und Experimentieren</a></td>
-<td>ab Challenge 1</td>
-</tr>
-<tr class="even">
-<td><a href="../concepts/algorithms-and-programs.html">Algorithmen und Programme</a></td>
-<td>ab Challenge 0, tragend in Challenge 1 und 2</td>
-</tr>
-<tr class="odd">
-<td><a href="../concepts/analog-and-digital.html">Analog und digital</a></td>
-<td>Challenge 1</td>
-</tr>
-<tr class="even">
-<td><a href="../concepts/symbols-and-information.html">Symbole und Information</a></td>
-<td>Challenge 1</td>
-</tr>
-<tr class="odd">
-<td><a href="../concepts/signal-and-noise.html">Signal und Rauschen</a></td>
-<td>Challenge 1</td>
-</tr>
-<tr class="even">
-<td><a href="../concepts/code-systems.html">Codesysteme</a></td>
-<td>Challenge 2</td>
-</tr>
-<tr class="odd">
-<td><a href="../concepts/sampling-and-synchronization.html">Abtastung und Synchronisation</a></td>
-<td>Challenge 2</td>
+<td>from C1</td>
 </tr>
 <tr class="even">
 <td><a href="../concepts/abstraction-and-layers.html">Abstraktion und Schichten</a></td>
-<td>ab Challenge 2</td>
+<td>from C2</td>
 </tr>
+</tbody>
+</table>
+<p><strong>Representing information</strong> (making bits)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Where you need it</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td><a href="../concepts/information-and-carrier.html">Information und ihr Träger</a></td>
-<td>Challenge 4</td>
+<td><a href="../concepts/analog-and-digital.html">Analog und digital</a></td>
+<td>C1</td>
 </tr>
 <tr class="even">
-<td><a href="../concepts/protocols.html">Protokolle</a></td>
-<td>Challenge 2 und 3</td>
+<td><a href="../concepts/symbols-and-information.html">Symbole und Information</a></td>
+<td>C1</td>
 </tr>
 <tr class="odd">
-<td><a href="../concepts/processing.html">Verarbeitung</a></td>
-<td>Challenge 4, Vorläufer in Challenge 2</td>
+<td><a href="../concepts/number-systems.html">Zahlensysteme</a></td>
+<td>C2</td>
+</tr>
+<tr class="even">
+<td><a href="../concepts/code-systems.html">Codesysteme</a></td>
+<td>C2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Storing information</strong> (storing bits)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Where you need it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../concepts/memory.html">Memory</a></td>
+<td>C4</td>
+</tr>
+<tr class="even">
+<td><a href="../concepts/files.html">Dateien</a></td>
+<td>C4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Transferring information</strong> (sending bits)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Where you need it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../concepts/signal-and-noise.html">Signal und Rauschen</a></td>
+<td>C1</td>
+</tr>
+<tr class="even">
+<td><a href="../concepts/sampling-and-synchronization.html">Abtastung und Synchronisation</a></td>
+<td>C2</td>
+</tr>
+<tr class="odd">
+<td><a href="../concepts/protocols.html">Protokolle</a></td>
+<td>C2 and C3</td>
 </tr>
 <tr class="even">
 <td><a href="../concepts/errors-and-redundancy.html">Fehler und Redundanz</a></td>
-<td>Challenge 4</td>
+<td>C4</td>
+</tr>
+<tr class="odd">
+<td><a href="../concepts/information-and-carrier.html">Information und ihr Träger</a></td>
+<td>C4</td>
+</tr>
+<tr class="even">
+<td><a href="../concepts/throughput-and-limits.html">Durchsatz und Grenzen</a></td>
+<td>C4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Processing information</strong> (processing bits)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Where you need it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../concepts/algorithms-and-programs.html">Algorithmen und Programme</a></td>
+<td>from C0, central in C1 and C2</td>
+</tr>
+<tr class="even">
+<td><a href="../concepts/logic-and-arithmetic.html">Logik und Arithmetik</a></td>
+<td>C4, first contact in C2</td>
 </tr>
 <tr class="odd">
 <td><a href="../concepts/compression.html">Kompression</a></td>
-<td>Challenge 4</td>
+<td>C4</td>
 </tr>
 <tr class="even">
 <td><a href="../concepts/encryption.html">Verschlüsselung</a></td>
-<td>Challenge 4, als Zusatz</td>
-</tr>
-<tr class="odd">
-<td><a href="../concepts/throughput-and-limits.html">Durchsatz und Grenzen</a></td>
-<td>Challenge 4</td>
+<td>C4, optional</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="nach-challenge-sortiert" class="level2">
-<h2 class="anchored" data-anchor-id="nach-challenge-sortiert">Nach Challenge sortiert</h2>
-<p>Wenn ihr gerade an einer bestimmten Challenge arbeitet, sind das die passenden Seiten.</p>
-<p><strong>Challenge 0.</strong> <a href="../concepts/input-processing-output.html">Probleme lösen mit Computern</a> und <a href="../concepts/algorithms-and-programs.html">Algorithmen und Programme</a>, sobald ihr die ersten eigenen Zeilen schreibt. Dazu fängt <a href="../concepts/problem-decomposition.html">Probleme zerlegen</a> hier schon an.</p>
-<p><strong>Challenge 1.</strong> <a href="../concepts/analog-and-digital.html">Analog und digital</a>, <a href="../concepts/symbols-and-information.html">Symbole und Information</a> und <a href="../concepts/signal-and-noise.html">Signal und Rauschen</a> gehören zusammen und beantworten gemeinsam die Frage, warum eure Alphabetgröße begrenzt ist. Dazu <a href="../concepts/measurement-and-experiments.html">Messen und Experimentieren</a>, weil ihr hier zum ersten Mal eine richtige Messreihe braucht, und <a href="../concepts/algorithms-and-programs.html">Algorithmen und Programme</a>, weil eure Erkennungsregel der erste Algorithmus ist, den ihr euch selbst ausdenkt.</p>
-<p><strong>Challenge 2.</strong> <a href="../concepts/code-systems.html">Codesysteme</a> für den Weg vom Buchstaben zum Symbol, <a href="../concepts/sampling-and-synchronization.html">Abtastung und Synchronisation</a> für die Frage, warum es bei höherem Tempo zerfällt. Dazu der erste Teil von <a href="../concepts/protocols.html">Protokolle</a>, nämlich die einfache Absprache.</p>
-<p><strong>Challenge 3.</strong> <a href="../concepts/protocols.html">Protokolle</a>, jetzt in voller Schärfe: Rahmung, Synchronisation und die Frage, wie vollständig eine Absprache sein muss.</p>
-<p><strong>Challenge 4.</strong> <a href="../concepts/processing.html">Verarbeitung</a> zuerst, denn Prüfsumme und Verschlüsselung beruhen beide darauf. Dann <a href="../concepts/errors-and-redundancy.html">Fehler und Redundanz</a>, <a href="../concepts/compression.html">Kompression</a> und <a href="../concepts/throughput-and-limits.html">Durchsatz und Grenzen</a>. Wer mag, nimmt <a href="../concepts/encryption.html">Verschlüsselung</a> dazu.</p>
-<p><strong>Rückblick.</strong> <a href="../concepts/abstraction-and-layers.html">Abstraktion und Schichten</a> lohnt sich am Ende noch einmal, wenn ihr euer fertiges System vor euch habt.</p>
+<section id="by-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="by-challenge">By challenge</h2>
+<p>If you are working on a particular challenge right now, these are the pages that go with it.</p>
+<p><strong>Challenge 0.</strong> <a href="../concepts/input-processing-output.html">Probleme lösen mit Computern</a> and <a href="../concepts/algorithms-and-programs.html">Algorithmen und Programme</a> as soon as you write your first lines of your own. <a href="../concepts/problem-decomposition.html">Probleme zerlegen</a> starts here as well.</p>
+<p><strong>Challenge 1.</strong> <a href="../concepts/analog-and-digital.html">Analog und digital</a>, <a href="../concepts/symbols-and-information.html">Symbole und Information</a> and <a href="../concepts/signal-and-noise.html">Signal und Rauschen</a> belong together and answer, between them, why the size of your alphabet is limited. Add <a href="../concepts/measurement-and-experiments.html">Messen und Experimentieren</a>, because this is the first time you need a proper series of measurements, and <a href="../concepts/algorithms-and-programs.html">Algorithmen und Programme</a>, because your recognition rule is the first algorithm you invent yourselves.</p>
+<p><strong>Challenge 2.</strong> <a href="../concepts/code-systems.html">Codesysteme</a> for the way from a letter to a symbol, <a href="../concepts/sampling-and-synchronization.html">Abtastung und Synchronisation</a> for the question why it falls apart at higher speed. Add the first part of <a href="../concepts/protocols.html">Protokolle</a>, the simple agreement.</p>
+<p><strong>Challenge 3.</strong> <a href="../concepts/protocols.html">Protokolle</a> in full: framing, synchronisation, and how complete an agreement has to be.</p>
+<p><strong>Challenge 4.</strong> <a href="../concepts/logic-and-arithmetic.html">Logik und Arithmetik</a> first, because checksums and encryption both build on it. Then <a href="../concepts/errors-and-redundancy.html">Fehler und Redundanz</a>, <a href="../concepts/memory.html">Memory</a> and <a href="../concepts/files.html">Dateien</a> for what travels through the air as a whole for the first time, <a href="../concepts/compression.html">Kompression</a> and <a href="../concepts/throughput-and-limits.html">Durchsatz und Grenzen</a>. If you like, add <a href="../concepts/encryption.html">Verschlüsselung</a>.</p>
+<p><strong>Looking back.</strong> <a href="../concepts/abstraction-and-layers.html">Abstraktion und Schichten</a> is worth a second look at the end, once your finished system is in front of you.</p>
 
 
 </section>
@@ -1147,13 +1285,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../challenges/challenge-4.html" class="pagination-link" aria-label="Challenge 4: Das Paket">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Challenge 4: Das Paket</span></span>
+      <a href="../software/cockpit.html" class="pagination-link" aria-label="Das Team-Cockpit">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Das Team-Cockpit</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../concepts/problem-decomposition.html" class="pagination-link" aria-label="Probleme zerlegen">
-        <span class="nav-page-text"><span class="chapter-title">Probleme zerlegen</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Probleme zerlegen</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1171,6 +1309,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

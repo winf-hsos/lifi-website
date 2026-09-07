@@ -17,17 +17,17 @@
     },
     {
      "kennung": "b",
-     "text": "Sie stammt aus einem Gerät, das ohne Strom funktioniert.",
-     "begruendung": "Strom hat damit nichts zu tun. Es gibt jede Menge analoge Elektronik, ein Verstärker etwa arbeitet elektrisch und trotzdem stufenlos."
+     "text": "Sie stammt aus einem Gerät, das ohne Rechner und Programm auskommt, etwa aus einem Verstärker oder einem Plattenspieler.",
+     "begruendung": "Ob ein Rechner beteiligt ist, entscheidet nichts. Ein Verstärker arbeitet ohne Programm und trotzdem stufenlos, und ein Computer kann umgekehrt stufenlose Größen messen. Es geht allein um die Frage: stufenlos oder endlich viele Zustände?"
     },
     {
      "kennung": "c",
-     "text": "Sie ist alt oder mechanisch.",
+     "text": "Sie gehört zu einer älteren, mechanischen Technik, so wie bei der analogen Fotografie oder der Schallplatte.",
      "begruendung": "Das ist die Alltagsbedeutung („analoge Fotografie“), nicht der Fachbegriff. Fachlich geht es nur um die Frage: stufenlos oder endlich viele Zustände?"
     },
     {
      "kennung": "d",
-     "text": "Sie ist ungenau.",
+     "text": "Sie lässt sich nur ungefähr bestimmen: Ihr Wert ist nie exakt, sondern immer nur eine Schätzung.",
      "begruendung": "Eine analoge Größe kann beliebig genau sein, sie hat sogar unendlich viele Zwischenwerte. Das Problem ist nicht ihre Genauigkeit, sondern dass ein Computer sie so nicht fassen kann."
     }
    ]
@@ -43,7 +43,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Es rechnet mit Strom.",
+     "text": "Es arbeitet elektronisch: Seine Zustände werden durch Strom oder Spannung dargestellt.",
      "begruendung": "Strom ist nur der übliche Träger, nicht das Merkmal. Man kann digital auch mit Lichtblitzen, Flaggen oder Zetteln arbeiten, ihr macht im Semester nichts anderes."
     },
     {
@@ -58,7 +58,7 @@
     },
     {
      "kennung": "d",
-     "text": "Es speichert alle Informationen als Text.",
+     "text": "Es speichert Informationen als Zeichen und Text, so dass ein Mensch sie im Prinzip lesen könnte.",
      "begruendung": "Gespeichert werden Zustände, meistens als Folgen von zwei Zuständen. Ob die mal Text, Bild oder Ton bedeuten, ist eine Frage der Codierung, die kommt in einem späteren Konzept."
     }
    ]
@@ -75,7 +75,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil das Rauschen mit der Zahl der Bereiche zunimmt.",
+     "text": "Weil das Rauschen mit jeder zusätzlichen Grenze zunimmt: Jede Grenze bringt ihre eigenen Störungen ins Signal.",
      "begruendung": "Nein, das Rauschen ist in allen vier Feldern identisch. Was sich ändert, steht auf der anderen Seite des Vergleichs."
     },
     {
@@ -85,7 +85,7 @@
     },
     {
      "kennung": "c",
-     "text": "Weil der Sensor bei feinen Stufen ungenauer misst.",
+     "text": "Weil der Sensor bei feinen Stufen ungenauer misst: Kleine Unterschiede zwischen Nachbarbereichen kann er nicht mehr sauber auflösen.",
      "begruendung": "Der Sensor weiß nichts von euren Bereichen, er liefert einfach Werte. Die Bereiche zieht ihr erst danach ein, im Programm."
     },
     {
@@ -117,7 +117,7 @@
     },
     {
      "kennung": "c",
-     "text": "Beim Digitalisieren wird das Signal von Störungen befreit.",
+     "text": "Beim Digitalisieren wird das Signal von Störungen befreit, weil danach nur noch der Bereich zählt und nicht mehr der genaue Wert.",
      "begruendung": "Das Digitalisieren selbst reinigt nichts; eine Störung, die groß genug ist, landet mit im Bereich nebenan. Robust wird es nur, wenn die Bereiche weiter auseinanderliegen als die Störung."
     },
     {
@@ -127,7 +127,7 @@
     },
     {
      "kennung": "e",
-     "text": "Digitalisieren funktioniert nur bei Licht und Ton.",
+     "text": "Digitalisieren funktioniert nur bei Signalen wie Licht und Ton, die sich als Welle beschreiben lassen.",
      "begruendung": "Es funktioniert bei allem, was sich messen lässt: Temperatur, Druck, Tastenwege, Mausbewegungen. Überall dieselben zwei Schritte: messen, einem Bereich zuordnen."
     }
    ]
@@ -148,7 +148,7 @@
     },
     {
      "kennung": "b",
-     "text": "Weil digitale Bauteile nicht rauschen.",
+     "text": "Weil digitale Bauteile nicht rauschen: Sie schalten nur zwischen an und aus, und dabei entsteht keine Störung.",
      "begruendung": "Auch digitale Schaltungen rauschen, die Physik macht keine Ausnahme. Der Unterschied ist, dass das Rauschen unterhalb des Zustandsabstands folgenlos bleibt."
     },
     {
@@ -158,7 +158,7 @@
     },
     {
      "kennung": "d",
-     "text": "Weil Computer Fehler automatisch erkennen und herausrechnen.",
+     "text": "Weil Computer Fehler automatisch erkennen und herausrechnen, sobald ein Wert nicht zu den umliegenden passt.",
      "begruendung": "Fehlererkennung gibt es, aber sie ist eine eigene, zusätzliche Zutat (sie kommt später bei Redundanz und Prüfsummen). Die Grundrobustheit kommt schon vorher aus dem Zustandsabstand."
     }
    ]
@@ -179,18 +179,18 @@
     },
     {
      "kennung": "b",
-     "text": "Acht Farben sind unproblematisch, denn 8 ist viel kleiner als 40.",
+     "text": "Acht Farben sind unproblematisch, denn die Zahl 8 ist viel kleiner als die Schwankung von 40, es bleibt also Reserve.",
      "begruendung": "Die beiden Zahlen messen verschiedene Dinge (Anzahl gegen Sensorwert), man kann sie nicht vergleichen. Verglichen werden muss die Breite eines Bereichs mit der Schwankung."
     },
     {
      "kennung": "c",
-     "text": "Die Schwankung spielt keine Rolle, weil der Sensor digital misst.",
+     "text": "Die Schwankung spielt keine Rolle, weil der Sensor bereits Zahlen liefert; ein digitaler Wert ist richtig oder falsch, nicht ungefähr.",
      "begruendung": "Dass der Sensor Zahlen liefert, macht die Schwankung nicht kleiner: Sie steckt schon im Licht und in der Messung selbst. Digital heißt nicht störungsfrei."
     },
     {
      "kennung": "d",
-     "text": "Mehr als zwei Farben sind grundsätzlich unmöglich.",
-     "begruendung": "Mit diesem Wertebereich und dieser Schwankung sind drei oder vier Bereiche rechnerisch gut denkbar. Wo die Grenze wirklich liegt, ist eine Messfrage, und genau die entscheidet euren Wettbewerb."
+     "text": "Mehr als zwei Farben sind nicht sinnvoll, weil jede zusätzliche Grenze eine weitere Fehlerquelle ist und ±40 dafür zu viel Schwankung sind.",
+     "begruendung": "Zu vorsichtig: Bei drei Bereichen ist jeder 100 breit, bei vier noch 75, beides deutlich mehr als die Schwankung von ±40. Wo die Grenze wirklich liegt, ist eine Messfrage, und genau die entscheidet euren Wettbewerb."
     }
    ]
   },
@@ -206,12 +206,12 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er wandelt das analoge Licht in einen digitalen Wert um.",
+     "text": "Er wandelt das analoge Licht in einen digitalen Wert um, denn erst nach dem Vergleich liegt ein echter digitaler Zustand vor.",
      "begruendung": "Das ist schon passiert: `get_clear()` hat den Wert geliefert, die Wandlung steckt im Sensor. Hier wird nur noch mit Zahlen gearbeitet."
     },
     {
      "kennung": "b",
-     "text": "Er misst die Helligkeit ein zweites Mal, zur Kontrolle.",
+     "text": "Er misst die Helligkeit ein zweites Mal, zur Kontrolle, damit ein Ausreißer der ersten Messung nicht durchrutscht.",
      "begruendung": "Ein Vergleich misst nichts, er entscheidet nur über einen bereits vorhandenen Wert. Gemessen wird ausschließlich in der Zeile darüber."
     },
     {
@@ -221,7 +221,7 @@
     },
     {
      "kennung": "d",
-     "text": "Er erhöht die Genauigkeit des Messwerts.",
+     "text": "Er erhöht die Genauigkeit des Messwerts, weil aus einem schwankenden Zahlenwert ein eindeutiges Ergebnis wird.",
      "begruendung": "Das Gegenteil: Aus vielen unterscheidbaren Werten werden zwei. Genau dieses bewusste Vergröbern kauft die Robustheit."
     }
    ]
@@ -237,7 +237,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil Dateien komprimiert sind und deshalb weniger kaputtgehen kann.",
+     "text": "Weil Dateien komprimiert gespeichert sind und beim Kopieren deshalb weniger Daten kaputtgehen können.",
      "begruendung": "Kompression ist ein anderes Thema (und macht Daten eher empfindlicher gegen Fehler, nicht robuster). Auch eine unkomprimierte Datei kopiert sich perfekt."
     },
     {
@@ -247,12 +247,12 @@
     },
     {
      "kennung": "c",
-     "text": "Weil Computer schneller kopieren, bleibt weniger Zeit für Fehler.",
+     "text": "Weil Computer viel schneller kopieren als ein Kassettendeck, bleibt kaum Zeit, in der sich Störungen einschleichen können.",
      "begruendung": "Die Geschwindigkeit hat damit nichts zu tun. Eine langsame digitale Kopie ist genauso perfekt wie eine schnelle."
     },
     {
      "kennung": "d",
-     "text": "Weil Dateien gar nicht wirklich kopiert, sondern nur verknüpft werden.",
+     "text": "Weil Dateien beim Kopieren nicht neu geschrieben, sondern nur verknüpft werden; eine zweite Fassung entsteht also gar nicht.",
      "begruendung": "Verknüpfungen gibt es, aber eine echte Kopie ist eine echte zweite Folge von Zuständen, und die ist trotzdem identisch. Genau das ist die Pointe."
     }
    ]
@@ -273,7 +273,7 @@
     },
     {
      "kennung": "b",
-     "text": "Es über das Internet übertragen.",
+     "text": "Es in eine Form bringen, die sich über das Internet übertragen lässt.",
      "begruendung": "Übertragung ist ein eigener Schritt und setzt die Zahlenform meist schon voraus. Digitalisieren passiert davor, am Übergang von der Welt zur Zahl."
     },
     {
@@ -367,17 +367,17 @@
     },
     {
      "kennung": "b",
-     "text": "Mehr Farben sind immer besser, weil die Übertragung dann schneller ist.",
+     "text": "Mehr Farben lohnen sich, weil jede Messung dann mehr Bits trägt und die Übertragung entsprechend schneller wird.",
      "begruendung": "Nur solange jede Messung noch stimmt. Ab einer gewissen Enge kosten die Erkennungsfehler mehr Zeit, als das größere Alphabet einspart."
     },
     {
      "kennung": "c",
-     "text": "Zwei Farben sind immer die richtige Wahl, weil Sicherheit vorgeht.",
+     "text": "Zwei Farben sind die sichere Wahl, weil der größte Abstand die wenigsten Fehler bringt und ein Fehler mehr kostet als etwas Tempo.",
      "begruendung": "Wer bei großem Störabstand trotzdem nur zwei Farben nutzt, verschenkt Tempo. Auch Vorsicht hat einen Preis, und ob er gerechtfertigt ist, zeigt wieder nur die Messung."
     },
     {
      "kennung": "d",
-     "text": "Die Zahl ist Geschmackssache, solange sauber kalibriert wird.",
+     "text": "Die Zahl ist Geschmackssache, solange sauber kalibriert wird: Die Kalibrierung legt die Grenzen dorthin, wo sie sicher liegen.",
      "begruendung": "Kalibrieren verschiebt die Grenzen an die richtigen Stellen, aber es vergrößert nicht den Abstand zwischen ihnen. Gegen zu enge Bereiche hilft keine noch so gute Kalibrierung."
     }
    ]

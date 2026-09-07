@@ -18,7 +18,7 @@
     },
     {
      "kennung": "b",
-     "text": "Die LED kann so schnell nicht mehr umschalten.",
+     "text": "Die LED braucht Zeit zum Umschalten, und bei zehn Farbwechseln pro Sekunde kommt sie nicht mehr hinterher.",
      "begruendung": "Eine LED schaltet in Mikrosekunden, zehn Wechsel pro Sekunde sind für sie nichts. Die Grenze liegt beim Messen, nicht beim Leuchten."
     },
     {
@@ -28,7 +28,7 @@
     },
     {
      "kennung": "d",
-     "text": "Der Rechner ist zu langsam für zehn Berechnungen pro Sekunde.",
+     "text": "Der Rechner schafft zehn Messungen samt Vergleich pro Sekunde nicht mehr rechtzeitig, und die Verzögerung wächst mit jedem Symbol.",
      "begruendung": "Zehn Vergleiche pro Sekunde sind für jeden Rechner nichts. Das Problem liegt in der Physik der Messung und im Auseinanderlaufen der Uhren."
     }
    ]
@@ -44,8 +44,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Saal hat beim ersten Mal nicht aufgepasst.",
-     "begruendung": "Auch bei bester Konzentration läuft es auseinander: Jeder hat seinen eigenen Rhythmus, und kleine Unterschiede summieren sich."
+     "text": "Das Startsignal war beim ersten Mal nicht deutlich genug; mit einem klareren gemeinsamen Start hätte der Saal durchgehalten.",
+     "begruendung": "Auch mit dem deutlichsten Start läuft es auseinander: Jeder hat seinen eigenen Rhythmus, und kleine Unterschiede summieren sich mit jedem Schlag. Ein besserer Anfang verschiebt das Auseinanderlaufen nur, er verhindert es nicht."
     },
     {
      "kennung": "b",
@@ -54,7 +54,7 @@
     },
     {
      "kennung": "c",
-     "text": "Menschen können keinen Takt halten, Rechner schon.",
+     "text": "Menschen halten keinen Takt, Rechner mit Quarzuhr schon; für zwei Geräte genügt deshalb der gemeinsame Start.",
      "begruendung": "Rechneruhren driften ebenfalls, nur um Größenordnungen langsamer. Genau deshalb fällt es bei einem Symbol pro Sekunde nicht auf und bei zehn schon."
     },
     {
@@ -80,18 +80,18 @@
     },
     {
      "kennung": "b",
-     "text": "Jedes zweite Symbol geht verloren, die übrigen kommen korrekt an.",
+     "text": "Etwa jedes zweite Symbol geht verloren, weil der Sensor nur alle 50 ms eine Messung fertig hat; die übrigen kommen sauber an.",
      "begruendung": "So sauber verhält es sich nicht. Es gehen nicht einzelne Symbole verloren, sondern die Messwerte selbst werden zu Mischungen, die sich keinem Symbol zuordnen lassen."
     },
     {
      "kennung": "c",
-     "text": "Nichts, solange Sender und Empfänger dieselbe Rate benutzen.",
+     "text": "Nichts Auffälliges, solange Sender und Empfänger dieselbe Rate benutzen; die Integrationszeit spielt dann keine Rolle mehr.",
      "begruendung": "Dieselbe Rate hilft gegen das Auseinanderlaufen, aber nicht gegen ein zu langes Messfenster. Auch bei perfekt gleicher Rate mittelt der Sensor über den Wechsel hinweg."
     },
     {
      "kennung": "d",
-     "text": "Der Sensor meldet einen Fehler.",
-     "begruendung": "Er meldet gar nichts, er liefert brav eine Zahl. Genau das macht diesen Fehler so tückisch: Die Messung sieht gültig aus und ist trotzdem sinnlos."
+     "text": "Der Sensor bemerkt, dass die Farbe während der Messung gewechselt hat, und liefert für diese Messung keinen gültigen Wert.",
+     "begruendung": "Er bemerkt nichts, er liefert brav eine Zahl. Der Sensor kennt keine Symbole und keine Wechsel, er summiert nur das Licht seines Fensters. Genau das macht diesen Fehler so tückisch: Die Messung sieht gültig aus und ist trotzdem sinnlos."
     }
    ]
   },
@@ -106,7 +106,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Rund 53 Minuten.",
+     "text": "Rund 53 Minuten: 1 Bit je Symbol, also 5 bit/s.",
      "begruendung": "Das wäre die Rechnung mit 1 Bit je Symbol, also mit nur zwei Farben. Vier Farben tragen 2 Bit."
     },
     {
@@ -116,12 +116,12 @@
     },
     {
      "kennung": "c",
-     "text": "Rund 13 Minuten.",
+     "text": "Rund 13 Minuten: 4 Bit je Symbol, also 20 bit/s.",
      "begruendung": "Das wäre die Rechnung mit 4 Bit je Symbol. Vier Farben tragen aber 2 Bit, nicht 4: Es zählt, wie oft man halbieren muss, nicht die Zahl der Farben selbst."
     },
     {
      "kennung": "d",
-     "text": "Das lässt sich ohne die Fehlerrate nicht sagen.",
+     "text": "Das lässt sich erst sagen, wenn die Fehlerrate der Strecke bekannt ist.",
      "begruendung": "Die Fehlerrate verlängert die Dauer durch Wiederholungen, gefragt war aber das Minimum. Und ohne diese Grundrechnung könnt ihr gar nicht beurteilen, ob sich eine Wiederholung lohnt."
     }
    ]
@@ -137,13 +137,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nichts, das Verfahren ist in jeder Hinsicht besser.",
-     "begruendung": "Es gibt keinen kostenlosen Gewinn. Was hier gespart wird (die Synchronisation), wird woanders bezahlt."
+     "text": "Keinen: Die Farbzahl bleibt gleich, und weil die Synchronisation entfällt, spart das Team sogar die Marken ein.",
+     "begruendung": "Die Farbzahl bleibt zwar gleich, aber nicht jede Farbe darf auf jede folgen. Diese Einschränkung kostet Kapazität je Übergang. Was bei der Synchronisation gespart wird, wird hier bezahlt."
     },
     {
      "kennung": "b",
-     "text": "Der Empfänger muss doppelt so schnell messen.",
-     "begruendung": "Er misst so oft er mag; gerade das ist ja der Gewinn. Häufiger messen schadet nicht, weil ohne Wechsel auch nichts decodiert wird."
+     "text": "Der Empfänger muss deutlich öfter messen als der Sender wechselt, damit ihm kein Übergang entgeht.",
+     "begruendung": "Öfter messen als der Sender wechselt muss der Empfänger bei jedem Verfahren, auch mit fester Rate. Das ist der gewöhnliche Preis des Messens, kein Preis dieser Freiheit. Hier darf er sogar messen, wann er will, weil ohne Wechsel nichts decodiert wird."
     },
     {
      "kennung": "c",
@@ -152,8 +152,8 @@
     },
     {
      "kennung": "d",
-     "text": "Es funktioniert nur mit genau drei Farben.",
-     "begruendung": "Es funktioniert ab drei Farben mit beliebig vielen; mehr Farben bringen sogar mehr Bit je Übergang. Bei fünf Farben sind es glatte 2 Bit."
+     "text": "Das Verfahren ist auf drei Farben festgelegt, denn mit mehr Farben lassen sich 0 und 1 den Nachfolgern nicht mehr eindeutig zuordnen.",
+     "begruendung": "Es funktioniert ab drei Farben mit beliebig vielen; mehr Farben bringen sogar mehr Bit je Übergang, weil mehr Nachfolger zur Wahl stehen. Bei fünf Farben sind es glatte 2 Bit je Übergang, die Zuordnung bleibt eindeutig."
     }
    ]
   },
@@ -168,7 +168,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Zwei, eine Farbe je Bitwert.",
+     "text": "Zwei, eine Farbe je Bitwert; der Wechsel dazwischen markiert nur die Grenze.",
      "begruendung": "Bei zwei Farben gibt es von jeder aus nur einen erlaubten Nachfolger. Der Übergang ist dann vorhersehbar und trägt gar keine Information."
     },
     {
@@ -199,8 +199,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Es ist langsamer als eine Übertragung mit festem Takt.",
-     "begruendung": "Langsamer ist es nicht; ohne Uhr kann sogar schneller gesendet werden, solange der Empfänger die Wechsel sicher sieht."
+     "text": "Es ist langsamer als eine Übertragung mit festem Takt, weil jedes Symbol erst mit dem nächsten Wechsel als abgeschlossen gilt.",
+     "begruendung": "Dass ein Symbol erst mit dem nächsten Wechsel feststeht, stimmt, macht es aber nicht langsamer: Der Sender wechselt so schnell, wie der Empfänger die Wechsel sicher sieht, und ohne Takt darf er sogar dichter senden. Das Problem liegt woanders."
     },
     {
      "kennung": "b",
@@ -209,13 +209,13 @@
     },
     {
      "kennung": "c",
-     "text": "Der Empfänger braucht dafür trotzdem eine Uhr.",
+     "text": "Der Empfänger braucht trotzdem eine gemeinsame Uhr, um zu wissen, wann der nächste Wechsel fällig ist.",
      "begruendung": "Eine Uhr im Sinne eines gemeinsamen Takts braucht er nicht. Eine Zeitentscheidung bleibt aber: Wie lange muss eine Farbe stabil anliegen, damit sie als neuer Zustand zählt und nicht als Zwischenwert während des Wechsels?"
     },
     {
      "kennung": "d",
-     "text": "Es funktioniert nur bei genau zwei Farben.",
-     "begruendung": "Die Zahl der Farben ist nicht das Problem. Bei zwei Farben wäre es sogar besonders schlimm, weil sich Wechsel und Wiederholung dann gar nicht mehr trennen lassen."
+     "text": "Es funktioniert nur mit genau zwei Farben, weil der Empfänger bei mehr Farben nicht weiß, welcher Wechsel gemeint ist.",
+     "begruendung": "Die Zahl der Farben ist nicht das Problem: Jeder Wechsel ist ein Wechsel, egal zwischen welchen Farben. Bei zwei Farben wäre es sogar besonders schlimm, weil sich Wechsel und Wiederholung dann gar nicht mehr trennen lassen."
     }
    ]
   },
@@ -236,7 +236,7 @@
     },
     {
      "kennung": "b",
-     "text": "Ohne Uhr lässt sich die Reihenfolge der Symbole nicht mehr feststellen.",
+     "text": "Ohne Uhr fehlt dem Empfänger die Zählung, welches Symbol gerade dran ist; die Reihenfolge der Symbole lässt sich dann nicht mehr sicher feststellen.",
      "begruendung": "Die Reihenfolge ergibt sich aus der Reihenfolge der Wechsel, die bleibt erhalten. Das ist gerade die Stärke des Verfahrens."
     },
     {
@@ -246,8 +246,8 @@
     },
     {
      "kennung": "d",
-     "text": "Der Empfänger muss trotzdem exakt zum selben Zeitpunkt messen wie der Sender sendet.",
-     "begruendung": "Genau das entfällt, und es ist der ganze Gewinn des Verfahrens. Der Empfänger darf messen, wann er will, er reagiert nur auf Änderungen."
+     "text": "Der Empfänger muss trotzdem im selben Moment messen, in dem der Sender wechselt, sonst fällt seine Messung mitten in einen Übergang.",
+     "begruendung": "Genau das entfällt, und es ist der ganze Gewinn des Verfahrens. Der Empfänger darf messen, wann er will, er reagiert nur auf Änderungen. Eine Messung mitten im Übergang ist dabei kein Unglück, sondern der Grund für die Stabilitätsschwelle aus Option a."
     }
    ]
   }

@@ -22,7 +22,7 @@
     },
     {
      "kennung": "c",
-     "text": "Ein Verfahren, das Daten kleiner macht.",
+     "text": "Ein Verfahren, das Daten so umschreibt, dass sie weniger Speicherplatz belegen.",
      "begruendung": "Das ist Kompression. Manche Codes sind nebenbei sparsam, aber kleiner machen ist nicht ihr Zweck."
     },
     {
@@ -48,8 +48,8 @@
     },
     {
      "kennung": "b",
-     "text": "Dass 65 die Position von A im Alphabet ist.",
-     "begruendung": "A ist der erste Buchstabe, nicht der 65. Die Zahl stammt aus der ASCII-Tabelle, deren Anfang für Steuerzeichen und Satzzeichen reserviert ist."
+     "text": "Dass sich die 65 aus der Stellung von A im Alphabet ergibt, sobald man Ziffern und Satzzeichen mitzählt.",
+     "begruendung": "Die Zahl folgt aus keiner Rechnung. Sie wurde in der ASCII-Tabelle festgelegt, deren Anfang für Steuerzeichen und Satzzeichen reserviert ist; man hätte A ebenso gut die 1 oder die 200 geben können."
     },
     {
      "kennung": "c",
@@ -58,8 +58,8 @@
     },
     {
      "kennung": "d",
-     "text": "Dass ASCII die einzig mögliche Zuordnung ist.",
-     "begruendung": "Es gibt viele: UTF-8, ältere Zeichensätze, euer eigenes Farbalphabet. ASCII ist verbreitet, nicht notwendig."
+     "text": "Dass jeder Rechner Buchstaben nach dieser Tabelle ablegen muss, weil die Zahlen in der Hardware festgelegt sind.",
+     "begruendung": "Die Tabelle ist eine Vereinbarung zwischen Programmen, keine Eigenschaft der Hardware. Es gibt viele Zuordnungen: UTF-8, ältere Zeichensätze, euer eigenes Farbalphabet. ASCII ist verbreitet, nicht notwendig."
     }
    ]
   },
@@ -74,7 +74,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Nachricht wird kürzer.",
+     "text": "Die Nachricht wird insgesamt kürzer, weil kein Zeichen mehr Symbole belegt als die anderen.",
      "begruendung": "Meistens umgekehrt: Variable Länge kann kürzer werden, weil häufige Zeichen kurze Codes bekommen. Feste Länge kauft etwas anderes ein."
     },
     {
@@ -89,8 +89,8 @@
     },
     {
      "kennung": "d",
-     "text": "Feste Länge braucht keine Vereinbarung zwischen Sender und Empfänger.",
-     "begruendung": "Auch feste Länge muss vereinbart werden: welche Länge, und welche Bitfolge welches Zeichen bedeutet. Ohne Absprache geht gar nichts."
+     "text": "Feste Länge kommt ohne vorher vereinbarte Tabelle aus, weil die Position im Byte schon sagt, welches Zeichen gemeint ist.",
+     "begruendung": "Auch feste Länge muss vereinbart werden: welche Länge, und welche Bitfolge welches Zeichen bedeutet. Die Position sagt nur, wo ein Zeichen anfängt, nicht, was es bedeutet."
     }
    ]
   },
@@ -105,8 +105,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil 010 keine gültige Zeichenfolge ist.",
-     "begruendung": "Sie ist sogar doppelt gültig, und genau darin liegt das Problem."
+     "text": "Weil die Codewörter verschieden lang sind und ein Code nur mit fester Länge lesbar bleibt.",
+     "begruendung": "Variable Länge ist an sich erlaubt, Morse lebt davon. Der Fehler liegt nicht in den Längen, sondern darin, dass ein Codewort der Anfang eines anderen ist."
     },
     {
      "kennung": "b",
@@ -115,12 +115,12 @@
     },
     {
      "kennung": "c",
-     "text": "Weil 0 und 1 zu wenige Symbole sind.",
+     "text": "Weil 0 und 1 zu wenige Symbole sind; für drei Zeichen bräuchte es ein drittes Symbol als Trenner.",
      "begruendung": "Zwei Symbole genügen für jede Nachricht, wie ihr in Sitzung 4 gesehen habt. Der Fehler liegt nicht in der Anzahl, sondern in der Wahl der Codewörter."
     },
     {
      "kennung": "d",
-     "text": "Weil das Alphabet nur drei Zeichen umfasst.",
+     "text": "Weil ein Alphabet aus nur drei Zeichen zu wenige Kombinationen ergibt, um Wörter eindeutig zu bilden.",
      "begruendung": "Drei Zeichen sind vollkommen in Ordnung. Mit a = 00, b = 01, c = 10 wäre derselbe Vorrat eindeutig lesbar."
     }
    ]
@@ -136,13 +136,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "2, weil 4 mal 2 gleich 8 ist.",
-     "begruendung": "Multipliziert wird nicht, potenziert: Zwei Symbole ergeben 4 mal 4 gleich 16 Kombinationen. Das reicht für 16 Buchstaben, nicht für 26."
+     "text": "7, denn 4 mal 7 sind 28, und das ist die kleinste Zahl über 26.",
+     "begruendung": "Multipliziert wird nicht, potenziert: Jedes weitere Symbol vervierfacht die Möglichkeiten. Schon zwei Symbole ergeben 4 mal 4 gleich 16, drei ergeben 64. Sieben wären enorm verschwenderisch."
     },
     {
      "kennung": "b",
-     "text": "7, wie beim Zahlenraten von 1 bis 100.",
-     "begruendung": "Die 7 galt für Ja/Nein-Fragen, also für zwei Möglichkeiten je Schritt. Mit vier Farben je Schritt geht es schneller."
+     "text": "5, wie beim Zahlenraten mit Ja/Nein-Fragen: 2 hoch 5 sind 32, und das reicht für 26.",
+     "begruendung": "Das sind 5 Bit, und die Rechnung stimmt für ein Alphabet aus zwei Symbolen. Eine von vier Farben trägt aber 2 Bit, zwei Möglichkeiten je Schritt sind hier also zu wenig gerechnet: 5 Bit passen in drei Farbsymbole."
     },
     {
      "kennung": "c",
@@ -151,8 +151,8 @@
     },
     {
      "kennung": "d",
-     "text": "26, ein Symbol je Buchstabe.",
-     "begruendung": "Das ginge nur mit einem Alphabet aus 26 unterscheidbaren Farben. Genau daran scheitert ihr an der Streuung, deshalb setzt man Buchstaben aus mehreren Symbolen zusammen."
+     "text": "1, wenn ihr jede der vier Farben in Helligkeitsstufen unterteilt, bis 26 unterscheidbare Töne erreicht sind.",
+     "begruendung": "Das wäre ein neues Alphabet aus 26 Symbolen, nicht mehr das aus vier Farben, um das die Frage geht. Und ob 26 Töne an eurer Strecke sicher unterscheidbar sind, entscheidet die Streuung; genau daran scheitert es meist, deshalb setzt man Buchstaben aus mehreren Symbolen zusammen."
     }
    ]
   },
@@ -173,7 +173,7 @@
     },
     {
      "kennung": "b",
-     "text": "Weil ASCII zu langsam zu decodieren ist.",
+     "text": "Weil ASCII mit einem Byte je Zeichen für heutige Rechner zu langsam zu verarbeiten ist.",
      "begruendung": "ASCII ist denkbar schnell zu decodieren, ein Byte je Zeichen. Der Grund für Unicode ist der Vorrat, nicht das Tempo."
     },
     {
@@ -183,7 +183,7 @@
     },
     {
      "kennung": "d",
-     "text": "Weil Unicode Bilder und Töne mit kodieren kann.",
+     "text": "Weil Unicode neben Zeichen auch Bilder und Töne kodiert, die in ASCII fehlen.",
      "begruendung": "Unicode kodiert Zeichen, auch Emoji, aber keine Bilder oder Töne. Dafür gibt es eigene Codesysteme, und die kommen im selben Input vor."
     }
    ]
@@ -204,8 +204,8 @@
     },
     {
      "kennung": "b",
-     "text": "Gar nicht, das ist reine Glückssache.",
-     "begruendung": "So schlimm ist es nicht: Es gibt Konventionen, nur stecken sie nicht in den Bytes selbst."
+     "text": "Aus dem Speicherort: Text, Bilder und Töne liegen auf der Platte in getrennten Bereichen.",
+     "begruendung": "Die Platte kennt keine Bereiche für Datentypen, sie speichert Bytes, wo Platz ist. Die Konvention, was die Bytes bedeuten, muss anderswo herkommen."
     },
     {
      "kennung": "c",
@@ -271,12 +271,12 @@
     },
     {
      "kennung": "c",
-     "text": "Eine Prüfsumme, die die Farbe gegen Fehler absichert.",
+     "text": "Eine Prüfsumme aus sechs Zeichen, an der ein Programm erkennt, ob der Farbwert unbeschädigt angekommen ist.",
      "begruendung": "Prüfsummen kommen später, in Challenge 3. Hier steht schlicht der Farbwert selbst, nur in anderer Basis."
     },
     {
      "kennung": "d",
-     "text": "Die Speicheradresse, an der die Farbe abgelegt ist.",
+     "text": "Die Speicheradresse, an der der Farbwert im Arbeitsspeicher abgelegt ist; daher das Raute-Zeichen davor.",
      "begruendung": "Adressen schreibt man auch hexadezimal, daher die Verwechslung. Hier ist es aber der Inhalt, nicht der Ort."
     }
    ]
@@ -298,7 +298,7 @@
     },
     {
      "kennung": "b",
-     "text": "Die Vektorfassung ist immer kleiner.",
+     "text": "Die Vektorfassung ergibt bei jedem Motiv die kleinere Datei, weil Anweisungen weniger Platz brauchen als Bildpunkte.",
      "begruendung": "Bei einfachen Formen meistens, bei einem Foto keineswegs: Ein Foto als Vektorgrafik zu beschreiben, wäre absurd aufwendig. Es hängt am Motiv."
     },
     {
@@ -308,7 +308,7 @@
     },
     {
      "kennung": "d",
-     "text": "Die Bitmapfassung braucht keine Vereinbarung, weil sie das Bild direkt speichert.",
+     "text": "Die Bitmapfassung braucht keine eigene Vereinbarung, weil eine Farbe je Bildpunkt ohnehin die natürliche Form eines Bildes ist.",
      "begruendung": "Auch sie braucht Absprachen: Breite, Höhe, Reihenfolge der Bildpunkte, Farbtiefe, Kanalreihenfolge. Ohne die ist eine Bitmap nur eine Bytefolge."
     }
    ]
@@ -335,8 +335,8 @@
     },
     {
      "kennung": "c",
-     "text": "cab, denn die Funktion gibt den Text unverändert zurück.",
-     "begruendung": "Die Funktion schlägt jedes Zeichen im Wörterbuch nach und hängt die Codewörter aneinander. Zurück kommt eine Zeichenkette aus Nullen und Einsen."
+     "text": "cab, denn join setzt die nachgeschlagenen Zeichen am Ende wieder zum ursprünglichen Text zusammen.",
+     "begruendung": "join fügt zusammen, was die Schleife liefert, und die liefert je Zeichen das Codewort aus dem Wörterbuch, nicht das Zeichen selbst. Zurück kommt eine Zeichenkette aus Nullen und Einsen."
     },
     {
      "kennung": "d",
@@ -395,22 +395,22 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "13, also 26 geteilt durch 2.",
+     "text": "13, denn 26 Buchstaben verteilt auf 2 Farben ergeben 13 Symbole je Buchstabe.",
      "begruendung": "Geteilt wird hier nichts. Mit jedem zusätzlichen Symbol verdoppelt sich die Zahl der Möglichkeiten, sie wächst also viel schneller."
     },
     {
      "kennung": "b",
-     "text": "4, denn 2 hoch 4 sind 16.",
-     "begruendung": "Die Rechnung stimmt, das Ergebnis reicht aber nicht: 16 Kombinationen für 26 Buchstaben lassen zehn Buchstaben ohne Code."
+     "text": "4, denn 2 hoch 4 sind 16, und die seltenen Buchstaben lassen sich zusammenlegen.",
+     "begruendung": "Die Rechnung stimmt, das Ergebnis reicht aber nicht: 16 Kombinationen für 26 Buchstaben lassen zehn Buchstaben ohne Code. Zusammengelegte Buchstaben kann der Empfänger nicht mehr auseinanderhalten, der Code wäre nicht eindeutig."
     },
     {
      "kennung": "c",
-     "text": "5, denn 2 hoch 5 sind 32, und aufgerundet wird immer.",
+     "text": "5, denn 2 hoch 5 sind 32, die erste Zweierpotenz, die 26 erreicht.",
      "begruendung": "Genau: Der Logarithmus zur Basis 2 von 26 ist etwa 4,7, und weil es keine halben Symbole gibt, wird aufgerundet. Mit 32 Kombinationen bleiben sechs für Leerzeichen und Ziffern übrig. Nebenbei: Genau das ist der Preis eines kleinen Alphabets, mit vier Farben wären es nur drei Symbole."
     },
     {
      "kennung": "d",
-     "text": "26, ein Symbol je Buchstabe.",
+     "text": "26, denn jeder Buchstabe braucht sein eigenes, von den anderen unterscheidbares Symbol.",
      "begruendung": "Das wäre die Zahl der Buchstaben, nicht die Länge eines Codeworts. Mit zwei Farben lassen sich Buchstaben nur aus mehreren Symbolen zusammensetzen."
     }
    ]
@@ -427,8 +427,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Eine Nummer aus einer Tabelle aller darstellbaren Farben.",
-     "begruendung": "Es gibt keine solche Tabelle, und es wären auch drei Nummern statt einer. Die Farbe entsteht durch Mischen, nicht durch Nachschlagen."
+     "text": "Drei Nummern aus einer Tabelle, in der jede darstellbare Farbe mit einem eigenen Eintrag steht.",
+     "begruendung": "Eine solche Tabelle gibt es nicht, und ein Eintrag bräuchte auch nur eine Nummer, nicht drei. Die Farbe entsteht durch Mischen dreier Anteile, nicht durch Nachschlagen."
     },
     {
      "kennung": "b",
@@ -437,7 +437,7 @@
     },
     {
      "kennung": "c",
-     "text": "Helligkeit, Farbton und Sättigung.",
+     "text": "Helligkeit, Farbton und Sättigung der Farbe, in dieser Reihenfolge, jeweils als Wert von 0 bis 255.",
      "begruendung": "Das wäre eine andere Vereinbarung, es gibt sie tatsächlich (HSV), aber `set_color` erwartet die drei Grundfarbenanteile. Wieder gilt: Zahlen bedeuten nur das, was vereinbart ist."
     },
     {

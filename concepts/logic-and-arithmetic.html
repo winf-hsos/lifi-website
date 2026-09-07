@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.3">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Logik und Arithmetik – LiFi Project</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../concepts/compression.html" rel="next">
+<link href="../concepts/algorithms-and-programs.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3195b598eb1f03154f53c883785ef3f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">LiFi Project</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Suchen"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/algorithms-and-programs.html">Processing Information</a></li><li class="breadcrumb-item"><a href="../concepts/logic-and-arithmetic.html">Logik und Arithmetik</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Goal</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">LiFi Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 0: The Spark</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 1: The Alphabet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 2: The Word</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 3: The Listener</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 4: The Packet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hardware</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Software</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ai/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbeiten mit dem KI-Assistenten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Modul <code>lifi_hardware</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/cockpit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Team-Cockpit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Concepts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Solving Problems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme zerlegen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme lösen mit Computern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Messen und Experimentieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstraktion und Schichten</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Representing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analog und digital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Symbole und Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zahlensysteme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Codesysteme</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Storing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dateien</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Transferring Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signal und Rauschen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abtastung und Synchronisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Protokolle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fehler und Redundanz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information und ihr Träger</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Durchsatz und Grenzen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Processing Information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmen und Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Logik und Arithmetik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kompression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verschlüsselung</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Links</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Auf dieser Seite</h2>
+   
+  <ul>
+  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <ul class="collapse">
+  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  </ul></li>
+  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a>
+  <ul class="collapse">
+  <li><a href="#drei-dinge-die-ein-rechner-mit-bits-tut" id="toc-drei-dinge-die-ein-rechner-mit-bits-tut" class="nav-link" data-scroll-target="#drei-dinge-die-ein-rechner-mit-bits-tut">Drei Dinge, die ein Rechner mit Bits tut</a></li>
+  <li><a href="#die-ganze-werkzeugkiste" id="toc-die-ganze-werkzeugkiste" class="nav-link" data-scroll-target="#die-ganze-werkzeugkiste">Die ganze Werkzeugkiste</a></li>
+  <li><a href="#speichern-ein-bit-das-sich-erinnert" id="toc-speichern-ein-bit-das-sich-erinnert" class="nav-link" data-scroll-target="#speichern-ein-bit-das-sich-erinnert">Speichern: ein Bit, das sich erinnert</a></li>
+  <li><a href="#wie-eine-maschine-addiert" id="toc-wie-eine-maschine-addiert" class="nav-link" data-scroll-target="#wie-eine-maschine-addiert">Wie eine Maschine addiert</a></li>
+  <li><a href="#ein-foto-pixel-für-pixel" id="toc-ein-foto-pixel-für-pixel" class="nav-link" data-scroll-target="#ein-foto-pixel-für-pixel">Ein Foto, Pixel für Pixel</a></li>
+  <li><a href="#ein-gatter-zwei-aufgaben" id="toc-ein-gatter-zwei-aufgaben" class="nav-link" data-scroll-target="#ein-gatter-zwei-aufgaben">Ein Gatter, zwei Aufgaben</a></li>
+  </ul></li>
+  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
+  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
+  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/algorithms-and-programs.html">Processing Information</a></li><li class="breadcrumb-item"><a href="../concepts/logic-and-arithmetic.html">Logik und Arithmetik</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Logik und Arithmetik</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="zusammenfassung" class="level2">
+<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
+<p>Computer speichern und übertragen nicht nur Bits, sondern verknüpfen und verändern sie nach festgelegten Regeln. Wenige grundlegende Operationen reichen aus, um sehr unterschiedliche Verfahren wie Rechnen, Fehlererkennung und Verschlüsselung aufzubauen.</p>
+<section id="fragen-um-die-es-geht" class="level3">
+<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<ul>
+<li>Was stellt ein Computer mit Bits an, außer sie aufzubewahren und weiterzureichen?</li>
+<li>Aus welchen Bausteinen ist Verarbeitung aufgebaut, und wie viele braucht man mindestens?</li>
+<li>Wie merkt sich eine Schaltung aus Gattern ein Bit?</li>
+<li>Wie addiert eine Maschine zwei Zahlen?</li>
+<li>Was passiert, wenn ein Foto heller wird, Pixel für Pixel?</li>
+<li>Warum steckt in einem einzigen dieser Bausteine sowohl Fehlererkennung als auch Verschlüsselung?</li>
+</ul>
+<p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-4.html">Challenge 4</a> verstanden haben, erste Berührung damit habt ihr schon in <a href="../challenges/challenge-2.html">Challenge 2</a>.</p>
+</section>
+</section>
+<section id="erläuterung-des-konzepts" class="level2">
+<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
+<p>Ein Relais ist ein Schalter, den ein Strom umlegt: Fließt Strom durch seine Spule, zieht sie einen Kontakt an, und ein zweiter Stromkreis schließt sich. Mehr kann es nicht. Zwei Relais hintereinander leiten nur, wenn beide angezogen sind; zwei nebeneinander leiten, wenn eines angezogen ist. Konrad Zuses Z3 rechnete 1941 mit rund zweitausend solcher Relais und konnte addieren, multiplizieren und Wurzeln ziehen. Der Chip in eurem Laptop tut nichts anderes, nur sind seine Schalter ein paar Milliarden und lautlos. Dieses Konzept geht den Weg vom Schalter bis zu dem Tastendruck, der ein Foto heller macht: Hinter ihm steckt etwas verblüffend Dummes, nämlich dieselbe Addition, zigtausendmal hintereinander.</p>
+<section id="drei-dinge-die-ein-rechner-mit-bits-tut" class="level3">
+<h3 class="anchored" data-anchor-id="drei-dinge-die-ein-rechner-mit-bits-tut">Drei Dinge, die ein Rechner mit Bits tut</h3>
+<p>Bisher ging es immer darum, wie Information dargestellt und transportiert wird. Speichern und Übertragen lassen die Bits, wie sie sind: Die Datei auf der Platte ist morgen dieselbe, und über die Lichtstrecke kommen die Bits so an, wie sie losgingen, sonst war es ein Fehler. Damit wäre ein Computer allerdings nur ein sehr schneller Bote. Das dritte Verb ist das entscheidende: Aus vorhandenen Bits entstehen nach festen Regeln neue Bits, die vorher nirgends standen. Eine Prüfsumme, ein komprimiertes Bild, die Entscheidung „das war Rot” aus vier Sensorwerten: alles Verarbeitung.</p>
+</section>
+<section id="die-ganze-werkzeugkiste" class="level3">
+<h3 class="anchored" data-anchor-id="die-ganze-werkzeugkiste">Die ganze Werkzeugkiste</h3>
+<p>Die Bausteine der Verarbeitung heißen Gatter, und es gibt nur eine Handvoll. Jedes ist ein Schalter mit einer festen Regel: zwei Bits hinein, eins heraus. Und liefert 1, wenn beide Eingaben 1 sind. Oder liefert 1, wenn mindestens eine 1 ist. Nicht dreht ein einzelnes Bit um. XOR, das exklusive Oder, liefert 1, wenn genau eine Eingabe 1 ist; es fragt also „sind die beiden verschieden?“. Die vollständige Liste aller Fälle heißt Wahrheitstabelle.</p>
+<div id="fig-logic-toolbox" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-logic-toolbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/logic-toolbox.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;1: Die vier Gatter mit ihren Wahrheitstabellen. Mehr Bausteine braucht ein Computer nicht; XOR ist hervorgehoben, weil es im Folgenden die meiste Arbeit leistet."><img src="../assets/diagrams/logic-toolbox.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logic-toolbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;1: Die vier Gatter mit ihren Wahrheitstabellen. Mehr Bausteine braucht ein Computer nicht; XOR ist hervorgehoben, weil es im Folgenden die meiste Arbeit leistet.
+</figcaption>
+</figure>
+</div>
+<p>Warum nur vier? Man könnte sogar mit einem auskommen. NAND ist Und mit anschließendem Nicht, und aus NAND allein entstehen alle anderen: Nicht, indem man dasselbe Bit zweimal hineinsteckt; Und, indem man ein NAND noch einmal umdreht; Oder, indem man beide Eingänge vorher kippt. NAND ist auch das, was ein Transistorpaar von sich aus tut. Der Chip in eurem Laptop besteht praktisch aus NAND-Gattern, die vier aus der Kiste sind daraus zusammengesetzt. NOR, Oder mit Nicht, kann dasselbe.</p>
+<p>Aus <a href="../concepts/input-processing-output.html">Probleme lösen mit Computern</a> kennt ihr die Form schon: Eingabe, feste Regel, Ausgabe, das IPO-Modell im Kleinsten. Und ein Satz, den ihr euch merken solltet: Kein Gatter versteht etwas. Es weiß nicht, ob es gerade eine Zahl, einen Buchstaben oder ein Pixel verarbeitet. Bedeutung gibt es nur für uns, genau wie beim Typfeld in Challenge 4.</p>
+</section>
+<section id="speichern-ein-bit-das-sich-erinnert" class="level3">
+<h3 class="anchored" data-anchor-id="speichern-ein-bit-das-sich-erinnert">Speichern: ein Bit, das sich erinnert</h3>
+<p>Speichern entsteht aus denselben Gattern. Zwei NOR-Gatter, ineinander verdrahtet: Der Ausgang des einen läuft in einen Eingang des anderen. Links kommen zwei Leitungen hinein, set und reset, rechts kommt q heraus. Diese Schaltung heißt Flip-Flop. Legt man set kurz auf 1, wird q 1. Nimmt man set wieder weg, bleibt q trotzdem 1, weil die Rückkopplung die Gatter gegenseitig festhält: Die Schaltung erinnert sich an den kurzen Impuls. Erst reset = 1 kippt sie zurück, und dann bleibt q 0. Setzen, halten, löschen, mehr braucht eine Speicherzelle nicht.</p>
+<div id="fig-flip-flop" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-flip-flop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/flip-flop.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;2: Ein RS-Flip-Flop aus zwei NOR-Gattern. Ein kurzer Impuls auf set macht q zu 1, und die Kreuzverbindung hält den Wert fest, bis reset kommt."><img src="../assets/diagrams/flip-flop.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flip-flop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2: Ein RS-Flip-Flop aus zwei NOR-Gattern. Ein kurzer Impuls auf set macht q zu 1, und die Kreuzverbindung hält den Wert fest, bis reset kommt.
+</figcaption>
+</figure>
+</div>
+<p>Acht Flip-Flops nebeneinander sind ein Register, ein Byte. Millionen davon, jede Zeile mit einer Adresse, sind der Arbeitsspeicher: Adressleitungen wählen eine Zeile aus, Datenleitungen lesen oder schreiben sie. Solange Strom fließt, hält die Rückkopplung jedes Bit am Leben; Strom aus, und die Schleife bricht zusammen. Deshalb vergisst der Arbeitsspeicher beim Ausschalten, und deshalb speichert die Festplatte anders, magnetisch. Speichern und Verarbeiten sind dieselben Schalter, nur anders verdrahtet.</p>
+</section>
+<section id="wie-eine-maschine-addiert" class="level3">
+<h3 class="anchored" data-anchor-id="wie-eine-maschine-addiert">Wie eine Maschine addiert</h3>
+<p>Die Additionstabelle für zwei Bits hat vier Zeilen: 0 + 0 = 0, 0 + 1 = 1, 1 + 0 = 1 und 1 + 1 = 10, also Summe 0 mit Übertrag 1. Das Ergebnis hat zwei Stellen, und jede liefert ein Gatter. Die Summenstelle ist 1, wenn die Bits verschieden sind: XOR. Der Übertrag ist 1, wenn beide 1 sind: Und. Zwei Gatter, und die Maschine addiert zwei Bits. Das Ding heißt Halbaddierer, „halb”, weil es noch keinen Übertrag von rechts annehmen kann. Ein Volladdierer nimmt zusätzlich den Übertrag entgegen und braucht dafür ein paar Gatter mehr, etwa fünf. Acht Volladdierer in Reihe addieren zwei Bytes, genau wie ihr in der Schule stellenweise addiert: von rechts nach links, mit Übertrag.</p>
+<p>Der Rest der Arithmetik entsteht aus dem Addierer. Subtrahieren ist Addieren des Negativen, und das Negative bildet man mit Nicht auf jedem Bit plus eins. Multiplizieren ist wiederholtes Addieren, und mal zwei ist ein Verschieben um eine Stelle nach links, so wie mal zehn im Dezimalsystem eine Null anhängt. Vergleichen ist Subtrahieren und aufs Vorzeichen schauen. Alles landet beim Addierer, und der landet bei vier Gattern. Charles Petzold bringt es in seinem Buch „Code“ auf einen Satz: Wenn man es genau nimmt, ist Addieren so gut wie das Einzige, was Computer tun.</p>
+</section>
+<section id="ein-foto-pixel-für-pixel" class="level3">
+<h3 class="anchored" data-anchor-id="ein-foto-pixel-für-pixel">Ein Foto, Pixel für Pixel</h3>
+<p>Aus dem <a href="https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/">Photo Digitiser</a> kennt ihr das: Ein Graustufenbild ist ein Raster aus Zahlen, jede Zahl ein Byte, 0 schwarz, 255 weiß. Ein Bild von 256 mal 256 Pixeln sind 65.536 Bytes, und der Rechner sieht nichts als diese Bytes. „Heller” heißt dann: zu jedem Byte 40 addieren. Für das erste Pixel, für das zweite, für alle 65.536. Kein Schritt weiß etwas vom Bild; es ist dieselbe Addition, sehr oft.</p>
+<div id="fig-pixel-arithmetic" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pixel-arithmetic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/pixel-arithmetic.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Abbildung&nbsp;3: Links ein Pixel mit dem Wert 178, das um 40 heller wird: dieselbe binäre Addition wie im Byte-Addierer. Rechts der Überlauf: 230 + 40 braucht neun Bits, der Addierer wirft den neunten Übertrag weg, und aus fast Weiß wird fast Schwarz."><img src="../assets/diagrams/pixel-arithmetic.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pixel-arithmetic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;3: Links ein Pixel mit dem Wert 178, das um 40 heller wird: dieselbe binäre Addition wie im Byte-Addierer. Rechts der Überlauf: 230 + 40 braucht neun Bits, der Addierer wirft den neunten Übertrag weg, und aus fast Weiß wird fast Schwarz.
+</figcaption>
+</figure>
+</div>
+<p>Dabei lauert ein echter Fehler, den jeder Anfänger einmal baut. 230 + 40 = 270, und das passt nicht in acht Bit. Der Addierer wirft den neunten Übertrag weg, es bleibt 14, fast schwarz. Ein heller Himmel bekommt schwarze Sprenkel. Das heißt Überlauf, und die Reparatur ist ein Vergleich (ist das Ergebnis größer als 255?) und eine Entscheidung (dann 255), das Begrenzen. Der Addierer selbst hat keine Ahnung, was 255 bedeutet; das muss man ihm sagen.</p>
+<p>Andere Filter kommen aus derselben Kiste. Dunkler: subtrahieren. Negativ: 255 minus Wert, und das ist Bit für Bit ein Nicht, denn 255 ist binär 11111111. Schwarzweiß: mit einer Schwelle vergleichen, dieselbe Entscheidung wie in Challenge 1 bei euren Farben. Zwei Fotos überblenden: addieren und halbieren, und halbieren ist eine Stelle nach rechts schieben. Jeder Filter aus eurer Foto-App ist von dieser Sorte, nur mit mehr Rechnung. Im Demonstrator <a href="https://winf-hsos.github.io/lifi-concept-demos/pixel-filter/">the pixel filter</a> könnt ihr das Pixel für Pixel nachvollziehen und den Überlauf selbst auslösen.</p>
+</section>
+<section id="ein-gatter-zwei-aufgaben" class="level3">
+<h3 class="anchored" data-anchor-id="ein-gatter-zwei-aufgaben">Ein Gatter, zwei Aufgaben</h3>
+<p>XOR über alle acht Bits eines Bytes sagt am Ende nur eines: gerade oder ungerade viele Einsen. Dieses eine Bit hängt der Sender als Prüfbit an; kippt unterwegs ein einzelnes Bit, stimmt die Parität nicht mehr. Mehr dazu unter <a href="../concepts/errors-and-redundancy.html">Fehler und Redundanz</a>. Und XOR mit einem Schlüssel kippt genau die Bits, an denen der Schlüssel eine 1 hat; noch einmal XOR mit demselben Schlüssel kippt sie zurück. Ver- und Entschlüsseln sind dieselbe Operation, und ein Schlüssel aus lauter Nullen kippt nichts. Mehr dazu unter <a href="../concepts/encryption.html">Verschlüsselung</a>.</p>
+<p>Was einen Rechner mächtig macht, ist also nicht die Klugheit seiner Bausteine, sondern ihre Zahl und ihre Geschwindigkeit: vier Gatter, ein paar Milliarden Mal pro Sekunde. Wer das verstanden hat, wundert sich nie wieder, dass ein Computer nichts „versteht” und trotzdem alles kann, was man ihm Schritt für Schritt aufschreibt.</p>
+</section>
+</section>
+<section id="folien" class="level2">
+<h2 class="anchored" data-anchor-id="folien">Folien</h2>
+<p>Der Input zu diesem Konzept aus Sitzung 12.</p>
+<div class="folien-viewer" data-quelle="../assets/slides/processing"></div>
+</section>
+<section id="fragen-üben" class="level2">
+<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
+<p>Hier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.</p>
+<div class="fragen-quiz" data-quelle="../assets/questions/logic-and-arithmetic.json"></div>
+</section>
+<section id="literatur" class="level2">
+<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
+<ul>
+<li>Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. 2. Auflage, Microsoft Press 2022. Baut aus Relais Gatter, aus Gattern einen Addierer und daraus einen ganzen Computer, Schritt für Schritt und ohne Vorwissen; die Kapitel zu Relais, Gattern und zur Addition sind die Langfassung dieses Konzepts.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Der Folienbetrachter der Website: nur die Folie plus Navigation, ohne
+     die Werkzeugleisten des Browser-PDF-Viewers. Eingebunden auf jeder Seite
+     über include-after-body in _quarto.yml; aktiv wird er nur, wo ein
+     <div class="folien-viewer" data-quelle="..."> steht. Die Seitenbilder
+     und das Manifest erzeugt tools/sync_slides.py. -->
+<script>
+(function () {
+  function bauen(kasten, seiten) {
+    var quelle = kasten.dataset.quelle;
+    var seite = 1;
+
+    kasten.innerHTML =
+      '<div class="fv-bild"><img alt="folie"></div>' +
+      '<div class="fv-leiste">' +
+      '<button class="fv-zurueck" title="vorherige folie">&#8249;</button>' +
+      '<span class="fv-zaehler"></span>' +
+      '<button class="fv-weiter" title="nächste folie">&#8250;</button>' +
+      '<span class="fv-platz"></span>' +
+      '<button class="fv-vollbild" title="vollbild">&#x26F6;</button>' +
+      '</div>';
+    kasten.setAttribute("tabindex", "0");
+
+    var bild = kasten.querySelector("img");
+    var zaehler = kasten.querySelector(".fv-zaehler");
+
+    function pfad(nr) {
+      return quelle + "/seite-" + String(nr).padStart(3, "0") + ".png";
+    }
+    function zeigen() {
+      bild.src = pfad(seite);
+      zaehler.textContent = seite + " / " + seiten;
+      if (seite < seiten) { (new Image()).src = pfad(seite + 1); }
+    }
+    function schritt(richtung) {
+      seite = Math.min(seiten, Math.max(1, seite + richtung));
+      zeigen();
+    }
+
+    kasten.querySelector(".fv-zurueck").addEventListener("click", function () { schritt(-1); });
+    kasten.querySelector(".fv-weiter").addEventListener("click", function () { schritt(1); });
+    kasten.querySelector(".fv-vollbild").addEventListener("click", function () {
+      if (document.fullscreenElement === kasten) { document.exitFullscreen(); }
+      else { kasten.requestFullscreen(); kasten.focus(); }
+    });
+    bild.addEventListener("click", function (ereignis) {
+      var kante = bild.getBoundingClientRect();
+      var links = (ereignis.clientX - kante.left) < kante.width / 3;
+      schritt(links ? -1 : 1);
+      kasten.focus();
+    });
+    kasten.addEventListener("keydown", function (ereignis) {
+      if (ereignis.key === "ArrowRight" || ereignis.key === " " ||
+          ereignis.key === "PageDown") { schritt(1); ereignis.preventDefault(); }
+      if (ereignis.key === "ArrowLeft" || ereignis.key === "PageUp") {
+        schritt(-1); ereignis.preventDefault();
+      }
+    });
+
+    zeigen();
+  }
+
+  document.querySelectorAll(".folien-viewer[data-quelle]").forEach(function (kasten) {
+    fetch(kasten.dataset.quelle + ".json")
+      .then(function (antwort) { return antwort.json(); })
+      .then(function (manifest) { bauen(kasten, manifest.seiten); })
+      .catch(function () {
+        kasten.textContent = "folien konnten nicht geladen werden.";
+      });
+  });
+})();
+</script>
+<!-- Das Übungsquiz der Website: Single- und Multiple-Choice-Fragen aus dem
+     Fragenpool, mit sofortigem Feedback samt Begründung je Option, freiem
+     Vor- und Zurückblättern und Vollbild für die Nutzung im Plenum. Fragen
+     können ein Bild (aus assets/diagrams) und einen Codeblock zeigen.
+     Eingebunden auf jeder Seite über include-after-body in _quarto.yml;
+     aktiv nur, wo ein <div class="fragen-quiz" data-quelle="..."> steht.
+     Die JSON-Dateien erzeugt tools/build_questions.py. Es wird nichts
+     erhoben und nichts gespeichert; das Quiz läuft komplett im Browser. -->
+<script>
+(function () {
+  function mischen(liste) {
+    for (var i = liste.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var merk = liste[i]; liste[i] = liste[j]; liste[j] = merk;
+    }
+    return liste;
+  }
+
+  function gleicheMenge(a, b) {
+    if (a.length !== b.length) { return false; }
+    return a.slice().sort().join(",") === b.slice().sort().join(",");
+  }
+
+  function bauen(kasten, daten) {
+    var fragen, reihenfolgen, antworten, auswahl, index;
+
+    function neustart() {
+      fragen = mischen(daten.fragen.slice());
+      // Optionsreihenfolge einmal je Frage festlegen, damit sie beim
+      // Zurückblättern stabil bleibt
+      reihenfolgen = fragen.map(function (frage) {
+        return mischen(frage.optionen.slice());
+      });
+      antworten = fragen.map(function () { return null; });
+      auswahl = fragen.map(function () { return []; });
+      index = 0;
+      zeigen();
+    }
+
+    function zeigen() {
+      var frage = fragen[index];
+      var mehrfach = frage.typ === "mc";
+      var beantwortet = antworten.filter(function (a) { return a !== null; });
+      var richtig = fragen.filter(function (frage, i) {
+        return antworten[i] !== null &&
+               gleicheMenge(antworten[i], frage.richtig);
+      }).length;
+
+      kasten.innerHTML =
+        '<div class="fq-kopf">' +
+        '<span>frage ' + (index + 1) + " von " + fragen.length +
+        '</span><span class="fq-niveau">' + frage.niveau +
+        (mehrfach ? " · mehrere richtige antworten möglich" : "") + "</span>" +
+        '<span class="fq-platz"></span>' +
+        '<button class="fq-nav fq-zurueck" title="vorherige frage">&#8249;</button>' +
+        '<button class="fq-nav fq-weiter-pfeil" title="nächste frage">&#8250;</button>' +
+        '<button class="fq-nav fq-vollbild" title="vollbild">&#x26F6;</button>' +
+        "</div>" +
+        '<div class="fq-frage"></div>' +
+        '<div class="fq-medien"></div>' +
+        '<div class="fq-optionen"></div>' +
+        '<div class="fq-fuss"><button class="fq-neustart">von vorn</button>' +
+        '<span class="fq-stand"></span></div>';
+
+      kasten.querySelector(".fq-frage").textContent = frage.frage;
+      kasten.querySelector(".fq-stand").textContent =
+        beantwortet.length + " beantwortet, " + richtig + " richtig";
+
+      var medien = kasten.querySelector(".fq-medien");
+      if (frage.bild) {
+        var bild = document.createElement("img");
+        bild.className = "fq-bild";
+        bild.src = "../assets/diagrams/" + frage.bild + ".svg";
+        bild.alt = "abbildung zur frage";
+        medien.appendChild(bild);
+      }
+      if (frage.code) {
+        var code = document.createElement("pre");
+        code.className = "fq-code";
+        code.textContent = frage.code;
+        medien.appendChild(code);
+      }
+
+      var liste = kasten.querySelector(".fq-optionen");
+      reihenfolgen[index].forEach(function (option) {
+        var knopf = document.createElement("button");
+        // Radio-Symbol bei einer richtigen Antwort, Checkbox bei mehreren
+        // möglichen: Der Fragetyp ist so auf einen Blick erkennbar
+        knopf.className = "fq-option " + (mehrfach ? "fq-mc" : "fq-sc");
+        var marker = document.createElement("span");
+        marker.className = "fq-marker";
+        knopf.appendChild(marker);
+        var inhalt = document.createElement("span");
+        inhalt.className = "fq-text";
+        inhalt.textContent = option.text;
+        knopf.appendChild(inhalt);
+        knopf.dataset.kennung = option.kennung;
+        knopf.addEventListener("click", function () {
+          if (antworten[index] !== null) { return; }
+          if (mehrfach) {
+            var stelle = auswahl[index].indexOf(option.kennung);
+            if (stelle >= 0) { auswahl[index].splice(stelle, 1); }
+            else { auswahl[index].push(option.kennung); }
+            knopf.classList.toggle("fq-gewaehlt");
+            kasten.querySelector(".fq-pruefen").disabled =
+              auswahl[index].length === 0;
+          } else {
+            antworten[index] = [option.kennung];
+            zeigen();
+          }
+        });
+        liste.appendChild(knopf);
+        if (auswahl[index].indexOf(option.kennung) >= 0) {
+          knopf.classList.add("fq-gewaehlt");
+        }
+      });
+
+      if (mehrfach && antworten[index] === null) {
+        var pruefen = document.createElement("button");
+        pruefen.className = "fq-pruefen";
+        pruefen.textContent = "antwort prüfen";
+        pruefen.disabled = auswahl[index].length === 0;
+        pruefen.addEventListener("click", function () {
+          antworten[index] = auswahl[index].slice();
+          zeigen();
+        });
+        liste.appendChild(pruefen);
+      }
+      if (antworten[index] !== null) { aufloesen(frage); }
+
+      kasten.querySelector(".fq-zurueck").addEventListener("click", function () {
+        blaettern(-1);
+      });
+      kasten.querySelector(".fq-weiter-pfeil").addEventListener("click", function () {
+        blaettern(1);
+      });
+      kasten.querySelector(".fq-vollbild").addEventListener("click", function () {
+        if (document.fullscreenElement === kasten) { document.exitFullscreen(); }
+        else { kasten.requestFullscreen(); kasten.focus(); }
+      });
+      kasten.querySelector(".fq-neustart").addEventListener("click", neustart);
+    }
+
+    function aufloesen(frage) {
+      var gewaehlt = antworten[index];
+      kasten.querySelectorAll(".fq-option").forEach(function (knopf) {
+        knopf.disabled = true;
+        knopf.classList.remove("fq-gewaehlt");
+        var kennung = knopf.dataset.kennung;
+        var korrekt = frage.richtig.indexOf(kennung) >= 0;
+        var angekreuzt = gewaehlt.indexOf(kennung) >= 0;
+        if (korrekt) { knopf.classList.add("fq-korrekt"); }
+        if (angekreuzt && !korrekt) { knopf.classList.add("fq-falsch"); }
+        if (angekreuzt) { knopf.classList.add("fq-angekreuzt"); }
+        var option = frage.optionen.find(function (o) {
+          return o.kennung === kennung;
+        });
+        var erklaerung = document.createElement("div");
+        erklaerung.className = "fq-begruendung";
+        erklaerung.textContent = option.begruendung;
+        knopf.insertAdjacentElement("afterend", erklaerung);
+      });
+    }
+
+    function blaettern(richtung) {
+      index = (index + richtung + fragen.length) % fragen.length;
+      zeigen();
+    }
+
+    kasten.setAttribute("tabindex", "0");
+    kasten.addEventListener("keydown", function (ereignis) {
+      if (ereignis.key === "ArrowRight") { blaettern(1); ereignis.preventDefault(); }
+      if (ereignis.key === "ArrowLeft") { blaettern(-1); ereignis.preventDefault(); }
+    });
+
+    neustart();
+  }
+
+  document.querySelectorAll(".fragen-quiz[data-quelle]").forEach(function (kasten) {
+    fetch(kasten.dataset.quelle)
+      .then(function (antwort) { return antwort.json(); })
+      .then(function (daten) { bauen(kasten, daten); })
+      .catch(function () {
+        kasten.textContent = "fragen konnten nicht geladen werden.";
+      });
+  });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lifi-project\.de");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../concepts/algorithms-and-programs.html" class="pagination-link" aria-label="Algorithmen und Programme">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Algorithmen und Programme</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../concepts/compression.html" class="pagination-link" aria-label="Kompression">
+        <span class="nav-page-text">Kompression</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Hochschule Osnabrück — Digitalisierung und Programmierung</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Inhalte CC BY-SA 4.0</p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Projektkurs im Modul Digitalisierung und Programmierung">
 
-<title>Arbeiten mit dem KI-Assistenten – LiFi-Projekt</title>
+<title>Arbeiten mit dem KI-Assistenten – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../challenges/index.html" rel="next">
-<link href="../organization.html" rel="prev">
+<link href="../software/lifi-hardware.html" rel="next">
+<link href="../software/index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -45,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bb2601a8850b103bfb4593477cd94f6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3195b598eb1f03154f53c883785ef3f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LiFi-Projekt</span>
+    <span class="navbar-title">LiFi Project</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-end">
@@ -98,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ai/index.html"><span class="chapter-title">Arbeiten mit dem KI-Assistenten</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/index.html">LiFi Project</a></li><li class="breadcrumb-item"><a href="../software/index.html">Software</a></li><li class="breadcrumb-item"><a href="../ai/index.html">Arbeiten mit dem KI-Assistenten</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -112,23 +111,14 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LiFi-Projekt</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../organization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ablauf und Bewertung</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../ai/index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Arbeiten mit dem KI-Assistenten</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Goal</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Challenges</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">LiFi Project</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -136,213 +126,285 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 0: Der Funke</span></a>
+  <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 1: Das Alphabet</span></a>
+  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 0: The Spark</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 2: Das Wort</span></a>
+  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 1: The Alphabet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 3: Der Horcher</span></a>
+  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 2: The Word</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 4: Das Paket</span></a>
+  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 3: The Listener</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 4: The Packet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hardware</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Konzepte</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme zerlegen</span></a>
+  <a href="../software/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme lösen mit Computern</span></a>
+  <a href="../ai/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Arbeiten mit dem KI-Assistenten</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Messen und Experimentieren</span></a>
+  <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Modul <code>lifi_hardware</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Algorithmen und Programme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Analog und digital</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbole und Information</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Signal und Rauschen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Zahlensysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Codesysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abtastung und Synchronisation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abstraktion und Schichten</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Information und ihr Träger</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Protokolle</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/processing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verarbeitung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fehler und Redundanz</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Kompression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verschlüsselung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Durchsatz und Grenzen</span></a>
+  <a href="../software/cockpit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Team-Cockpit</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hardware</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/led.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Die LED</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/color-sensor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Der Farbsensor</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/case.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Gehäuse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/optics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optischer Aufbau</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../software/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Concepts</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../software/installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Installation</span></a>
+  <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Solving Problems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme zerlegen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme lösen mit Computern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Messen und Experimentieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstraktion und Schichten</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Representing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/first-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Erste Schritte</span></a>
+  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analog und digital</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/lifi-hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Modul <code>lifi_hardware</code></span></a>
+  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Symbole und Information</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/cockpit.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Team-Cockpit</span></a>
+  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zahlensysteme</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Codesysteme</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Storing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dateien</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Transferring Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signal und Rauschen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abtastung und Synchronisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Protokolle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fehler und Redundanz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information und ihr Träger</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Durchsatz und Grenzen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Processing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmen und Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logik und Arithmetik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kompression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verschlüsselung</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../demos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Demonstratoren</span></a>
+  <a href="../links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Links</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Über dieses Projekt</span></a>
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
     </ul>
@@ -369,9 +431,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/index.html">LiFi Project</a></li><li class="breadcrumb-item"><a href="../software/index.html">Software</a></li><li class="breadcrumb-item"><a href="../ai/index.html">Arbeiten mit dem KI-Assistenten</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Arbeiten mit dem KI-Assistenten</span></h1>
+<h1 class="title">Arbeiten mit dem KI-Assistenten</h1>
 </div>
 
 
@@ -1088,13 +1150,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../organization.html" class="pagination-link" aria-label="Ablauf und Bewertung">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Ablauf und Bewertung</span></span>
+      <a href="../software/index.html" class="pagination-link" aria-label="Setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setup</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../challenges/index.html" class="pagination-link" aria-label="Challenges">
-        <span class="nav-page-text">Challenges</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../software/lifi-hardware.html" class="pagination-link" aria-label="Das Modul `lifi_hardware`">
+        <span class="nav-page-text">Das Modul <code>lifi_hardware</code></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

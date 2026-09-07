@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Projektkurs im Modul Digitalisierung und Programmierung">
 
-<title>Hardware – LiFi-Projekt</title>
+<title>Hardware – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -34,8 +68,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../hardware/led.html" rel="next">
-<link href="../concepts/throughput-and-limits.html" rel="prev">
+<link href="../software/index.html" rel="next">
+<link href="../challenges/challenge-4.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -45,7 +79,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bb2601a8850b103bfb4593477cd94f6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3195b598eb1f03154f53c883785ef3f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LiFi-Projekt</span>
+    <span class="navbar-title">LiFi Project</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-end">
@@ -98,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hardware/index.html">Hardware</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/index.html">LiFi Project</a></li><li class="breadcrumb-item"><a href="../hardware/index.html">Hardware</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -112,23 +149,14 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LiFi-Projekt</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../organization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ablauf und Bewertung</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../ai/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Arbeiten mit dem KI-Assistenten</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Goal</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Challenges</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">LiFi Project</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -136,213 +164,285 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 0: Der Funke</span></a>
+  <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 1: Das Alphabet</span></a>
+  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 0: The Spark</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 2: Das Wort</span></a>
+  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 1: The Alphabet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 3: Der Horcher</span></a>
+  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 2: The Word</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 4: Das Paket</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Konzepte</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme zerlegen</span></a>
+  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 3: The Listener</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme lösen mit Computern</span></a>
+  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 4: The Packet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Messen und Experimentieren</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Algorithmen und Programme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Analog und digital</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbole und Information</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Signal und Rauschen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Zahlensysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Codesysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abtastung und Synchronisation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abstraktion und Schichten</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Information und ihr Träger</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Protokolle</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/processing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verarbeitung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fehler und Redundanz</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Kompression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verschlüsselung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Durchsatz und Grenzen</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../hardware/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../hardware/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Hardware</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/led.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Die LED</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/color-sensor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Der Farbsensor</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/case.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Gehäuse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../hardware/optics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optischer Aufbau</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../software/index.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../software/installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Installation</span></a>
+  <a href="../software/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ai/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbeiten mit dem KI-Assistenten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Modul <code>lifi_hardware</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/cockpit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Team-Cockpit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Concepts</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/first-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Erste Schritte</span></a>
+  <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Solving Problems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme zerlegen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/lifi-hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Modul <code>lifi_hardware</code></span></a>
+  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme lösen mit Computern</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/cockpit.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Team-Cockpit</span></a>
+  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Messen und Experimentieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstraktion und Schichten</span></a>
   </div>
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Representing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analog und digital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Symbole und Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zahlensysteme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Codesysteme</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Storing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dateien</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Transferring Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signal und Rauschen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abtastung und Synchronisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Protokolle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fehler und Redundanz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information und ihr Träger</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Durchsatz und Grenzen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Processing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmen und Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logik und Arithmetik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kompression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verschlüsselung</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../demos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Demonstratoren</span></a>
+  <a href="../links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Links</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Über dieses Projekt</span></a>
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
     </ul>
@@ -355,14 +455,37 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Auf dieser Seite</h2>
    
   <ul>
-  <li><a href="#weiter" id="toc-weiter" class="nav-link active" data-scroll-target="#weiter">Weiter</a></li>
+  <li><a href="#die-led" id="toc-die-led" class="nav-link active" data-scroll-target="#die-led">Die LED</a>
+  <ul class="collapse">
+  <li><a href="#drei-lämpchen-in-einem" id="toc-drei-lämpchen-in-einem" class="nav-link" data-scroll-target="#drei-lämpchen-in-einem">Drei Lämpchen in einem</a></li>
+  </ul></li>
+  <li><a href="#der-farbsensor" id="toc-der-farbsensor" class="nav-link" data-scroll-target="#der-farbsensor">Der Farbsensor</a>
+  <ul class="collapse">
+  <li><a href="#was-der-sensor-überhaupt-misst" id="toc-was-der-sensor-überhaupt-misst" class="nav-link" data-scroll-target="#was-der-sensor-überhaupt-misst">Was der Sensor überhaupt misst</a></li>
+  <li><a href="#vier-kanäle-nicht-drei" id="toc-vier-kanäle-nicht-drei" class="nav-link" data-scroll-target="#vier-kanäle-nicht-drei">Vier Kanäle, nicht drei</a></li>
+  <li><a href="#integrationszeit-und-verstärkung" id="toc-integrationszeit-und-verstärkung" class="nav-link" data-scroll-target="#integrationszeit-und-verstärkung">Integrationszeit und Verstärkung</a></li>
+  <li><a href="#die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt" id="toc-die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt" class="nav-link" data-scroll-target="#die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt">Die Zahlen kommen nicht so an, wie ihr sie gesendet habt</a></li>
+  </ul></li>
+  <li><a href="#optischer-aufbau" id="toc-optischer-aufbau" class="nav-link" data-scroll-target="#optischer-aufbau">Optischer Aufbau</a>
+  <ul class="collapse">
+  <li><a href="#regeln" id="toc-regeln" class="nav-link" data-scroll-target="#regeln">Regeln</a></li>
+  <li><a href="#der-feste-abstand" id="toc-der-feste-abstand" class="nav-link" data-scroll-target="#der-feste-abstand">Der feste Abstand</a></li>
+  <li><a href="#bevor-ihr-etwas-kauft" id="toc-bevor-ihr-etwas-kauft" class="nav-link" data-scroll-target="#bevor-ihr-etwas-kauft">Bevor ihr etwas kauft</a></li>
+  </ul></li>
+  <li><a href="#das-gehäuse" id="toc-das-gehäuse" class="nav-link" data-scroll-target="#das-gehäuse">Das Gehäuse</a>
+  <ul class="collapse">
+  <li><a href="#bauteileliste" id="toc-bauteileliste" class="nav-link" data-scroll-target="#bauteileliste">Bauteileliste</a></li>
+  <li><a href="#das-3d-modell" id="toc-das-3d-modell" class="nav-link" data-scroll-target="#das-3d-modell">Das 3D-Modell</a></li>
+  <li><a href="#druck" id="toc-druck" class="nav-link" data-scroll-target="#druck">Druck</a></li>
+  <li><a href="#zusammenbau" id="toc-zusammenbau" class="nav-link" data-scroll-target="#zusammenbau">Zusammenbau</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../challenges/index.html">LiFi Project</a></li><li class="breadcrumb-item"><a href="../hardware/index.html">Hardware</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Hardware</h1>
 </div>
@@ -383,22 +506,248 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Euer Gerät besteht aus drei Bauteilen in einem 3D-gedruckten Gehäuse:</p>
 <ul>
-<li>ein <strong><a href="../hardware/led.html">RGB LED Bricklet 2.0</a></strong> als Sender,</li>
-<li>ein <strong><a href="../hardware/color-sensor.html">Color Bricklet 2.0</a></strong> als Empfänger,</li>
+<li>ein <strong><a href="#die-led">RGB LED Bricklet 2.0</a></strong> als Sender,</li>
+<li>ein <strong><a href="#der-farbsensor">Color Bricklet 2.0</a></strong> als Empfänger,</li>
 <li>ein <strong>Master Brick</strong>, der beide mit dem Rechner verbindet.</li>
 </ul>
 <p>Jedes Team bekommt zwei solche Geräte, eines pro Person. Ihr habt damit beide Enden der Strecke selbst in der Hand.</p>
 <p>Die beiden Geräte stehen sich auf dem Tisch gegenüber. Weil LED und Sensor symmetrisch zur Mitte sitzen, steht beim um 180° gedrehten Gegenüber automatisch jede LED einem Sensor gegenüber. Ein Trennsteg zwischen beiden verhindert, dass eure eigene LED in euren eigenen Sensor leuchtet.</p>
 <p>Daraus folgt etwas, das euch erst spät im Semester nützt: Weil jedes Gerät senden <strong>und</strong> empfangen kann, ist die Strecke in beide Richtungen nutzbar. Bis einschließlich <a href="../challenges/challenge-3.html">Challenge 3</a> arbeitet ihr trotzdem nur in eine Richtung. Den Rückkanal gebt ihr erst in <a href="../challenges/challenge-4.html">Challenge 4</a> frei.</p>
 <!-- TODO: Foto des aufgebauten Geräts -->
-<section id="weiter" class="level2">
-<h2 class="anchored" data-anchor-id="weiter">Weiter</h2>
+<section id="die-led" class="level2">
+<h2 class="anchored" data-anchor-id="die-led">Die LED</h2>
+<p>RGB LED Bricklet 2.0.</p>
+<section id="drei-lämpchen-in-einem" class="level3">
+<h3 class="anchored" data-anchor-id="drei-lämpchen-in-einem">Drei Lämpchen in einem</h3>
+<p>Was aussieht wie eine einzelne Lampe, sind in Wirklichkeit drei: eine rote, eine grüne und eine blaue, dicht nebeneinander. Ihr gebt für jede an, wie hell sie leuchten soll, jeweils als Zahl von 0 (aus) bis 255 (volle Helligkeit). Weil die drei so eng beieinander sitzen, sieht euer Auge keine drei Lichter, sondern eine Mischfarbe.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)      <span class="co"># nur die rote Lampe, volle Helligkeit</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)        <span class="co"># alle aus</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">255</span>)  <span class="co"># alle voll, ergibt weiss</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">60</span>)     <span class="co"># rot, mit etwas Blau dazu</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Genau diese drei Zahlen sind euer Werkzeug: Jede Kombination, die ihr zuverlässig wiedererkennen könnt, ist ein Zeichen, das ihr übertragen könnt.</p>
+<!-- TODO: Schaltzeiten, kleinste sinnvolle Helligkeitsschritte, Verhalten bei schnellem
+     Umschalten -->
+</section>
+</section>
+<section id="der-farbsensor" class="level2">
+<h2 class="anchored" data-anchor-id="der-farbsensor">Der Farbsensor</h2>
+<p>Color Bricklet 2.0.</p>
+<section id="was-der-sensor-überhaupt-misst" class="level3">
+<h3 class="anchored" data-anchor-id="was-der-sensor-überhaupt-misst">Was der Sensor überhaupt misst</h3>
+<p>Vor dem Sensor sitzen kleine Farbfilter. Einer lässt vor allem rotes Licht durch, einer vor allem grünes, einer vor allem blaues. Hinter jedem Filter wird gezählt, wie viel Licht ankommt. Ihr bekommt also drei Zahlen, die beschreiben, wie viel Rot, Grün und Blau gerade auf den Sensor fällt.</p>
+<p>Wichtig ist das Wort „vor allem”: Die Filter trennen nicht sauber. Durch den Rotfilter kommt auch etwas grünes Licht. Deshalb hat rotes Licht nicht einfach eine hohe erste Zahl und zwei Nullen, sondern alle drei Werte sind ungleich null.</p>
+</section>
+<section id="vier-kanäle-nicht-drei" class="level3">
+<h3 class="anchored" data-anchor-id="vier-kanäle-nicht-drei">Vier Kanäle, nicht drei</h3>
+<p>Zu den drei Farbwerten kommt ein vierter, der <strong>Clear-Kanal (C)</strong>. Er sitzt hinter keinem Filter und zählt einfach alles Licht zusammen. Dadurch ist er empfindlicher als die anderen drei und oft der nützlichste, wenn ihr nur Helligkeiten unterscheiden wollt.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>r, g, b, c <span class="op">=</span> sensor.read()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="integrationszeit-und-verstärkung" class="level3">
+<h3 class="anchored" data-anchor-id="integrationszeit-und-verstärkung">Integrationszeit und Verstärkung</h3>
+<!-- TODO: Der zentrale Zielkonflikt — lange Integration heißt sauberes Signal,
+     aber wenige Messungen pro Sekunde. -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sensor.set_integration_time(ms)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sensor.set_gain(factor)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt" class="level3">
+<h3 class="anchored" data-anchor-id="die-zahlen-kommen-nicht-so-an-wie-ihr-sie-gesendet-habt">Die Zahlen kommen nicht so an, wie ihr sie gesendet habt</h3>
+<p>Wenn ihr der LED die Werte (255, 0, 60) gebt, meldet der Sensor etwas ganz anderes. Das ist kein Fehler. Seine Zahlen hängen außer vom gesendeten Licht auch davon ab, wie weit er entfernt ist, wie hell der Raum ist und wie ihr Verstärkung und Integrationszeit eingestellt habt. Zurückrechnen lässt sich das nicht. Wie ihr trotzdem zuverlässig übertragt, steht bei <a href="../challenges/challenge-1.html">Challenge 1</a>.</p>
+</section>
+</section>
+<section id="optischer-aufbau" class="level2">
+<h2 class="anchored" data-anchor-id="optischer-aufbau">Optischer Aufbau</h2>
+<p>Zwischen den beiden Geräten dürft ihr selbst bauen, und ihr solltet es auch: Röhren, Blenden, Reflektoren, Linsen. Ein guter Lichtkanal ist einer der wirksamsten Hebel im ganzen Projekt.</p>
+<section id="regeln" class="level3">
+<h3 class="anchored" data-anchor-id="regeln">Regeln</h3>
+<p><strong>Erlaubt</strong> ist alles Passive: Rohre, Pappe, Farbe, Alufolie, Spiegel, Linsen, Acrylstäbe, Klemmen, Stative, 3D-gedruckte Teile.</p>
+<p><strong>Nicht erlaubt</strong> sind zusätzliche Sensoren, zusätzliche Lichtquellen, Laser oder der Austausch von LED und Farbsensor.</p>
+<p><strong>Budget:</strong> höchstens 10 € Materialwert, selbst gebaut, mit Foto und kurzer Begründung dokumentiert.</p>
+</section>
+<section id="der-feste-abstand" class="level3">
+<h3 class="anchored" data-anchor-id="der-feste-abstand">Der feste Abstand</h3>
+<!-- TODO: Wert eintragen, sobald die Pilotmessung erfolgt ist -->
+</section>
+<section id="bevor-ihr-etwas-kauft" class="level3">
+<h3 class="anchored" data-anchor-id="bevor-ihr-etwas-kauft">Bevor ihr etwas kauft</h3>
+<p>Messt erst, was euer Aufbau ohne Hilfsmittel schafft. Erfahrungsgemäß bringt eine mattschwarz ausgemalte Innenwand mehr als eine gekaufte Linse.</p>
+</section>
+</section>
+<section id="das-gehäuse" class="level2">
+<h2 class="anchored" data-anchor-id="das-gehäuse">Das Gehäuse</h2>
+<p>Das Gehäuse wird im 3D-Druck hergestellt und besteht aus zwei Druckteilen: der Wanne mit integrierter Frontwand und dem Deckel. Die Quelldatei ist parametrisch in OpenSCAD geschrieben: <a href="../assets/hardware/lifi-device-case.scad">lifi-device-case.scad</a>. Sie ist als CC0 freigegeben, ihr dürft sie also ohne Bedingungen verwenden und verändern.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../assets/cc-zero-88x31.png" class="img-fluid figure-img"></p>
+<figcaption>CC0 1.0</figcaption>
+</figure>
+</div>
+<section id="bauteileliste" class="level3">
+<h3 class="anchored" data-anchor-id="bauteileliste">Bauteileliste</h3>
+<p>Alles, was in einem Gerät steckt. Die Kits werden fertig gestellt; die Liste braucht ihr, wenn etwas ersetzt werden muss oder ihr das Gerät nachbauen wollt.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Anzahl</th>
+<th>Bauteil</th>
+<th>Anmerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td><a href="https://www.tinkerforge.com/de/shop/master-brick.html">Master Brick</a> (Tinkerforge)</td>
+<td>verbindet die Bricklets per USB-C mit dem Rechner</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td><a href="https://www.tinkerforge.com/de/shop/rgb-led-v2-bricklet.html">RGB LED Bricklet 2.0</a></td>
+<td>der Sender</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td><a href="https://www.tinkerforge.com/de/shop/color-v2-bricklet.html">Color Bricklet 2.0</a></td>
+<td>der Empfänger, misst R, G, B und Clear</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td><a href="https://www.tinkerforge.com/de/shop/accessories/cable/bricklet-cable-15cm-7p-7p.html">Bricklet-Kabel, 7-polig, 15 cm</a></td>
+<td>Bricklets an den Master Brick</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td><a href="https://shop.tinkerforge.com/de/accessories/cable/usb-a-to-usb-c-cable-100cm.html">USB-A-auf-USB-C-Kabel, 100 cm</a> (Tinkerforge)</td>
+<td>Gerät an den Rechner; jedes andere USB-C-Datenkabel geht auch</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td><a href="https://www.tinkerforge.com/de/shop/accessories/mounting/mounting-kit-12mm.html">Montagekit 12 mm</a> (Tinkerforge)</td>
+<td>enthält alles Kleinteilige für Brick und Bricklets: die vier 10-mm-Abstandsbolzen (Gewinde beidseitig innen) für den Master Brick, acht M3-Schrauben (vier für die Bricklets vorn, vier für den Brick auf den Bolzen), acht Muttern und Unterlegscheiben</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td>Schraube M3 × 8, Senkkopf DIN 965 (<a href="https://www.amazon.de/s?k=M3x8+Senkkopf+DIN+965">Suche</a>)</td>
+<td>von unten durch den Boden in die Bolzen; Senkkopf, damit die Köpfe bündig in den Senkungen sitzen (die Linsenkopf-Schrauben aus dem Kit stünden über)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td>Schneidschraube EJOT Delta PT WN 5454, Senkkopf 3,0 × 8, Torx (<a href="https://dw-bendler.de/shop/public/FE-Schraube-EJOT-Delta-PT-WN5454-Senkkopf-3-0x8-Innensechsrund-Antrieb-verzinkt/SW34172">DW Bendler, SW34172</a>)</td>
+<td>für den Deckel; gewindeformend für Thermoplaste, keine Blechschrauben</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td>Klebe-Gummifuß, Ø 10 × 3 mm, schwarz (<a href="https://www.reichelt.com/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081">Delock 18309 bei Reichelt</a>, 50er-Pack)</td>
+<td>in die Mulden an der Unterseite</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td>Druckteil Wanne und Deckel</td>
+<td>STL-Dateien unten, schwarzes mattes Filament</td>
+</tr>
+</tbody>
+</table>
+<p>Die Tinkerforge-Links führen direkt zum Hersteller-Shop; die Suchlinks bei den Normteilen sind Beispiele, jeder Schrauben- oder Elektronikhandel führt sie.</p>
+</section>
+<section id="das-3d-modell" class="level3">
+<h3 class="anchored" data-anchor-id="das-3d-modell">Das 3D-Modell</h3>
+<p>Beide Druckteile zum Ansehen: Ziehen dreht, Scrollen zoomt.</p>
+<div class="stl-zeile">
+  <figure class="figure"><div id="stl-wanne" class="stl-viewer"></div><figcaption>Wanne mit Frontwand und Trennsteg</figcaption></figure>
+  <figure class="figure"><div id="stl-deckel" class="stl-viewer"></div><figcaption>Deckel</figcaption></figure>
+</div>
+<style>
+  .stl-zeile { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .stl-zeile figure { flex: 1 1 280px; margin: 0; }
+  .stl-viewer { height: 340px; background: #f4f5f6; border-radius: 6px; }
+  .stl-zeile figcaption { font-size: 0.85em; color: #6b7580; margin-top: 0.3rem; }
+</style>
+<script type="importmap">
+  {"imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }}
+</script>
+<script type="module">
+  import * as THREE from "three";
+  import { STLLoader } from "three/addons/loaders/STLLoader.js";
+  import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+  function zeige(behaelterId, url) {
+    const wrap = document.getElementById(behaelterId);
+    if (!wrap) return;
+    const breite = wrap.clientWidth, hoehe = wrap.clientHeight;
+
+    const szene = new THREE.Scene();
+    szene.background = new THREE.Color(0xf4f5f6);
+    const kamera = new THREE.PerspectiveCamera(40, breite / hoehe, 1, 2000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(breite, hoehe);
+    wrap.appendChild(renderer.domElement);
+
+    szene.add(new THREE.HemisphereLight(0xffffff, 0x667788, 1.1));
+    const sonne = new THREE.DirectionalLight(0xffffff, 1.4);
+    sonne.position.set(1, 2, 2);
+    szene.add(sonne);
+
+    new STLLoader().load(url, (geometrie) => {
+      geometrie.computeVertexNormals();
+      geometrie.center();
+      const material = new THREE.MeshStandardMaterial(
+        { color: 0x3a3f45, metalness: 0.05, roughness: 0.75 });
+      const teil = new THREE.Mesh(geometrie, material);
+      teil.rotation.x = -Math.PI / 2;   // Z-hoch (Druck) nach Y-hoch (Anzeige)
+      szene.add(teil);
+
+      geometrie.computeBoundingSphere();
+      const r = geometrie.boundingSphere.radius;
+      kamera.position.set(r * 1.6, r * 1.2, r * 1.9);
+
+      const steuerung = new OrbitControls(kamera, renderer.domElement);
+      steuerung.enableDamping = true;
+      steuerung.target.set(0, 0, 0);
+
+      renderer.setAnimationLoop(() => {
+        steuerung.update();
+        renderer.render(szene, kamera);
+      });
+    }, undefined, () => {
+      wrap.textContent = "3D-Ansicht konnte nicht geladen werden. " +
+        "Die STL-Dateien gibt es unten zum Herunterladen.";
+    });
+
+    new ResizeObserver(() => {
+      const b = wrap.clientWidth, h = wrap.clientHeight;
+      kamera.aspect = b / h;
+      kamera.updateProjectionMatrix();
+      renderer.setSize(b, h);
+    }).observe(wrap);
+  }
+
+  zeige("stl-wanne", "../assets/hardware/lifi-device-case-wanne.stl");
+  zeige("stl-deckel", "../assets/hardware/lifi-device-case-deckel.stl");
+</script>
+<p>Zum Herunterladen und Selberdrucken:</p>
 <ul>
-<li><a href="../hardware/case.html">Das Gehäuse</a>: Druck und Zusammenbau</li>
-<li><a href="../hardware/optics.html">Optischer Aufbau</a>: was ihr selbst bauen dürft</li>
+<li><a href="../assets/hardware/lifi-device-case-wanne.stl">Wanne (STL)</a></li>
+<li><a href="../assets/hardware/lifi-device-case-deckel.stl">Deckel (STL)</a></li>
 </ul>
+</section>
+<section id="druck" class="level3">
+<h3 class="anchored" data-anchor-id="druck">Druck</h3>
+<p>Wanne mit der offenen Seite nach oben drucken, den Deckel flach. Empfohlen: schwarzes, mattes Filament (PETG oder PLA), 0,2 mm Schichthöhe, mindestens 4 Perimeter, damit die Schraubdome stabil sind. Stützen braucht nur der vorstehende Trennsteg an der Front; im Inneren gibt es absichtlich keine Hohlräume, die der Slicer stützen müsste.</p>
+</section>
+<section id="zusammenbau" class="level3">
+<h3 class="anchored" data-anchor-id="zusammenbau">Zusammenbau</h3>
+<ol type="1">
+<li>Die vier 10-mm-Abstandsbolzen aus dem Montagekit von unten durch den Boden verschrauben (M3 × 8 Senkkopf, die Köpfe verschwinden in den Senkungen), den Master Brick mit vier Kit-Schrauben oben auf die Bolzen schrauben.</li>
+<li>LED- und Farbsensor-Bricklet von vorn in ihre Fassungen setzen und mit je zwei Kit-Schrauben verschrauben; die Kit-Muttern von innen mit den Fingern oder einem kleinen Schlüssel kontern. Der Innenraum ist dabei noch offen.</li>
+<li>Bricklet-Kabel durch die Schlitze unter den Fassungen zum Master Brick führen, USB-C-Kabel durch den Schlitz in der Rückwand anschließen.</li>
+<li>Deckel auflegen und mit den vier Schneidschrauben befestigen. Beim allerersten Zusammenbau die Schrauben von Hand eindrehen, nicht mit dem Akkuschrauber: Sie formen sich dabei ihr Gewinde in die Schraubdome.</li>
+<li>Gummifüße in die vier Mulden an der Unterseite kleben.</li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1068,13 +1417,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../concepts/throughput-and-limits.html" class="pagination-link" aria-label="Durchsatz und Grenzen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Durchsatz und Grenzen</span></span>
+      <a href="../challenges/challenge-4.html" class="pagination-link" aria-label="Challenge 4: The Packet">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Challenge 4: The Packet</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../hardware/led.html" class="pagination-link" aria-label="Die LED">
-        <span class="nav-page-text"><span class="chapter-title">Die LED</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../software/index.html" class="pagination-link" aria-label="Setup">
+        <span class="nav-page-text">Setup</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1092,6 +1441,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

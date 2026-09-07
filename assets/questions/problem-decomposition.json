@@ -110,17 +110,17 @@
     },
     {
      "kennung": "b",
-     "text": "Der Router ist defekt.",
-     "begruendung": "So genau ist der Test nicht. Er schließt den Laptop aus, unterscheidet aber nicht zwischen WLAN, Router und Anbieter."
+     "text": "Das WLAN ist die Ursache, denn der Hotspot ersetzt genau dieses Glied, und damit läuft es.",
+     "begruendung": "Der Hotspot ersetzt nicht nur das WLAN, sondern auch Router und Anbieter. Der Test schließt den Laptop aus, unterscheidet aber nicht zwischen den drei übrigen Gliedern."
     },
     {
      "kennung": "c",
-     "text": "Der Anbieter hat eine Störung.",
-     "begruendung": "Auch das wäre nur geraten. Der Hotspot-Test sagt nichts darüber, welches der verbleibenden Glieder betroffen ist."
+     "text": "Der Anbieter hat eine Störung, denn über das Mobilfunknetz kommt der Laptop ja problemlos ins Internet.",
+     "begruendung": "Dass ein anderer Weg funktioniert, belastet nicht den Anbieter allein. WLAN und Router liegen ebenfalls auf dem ausgefallenen Weg und bleiben Verdächtige."
     },
     {
      "kennung": "d",
-     "text": "Nichts, der Hotspot nutzt ja einen ganz anderen Weg ins Internet.",
+     "text": "Noch nichts Belastbares, denn der Hotspot nimmt einen anderen Weg und sagt über die Heimkette nichts aus.",
      "begruendung": "Gerade weil der Weg ein anderer ist, ist der Test aussagekräftig: Er prüft den Laptop isoliert vom Rest der Kette."
     }
    ]
@@ -136,13 +136,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Den Code des Senders komplett neu schreiben.",
-     "begruendung": "Das ist kein Test, sondern blindes Bauen. Vielleicht war der Sender nie das Problem."
+     "text": "Den Code des Senders Zeile für Zeile durchgehen und prüfen, ob die Farbwerte richtig gesetzt werden.",
+     "begruendung": "Das prüft ein einzelnes Glied am Anfang der Kette, und zwar nur durch Lesen. Selbst wenn der Code fehlerfrei ist, bleiben vier Verdächtige übrig; die Suche hat kaum etwas ausgeschlossen."
     },
     {
      "kennung": "b",
-     "text": "Beide Geräte neu starten und es noch einmal probieren.",
-     "begruendung": "Der Neustart-Reflex. Selbst wenn es danach geht, wisst ihr nicht, was kaputt war, und das Problem kommt wieder."
+     "text": "Beide Geräte neu starten, damit ein hängen gebliebener Zustand als Ursache ausscheidet.",
+     "begruendung": "Der Neustart-Reflex. Er verändert alle Glieder auf einmal; selbst wenn es danach geht, wisst ihr nicht, welches kaputt war, und das Problem kommt wieder."
     },
     {
      "kennung": "c",
@@ -151,8 +151,8 @@
     },
     {
      "kennung": "d",
-     "text": "Den Abstand zwischen den Geräten verringern.",
-     "begruendung": "Das verändert eine Bedingung, prüft aber kein Kettenglied gezielt. Wenn es hilft, wisst ihr immer noch nicht warum."
+     "text": "Den Abstand zwischen den Geräten verringern, damit mehr Licht am Sensor ankommt.",
+     "begruendung": "Das verändert eine Bedingung, prüft aber kein Kettenglied gezielt. Wenn es hilft, wisst ihr immer noch nicht warum, und wenn nicht, habt ihr nichts ausgeschlossen."
     }
    ]
   },
@@ -177,8 +177,8 @@
     },
     {
      "kennung": "c",
-     "text": "Weil Vorspeise und Nachtisch leichter zu kochen sind als ein Hauptgericht.",
-     "begruendung": "Der Schwierigkeitsgrad der Gerichte hat mit der Qualität des Schnitts nichts zu tun."
+     "text": "Weil zwei getrennte Aufgaben parallel laufen und das Essen so doppelt so schnell fertig ist.",
+     "begruendung": "Parallel arbeiten könnten beide auch bei 'wir machen beide das Essen'. Der Gewinn des Schnitts liegt nicht im Tempo, sondern darin, dass jede Person ohne Rückfragen weiß, was ihres ist."
     },
     {
      "kennung": "d",
@@ -260,8 +260,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Baue mir den kompletten Empfänger für unsere Lichtübertragung.",
-     "begruendung": "Der große Wunsch: Das Ergebnis wäre zu groß, um es zu prüfen, und die Zerlegung hätte die Maschine übernommen statt ihr."
+     "text": "Baue mir den kompletten Empfänger für unsere Lichtübertragung. Ich prüfe am Ende, ob der gesendete Text ankommt.",
+     "begruendung": "Ein Test ist zwar mitgedacht, aber das Stück ist zu groß: Kommt kein Text an, wisst ihr nicht, welcher der vielen Teile schuld ist. Und die Zerlegung hätte die Maschine übernommen statt ihr."
     },
     {
      "kennung": "b",
@@ -270,13 +270,13 @@
     },
     {
      "kennung": "c",
-     "text": "Mach meinen Code besser.",
-     "begruendung": "'Besser' ist kein prüfbares Ziel. Ihr könntet hinterher nicht sagen, ob der Auftrag erfüllt wurde."
+     "text": "Überarbeite meinen Empfängercode so, dass er zuverlässiger wird, und erkläre mir anschließend die Änderungen.",
+     "begruendung": "'Zuverlässiger' ist kein prüfbares Ziel, und was geändert wird, entscheidet die Maschine. Ihr könntet hinterher nicht sagen, ob der Auftrag erfüllt wurde, auch nicht mit Erklärung."
     },
     {
      "kennung": "d",
-     "text": "Erkläre mir alles über Python, damit ich danach selbst weiterkomme.",
-     "begruendung": "Verständnisfragen sind erlaubt und gut, aber 'alles' ist kein geschnittenes Teil. Auch Lernaufträge werden besser, wenn sie klein und konkret sind."
+     "text": "Schreibe eine Funktion, die den Sensor liest und die erkannte Farbe zurückgibt. Wenn der Code schlüssig aussieht, übernehme ich ihn.",
+     "begruendung": "Der Schnitt ist gut, die Prüfung fehlt: 'Sieht schlüssig aus' ist ein Gefühl, kein Test. Der dritte Teil der Arbeitsteilung, das Prüfen am Gerät, wäre übersprungen."
     }
    ]
   },
@@ -291,13 +291,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Wenn das Programm ohne Fehlermeldung durchläuft.",
+     "text": "Wenn das Programm ohne Fehlermeldung durchläuft und die LED dabei sichtbar blinkt.",
      "begruendung": "Keine Fehlermeldung heißt nur: Die Maschine konnte ausführen, was dastand. Ob das Richtige passiert, sagt sie damit nicht."
     },
     {
      "kennung": "b",
-     "text": "Wenn das Blinken auf den ersten Blick richtig aussieht.",
-     "begruendung": "'Sieht gut aus' ist ein Gefühl. Ob es wirklich eine Sekunde ist, verrät nur eine Messung."
+     "text": "Wenn das Blinken beim Zuschauen gleichmäßig wirkt und ungefähr im Sekundentakt liegt.",
+     "begruendung": "'Wirkt gleichmäßig' und 'ungefähr' sind Gefühle. Ob es wirklich eine Sekunde ist, verrät nur eine Messung mit vereinbarter Toleranz."
     },
     {
      "kennung": "c",
@@ -306,7 +306,7 @@
     },
     {
      "kennung": "d",
-     "text": "Wenn der KI-Assistent bestätigt, dass der Code korrekt ist.",
+     "text": "Wenn der KI-Assistent den Code geprüft hat und bestätigt, dass er einmal pro Sekunde blinkt.",
      "begruendung": "Der Assistent hat keinen Zugang zur echten LED. Die Ground Truth liegt am Gerät, und geprüft wird dort, nicht im Chat."
     }
    ]
@@ -362,7 +362,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Den Code lesen; wenn er schlüssig aussieht, übernehmen.",
+     "text": "Den Code Zeile für Zeile lesen und ihn übernehmen, sobald jede Zeile schlüssig ist.",
      "begruendung": "Lesen ist gut, reicht aber nicht: 'Sieht schlüssig aus' ist ein Gefühl, kein Test. Plausibler Code kann trotzdem das Falsche tun."
     },
     {

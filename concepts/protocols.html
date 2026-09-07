@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Projektkurs im Modul Digitalisierung und Programmierung">
 
-<title>Protokolle – LiFi-Projekt</title>
+<title>Protokolle – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../concepts/processing.html" rel="next">
-<link href="../concepts/information-and-carrier.html" rel="prev">
+<link href="../concepts/errors-and-redundancy.html" rel="next">
+<link href="../concepts/sampling-and-synchronization.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -45,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bb2601a8850b103bfb4593477cd94f6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3195b598eb1f03154f53c883785ef3f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LiFi-Projekt</span>
+    <span class="navbar-title">LiFi Project</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-end">
@@ -98,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Konzepte</a></li><li class="breadcrumb-item"><a href="../concepts/protocols.html"><span class="chapter-title">Protokolle</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/protocols.html">Protokolle</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -112,160 +114,102 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LiFi-Projekt</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../organization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ablauf und Bewertung</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../ai/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Arbeiten mit dem KI-Assistenten</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Goal</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Challenges</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">LiFi Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 0: Der Funke</span></a>
+  <a href="../challenges/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 1: Das Alphabet</span></a>
+  <a href="../challenges/challenge-0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 0: The Spark</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 2: Das Wort</span></a>
+  <a href="../challenges/challenge-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 1: The Alphabet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 3: Der Horcher</span></a>
+  <a href="../challenges/challenge-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 2: The Word</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Challenge 4: Das Paket</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Konzepte</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme zerlegen</span></a>
+  <a href="../challenges/challenge-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 3: The Listener</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Probleme lösen mit Computern</span></a>
+  <a href="../challenges/challenge-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Challenge 4: The Packet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Messen und Experimentieren</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Algorithmen und Programme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Analog und digital</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Symbole und Information</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Signal und Rauschen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Zahlensysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Codesysteme</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abtastung und Synchronisation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abstraktion und Schichten</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Information und ihr Träger</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Protokolle</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/processing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verarbeitung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fehler und Redundanz</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Kompression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Verschlüsselung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Durchsatz und Grenzen</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../hardware/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hardware</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Software</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ai/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbeiten mit dem KI-Assistenten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Modul <code>lifi_hardware</code></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../software/cockpit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Team-Cockpit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Concepts</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -273,76 +217,197 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hardware/led.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Die LED</span></a>
+  <a href="../concepts/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Solving Problems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme zerlegen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hardware/color-sensor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Der Farbsensor</span></a>
+  <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probleme lösen mit Computern</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hardware/case.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Gehäuse</span></a>
+  <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Messen und Experimentieren</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hardware/optics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optischer Aufbau</span></a>
+  <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstraktion und Schichten</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../software/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Representing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../software/installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Installation</span></a>
+  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analog und digital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/symbols-and-information.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Symbole und Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/number-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zahlensysteme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Codesysteme</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Storing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/first-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Erste Schritte</span></a>
+  <a href="../concepts/memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/lifi-hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Modul <code>lifi_hardware</code></span></a>
+  <a href="../concepts/files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dateien</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Transferring Information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Signal und Rauschen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/cockpit.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Das Team-Cockpit</span></a>
+  <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abtastung und Synchronisation</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/protocols.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Protokolle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fehler und Redundanz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Information und ihr Träger</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Durchsatz und Grenzen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Processing Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithmen und Programme</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logik und Arithmetik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kompression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verschlüsselung</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../demos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Demonstratoren</span></a>
+  <a href="../links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Links</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Über dieses Projekt</span></a>
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
   </div>
 </li>
     </ul>
@@ -359,7 +424,14 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a></li>
+  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a>
+  <ul class="collapse">
+  <li><a href="#bisher-hat-ein-mensch-jetzt-gesagt" id="toc-bisher-hat-ein-mensch-jetzt-gesagt" class="nav-link" data-scroll-target="#bisher-hat-ein-mensch-jetzt-gesagt">Bisher hat ein Mensch „jetzt” gesagt</a></li>
+  <li><a href="#der-anfang-die-präambel" id="toc-der-anfang-die-präambel" class="nav-link" data-scroll-target="#der-anfang-die-präambel">Der Anfang: die Präambel</a></li>
+  <li><a href="#das-ende-längenfeld-oder-endmarke" id="toc-das-ende-längenfeld-oder-endmarke" class="nav-link" data-scroll-target="#das-ende-längenfeld-oder-endmarke">Das Ende: Längenfeld oder Endmarke</a></li>
+  <li><a href="#ein-programm-mit-gedächtnis" id="toc-ein-programm-mit-gedächtnis" class="nav-link" data-scroll-target="#ein-programm-mit-gedächtnis">Ein Programm mit Gedächtnis</a></li>
+  <li><a href="#die-absprache-die-jemand-anderes-umsetzen-kann" id="toc-die-absprache-die-jemand-anderes-umsetzen-kann" class="nav-link" data-scroll-target="#die-absprache-die-jemand-anderes-umsetzen-kann">Die Absprache, die jemand anderes umsetzen kann</a></li>
+  </ul></li>
   <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
   <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
   <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
@@ -369,9 +441,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Konzepte</a></li><li class="breadcrumb-item"><a href="../concepts/protocols.html"><span class="chapter-title">Protokolle</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/protocols.html">Protokolle</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Protokolle</span></h1>
+<h1 class="title">Protokolle</h1>
 </div>
 
 
@@ -396,23 +468,73 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Was muss festgelegt sein, bevor zwei Seiten miteinander reden können?</li>
 <li>Woran erkennt ein Empfänger den Anfang und das Ende einer Nachricht?</li>
-<li>Wie stimmen sich zwei Geräte ohne gemeinsame Uhr aufeinander ab?</li>
+<li>Warum muss ein Anfangsmuster länger sein als ein einzelnes Symbol?</li>
+<li>Warum braucht ein Empfänger ein Gedächtnis, und was passiert ohne?</li>
 <li>Wann ist eine Beschreibung vollständig genug, dass jemand anderes sie umsetzen kann?</li>
 </ul>
-<p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-2.html">Challenge 2</a> und vor allem für <a href="../challenges/challenge-3.html">Challenge 3</a> verstanden haben, damit ihr dort erfolgreich seid.</p>
+<p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-2.html">Challenge 2</a> und vor allem für <a href="../challenges/challenge-3.html">Challenge 3</a> verstanden haben, damit ihr dort erfolgreich seid. Die Frage, wie zwei Geräte ohne gemeinsame Uhr im Takt bleiben, gehört zum Nachbarkonzept <a href="../concepts/sampling-and-synchronization.html">Abtastung und Synchronisation</a>; hier geht es um die Absprache darüber, was gesendet wird.</p>
 </section>
 </section>
 <section id="erläuterung-des-konzepts" class="level2">
 <h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>Ein Protokoll ist eine Absprache zwischen zwei Seiten darüber, wie sie miteinander reden. Nichts daran versteht sich von selbst, und alles muss festgelegt sein, bevor auch nur ein Bit fließt. Richtig schwierig wird es, wenn niemand mehr das Startzeichen gibt.</p>
+<p>Ein Notruf über Seefunk beginnt immer mit dreimal „Mayday”. Nicht aus Ordnungsliebe: Der Kanal rauscht, und niemand weiß, wann ein Ruf beginnt. Ein einzelnes Wort geht unter oder ist Zufall, drei gleiche Wörter hintereinander sind ein Muster, das das Rauschen nicht erzeugt. Danach hat der Ruf eine feste Form: wer ruft wen, dann die Nachricht, dann „over” (ich bin fertig, du bist dran) oder „out” (Gespräch beendet). Seeleute haben damit vor hundert Jahren erfunden, was euer Empfänger ab Challenge 3 braucht.</p>
+<section id="bisher-hat-ein-mensch-jetzt-gesagt" class="level3">
+<h3 class="anchored" data-anchor-id="bisher-hat-ein-mensch-jetzt-gesagt">Bisher hat ein Mensch „jetzt” gesagt</h3>
+<p>In Challenge 1 und 2 hat jemand beide Programme kurz nacheinander gestartet, auf beiden Rechnern Enter gedrückt. Damit war der Anfang klar, und wie lang die Nachricht ist, wusste der Empfänger auch. Diese Hilfe fällt weg. Der Empfänger läuft, bevor der Sender anfängt, und er sieht dauernd Messwerte, denn das Zimmer ist nie dunkel. Irgendwo in diesem Strom steckt die Nachricht. Nichts an den Zahlen selbst sagt ihm, wo sie beginnt und wo sie aufhört.</p>
+<p>Das ist der Satz, um den es geht: Ein Bitstrom ohne Rahmen bedeutet nichts. Bits sind erst dann eine Nachricht, wenn beide Seiten wissen, wo sie anfängt, wo sie endet und was sie bedeutet. Diesen Rahmen liefert kein Sensor, den vereinbart ihr. Drei Fragen muss eure Absprache beantworten: Wo fängt es an? Wo hört es auf? Und was tut der Empfänger, wenn etwas schiefgeht, etwa wenn ein erwartetes Muster ausbleibt? Die dritte vergisst man am leichtesten, und eine Absprache, die nur den Normalfall regelt, lässt den Empfänger im Fehlerfall raten.</p>
+<div id="fig-message-frame" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-message-frame-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/message-frame.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;1: Der Rahmen einer Nachricht aus Sicht des laufenden Empfängers: links und rechts das Rauschen des Zimmers, dann ein vereinbartes Anfangsmuster aus zwei wechselnden Farben (die Präambel), die Nachricht selbst und eine Endmarke. Ob das Ende über eine Marke oder ein Längenfeld erkannt wird, entscheidet ihr."><img src="../assets/diagrams/message-frame.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-message-frame-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;1: Der Rahmen einer Nachricht aus Sicht des laufenden Empfängers: links und rechts das Rauschen des Zimmers, dann ein vereinbartes Anfangsmuster aus zwei wechselnden Farben (die Präambel), die Nachricht selbst und eine Endmarke. Ob das Ende über eine Marke oder ein Längenfeld erkannt wird, entscheidet ihr.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="der-anfang-die-präambel" class="level3">
+<h3 class="anchored" data-anchor-id="der-anfang-die-präambel">Der Anfang: die Präambel</h3>
+<p>Wenn jemand vorn im Saal erst zufällige Farben sendet, dann eine Nachricht, dann wieder zufällige Farben, findet niemand den Anfang. Beginnt jede Nachricht dagegen mit derselben auffälligen Folge, etwa dreimal Rot-Blau im Wechsel, erkennt der Saal den Anfang nach zwei Durchgängen von selbst. Diese Folge heißt <strong>Präambel</strong>: ein vereinbartes Muster vor der Nachricht, das keine Information trägt, sondern nur „ab hier” sagt. Sie ersetzt den Menschen, der bisher Enter gedrückt hat.</p>
+<p>Zwei Eigenschaften machen eine Präambel brauchbar: Sie ist vereinbart, und sie kommt im Rauschen nicht vor. Daraus folgt zweierlei. Erstens besteht sie aus aktiven Farben, nicht aus Hell und Dunkel: LED aus sieht für den Sensor genauso aus wie das Zimmer, ein Muster mit Aus-Anteil wäre also zur Hälfte Rauschen. Zweitens genügt ein einzelnes Symbol nicht. Ein einzelnes Rot entsteht im Raumlicht ständig von selbst, eine Lampe, ein Schatten, eine Schwankung, und an jeder dieser Stellen würde der Empfänger „Nachricht beginnt” melden. Die Folge Rot, Blau, Rot, Blau, Rot, Blau entsteht zufällig praktisch nie. Je länger und je regelmäßiger das Muster, desto seltener bildet der Zufall es nach; der Preis sind ein paar Symbole Vorlauf je Nachricht. Wer mit Fehlstarts kämpft, ändert also die Absprache, nicht die Verstärkung oder die Integrationszeit. Die heben das Rauschen genauso an wie das Signal.</p>
+<p>Eine Frage muss eure Spezifikation außerdem beantworten: Was passiert, wenn die Präambel zufällig auch mitten in einer Nachricht auftaucht? Ein Empfänger, der nach dem Muster sucht, hält das für einen neuen Anfang, verwirft, was er bisher hatte, und beginnt mittendrin neu. Das Problem ist echt und hat in der Praxis einen Namen. Die Lösung sagt euch niemand; es gibt mehr als eine gute Antwort, und eure Spezifikation muss eine davon festlegen.</p>
+</section>
+<section id="das-ende-längenfeld-oder-endmarke" class="level3">
+<h3 class="anchored" data-anchor-id="das-ende-längenfeld-oder-endmarke">Das Ende: Längenfeld oder Endmarke</h3>
+<p>Schickt der Sender zwei Nachrichten direkt hintereinander, muss der Empfänger wissen, wo die erste aufhört. Dafür gibt es zwei Antworten, und beide sind richtig. Ein <strong>Längenfeld</strong> steht am Anfang und sagt, wie viele Zeichen folgen; der Empfänger zählt mit. Sein Preis: Das Feld muss fehlerfrei ankommen, sonst verdirbt es die ganze Nachricht, und seine Größe begrenzt die Nachricht, mit 8 Bit auf 255 Zeichen. Eine <strong>Endmarke</strong> ist ein vereinbartes Zeichen nach dem letzten Zeichen; der Empfänger hört auf, sobald sie kommt, und die Nachricht darf beliebig lang sein. Ihr Preis ist dieselbe Frage wie bei der Präambel: Die Marke darf nicht zufällig in den Daten vorkommen, sonst endet die Nachricht zu früh. Keiner der beiden Wege ist der richtige. Ihr wählt einen und schreibt ihn auf.</p>
+<p>Was nicht funktioniert: sich darauf zu verlassen, dass die nächste Präambel das Ende der vorigen Nachricht anzeigt. Die letzte Nachricht endet dann nie. Und der Empfänger kann auch nicht am Inhalt erkennen, dass ein Wort „vollständig” ist, denn er kennt den Inhalt nicht. Das Ende muss aus der Absprache folgen, nicht aus dem Text.</p>
+</section>
+<section id="ein-programm-mit-gedächtnis" class="level3">
+<h3 class="anchored" data-anchor-id="ein-programm-mit-gedächtnis">Ein Programm mit Gedächtnis</h3>
+<p>Euer Empfänger erkennt gerade ein Rot. Was soll er damit tun? Das lässt sich aus der Messung allein nicht entscheiden. Solange er auf den Anfang wartet, ist das Rot vielleicht Rauschen oder ein Stück Präambel; liest er gerade eine Nachricht, ist es ein Datensymbol. Dieselbe Messung, verschiedene Reaktionen, je nachdem, was vorher war. Deshalb braucht der Empfänger ein Gedächtnis: einen <strong>Zustand</strong>, der festhält, wo er gerade steht.</p>
+<div id="fig-receiver-states" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-receiver-states-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/receiver-states.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;2: Die zwei Zustände des Empfängers. Beim Warten wird alles außer der Präambel ignoriert, beim Lesen alles bis zur Endmarke gespeichert. Dasselbe rote Symbol bedeutet in jedem Zustand etwas anderes, und nach dem Ende geht es zurück ins Warten."><img src="../assets/diagrams/receiver-states.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-receiver-states-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2: Die zwei Zustände des Empfängers. Beim Warten wird alles außer der Präambel ignoriert, beim Lesen alles bis zur Endmarke gespeichert. Dasselbe rote Symbol bedeutet in jedem Zustand etwas anderes, und nach dem Ende geht es zurück ins Warten.
+</figcaption>
+</figure>
+</div>
+<p>In Python ist ein Zustand nur eine Variable, etwa <code>state</code>, und je Zustand ein Zweig in der Schleife. Im Zustand <code>waiting</code> wird nur geprüft, ob das Anfangsmuster vollständig ist; im Zustand <code>reading</code> wird jedes Symbol angehängt, bis die Endmarke kommt, dann wird die Nachricht ausgegeben und der Zustand zurückgesetzt. Der Pfeil zurück ist wichtig: Wer das Zurücksetzen vergisst, hat einen Empfänger, der genau eine Nachricht kann. Das ist der häufigste Fehler bei der Abnahme, und die Live-Änderung „zwei Nachrichten hintereinander” findet ihn. Das Programm stürzt dabei nicht ab; ein nicht behandelter Zustand tut in Python einfach nichts, und die zweite Nachricht verschwindet stumm.</p>
+</section>
+<section id="die-absprache-die-jemand-anderes-umsetzen-kann" class="level3">
+<h3 class="anchored" data-anchor-id="die-absprache-die-jemand-anderes-umsetzen-kann">Die Absprache, die jemand anderes umsetzen kann</h3>
+<p>Ein Protokoll ist eine Absprache zwischen zwei Seiten darüber, wie sie miteinander reden. Nichts daran versteht sich von selbst, und alles muss vor dem ersten Bit festgelegt sein: die Symbole, der Anfang, das Ende, die Zeit, der Fehlerfall. Die Probe ist nicht, ob es zwischen euch beiden läuft. Die Probe ist, ob jemand, der euch nicht kennt, danach einen Empfänger bauen kann. Genau das passiert beim Interop-Test in Challenge 3.</p>
+<p>Der Test für eure Spezifikation lautet: Streicht in Gedanken alles, was ihr wisst, aber nicht aufgeschrieben habt. Reicht der Rest? Die klassische Lücke ist die Zeit. Symbole, Präambel, Zeichencode und Endmarke stehen drin, aber nicht, wie lange ein Symbol steht. Für euch ist das selbstverständlich, für ein fremdes Team ist die Spezifikation damit unbaubar, denn ohne Symboldauer kann es nicht einmal das Anfangsmuster zuverlässig abtasten. Ein vollständiges Beispiel, etwa <code>HI</code> als komplette Symbolfolge mit Anfang und Ende, rettet mehr Spezifikationen als jeder Erklärtext. Und wenn der fremde Empfänger eure Nachrichten nicht versteht, während es zwischen euren eigenen Geräten läuft, ist das zuerst ein Befund über euer Dokument, nicht über das Partnerteam.</p>
+<p>Am Ende von Challenge 3 einigt sich die Klasse auf einen gemeinsamen Rahmen, aus euren Vorschlägen. So entstehen Standards wirklich: nicht am Reißbrett, sondern aus dem Vergleich funktionierender Lösungen. Ein Standard ist eine Vereinbarung zwischen Menschen, keine technische Notwendigkeit. Was unterhalb des Rahmens liegt, Farben, Tempo, Kalibrierung, bleibt auch danach eures.</p>
+</section>
 </section>
 <section id="folien" class="level2">
 <h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<!-- TODO: Folien ergänzen -->
+<p>Der Input zu diesem Konzept aus Sitzung 9. Das Plenumsexperiment „Der Horcher” liegt in seiner Mitte, weil ihr die Präambel selbst erfinden sollt, bevor sie einen Namen bekommt.</p>
+<div class="folien-viewer" data-quelle="../assets/slides/protocols"></div>
 </section>
 <section id="fragen-üben" class="level2">
 <h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Übungsfragen zu diesem Konzept folgen, sobald der zugehörige Input steht.</p>
+<p>Hier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.</p>
+<div class="fragen-quiz" data-quelle="../assets/questions/protocols.json"></div>
 </section>
 <section id="literatur" class="level2">
 <h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
@@ -1088,13 +1210,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../concepts/information-and-carrier.html" class="pagination-link" aria-label="Information und ihr Träger">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Information und ihr Träger</span></span>
+      <a href="../concepts/sampling-and-synchronization.html" class="pagination-link" aria-label="Abtastung und Synchronisation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Abtastung und Synchronisation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../concepts/processing.html" class="pagination-link" aria-label="Verarbeitung">
-        <span class="nav-page-text"><span class="chapter-title">Verarbeitung</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../concepts/errors-and-redundancy.html" class="pagination-link" aria-label="Fehler und Redundanz">
+        <span class="nav-page-text">Fehler und Redundanz</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1112,6 +1234,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

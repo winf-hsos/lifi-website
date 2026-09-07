@@ -12,13 +12,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die KI grundsätzlich falsche Vorschläge macht.",
-     "begruendung": "Der Vorschlag kann gut sein, oft ist er es sogar. Das Problem ist nicht seine Herkunft, sondern dass er unbelegt ist."
+     "text": "Weil der Vorschlag aus allgemeinem Wissen über Sensoren stammt; erst die Bestätigung durch eine fachkundige Person macht ihn belastbar.",
+     "begruendung": "Eine zweite Meinung ist wieder nur eine Meinung. Auch die fachkundigste Person kennt euren Aufbau nicht; belastbar wird der Vorschlag allein durch die Messung daran."
     },
     {
      "kennung": "b",
-     "text": "Weil man Einstellungen des Sensors nie ändern sollte.",
-     "begruendung": "Im Gegenteil: Integrationszeit und Verstärkung zu verstellen gehört zum Kern des Projekts. Nur eben gemessen, nicht geglaubt."
+     "text": "Weil der Assistent nicht erklärt, warum ein längeres Fenster ruhigere Werte liefert; mit einer schlüssigen Begründung wäre die Auskunft ausreichend.",
+     "begruendung": "Eine schlüssige Erklärung ersetzt keine Messung. Sie sagt, warum etwas passieren sollte, nicht ob es in eurem Aufbau passiert und wie stark. Genau das ist der Fehlschluss, Nachdenken für Messen zu halten."
     },
     {
      "kennung": "c",
@@ -27,8 +27,8 @@
     },
     {
      "kennung": "d",
-     "text": "Weil 'verdoppeln' keine gültige Einstellung ist.",
-     "begruendung": "Verdoppeln ist technisch problemlos möglich. Die offene Frage ist nicht das Wie, sondern der belegbare Effekt."
+     "text": "Weil 'besser' sich erst beurteilen lässt, wenn der Assistent auch vorhersagt, welche Werte der Sensor nach der Änderung liefern wird.",
+     "begruendung": "Eine Vorhersage ist wieder nur eine Behauptung, nur eben mit Zahlen. Ob sie stimmt, entscheidet dieselbe Messreihe, die auch den ursprünglichen Vorschlag prüfen müsste."
     }
    ]
   },
@@ -43,8 +43,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Beide Änderungen haben geholfen.",
-     "begruendung": "Möglich, aber nicht belegt: Es kann auch eine allein gewesen sein, und die andere hat sogar geschadet."
+     "text": "Dass beide Änderungen geholfen haben, sonst wäre die zweite Reihe nicht so deutlich besser.",
+     "begruendung": "Die Deutlichkeit belegt nichts über die Verteilung: Es kann eine Änderung allein gewesen sein, und die andere hat vielleicht sogar geschadet, ohne dass es auffiel."
     },
     {
      "kennung": "b",
@@ -58,8 +58,8 @@
     },
     {
      "kennung": "d",
-     "text": "Die Messung ist wertlos und muss gelöscht werden.",
-     "begruendung": "Wertlos ist sie nicht, sie zeigt, dass die Kombination hilft. Sie beantwortet nur nicht, welcher Anteil wofür steht; das klären zwei saubere Nachmessungen."
+     "text": "Dass die Reihe nicht verwertbar ist und wiederholt werden muss, bevor sich überhaupt etwas sagen lässt.",
+     "begruendung": "Ganz so streng ist es nicht: Die Reihe belegt, dass die Kombination hilft. Sie beantwortet nur nicht, welcher Anteil wofür steht; das klären zwei saubere Nachmessungen mit je einer Änderung."
     }
    ]
   },
@@ -74,13 +74,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Um zu prüfen, ob der Sensor überhaupt Strom hat.",
-     "begruendung": "Das sieht man nebenbei auch, aber dafür bräuchte es keine aufgezeichnete Messreihe."
+     "text": "Um zu prüfen, ob der Sensor überhaupt reagiert, bevor Zeit in die eigentlichen Messungen fließt.",
+     "begruendung": "Einen Funktionstest nimmt man nebenbei mit, dafür bräuchte es aber keine aufgezeichnete Reihe. Der Zweck liegt in den Werten selbst: Sie sind die Bezugsgröße für alles Folgende."
     },
     {
      "kennung": "b",
-     "text": "Damit im Protokoll auch eine langweilige Messung steht.",
-     "begruendung": "Die Kontrollmessung ist keine Pflichtübung, sondern die Bezugsgröße, ohne die die anderen Messungen nicht deutbar sind."
+     "text": "Damit sich der Sensor auf das Umgebungslicht einstellt und es danach von selbst aus den Werten herausrechnet.",
+     "begruendung": "Der Sensor lernt nichts und rechnet nichts heraus; er liefert weiter Rohwerte samt Raumlicht. Den Bezug zum Nullpunkt stellt ihr her, in eurem Programm und in eurer Deutung."
     },
     {
      "kennung": "c",
@@ -89,8 +89,8 @@
     },
     {
      "kennung": "d",
-     "text": "Um die LED zu schonen, bevor die eigentlichen Messungen beginnen.",
-     "begruendung": "Die LED nimmt durch Messen keinen Schaden. Es geht um Information über die Umgebung, nicht um Schonung."
+     "text": "Um zu sehen, wie stark die Werte ohne Licht streuen; sobald die LED leuchtet, geht das Rauschen ohnehin im Signal unter.",
+     "begruendung": "Die Streuung mitzunehmen ist richtig, der Schluss nicht: Das Rauschen verschwindet mit Signal nicht, es liegt weiter auf jedem Wert. Und der Hauptzweck bleibt der Nullpunkt, gegen den jede Farbmessung gelesen wird."
     }
    ]
   },
@@ -137,8 +137,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er liefert genau drei Werte: Rot, Grün und Blau.",
-     "begruendung": "Es sind vier: Zu Rot, Grün und Blau kommt der Clear-Kanal, der ungefiltert misst."
+     "text": "Er liefert drei Werte, Rot, Grün und Blau, passend zu den drei Lämpchen in der LED des Senders.",
+     "begruendung": "Es sind vier: Zu Rot, Grün und Blau kommt der Clear-Kanal, der ungefiltert misst. Die Symmetrie zur LED ist verführerisch, aber der Sensor ist ein anderes Bauteil mit eigener Logik."
     },
     {
      "kennung": "b",
@@ -152,8 +152,8 @@
     },
     {
      "kennung": "d",
-     "text": "Bei ausgeschalteter LED liefern alle vier Kanäle exakt Null.",
-     "begruendung": "Nein: Umgebungslicht ist immer da, und genau deshalb braucht es die Kontrollmessung als Bezugsgröße."
+     "text": "Bei ausgeschalteter LED liefern alle Kanäle Null, weil ohne Sender kein Licht am Sensor ankommt.",
+     "begruendung": "Nein: Der Sender ist nicht die einzige Lichtquelle. Umgebungslicht ist immer da, und genau deshalb braucht es die Kontrollmessung als Bezugsgröße."
     }
    ]
   },
@@ -169,8 +169,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nichts ändert sich, die Integrationszeit betrifft nur den Stromverbrauch.",
-     "begruendung": "Die Integrationszeit ist das Ablesefenster: Sie bestimmt, über wie viel Licht ein Messwert mittelt, und damit direkt seine Ruhe."
+     "text": "Die Werte bleiben so ruhig wie zuvor und kommen häufiger; das Fenster legt nur fest, wie oft der Sensor einen neuen Wert liefert.",
+     "begruendung": "Die Häufigkeit stimmt, die Ruhe nicht: Das Fenster bestimmt auch, über wie viel Licht ein Wert mittelt. Kürzer heißt weniger Licht je Wert, und das Rauschen schlägt stärker durch; die Abbildung zeigt es an den kurzen Ablesungen."
     },
     {
      "kennung": "b",
@@ -200,7 +200,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sensor reklamieren: Er müsste (255, 0, 0) anzeigen.",
+     "text": "Den Sensor reklamieren: Ein intakter Sensor müsste bei gesendetem (255, 0, 0) auch (255, 0, 0) anzeigen.",
      "begruendung": "Der Sensor ist in Ordnung. Überlappende Farbfilter, Abstand und Umgebungslicht sorgen dafür, dass Messwerte nie den gesendeten Zahlen gleichen."
     },
     {
@@ -265,7 +265,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nichts, fünf Treffer sind ein sauberer Beleg.",
+     "text": "Nichts, fünf Treffer ohne einen einzigen Fehler belegen sauber, dass die Unterscheidung steht.",
      "begruendung": "Bei zwei Farben schafft reines Raten fünf Treffer in Folge mit einer Wahrscheinlichkeit von rund drei Prozent. Das passiert im Semesterbetrieb ständig irgendwo."
     },
     {
@@ -280,8 +280,8 @@
     },
     {
      "kennung": "d",
-     "text": "Tests am Vormittag zählen nicht, das Licht ist da anders.",
-     "begruendung": "Umgebungslicht ist ein echtes Thema, aber dafür gibt es die Kontrollmessung. Es erklärt nicht, warum fünf Versuche zu wenige sind."
+     "text": "Fünf Treffer zeigen nur, dass die Schwelle gerade passt; entscheidend ist, wie weit der Mittelwert der Messwerte von der Schwelle entfernt liegt.",
+     "begruendung": "Der Abstand zur Schwelle ist eine nützliche Größe, aber ein Mittelwert aus wenigen Messungen ist selbst nur ein Wurf. Der Haken bleibt die kleine Zahl der Versuche, nicht die Lage der Schwelle."
     }
    ]
   },
@@ -296,13 +296,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die Messung sonst technisch nicht funktioniert.",
-     "begruendung": "Der Sensor misst auch ohne Erwartung. Das Problem entsteht später, beim Deuten der Werte."
+     "text": "Weil sich die Sensoreinstellungen nur dann sinnvoll wählen lassen, wenn vorher feststeht, welche Werte herauskommen sollen.",
+     "begruendung": "Die Einstellungen richten sich nach Aufbau und Umgebungslicht, nicht nach dem erhofften Ergebnis. Der Sensor misst mit jeder Einstellung; das Problem entsteht später, beim Deuten der Werte."
     },
     {
      "kennung": "b",
-     "text": "Damit man weniger Messungen braucht.",
-     "begruendung": "Die nötige Zahl der Wiederholungen hängt an der Streuung und am Zufall, nicht an der Erwartung."
+     "text": "Damit man die Reihe abbrechen kann, sobald das erwartete Ergebnis erreicht ist, und keine überflüssigen Wiederholungen macht.",
+     "begruendung": "Genau das wäre die Verzerrung, die vermieden werden soll: Wer aufhört, sobald es passt, sammelt Belege für die eigene Hoffnung. Die Zahl der Wiederholungen wird vorher festgelegt und durchgezogen."
     },
     {
      "kennung": "c",
@@ -311,8 +311,8 @@
     },
     {
      "kennung": "d",
-     "text": "Weil das Messprotokoll sonst unvollständig aussieht.",
-     "begruendung": "Es geht nicht um die Optik des Protokolls, sondern darum, sich selbst nicht zu täuschen."
+     "text": "Weil ein Protokoll ohne notierte Erwartung nicht als Messreihe gilt, sondern nur als Sammlung einzelner Werte.",
+     "begruendung": "Was eine Messreihe ausmacht, sind Wiederholung und festgehaltene Bedingungen, nicht die Erwartung. Die dient nicht der Form, sondern dem Schutz davor, sich selbst zu täuschen."
     }
    ]
   },
@@ -327,8 +327,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass besonders genau gemessen wird.",
-     "begruendung": "Auch eine Einzelmessung kann genau sein. Der Unterschied liegt in Wiederholung und festgehaltenen Bedingungen, nicht in der Sorgfalt des einen Blicks."
+     "text": "Dass mit besonderer Sorgfalt gemessen wird: ruhiger Aufbau, sauber eingestellter Sensor, und jeder Wert wird sofort notiert.",
+     "begruendung": "Sorgfalt gehört dazu, macht aber noch keine Reihe: Auch eine einzelne, sorgfältige Messung bleibt ein Wurf. Der Unterschied liegt in Wiederholung, festgehaltenen Bedingungen und der einen veränderten Größe."
     },
     {
      "kennung": "b",
@@ -337,8 +337,8 @@
     },
     {
      "kennung": "c",
-     "text": "Viele Messungen von möglichst vielen verschiedenen Dingen.",
-     "begruendung": "Viel messen allein ergibt einen Datenhaufen. Ohne gleiche Bedingungen und gezielte Veränderung lässt sich daraus nichts folgern."
+     "text": "Möglichst viele Messungen bei möglichst vielen verschiedenen Einstellungen, damit sich hinterher jeder Zusammenhang aus den Daten ablesen lässt.",
+     "begruendung": "Viel messen allein ergibt einen Datenhaufen. Wenn sich zwischen zwei Werten mehrere Größen zugleich geändert haben, lässt sich hinterher kein Zusammenhang mehr sauber zuordnen; deshalb je Reihe nur eine Größe."
     }
    ]
   },
@@ -375,8 +375,8 @@
     },
     {
      "kennung": "e",
-     "text": "Die höhere Verstärkung trotzdem übernehmen, der Vorschlag klang fundiert.",
-     "begruendung": "'Klang fundiert' ist keine Evidenz. Wer gegen die eigene saubere Messung entscheidet, hat das Messen aufgegeben."
+     "text": "Die höhere Verstärkung trotzdem übernehmen, denn eine einzelne widersprechende Messreihe wiegt weniger als eine gut begründete Empfehlung.",
+     "begruendung": "Die Gewichtung ist verkehrt: Eine Begründung sagt, warum etwas gelten sollte, die saubere Messreihe zeigt, was in eurem Aufbau gilt. Wer gegen die eigene saubere Messung entscheidet, hat das Messen aufgegeben."
     }
    ]
   }

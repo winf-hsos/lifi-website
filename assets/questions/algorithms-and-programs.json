@@ -12,8 +12,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass sie mit einem Computer zu tun hat.",
-     "begruendung": "Ein Algorithmus braucht keinen Computer. Ihr habt ihn von Hand ausgeführt, und er war trotzdem einer."
+     "text": "Dass sie sich auf einen Computer übertragen ließe, denn nur was ein Rechner ausführen könnte, zählt als Algorithmus.",
+     "begruendung": "Ein Algorithmus braucht keinen Computer, nicht einmal als Gedanken. Ihr habt ihn von Hand ausgeführt, und er war trotzdem einer; die Eindeutigkeit der Schritte macht ihn aus, nicht der Ausführende."
     },
     {
      "kennung": "b",
@@ -22,13 +22,13 @@
     },
     {
      "kennung": "c",
-     "text": "Dass sie kurz ist.",
-     "begruendung": "Länge ist egal. Auch tausend Schritte sind ein Algorithmus, solange jeder eindeutig ist."
+     "text": "Dass sie aus wenigen, überschaubaren Schritten besteht, die man sich ohne Aufschreiben merken kann.",
+     "begruendung": "Länge und Merkbarkeit sind egal. Auch tausend Schritte sind ein Algorithmus, solange jeder eindeutig ist; und vier Schritte sind keiner, wenn einer davon Ermessen verlangt."
     },
     {
      "kennung": "d",
-     "text": "Dass sie in einer Programmiersprache geschrieben ist.",
-     "begruendung": "Das wäre erst das Programm. Der Algorithmus kann auf einem Zettel stehen."
+     "text": "Dass sie in einer Programmiersprache aufgeschrieben ist, denn erst die feste Syntax macht aus einer Anleitung einen Algorithmus.",
+     "begruendung": "Das wäre erst das Programm. Der Algorithmus kann auf einem Zettel stehen, in Alltagssprache; entscheidend ist, dass jeder Schritt eindeutig ist, nicht in welcher Sprache er steht."
     }
    ]
   },
@@ -43,13 +43,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein Programm ist die schwierigere Version eines Algorithmus.",
-     "begruendung": "Es geht nicht um Schwierigkeit, sondern um den Adressaten: Mensch oder Maschine."
+     "text": "Ein Programm ist die fortgeschrittene Stufe eines Algorithmus, die erst nötig wird, wenn ein Problem für die Bearbeitung von Hand zu groß ist.",
+     "begruendung": "Es geht nicht um Größe oder Schwierigkeit, sondern um den Adressaten: Mensch oder Maschine. Auch ein winziger Ablauf wird zum Programm, sobald er vollständig genug für eine Maschine aufgeschrieben ist."
     },
     {
      "kennung": "b",
-     "text": "Ein Algorithmus rechnet, ein Programm speichert Daten.",
-     "begruendung": "Beide beschreiben Abläufe. Die Unterscheidung Rechnen gegen Speichern trifft etwas anderes."
+     "text": "Ein Algorithmus beschreibt, wie gerechnet wird; ein Programm legt fest, wie die Daten dafür gespeichert und verwaltet werden.",
+     "begruendung": "Beide beschreiben denselben Ablauf, nur für verschiedene Leser. Die Unterscheidung Rechnen gegen Speichern trifft eine andere Grenze, die zwischen Verarbeitung und Daten, nicht die zwischen Algorithmus und Programm."
     },
     {
      "kennung": "c",
@@ -58,8 +58,8 @@
     },
     {
      "kennung": "d",
-     "text": "Es gibt keinen: Die Wörter bedeuten dasselbe.",
-     "begruendung": "Die Nähe ist echt, der Unterschied auch: Der Kartenlauf war ein Algorithmus, aber noch kein Programm."
+     "text": "Es gibt keinen wesentlichen: Beide sind eindeutige Schrittfolgen, und welches Wort man benutzt, hängt vom Fachgebiet ab.",
+     "begruendung": "Die Nähe ist echt, der Unterschied auch: Der Kartenlauf war ein Algorithmus, aber noch kein Programm, weil ein Mensch beim Ausführen Lücken ergänzt hat, die eine Maschine nicht ergänzen würde."
     }
    ]
   },
@@ -102,13 +102,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die erste Zeile hat einen Fehler, sonst würde Rot leuchten.",
-     "begruendung": "Die Zeile ist korrekt und wird ausgeführt. Das Problem liegt nicht im Code, sondern im Zeitmaßstab."
+     "text": "Die erste Zeile enthält einen Fehler, den die Maschine stillschweigend überspringt; sonst müsste Rot zu sehen sein.",
+     "begruendung": "Die Zeile ist korrekt und wird ausgeführt; eine Maschine überspringt auch nichts stillschweigend, sie bricht bei Fehlern mit einer Meldung ab. Das Problem liegt nicht im Code, sondern im Zeitmaßstab."
     },
     {
      "kennung": "b",
-     "text": "Die zweite Zeile löscht die erste rückwirkend.",
-     "begruendung": "Nichts wird rückwirkend gelöscht. Rot war da, nur eben extrem kurz."
+     "text": "Die zweite Zeile ersetzt die erste, bevor diese ausgeführt wird: Bei zwei gleichen Befehlen gilt nur die letzte Angabe.",
+     "begruendung": "Die Maschine fasst nichts zusammen und lässt nichts aus. Beide Zeilen laufen, in dieser Reihenfolge; Rot war da, nur eben extrem kurz."
     },
     {
      "kennung": "c",
@@ -117,8 +117,8 @@
     },
     {
      "kennung": "d",
-     "text": "Die LED kann nicht so schnell von Rot auf Blau wechseln.",
-     "begruendung": "Doch, die LED schaltet weit schneller als jedes Auge. Der Engpass ist die Wahrnehmung, nicht die Hardware."
+     "text": "Die LED reagiert träge: Bei zwei so schnell folgenden Befehlen kommt nur der letzte an, der erste geht in der Hardware verloren.",
+     "begruendung": "Die LED schaltet weit schneller als jedes Auge, und verloren geht nichts: Sie war rot, dann blau. Der Engpass ist die Wahrnehmung, nicht die Hardware."
     }
    ]
   },
@@ -134,8 +134,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er sagt, welches Ding angesprochen wird.",
-     "begruendung": "Das leistet led vor dem Punkt. Die Klammern kommen erst danach."
+     "text": "Er sagt, welches Bauteil angesprochen wird: Die drei Zahlen kennzeichnen, welche der LEDs am Gerät gemeint ist.",
+     "begruendung": "Welches Ding gemeint ist, sagt led vor dem Punkt. Die Zahlen in der Klammer beschreiben nicht das Bauteil, sondern die Farbe, die es zeigen soll."
     },
     {
      "kennung": "b",
@@ -144,8 +144,8 @@
     },
     {
      "kennung": "c",
-     "text": "Er ist ein Kommentar für Menschen und wird nicht ausgeführt.",
-     "begruendung": "Kommentare sehen anders aus (mit #). Diese Werte bestimmen unmittelbar, was die LED tut."
+     "text": "Er ist eine Notiz für Lesende, die den gewünschten Rotanteil erklärt; ausgeführt wird nur der Teil vor der Klammer.",
+     "begruendung": "Notizen für Menschen sehen anders aus (Kommentare mit #). Diese Werte werden ausgeführt und bestimmen unmittelbar, was die LED zeigt; ohne sie wüsste set_color nicht, welche Farbe gemeint ist."
     }
    ]
   },
@@ -161,13 +161,13 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Das Programm läuft dadurch schneller.",
-     "begruendung": "Auf das Tempo hat ein benannter Wert keinen messbaren Einfluss. Der Gewinn liegt woanders."
+     "text": "Das Programm läuft schneller, weil die Maschine den Wert nur einmal lesen muss statt bei jedem Aufruf neu.",
+     "begruendung": "Auf das Tempo hat ein benannter Wert keinen messbaren Einfluss; eine Zahl lesen kostet die Maschine nichts. Der Gewinn liegt beim Menschen, der das Programm ändert."
     },
     {
      "kennung": "b",
-     "text": "Ohne sie würde die LED gar nicht leuchten.",
-     "begruendung": "Man könnte überall direkt 255 schreiben, und es leuchtete genauso. Der Name ist eine Entscheidung, keine Notwendigkeit."
+     "text": "Ohne sie bliebe die LED dunkel, denn erst diese Zeile schaltet die Helligkeit auf den Höchstwert.",
+     "begruendung": "Die Zeile schaltet nichts, sie gibt nur einer Zahl einen Namen. Man könnte in beiden Aufrufen direkt 255 schreiben, und die LED leuchtete genauso. Der Name ist eine Entscheidung, keine Notwendigkeit."
     },
     {
      "kennung": "c",
@@ -176,7 +176,7 @@
     },
     {
      "kennung": "d",
-     "text": "Namen sind Pflicht: Zahlen dürfen nicht direkt in Klammern stehen.",
+     "text": "Namen sind Pflicht: Eine Anweisung wie set_color nimmt nur benannte Werte an, keine nackten Zahlen in der Klammer.",
      "begruendung": "Zahlen direkt sind erlaubt und oft in Ordnung. Der Name lohnt sich dort, wo derselbe Wert mehrfach vorkommt oder sich ändern soll."
     }
    ]
@@ -291,8 +291,8 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Computer ist abgestürzt; neu starten und noch einmal probieren.",
-     "begruendung": "Nichts ist abgestürzt. Die Maschine hat geordnet gestoppt und präzise gemeldet, woran."
+     "text": "Der Rechner ist abgestürzt; nach einem Neustart läuft das Programm meist wieder, solche Meldungen kommen und gehen.",
+     "begruendung": "Nichts ist abgestürzt, und nach dem Neustart käme dieselbe Meldung wieder, denn der falsche Name steht weiter in Zeile 7. Die Maschine hat geordnet gestoppt und präzise gemeldet, woran."
     },
     {
      "kennung": "b",
@@ -301,13 +301,13 @@
     },
     {
      "kennung": "c",
-     "text": "Das Programm ist zu schwer für den Rechner, es braucht bessere Hardware.",
-     "begruendung": "Mit Leistung hat das nichts zu tun. Es steht ein Name im Code, den es nicht gibt, mehr sagt die Meldung nicht."
+     "text": "Das Programm überfordert den Rechner; die Meldung zeigt, dass er beim Ausführen von Zeile 7 nicht mehr mitgekommen ist.",
+     "begruendung": "Mit Leistung hat das nichts zu tun, drei Zeilen überfordern keinen Rechner. Es steht ein Name im Code, den es nicht gibt, und genau das sagt die Meldung, nicht mehr."
     },
     {
      "kennung": "d",
-     "text": "Solche Meldungen kann man ignorieren, wenn die LED trotzdem irgendwann leuchtet.",
-     "begruendung": "Nach diesem Abbruch leuchtet nichts mehr: Das Programm endet in Zeile 7. Die Meldung ist der schnellste Weg zur Lösung, nicht Lärm."
+     "text": "Die Meldung ist eine Warnung, die man weglesen kann: Das Programm läuft nach Zeile 7 weiter, und die LED leuchtet trotzdem.",
+     "begruendung": "Es ist keine Warnung, sondern ein Abbruch: Das Programm endet in Zeile 7, danach leuchtet nichts mehr. Die Meldung ist der schnellste Weg zur Lösung, nicht Lärm."
     }
    ]
   },
@@ -323,7 +323,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Wenn beide Farben einmal gezeigt wurden.",
+     "text": "Wenn beide Farben einmal gezeigt wurden, denn dann ist der Schleifenkörper vollständig abgearbeitet.",
      "begruendung": "Nach Blau springt die Schleife wieder an ihren Anfang. Ein Durchlauf ist kein Ende."
     },
     {
@@ -338,8 +338,8 @@
     },
     {
      "kennung": "d",
-     "text": "Nach genau 100 Wiederholungen, das ist die eingebaute Obergrenze.",
-     "begruendung": "Es gibt keine eingebaute Obergrenze. Was nicht dasteht, passiert nicht."
+     "text": "Nach einer festen Zahl von Wiederholungen, denn jede Schleife hat eine eingebaute Obergrenze, damit der Rechner nicht hängen bleibt.",
+     "begruendung": "Es gibt keine eingebaute Obergrenze, und die Maschine schützt sich auch nicht selbst vor dem Hängenbleiben. Was nicht dasteht, passiert nicht."
     }
    ]
   },
@@ -354,7 +354,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nur das Halbieren ist ein richtiger Algorithmus.",
+     "text": "Nur das Halbieren verdient den Namen Algorithmus; das Durchfragen ist bloßes Ausprobieren ohne Verfahren.",
      "begruendung": "Beide sind korrekte Algorithmen: eindeutige Schritte, sicheres Ende, richtiges Ergebnis. Sie unterscheiden sich woanders."
     },
     {
@@ -364,12 +364,12 @@
     },
     {
      "kennung": "c",
-     "text": "Bei modernen Computern spielt der Unterschied keine Rolle mehr.",
+     "text": "Bei modernen Computern spielt der Unterschied keine Rolle mehr, weil beide Verfahren ohnehin in Sekundenbruchteilen fertig sind.",
      "begruendung": "Schnelle Rechner verschieben die Grenze, heben sie aber nicht auf: 99 gegen 7 wird bei 1000 Zahlen zu 999 gegen 10. Der Abstand wächst mit dem Problem."
     },
     {
      "kennung": "d",
-     "text": "Das langsame Verfahren ist sicherer und deshalb vorzuziehen.",
+     "text": "Das langsame Verfahren ist sicherer, weil es jede Zahl ausdrücklich prüft, und deshalb vorzuziehen.",
      "begruendung": "Beide sind gleich sicher, sie enden beide garantiert mit der richtigen Zahl. Langsamkeit ist hier kein Sicherheitsgewinn, nur Aufwand."
     }
    ]
@@ -385,7 +385,7 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nach genau einem Durchlauf durch die Reihe.",
+     "text": "Nach genau einem Durchlauf durch die Reihe, denn dann hat jede Person ihren Nachbarn einmal geprüft.",
      "begruendung": "Ein Durchlauf schiebt nur die größte Person ganz nach rechts. Der Rest kann noch durcheinander stehen."
     },
     {
@@ -400,7 +400,7 @@
     },
     {
      "kennung": "d",
-     "text": "Gar nicht: Jemand von außen muss abbrechen.",
+     "text": "Gar nicht von selbst: Wie bei jeder Wiederholung von vorn muss jemand von außen abbrechen, sobald die Reihe stimmt.",
      "begruendung": "Das wäre eine Schleife ohne Ausweg. Diese hier hat einen, und genau das unterscheidet sie von while True ohne Abbruchbedingung."
     }
    ]
@@ -422,8 +422,8 @@
     },
     {
      "kennung": "b",
-     "text": "Eine Sekunde Blau, dann Rot.",
-     "begruendung": "Die Reihenfolge im Programm ist Rot vor Blau. Getauscht wird nur sichtbar, was im Code getauscht wird."
+     "text": "Eine Sekunde Blau, dann Rot: Die Pause hält die zuletzt gesetzte Farbe fest, und die erste Zeile wird danach nachgeholt.",
+     "begruendung": "Nachgeholt wird nichts: Die Maschine führt jede Zeile genau einmal aus, in der Reihenfolge Rot vor Blau, und nach der letzten Zeile ist Schluss. Die LED bleibt blau."
     },
     {
      "kennung": "c",

@@ -1,0 +1,191 @@
+{
+ "konzept": "information-and-carrier",
+ "fragen": [
+  {
+   "id": "ic-001",
+   "niveau": "verstehen",
+   "frage": "Ihr öffnet eine kleine Bilddatei in einem Texteditor. Statt eines Bildes\nerscheint eine Seite voller Unsinnszeichen. Was zeigt das?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Dass die Datei beschädigt ist, denn eine intakte Bilddatei würde auch im Texteditor als Bild erscheinen.",
+     "begruendung": "Die Datei ist in Ordnung; der Bildbetrachter zeigt sie danach unverändert an. Der Texteditor liest dieselben Bytes nur als Zeichen, und als Zeichen ergeben sie keinen Sinn."
+    },
+    {
+     "kennung": "b",
+     "text": "Dass die Bytes selbst nicht sagen, was sie bedeuten; der Editor liest sie als Zeichen, der Bildbetrachter als Bildpunkte.",
+     "begruendung": "Genau. Dieselben zweitausend Bytes sind ein Bild, ein Text oder Krach, je nachdem, wie man sie liest. Die Bedeutung steckt nicht in den Bytes, sondern in der Lesevorschrift, und die muss jemand dazusagen."
+    },
+    {
+     "kennung": "c",
+     "text": "Dass Bilder und Texte auf der Festplatte in verschiedenen Bereichen liegen und der Editor im falschen Bereich sucht.",
+     "begruendung": "Es gibt keine getrennten Bereiche; jede Datei ist eine Folge von Bytes, und der Editor hat genau diese Folge gefunden und gezeigt. Er hat sie nur anders gelesen als der Bildbetrachter."
+    },
+    {
+     "kennung": "d",
+     "text": "Dass der Texteditor die Bildbytes zuerst in Zeichen umrechnet und dabei die Bildinformation verloren geht.",
+     "begruendung": "Umgerechnet und verloren wird nichts; die Datei bleibt, wie sie ist. Der Editor zeigt jedes Byte als das Zeichen mit dieser Nummer. Die Bildinformation ist noch da, nur nicht als Bild lesbar."
+    }
+   ]
+  },
+  {
+   "id": "ic-002",
+   "niveau": "anwenden",
+   "frage": "Ihr benennt die Datei bild.png in bild.txt um. Was ändert sich an den\nBytes der Datei, und was ändert sich sonst?",
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "An den Bytes nichts; nur das System schlägt jetzt ein anderes Programm zum Öffnen vor, weil die Endung eine Lesevorschrift neben der Datei ist.",
+     "begruendung": "Genau. Die Endung steht nicht in der Datei, sondern in ihrem Namen. Sie sagt dem System, wie die Bytes zu lesen sind, so wie das Typfeld im Rahmen es dem Empfänger sagt. Ändert man sie, ändert sich die Deutung, nicht der Inhalt."
+    },
+    {
+     "kennung": "b",
+     "text": "Die Bytes werden beim Umbenennen in Textzeichen umgewandelt, deshalb lässt sich die Datei danach als Text lesen.",
+     "begruendung": "Umbenennen fasst den Inhalt nicht an; die Datei ist danach byteweise dieselbe. Dass ein Editor sie öffnet, heißt nicht, dass sie Text geworden ist, es erscheint derselbe Unsinn wie zuvor."
+    },
+    {
+     "kennung": "c",
+     "text": "Die Bytes bleiben gleich, aber das Bild ist verloren, denn ohne die Endung .png weiß kein Programm mehr, dass es ein Bild war.",
+     "begruendung": "Verloren ist nichts: Wer die Datei wieder umbenennt oder sie gezielt mit dem Bildbetrachter öffnet, sieht das Bild. Die Endung ist eine Empfehlung, keine Eigenschaft der Bytes."
+    },
+    {
+     "kennung": "d",
+     "text": "Das System schreibt beim Umbenennen die ersten Bytes neu, damit sie zum neuen Typ passen, der Rest bleibt gleich.",
+     "begruendung": "Das System kennt den Inhalt nicht und rührt ihn nicht an. Die Kennbytes am Anfang einer PNG-Datei bleiben stehen; sie widersprechen dann der Endung, und genau daran könnte ein Programm den Widerspruch bemerken."
+    }
+   ]
+  },
+  {
+   "id": "ic-003",
+   "niveau": "erinnern",
+   "frage": "Wie hängen Information und ihr physikalischer Träger zusammen?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Information ist der Träger: Ein Bit ist die Spannung auf der Leitung oder das Licht in der Luft, nichts darüber hinaus.",
+     "begruendung": "Dann könnte dasselbe Bit nicht gleichzeitig als Spannung, als Lichtimpuls und als Magnetisierung existieren, und dieselbe Datei nicht über Kabel und Funk ankommen. Das Bit ist das, was allen diesen Trägern gemeinsam ist."
+    },
+    {
+     "kennung": "b",
+     "text": "Information braucht keinen Träger; sie existiert unabhängig davon, ob sie irgendwo gespeichert oder gesendet wird.",
+     "begruendung": "Ohne Träger ist Information nirgends. Jedes Bit, das ihr sendet, ist in diesem Moment Licht, und jedes gespeicherte ist Ladung oder Magnetisierung. Unabhängig ist sie nur davon, welcher Träger es ist."
+    },
+    {
+     "kennung": "c",
+     "text": "Information braucht immer einen Träger, ist aber nicht mit ihm identisch; derselbe Bitstrom kann über Licht, Kabel oder Ton laufen.",
+     "begruendung": "Genau. Etwas Physikalisches muss die Bits tragen, aber welches, ist austauschbar, solange die Schichten darüber nur Bits sehen. Deshalb kommt dieselbe Webseite über WLAN, Glasfaser und Mobilfunk an."
+    },
+    {
+     "kennung": "d",
+     "text": "Information ist an ihren ersten Träger gebunden; wird sie umkopiert, entsteht eine Kopie, die etwas weniger enthält als das Original.",
+     "begruendung": "Das gilt für analoge Kopien, nicht für Bits. Eine digitale Kopie ist bitgenau dasselbe, und genau das macht ihr im Finale mit dem Hash sichtbar: Dieselben Bytes auf einem anderen Rechner sind nicht weniger, sie sind identisch."
+    }
+   ]
+  },
+  {
+   "id": "ic-004",
+   "niveau": "anwenden",
+   "frage": "Ein Team ersetzt in Challenge 4 die LED durch den Lautsprecher und den\nFarbsensor durch das Mikrofon. Der Rahmencode bleibt unverändert, und die\nDatei kommt mit demselben Hash an. Was hat das Team damit gezeigt?",
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Dass Ton der bessere Träger ist, denn er hat dieselbe Datei ohne Änderung am restlichen Code übertragen.",
+     "begruendung": "Über besser oder schlechter sagt der Versuch nichts; das würde erst ein Vergleich von Tempo und Fehlerrate zeigen. Gezeigt ist etwas anderes: dass es auf den Träger gar nicht ankam."
+    },
+    {
+     "kennung": "b",
+     "text": "Dass die Information nicht am Licht hängt, sondern an den Bits und ihrer Deutung; der Träger war nur ihr Fahrzeug.",
+     "begruendung": "Genau. Derselbe Rahmen, dieselben Bytes, derselbe Hash, nur der Träger ist ein anderer. Was gleich blieb, ist die Information; was wechselte, war nur ihr Fahrzeug. Und die Probe prüft sich selbst: Wer Licht und Rahmen im Code vermischt hätte, hätte den Tausch nicht geschafft."
+    },
+    {
+     "kennung": "c",
+     "text": "Dass der Hash unabhängig vom Übertragungsweg berechnet wird und deshalb auch bei einem anderen Träger gleich bleibt.",
+     "begruendung": "Das stimmt, beantwortet aber nicht die Frage. Der Hash ist nur das Messinstrument, das zeigt, dass dieselben Bytes angekommen sind. Die Erkenntnis ist, was das über die Information sagt: Sie hing nie am Licht."
+    },
+    {
+     "kennung": "d",
+     "text": "Dass Licht als Träger überflüssig war und die Klasse den Rahmen von Anfang an für Ton hätte auslegen können.",
+     "begruendung": "Der Rahmen ist für keinen Träger ausgelegt, und genau das ist der Punkt: Er ist in Bits definiert und weiß nichts von Licht oder Ton. Deshalb konnte er beides. Ein Rahmen 'für Ton' wäre derselbe Fehler in die andere Richtung."
+    }
+   ]
+  },
+  {
+   "id": "ic-005",
+   "niveau": "verstehen",
+   "frage": "Wenn Licht, Kabel und Ton austauschbar sind: Was genau ist dann die\nInformation, die von einem Rechner zum anderen gelangt?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Das physikalische Signal, das gerade unterwegs ist; ohne Licht oder Ton ist nichts da, was ankommen könnte.",
+     "begruendung": "Das Signal ist der Träger, und der ist austauschbar; die Frage fragt nach dem, was beim Tausch gleich bleibt. Das Licht kommt nicht auf dem anderen Rechner an, die Bits schon."
+    },
+    {
+     "kennung": "b",
+     "text": "Der Dateiname mit seiner Endung, denn er sagt dem Empfänger, was er bekommen hat und wie er es öffnen soll.",
+     "begruendung": "Der Name ist ein Etikett neben der Information, nicht die Information; die Bytes bleiben dieselben, wenn man ihn ändert. Ohne die Bytes wäre der Name ein Etikett an nichts."
+    },
+    {
+     "kennung": "c",
+     "text": "Das Muster, also die Bitfolge, zusammen mit der Vereinbarung, wie sie zu lesen ist; beides bleibt gleich, egal was es trägt.",
+     "begruendung": "Genau. Was über den Tausch hinweg erhalten bleibt, ist die Anordnung der Zustände und die Absprache über ihre Bedeutung: Codierung, Rahmen, Typfeld. Nehmt eines davon weg, und aus den Bytes wird Krach; nehmt den Träger weg und setzt einen anderen ein, und nichts fehlt."
+    },
+    {
+     "kennung": "d",
+     "text": "Das Programm, das die Datei erzeugt hat, denn nur damit lässt sich der Inhalt auf dem anderen Rechner wiederherstellen.",
+     "begruendung": "Das erzeugende Programm reist nicht mit, und der Empfänger braucht es auch nicht; ein beliebiger Bildbetrachter genügt, wenn er die Lesevorschrift kennt. Die Information hängt an der Vereinbarung, nicht an einem bestimmten Programm."
+    }
+   ]
+  },
+  {
+   "id": "ic-006",
+   "niveau": "verstehen",
+   "frage": "Der Klassenstandard hat ein Typfeld im Kopf des Rahmens. Ein Team fragt:\n'Kann der Empfänger den Dateityp nicht einfach an den Bytes selbst\nerkennen?' Was ist die beste Antwort?",
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": "Doch, jede Datei beginnt mit Bytes, die ihren Typ nennen; das Typfeld ist nur eine Abkürzung, damit der Empfänger nicht nachsehen muss.",
+     "begruendung": "Manche Formate haben solche Kennbytes, PNG etwa. Eine Textdatei hat keine: Sie beginnt mit ihrem ersten Buchstaben, und Binärdaten mit irgendetwas. Am Inhalt lässt sich der Typ nicht zuverlässig ablesen."
+    },
+    {
+     "kennung": "b",
+     "text": "Nein, denn die Bytes werden beim Senden verschlüsselt und komprimiert, und danach ist der Typ nicht mehr erkennbar.",
+     "begruendung": "Verschlüsseln und Komprimieren sind Zusatzaufgaben, nicht der Grund. Auch eine unveränderte Textdatei verrät ihren Typ nicht; die Bytes 72, 73 sind 'HI' oder zwei Helligkeitswerte, je nach Lesart."
+    },
+    {
+     "kennung": "c",
+     "text": "Nein, denn dieselben Bytes können Bild, Text oder Krach sein; der Typ steht nicht in den Daten, sondern muss dazugesagt werden.",
+     "begruendung": "Genau. Daten allein bedeuten nichts; die Bedeutung ist eine Vereinbarung, und das Typfeld überträgt sie mit. Dateiendungen und die Typangaben im Internet lösen dasselbe Problem auf dieselbe Weise: ein Etikett neben den Daten."
+    },
+    {
+     "kennung": "d",
+     "text": "Doch, aber nur bei Bildern; deshalb steht das Typfeld nur für Textdateien im Rahmen und bleibt bei Bildern leer.",
+     "begruendung": "Das Typfeld ist für jede Datei gefüllt, das ist der Sinn eines Standards. Und selbst bei Bildern wäre Raten riskant: Ein zufälliger Bytestrom kann mit denselben Kennbytes beginnen wie eine PNG-Datei."
+    }
+   ]
+  }
+ ]
+}
