@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>cutting problems</title>
+  <link rel="stylesheet" href="theme.css?v=10">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=10">
+  <style>
+    /* deck-specific helpers, colours only from the theme */
+    .caption { position: absolute; left: var(--margin); bottom: calc(var(--margin) * 1.05); font-size: var(--small); color: var(--gray); }
+    .slide.has-punch .caption { bottom: calc(var(--margin) * 1.75); }
+  </style>
+</head>
+<body>
+<div class="deck" data-title="cutting problems"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["you can already do this", "this semester&apos;s elephant", "three ways to cut", "a good cut is testable", "cuts are agreements"]'>
+
+  <section class="slide title"></section>
+  <section class="slide agenda"></section>
+
+  <!-- ===== part 1: you can already do this ===== -->
+  <section class="slide part" data-part="you can already do this">
+    <aside class="notes">Willkommen im Modul. Der erste Input handelt von der einzigen Fähigkeit, die durch alle vierzehn Sitzungen läuft, und ihr bringt sie schon mit.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/elephant.png" alt="">
+    <div class="photo-text">how do you eat<br>an elephant?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Ein Bissen nach dem anderen. Der Spruch ist alt, aber er trägt: Niemand isst einen Elefanten am Stück, und niemand löst ein großes Problem am Stück. Große Probleme werden nicht gelöst, sie werden geschnitten, so lange, bis die Teile lösbar sind.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawParty" data-on-step="drawParty">
+    <h2>you plan like this without thinking</h2>
+    <div class="figure" id="fig-party"></div>
+    <span data-step="1"></span>
+    <aside class="notes">Eure Mitbewohnerin wird 25, Party am Samstag, 30 Gäste. Schritt 1: Niemand plant „Party“ als ein Ding. Ihr schneidet sofort: Getränke, Essen, Musik, Einladungen, Aufräumen, und ihr verteilt die Teile. Das ist Zerlegung, ihr könnt sie längst, ihr habt sie nur nie so genannt. Nebenbei sind die Teile so geschnitten, dass man einzeln nachfragen kann, ob sie erledigt sind. Darauf kommen wir zurück.</aside>
+  </section>
+
+  <!-- ===== part 2: this semester's elephant ===== -->
+  <section class="slide part" data-part="this semester&apos;s elephant">
+    <aside class="notes">Und jetzt der Elefant, an dem ihr dieses Semester sitzt.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">transfer a file from one laptop<br>to another, using light.</div>
+    </div>
+    <aside class="notes">Das ist die Aufgabe des Semesters, in einem Satz. So, als ein Stück, kann das niemand lösen: kein Profi, keine KI, ihr auch nicht. Das ist keine Drohung, sondern der Normalzustand. Interessante Probleme sind am Anfang immer zu groß.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawCut" data-on-step="drawCut">
+    <h2>the same problem, cut</h2>
+    <div class="figure" id="fig-cut"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <aside class="notes">Schritt 1: Dasselbe Problem, geschnitten, sind vier Teile. Farben auseinanderhalten, Buchstaben in Farben übersetzen, Anfang und Ende finden, eine ganze Datei übertragen. Jedes Teil ist lösbar, von euch, in zwei bis drei Wochen. Schritt 2: Und jetzt der Punkt: Euer Semesterplan ist genau diese Zerlegung. Die vier Teile heißen Challenge 1 bis 4. Dieses Semester ist nicht zufällig so gebaut.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>one question, four questions</h2>
+    <div class="figure" id="fig-map"></div>
+    <aside class="notes">Hinter der Zerlegung in vier Challenges steckt die Karte des ganzen Moduls. Die große Frage lautet: Wie lösen wir komplexe Probleme mit Computern? Darunter stehen die Fähigkeiten, mit denen wir das angehen, und darunter vier Fragen über Information: darstellen, speichern, übertragen, verarbeiten. Alle vier gehen euch an. Unter jeder Frage stehen ihre wichtigsten Konzepte: Signal und Rauschen, Takt, Protokolle beim Übertragen; darstellen, speichern und verarbeiten daneben. Die Lichtstrecke ist das Übertragen, aber ihr stellt auch Farben als Symbole dar, ihr speichert eine Datei, ihr verarbeitet sie mit einer Prüfsumme. Jede Sitzung arbeitet an einer der vier Fragen; auf der Website hängt dieselbe Karte über allen Konzepten.</aside>
+  </section>
+
+  <!-- ===== part 3: three ways to cut ===== -->
+  <section class="slide part" data-part="three ways to cut">
+    <aside class="notes">Schneiden kann man auf viele Arten. Drei davon werdet ihr ständig brauchen.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawHalve" data-on-step="drawHalve">
+    <h2>divide &amp; conquer: halve until it's easy</h2>
+    <div class="figure" id="fig-halve"></div>
+    <div class="caption" id="halve-caption"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span><span data-step="5"></span><span data-step="6"></span><span data-step="7"></span>
+    <div class="punch" data-step="7">how many steps in general?</div>
+    <aside class="notes">Live-Moment vorher: Ich denke mir eine Zahl zwischen 1 und 100, der Saal darf nur Ja/Nein-Fragen stellen. Erst raten lassen, dann die Folie. Jede Antwort halbiert den Bereich, in dem die Zahl noch stecken kann: 100 Zahlen, 50, 25, 12, 6, 3, 2, gefunden. Sieben Fragen genügen immer, egal welche Zahl ich mir denke. Die Strategie heißt Divide and Conquer und funktioniert überall dort, wo man nach jedem Schnitt eine Hälfte ausschließen kann. Die gelbe Frage lasse ich offen; sie ist der Ausblick auf Sitzung 6: Jede Ja/Nein-Frage ist ein Bit.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawDebug" data-on-step="drawDebug">
+    <h2>the same trick when something breaks</h2>
+    <div class="figure" id="fig-debug"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <aside class="notes">WLAN tot. Wie geht ihr vor? Router-Lämpchen angucken, Handy-Hotspot probieren, anderes Gerät testen. Schritt 1: Ihr testet instinktiv in der Mitte der Kette, denn jeder Test halbiert die Zahl der Verdächtigen. Geht der Hotspot, liegt es nicht am Laptop, und die halbe Kette ist erledigt. Schritt 2: Im Projekt heißt eure Kette Sender, LED, Luft, Sensor, Empfänger, und ihr werdet sie oft entlanglaufen, wenn nichts ankommt. Leuchtet die LED überhaupt? Sieht der Sensor eine Taschenlampe? Wer grob zerlegt hat, weiß nur, dass etwas kaputt ist. Wer gut zerlegt hat, weiß wo.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>start smaller: solve an easier version first</h2>
+    <div class="figure" id="fig-stairs"></div>
+    <aside class="notes">Wenn das Problem zu groß ist, löst erst eine kleinere Fassung, die ihr wirklich könnt, und wachst von dort: erst Licht an und aus, dann zwei Farben, dann ein Zeichen, dann ein Wort, am Ende eine ganze Datei. Die Treppe ist euer Semester, die Stufen sind die Challenges 0 bis 4. Auf der untersten steht ihr heute.</aside>
+  </section>
+
+  <!-- ===== part 4: a good cut is testable ===== -->
+  <section class="slide part" data-part="a good cut is testable">
+    <aside class="notes">Schneiden allein genügt nicht. Nicht jeder Schnitt ist gleich gut.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawExam" data-on-step="drawExam">
+    <h2>which one are you actually preparing?</h2>
+    <div class="figure" id="fig-exam"></div>
+    <span data-step="1"></span>
+    <aside class="notes">Beide Sätze klingen nach Klausurvorbereitung. Schritt 1: Der Unterschied ist der Test. Beim ersten wisst ihr nie, ob ihr fertig seid. Das zweite könnt ihr heute Abend ausprobieren und bekommt ein Ja oder Nein. Ein gutes Teil ist eines mit eingebautem Test.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawProject" data-on-step="drawProject">
+    <h2>the same, in this project</h2>
+    <div class="figure" id="fig-project"></div>
+    <span data-step="1"></span>
+    <aside class="notes">Dasselbe im Projekt. „Die LED funktioniert“ ist ein Gefühl. Schritt 1: „Rot oder Blau, 50-mal in Folge richtig erkannt“ ist ein Messwert. Genau so sind alle Challenges formuliert, und genau so laufen die Abnahmen: Es gibt immer einen Test, der Ja oder Nein sagt.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">done means: the test passes.</div>
+    </div>
+    <aside class="notes">Fertig heißt nicht „sieht gut aus“. Fertig heißt: Der Test läuft durch. Jede Aufgabe in diesem Modul endet mit einem Prüfschritt, den ihr selbst ausführen könnt, ohne auf mich zu warten.</aside>
+  </section>
+
+  <!-- ===== part 5: cuts are agreements ===== -->
+  <section class="slide part" data-part="cuts are agreements">
+    <aside class="notes">Ein Schnitt trennt nicht nur Arbeit, er erzeugt eine Grenze. Und über Grenzen muss man reden.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>where you cut decides how much you must talk</h2>
+    <div class="figure" id="fig-agree"></div>
+    <aside class="notes">Zurück zur Party. „Du machst die Vorspeise, ich den Nachtisch“ funktioniert. „Wir machen beide irgendwie das Essen“ wird Chaos. Teile funktionieren, wenn die Grenze klar ist. Im Zweierteam gilt dasselbe: eine Person je Ende der Strecke, und was die Grenze überquert, etwa welche Farbe welches Zeichen bedeutet, wird aufgeschrieben. Wie ernst das wird, merkt ihr in Challenge 3, wenn ein fremdes Team eure Absprache lesen und umsetzen muss.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawMachine" data-on-step="drawMachine">
+    <h2>and this is how you talk to the <span class="keep-case">AI</span> assistant</h2>
+    <div class="figure" id="fig-machine"></div>
+    <span data-step="1"></span>
+    <div class="punch">you cut. the assistant solves pieces. you check.</div>
+    <aside class="notes">Zwei Arten, den Assistenten zu beauftragen. Der große Wunsch: Der Agent kann ihn nicht gut erfüllen, und ihr könntet das Ergebnis nicht einmal prüfen. Schritt 1: Der kleine Auftrag dagegen sagt genau, was herauskommen soll, und nennt den Test gleich mit: Sensor zuhalten, dann muss der Mittelwert unter 10 bleiben; rote LED an, dann über 100. Das könnt ihr in zehn Sekunden nachprüfen, ohne dem Assistenten glauben zu müssen. Zerlegen ist die Fähigkeit, die euch von „ich hoffe, die KI hat recht“ zu „ich habe es geprüft“ bringt. Deshalb steht sie in den vier Zielen dieses Moduls, und deshalb ist sie der erste Input des Semesters.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/elephant.png" alt="">
+    <div class="photo-text">one bite<br>at a time.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Rückblick in einem Satz: Ihr könnt das schon, ihr habt heute drei Schnittmuster dazubekommen, und ihr wisst jetzt, woran man einen guten Schnitt erkennt, nämlich am eingebauten Test. Nächste Woche schauen wir uns an, wie ein geschnittenes Teil aussehen muss, damit ein Computer es lösen kann.</aside>
+  </section>
+
+</div>
+<script src="../stagekit/draw.js?v=10"></script>
+<script src="deck.js?v=10"></script>
+<script src="../stagekit/stagekit.js?v=10"></script>
+</body>
+</html>

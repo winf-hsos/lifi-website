@@ -4,7 +4,10 @@
   {
    "id": "aa-001",
    "niveau": "verstehen",
-   "frage": "Im Farbkarten-Experiment habt ihr empfangen: auf die Karte schauen, Farbe\nentscheiden, Zeichen notieren, warten. Was macht diese Anleitung zu einem\nAlgorithmus?",
+   "frage": {
+    "de": "Im Farbkarten-Experiment habt ihr empfangen: auf die Karte schauen, Farbe\nentscheiden, Zeichen notieren, warten. Was macht diese Anleitung zu einem\nAlgorithmus?",
+    "en": "In the colour-card experiment you received: look at the card, decide the colour,\nwrite the symbol, wait. What makes these instructions an algorithm?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass sie sich auf einen Computer übertragen ließe, denn nur was ein Rechner ausführen könnte, zählt als Algorithmus.",
-     "begruendung": "Ein Algorithmus braucht keinen Computer, nicht einmal als Gedanken. Ihr habt ihn von Hand ausgeführt, und er war trotzdem einer; die Eindeutigkeit der Schritte macht ihn aus, nicht der Ausführende."
+     "text": {
+      "de": "Dass sie sich auf einen Computer übertragen ließe, denn nur was ein Rechner ausführen könnte, zählt als Algorithmus.",
+      "en": "That it could be transferred to a computer, since only what a machine could execute counts as an algorithm."
+     },
+     "begruendung": {
+      "de": "Ein Algorithmus braucht keinen Computer, nicht einmal als Gedanken. Ihr habt ihn von Hand ausgeführt, und er war trotzdem einer; die Eindeutigkeit der Schritte macht ihn aus, nicht der Ausführende.",
+      "en": "An algorithm needs no computer, not even hypothetically. You executed it by hand, and it was one all the same; what makes it an algorithm is the unambiguity of the steps, not who executes them."
+     }
     },
     {
      "kennung": "b",
-     "text": "Dass die Schritte so genau beschrieben sind, dass man sie ausführen kann, ohne zu verstehen, worum es geht.",
-     "begruendung": "Genau die Definition: eine eindeutige Schrittfolge, bei der keine Frage offen bleibt. Ihr wart die Maschine."
+     "text": {
+      "de": "Dass die Schritte so genau beschrieben sind, dass man sie ausführen kann, ohne zu verstehen, worum es geht.",
+      "en": "That the steps are described so precisely that you can execute them without understanding what it is about."
+     },
+     "begruendung": {
+      "de": "Genau die Definition: eine eindeutige Schrittfolge, bei der keine Frage offen bleibt. Ihr wart die Maschine.",
+      "en": "Exactly the definition: an unambiguous sequence of steps leaving no question open. You were the machine."
+     }
     },
     {
      "kennung": "c",
-     "text": "Dass sie aus wenigen, überschaubaren Schritten besteht, die man sich ohne Aufschreiben merken kann.",
-     "begruendung": "Länge und Merkbarkeit sind egal. Auch tausend Schritte sind ein Algorithmus, solange jeder eindeutig ist; und vier Schritte sind keiner, wenn einer davon Ermessen verlangt."
+     "text": {
+      "de": "Dass sie aus wenigen, überschaubaren Schritten besteht, die man sich ohne Aufschreiben merken kann.",
+      "en": "That it consists of a few manageable steps that you can remember without writing them down."
+     },
+     "begruendung": {
+      "de": "Länge und Merkbarkeit sind egal. Auch tausend Schritte sind ein Algorithmus, solange jeder eindeutig ist; und vier Schritte sind keiner, wenn einer davon Ermessen verlangt.",
+      "en": "Length and memorability do not matter. A thousand steps are still an algorithm as long as each is unambiguous; and four steps are not one if any of them requires judgement."
+     }
     },
     {
      "kennung": "d",
-     "text": "Dass sie in einer Programmiersprache aufgeschrieben ist, denn erst die feste Syntax macht aus einer Anleitung einen Algorithmus.",
-     "begruendung": "Das wäre erst das Programm. Der Algorithmus kann auf einem Zettel stehen, in Alltagssprache; entscheidend ist, dass jeder Schritt eindeutig ist, nicht in welcher Sprache er steht."
+     "text": {
+      "de": "Dass sie in einer Programmiersprache aufgeschrieben ist, denn erst die feste Syntax macht aus einer Anleitung einen Algorithmus.",
+      "en": "That it is written in a programming language, since only the fixed syntax turns instructions into an algorithm."
+     },
+     "begruendung": {
+      "de": "Das wäre erst das Programm. Der Algorithmus kann auf einem Zettel stehen, in Alltagssprache; entscheidend ist, dass jeder Schritt eindeutig ist, nicht in welcher Sprache er steht.",
+      "en": "That would be the program. The algorithm can live on a piece of paper, in everyday language; what matters is that each step is unambiguous, not which language it is written in."
+     }
     }
    ]
   },
   {
    "id": "aa-002",
    "niveau": "verstehen",
-   "frage": "Worin liegt der Unterschied zwischen einem Algorithmus und einem Programm?",
+   "frage": {
+    "de": "Worin liegt der Unterschied zwischen einem Algorithmus und einem Programm?",
+    "en": "What is the difference between an algorithm and a program?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein Programm ist die fortgeschrittene Stufe eines Algorithmus, die erst nötig wird, wenn ein Problem für die Bearbeitung von Hand zu groß ist.",
-     "begruendung": "Es geht nicht um Größe oder Schwierigkeit, sondern um den Adressaten: Mensch oder Maschine. Auch ein winziger Ablauf wird zum Programm, sobald er vollständig genug für eine Maschine aufgeschrieben ist."
+     "text": {
+      "de": "Ein Programm ist die fortgeschrittene Stufe eines Algorithmus, die erst nötig wird, wenn ein Problem für die Bearbeitung von Hand zu groß ist.",
+      "en": "A program is the advanced stage of an algorithm, needed only once a problem becomes too large to handle by hand."
+     },
+     "begruendung": {
+      "de": "Es geht nicht um Größe oder Schwierigkeit, sondern um den Adressaten: Mensch oder Maschine. Auch ein winziger Ablauf wird zum Programm, sobald er vollständig genug für eine Maschine aufgeschrieben ist.",
+      "en": "It is not about size or difficulty but about the addressee: human or machine. Even a tiny procedure becomes a program as soon as it is written completely enough for a machine."
+     }
     },
     {
      "kennung": "b",
-     "text": "Ein Algorithmus beschreibt, wie gerechnet wird; ein Programm legt fest, wie die Daten dafür gespeichert und verwaltet werden.",
-     "begruendung": "Beide beschreiben denselben Ablauf, nur für verschiedene Leser. Die Unterscheidung Rechnen gegen Speichern trifft eine andere Grenze, die zwischen Verarbeitung und Daten, nicht die zwischen Algorithmus und Programm."
+     "text": {
+      "de": "Ein Algorithmus beschreibt, wie gerechnet wird; ein Programm legt fest, wie die Daten dafür gespeichert und verwaltet werden.",
+      "en": "An algorithm describes how to compute; a program defines how the data for it is stored and managed."
+     },
+     "begruendung": {
+      "de": "Beide beschreiben denselben Ablauf, nur für verschiedene Leser. Die Unterscheidung Rechnen gegen Speichern trifft eine andere Grenze, die zwischen Verarbeitung und Daten, nicht die zwischen Algorithmus und Programm.",
+      "en": "Both describe the same procedure, just for different readers. Computing versus storing is a different boundary, the one between processing and data, not the one between algorithm and program."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein Programm ist derselbe Ablauf, aber so vollständig aufgeschrieben, dass eine Maschine ihn ausführen kann.",
-     "begruendung": "Genau: Ein Mensch ergänzt beim Lesen, was offensichtlich gemeint war. Eine Maschine tut das nicht, deshalb muss das Programm vollständig sein."
+     "text": {
+      "de": "Ein Programm ist derselbe Ablauf, aber so vollständig aufgeschrieben, dass eine Maschine ihn ausführen kann.",
+      "en": "A program is the same procedure, but written down so completely that a machine can execute it."
+     },
+     "begruendung": {
+      "de": "Genau: Ein Mensch ergänzt beim Lesen, was offensichtlich gemeint war. Eine Maschine tut das nicht, deshalb muss das Programm vollständig sein.",
+      "en": "Exactly: a human fills in what was obviously meant. A machine does not, which is why the program must be complete."
+     }
     },
     {
      "kennung": "d",
-     "text": "Es gibt keinen wesentlichen: Beide sind eindeutige Schrittfolgen, und welches Wort man benutzt, hängt vom Fachgebiet ab.",
-     "begruendung": "Die Nähe ist echt, der Unterschied auch: Der Kartenlauf war ein Algorithmus, aber noch kein Programm, weil ein Mensch beim Ausführen Lücken ergänzt hat, die eine Maschine nicht ergänzen würde."
+     "text": {
+      "de": "Es gibt keinen wesentlichen: Beide sind eindeutige Schrittfolgen, und welches Wort man benutzt, hängt vom Fachgebiet ab.",
+      "en": "There is no essential one: both are unambiguous sequences of steps, and which word you use depends on the field."
+     },
+     "begruendung": {
+      "de": "Die Nähe ist echt, der Unterschied auch: Der Kartenlauf war ein Algorithmus, aber noch kein Programm, weil ein Mensch beim Ausführen Lücken ergänzt hat, die eine Maschine nicht ergänzen würde.",
+      "en": "They are close, but the difference is real: the card procedure was an algorithm, yet not a program, because a human filled in gaps while executing it that a machine would not fill."
+     }
     }
    ]
   },
   {
    "id": "aa-003",
    "niveau": "anwenden",
-   "frage": "Was seht ihr an der LED, wenn dieses Programm läuft?",
+   "frage": {
+    "de": "Was seht ihr an der LED, wenn dieses Programm läuft?",
+    "en": "What do you see on the LED when this program runs?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -75,25 +132,46 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Eine Sekunde Rot, danach Blau.",
-     "begruendung": "Richtig: Zeile für Zeile, von oben nach unten. Rot, eine Sekunde warten, Blau."
+     "text": {
+      "de": "Eine Sekunde Rot, danach Blau.",
+      "en": "One second of red, then blue."
+     },
+     "begruendung": {
+      "de": "Richtig: Zeile für Zeile, von oben nach unten. Rot, eine Sekunde warten, Blau.",
+      "en": "Correct: line by line, top to bottom. Red, wait one second, blue."
+     }
     },
     {
      "kennung": "b",
-     "text": "Rot und Blau gleichzeitig, also Violett.",
-     "begruendung": "Ein Programm läuft nacheinander, nicht gleichzeitig. Die zweite Farbe ersetzt die erste."
+     "text": {
+      "de": "Rot und Blau gleichzeitig, also Violett.",
+      "en": "Red and blue at once, so violet."
+     },
+     "begruendung": {
+      "de": "Ein Programm läuft nacheinander, nicht gleichzeitig. Die zweite Farbe ersetzt die erste.",
+      "en": "A program runs sequentially, not simultaneously. The second colour replaces the first."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nur Blau, die erste Zeile wird übersprungen.",
-     "begruendung": "Übersprungen wird nichts: Rot leuchtet wirklich, und dank wait(1) lange genug, um es zu sehen."
+     "text": {
+      "de": "Nur Blau, die erste Zeile wird übersprungen.",
+      "en": "Only blue, the first line is skipped."
+     },
+     "begruendung": {
+      "de": "Übersprungen wird nichts: Rot leuchtet wirklich, und dank wait(1) lange genug, um es zu sehen.",
+      "en": "Nothing is skipped: red really shows, and thanks to wait(1) long enough to see it."
+     }
     }
    ]
   },
   {
    "id": "aa-004",
    "niveau": "anwenden",
-   "frage": "Ein Team wundert sich: \"Die LED wird nie rot, dabei steht es doch da!\"\nWas ist los?",
+   "frage": {
+    "de": "Ein Team wundert sich: \"Die LED wird nie rot, dabei steht es doch da!\"\nWas ist los?",
+    "en": "A team is puzzled: \"The LED never turns red, but the line is right there!\"\nWhat is going on?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -102,30 +180,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die erste Zeile enthält einen Fehler, den die Maschine stillschweigend überspringt; sonst müsste Rot zu sehen sein.",
-     "begruendung": "Die Zeile ist korrekt und wird ausgeführt; eine Maschine überspringt auch nichts stillschweigend, sie bricht bei Fehlern mit einer Meldung ab. Das Problem liegt nicht im Code, sondern im Zeitmaßstab."
+     "text": {
+      "de": "Die erste Zeile enthält einen Fehler, den die Maschine stillschweigend überspringt; sonst müsste Rot zu sehen sein.",
+      "en": "The first line contains a bug that the machine silently skips; otherwise red would have to show."
+     },
+     "begruendung": {
+      "de": "Die Zeile ist korrekt und wird ausgeführt; eine Maschine überspringt auch nichts stillschweigend, sie bricht bei Fehlern mit einer Meldung ab. Das Problem liegt nicht im Code, sondern im Zeitmaßstab.",
+      "en": "The line is correct and does execute; nor does a machine skip anything silently, it stops with a message when something is wrong. The problem is not in the code but in the timescale."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die zweite Zeile ersetzt die erste, bevor diese ausgeführt wird: Bei zwei gleichen Befehlen gilt nur die letzte Angabe.",
-     "begruendung": "Die Maschine fasst nichts zusammen und lässt nichts aus. Beide Zeilen laufen, in dieser Reihenfolge; Rot war da, nur eben extrem kurz."
+     "text": {
+      "de": "Die zweite Zeile ersetzt die erste, bevor diese ausgeführt wird: Bei zwei gleichen Befehlen gilt nur die letzte Angabe.",
+      "en": "The second line replaces the first before it is executed: with two identical commands only the last one counts."
+     },
+     "begruendung": {
+      "de": "Die Maschine fasst nichts zusammen und lässt nichts aus. Beide Zeilen laufen, in dieser Reihenfolge; Rot war da, nur eben extrem kurz.",
+      "en": "The machine merges nothing and omits nothing. Both lines run, in this order; red was there, just extremely briefly."
+     }
     },
     {
      "kennung": "c",
-     "text": "Rot leuchtet, aber nur für etwa eine Millisekunde; ohne wait ist das für Augen unsichtbar.",
-     "begruendung": "Genau: Das Programm ist richtig, es ist nur zu schnell. Eure Augen sind langsam, die Maschine ist es nicht. Anweisungen kosten nur dann sichtbare Zeit, wenn es dasteht."
+     "text": {
+      "de": "Rot leuchtet, aber nur für etwa eine Millisekunde; ohne wait ist das für Augen unsichtbar.",
+      "en": "Red does show, but only for about a millisecond; without a wait that is invisible to eyes."
+     },
+     "begruendung": {
+      "de": "Genau: Das Programm ist richtig, es ist nur zu schnell. Eure Augen sind langsam, die Maschine ist es nicht. Anweisungen kosten nur dann sichtbare Zeit, wenn es dasteht.",
+      "en": "Exactly: the program is correct, it is just too fast. Your eyes are slow, the machine is not. Instructions only take visible time when it says so."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die LED reagiert träge: Bei zwei so schnell folgenden Befehlen kommt nur der letzte an, der erste geht in der Hardware verloren.",
-     "begruendung": "Die LED schaltet weit schneller als jedes Auge, und verloren geht nichts: Sie war rot, dann blau. Der Engpass ist die Wahrnehmung, nicht die Hardware."
+     "text": {
+      "de": "Die LED reagiert träge: Bei zwei so schnell folgenden Befehlen kommt nur der letzte an, der erste geht in der Hardware verloren.",
+      "en": "The LED is sluggish: with two commands this close together only the last one gets through, the first is lost in the hardware."
+     },
+     "begruendung": {
+      "de": "Die LED schaltet weit schneller als jedes Auge, und verloren geht nichts: Sie war rot, dann blau. Der Engpass ist die Wahrnehmung, nicht die Hardware.",
+      "en": "The LED switches far faster than any eye, and nothing gets lost: it was red, then blue. The bottleneck is perception, not hardware."
+     }
     }
    ]
   },
   {
    "id": "aa-005",
    "niveau": "erinnern",
-   "frage": "Welche Rolle spielt der Teil (255, 0, 0) in dieser Zeile?",
+   "frage": {
+    "de": "Welche Rolle spielt der Teil (255, 0, 0) in dieser Zeile?",
+    "en": "What role does the part (255, 0, 0) play in this line?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -134,25 +239,46 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er sagt, welches Bauteil angesprochen wird: Die drei Zahlen kennzeichnen, welche der LEDs am Gerät gemeint ist.",
-     "begruendung": "Welches Ding gemeint ist, sagt led vor dem Punkt. Die Zahlen in der Klammer beschreiben nicht das Bauteil, sondern die Farbe, die es zeigen soll."
+     "text": {
+      "de": "Er sagt, welches Bauteil angesprochen wird: Die drei Zahlen kennzeichnen, welche der LEDs am Gerät gemeint ist.",
+      "en": "It says which component is being addressed: the three numbers identify which of the LEDs on the device is meant."
+     },
+     "begruendung": {
+      "de": "Welches Ding gemeint ist, sagt led vor dem Punkt. Die Zahlen in der Klammer beschreiben nicht das Bauteil, sondern die Farbe, die es zeigen soll.",
+      "en": "Which thing is meant is said by led before the dot. The numbers in the parentheses do not describe the component but the colour it should show."
+     }
     },
     {
      "kennung": "b",
-     "text": "Er sagt, mit welchen Werten die Anweisung ausgeführt wird: voller Rotanteil, kein Grün, kein Blau.",
-     "begruendung": "Richtig: led sagt welches Ding, set_color sagt was es tun soll, die Klammer sagt mit welchen Werten. Andere Werte, anderes Ergebnis."
+     "text": {
+      "de": "Er sagt, mit welchen Werten die Anweisung ausgeführt wird: voller Rotanteil, kein Grün, kein Blau.",
+      "en": "It says which values the instruction runs with: full red, no green, no blue."
+     },
+     "begruendung": {
+      "de": "Richtig: led sagt welches Ding, set_color sagt was es tun soll, die Klammer sagt mit welchen Werten. Andere Werte, anderes Ergebnis.",
+      "en": "Correct: led says which thing, set_color says what to do, the parentheses say with which values. Different values, different result."
+     }
     },
     {
      "kennung": "c",
-     "text": "Er ist eine Notiz für Lesende, die den gewünschten Rotanteil erklärt; ausgeführt wird nur der Teil vor der Klammer.",
-     "begruendung": "Notizen für Menschen sehen anders aus (Kommentare mit #). Diese Werte werden ausgeführt und bestimmen unmittelbar, was die LED zeigt; ohne sie wüsste set_color nicht, welche Farbe gemeint ist."
+     "text": {
+      "de": "Er ist eine Notiz für Lesende, die den gewünschten Rotanteil erklärt; ausgeführt wird nur der Teil vor der Klammer.",
+      "en": "It is a note for readers explaining the intended amount of red; only the part before the parentheses is executed."
+     },
+     "begruendung": {
+      "de": "Notizen für Menschen sehen anders aus (Kommentare mit #). Diese Werte werden ausgeführt und bestimmen unmittelbar, was die LED zeigt; ohne sie wüsste set_color nicht, welche Farbe gemeint ist.",
+      "en": "Notes for humans look different (comments with #). These values are executed and directly determine what the LED shows; without them set_color would not know which colour is meant."
+     }
     }
    ]
   },
   {
    "id": "aa-006",
    "niveau": "anwenden",
-   "frage": "Welchen Vorteil bringt die erste Zeile bright = 255?",
+   "frage": {
+    "de": "Welchen Vorteil bringt die erste Zeile bright = 255?",
+    "en": "What is the benefit of the first line bright = 255?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -161,30 +287,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Das Programm läuft schneller, weil die Maschine den Wert nur einmal lesen muss statt bei jedem Aufruf neu.",
-     "begruendung": "Auf das Tempo hat ein benannter Wert keinen messbaren Einfluss; eine Zahl lesen kostet die Maschine nichts. Der Gewinn liegt beim Menschen, der das Programm ändert."
+     "text": {
+      "de": "Das Programm läuft schneller, weil die Maschine den Wert nur einmal lesen muss statt bei jedem Aufruf neu.",
+      "en": "The program runs faster because the machine reads the value only once instead of anew at every call."
+     },
+     "begruendung": {
+      "de": "Auf das Tempo hat ein benannter Wert keinen messbaren Einfluss; eine Zahl lesen kostet die Maschine nichts. Der Gewinn liegt beim Menschen, der das Programm ändert.",
+      "en": "A named value has no measurable effect on speed; reading a number costs the machine nothing. The benefit is for the human who changes the program."
+     }
     },
     {
      "kennung": "b",
-     "text": "Ohne sie bliebe die LED dunkel, denn erst diese Zeile schaltet die Helligkeit auf den Höchstwert.",
-     "begruendung": "Die Zeile schaltet nichts, sie gibt nur einer Zahl einen Namen. Man könnte in beiden Aufrufen direkt 255 schreiben, und die LED leuchtete genauso. Der Name ist eine Entscheidung, keine Notwendigkeit."
+     "text": {
+      "de": "Ohne sie bliebe die LED dunkel, denn erst diese Zeile schaltet die Helligkeit auf den Höchstwert.",
+      "en": "Without it the LED would stay dark, since this line is what sets the brightness to its maximum."
+     },
+     "begruendung": {
+      "de": "Die Zeile schaltet nichts, sie gibt nur einer Zahl einen Namen. Man könnte in beiden Aufrufen direkt 255 schreiben, und die LED leuchtete genauso. Der Name ist eine Entscheidung, keine Notwendigkeit.",
+      "en": "The line switches nothing; it only gives a number a name. You could write 255 directly in both calls and the LED would light the same. The name is a choice, not a necessity."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Helligkeit lässt sich an genau einer Stelle ändern, statt an jeder Verwendung.",
-     "begruendung": "Genau: Ein Wert mit einem Namen. Wer dimmen will, ändert eine Zeile, und beide set_color-Aufrufe ziehen mit."
+     "text": {
+      "de": "Die Helligkeit lässt sich an genau einer Stelle ändern, statt an jeder Verwendung.",
+      "en": "The brightness can be changed in exactly one place instead of at every use."
+     },
+     "begruendung": {
+      "de": "Genau: Ein Wert mit einem Namen. Wer dimmen will, ändert eine Zeile, und beide set_color-Aufrufe ziehen mit.",
+      "en": "Exactly: a value with a name. To dim, you change one line, and both set_color calls follow."
+     }
     },
     {
      "kennung": "d",
-     "text": "Namen sind Pflicht: Eine Anweisung wie set_color nimmt nur benannte Werte an, keine nackten Zahlen in der Klammer.",
-     "begruendung": "Zahlen direkt sind erlaubt und oft in Ordnung. Der Name lohnt sich dort, wo derselbe Wert mehrfach vorkommt oder sich ändern soll."
+     "text": {
+      "de": "Namen sind Pflicht: Eine Anweisung wie set_color nimmt nur benannte Werte an, keine nackten Zahlen in der Klammer.",
+      "en": "Names are mandatory: an instruction like set_color accepts only named values, not bare numbers in the parentheses."
+     },
+     "begruendung": {
+      "de": "Zahlen direkt sind erlaubt und oft in Ordnung. Der Name lohnt sich dort, wo derselbe Wert mehrfach vorkommt oder sich ändern soll.",
+      "en": "Direct numbers are allowed and often fine. The name pays off where the same value recurs or is meant to change."
+     }
     }
    ]
   },
   {
    "id": "aa-007",
    "niveau": "anwenden",
-   "frage": "Wie lange läuft dieses Programm ungefähr, und was zeigt die LED?",
+   "frage": {
+    "de": "Wie lange läuft dieses Programm ungefähr, und was zeigt die LED?",
+    "en": "Roughly how long does this program run, and what does the LED show?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -193,30 +346,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Eine Sekunde: Die Schleife zeigt alle vier Farben gleichzeitig.",
-     "begruendung": "Eine Schleife läuft nacheinander, nicht gleichzeitig: ein Durchlauf je Wert."
+     "text": {
+      "de": "Eine Sekunde: Die Schleife zeigt alle vier Farben gleichzeitig.",
+      "en": "One second: the loop shows all four colours at once."
+     },
+     "begruendung": {
+      "de": "Eine Schleife läuft nacheinander, nicht gleichzeitig: ein Durchlauf je Wert.",
+      "en": "A loop runs sequentially, not in parallel: one pass per value."
+     }
     },
     {
      "kennung": "b",
-     "text": "Etwa vier Sekunden: vier Durchläufe, je eine Farbe für eine Sekunde.",
-     "begruendung": "Genau: Dieselben zwei Zeilen laufen viermal, mit jeweils dem nächsten Wert aus der Liste. Auch Wiederholung kostet Zeit."
+     "text": {
+      "de": "Etwa vier Sekunden: vier Durchläufe, je eine Farbe für eine Sekunde.",
+      "en": "About four seconds: four passes, one colour for one second each."
+     },
+     "begruendung": {
+      "de": "Genau: Dieselben zwei Zeilen laufen viermal, mit jeweils dem nächsten Wert aus der Liste. Auch Wiederholung kostet Zeit.",
+      "en": "Exactly: the same two lines run four times, each with the next value from the list. Repetition costs time too."
+     }
     },
     {
      "kennung": "c",
-     "text": "Unendlich: Eine for-Schleife läuft, bis man sie abbricht.",
-     "begruendung": "Diese Schleife hat ein eingebautes Ende: Sie läuft genau einmal je Listeneintrag, dann ist Schluss."
+     "text": {
+      "de": "Unendlich: Eine for-Schleife läuft, bis man sie abbricht.",
+      "en": "Forever: a for loop runs until you stop it."
+     },
+     "begruendung": {
+      "de": "Diese Schleife hat ein eingebautes Ende: Sie läuft genau einmal je Listeneintrag, dann ist Schluss.",
+      "en": "This loop has a built-in end: it runs exactly once per list entry, then stops."
+     }
     },
     {
      "kennung": "d",
-     "text": "Vier Sekunden, aber nur die letzte Farbe Gelb ist je zu sehen.",
-     "begruendung": "Dank wait(1) im Schleifenkörper bleibt jede Farbe eine volle Sekunde sichtbar, nicht nur die letzte."
+     "text": {
+      "de": "Vier Sekunden, aber nur die letzte Farbe Gelb ist je zu sehen.",
+      "en": "Four seconds, but only the last colour, yellow, is ever visible."
+     },
+     "begruendung": {
+      "de": "Dank wait(1) im Schleifenkörper bleibt jede Farbe eine volle Sekunde sichtbar, nicht nur die letzte.",
+      "en": "Thanks to wait(1) inside the loop body, every colour stays visible for a full second, not just the last."
+     }
     }
    ]
   },
   {
    "id": "aa-008",
    "niveau": "anwenden",
-   "frage": "Wie lange läuft dieses Programm insgesamt, ungefähr?",
+   "frage": {
+    "de": "Wie lange läuft dieses Programm insgesamt, ungefähr?",
+    "en": "Roughly how long does this program run in total?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -225,30 +405,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "3 Sekunden",
-     "begruendung": "Das wäre eine Sekunde je Durchlauf. Der Gelb-Durchlauf wartet aber drei."
+     "text": {
+      "de": "3 Sekunden",
+      "en": "3 seconds"
+     },
+     "begruendung": {
+      "de": "Das wäre eine Sekunde je Durchlauf. Der Gelb-Durchlauf wartet aber drei.",
+      "en": "That would be one second per pass. But the yellow pass waits three."
+     }
     },
     {
      "kennung": "b",
-     "text": "9 Sekunden",
-     "begruendung": "Das wären drei Sekunden je Durchlauf. Nur Gelb wartet drei, die anderen eine."
+     "text": {
+      "de": "9 Sekunden",
+      "en": "9 seconds"
+     },
+     "begruendung": {
+      "de": "Das wären drei Sekunden je Durchlauf. Nur Gelb wartet drei, die anderen eine.",
+      "en": "That would be three seconds per pass. Only yellow waits three, the others one."
+     }
     },
     {
      "kennung": "c",
-     "text": "5 Sekunden",
-     "begruendung": "Genau: Rot 1, Gelb 3, Blau 1. Die Bedingung entscheidet je Durchlauf, welcher wait-Zweig läuft."
+     "text": {
+      "de": "5 Sekunden",
+      "en": "5 seconds"
+     },
+     "begruendung": {
+      "de": "Genau: Rot 1, Gelb 3, Blau 1. Die Bedingung entscheidet je Durchlauf, welcher wait-Zweig läuft.",
+      "en": "Exactly: red 1, yellow 3, blue 1. The condition decides per pass which wait branch runs."
+     }
     },
     {
      "kennung": "d",
-     "text": "4 Sekunden",
-     "begruendung": "Fast: Wer if und else je einmal zählt, kommt auf 3 plus 1. Aber jeder der drei Durchläufe wartet, also 1 plus 3 plus 1."
+     "text": {
+      "de": "4 Sekunden",
+      "en": "4 seconds"
+     },
+     "begruendung": {
+      "de": "Fast: Wer if und else je einmal zählt, kommt auf 3 plus 1. Aber jeder der drei Durchläufe wartet, also 1 plus 3 plus 1.",
+      "en": "Close: counting if and else once each gives 3 plus 1. But each of the three passes waits, so 1 plus 3 plus 1."
+     }
     }
    ]
   },
   {
    "id": "aa-009",
    "niveau": "erinnern",
-   "frage": "Aus welchen Bausteinen ist jedes Programm gebaut? Kreuzt alle an, die dazugehören.\n(Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Aus welchen Bausteinen ist jedes Programm gebaut? Kreuzt alle an, die dazugehören.\n(Mehrere richtige Antworten möglich.)",
+    "en": "Which building blocks is every program made of? Tick all that belong.\n(Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -259,30 +466,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Anweisungen, die nacheinander laufen.",
-     "begruendung": "Richtig: die Grundlage. Zeile für Zeile, von oben nach unten."
+     "text": {
+      "de": "Anweisungen, die nacheinander laufen.",
+      "en": "Instructions that run one after another."
+     },
+     "begruendung": {
+      "de": "Richtig: die Grundlage. Zeile für Zeile, von oben nach unten.",
+      "en": "Correct: the foundation. Line by line, top to bottom."
+     }
     },
     {
      "kennung": "b",
-     "text": "Werte, die einen Namen bekommen.",
-     "begruendung": "Richtig: eine Stelle zum Ändern statt vieler."
+     "text": {
+      "de": "Werte, die einen Namen bekommen.",
+      "en": "Values that get a name."
+     },
+     "begruendung": {
+      "de": "Richtig: eine Stelle zum Ändern statt vieler.",
+      "en": "Correct: one place to change instead of many."
+     }
     },
     {
      "kennung": "c",
-     "text": "Wiederholung.",
-     "begruendung": "Richtig: Dieselben Zeilen laufen mehrmals, mit jeweils dem nächsten Wert."
+     "text": {
+      "de": "Wiederholung.",
+      "en": "Repetition."
+     },
+     "begruendung": {
+      "de": "Richtig: Dieselben Zeilen laufen mehrmals, mit jeweils dem nächsten Wert.",
+      "en": "Correct: the same lines run several times, each with the next value."
+     }
     },
     {
      "kennung": "d",
-     "text": "Bedingungen: etwas passiert nur, wenn.",
-     "begruendung": "Richtig: Damit reagiert ein Programm, statt stur abzuspulen. Alle vier zusammen sind das ganze Baumaterial."
+     "text": {
+      "de": "Bedingungen: etwas passiert nur, wenn.",
+      "en": "Conditions: something happens only if."
+     },
+     "begruendung": {
+      "de": "Richtig: Damit reagiert ein Programm, statt stur abzuspulen. Alle vier zusammen sind das ganze Baumaterial.",
+      "en": "Correct: this is how a program reacts instead of blindly unrolling. All four together are the entire building material."
+     }
     }
    ]
   },
   {
    "id": "aa-010",
    "niveau": "verstehen",
-   "frage": "Euer Programm bricht mit dieser Meldung ab. Was fangt ihr damit an?",
+   "frage": {
+    "de": "Euer Programm bricht mit dieser Meldung ab. Was fangt ihr damit an?",
+    "en": "Your program stops with this message. What do you make of it?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -291,30 +525,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Rechner ist abgestürzt; nach einem Neustart läuft das Programm meist wieder, solche Meldungen kommen und gehen.",
-     "begruendung": "Nichts ist abgestürzt, und nach dem Neustart käme dieselbe Meldung wieder, denn der falsche Name steht weiter in Zeile 7. Die Maschine hat geordnet gestoppt und präzise gemeldet, woran."
+     "text": {
+      "de": "Der Rechner ist abgestürzt; nach einem Neustart läuft das Programm meist wieder, solche Meldungen kommen und gehen.",
+      "en": "The computer crashed; after a restart the program usually works again, messages like this come and go."
+     },
+     "begruendung": {
+      "de": "Nichts ist abgestürzt, und nach dem Neustart käme dieselbe Meldung wieder, denn der falsche Name steht weiter in Zeile 7. Die Maschine hat geordnet gestoppt und präzise gemeldet, woran.",
+      "en": "Nothing crashed, and after a restart the same message would return, because the wrong name is still in line 7. The machine stopped in an orderly way and reported precisely why."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Meldung sagt Datei, Zeile und Ursache: In Zeile 7 steht set_colour, das es nicht gibt; gemeint war set_color.",
-     "begruendung": "Genau: Eine Fehlermeldung ist eine Auskunft, kein Urteil. Laut vorlesen, sie sagt meist wortwörtlich, was falsch ist."
+     "text": {
+      "de": "Die Meldung sagt Datei, Zeile und Ursache: In Zeile 7 steht set_colour, das es nicht gibt; gemeint war set_color.",
+      "en": "The message states file, line and cause: line 7 says set_colour, which does not exist; set_color was meant."
+     },
+     "begruendung": {
+      "de": "Genau: Eine Fehlermeldung ist eine Auskunft, kein Urteil. Laut vorlesen, sie sagt meist wortwörtlich, was falsch ist.",
+      "en": "Exactly: an error message is information, not a verdict. Read it out loud; it usually says literally what is wrong."
+     }
     },
     {
      "kennung": "c",
-     "text": "Das Programm überfordert den Rechner; die Meldung zeigt, dass er beim Ausführen von Zeile 7 nicht mehr mitgekommen ist.",
-     "begruendung": "Mit Leistung hat das nichts zu tun, drei Zeilen überfordern keinen Rechner. Es steht ein Name im Code, den es nicht gibt, und genau das sagt die Meldung, nicht mehr."
+     "text": {
+      "de": "Das Programm überfordert den Rechner; die Meldung zeigt, dass er beim Ausführen von Zeile 7 nicht mehr mitgekommen ist.",
+      "en": "The program overwhelms the machine; the message shows it could not keep up when executing line 7."
+     },
+     "begruendung": {
+      "de": "Mit Leistung hat das nichts zu tun, drei Zeilen überfordern keinen Rechner. Es steht ein Name im Code, den es nicht gibt, und genau das sagt die Meldung, nicht mehr.",
+      "en": "This has nothing to do with performance; three lines overwhelm no machine. A name in the code does not exist, and that is precisely what the message says, nothing more."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Meldung ist eine Warnung, die man weglesen kann: Das Programm läuft nach Zeile 7 weiter, und die LED leuchtet trotzdem.",
-     "begruendung": "Es ist keine Warnung, sondern ein Abbruch: Das Programm endet in Zeile 7, danach leuchtet nichts mehr. Die Meldung ist der schnellste Weg zur Lösung, nicht Lärm."
+     "text": {
+      "de": "Die Meldung ist eine Warnung, die man weglesen kann: Das Programm läuft nach Zeile 7 weiter, und die LED leuchtet trotzdem.",
+      "en": "The message is a warning you can read past: the program continues after line 7, and the LED lights up anyway."
+     },
+     "begruendung": {
+      "de": "Es ist keine Warnung, sondern ein Abbruch: Das Programm endet in Zeile 7, danach leuchtet nichts mehr. Die Meldung ist der schnellste Weg zur Lösung, nicht Lärm.",
+      "en": "It is not a warning but a stop: the program ends at line 7, and nothing lights up after that. The message is the fastest route to the fix, not noise."
+     }
     }
    ]
   },
   {
    "id": "aa-011",
    "niveau": "anwenden",
-   "frage": "Wann endet dieses Programm?",
+   "frage": {
+    "de": "Wann endet dieses Programm?",
+    "en": "When does this program end?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -323,30 +584,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Wenn beide Farben einmal gezeigt wurden, denn dann ist der Schleifenkörper vollständig abgearbeitet.",
-     "begruendung": "Nach Blau springt die Schleife wieder an ihren Anfang. Ein Durchlauf ist kein Ende."
+     "text": {
+      "de": "Wenn beide Farben einmal gezeigt wurden, denn dann ist der Schleifenkörper vollständig abgearbeitet.",
+      "en": "Once both colours have been shown, because then the loop body has been fully executed."
+     },
+     "begruendung": {
+      "de": "Nach Blau springt die Schleife wieder an ihren Anfang. Ein Durchlauf ist kein Ende.",
+      "en": "After blue, the loop jumps back to its start. One pass is not an end."
+     }
     },
     {
      "kennung": "b",
-     "text": "Nach einer Weile von selbst, wenn der Rechner merkt, dass nichts Neues passiert.",
-     "begruendung": "Die Maschine merkt nichts und beurteilt nichts. Sie führt aus, was dasteht, und da steht: für immer."
+     "text": {
+      "de": "Nach einer Weile von selbst, wenn der Rechner merkt, dass nichts Neues passiert.",
+      "en": "By itself after a while, when the machine notices nothing new happens."
+     },
+     "begruendung": {
+      "de": "Die Maschine merkt nichts und beurteilt nichts. Sie führt aus, was dasteht, und da steht: für immer.",
+      "en": "The machine notices nothing and judges nothing. It executes what is written, and it says: forever."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nie: Die Bedingung ist immer wahr, und im Schleifenkörper gibt es keinen Ausweg.",
-     "begruendung": "Genau: Ein Ablauf endet nur, wenn sein Ende erreichbar ist. Diese Schleife blinkt, bis jemand von außen abbricht. Fürs Dauerblinken ist das sogar gewollt; als Empfänger-Hauptschleife braucht sie eine Abbruchbedingung."
+     "text": {
+      "de": "Nie: Die Bedingung ist immer wahr, und im Schleifenkörper gibt es keinen Ausweg.",
+      "en": "Never: the condition is always true, and the loop body has no way out."
+     },
+     "begruendung": {
+      "de": "Genau: Ein Ablauf endet nur, wenn sein Ende erreichbar ist. Diese Schleife blinkt, bis jemand von außen abbricht. Fürs Dauerblinken ist das sogar gewollt; als Empfänger-Hauptschleife braucht sie eine Abbruchbedingung.",
+      "en": "Exactly: a procedure only ends if its end is reachable. This loop blinks until someone stops it from outside. For permanent blinking that is even intended; as a receiver main loop it needs an exit condition."
+     }
     },
     {
      "kennung": "d",
-     "text": "Nach einer festen Zahl von Wiederholungen, denn jede Schleife hat eine eingebaute Obergrenze, damit der Rechner nicht hängen bleibt.",
-     "begruendung": "Es gibt keine eingebaute Obergrenze, und die Maschine schützt sich auch nicht selbst vor dem Hängenbleiben. Was nicht dasteht, passiert nicht."
+     "text": {
+      "de": "Nach einer festen Zahl von Wiederholungen, denn jede Schleife hat eine eingebaute Obergrenze, damit der Rechner nicht hängen bleibt.",
+      "en": "After a fixed number of repetitions, because every loop has a built-in upper limit so the machine does not get stuck."
+     },
+     "begruendung": {
+      "de": "Es gibt keine eingebaute Obergrenze, und die Maschine schützt sich auch nicht selbst vor dem Hängenbleiben. Was nicht dasteht, passiert nicht.",
+      "en": "There is no built-in limit, and the machine does not protect itself from getting stuck either. What is not written does not happen."
+     }
     }
    ]
   },
   {
    "id": "aa-012",
    "niveau": "verstehen",
-   "frage": "Beim Zahlenraten zwischen 1 und 100 führen zwei Verfahren sicher zum Ziel:\nalle Zahlen einzeln durchfragen (bis zu 99 Fragen) oder den Bereich halbieren\n(höchstens 7 Fragen). Was folgt daraus?",
+   "frage": {
+    "de": "Beim Zahlenraten zwischen 1 und 100 führen zwei Verfahren sicher zum Ziel:\nalle Zahlen einzeln durchfragen (bis zu 99 Fragen) oder den Bereich halbieren\n(höchstens 7 Fragen). Was folgt daraus?",
+    "en": "In the 1-to-100 guessing game two procedures are guaranteed to succeed: asking\nevery number one by one (up to 99 questions) or halving the range (at most 7\nquestions). What follows?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -354,30 +642,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nur das Halbieren verdient den Namen Algorithmus; das Durchfragen ist bloßes Ausprobieren ohne Verfahren.",
-     "begruendung": "Beide sind korrekte Algorithmen: eindeutige Schritte, sicheres Ende, richtiges Ergebnis. Sie unterscheiden sich woanders."
+     "text": {
+      "de": "Nur das Halbieren verdient den Namen Algorithmus; das Durchfragen ist bloßes Ausprobieren ohne Verfahren.",
+      "en": "Only halving deserves the name algorithm; asking one by one is mere trial without a procedure."
+     },
+     "begruendung": {
+      "de": "Beide sind korrekte Algorithmen: eindeutige Schritte, sicheres Ende, richtiges Ergebnis. Sie unterscheiden sich woanders.",
+      "en": "Both are correct algorithms: unambiguous steps, guaranteed end, right result. They differ elsewhere."
+     }
     },
     {
      "kennung": "b",
-     "text": "Eine Lösung kann richtig und trotzdem unbrauchbar sein; Verfahren vergleicht man über ihren Aufwand.",
-     "begruendung": "Genau: Richtigkeit ist die Mindestanforderung, danach zählt der Aufwand, hier die Zahl der Fragen. Bei eurer Übertragung wird daraus die Frage, wie viele Sekunden eine Datei braucht."
+     "text": {
+      "de": "Eine Lösung kann richtig und trotzdem unbrauchbar sein; Verfahren vergleicht man über ihren Aufwand.",
+      "en": "A solution can be correct and still useless; procedures are compared by their cost."
+     },
+     "begruendung": {
+      "de": "Genau: Richtigkeit ist die Mindestanforderung, danach zählt der Aufwand, hier die Zahl der Fragen. Bei eurer Übertragung wird daraus die Frage, wie viele Sekunden eine Datei braucht.",
+      "en": "Exactly: correctness is the minimum; after that, cost counts, here the number of questions. For your transmission this becomes how many seconds a file takes."
+     }
     },
     {
      "kennung": "c",
-     "text": "Bei modernen Computern spielt der Unterschied keine Rolle mehr, weil beide Verfahren ohnehin in Sekundenbruchteilen fertig sind.",
-     "begruendung": "Schnelle Rechner verschieben die Grenze, heben sie aber nicht auf: 99 gegen 7 wird bei 1000 Zahlen zu 999 gegen 10. Der Abstand wächst mit dem Problem."
+     "text": {
+      "de": "Bei modernen Computern spielt der Unterschied keine Rolle mehr, weil beide Verfahren ohnehin in Sekundenbruchteilen fertig sind.",
+      "en": "On modern computers the difference no longer matters, since both procedures finish in fractions of a second anyway."
+     },
+     "begruendung": {
+      "de": "Schnelle Rechner verschieben die Grenze, heben sie aber nicht auf: 99 gegen 7 wird bei 1000 Zahlen zu 999 gegen 10. Der Abstand wächst mit dem Problem.",
+      "en": "Fast machines shift the limit but do not remove it: 99 versus 7 becomes 999 versus 10 at 1000 numbers. The gap grows with the problem."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das langsame Verfahren ist sicherer, weil es jede Zahl ausdrücklich prüft, und deshalb vorzuziehen.",
-     "begruendung": "Beide sind gleich sicher, sie enden beide garantiert mit der richtigen Zahl. Langsamkeit ist hier kein Sicherheitsgewinn, nur Aufwand."
+     "text": {
+      "de": "Das langsame Verfahren ist sicherer, weil es jede Zahl ausdrücklich prüft, und deshalb vorzuziehen.",
+      "en": "The slow procedure is safer because it explicitly checks every number, and is therefore preferable."
+     },
+     "begruendung": {
+      "de": "Beide sind gleich sicher, sie enden beide garantiert mit der richtigen Zahl. Langsamkeit ist hier kein Sicherheitsgewinn, nur Aufwand.",
+      "en": "Both are equally safe; both are guaranteed to end with the right number. Slowness buys no safety here, only cost."
+     }
     }
    ]
   },
   {
    "id": "aa-013",
    "niveau": "verstehen",
-   "frage": "Beim Sortieren im Plenum galt: auf den rechten Nachbarn schauen, wer größer ist,\ntauscht, am Reihenende wieder von vorn. Woran erkennt dieser Ablauf, dass er\nfertig ist?",
+   "frage": {
+    "de": "Beim Sortieren im Plenum galt: auf den rechten Nachbarn schauen, wer größer ist,\ntauscht, am Reihenende wieder von vorn. Woran erkennt dieser Ablauf, dass er\nfertig ist?",
+    "en": "In the plenary sorting exercise the rules were: look at your right neighbour,\nswap if you are taller, start over at the end of the row. How does this\nprocedure know it is done?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -385,30 +700,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nach genau einem Durchlauf durch die Reihe, denn dann hat jede Person ihren Nachbarn einmal geprüft.",
-     "begruendung": "Ein Durchlauf schiebt nur die größte Person ganz nach rechts. Der Rest kann noch durcheinander stehen."
+     "text": {
+      "de": "Nach genau einem Durchlauf durch die Reihe, denn dann hat jede Person ihren Nachbarn einmal geprüft.",
+      "en": "After exactly one pass through the row, because by then every person has checked their neighbour once."
+     },
+     "begruendung": {
+      "de": "Ein Durchlauf schiebt nur die größte Person ganz nach rechts. Der Rest kann noch durcheinander stehen.",
+      "en": "One pass only moves the tallest person to the far right. The rest can still be out of order."
+     }
     },
     {
      "kennung": "b",
-     "text": "Wenn die Ausführenden sehen, dass die Reihe sortiert aussieht.",
-     "begruendung": "'Sieht sortiert aus' ist ein Urteil, und Urteilen war verboten: Ihr wart Maschinen. Das Ende muss aus den Regeln selbst folgen."
+     "text": {
+      "de": "Wenn die Ausführenden sehen, dass die Reihe sortiert aussieht.",
+      "en": "When the executors can see that the row looks sorted."
+     },
+     "begruendung": {
+      "de": "'Sieht sortiert aus' ist ein Urteil, und Urteilen war verboten: Ihr wart Maschinen. Das Ende muss aus den Regeln selbst folgen.",
+      "en": "'Looks sorted' is a judgement, and judging was forbidden: you were machines. The end must follow from the rules themselves."
+     }
     },
     {
      "kennung": "c",
-     "text": "An einem kompletten Durchlauf, in dem niemand mehr getauscht hat.",
-     "begruendung": "Genau: Das ist die eingebaute Terminierungsbedingung. Kein Tausch im ganzen Durchlauf heißt: Es gibt nichts mehr zu sortieren. Ohne so eine Bedingung liefe der Ablauf ewig weiter."
+     "text": {
+      "de": "An einem kompletten Durchlauf, in dem niemand mehr getauscht hat.",
+      "en": "By one complete pass in which nobody swapped."
+     },
+     "begruendung": {
+      "de": "Genau: Das ist die eingebaute Terminierungsbedingung. Kein Tausch im ganzen Durchlauf heißt: Es gibt nichts mehr zu sortieren. Ohne so eine Bedingung liefe der Ablauf ewig weiter.",
+      "en": "Exactly: that is the built-in termination condition. No swap in a whole pass means there is nothing left to sort. Without such a condition the procedure would run forever."
+     }
     },
     {
      "kennung": "d",
-     "text": "Gar nicht von selbst: Wie bei jeder Wiederholung von vorn muss jemand von außen abbrechen, sobald die Reihe stimmt.",
-     "begruendung": "Das wäre eine Schleife ohne Ausweg. Diese hier hat einen, und genau das unterscheidet sie von while True ohne Abbruchbedingung."
+     "text": {
+      "de": "Gar nicht von selbst: Wie bei jeder Wiederholung von vorn muss jemand von außen abbrechen, sobald die Reihe stimmt.",
+      "en": "Not by itself: as with any start-over repetition, someone from outside has to stop it once the row is right."
+     },
+     "begruendung": {
+      "de": "Das wäre eine Schleife ohne Ausweg. Diese hier hat einen, und genau das unterscheidet sie von while True ohne Abbruchbedingung.",
+      "en": "That would be a loop with no way out. This one has one, and exactly that distinguishes it from while True with no exit condition."
+     }
     }
    ]
   },
   {
    "id": "aa-014",
    "niveau": "anwenden",
-   "frage": "Was zeigt die LED, wenn dieses Programm läuft?",
+   "frage": {
+    "de": "Was zeigt die LED, wenn dieses Programm läuft?",
+    "en": "What does the LED show when this program runs?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -417,23 +759,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Eine Sekunde Rot, dann Blau: Das wait(1) gehört erkennbar zur roten Phase.",
-     "begruendung": "Die Maschine ordnet nichts zu und nichts um. Sie führt die Zeilen der Reihe nach aus, und die Pause steht nach beiden Farbwechseln."
+     "text": {
+      "de": "Eine Sekunde Rot, dann Blau: Das wait(1) gehört erkennbar zur roten Phase.",
+      "en": "Red for one second, then blue: the wait(1) clearly belongs to the red phase."
+     },
+     "begruendung": {
+      "de": "Die Maschine ordnet nichts zu und nichts um. Sie führt die Zeilen der Reihe nach aus, und die Pause steht nach beiden Farbwechseln.",
+      "en": "The machine assigns and reorders nothing. It runs the lines in order, and the pause comes after both colour changes."
+     }
     },
     {
      "kennung": "b",
-     "text": "Eine Sekunde Blau, dann Rot: Die Pause hält die zuletzt gesetzte Farbe fest, und die erste Zeile wird danach nachgeholt.",
-     "begruendung": "Nachgeholt wird nichts: Die Maschine führt jede Zeile genau einmal aus, in der Reihenfolge Rot vor Blau, und nach der letzten Zeile ist Schluss. Die LED bleibt blau."
+     "text": {
+      "de": "Eine Sekunde Blau, dann Rot: Die Pause hält die zuletzt gesetzte Farbe fest, und die erste Zeile wird danach nachgeholt.",
+      "en": "Blue for one second, then red: the pause holds the last colour set, and the first line is caught up on afterwards."
+     },
+     "begruendung": {
+      "de": "Nachgeholt wird nichts: Die Maschine führt jede Zeile genau einmal aus, in der Reihenfolge Rot vor Blau, und nach der letzten Zeile ist Schluss. Die LED bleibt blau.",
+      "en": "Nothing is caught up on: the machine executes each line exactly once, red before blue, and after the last line it is finished. The LED stays blue."
+     }
     },
     {
      "kennung": "c",
-     "text": "Rot nur für einen Sekundenbruchteil, dann eine Sekunde Blau.",
-     "begruendung": "Genau: Rot wird sofort von Blau überschrieben, erst danach wartet die Maschine, mit blauer LED. Dieselben drei Zeilen mit der Pause in der Mitte wären ein anderes Programm: Die Reihenfolge ist Teil des Programms."
+     "text": {
+      "de": "Rot nur für einen Sekundenbruchteil, dann eine Sekunde Blau.",
+      "en": "Red only for a split second, then blue for one second."
+     },
+     "begruendung": {
+      "de": "Genau: Rot wird sofort von Blau überschrieben, erst danach wartet die Maschine, mit blauer LED. Dieselben drei Zeilen mit der Pause in der Mitte wären ein anderes Programm: Die Reihenfolge ist Teil des Programms.",
+      "en": "Exactly: red is overwritten by blue immediately, only then does the machine wait, with the LED blue. The same three lines with the pause in the middle would be a different program: order is part of the program."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das Programm ist fehlerhaft und startet nicht, weil wait(1) als letzte Zeile nicht erlaubt ist.",
-     "begruendung": "Jede dieser Zeilen ist für sich gültig, in jeder Reihenfolge. Das Programm läuft; es tut nur nicht, was vielleicht gemeint war."
+     "text": {
+      "de": "Das Programm ist fehlerhaft und startet nicht, weil wait(1) als letzte Zeile nicht erlaubt ist.",
+      "en": "The program is faulty and does not start, because wait(1) is not allowed as the last line."
+     },
+     "begruendung": {
+      "de": "Jede dieser Zeilen ist für sich gültig, in jeder Reihenfolge. Das Programm läuft; es tut nur nicht, was vielleicht gemeint war.",
+      "en": "Each of these lines is valid on its own, in any order. The program runs; it just does not do what may have been meant."
+     }
     }
    ]
   }

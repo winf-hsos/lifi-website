@@ -4,7 +4,10 @@
   {
    "id": "me-001",
    "niveau": "verstehen",
-   "frage": "Der KI-Assistent schlägt vor, die Integrationszeit des Sensors zu verdoppeln,\n\"dann werden die Werte besser\". Warum genügt diese Auskunft nicht?",
+   "frage": {
+    "de": "Der KI-Assistent schlägt vor, die Integrationszeit des Sensors zu verdoppeln,\n\"dann werden die Werte besser\". Warum genügt diese Auskunft nicht?",
+    "en": "The AI assistant suggests doubling the sensor's integration time, \"then the\nreadings will get better\". Why is this advice not enough?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil der Vorschlag aus allgemeinem Wissen über Sensoren stammt; erst die Bestätigung durch eine fachkundige Person macht ihn belastbar.",
-     "begruendung": "Eine zweite Meinung ist wieder nur eine Meinung. Auch die fachkundigste Person kennt euren Aufbau nicht; belastbar wird der Vorschlag allein durch die Messung daran."
+     "text": {
+      "de": "Weil der Vorschlag aus allgemeinem Wissen über Sensoren stammt; erst die Bestätigung durch eine fachkundige Person macht ihn belastbar.",
+      "en": "Because the suggestion comes from general knowledge about sensors; only confirmation by an expert makes it reliable."
+     },
+     "begruendung": {
+      "de": "Eine zweite Meinung ist wieder nur eine Meinung. Auch die fachkundigste Person kennt euren Aufbau nicht; belastbar wird der Vorschlag allein durch die Messung daran.",
+      "en": "A second opinion is still just an opinion. Even the most knowledgeable person does not know your setup; only measuring on it makes the suggestion reliable."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil der Assistent nicht erklärt, warum ein längeres Fenster ruhigere Werte liefert; mit einer schlüssigen Begründung wäre die Auskunft ausreichend.",
-     "begruendung": "Eine schlüssige Erklärung ersetzt keine Messung. Sie sagt, warum etwas passieren sollte, nicht ob es in eurem Aufbau passiert und wie stark. Genau das ist der Fehlschluss, Nachdenken für Messen zu halten."
+     "text": {
+      "de": "Weil der Assistent nicht erklärt, warum ein längeres Fenster ruhigere Werte liefert; mit einer schlüssigen Begründung wäre die Auskunft ausreichend.",
+      "en": "Because the assistant does not explain why a longer window yields calmer readings; with a sound explanation the advice would be sufficient."
+     },
+     "begruendung": {
+      "de": "Eine schlüssige Erklärung ersetzt keine Messung. Sie sagt, warum etwas passieren sollte, nicht ob es in eurem Aufbau passiert und wie stark. Genau das ist der Fehlschluss, Nachdenken für Messen zu halten.",
+      "en": "A sound explanation is no substitute for a measurement. It says why something should happen, not whether it happens in your setup and how strongly. That is precisely the fallacy of mistaking reasoning for measuring."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil niemand außer eurem Aufbau selbst weiß, wie euer Aufbau sich verhält; das entscheidet eine Messung.",
-     "begruendung": "Genau: Der physikalische Kanal ist die Ground Truth, zu der kein Sprachmodell Zugang hat. Ob 'besser' stimmt, zeigt nur die Messreihe vorher gegen nachher."
+     "text": {
+      "de": "Weil niemand außer eurem Aufbau selbst weiß, wie euer Aufbau sich verhält; das entscheidet eine Messung.",
+      "en": "Because nothing but your own setup knows how your setup behaves; a measurement decides that."
+     },
+     "begruendung": {
+      "de": "Genau: Der physikalische Kanal ist die Ground Truth, zu der kein Sprachmodell Zugang hat. Ob 'besser' stimmt, zeigt nur die Messreihe vorher gegen nachher.",
+      "en": "Exactly: the physical channel is the ground truth no language model has access to. Whether 'better' is true only shows in measuring before versus after."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil 'besser' sich erst beurteilen lässt, wenn der Assistent auch vorhersagt, welche Werte der Sensor nach der Änderung liefern wird.",
-     "begruendung": "Eine Vorhersage ist wieder nur eine Behauptung, nur eben mit Zahlen. Ob sie stimmt, entscheidet dieselbe Messreihe, die auch den ursprünglichen Vorschlag prüfen müsste."
+     "text": {
+      "de": "Weil 'besser' sich erst beurteilen lässt, wenn der Assistent auch vorhersagt, welche Werte der Sensor nach der Änderung liefern wird.",
+      "en": "Because 'better' can only be judged once the assistant also predicts which values the sensor will deliver after the change."
+     },
+     "begruendung": {
+      "de": "Eine Vorhersage ist wieder nur eine Behauptung, nur eben mit Zahlen. Ob sie stimmt, entscheidet dieselbe Messreihe, die auch den ursprünglichen Vorschlag prüfen müsste.",
+      "en": "A prediction is still just a claim, merely with numbers attached. Whether it holds is decided by the same measurement series that would have to test the original suggestion anyway."
+     }
     }
    ]
   },
   {
    "id": "me-002",
    "niveau": "anwenden",
-   "frage": "Ein Team verändert zwischen zwei Messreihen gleichzeitig den Abstand der Geräte\nund die Integrationszeit. Die zweite Reihe ist deutlich besser. Was wisst ihr\njetzt?",
+   "frage": {
+    "de": "Ein Team verändert zwischen zwei Messreihen gleichzeitig den Abstand der Geräte\nund die Integrationszeit. Die zweite Reihe ist deutlich besser. Was wisst ihr\njetzt?",
+    "en": "Between two measurement series a team changes both the distance between the\ndevices and the integration time. The second series is clearly better. What do\nyou know now?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass beide Änderungen geholfen haben, sonst wäre die zweite Reihe nicht so deutlich besser.",
-     "begruendung": "Die Deutlichkeit belegt nichts über die Verteilung: Es kann eine Änderung allein gewesen sein, und die andere hat vielleicht sogar geschadet, ohne dass es auffiel."
+     "text": {
+      "de": "Dass beide Änderungen geholfen haben, sonst wäre die zweite Reihe nicht so deutlich besser.",
+      "en": "That both changes helped, otherwise the second series would not be so clearly better."
+     },
+     "begruendung": {
+      "de": "Die Deutlichkeit belegt nichts über die Verteilung: Es kann eine Änderung allein gewesen sein, und die andere hat vielleicht sogar geschadet, ohne dass es auffiel.",
+      "en": "How clear the improvement is says nothing about how it splits: it may have been one change alone, and the other may even have hurt without anyone noticing."
+     }
     },
     {
      "kennung": "b",
-     "text": "Dass es besser wurde, aber nicht, woran es lag.",
-     "begruendung": "Genau das Problem: Zwei gleichzeitig veränderte Größen lassen sich im Ergebnis nicht mehr trennen. Deshalb je Messreihe nur eine Variable ändern."
+     "text": {
+      "de": "Dass es besser wurde, aber nicht, woran es lag.",
+      "en": "That it got better, but not what caused it."
+     },
+     "begruendung": {
+      "de": "Genau das Problem: Zwei gleichzeitig veränderte Größen lassen sich im Ergebnis nicht mehr trennen. Deshalb je Messreihe nur eine Variable ändern.",
+      "en": "Exactly the problem: two variables changed at once can no longer be separated in the result. That is why you change one variable per series."
+     }
     },
     {
      "kennung": "c",
-     "text": "Der Abstand war entscheidend, denn er wirkt physikalisch stärker.",
-     "begruendung": "Das ist eine Vermutung im Gewand eines Ergebnisses. Welche Größe wie stark wirkt, war ja gerade die offene Frage."
+     "text": {
+      "de": "Der Abstand war entscheidend, denn er wirkt physikalisch stärker.",
+      "en": "The distance was decisive, since it has the stronger physical effect."
+     },
+     "begruendung": {
+      "de": "Das ist eine Vermutung im Gewand eines Ergebnisses. Welche Größe wie stark wirkt, war ja gerade die offene Frage.",
+      "en": "That is a guess dressed up as a result. How strongly each variable acts was precisely the open question."
+     }
     },
     {
      "kennung": "d",
-     "text": "Dass die Reihe nicht verwertbar ist und wiederholt werden muss, bevor sich überhaupt etwas sagen lässt.",
-     "begruendung": "Ganz so streng ist es nicht: Die Reihe belegt, dass die Kombination hilft. Sie beantwortet nur nicht, welcher Anteil wofür steht; das klären zwei saubere Nachmessungen mit je einer Änderung."
+     "text": {
+      "de": "Dass die Reihe nicht verwertbar ist und wiederholt werden muss, bevor sich überhaupt etwas sagen lässt.",
+      "en": "That the series is unusable and has to be repeated before anything can be said at all."
+     },
+     "begruendung": {
+      "de": "Ganz so streng ist es nicht: Die Reihe belegt, dass die Kombination hilft. Sie beantwortet nur nicht, welcher Anteil wofür steht; das klären zwei saubere Nachmessungen mit je einer Änderung.",
+      "en": "That is stricter than necessary: the series does show the combination helps. It just does not tell which part did what; two clean follow-up series with one change each will."
+     }
     }
    ]
   },
   {
    "id": "me-003",
    "niveau": "verstehen",
-   "frage": "Bevor ihr eure LED-Farben vermesst, sollt ihr eine Kontrollmessung machen:\nSensorwerte aufnehmen, während die eigene LED aus ist. Wozu?",
+   "frage": {
+    "de": "Bevor ihr eure LED-Farben vermesst, sollt ihr eine Kontrollmessung machen:\nSensorwerte aufnehmen, während die eigene LED aus ist. Wozu?",
+    "en": "Before measuring your LED colours you are asked to take a control measurement:\nrecord sensor readings while your own LED is off. What for?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -74,30 +131,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Um zu prüfen, ob der Sensor überhaupt reagiert, bevor Zeit in die eigentlichen Messungen fließt.",
-     "begruendung": "Einen Funktionstest nimmt man nebenbei mit, dafür bräuchte es aber keine aufgezeichnete Reihe. Der Zweck liegt in den Werten selbst: Sie sind die Bezugsgröße für alles Folgende."
+     "text": {
+      "de": "Um zu prüfen, ob der Sensor überhaupt reagiert, bevor Zeit in die eigentlichen Messungen fließt.",
+      "en": "To check whether the sensor responds at all, before time goes into the real measurements."
+     },
+     "begruendung": {
+      "de": "Einen Funktionstest nimmt man nebenbei mit, dafür bräuchte es aber keine aufgezeichnete Reihe. Der Zweck liegt in den Werten selbst: Sie sind die Bezugsgröße für alles Folgende.",
+      "en": "A quick function check comes for free, but it would not need a recorded series. The purpose lies in the values themselves: they are the reference for everything that follows."
+     }
     },
     {
      "kennung": "b",
-     "text": "Damit sich der Sensor auf das Umgebungslicht einstellt und es danach von selbst aus den Werten herausrechnet.",
-     "begruendung": "Der Sensor lernt nichts und rechnet nichts heraus; er liefert weiter Rohwerte samt Raumlicht. Den Bezug zum Nullpunkt stellt ihr her, in eurem Programm und in eurer Deutung."
+     "text": {
+      "de": "Damit sich der Sensor auf das Umgebungslicht einstellt und es danach von selbst aus den Werten herausrechnet.",
+      "en": "So that the sensor adjusts to the ambient light and afterwards subtracts it from the readings by itself."
+     },
+     "begruendung": {
+      "de": "Der Sensor lernt nichts und rechnet nichts heraus; er liefert weiter Rohwerte samt Raumlicht. Den Bezug zum Nullpunkt stellt ihr her, in eurem Programm und in eurer Deutung.",
+      "en": "The sensor learns nothing and subtracts nothing; it keeps delivering raw values including room light. Relating readings to the baseline is your job, in your program and in your interpretation."
+     }
     },
     {
      "kennung": "c",
-     "text": "Um zu wissen, was der Sensor durch Umgebungslicht ohnehin misst; erst dagegen lassen sich die LED-Werte deuten.",
-     "begruendung": "Genau: Der Sensor misst nie Null, Raumlicht ist immer da. Die Kontrollmessung ist der Nullpunkt, gegen den jede Farbmessung verglichen wird, und sie verrät, wenn sich die Umgebung ändert."
+     "text": {
+      "de": "Um zu wissen, was der Sensor durch Umgebungslicht ohnehin misst; erst dagegen lassen sich die LED-Werte deuten.",
+      "en": "To know what the sensor measures from ambient light anyway; only against that can the LED readings be interpreted."
+     },
+     "begruendung": {
+      "de": "Genau: Der Sensor misst nie Null, Raumlicht ist immer da. Die Kontrollmessung ist der Nullpunkt, gegen den jede Farbmessung verglichen wird, und sie verrät, wenn sich die Umgebung ändert.",
+      "en": "Exactly: the sensor never reads zero, room light is always there. The control measurement is the baseline every colour reading is compared against, and it reveals when the environment changes."
+     }
     },
     {
      "kennung": "d",
-     "text": "Um zu sehen, wie stark die Werte ohne Licht streuen; sobald die LED leuchtet, geht das Rauschen ohnehin im Signal unter.",
-     "begruendung": "Die Streuung mitzunehmen ist richtig, der Schluss nicht: Das Rauschen verschwindet mit Signal nicht, es liegt weiter auf jedem Wert. Und der Hauptzweck bleibt der Nullpunkt, gegen den jede Farbmessung gelesen wird."
+     "text": {
+      "de": "Um zu sehen, wie stark die Werte ohne Licht streuen; sobald die LED leuchtet, geht das Rauschen ohnehin im Signal unter.",
+      "en": "To see how much the readings scatter without light; once the LED is on, the noise disappears in the signal anyway."
+     },
+     "begruendung": {
+      "de": "Die Streuung mitzunehmen ist richtig, der Schluss nicht: Das Rauschen verschwindet mit Signal nicht, es liegt weiter auf jedem Wert. Und der Hauptzweck bleibt der Nullpunkt, gegen den jede Farbmessung gelesen wird.",
+      "en": "Recording the spread is right, the conclusion is not: noise does not vanish once there is signal, it still sits on every reading. And the main purpose remains the baseline against which every colour reading is read."
+     }
     }
    ]
   },
   {
    "id": "me-004",
    "niveau": "anwenden",
-   "frage": "Ihr messt fünfmal hintereinander dieselbe rote LED und bekommt für den Rotanteil:\n198, 205, 201, 195, 206. Was folgt daraus?",
+   "frage": {
+    "de": "Ihr messt fünfmal hintereinander dieselbe rote LED und bekommt für den Rotanteil:\n198, 205, 201, 195, 206. Was folgt daraus?",
+    "en": "You measure the same red LED five times in a row and get these red components:\n198, 205, 201, 195, 206. What follows?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -105,30 +189,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Sensor ist defekt, sonst käme fünfmal derselbe Wert.",
-     "begruendung": "Streuung ist der Normalfall jeder echten Messung: Rauschen von Sensor, Licht und Umgebung. Fünf identische Werte wären eher verdächtig."
+     "text": {
+      "de": "Der Sensor ist defekt, sonst käme fünfmal derselbe Wert.",
+      "en": "The sensor is broken, otherwise the same value would appear five times."
+     },
+     "begruendung": {
+      "de": "Streuung ist der Normalfall jeder echten Messung: Rauschen von Sensor, Licht und Umgebung. Fünf identische Werte wären eher verdächtig.",
+      "en": "Spread is the normal case of any real measurement: noise from sensor, light and environment. Five identical values would be more suspicious."
+     }
     },
     {
      "kennung": "b",
-     "text": "Messwerte streuen; wer einen stabilen Wert braucht, mittelt über mehrere Messungen.",
-     "begruendung": "Genau: Der Einzelwert springt, der Mittelwert (hier etwa 201) liegt ruhig. Deshalb liest man mehrfach und mittelt, statt einer einzelnen Messung zu glauben. Und die Streuung selbst ist ein Ergebnis: Sie gehört mit ins Protokoll, denn sie entscheidet später darüber, wie viele Farben ihr unterscheiden könnt (Signal und Rauschen, Sitzung 5)."
+     "text": {
+      "de": "Messwerte streuen; wer einen stabilen Wert braucht, mittelt über mehrere Messungen.",
+      "en": "Readings scatter; if you need a stable value, average over several measurements."
+     },
+     "begruendung": {
+      "de": "Genau: Der Einzelwert springt, der Mittelwert (hier etwa 201) liegt ruhig. Deshalb liest man mehrfach und mittelt, statt einer einzelnen Messung zu glauben. Und die Streuung selbst ist ein Ergebnis: Sie gehört mit ins Protokoll, denn sie entscheidet später darüber, wie viele Farben ihr unterscheiden könnt (Signal und Rauschen, Sitzung 5).",
+      "en": "Exactly: single values jump, the average (about 201 here) sits still. That is why you read several times and average instead of trusting one reading. And the scatter itself is a result: it belongs in the protocol, because later it decides how many colours you can tell apart (signal and noise, session 5)."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die LED wird beim Messen langsam schwächer.",
-     "begruendung": "Die Werte gehen rauf und runter, nicht stetig bergab. Das ist Rauschen, kein Trend."
+     "text": {
+      "de": "Die LED wird beim Messen langsam schwächer.",
+      "en": "The LED slowly gets weaker while being measured."
+     },
+     "begruendung": {
+      "de": "Die Werte gehen rauf und runter, nicht stetig bergab. Das ist Rauschen, kein Trend.",
+      "en": "The values go up and down, not steadily downhill. That is noise, not a trend."
+     }
     },
     {
      "kennung": "d",
-     "text": "Nur der letzte Wert zählt, denn da war der Sensor eingeschwungen.",
-     "begruendung": "Auch der letzte Wert ist nur ein Wurf aus derselben Streuung. Er ist nicht wahrer als die anderen vier."
+     "text": {
+      "de": "Nur der letzte Wert zählt, denn da war der Sensor eingeschwungen.",
+      "en": "Only the last value counts, since the sensor had settled by then."
+     },
+     "begruendung": {
+      "de": "Auch der letzte Wert ist nur ein Wurf aus derselben Streuung. Er ist nicht wahrer als die anderen vier.",
+      "en": "The last value is just one more draw from the same spread. It is no truer than the other four."
+     }
     }
    ]
   },
   {
    "id": "me-005",
    "niveau": "verstehen",
-   "frage": "Welche Aussagen über die Werte eures Farbsensors treffen zu?\n(Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Welche Aussagen über die Werte eures Farbsensors treffen zu?\n(Mehrere richtige Antworten möglich.)",
+    "en": "Which statements about your colour sensor's values are true?\n(Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "b",
@@ -137,30 +248,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er liefert drei Werte, Rot, Grün und Blau, passend zu den drei Lämpchen in der LED des Senders.",
-     "begruendung": "Es sind vier: Zu Rot, Grün und Blau kommt der Clear-Kanal, der ungefiltert misst. Die Symmetrie zur LED ist verführerisch, aber der Sensor ist ein anderes Bauteil mit eigener Logik."
+     "text": {
+      "de": "Er liefert drei Werte, Rot, Grün und Blau, passend zu den drei Lämpchen in der LED des Senders.",
+      "en": "It delivers three values, red, green and blue, matching the three lamps inside the sender's LED."
+     },
+     "begruendung": {
+      "de": "Es sind vier: Zu Rot, Grün und Blau kommt der Clear-Kanal, der ungefiltert misst. Die Symmetrie zur LED ist verführerisch, aber der Sensor ist ein anderes Bauteil mit eigener Logik.",
+      "en": "There are four: besides red, green and blue there is the clear channel, which measures unfiltered. The symmetry with the LED is tempting, but the sensor is a different part with its own logic."
+     }
     },
     {
      "kennung": "b",
-     "text": "Neben Rot, Grün und Blau gibt es einen vierten, ungefilterten Kanal (Clear).",
-     "begruendung": "Richtig: Clear misst das gesamte einfallende Licht ohne Farbfilter und ist dadurch empfindlicher als die drei Farbkanäle."
+     "text": {
+      "de": "Neben Rot, Grün und Blau gibt es einen vierten, ungefilterten Kanal (Clear).",
+      "en": "Besides red, green and blue there is a fourth, unfiltered channel (clear)."
+     },
+     "begruendung": {
+      "de": "Richtig: Clear misst das gesamte einfallende Licht ohne Farbfilter und ist dadurch empfindlicher als die drei Farbkanäle.",
+      "en": "Correct: clear measures all incoming light without a colour filter and is therefore more sensitive than the three colour channels."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die gemessenen Werte entsprechen nicht einfach den RGB-Zahlen, die der Sender an seine LED schickt.",
-     "begruendung": "Richtig: Überlappende Farbfilter, Abstand und Umgebungslicht verschieben die Werte. Gesendetes (255, 0, 0) kommt nie als (255, 0, 0) an."
+     "text": {
+      "de": "Die gemessenen Werte entsprechen nicht einfach den RGB-Zahlen, die der Sender an seine LED schickt.",
+      "en": "The measured values do not simply match the RGB numbers the sender puts into its LED."
+     },
+     "begruendung": {
+      "de": "Richtig: Überlappende Farbfilter, Abstand und Umgebungslicht verschieben die Werte. Gesendetes (255, 0, 0) kommt nie als (255, 0, 0) an.",
+      "en": "Correct: overlapping colour filters, distance and ambient light shift the values. A transmitted (255, 0, 0) never arrives as (255, 0, 0)."
+     }
     },
     {
      "kennung": "d",
-     "text": "Bei ausgeschalteter LED liefern alle Kanäle Null, weil ohne Sender kein Licht am Sensor ankommt.",
-     "begruendung": "Nein: Der Sender ist nicht die einzige Lichtquelle. Umgebungslicht ist immer da, und genau deshalb braucht es die Kontrollmessung als Bezugsgröße."
+     "text": {
+      "de": "Bei ausgeschalteter LED liefern alle Kanäle Null, weil ohne Sender kein Licht am Sensor ankommt.",
+      "en": "With the LED off, all channels read zero, because without a sender no light reaches the sensor."
+     },
+     "begruendung": {
+      "de": "Nein: Der Sender ist nicht die einzige Lichtquelle. Umgebungslicht ist immer da, und genau deshalb braucht es die Kontrollmessung als Bezugsgröße.",
+      "en": "No: the sender is not the only light source. Ambient light is always present, and that is exactly why the control measurement is needed as a baseline."
+     }
     }
    ]
   },
   {
    "id": "me-006",
    "niveau": "anwenden",
-   "frage": "Die Abbildung zeigt dasselbe Licht, gemessen mit langen, mittleren und kurzen\nAblesefenstern. Ein Team will schneller senden und verkürzt dafür die\nIntegrationszeit des Sensors stark. Was ist zu erwarten?",
+   "frage": {
+    "de": "Die Abbildung zeigt dasselbe Licht, gemessen mit langen, mittleren und kurzen\nAblesefenstern. Ein Team will schneller senden und verkürzt dafür die\nIntegrationszeit des Sensors stark. Was ist zu erwarten?",
+    "en": "The figure shows the same light measured with long, medium and short reading\nwindows. A team wants to transmit faster and therefore shortens the sensor's\nintegration time drastically. What should they expect?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -169,30 +307,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Werte bleiben so ruhig wie zuvor und kommen häufiger; das Fenster legt nur fest, wie oft der Sensor einen neuen Wert liefert.",
-     "begruendung": "Die Häufigkeit stimmt, die Ruhe nicht: Das Fenster bestimmt auch, über wie viel Licht ein Wert mittelt. Kürzer heißt weniger Licht je Wert, und das Rauschen schlägt stärker durch; die Abbildung zeigt es an den kurzen Ablesungen."
+     "text": {
+      "de": "Die Werte bleiben so ruhig wie zuvor und kommen häufiger; das Fenster legt nur fest, wie oft der Sensor einen neuen Wert liefert.",
+      "en": "The readings stay as calm as before and arrive more often; the window only sets how often the sensor delivers a new value."
+     },
+     "begruendung": {
+      "de": "Die Häufigkeit stimmt, die Ruhe nicht: Das Fenster bestimmt auch, über wie viel Licht ein Wert mittelt. Kürzer heißt weniger Licht je Wert, und das Rauschen schlägt stärker durch; die Abbildung zeigt es an den kurzen Ablesungen.",
+      "en": "The rate part is right, the calm part is not: the window also sets how much light one reading averages over. Shorter means less light per reading, so noise hits harder; the figure shows it in the short readings."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Werte werden ruhiger, weil der Sensor weniger Zeit hat zu rauschen.",
-     "begruendung": "Andersherum: Ein kurzes Fenster mittelt über weniger Licht, also schlägt das Rauschen stärker durch. Die Abbildung zeigt es an den kurzen Ablesungen, die in den Nachbarbereich rutschen."
+     "text": {
+      "de": "Die Werte werden ruhiger, weil der Sensor weniger Zeit hat zu rauschen.",
+      "en": "The readings get calmer because the sensor has less time to be noisy."
+     },
+     "begruendung": {
+      "de": "Andersherum: Ein kurzes Fenster mittelt über weniger Licht, also schlägt das Rauschen stärker durch. Die Abbildung zeigt es an den kurzen Ablesungen, die in den Nachbarbereich rutschen.",
+      "en": "The other way round: a short window averages over less light, so noise hits harder. The figure shows it in the short readings crossing into the neighbouring level."
+     }
     },
     {
      "kennung": "c",
-     "text": "Mehr Messungen pro Sekunde, aber stärker streuende Werte; einzelne können in den falschen Bereich rutschen.",
-     "begruendung": "Genau der Zielkonflikt des Projekts: kurze Fenster für hohe Symbolrate gegen lange Fenster für ruhige Werte. Wo euer Aufbau die Grenze hat, klärt nur eine Messreihe."
+     "text": {
+      "de": "Mehr Messungen pro Sekunde, aber stärker streuende Werte; einzelne können in den falschen Bereich rutschen.",
+      "en": "More readings per second, but with more spread; single readings may cross into the wrong level."
+     },
+     "begruendung": {
+      "de": "Genau der Zielkonflikt des Projekts: kurze Fenster für hohe Symbolrate gegen lange Fenster für ruhige Werte. Wo euer Aufbau die Grenze hat, klärt nur eine Messreihe.",
+      "en": "Exactly the project's trade-off: short windows for symbol rate versus long windows for calm readings. Where your setup's limit sits, only a measurement series can tell."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Werte streuen stärker, dafür sinkt auch die Zahl der Messungen pro Sekunde.",
-     "begruendung": "Halb richtig, halb falsch: Die Streuung steigt, aber ein kürzeres Fenster erlaubt mehr Ablesungen pro Sekunde, nicht weniger. Sonst gäbe es keinen Zielkonflikt."
+     "text": {
+      "de": "Die Werte streuen stärker, dafür sinkt auch die Zahl der Messungen pro Sekunde.",
+      "en": "The readings scatter more, but the number of readings per second drops too."
+     },
+     "begruendung": {
+      "de": "Halb richtig, halb falsch: Die Streuung steigt, aber ein kürzeres Fenster erlaubt mehr Ablesungen pro Sekunde, nicht weniger. Sonst gäbe es keinen Zielkonflikt.",
+      "en": "Half right, half wrong: spread increases, but a shorter window allows more readings per second, not fewer. Otherwise there would be no trade-off."
+     }
     }
    ]
   },
   {
    "id": "me-007",
    "niveau": "verstehen",
-   "frage": "Euer Sender schickt (255, 0, 0) an die LED, der Sensor misst aber\nr=203, g=41, b=57. Wie geht ihr damit um?",
+   "frage": {
+    "de": "Euer Sender schickt (255, 0, 0) an die LED, der Sensor misst aber\nr=203, g=41, b=57. Wie geht ihr damit um?",
+    "en": "Your sender puts (255, 0, 0) into the LED, but the sensor reads\nr=203, g=41, b=57. How do you deal with that?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -200,30 +365,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Den Sensor reklamieren: Ein intakter Sensor müsste bei gesendetem (255, 0, 0) auch (255, 0, 0) anzeigen.",
-     "begruendung": "Der Sensor ist in Ordnung. Überlappende Farbfilter, Abstand und Umgebungslicht sorgen dafür, dass Messwerte nie den gesendeten Zahlen gleichen."
+     "text": {
+      "de": "Den Sensor reklamieren: Ein intakter Sensor müsste bei gesendetem (255, 0, 0) auch (255, 0, 0) anzeigen.",
+      "en": "Complain about the sensor: an intact sensor should read (255, 0, 0) when (255, 0, 0) is sent."
+     },
+     "begruendung": {
+      "de": "Der Sensor ist in Ordnung. Überlappende Farbfilter, Abstand und Umgebungslicht sorgen dafür, dass Messwerte nie den gesendeten Zahlen gleichen.",
+      "en": "The sensor is fine. Overlapping colour filters, distance and ambient light ensure readings never equal the transmitted numbers."
+     }
     },
     {
      "kennung": "b",
-     "text": "Für jede Sendefarbe messen, wie sie ankommt, und künftige Messungen diesen gelernten Mustern zuordnen.",
-     "begruendung": "Genau: Kalibrieren und klassifizieren. Nicht zurückrechnen, was gesendet wurde, sondern je Farbe das typische Ankunftsmuster lernen und Neues dem nächstliegenden Muster zuordnen."
+     "text": {
+      "de": "Für jede Sendefarbe messen, wie sie ankommt, und künftige Messungen diesen gelernten Mustern zuordnen.",
+      "en": "Measure how each transmitted colour arrives, and match future readings to these learned patterns."
+     },
+     "begruendung": {
+      "de": "Genau: Kalibrieren und klassifizieren. Nicht zurückrechnen, was gesendet wurde, sondern je Farbe das typische Ankunftsmuster lernen und Neues dem nächstliegenden Muster zuordnen.",
+      "en": "Exactly: calibrate and classify. Do not try to compute back what was sent; learn each colour's typical arrival pattern and match new readings to the nearest one."
+     }
     },
     {
      "kennung": "c",
-     "text": "Eine Umrechnungsformel herleiten, die aus den Messwerten die gesendeten RGB-Zahlen exakt zurückrechnet.",
-     "begruendung": "Verführerisch, aber brüchig: Die Verzerrung hängt von Abstand, Umgebungslicht und Streuung ab und ändert sich mit ihnen. Die Rückrechnung, die heute stimmt, stimmt morgen nicht mehr."
+     "text": {
+      "de": "Eine Umrechnungsformel herleiten, die aus den Messwerten die gesendeten RGB-Zahlen exakt zurückrechnet.",
+      "en": "Derive a conversion formula that computes the exact transmitted RGB numbers back from the readings."
+     },
+     "begruendung": {
+      "de": "Verführerisch, aber brüchig: Die Verzerrung hängt von Abstand, Umgebungslicht und Streuung ab und ändert sich mit ihnen. Die Rückrechnung, die heute stimmt, stimmt morgen nicht mehr.",
+      "en": "Tempting but fragile: the distortion depends on distance, ambient light and noise, and changes with them. The back-computation that works today fails tomorrow."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die LED heller einstellen, bis die Messwerte den Sendewerten entsprechen.",
-     "begruendung": "Die Zahlen leben in verschiedenen Welten: Ansteuerwerte der LED gegen Messwerte des Sensors. Keine Helligkeit macht sie deckungsgleich."
+     "text": {
+      "de": "Die LED heller einstellen, bis die Messwerte den Sendewerten entsprechen.",
+      "en": "Turn the LED brighter until the readings match the transmitted values."
+     },
+     "begruendung": {
+      "de": "Die Zahlen leben in verschiedenen Welten: Ansteuerwerte der LED gegen Messwerte des Sensors. Keine Helligkeit macht sie deckungsgleich.",
+      "en": "The numbers live in different worlds: LED drive values versus sensor readings. No brightness makes them coincide."
+     }
     }
    ]
   },
   {
    "id": "me-008",
    "niveau": "verstehen",
-   "frage": "Was gehört in das Protokoll einer Messreihe?\n(Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Was gehört in das Protokoll einer Messreihe?\n(Mehrere richtige Antworten möglich.)",
+    "en": "What belongs in the log of a measurement series?\n(Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -234,30 +426,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Was verändert wurde und was konstant blieb.",
-     "begruendung": "Richtig: Ohne diese Angabe lässt sich später nicht sagen, worauf ein Unterschied zurückgeht."
+     "text": {
+      "de": "Was verändert wurde und was konstant blieb.",
+      "en": "What was changed and what stayed constant."
+     },
+     "begruendung": {
+      "de": "Richtig: Ohne diese Angabe lässt sich später nicht sagen, worauf ein Unterschied zurückgeht.",
+      "en": "Correct: without this you cannot later say what a difference was due to."
+     }
     },
     {
      "kennung": "b",
-     "text": "Der Aufbau: Abstand, Umgebungslicht, Sensoreinstellungen.",
-     "begruendung": "Richtig: Nur mit den Bedingungen ist eine Messung wiederholbar und mit anderen vergleichbar."
+     "text": {
+      "de": "Der Aufbau: Abstand, Umgebungslicht, Sensoreinstellungen.",
+      "en": "The setup: distance, ambient light, sensor settings."
+     },
+     "begruendung": {
+      "de": "Richtig: Nur mit den Bedingungen ist eine Messung wiederholbar und mit anderen vergleichbar.",
+      "en": "Correct: only with the conditions is a measurement repeatable and comparable with others."
+     }
     },
     {
      "kennung": "c",
-     "text": "Alle Messwerte, auch die unbequemen.",
-     "begruendung": "Richtig: Wer nur die schönen Werte notiert, misst nicht, sondern sammelt Belege für die eigene Hoffnung. Ausreißer sind oft die interessanteste Information."
+     "text": {
+      "de": "Alle Messwerte, auch die unbequemen.",
+      "en": "All readings, including the inconvenient ones."
+     },
+     "begruendung": {
+      "de": "Richtig: Wer nur die schönen Werte notiert, misst nicht, sondern sammelt Belege für die eigene Hoffnung. Ausreißer sind oft die interessanteste Information.",
+      "en": "Correct: recording only the nice values is not measuring but collecting evidence for one's own hopes. Outliers are often the most interesting information."
+     }
     },
     {
      "kennung": "d",
-     "text": "Wie oft gemessen wurde.",
-     "begruendung": "Richtig: Ob ein Ergebnis auf 5 oder auf 50 Wiederholungen steht, entscheidet darüber, wie belastbar es ist."
+     "text": {
+      "de": "Wie oft gemessen wurde.",
+      "en": "How many times was measured."
+     },
+     "begruendung": {
+      "de": "Richtig: Ob ein Ergebnis auf 5 oder auf 50 Wiederholungen steht, entscheidet darüber, wie belastbar es ist.",
+      "en": "Correct: whether a result rests on 5 or on 50 repetitions decides how much weight it can bear."
+     }
     }
    ]
   },
   {
    "id": "me-009",
    "niveau": "anwenden",
-   "frage": "Euer Empfänger soll Rot und Blau unterscheiden. Im Test liegt er 5-mal von 5\nrichtig. Euer Teammitglied sagt: \"Fertig, funktioniert.\" Was ist der Haken?",
+   "frage": {
+    "de": "Euer Empfänger soll Rot und Blau unterscheiden. Im Test liegt er 5-mal von 5\nrichtig. Euer Teammitglied sagt: \"Fertig, funktioniert.\" Was ist der Haken?",
+    "en": "Your receiver is supposed to tell red from blue. In a test it is right 5 times\nout of 5. Your teammate says: \"Done, it works.\" What is the catch?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -265,30 +484,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nichts, fünf Treffer ohne einen einzigen Fehler belegen sauber, dass die Unterscheidung steht.",
-     "begruendung": "Bei zwei Farben schafft reines Raten fünf Treffer in Folge mit einer Wahrscheinlichkeit von rund drei Prozent. Das passiert im Semesterbetrieb ständig irgendwo."
+     "text": {
+      "de": "Nichts, fünf Treffer ohne einen einzigen Fehler belegen sauber, dass die Unterscheidung steht.",
+      "en": "Nothing, five hits without a single miss are solid proof that the distinction works."
+     },
+     "begruendung": {
+      "de": "Bei zwei Farben schafft reines Raten fünf Treffer in Folge mit einer Wahrscheinlichkeit von rund drei Prozent. Das passiert im Semesterbetrieb ständig irgendwo.",
+      "en": "With two colours, pure guessing gets five hits in a row with a probability of about three percent. Across a whole term that happens somewhere all the time."
+     }
     },
     {
      "kennung": "b",
-     "text": "Fünf Treffer können bei zwei Farben noch Glück sein; erst viele Wiederholungen trennen Können von Zufall.",
-     "begruendung": "Genau: Raten trifft mit 50 Prozent je Versuch. 5 aus 5 gelingt dem Zufall in etwa jedem 32. Anlauf, 50 aus 50 praktisch nie. Deshalb sind die Abnahmen auf lange Serien geschnitten."
+     "text": {
+      "de": "Fünf Treffer können bei zwei Farben noch Glück sein; erst viele Wiederholungen trennen Können von Zufall.",
+      "en": "Five hits can still be luck with two colours; only many repetitions separate skill from chance."
+     },
+     "begruendung": {
+      "de": "Genau: Raten trifft mit 50 Prozent je Versuch. 5 aus 5 gelingt dem Zufall in etwa jedem 32. Anlauf, 50 aus 50 praktisch nie. Deshalb sind die Abnahmen auf lange Serien geschnitten.",
+      "en": "Exactly: guessing hits 50 percent per trial. 5 out of 5 happens by chance in roughly one run in 32; 50 out of 50 practically never. That is why acceptance tests use long series."
+     }
     },
     {
      "kennung": "c",
-     "text": "Der Test hätte mit mehr als zwei Farben laufen müssen.",
-     "begruendung": "Die Aufgabe war Rot gegen Blau; mehr Farben sind eine andere, spätere Aufgabe. Der Haken liegt in der kleinen Zahl der Versuche, nicht in der Farbzahl."
+     "text": {
+      "de": "Der Test hätte mit mehr als zwei Farben laufen müssen.",
+      "en": "The test should have used more than two colours."
+     },
+     "begruendung": {
+      "de": "Die Aufgabe war Rot gegen Blau; mehr Farben sind eine andere, spätere Aufgabe. Der Haken liegt in der kleinen Zahl der Versuche, nicht in der Farbzahl.",
+      "en": "The task was red versus blue; more colours are a different, later task. The catch is the small number of trials, not the number of colours."
+     }
     },
     {
      "kennung": "d",
-     "text": "Fünf Treffer zeigen nur, dass die Schwelle gerade passt; entscheidend ist, wie weit der Mittelwert der Messwerte von der Schwelle entfernt liegt.",
-     "begruendung": "Der Abstand zur Schwelle ist eine nützliche Größe, aber ein Mittelwert aus wenigen Messungen ist selbst nur ein Wurf. Der Haken bleibt die kleine Zahl der Versuche, nicht die Lage der Schwelle."
+     "text": {
+      "de": "Fünf Treffer zeigen nur, dass die Schwelle gerade passt; entscheidend ist, wie weit der Mittelwert der Messwerte von der Schwelle entfernt liegt.",
+      "en": "Five hits only show that the threshold happens to fit; what matters is how far the mean of the readings sits from the threshold."
+     },
+     "begruendung": {
+      "de": "Der Abstand zur Schwelle ist eine nützliche Größe, aber ein Mittelwert aus wenigen Messungen ist selbst nur ein Wurf. Der Haken bleibt die kleine Zahl der Versuche, nicht die Lage der Schwelle.",
+      "en": "The margin to the threshold is a useful quantity, but a mean from a few readings is itself just one draw. The catch remains the small number of trials, not where the threshold sits."
+     }
     }
    ]
   },
   {
    "id": "me-010",
    "niveau": "verstehen",
-   "frage": "Warum legt man vor einer Messreihe fest, welches Ergebnis man erwartet, statt\neinfach zu messen und dann zu schauen?",
+   "frage": {
+    "de": "Warum legt man vor einer Messreihe fest, welches Ergebnis man erwartet, statt\neinfach zu messen und dann zu schauen?",
+    "en": "Why do you decide before a measurement series what result you expect, instead\nof just measuring and then having a look?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -296,30 +542,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil sich die Sensoreinstellungen nur dann sinnvoll wählen lassen, wenn vorher feststeht, welche Werte herauskommen sollen.",
-     "begruendung": "Die Einstellungen richten sich nach Aufbau und Umgebungslicht, nicht nach dem erhofften Ergebnis. Der Sensor misst mit jeder Einstellung; das Problem entsteht später, beim Deuten der Werte."
+     "text": {
+      "de": "Weil sich die Sensoreinstellungen nur dann sinnvoll wählen lassen, wenn vorher feststeht, welche Werte herauskommen sollen.",
+      "en": "Because the sensor settings can only be chosen sensibly once it is clear beforehand which values are supposed to come out."
+     },
+     "begruendung": {
+      "de": "Die Einstellungen richten sich nach Aufbau und Umgebungslicht, nicht nach dem erhofften Ergebnis. Der Sensor misst mit jeder Einstellung; das Problem entsteht später, beim Deuten der Werte.",
+      "en": "The settings follow the setup and the ambient light, not the hoped-for result. The sensor measures with any setting; the problem arises later, when interpreting the values."
+     }
     },
     {
      "kennung": "b",
-     "text": "Damit man die Reihe abbrechen kann, sobald das erwartete Ergebnis erreicht ist, und keine überflüssigen Wiederholungen macht.",
-     "begruendung": "Genau das wäre die Verzerrung, die vermieden werden soll: Wer aufhört, sobald es passt, sammelt Belege für die eigene Hoffnung. Die Zahl der Wiederholungen wird vorher festgelegt und durchgezogen."
+     "text": {
+      "de": "Damit man die Reihe abbrechen kann, sobald das erwartete Ergebnis erreicht ist, und keine überflüssigen Wiederholungen macht.",
+      "en": "So the series can be stopped as soon as the expected result is reached, avoiding superfluous repetitions."
+     },
+     "begruendung": {
+      "de": "Genau das wäre die Verzerrung, die vermieden werden soll: Wer aufhört, sobald es passt, sammelt Belege für die eigene Hoffnung. Die Zahl der Wiederholungen wird vorher festgelegt und durchgezogen.",
+      "en": "That would be exactly the bias to avoid: stopping as soon as it fits collects evidence for your own hopes. The number of repetitions is fixed beforehand and carried through."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ohne vorher festgelegte Erwartung lässt sich fast jedes Ergebnis hinterher als Erfolg deuten.",
-     "begruendung": "Genau: Wer erst misst und dann entscheidet, was 'gut' heißt, biegt die Deutung unbemerkt zum Wunschergebnis. Die vorab notierte Erwartung macht aus der Messung einen ehrlichen Ja/Nein-Test."
+     "text": {
+      "de": "Ohne vorher festgelegte Erwartung lässt sich fast jedes Ergebnis hinterher als Erfolg deuten.",
+      "en": "Without a pre-set expectation, almost any result can be interpreted as success afterwards."
+     },
+     "begruendung": {
+      "de": "Genau: Wer erst misst und dann entscheidet, was 'gut' heißt, biegt die Deutung unbemerkt zum Wunschergebnis. Die vorab notierte Erwartung macht aus der Messung einen ehrlichen Ja/Nein-Test.",
+      "en": "Exactly: measuring first and deciding afterwards what counts as 'good' silently bends the interpretation towards the hoped-for result. An expectation written down beforehand turns the measurement into an honest yes/no test."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil ein Protokoll ohne notierte Erwartung nicht als Messreihe gilt, sondern nur als Sammlung einzelner Werte.",
-     "begruendung": "Was eine Messreihe ausmacht, sind Wiederholung und festgehaltene Bedingungen, nicht die Erwartung. Die dient nicht der Form, sondern dem Schutz davor, sich selbst zu täuschen."
+     "text": {
+      "de": "Weil ein Protokoll ohne notierte Erwartung nicht als Messreihe gilt, sondern nur als Sammlung einzelner Werte.",
+      "en": "Because a log without a written expectation does not count as a measurement series, only as a collection of single values."
+     },
+     "begruendung": {
+      "de": "Was eine Messreihe ausmacht, sind Wiederholung und festgehaltene Bedingungen, nicht die Erwartung. Die dient nicht der Form, sondern dem Schutz davor, sich selbst zu täuschen.",
+      "en": "What makes a measurement series is repetition and recorded conditions, not the expectation. It serves not the form but the protection against fooling yourself."
+     }
     }
    ]
   },
   {
    "id": "me-011",
    "niveau": "erinnern",
-   "frage": "Was macht eine Messreihe aus, im Unterschied zu einer einzelnen Messung?",
+   "frage": {
+    "de": "Was macht eine Messreihe aus, im Unterschied zu einer einzelnen Messung?",
+    "en": "What makes a measurement series, as opposed to a single measurement?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -327,25 +600,46 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass mit besonderer Sorgfalt gemessen wird: ruhiger Aufbau, sauber eingestellter Sensor, und jeder Wert wird sofort notiert.",
-     "begruendung": "Sorgfalt gehört dazu, macht aber noch keine Reihe: Auch eine einzelne, sorgfältige Messung bleibt ein Wurf. Der Unterschied liegt in Wiederholung, festgehaltenen Bedingungen und der einen veränderten Größe."
+     "text": {
+      "de": "Dass mit besonderer Sorgfalt gemessen wird: ruhiger Aufbau, sauber eingestellter Sensor, und jeder Wert wird sofort notiert.",
+      "en": "That the measuring is done with special care: a steady setup, a properly configured sensor, and every value written down immediately."
+     },
+     "begruendung": {
+      "de": "Sorgfalt gehört dazu, macht aber noch keine Reihe: Auch eine einzelne, sorgfältige Messung bleibt ein Wurf. Der Unterschied liegt in Wiederholung, festgehaltenen Bedingungen und der einen veränderten Größe.",
+      "en": "Care is part of it but does not make a series: a single careful measurement is still one draw. The difference lies in repetition, recorded conditions and the single changed variable."
+     }
     },
     {
      "kennung": "b",
-     "text": "Mehrere Messungen unter gleichen, festgehaltenen Bedingungen, bei denen gezielt höchstens eine Größe verändert wird.",
-     "begruendung": "Genau: Wiederholung fängt die Streuung ein, die dokumentierten Bedingungen machen sie wiederholbar, und die eine veränderte Größe macht Unterschiede deutbar."
+     "text": {
+      "de": "Mehrere Messungen unter gleichen, festgehaltenen Bedingungen, bei denen gezielt höchstens eine Größe verändert wird.",
+      "en": "Several measurements under identical, recorded conditions, with at most one variable changed deliberately."
+     },
+     "begruendung": {
+      "de": "Genau: Wiederholung fängt die Streuung ein, die dokumentierten Bedingungen machen sie wiederholbar, und die eine veränderte Größe macht Unterschiede deutbar.",
+      "en": "Exactly: repetition captures the spread, the recorded conditions make it repeatable, and the single changed variable makes differences interpretable."
+     }
     },
     {
      "kennung": "c",
-     "text": "Möglichst viele Messungen bei möglichst vielen verschiedenen Einstellungen, damit sich hinterher jeder Zusammenhang aus den Daten ablesen lässt.",
-     "begruendung": "Viel messen allein ergibt einen Datenhaufen. Wenn sich zwischen zwei Werten mehrere Größen zugleich geändert haben, lässt sich hinterher kein Zusammenhang mehr sauber zuordnen; deshalb je Reihe nur eine Größe."
+     "text": {
+      "de": "Möglichst viele Messungen bei möglichst vielen verschiedenen Einstellungen, damit sich hinterher jeder Zusammenhang aus den Daten ablesen lässt.",
+      "en": "As many measurements as possible at as many different settings as possible, so that every relationship can be read from the data afterwards."
+     },
+     "begruendung": {
+      "de": "Viel messen allein ergibt einen Datenhaufen. Wenn sich zwischen zwei Werten mehrere Größen zugleich geändert haben, lässt sich hinterher kein Zusammenhang mehr sauber zuordnen; deshalb je Reihe nur eine Größe.",
+      "en": "Measuring a lot by itself yields a data pile. If several variables changed between two values at once, no relationship can be attributed cleanly afterwards; hence one variable per series."
+     }
     }
    ]
   },
   {
    "id": "me-012",
    "niveau": "anwenden",
-   "frage": "Der KI-Assistent hat vorgeschlagen, die Verstärkung des Sensors zu erhöhen,\n\"das verbessert die Erkennung\". Eure saubere Messreihe zeigt das Gegenteil:\nDie Erkennungsrate sinkt. Wie geht ihr vor?\n(Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Der KI-Assistent hat vorgeschlagen, die Verstärkung des Sensors zu erhöhen,\n\"das verbessert die Erkennung\". Eure saubere Messreihe zeigt das Gegenteil:\nDie Erkennungsrate sinkt. Wie geht ihr vor?\n(Mehrere richtige Antworten möglich.)",
+    "en": "The AI assistant suggested increasing the sensor's gain, \"that improves\nrecognition\". Your clean measurement series shows the opposite: the recognition\nrate drops. What do you do?\n(Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -355,28 +649,58 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Messreihe samt Bedingungen dokumentieren.",
-     "begruendung": "Richtig: Ohne festgehaltene Bedingungen ist der Widerspruch später weder nachvollziehbar noch wiederholbar."
+     "text": {
+      "de": "Die Messreihe samt Bedingungen dokumentieren.",
+      "en": "Document the measurement series including its conditions."
+     },
+     "begruendung": {
+      "de": "Richtig: Ohne festgehaltene Bedingungen ist der Widerspruch später weder nachvollziehbar noch wiederholbar.",
+      "en": "Correct: without recorded conditions the contradiction can neither be retraced nor repeated later."
+     }
     },
     {
      "kennung": "b",
-     "text": "Der Messung misstrauen; die KI kennt solche Sensoren besser als ihr.",
-     "begruendung": "Falsch herum: Die KI kennt Sensoren dieser Art, aber nicht euren Aufbau. Die Messung am echten Gerät ist die Ground Truth, zu der kein Sprachmodell Zugang hat."
+     "text": {
+      "de": "Der Messung misstrauen; die KI kennt solche Sensoren besser als ihr.",
+      "en": "Distrust the measurement; the AI knows such sensors better than you."
+     },
+     "begruendung": {
+      "de": "Falsch herum: Die KI kennt Sensoren dieser Art, aber nicht euren Aufbau. Die Messung am echten Gerät ist die Ground Truth, zu der kein Sprachmodell Zugang hat.",
+      "en": "The wrong way round: the AI knows sensors of this kind, but not your setup. The measurement on the real device is the ground truth no language model has access to."
+     }
     },
     {
      "kennung": "c",
-     "text": "Kurz prüfen, ob die Messreihe sauber war: nur eine Größe verändert, genug Wiederholungen, Kontrollmessung vorhanden.",
-     "begruendung": "Richtig: Bevor man einen Vorschlag als widerlegt ablegt, gehört die eigene Messung auf den Prüfstand. Erst eine saubere Reihe trägt den Widerspruch."
+     "text": {
+      "de": "Kurz prüfen, ob die Messreihe sauber war: nur eine Größe verändert, genug Wiederholungen, Kontrollmessung vorhanden.",
+      "en": "Briefly check that the series was clean: one variable changed, enough repetitions, control measurement in place."
+     },
+     "begruendung": {
+      "de": "Richtig: Bevor man einen Vorschlag als widerlegt ablegt, gehört die eigene Messung auf den Prüfstand. Erst eine saubere Reihe trägt den Widerspruch.",
+      "en": "Correct: before filing a suggestion as refuted, your own measurement deserves scrutiny. Only a clean series can carry the contradiction."
+     }
     },
     {
      "kennung": "d",
-     "text": "Den Fall ins Irrtumsprotokoll aufnehmen: Vorschlag, Messung, Ergebnis.",
-     "begruendung": "Richtig: Genau dafür ist das Irrtumsprotokoll da. Dokumentierte Fälle, in denen eine Messung einen KI-Vorschlag widerlegt hat, sind Prüfungsstoff und Lernertrag zugleich."
+     "text": {
+      "de": "Den Fall ins Irrtumsprotokoll aufnehmen: Vorschlag, Messung, Ergebnis.",
+      "en": "Add the case to the error log: suggestion, measurement, outcome."
+     },
+     "begruendung": {
+      "de": "Richtig: Genau dafür ist das Irrtumsprotokoll da. Dokumentierte Fälle, in denen eine Messung einen KI-Vorschlag widerlegt hat, sind Prüfungsstoff und Lernertrag zugleich.",
+      "en": "Correct: that is exactly what the error log is for. Documented cases where a measurement refuted an AI suggestion are exam material and learning yield at once."
+     }
     },
     {
      "kennung": "e",
-     "text": "Die höhere Verstärkung trotzdem übernehmen, denn eine einzelne widersprechende Messreihe wiegt weniger als eine gut begründete Empfehlung.",
-     "begruendung": "Die Gewichtung ist verkehrt: Eine Begründung sagt, warum etwas gelten sollte, die saubere Messreihe zeigt, was in eurem Aufbau gilt. Wer gegen die eigene saubere Messung entscheidet, hat das Messen aufgegeben."
+     "text": {
+      "de": "Die höhere Verstärkung trotzdem übernehmen, denn eine einzelne widersprechende Messreihe wiegt weniger als eine gut begründete Empfehlung.",
+      "en": "Keep the higher gain anyway, since a single contradicting measurement series carries less weight than a well-reasoned recommendation."
+     },
+     "begruendung": {
+      "de": "Die Gewichtung ist verkehrt: Eine Begründung sagt, warum etwas gelten sollte, die saubere Messreihe zeigt, was in eurem Aufbau gilt. Wer gegen die eigene saubere Messung entscheidet, hat das Messen aufgegeben.",
+      "en": "The weighting is upside down: a rationale says why something should hold, the clean series shows what holds in your setup. Deciding against your own clean measurement means giving up on measuring."
+     }
     }
    ]
   }

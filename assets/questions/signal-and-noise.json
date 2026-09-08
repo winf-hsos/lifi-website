@@ -4,7 +4,10 @@
   {
    "id": "sn-001",
    "niveau": "erinnern",
-   "frage": "Ihr messt zehnmal hintereinander dieselbe Farbe, ohne irgendetwas zu\nverändern, und bekommt zehn leicht verschiedene Zahlen. Was bedeutet das?",
+   "frage": {
+    "de": "Ihr messt zehnmal hintereinander dieselbe Farbe, ohne irgendetwas zu\nverändern, und bekommt zehn leicht verschiedene Zahlen. Was bedeutet das?",
+    "en": "You measure the same colour ten times in a row without changing\nanything, and get ten slightly different numbers. What does that mean?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Sensor arbeitet fehlerhaft: Ein intakter Sensor liefert bei gleicher Farbe auch gleiche Zahlen.",
-     "begruendung": "Ein perfekt funktionierender Sensor verhält sich genauso. Jede Messung enthält Schwankungen, das ist Physik und keine Panne."
+     "text": {
+      "de": "Der Sensor arbeitet fehlerhaft: Ein intakter Sensor liefert bei gleicher Farbe auch gleiche Zahlen.",
+      "en": "The sensor is faulty: an intact sensor returns the same numbers for the same colour."
+     },
+     "begruendung": {
+      "de": "Ein perfekt funktionierender Sensor verhält sich genauso. Jede Messung enthält Schwankungen, das ist Physik und keine Panne.",
+      "en": "A perfectly working sensor behaves the same way. Every measurement contains fluctuation; that is physics, not a fault."
+     }
     },
     {
      "kennung": "b",
-     "text": "Das ist normal: Jede Messung schwankt, und diese Schwankung heißt Rauschen.",
-     "begruendung": "Genau. Rauschen ist keine Störung von außen allein, sondern eine Eigenschaft jeder Messung. Interessant ist deshalb nicht, ob es rauscht, sondern wie stark."
+     "text": {
+      "de": "Das ist normal: Jede Messung schwankt, und diese Schwankung heißt Rauschen.",
+      "en": "That is normal: every measurement fluctuates, and this fluctuation is called noise."
+     },
+     "begruendung": {
+      "de": "Genau. Rauschen ist keine Störung von außen allein, sondern eine Eigenschaft jeder Messung. Interessant ist deshalb nicht, ob es rauscht, sondern wie stark.",
+      "en": "Exactly. Noise is not only an external disturbance but a property of every measurement. The interesting question is not whether there is noise, but how much."
+     }
     },
     {
      "kennung": "c",
-     "text": "Euer Programm hat einen Fehler, denn ein Computer liefert bei gleicher Eingabe dieselbe Ausgabe.",
-     "begruendung": "Für das Programm stimmt der Satz, für die Messung nicht: Die Eingabe ist hier das Licht am Sensor, und die ist nie zweimal exakt gleich. Auch ein fehlerfreies Programm gibt schwankende Werte weiter."
+     "text": {
+      "de": "Euer Programm hat einen Fehler, denn ein Computer liefert bei gleicher Eingabe dieselbe Ausgabe.",
+      "en": "Your program has a bug, because a computer returns the same output for the same input."
+     },
+     "begruendung": {
+      "de": "Für das Programm stimmt der Satz, für die Messung nicht: Die Eingabe ist hier das Licht am Sensor, und die ist nie zweimal exakt gleich. Auch ein fehlerfreies Programm gibt schwankende Werte weiter.",
+      "en": "True for the program, not for the measurement: the input here is the light at the sensor, and that is never exactly the same twice. Even a correct program passes on fluctuating values."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die LED flackert unmerklich, und der Sensor bildet dieses Flackern in seinen Werten ab.",
-     "begruendung": "Die LED hält ihren Wert. Selbst bei völlig konstanter Beleuchtung streuen die Messwerte, weil Sensor, Licht und Umgebung nie exakt gleich sind."
+     "text": {
+      "de": "Die LED flackert unmerklich, und der Sensor bildet dieses Flackern in seinen Werten ab.",
+      "en": "The LED flickers imperceptibly, and the sensor reflects that flicker in its values."
+     },
+     "begruendung": {
+      "de": "Die LED hält ihren Wert. Selbst bei völlig konstanter Beleuchtung streuen die Messwerte, weil Sensor, Licht und Umgebung nie exakt gleich sind.",
+      "en": "The LED holds its value. Even with perfectly constant illumination the readings scatter, because sensor, light, and surroundings are never exactly identical."
+     }
     }
    ]
   },
   {
    "id": "sn-002",
    "niveau": "verstehen",
-   "frage": "In allen vier Streifen liegt dasselbe Rohsignal, nur die Länge der\nMessfenster wächst nach unten. Was zeigt die Abbildung?",
+   "frage": {
+    "de": "In allen vier Streifen liegt dasselbe Rohsignal, nur die Länge der\nMessfenster wächst nach unten. Was zeigt die Abbildung?",
+    "en": "All four strips show the same raw signal; only the length of the\nmeasurement windows grows downwards. What does the figure show?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -44,30 +74,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass ein besserer Sensor weniger rauscht: Die unteren Streifen stammen von einem genaueren Bauteil.",
-     "begruendung": "Der Sensor ist in allen vier Streifen derselbe. Was sich ändert, ist allein die Messdauer."
+     "text": {
+      "de": "Dass ein besserer Sensor weniger rauscht: Die unteren Streifen stammen von einem genaueren Bauteil.",
+      "en": "That a better sensor produces less noise: the lower strips come from a more precise component."
+     },
+     "begruendung": {
+      "de": "Der Sensor ist in allen vier Streifen derselbe. Was sich ändert, ist allein die Messdauer.",
+      "en": "The sensor is the same in all four strips. The only thing that changes is the measurement duration."
+     }
     },
     {
      "kennung": "b",
-     "text": "Dass das Rauschen mit der Zeit von selbst nachlässt, weil sich der Sensor erst einpendeln muss.",
-     "begruendung": "Das Rohsignal oben rauscht durchgehend gleich stark, vom ersten bis zum letzten Moment. Ruhiger werden nur die daraus gebildeten Messwerte, und zwar wegen der längeren Fenster, nicht wegen der verstrichenen Zeit."
+     "text": {
+      "de": "Dass das Rauschen mit der Zeit von selbst nachlässt, weil sich der Sensor erst einpendeln muss.",
+      "en": "That noise fades away by itself over time because the sensor first has to settle."
+     },
+     "begruendung": {
+      "de": "Das Rohsignal oben rauscht durchgehend gleich stark, vom ersten bis zum letzten Moment. Ruhiger werden nur die daraus gebildeten Messwerte, und zwar wegen der längeren Fenster, nicht wegen der verstrichenen Zeit.",
+      "en": "The raw signal at the top is equally noisy throughout, from the first moment to the last. Only the values derived from it become calmer, and that is due to the longer windows, not to elapsed time."
+     }
     },
     {
      "kennung": "c",
-     "text": "Dass längere Messfenster die Schwankung glätten: Jeder Messwert liegt näher am wahren Pegel.",
-     "begruendung": "Genau: Über ein längeres Fenster mitteln sich die Ausreißer heraus. Der Preis steht auf der nächsten Seite dieses Konzepts: Längere Fenster bedeuten weniger Symbole pro Sekunde."
+     "text": {
+      "de": "Dass längere Messfenster die Schwankung glätten: Jeder Messwert liegt näher am wahren Pegel.",
+      "en": "That longer measurement windows smooth the fluctuation: each value lies closer to the true level."
+     },
+     "begruendung": {
+      "de": "Genau: Über ein längeres Fenster mitteln sich die Ausreißer heraus. Der Preis steht auf der nächsten Seite dieses Konzepts: Längere Fenster bedeuten weniger Symbole pro Sekunde.",
+      "en": "Exactly: over a longer window the outliers average out. The price is on the next page of this concept: longer windows mean fewer symbols per second."
+     }
     },
     {
      "kennung": "d",
-     "text": "Dass man mit genügend langer Messung jedes beliebige Alphabet sicher übertragen kann.",
-     "begruendung": "Glätten hilft, aber es kostet Zeit, und die Restschwankung verschwindet nie ganz. Wer beliebig viele Symbole will, braucht beliebig lange Messungen, und dann ist die Übertragung unbrauchbar langsam."
+     "text": {
+      "de": "Dass man mit genügend langer Messung jedes beliebige Alphabet sicher übertragen kann.",
+      "en": "That with a long enough measurement any alphabet can be transmitted safely."
+     },
+     "begruendung": {
+      "de": "Glätten hilft, aber es kostet Zeit, und die Restschwankung verschwindet nie ganz. Wer beliebig viele Symbole will, braucht beliebig lange Messungen, und dann ist die Übertragung unbrauchbar langsam.",
+      "en": "Smoothing helps but costs time, and residual fluctuation never disappears. Wanting arbitrarily many symbols means arbitrarily long measurements, and then the transmission is uselessly slow."
+     }
     }
    ]
   },
   {
    "id": "sn-003",
    "niveau": "verstehen",
-   "frage": "Im Wettbewerb erreicht ein Team ein sicheres Alphabet aus 16 Farben, ein\nanderes nur aus 4. Beide haben denselben Sensor und dieselbe LED. Woran\nliegt der Unterschied in erster Linie?",
+   "frage": {
+    "de": "Im Wettbewerb erreicht ein Team ein sicheres Alphabet aus 16 Farben, ein\nanderes nur aus 4. Beide haben denselben Sensor und dieselbe LED. Woran\nliegt der Unterschied in erster Linie?",
+    "en": "In the competition one team reaches a safe alphabet of 16 colours,\nanother only 4. Both use the same sensor and the same LED. What mainly\nexplains the difference?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -75,30 +132,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "An der Qualität des Codes, der die Grenzen zwischen den Farben zieht und die Messwerte zuordnet.",
-     "begruendung": "Der Code entscheidet, wo die Grenzen liegen, aber nicht, wie weit die Messwerte streuen. Sauberer Code allein vergrößert kein Alphabet."
+     "text": {
+      "de": "An der Qualität des Codes, der die Grenzen zwischen den Farben zieht und die Messwerte zuordnet.",
+      "en": "At the quality of the code that draws the boundaries between colours and assigns the readings."
+     },
+     "begruendung": {
+      "de": "Der Code entscheidet, wo die Grenzen liegen, aber nicht, wie weit die Messwerte streuen. Sauberer Code allein vergrößert kein Alphabet.",
+      "en": "The code decides where the boundaries lie, not how far the readings scatter. Clean code alone does not enlarge an alphabet."
+     }
     },
     {
      "kennung": "b",
-     "text": "An der Verstärkung: Das erste Team hat sie höher gestellt, und mehr Verstärkung liefert feinere Abstufungen.",
-     "begruendung": "Verstärkung hebt Signal und Rauschen gemeinsam an; der Abstand zwischen den Symbolen wächst, die Streuung aber genauso. Das entscheidende Verhältnis bleibt dabei gleich, und bei zu viel Verstärkung läuft der Sensor in die Sättigung."
+     "text": {
+      "de": "An der Verstärkung: Das erste Team hat sie höher gestellt, und mehr Verstärkung liefert feinere Abstufungen.",
+      "en": "At the gain: the first team set it higher, and more gain yields finer gradations."
+     },
+     "begruendung": {
+      "de": "Verstärkung hebt Signal und Rauschen gemeinsam an; der Abstand zwischen den Symbolen wächst, die Streuung aber genauso. Das entscheidende Verhältnis bleibt dabei gleich, und bei zu viel Verstärkung läuft der Sensor in die Sättigung.",
+      "en": "Gain lifts signal and noise together: the distance between symbols grows, but so does the scatter. The decisive ratio stays the same, and with too much gain the sensor saturates."
+     }
     },
     {
      "kennung": "c",
-     "text": "Am Verhältnis von Abstand zwischen den Symbolen zu Streuung der Messwerte: Wer die Streuung kleiner bekommt, bringt mehr Symbole unter.",
-     "begruendung": "Genau: Die Alphabetgröße misst nichts anderes als dieses Verhältnis. Kleiner wird die Streuung durch Abschirmung gegen Umgebungslicht, saubere Optik, festen Abstand und längere Messfenster."
+     "text": {
+      "de": "Am Verhältnis von Abstand zwischen den Symbolen zu Streuung der Messwerte: Wer die Streuung kleiner bekommt, bringt mehr Symbole unter.",
+      "en": "At the ratio of distance between symbols to scatter of the readings: whoever reduces the scatter fits in more symbols."
+     },
+     "begruendung": {
+      "de": "Genau: Die Alphabetgröße misst nichts anderes als dieses Verhältnis. Kleiner wird die Streuung durch Abschirmung gegen Umgebungslicht, saubere Optik, festen Abstand und längere Messfenster.",
+      "en": "Exactly: alphabet size measures nothing but this ratio. Scatter shrinks through shielding against ambient light, clean optics, a fixed distance, and longer measurement windows."
+     }
     },
     {
      "kennung": "d",
-     "text": "Daran, dass das erste Team hellere Farben gewählt hat.",
-     "begruendung": "Helligkeit allein hilft wenig, wenn die Werte trotzdem breit streuen. Es zählt der Abstand zwischen den Symbolen im Verhältnis zur Streuung, nicht der absolute Pegel."
+     "text": {
+      "de": "Daran, dass das erste Team hellere Farben gewählt hat.",
+      "en": "At the first team having chosen brighter colours."
+     },
+     "begruendung": {
+      "de": "Helligkeit allein hilft wenig, wenn die Werte trotzdem breit streuen. Es zählt der Abstand zwischen den Symbolen im Verhältnis zur Streuung, nicht der absolute Pegel.",
+      "en": "Brightness alone helps little if the values still scatter widely. What counts is the distance between symbols relative to the scatter, not the absolute level."
+     }
     }
    ]
   },
   {
    "id": "sn-004",
    "niveau": "verstehen",
-   "frage": "Längere Messfenster liefern ruhigere Werte. Warum stellt man die\nIntegrationszeit dann nicht einfach auf den höchsten Wert?",
+   "frage": {
+    "de": "Längere Messfenster liefern ruhigere Werte. Warum stellt man die\nIntegrationszeit dann nicht einfach auf den höchsten Wert?",
+    "en": "Longer measurement windows give calmer values. So why not simply set the\nintegration time to its maximum?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -106,30 +190,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil sich bei langem Fenster so viel Licht ansammelt, dass jede Farbe den Höchstwert erreicht und nichts mehr unterscheidbar ist.",
-     "begruendung": "Sättigung kann vorkommen, ist aber kein Argument gegen lange Fenster an sich: Sie lässt sich über kleinere Verstärkung oder mehr Abstand vermeiden. Der eigentliche Preis wird in einer anderen Währung bezahlt: Zeit."
+     "text": {
+      "de": "Weil sich bei langem Fenster so viel Licht ansammelt, dass jede Farbe den Höchstwert erreicht und nichts mehr unterscheidbar ist.",
+      "en": "Because with a long window so much light accumulates that every colour reaches the maximum value and nothing can be told apart."
+     },
+     "begruendung": {
+      "de": "Sättigung kann vorkommen, ist aber kein Argument gegen lange Fenster an sich: Sie lässt sich über kleinere Verstärkung oder mehr Abstand vermeiden. Der eigentliche Preis wird in einer anderen Währung bezahlt: Zeit.",
+      "en": "Saturation can happen, but it is no argument against long windows as such: lower gain or more distance avoids it. The real price is paid in a different currency: time."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil jede Messung Zeit kostet: Längere Fenster bedeuten weniger Symbole pro Sekunde und damit weniger Durchsatz.",
-     "begruendung": "Genau, und das ist der zentrale Zielkonflikt des Projekts: Signalqualität gegen Symbolrate. Deshalb sind Integrationszeit und Verstärkung in eurer Schnittstelle sichtbar und nicht versteckt."
+     "text": {
+      "de": "Weil jede Messung Zeit kostet: Längere Fenster bedeuten weniger Symbole pro Sekunde und damit weniger Durchsatz.",
+      "en": "Because every measurement costs time: longer windows mean fewer symbols per second and thus less throughput."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist der zentrale Zielkonflikt des Projekts: Signalqualität gegen Symbolrate. Deshalb sind Integrationszeit und Verstärkung in eurer Schnittstelle sichtbar und nicht versteckt.",
+      "en": "Exactly, and this is the project's central trade-off: signal quality against symbol rate. That is why integration time and gain are visible in your interface, not hidden."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil sich bei langer Messung mehr Störlicht ansammelt und die Werte dadurch ungenauer werden.",
-     "begruendung": "Störlicht sammelt sich mit, aber das Nutzlicht ebenso, und die Schwankung mittelt sich über das längere Fenster heraus. Die Werte werden ruhiger, nicht ungenauer; das ist ja der Grund für längere Fenster. Nur eben langsamer."
+     "text": {
+      "de": "Weil sich bei langer Messung mehr Störlicht ansammelt und die Werte dadurch ungenauer werden.",
+      "en": "Because a long measurement accumulates more stray light, which makes the values less precise."
+     },
+     "begruendung": {
+      "de": "Störlicht sammelt sich mit, aber das Nutzlicht ebenso, und die Schwankung mittelt sich über das längere Fenster heraus. Die Werte werden ruhiger, nicht ungenauer; das ist ja der Grund für längere Fenster. Nur eben langsamer.",
+      "en": "Stray light does accumulate, but so does the useful light, and the fluctuation averages out over the longer window. The values become calmer, not less precise; that is the very reason for longer windows. Just slower."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil der Sensor bei langer Integrationszeit keine Farben mehr unterscheidet.",
-     "begruendung": "Die Farbkanäle arbeiten unabhängig von der Fensterlänge weiter. Was sich ändert, ist nur die Ruhe der Werte und die Zeit, die sie kosten."
+     "text": {
+      "de": "Weil der Sensor bei langer Integrationszeit keine Farben mehr unterscheidet.",
+      "en": "Because with long integration times the sensor no longer distinguishes colours."
+     },
+     "begruendung": {
+      "de": "Die Farbkanäle arbeiten unabhängig von der Fensterlänge weiter. Was sich ändert, ist nur die Ruhe der Werte und die Zeit, die sie kosten.",
+      "en": "The colour channels keep working regardless of window length. What changes is only the calmness of the values and the time they cost."
+     }
     }
    ]
   },
   {
    "id": "sn-005",
    "niveau": "anwenden",
-   "frage": "Zwei eurer Farben liefern Messreihen, die sich überlappen: Farbe A\nstreut um 180 bis 240, Farbe B um 220 bis 280. Welche Maßnahmen greifen\ndas Problem an der Wurzel an?",
+   "frage": {
+    "de": "Zwei eurer Farben liefern Messreihen, die sich überlappen: Farbe A\nstreut um 180 bis 240, Farbe B um 220 bis 280. Welche Maßnahmen greifen\ndas Problem an der Wurzel an?",
+    "en": "Two of your colours produce overlapping measurement series: colour A\nscatters from 180 to 240, colour B from 220 to 280. Which measures\naddress the root of the problem?"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -139,35 +250,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Eine der beiden Farben durch eine weiter entfernte ersetzen.",
-     "begruendung": "Richtig: Das vergrößert den Abstand zwischen den Symbolen, also den Zähler im entscheidenden Verhältnis."
+     "text": {
+      "de": "Eine der beiden Farben durch eine weiter entfernte ersetzen.",
+      "en": "Replace one of the two colours with one that lies further away."
+     },
+     "begruendung": {
+      "de": "Richtig: Das vergrößert den Abstand zwischen den Symbolen, also den Zähler im entscheidenden Verhältnis.",
+      "en": "Correct: this increases the distance between symbols, the numerator of the decisive ratio."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Grenze genau in die Mitte der Überlappung legen.",
-     "begruendung": "Das ist die beste Grenze für eine schlechte Lage, aber es beseitigt die Überlappung nicht: Ein Teil der Messungen fällt weiterhin auf die falsche Seite."
+     "text": {
+      "de": "Die Grenze genau in die Mitte der Überlappung legen.",
+      "en": "Put the boundary exactly in the middle of the overlap."
+     },
+     "begruendung": {
+      "de": "Das ist die beste Grenze für eine schlechte Lage, aber es beseitigt die Überlappung nicht: Ein Teil der Messungen fällt weiterhin auf die falsche Seite.",
+      "en": "That is the best boundary for a bad situation, but it does not remove the overlap: some measurements still land on the wrong side."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Integrationszeit erhöhen, damit die Streuung schrumpft.",
-     "begruendung": "Richtig, und das ist der Nenner desselben Verhältnisses. Es kostet Symbolrate, deshalb ist es eine Abwägung und keine Selbstverständlichkeit."
+     "text": {
+      "de": "Die Integrationszeit erhöhen, damit die Streuung schrumpft.",
+      "en": "Increase the integration time so the scatter shrinks."
+     },
+     "begruendung": {
+      "de": "Richtig, und das ist der Nenner desselben Verhältnisses. Es kostet Symbolrate, deshalb ist es eine Abwägung und keine Selbstverständlichkeit.",
+      "en": "Correct, and this is the denominator of the same ratio. It costs symbol rate, so it is a trade-off, not a given."
+     }
     },
     {
      "kennung": "d",
-     "text": "Den optischen Aufbau verbessern: abschirmen, Röhre, fester Abstand.",
-     "begruendung": "Richtig: Weniger Fremdlicht und stabile Geometrie senken die Streuung, ohne einen einzigen Millisekunde Symbolrate zu kosten. Die beste Sorte Verbesserung."
+     "text": {
+      "de": "Den optischen Aufbau verbessern: abschirmen, Röhre, fester Abstand.",
+      "en": "Improve the optical setup: shield it, add a tube, fix the distance."
+     },
+     "begruendung": {
+      "de": "Richtig: Weniger Fremdlicht und stabile Geometrie senken die Streuung, ohne einen einzigen Millisekunde Symbolrate zu kosten. Die beste Sorte Verbesserung.",
+      "en": "Correct: less stray light and stable geometry lower the scatter without costing a single millisecond of symbol rate. The best kind of improvement."
+     }
     },
     {
      "kennung": "e",
-     "text": "Mehr Farben ins Alphabet aufnehmen, damit die Überlappung weniger ins Gewicht fällt.",
-     "begruendung": "Das verschärft die Lage: Mehr Farben bedeuten kleinere Abstände, und die Überlappung nimmt zu statt ab."
+     "text": {
+      "de": "Mehr Farben ins Alphabet aufnehmen, damit die Überlappung weniger ins Gewicht fällt.",
+      "en": "Add more colours to the alphabet so the overlap matters less."
+     },
+     "begruendung": {
+      "de": "Das verschärft die Lage: Mehr Farben bedeuten kleinere Abstände, und die Überlappung nimmt zu statt ab.",
+      "en": "That makes things worse: more colours mean smaller distances, and the overlap grows rather than shrinks."
+     }
     }
    ]
   },
   {
    "id": "sn-006",
    "niveau": "anwenden",
-   "frage": "Was bewirkt diese Funktion, verglichen mit einer einzelnen Messung?",
+   "frage": {
+    "de": "Was bewirkt diese Funktion, verglichen mit einer einzelnen Messung?",
+    "en": "Compared to a single measurement, what does this function achieve?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -176,30 +320,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie macht den Sensor genauer, weil er zehnmal so viel Licht sammelt.",
-     "begruendung": "Der Sensor selbst bleibt unverändert; er misst zehnmal dasselbe. Verbessert wird nur, was das Programm aus den zehn Werten macht."
+     "text": {
+      "de": "Sie macht den Sensor genauer, weil er zehnmal so viel Licht sammelt.",
+      "en": "It makes the sensor more precise because it collects ten times as much light."
+     },
+     "begruendung": {
+      "de": "Der Sensor selbst bleibt unverändert; er misst zehnmal dasselbe. Verbessert wird nur, was das Programm aus den zehn Werten macht.",
+      "en": "The sensor itself is unchanged; it measures the same thing ten times. What improves is only what the program makes of the ten values."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sie mittelt die Schwankung heraus: Der Rückgabewert streut weniger als eine Einzelmessung, und die Funktion dauert zehnmal so lang.",
-     "begruendung": "Genau, und beide Hälften gehören zusammen. Mitteln ist dasselbe Geschäft wie eine längere Integrationszeit: ruhigere Werte gegen Zeit. Wer nur die erste Hälfte sieht, wundert sich über den eingebrochenen Durchsatz."
+     "text": {
+      "de": "Sie mittelt die Schwankung heraus: Der Rückgabewert streut weniger als eine Einzelmessung, und die Funktion dauert zehnmal so lang.",
+      "en": "It averages out the fluctuation: the returned value scatters less than a single reading, and the function takes ten times as long."
+     },
+     "begruendung": {
+      "de": "Genau, und beide Hälften gehören zusammen. Mitteln ist dasselbe Geschäft wie eine längere Integrationszeit: ruhigere Werte gegen Zeit. Wer nur die erste Hälfte sieht, wundert sich über den eingebrochenen Durchsatz.",
+      "en": "Exactly, and both halves belong together. Averaging is the same deal as a longer integration time: calmer values for time. Whoever sees only the first half is surprised by the collapsed throughput."
+     }
     },
     {
      "kennung": "c",
-     "text": "Sie entfernt Ausreißer: Ein einzelner verrutschter Wert fällt im Mittel über zehn Messungen nicht mehr ins Gewicht.",
-     "begruendung": "Ein Mittelwert dämpft Ausreißer, aber er wirft sie nicht weg; ein einzelner starker Ausreißer zieht ihn spürbar mit. Wer Ausreißer wirklich verwerfen will, nimmt den Median."
+     "text": {
+      "de": "Sie entfernt Ausreißer: Ein einzelner verrutschter Wert fällt im Mittel über zehn Messungen nicht mehr ins Gewicht.",
+      "en": "It removes outliers: a single stray value no longer matters in the average over ten readings."
+     },
+     "begruendung": {
+      "de": "Ein Mittelwert dämpft Ausreißer, aber er wirft sie nicht weg; ein einzelner starker Ausreißer zieht ihn spürbar mit. Wer Ausreißer wirklich verwerfen will, nimmt den Median.",
+      "en": "An average damps outliers but does not discard them; one strong outlier noticeably drags it along. To really reject outliers, use the median."
+     }
     },
     {
      "kennung": "d",
-     "text": "Sie sorgt dafür, dass das gesendete Symbol zuverlässig erkannt wird, weil der Mittelwert die Schwankung neutralisiert.",
-     "begruendung": "Sie verbessert die Chancen, garantiert aber nichts: Liegen zwei Symbole zu dicht beieinander, hilft auch ein ruhiger Mittelwert nicht mehr."
+     "text": {
+      "de": "Sie sorgt dafür, dass das gesendete Symbol zuverlässig erkannt wird, weil der Mittelwert die Schwankung neutralisiert.",
+      "en": "It ensures the transmitted symbol is recognised reliably, because the average neutralises the fluctuation."
+     },
+     "begruendung": {
+      "de": "Sie verbessert die Chancen, garantiert aber nichts: Liegen zwei Symbole zu dicht beieinander, hilft auch ein ruhiger Mittelwert nicht mehr.",
+      "en": "It improves the odds but guarantees nothing: if two symbols lie too close together, even a calm average will not help."
+     }
     }
    ]
   },
   {
    "id": "sn-007",
    "niveau": "verstehen",
-   "frage": "Zwei Wege sollen die Übertragung beschleunigen: mehr Symbole ins\nAlphabet aufnehmen oder schneller messen. Was haben beide gemeinsam?",
+   "frage": {
+    "de": "Zwei Wege sollen die Übertragung beschleunigen: mehr Symbole ins\nAlphabet aufnehmen oder schneller messen. Was haben beide gemeinsam?",
+    "en": "Two ways to speed up a transmission: put more symbols into the alphabet,\nor measure faster. What do they have in common?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -207,30 +378,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Beide sind kostenlos, solange die Hardware mitspielt, denn sie ändern nur, wie das Programm die Messwerte deutet.",
-     "begruendung": "Beide kosten dasselbe, nämlich Sicherheitsabstand zwischen dem, was ankommt, und dem, was noch sicher unterscheidbar ist."
+     "text": {
+      "de": "Beide sind kostenlos, solange die Hardware mitspielt, denn sie ändern nur, wie das Programm die Messwerte deutet.",
+      "en": "Both are free as long as the hardware keeps up, since they only change how the program interprets the readings."
+     },
+     "begruendung": {
+      "de": "Beide kosten dasselbe, nämlich Sicherheitsabstand zwischen dem, was ankommt, und dem, was noch sicher unterscheidbar ist.",
+      "en": "Both cost the same thing: safety margin between what arrives and what is still reliably distinguishable."
+     }
     },
     {
      "kennung": "b",
-     "text": "Beide erfordern einen empfindlicheren Sensor, weil die vorhandene Hardware feinere Abstufungen nicht auflöst.",
-     "begruendung": "Ein besserer Sensor verschöbe die Grenze, aber die Struktur des Problems bliebe dieselbe. Auch mit Spitzenhardware gibt es eine Wand, sie steht nur weiter hinten."
+     "text": {
+      "de": "Beide erfordern einen empfindlicheren Sensor, weil die vorhandene Hardware feinere Abstufungen nicht auflöst.",
+      "en": "Both require a more sensitive sensor, because the existing hardware cannot resolve finer gradations."
+     },
+     "begruendung": {
+      "de": "Ein besserer Sensor verschöbe die Grenze, aber die Struktur des Problems bliebe dieselbe. Auch mit Spitzenhardware gibt es eine Wand, sie steht nur weiter hinten.",
+      "en": "A better sensor would shift the limit, but the structure of the problem stays. Even with top hardware there is a wall; it just stands further out."
+     }
     },
     {
      "kennung": "c",
-     "text": "Beide verkleinern den Sicherheitsabstand: einmal den Abstand zwischen den Symbolen, einmal durch mehr Streuung je Messung. Sie enden an derselben Wand.",
-     "begruendung": "Genau: Der eine Weg schiebt die Symbole zusammen, der andere macht die Messwerte unruhiger. In beiden Fällen schrumpft dasselbe Verhältnis, und deshalb begrenzen die beiden Konzepte gemeinsam euren Durchsatz."
+     "text": {
+      "de": "Beide verkleinern den Sicherheitsabstand: einmal den Abstand zwischen den Symbolen, einmal durch mehr Streuung je Messung. Sie enden an derselben Wand.",
+      "en": "Both shrink the safety margin: once the distance between symbols, once through more scatter per measurement. They end at the same wall."
+     },
+     "begruendung": {
+      "de": "Genau: Der eine Weg schiebt die Symbole zusammen, der andere macht die Messwerte unruhiger. In beiden Fällen schrumpft dasselbe Verhältnis, und deshalb begrenzen die beiden Konzepte gemeinsam euren Durchsatz.",
+      "en": "Exactly: one way pushes the symbols together, the other makes the readings noisier. In both cases the same ratio shrinks, which is why the two concepts jointly limit your throughput."
+     }
     },
     {
      "kennung": "d",
-     "text": "Beide funktionieren nur, wenn das Umgebungslicht konstant bleibt.",
-     "begruendung": "Konstantes Umgebungslicht hilft immer, ist aber nicht das Gemeinsame der beiden Wege. Ihr gemeinsamer Preis ist der schrumpfende Sicherheitsabstand."
+     "text": {
+      "de": "Beide funktionieren nur, wenn das Umgebungslicht konstant bleibt.",
+      "en": "Both only work if the ambient light stays constant."
+     },
+     "begruendung": {
+      "de": "Konstantes Umgebungslicht hilft immer, ist aber nicht das Gemeinsame der beiden Wege. Ihr gemeinsamer Preis ist der schrumpfende Sicherheitsabstand.",
+      "en": "Constant ambient light always helps but is not what the two ways share. Their common price is the shrinking safety margin."
+     }
     }
    ]
   },
   {
    "id": "sn-008",
    "niveau": "anwenden",
-   "frage": "Ein Team dokumentiert seine Farben mit je einem Mittelwert: rot 210,\norange 245, gelb 280. Warum genügt das für die Entscheidung über die\nAlphabetgröße nicht?",
+   "frage": {
+    "de": "Ein Team dokumentiert seine Farben mit je einem Mittelwert: rot 210,\norange 245, gelb 280. Warum genügt das für die Entscheidung über die\nAlphabetgröße nicht?",
+    "en": "A team documents its colours with one mean each: red 210, orange 245,\nyellow 280. Why is that not enough to decide on the alphabet size?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -238,30 +436,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die Mittelwerte nichts darüber sagen, wie weit die Einzelmessungen um sie herum streuen.",
-     "begruendung": "Genau: 35 Punkte Abstand sind reichlich, wenn die Werte um ±5 schwanken, und hoffnungslos bei ±30. Zu jedem Steckbrief gehört deshalb ein Streumaß, mindestens der kleinste und größte beobachtete Wert."
+     "text": {
+      "de": "Weil die Mittelwerte nichts darüber sagen, wie weit die Einzelmessungen um sie herum streuen.",
+      "en": "Because the means say nothing about how far the individual readings scatter around them."
+     },
+     "begruendung": {
+      "de": "Genau: 35 Punkte Abstand sind reichlich, wenn die Werte um ±5 schwanken, und hoffnungslos bei ±30. Zu jedem Steckbrief gehört deshalb ein Streumaß, mindestens der kleinste und größte beobachtete Wert.",
+      "en": "Exactly: a gap of 35 is plenty if the values vary by ±5 and hopeless at ±30. Every profile therefore needs a measure of spread, at least the smallest and largest observed value."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil ein Mittelwert aus zu wenigen Messungen zufällig zu hoch oder zu tief liegen kann.",
-     "begruendung": "Das stimmt für kleine Messreihen, trifft aber nicht den Kern: Auch ein aus hundert Messungen ermittelter, verlässlicher Mittelwert sagt nichts über die Streuung. Es fehlt nicht Genauigkeit, es fehlt die zweite Angabe."
+     "text": {
+      "de": "Weil ein Mittelwert aus zu wenigen Messungen zufällig zu hoch oder zu tief liegen kann.",
+      "en": "Because a mean taken from too few measurements can by chance lie too high or too low."
+     },
+     "begruendung": {
+      "de": "Das stimmt für kleine Messreihen, trifft aber nicht den Kern: Auch ein aus hundert Messungen ermittelter, verlässlicher Mittelwert sagt nichts über die Streuung. Es fehlt nicht Genauigkeit, es fehlt die zweite Angabe.",
+      "en": "True for small series, but it misses the point: even a reliable mean from a hundred readings says nothing about the spread. What is missing is not precision but the second number."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil drei Farben zu wenig für ein brauchbares Alphabet sind; erst ab vier trägt jedes Symbol zwei Bit.",
-     "begruendung": "Drei Symbole sind ein gültiges Alphabet, es trägt knapp anderthalb Bit. Die Frage ist nicht die Anzahl, sondern ob die drei sicher trennbar sind."
+     "text": {
+      "de": "Weil drei Farben zu wenig für ein brauchbares Alphabet sind; erst ab vier trägt jedes Symbol zwei Bit.",
+      "en": "Because three colours are too few for a usable alphabet; only from four upwards does each symbol carry two bits."
+     },
+     "begruendung": {
+      "de": "Drei Symbole sind ein gültiges Alphabet, es trägt knapp anderthalb Bit. Die Frage ist nicht die Anzahl, sondern ob die drei sicher trennbar sind.",
+      "en": "Three symbols are a valid alphabet carrying about one and a half bits. The question is not the count but whether the three are reliably separable."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil die Werte offenbar aus dem Clear-Kanal stammen und der für Farben ungeeignet ist.",
-     "begruendung": "Der Clear-Kanal ist eine legitime und oft robuste Wahl. Auch mit den Farbkanälen bliebe das Problem dasselbe: ohne Streumaß keine Aussage."
+     "text": {
+      "de": "Weil die Werte offenbar aus dem Clear-Kanal stammen und der für Farben ungeeignet ist.",
+      "en": "Because the values apparently come from the clear channel, which is unsuitable for colours."
+     },
+     "begruendung": {
+      "de": "Der Clear-Kanal ist eine legitime und oft robuste Wahl. Auch mit den Farbkanälen bliebe das Problem dasselbe: ohne Streumaß keine Aussage.",
+      "en": "The clear channel is a legitimate and often robust choice. With the colour channels the problem would be identical: without a spread measure, no conclusion."
+     }
     }
    ]
   },
   {
    "id": "sn-009",
    "niveau": "verstehen",
-   "frage": "Was heißt es, dass zwei Zustände „sicher unterscheidbar“ sind?",
+   "frage": {
+    "de": "Was heißt es, dass zwei Zustände „sicher unterscheidbar“ sind?",
+    "en": "What does it mean for two states to be \"reliably distinguishable\"?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -269,30 +494,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ihre Mittelwerte sind verschieden, mit deutlichem Abstand, wenn man jede Farbe zehnmal misst.",
-     "begruendung": "Verschiedene Mittelwerte sind die Mindestbedingung, aber sie genügen nicht: Auch bei verschiedenen Mittelwerten können sich die Messreihen überlappen."
+     "text": {
+      "de": "Ihre Mittelwerte sind verschieden, mit deutlichem Abstand, wenn man jede Farbe zehnmal misst.",
+      "en": "Their means are different, with a clear gap, when each colour is measured ten times."
+     },
+     "begruendung": {
+      "de": "Verschiedene Mittelwerte sind die Mindestbedingung, aber sie genügen nicht: Auch bei verschiedenen Mittelwerten können sich die Messreihen überlappen.",
+      "en": "Different means are the minimum condition but not enough: even with different means the series can overlap."
+     }
     },
     {
      "kennung": "b",
-     "text": "Ihre Messreihen überlappen nicht: Auch die extremsten Werte des einen liegen noch klar auf seiner Seite der Grenze.",
-     "begruendung": "Genau, und das ist ein empirischer Befund, kein rechnerischer: Ihr seht es erst, wenn ihr oft genug gemessen habt. Zehn Messungen je Farbe sind das Minimum, mit dem sich das beurteilen lässt."
+     "text": {
+      "de": "Ihre Messreihen überlappen nicht: Auch die extremsten Werte des einen liegen noch klar auf seiner Seite der Grenze.",
+      "en": "Their measurement series do not overlap: even the most extreme values of one still lie clearly on its side of the boundary."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist ein empirischer Befund, kein rechnerischer: Ihr seht es erst, wenn ihr oft genug gemessen habt. Zehn Messungen je Farbe sind das Minimum, mit dem sich das beurteilen lässt.",
+      "en": "Exactly, and it is an empirical finding, not a calculated one: you only see it after measuring often enough. Ten measurements per colour are the minimum for judging it."
+     }
     },
     {
      "kennung": "c",
-     "text": "Der Empfänger ordnet sie in mindestens der Hälfte der Versuche der richtigen Seite der Grenze zu.",
-     "begruendung": "Die Hälfte ist bei zwei Zuständen genau so gut wie Raten. Sicher heißt: praktisch immer, nicht öfter als zufällig."
+     "text": {
+      "de": "Der Empfänger ordnet sie in mindestens der Hälfte der Versuche der richtigen Seite der Grenze zu.",
+      "en": "The receiver assigns them to the correct side of the boundary in at least half the attempts."
+     },
+     "begruendung": {
+      "de": "Die Hälfte ist bei zwei Zuständen genau so gut wie Raten. Sicher heißt: praktisch immer, nicht öfter als zufällig.",
+      "en": "Half is exactly as good as guessing with two states. Reliable means practically always, not better than chance."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die beiden Farben sehen für das menschliche Auge klar verschieden aus, etwa Rot gegen Grün.",
-     "begruendung": "Euer Auge ist nicht der Empfänger. Zwei für euch deutlich verschiedene Farben können im Sensorwert dicht beieinanderliegen, und umgekehrt."
+     "text": {
+      "de": "Die beiden Farben sehen für das menschliche Auge klar verschieden aus, etwa Rot gegen Grün.",
+      "en": "The two colours look clearly different to the human eye, say red versus green."
+     },
+     "begruendung": {
+      "de": "Euer Auge ist nicht der Empfänger. Zwei für euch deutlich verschiedene Farben können im Sensorwert dicht beieinanderliegen, und umgekehrt.",
+      "en": "Your eye is not the receiver. Two colours that look clearly different to you can be close in sensor values, and vice versa."
+     }
     }
    ]
   },
   {
    "id": "sn-010",
    "niveau": "anwenden",
-   "frage": "Euer optischer Aufbau darf nur passiv sein: Röhren, Blenden, Spiegel,\nhöchstens 10 Euro Material. Was bewirkt so ein Aufbau messtechnisch?",
+   "frage": {
+    "de": "Euer optischer Aufbau darf nur passiv sein: Röhren, Blenden, Spiegel,\nhöchstens 10 Euro Material. Was bewirkt so ein Aufbau messtechnisch?",
+    "en": "Your optical setup must be passive: tubes, apertures, mirrors, at most\nten euros of material. What does such a setup achieve in measurement\nterms?"
+   },
    "typ": "mc",
    "richtig": [
     "b",
@@ -301,30 +553,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er verstärkt das Licht der LED, so wie eine höhere Verstärkung am Sensor die Messwerte anhebt.",
-     "begruendung": "Passive Optik erzeugt kein Licht und verstärkt es auch nicht. Sie kann es bündeln und führen, aber die LED gibt nicht mehr her als vorher. Ihr Nutzen liegt woanders: weniger Fremdlicht, feste Geometrie."
+     "text": {
+      "de": "Er verstärkt das Licht der LED, so wie eine höhere Verstärkung am Sensor die Messwerte anhebt.",
+      "en": "It amplifies the LED's light, the way a higher gain at the sensor raises the readings."
+     },
+     "begruendung": {
+      "de": "Passive Optik erzeugt kein Licht und verstärkt es auch nicht. Sie kann es bündeln und führen, aber die LED gibt nicht mehr her als vorher. Ihr Nutzen liegt woanders: weniger Fremdlicht, feste Geometrie.",
+      "en": "Passive optics neither create nor amplify light. They can focus and guide it, but the LED gives no more than before. Their benefit lies elsewhere: less stray light, fixed geometry."
+     }
     },
     {
      "kennung": "b",
-     "text": "Er hält Umgebungslicht fern, das sonst als Störanteil in jeder Messung landet.",
-     "begruendung": "Richtig, und das ist der größte Hebel im Raum HD0001 mit seiner Deckenbeleuchtung. Weniger Fremdlicht heißt kleinere Streuung, ohne Zeitverlust."
+     "text": {
+      "de": "Er hält Umgebungslicht fern, das sonst als Störanteil in jeder Messung landet.",
+      "en": "It keeps out ambient light that would otherwise enter every measurement as a disturbance."
+     },
+     "begruendung": {
+      "de": "Richtig, und das ist der größte Hebel im Raum HD0001 mit seiner Deckenbeleuchtung. Weniger Fremdlicht heißt kleinere Streuung, ohne Zeitverlust.",
+      "en": "Correct, and it is the biggest lever in a room with ceiling lighting. Less stray light means less scatter, at no cost in time."
+     }
     },
     {
      "kennung": "c",
-     "text": "Er stabilisiert die Geometrie: Abstand und Winkel bleiben zwischen zwei Messungen gleich.",
-     "begruendung": "Richtig: Ein verrutschtes Gerät verschiebt alle Werte, und eure sorgfältig vermessenen Steckbriefe stimmen nicht mehr. Reproduzierbarkeit ist der halbe Wettbewerb."
+     "text": {
+      "de": "Er stabilisiert die Geometrie: Abstand und Winkel bleiben zwischen zwei Messungen gleich.",
+      "en": "It stabilises the geometry: distance and angle stay the same between measurements."
+     },
+     "begruendung": {
+      "de": "Richtig: Ein verrutschtes Gerät verschiebt alle Werte, und eure sorgfältig vermessenen Steckbriefe stimmen nicht mehr. Reproduzierbarkeit ist der halbe Wettbewerb.",
+      "en": "Correct: a shifted device moves all values, and your carefully measured profiles no longer match. Reproducibility is half the competition."
+     }
     },
     {
      "kennung": "d",
-     "text": "Er ersetzt die Kalibrierung, weil die Werte mit fester Röhre nicht mehr verrutschen können.",
-     "begruendung": "Im Gegenteil: Nach jeder Änderung am Aufbau muss neu kalibriert werden, weil sich alle Pegel verschieben. Deshalb gehören beide Messreihen in die Dokumentation, vorher und nachher."
+     "text": {
+      "de": "Er ersetzt die Kalibrierung, weil die Werte mit fester Röhre nicht mehr verrutschen können.",
+      "en": "It replaces calibration, because with a fixed tube the values can no longer drift."
+     },
+     "begruendung": {
+      "de": "Im Gegenteil: Nach jeder Änderung am Aufbau muss neu kalibriert werden, weil sich alle Pegel verschieben. Deshalb gehören beide Messreihen in die Dokumentation, vorher und nachher.",
+      "en": "On the contrary: after every change to the setup you must recalibrate, because all levels shift. That is why both measurement series belong in the documentation, before and after."
+     }
     }
    ]
   },
   {
    "id": "sn-011",
    "niveau": "verstehen",
-   "frage": "Ein anderes Team empfiehlt euch seine Einstellungen: „Integrationszeit\n50 ms, Verstärkung 4x, damit haben wir 8 Farben geschafft.“ Wie geht ihr\ndamit um?",
+   "frage": {
+    "de": "Ein anderes Team empfiehlt euch seine Einstellungen: „Integrationszeit\n50 ms, Verstärkung 4x, damit haben wir 8 Farben geschafft.“ Wie geht ihr\ndamit um?",
+    "en": "Another team recommends its settings: \"Integration time 50 ms, gain 4x,\nthat got us 8 colours.\" How do you handle that?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -332,30 +611,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Übernehmen, denn mit derselben Hardware liefern dieselben Einstellungen auch dieselben Ergebnisse.",
-     "begruendung": "Bewiesen hat es etwas über seinen Aufbau: seine Optik, seinen Abstand, seinen Platz im Raum. Eure Werte können deutlich abweichen."
+     "text": {
+      "de": "Übernehmen, denn mit derselben Hardware liefern dieselben Einstellungen auch dieselben Ergebnisse.",
+      "en": "Adopt them, since with the same hardware the same settings give the same results."
+     },
+     "begruendung": {
+      "de": "Bewiesen hat es etwas über seinen Aufbau: seine Optik, seinen Abstand, seinen Platz im Raum. Eure Werte können deutlich abweichen.",
+      "en": "It has proven something about its own setup: its optics, its distance, its spot in the room. Your values can differ considerably."
+     }
     },
     {
      "kennung": "b",
-     "text": "Nur die Verstärkung übernehmen, denn die hängt vom Sensor ab; die Integrationszeit dagegen vom eigenen Aufbau.",
-     "begruendung": "Die Trennung hält nicht: Auch die passende Verstärkung hängt davon ab, wie viel Licht am Sensor ankommt, also von Abstand, Optik und Raum. Beide Werte sind fremde Messergebnisse, die als Startpunkt Zeit sparen, aber eigene Messungen nicht ersetzen."
+     "text": {
+      "de": "Nur die Verstärkung übernehmen, denn die hängt vom Sensor ab; die Integrationszeit dagegen vom eigenen Aufbau.",
+      "en": "Adopt only the gain, since that depends on the sensor; the integration time, however, depends on your own setup."
+     },
+     "begruendung": {
+      "de": "Die Trennung hält nicht: Auch die passende Verstärkung hängt davon ab, wie viel Licht am Sensor ankommt, also von Abstand, Optik und Raum. Beide Werte sind fremde Messergebnisse, die als Startpunkt Zeit sparen, aber eigene Messungen nicht ersetzen.",
+      "en": "The split does not hold: the right gain also depends on how much light reaches the sensor, that is on distance, optics and room. Both values are someone else's results; they save time as a starting point but do not replace your own measurements."
+     }
     },
     {
      "kennung": "c",
-     "text": "Als Startpunkt nehmen und dann selbst messen: mehrere Einstellungen durchprobieren und die Trefferquote je Einstellung protokollieren.",
-     "begruendung": "Genau: Der Kanal ist die einzige verlässliche Instanz, und er ist bei jedem Aufbau ein anderer. Dasselbe gilt für Vorschläge des KI-Assistenten; auch die sind Hypothesen, keine Messwerte."
+     "text": {
+      "de": "Als Startpunkt nehmen und dann selbst messen: mehrere Einstellungen durchprobieren und die Trefferquote je Einstellung protokollieren.",
+      "en": "Take it as a starting point and then measure yourselves: try several settings and record the hit rate for each."
+     },
+     "begruendung": {
+      "de": "Genau: Der Kanal ist die einzige verlässliche Instanz, und er ist bei jedem Aufbau ein anderer. Dasselbe gilt für Vorschläge des KI-Assistenten; auch die sind Hypothesen, keine Messwerte.",
+      "en": "Exactly: the channel is the only reliable authority, and it differs for every setup. The same applies to the AI assistant's suggestions; those are hypotheses too, not measurements."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Verstärkung höher stellen als das andere Team, dann werden es mehr als 8 Farben.",
-     "begruendung": "Mehr Verstärkung verstärkt auch das Rauschen und kann in die Sättigung führen. Ob sie hilft, entscheidet eure Messreihe, nicht die Richtung des Reglers."
+     "text": {
+      "de": "Die Verstärkung höher stellen als das andere Team, dann werden es mehr als 8 Farben.",
+      "en": "Set the gain higher than the other team, then you get more than 8 colours."
+     },
+     "begruendung": {
+      "de": "Mehr Verstärkung verstärkt auch das Rauschen und kann in die Sättigung führen. Ob sie hilft, entscheidet eure Messreihe, nicht die Richtung des Reglers.",
+      "en": "More gain also amplifies the noise and can drive the sensor into saturation. Whether it helps is decided by your measurements, not by the direction of the knob."
+     }
     }
    ]
   },
   {
    "id": "sn-012",
    "niveau": "verstehen",
-   "frage": "Welche Aussagen über Rauschen treffen zu?",
+   "frage": {
+    "de": "Welche Aussagen über Rauschen treffen zu?",
+    "en": "Which statements about noise are true?"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -365,28 +671,58 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Rauschen lässt sich verkleinern, aber nie ganz beseitigen.",
-     "begruendung": "Richtig: Abschirmung, Optik und längere Messfenster drücken es, aber jede Messung behält eine Restschwankung."
+     "text": {
+      "de": "Rauschen lässt sich verkleinern, aber nie ganz beseitigen.",
+      "en": "Noise can be reduced but never fully removed."
+     },
+     "begruendung": {
+      "de": "Richtig: Abschirmung, Optik und längere Messfenster drücken es, aber jede Messung behält eine Restschwankung.",
+      "en": "Correct: shielding, optics, and longer windows push it down, but every measurement keeps a residual fluctuation."
+     }
     },
     {
      "kennung": "b",
-     "text": "Wie viel Rauschen stört, hängt vom Abstand zwischen den Symbolen ab.",
-     "begruendung": "Richtig, und deshalb ist die absolute Streuung allein nie die Antwort. Entscheidend ist immer das Verhältnis von Abstand zu Streuung."
+     "text": {
+      "de": "Wie viel Rauschen stört, hängt vom Abstand zwischen den Symbolen ab.",
+      "en": "How much the noise matters depends on the distance between symbols."
+     },
+     "begruendung": {
+      "de": "Richtig, und deshalb ist die absolute Streuung allein nie die Antwort. Entscheidend ist immer das Verhältnis von Abstand zu Streuung.",
+      "en": "Correct, which is why absolute scatter alone is never the answer. What counts is always the ratio of distance to scatter."
+     }
     },
     {
      "kennung": "c",
-     "text": "Rauschen stammt aus dem Umgebungslicht; in einem abgedunkelten Raum verschwindet es.",
-     "begruendung": "Umgebungslicht ist ein großer Beitrag, aber nicht der einzige: Auch Sensor und Elektronik rauschen, und im Dunkeln bleibt eine Schwankung übrig."
+     "text": {
+      "de": "Rauschen stammt aus dem Umgebungslicht; in einem abgedunkelten Raum verschwindet es.",
+      "en": "Noise comes from ambient light; in a darkened room it disappears."
+     },
+     "begruendung": {
+      "de": "Umgebungslicht ist ein großer Beitrag, aber nicht der einzige: Auch Sensor und Elektronik rauschen, und im Dunkeln bleibt eine Schwankung übrig.",
+      "en": "Ambient light is a large contribution but not the only one: sensor and electronics are noisy too, and a fluctuation remains even in darkness."
+     }
     },
     {
      "kennung": "d",
-     "text": "Wer schneller misst, bekommt unruhigere Werte.",
-     "begruendung": "Richtig, und das ist der Zielkonflikt in einem Satz: Ein kürzeres Messfenster sammelt weniger Licht und mittelt weniger, dafür passen mehr Symbole in dieselbe Sekunde."
+     "text": {
+      "de": "Wer schneller misst, bekommt unruhigere Werte.",
+      "en": "Measuring faster gives noisier values."
+     },
+     "begruendung": {
+      "de": "Richtig, und das ist der Zielkonflikt in einem Satz: Ein kürzeres Messfenster sammelt weniger Licht und mittelt weniger, dafür passen mehr Symbole in dieselbe Sekunde.",
+      "en": "Correct, and this is the trade-off in one sentence: a shorter window collects less light and averages less, but fits more symbols into the same second."
+     }
     },
     {
      "kennung": "e",
-     "text": "Ein fehlerkorrigierender Code macht Rauschen überflüssig zu betrachten.",
-     "begruendung": "Fehlerkorrektur (Challenge 2 und später) hilft gegen die Fehler, die trotzdem passieren, und sie kostet zusätzliche Bits. Sie ersetzt keinen sauberen Aufbau, sie ergänzt ihn."
+     "text": {
+      "de": "Ein fehlerkorrigierender Code macht Rauschen überflüssig zu betrachten.",
+      "en": "An error-correcting code makes it unnecessary to think about noise."
+     },
+     "begruendung": {
+      "de": "Fehlerkorrektur (Challenge 2 und später) hilft gegen die Fehler, die trotzdem passieren, und sie kostet zusätzliche Bits. Sie ersetzt keinen sauberen Aufbau, sie ergänzt ihn.",
+      "en": "Error correction (challenge 2 and later) helps against the errors that still happen, and it costs extra bits. It does not replace a clean setup, it complements it."
+     }
     }
    ]
   }

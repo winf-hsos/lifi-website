@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.3">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Probleme zerlegen – LiFi Project</title>
+<title>Cutting Problems – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3195b598eb1f03154f53c883785ef3f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6afc368e6f6fa7c79ac664f908235de2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -62,17 +62,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -92,16 +92,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
         <div class="quarto-navbar-tools tools-end">
 </div>
-          <div id="quarto-search" class="" title="Suchen"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Probleme zerlegen</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Cutting Problems</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">LiFi Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Das Modul <code>lifi_hardware</code></span></a>
+ <span class="menu-text">The module <code>lifi_hardware</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -225,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Solving Problems</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -233,13 +233,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Probleme zerlegen</span></a>
+ <span class="menu-text">Cutting Problems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probleme lösen mit Computern</span></a>
+ <span class="menu-text">Problem Solving with Computers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -260,7 +260,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -295,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -318,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Transferring Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -365,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Processing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -379,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Logik und Arithmetik</span></a>
+ <span class="menu-text">Logic and Arithmetic</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -417,31 +417,28 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  <li><a href="#three-cutting-patterns" id="toc-three-cutting-patterns" class="nav-link" data-scroll-target="#three-cutting-patterns">Three cutting patterns</a></li>
+  <li><a href="#a-good-cut-is-testable" id="toc-a-good-cut-is-testable" class="nav-link" data-scroll-target="#a-good-cut-is-testable">A good cut is testable</a></li>
+  <li><a href="#cuts-are-agreements" id="toc-cuts-are-agreements" class="nav-link" data-scroll-target="#cuts-are-agreements">Cuts are agreements</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a>
-  <ul class="collapse">
-  <li><a href="#drei-schnittmuster" id="toc-drei-schnittmuster" class="nav-link" data-scroll-target="#drei-schnittmuster">Drei Schnittmuster</a></li>
-  <li><a href="#ein-guter-schnitt-ist-prüfbar" id="toc-ein-guter-schnitt-ist-prüfbar" class="nav-link" data-scroll-target="#ein-guter-schnitt-ist-prüfbar">Ein guter Schnitt ist prüfbar</a></li>
-  <li><a href="#schnitte-sind-absprachen" id="toc-schnitte-sind-absprachen" class="nav-link" data-scroll-target="#schnitte-sind-absprachen">Schnitte sind Absprachen</a></li>
-  </ul></li>
-  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
-  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Probleme zerlegen</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Cutting Problems</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Probleme zerlegen</h1>
+<h1 class="title">Cutting Problems</h1>
 </div>
 
 
@@ -458,99 +455,99 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="zusammenfassung" class="level2">
-<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
-<p>Große Probleme werden lösbar, wenn ihr sie in kleine, einzeln prüfbare Teile zerlegt. Dafür gibt es wiederkehrende Schnittmuster. Ein guter Schnitt legt zugleich fest, woran ihr erkennt, dass ein Teil gelöst ist, und was an seinen Grenzen abgesprochen werden muss.</p>
-<section id="fragen-um-die-es-geht" class="level3">
-<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>A big problem becomes solvable when you cut it into small pieces you can check one by one. There are cutting patterns that come back again and again. A good cut also settles two things at once: how you will know that a piece is done, and what has to be agreed at its borders.</p>
+<p>In this chapter, we address the following questions:</p>
 <ul>
-<li>Wie schneide ich eine große Aufgabe in Teile, die ich einzeln prüfen kann?</li>
-<li>Woran erkenne ich, dass ein Teil klein genug ist?</li>
-<li>Welche Schnittmuster gibt es, und wann hilft welches?</li>
-<li>Was passiert, wenn ich zu grob zerlege?</li>
-<li>Was muss an der Grenze zwischen zwei Teilen abgesprochen sein?</li>
+<li>How do I cut a big task into pieces I can check on their own?</li>
+<li>How do I know that a piece is small enough?</li>
+<li>Which cutting patterns are there, and when does which one help?</li>
+<li>What happens when I cut too coarsely?</li>
+<li>What has to be agreed at the border between two pieces?</li>
 </ul>
-<p>Dieses Konzept braucht ihr ab <a href="../challenges/challenge-0.html">Challenge 0</a> durchgehend, in jeder einzelnen Challenge. Wie ein geschnittenes Teil aussieht, wenn ein Computer es lösen soll, steht in <a href="../concepts/input-processing-output.html">Probleme lösen mit Computern</a>.</p>
+<p>You need this concept from <a href="../challenges/challenge-0.html">Challenge 0</a> onwards, in every single challenge. What a cut piece looks like once a computer is supposed to solve it is the subject of <a href="../concepts/input-processing-output.html">Problem solving with computers</a>.</p>
 </section>
-</section>
-<section id="erläuterung-des-konzepts" class="level2">
-<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>„Übertrage eine Datei mit Licht“ lässt sich nicht in einem Stück lösen, von niemandem. Große Probleme werden auch nicht in einem Stück gelöst: Sie werden so lange geschnitten, bis die Teile lösbar und prüfbar sind. Genau das könnt ihr übrigens längst. Wer eine Party plant, schneidet sofort in Getränke, Essen, Musik und Aufräumen und verteilt die Teile. Neu ist nur, das bewusst und mit Absicht zu tun.</p>
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
+<p>“Transfer a file using light” cannot be solved in one piece, by anyone. That is not a statement about you, it is the normal state of an interesting problem. Big problems are not solved in one go. They are cut, again and again, until the pieces are small enough to be solved and checked.</p>
+<p>You can already do this, by the way. Somebody’s birthday is on Saturday, thirty guests are coming, and nobody plans “the party” as one thing. You cut it immediately into drinks, food, music, invitations and cleaning up, and then you hand the pieces out. What is new here is only doing it on purpose, and knowing what makes one cut better than another.</p>
 <div id="fig-decomposition-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-decomposition-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/decomposition-tree.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;1: Das große Problem dieses Semesters, in vier lösbare Teile geschnitten. Jedes Teil ist von euch in zwei bis drei Wochen zu schaffen, und euer Semesterplan ist genau diese Zerlegung: Die vier Teile sind Challenge 1 bis 4."><img src="../assets/diagrams/decomposition-tree.svg" class="img-fluid figure-img" style="width:85.0%"></a>
+<a href="../assets/diagrams/decomposition-tree.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: The big problem of this semester, cut into four solvable pieces. Each piece is something you can manage in two or three weeks, and your semester plan is exactly this cut: the four pieces are Challenge 1 to 4."><img src="../assets/diagrams/decomposition-tree.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decomposition-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1: Das große Problem dieses Semesters, in vier lösbare Teile geschnitten. Jedes Teil ist von euch in zwei bis drei Wochen zu schaffen, und euer Semesterplan ist genau diese Zerlegung: Die vier Teile sind Challenge 1 bis 4.
+Figure&nbsp;1: The big problem of this semester, cut into four solvable pieces. Each piece is something you can manage in two or three weeks, and your semester plan is exactly this cut: the four pieces are Challenge 1 to 4.
 </figcaption>
 </figure>
 </div>
-<section id="drei-schnittmuster" class="level3">
-<h3 class="anchored" data-anchor-id="drei-schnittmuster">Drei Schnittmuster</h3>
-<p>Es gibt bewährte Arten zu schneiden, und drei davon werdet ihr in diesem Semester ständig benutzen.</p>
-<p><strong>Halbieren, bis es leicht ist.</strong> Die Informatik nennt das Divide &amp; Conquer. Denkt euch eine Zahl zwischen 1 und 100: Mit Ja/Nein-Fragen, die den Bereich jeweils halbieren, findet ihr jede Zahl in höchstens sieben Fragen. Die Strategie funktioniert überall dort, wo man nach jedem Schnitt eine Hälfte ausschließen kann.</p>
+<section id="three-cutting-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="three-cutting-patterns">Three cutting patterns</h3>
+<p>There are tried and tested ways to cut, and you will use three of them all the time this semester.</p>
+<p><strong>Halve it until it is easy.</strong> Computer science calls this divide and conquer. Think of a number between 1 and 100. With yes-or-no questions that cut the range in half every time, you find any number in at most seven questions: a hundred candidates, then fifty, twenty-five, twelve, six, three, two, done. The strategy works wherever you can rule out one half after every cut.</p>
 <div id="fig-halving-search" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-halving-search-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/halving-search.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;2: Der Zahlenstrahl von 1 bis 100, mit jeder Frage halbiert. Blau ist der Bereich, in dem die gesuchte Zahl noch stecken kann; die rote Linie ist die gesuchte 73, und sie bleibt immer im blauen Bereich, bis genau eine Zahl übrig ist."><img src="../assets/diagrams/halving-search.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/halving-search.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The range from 1 to 100, halved with every question. The bar is the range the number can still be in, and the red line is the 73 we are looking for. It stays inside the bar until exactly one number is left."><img src="../assets/diagrams/halving-search.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-halving-search-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;2: Der Zahlenstrahl von 1 bis 100, mit jeder Frage halbiert. Blau ist der Bereich, in dem die gesuchte Zahl noch stecken kann; die rote Linie ist die gesuchte 73, und sie bleibt immer im blauen Bereich, bis genau eine Zahl übrig ist.
+Figure&nbsp;2: The range from 1 to 100, halved with every question. The bar is the range the number can still be in, and the red line is the 73 we are looking for. It stays inside the bar until exactly one number is left.
 </figcaption>
 </figure>
 </div>
-<p><strong>Dasselbe, wenn etwas kaputt ist.</strong> Auch das kennt ihr: Wenn das WLAN ausfällt, testet ihr instinktiv in der Mitte der Kette. Geht der Handy-Hotspot, liegt es nicht am Laptop. Jeder Test halbiert die Kette der Verdächtigen. Im Projekt heißt eure Kette Sender, LED, Luft, Sensor, Empfänger, und ihr werdet sie oft entlanglaufen: Leuchtet die LED überhaupt? Sieht der Sensor das Licht? Wer gut zerlegt hat, weiß nicht nur, <strong>dass</strong> etwas kaputt ist, sondern <strong>wo</strong>.</p>
+<p><strong>The same trick when something is broken.</strong> You know this one too. When the wifi is dead, you test in the middle of the chain without thinking about it: if the phone hotspot works, it is not the laptop, and half the suspects are gone. Every test halves the chain. In this project your chain is sender, LED, air, sensor, receiver, and you will walk along it often: is the LED lit at all? Does the sensor see a torch? Whoever cuts well knows not only <strong>that</strong> something is broken, but <strong>where</strong>.</p>
 <div id="fig-debug-chain" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-debug-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/debug-chain.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Abbildung&nbsp;3: Fehlersuche durch Halbieren: ein Test in der Mitte der Kette schließt die halbe Kette aus. Oben der Alltag, unten dieselbe Denkfigur im Projekt."><img src="../assets/diagrams/debug-chain.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/debug-chain.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Finding a fault by halving: one test in the middle rules out half the chain. Above the everyday case, below the same figure of thought in the project."><img src="../assets/diagrams/debug-chain.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-debug-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;3: Fehlersuche durch Halbieren: ein Test in der Mitte der Kette schließt die halbe Kette aus. Oben der Alltag, unten dieselbe Denkfigur im Projekt.
+Figure&nbsp;3: Finding a fault by halving: one test in the middle rules out half the chain. Above the everyday case, below the same figure of thought in the project.
 </figcaption>
 </figure>
 </div>
-<p><strong>Erst die kleinere Version lösen.</strong> Wenn ein Problem zu groß ist, löst erst eine kleinere Fassung davon, die ihr wirklich könnt, und wachst von dort. Genau so ist das Semester gebaut: erst Licht an und aus, dann zwei Farben, dann ein Zeichen, dann ein Wort, am Ende eine ganze Datei.</p>
+<p><strong>Solve a smaller version first.</strong> When a problem is too big, solve a smaller version of it that you really can do, and grow from there. That is exactly how the semester is built: light on and off, then as many colours as you can tell apart, then a single character, then a word, and a whole file at the end.</p>
 <div id="fig-challenge-staircase" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-challenge-staircase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/challenge-staircase.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fassung desselben Problems. Auf der untersten steht ihr am ersten Tag."><img src="../assets/diagrams/challenge-staircase.svg" class="img-fluid figure-img" style="width:70.0%"></a>
+<a href="../assets/diagrams/challenge-staircase.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The staircase of the challenges: every step is a slightly bigger version of the same problem. On the first day you are standing on the bottom one."><img src="../assets/diagrams/challenge-staircase.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-challenge-staircase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fassung desselben Problems. Auf der untersten steht ihr am ersten Tag.
+Figure&nbsp;4: The staircase of the challenges: every step is a slightly bigger version of the same problem. On the first day you are standing on the bottom one.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="ein-guter-schnitt-ist-prüfbar" class="level3">
-<h3 class="anchored" data-anchor-id="ein-guter-schnitt-ist-prüfbar">Ein guter Schnitt ist prüfbar</h3>
-<p>Schneiden allein genügt nicht, denn nicht jeder Schnitt ist gleich gut. Der Unterschied: „Ich muss Mathe lernen” und „ich schaffe die Altklausur von 2023 in 90 Minuten” klingen beide nach Klausurvorbereitung. Beim ersten weiß man nie, ob man fertig ist. Das zweite kann man heute Abend ausprobieren und bekommt ein Ja oder Nein. Ein gutes Teil ist eines mit eingebautem Test.</p>
-<p>Im Projekt heißt das: „Die LED funktioniert” ist ein Gefühl. „Rot oder Blau, 50-mal in Folge richtig erkannt” ist ein Messwert. Genau so sind alle Challenges formuliert, und genau so laufen die Abnahmen. Daraus folgt auch die Werkstattregel dieses Moduls: <strong>Fertig heißt, der Test läuft durch</strong>, nicht „sieht gut aus”.</p>
+<section id="a-good-cut-is-testable" class="level3">
+<h3 class="anchored" data-anchor-id="a-good-cut-is-testable">A good cut is testable</h3>
+<p>Cutting alone is not enough, because not every cut is equally good. Compare two sentences: “I need to learn maths” and “I can pass the 2023 exam in 90 minutes”. Both sound like exam preparation. With the first one you never know whether you are done. The second one you can try out tonight, and you get a yes or a no. A good piece is one with a test built into it.</p>
+<p>In the project that reads: “the LED works” is a feeling. “Red or blue, recognised correctly 50 times in a row” is a measurement. Every challenge is written that way, and every hand-over runs that way. From this follows the workshop rule of this module: <strong>done means the test passes</strong>, not “it looks good”.</p>
 </section>
-<section id="schnitte-sind-absprachen" class="level3">
-<h3 class="anchored" data-anchor-id="schnitte-sind-absprachen">Schnitte sind Absprachen</h3>
-<p>Wo ihr schneidet, entscheidet, wie viel ihr reden müsst. „Du machst die Vorspeise, ich den Nachtisch” funktioniert; „wir machen beide das Essen” wird ohne weitere Absprache Chaos. Im Team gilt dasselbe: eine Person je Ende der Strecke, und was die Grenze überquert, etwa welche Farbe welches Zeichen bedeutet, wird aufgeschrieben. Wie ernst das wird, merkt ihr in <a href="../challenges/challenge-3.html">Challenge 3</a>, wenn ein fremdes Team eure Absprache lesen und umsetzen muss.</p>
-<p>Und mit dem KI-Assistenten ist Zerlegen die Schlüsselkompetenz überhaupt: „Bau mir die Dateiübertragung” kann der Agent nicht gut erfüllen, und ihr könntet das Ergebnis nicht prüfen. Ein kleiner Auftrag mit klarem Test dagegen: Ihr schneidet, die Maschine löst Teile, ihr prüft.</p>
+<section id="cuts-are-agreements" class="level3">
+<h3 class="anchored" data-anchor-id="cuts-are-agreements">Cuts are agreements</h3>
+<p>Where you cut decides how much you have to talk. “You do the starters, I do the dessert” works. “We both kind of do the food” turns into chaos, because nobody knows who buys the bread. Pieces work when the border between them is clear.</p>
+<p>The same holds in your team: one person at each end of the link, and whatever crosses the border, for instance which colour means which symbol, gets written down. You will find out how serious that is in <a href="../challenges/challenge-3.html">Challenge 3</a>, when another team has to read your agreement and build against it.</p>
+<p>And with an AI assistant, cutting is the key skill of all. “Build me the file transfer” is one big wish: the assistant cannot do it well, and you could not check the result if it did. A small piece with its test is a different thing: “read the sensor ten times and return the average. test: covered, it stays under 10; red LED on, it goes over 100.” You cut, the assistant solves pieces, you check.</p>
 </section>
 </section>
-<section id="folien" class="level2">
-<h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<p>Die Folien aus dem Input, zum Nachsehen:</p>
-<div class="folien-viewer" data-quelle="../assets/slides/problem-decomposition"></div>
-<p class="folien-links">
-  Blättern mit den Pfeiltasten oder per Klick auf die Folie ·
-  <a href="../assets/slides/problem-decomposition.pdf" download="">als PDF herunterladen</a>
-</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
+<div class="deck-embed">
+  <iframe src="../assets/decks/problem-decomposition/index.html?bar=1&amp;pdf=../problem-decomposition.pdf" title="cutting problems" allowfullscreen="" loading="lazy"></iframe>
+</div>
 </section>
-<section id="fragen-üben" class="level2">
-<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Hier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.</p>
-<div class="fragen-quiz" data-quelle="../assets/questions/problem-decomposition.json"></div>
+<section id="practice-questions" class="level2">
+<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
+<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/problem-decomposition.json"></div>
 </section>
-<section id="literatur" class="level2">
-<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
-<!-- TODO: weiterführende Literatur ergänzen -->
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li>George Pólya: How to Solve It. Princeton University Press, 1945. The classic on cutting problems, written for mathematics and readable far beyond it: understand the problem, make a plan, carry it out, look back. His questions (“Do you know a related problem?”, “Can you solve a part of it?”) are the long version of this page.</li>
+</ul>
 
 
 </section>
@@ -633,10 +630,45 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
      können ein Bild (aus assets/diagrams) und einen Codeblock zeigen.
      Eingebunden auf jeder Seite über include-after-body in _quarto.yml;
      aktiv nur, wo ein <div class="fragen-quiz" data-quelle="..."> steht.
+
+     Sprache: Die JSON-Dateien enthalten beide Sprachen. Welche angezeigt
+     wird, sagt data-sprache am Kasten ("de" oder "en", Standard "de"); die
+     Seite entscheidet also, passend zu ihrem eigenen Text. Fehlt eine
+     Übersetzung, wird die deutsche Fassung gezeigt.
+
      Die JSON-Dateien erzeugt tools/build_questions.py. Es wird nichts
      erhoben und nichts gespeichert; das Quiz läuft komplett im Browser. -->
 <script>
 (function () {
+  var TEXTE = {
+    de: {
+      frageVon: function (i, n) { return "frage " + i + " von " + n; },
+      mehrfach: " · mehrere richtige antworten möglich",
+      pruefen: "antwort prüfen",
+      neustart: "von vorn",
+      stand: function (a, r) { return a + " beantwortet, " + r + " richtig"; },
+      zurueck: "vorherige frage",
+      weiter: "nächste frage",
+      vollbild: "vollbild",
+      bildAlt: "abbildung zur frage",
+      fehler: "fragen konnten nicht geladen werden.",
+      niveau: {erinnern: "erinnern", verstehen: "verstehen", anwenden: "anwenden"}
+    },
+    en: {
+      frageVon: function (i, n) { return "question " + i + " of " + n; },
+      mehrfach: " · several answers may be correct",
+      pruefen: "check answer",
+      neustart: "start over",
+      stand: function (a, r) { return a + " answered, " + r + " correct"; },
+      zurueck: "previous question",
+      weiter: "next question",
+      vollbild: "fullscreen",
+      bildAlt: "figure for the question",
+      fehler: "the questions could not be loaded.",
+      niveau: {erinnern: "remember", verstehen: "understand", anwenden: "apply"}
+    }
+  };
+
   function mischen(liste) {
     for (var i = liste.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -650,8 +682,15 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
     return a.slice().sort().join(",") === b.slice().sort().join(",");
   }
 
-  function bauen(kasten, daten) {
+  function bauen(kasten, daten, sprache) {
     var fragen, reihenfolgen, antworten, auswahl, index;
+    var t = TEXTE[sprache] || TEXTE.de;
+
+    // ein zweisprachiges Feld in der gewählten Sprache; fehlt sie, deutsch
+    function s(feld) {
+      if (typeof feld === "string") { return feld; }
+      return (feld && (feld[sprache] || feld.de)) || "";
+    }
 
     function neustart() {
       fragen = mischen(daten.fragen.slice());
@@ -677,30 +716,31 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
 
       kasten.innerHTML =
         '<div class="fq-kopf">' +
-        '<span>frage ' + (index + 1) + " von " + fragen.length +
-        '</span><span class="fq-niveau">' + frage.niveau +
-        (mehrfach ? " · mehrere richtige antworten möglich" : "") + "</span>" +
+        "<span>" + t.frageVon(index + 1, fragen.length) +
+        '</span><span class="fq-niveau">' +
+        (t.niveau[frage.niveau] || frage.niveau) +
+        (mehrfach ? t.mehrfach : "") + "</span>" +
         '<span class="fq-platz"></span>' +
-        '<button class="fq-nav fq-zurueck" title="vorherige frage">&#8249;</button>' +
-        '<button class="fq-nav fq-weiter-pfeil" title="nächste frage">&#8250;</button>' +
-        '<button class="fq-nav fq-vollbild" title="vollbild">&#x26F6;</button>' +
+        '<button class="fq-nav fq-zurueck" title="' + t.zurueck + '">&#8249;</button>' +
+        '<button class="fq-nav fq-weiter-pfeil" title="' + t.weiter + '">&#8250;</button>' +
+        '<button class="fq-nav fq-vollbild" title="' + t.vollbild + '">&#x26F6;</button>' +
         "</div>" +
         '<div class="fq-frage"></div>' +
         '<div class="fq-medien"></div>' +
         '<div class="fq-optionen"></div>' +
-        '<div class="fq-fuss"><button class="fq-neustart">von vorn</button>' +
+        '<div class="fq-fuss"><button class="fq-neustart">' + t.neustart + "</button>" +
         '<span class="fq-stand"></span></div>';
 
-      kasten.querySelector(".fq-frage").textContent = frage.frage;
+      kasten.querySelector(".fq-frage").textContent = s(frage.frage);
       kasten.querySelector(".fq-stand").textContent =
-        beantwortet.length + " beantwortet, " + richtig + " richtig";
+        t.stand(beantwortet.length, richtig);
 
       var medien = kasten.querySelector(".fq-medien");
       if (frage.bild) {
         var bild = document.createElement("img");
         bild.className = "fq-bild";
         bild.src = "../assets/diagrams/" + frage.bild + ".svg";
-        bild.alt = "abbildung zur frage";
+        bild.alt = t.bildAlt;
         medien.appendChild(bild);
       }
       if (frage.code) {
@@ -721,7 +761,7 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
         knopf.appendChild(marker);
         var inhalt = document.createElement("span");
         inhalt.className = "fq-text";
-        inhalt.textContent = option.text;
+        inhalt.textContent = s(option.text);
         knopf.appendChild(inhalt);
         knopf.dataset.kennung = option.kennung;
         knopf.addEventListener("click", function () {
@@ -747,7 +787,7 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
       if (mehrfach && antworten[index] === null) {
         var pruefen = document.createElement("button");
         pruefen.className = "fq-pruefen";
-        pruefen.textContent = "antwort prüfen";
+        pruefen.textContent = t.pruefen;
         pruefen.disabled = auswahl[index].length === 0;
         pruefen.addEventListener("click", function () {
           antworten[index] = auswahl[index].slice();
@@ -786,7 +826,7 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
         });
         var erklaerung = document.createElement("div");
         erklaerung.className = "fq-begruendung";
-        erklaerung.textContent = option.begruendung;
+        erklaerung.textContent = s(option.begruendung);
         knopf.insertAdjacentElement("afterend", erklaerung);
       });
     }
@@ -806,11 +846,12 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
   }
 
   document.querySelectorAll(".fragen-quiz[data-quelle]").forEach(function (kasten) {
+    var sprache = kasten.dataset.sprache === "en" ? "en" : "de";
     fetch(kasten.dataset.quelle)
       .then(function (antwort) { return antwort.json(); })
-      .then(function (daten) { bauen(kasten, daten); })
+      .then(function (daten) { bauen(kasten, daten, sprache); })
       .catch(function () {
-        kasten.textContent = "fragen konnten nicht geladen werden.";
+        kasten.textContent = (TEXTE[sprache] || TEXTE.de).fehler;
       });
   });
 })();
@@ -840,12 +881,12 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1227,8 +1268,8 @@ Abbildung&nbsp;4: Die Treppe der Challenges: jede Stufe eine etwas größere Fas
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../concepts/input-processing-output.html" class="pagination-link" aria-label="Probleme lösen mit Computern">
-        <span class="nav-page-text">Probleme lösen mit Computern</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../concepts/input-processing-output.html" class="pagination-link" aria-label="Problem Solving with Computers">
+        <span class="nav-page-text">Problem Solving with Computers</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

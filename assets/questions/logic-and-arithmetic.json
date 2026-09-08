@@ -4,7 +4,10 @@
   {
    "id": "pc-001",
    "niveau": "erinnern",
-   "frage": "Speichern, Übertragen, Verarbeiten: Was unterscheidet das Verarbeiten von\nden beiden anderen?",
+   "frage": {
+    "de": "Speichern, Übertragen, Verarbeiten: Was unterscheidet das Verarbeiten von\nden beiden anderen?",
+    "en": "Storing, transmitting, processing: what sets processing apart from the\nother two?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Beim Verarbeiten werden die Bits von einem Ort an einen anderen gebracht, nur innerhalb des Rechners statt über eine Strecke.",
-     "begruendung": "Das ist Übertragen im Kleinen, kein Verarbeiten. Auch der Weg vom Speicher zum Prozessor ändert an den Bits nichts; sie kommen so an, wie sie losgingen."
+     "text": {
+      "de": "Beim Verarbeiten werden die Bits von einem Ort an einen anderen gebracht, nur innerhalb des Rechners statt über eine Strecke.",
+      "en": "Processing moves the bits from one place to another, only inside the computer instead of across a link."
+     },
+     "begruendung": {
+      "de": "Das ist Übertragen im Kleinen, kein Verarbeiten. Auch der Weg vom Speicher zum Prozessor ändert an den Bits nichts; sie kommen so an, wie sie losgingen.",
+      "en": "That is transmitting on a small scale, not processing. The path from memory to processor does not change the bits either; they arrive as they left."
+     }
     },
     {
      "kennung": "b",
-     "text": "Beim Verarbeiten entstehen aus vorhandenen Bits nach festen Regeln neue Bits, die vorher nirgends standen.",
-     "begruendung": "Genau. Speichern bewahrt Bits auf, Übertragen reicht sie weiter, beides lässt sie unverändert. Erst das Verknüpfen und Verändern nach Regeln macht aus dem Rechner mehr als einen schnellen Boten."
+     "text": {
+      "de": "Beim Verarbeiten entstehen aus vorhandenen Bits nach festen Regeln neue Bits, die vorher nirgends standen.",
+      "en": "Processing produces new bits from existing ones according to fixed rules, bits that existed nowhere before."
+     },
+     "begruendung": {
+      "de": "Genau. Speichern bewahrt Bits auf, Übertragen reicht sie weiter, beides lässt sie unverändert. Erst das Verknüpfen und Verändern nach Regeln macht aus dem Rechner mehr als einen schnellen Boten.",
+      "en": "Exactly. Storing keeps bits, transmitting passes them on, both leave them unchanged. Only combining and changing them by rules makes the computer more than a fast messenger."
+     }
     },
     {
      "kennung": "c",
-     "text": "Beim Verarbeiten werden die Bits in Zahlen zurückverwandelt, damit der Rechner mit ihnen rechnen kann wie ein Mensch.",
-     "begruendung": "Der Rechner rechnet nie mit etwas anderem als Bits. Was wir als Zahl lesen, bleibt für die Maschine eine Bitfolge, und die Rechenregeln arbeiten direkt darauf."
+     "text": {
+      "de": "Beim Verarbeiten werden die Bits in Zahlen zurückverwandelt, damit der Rechner mit ihnen rechnen kann wie ein Mensch.",
+      "en": "Processing turns the bits back into numbers so that the computer can calculate with them like a human."
+     },
+     "begruendung": {
+      "de": "Der Rechner rechnet nie mit etwas anderem als Bits. Was wir als Zahl lesen, bleibt für die Maschine eine Bitfolge, und die Rechenregeln arbeiten direkt darauf.",
+      "en": "The computer never calculates with anything but bits. What we read as a number remains a bit sequence for the machine, and the rules of arithmetic work directly on it."
+     }
     },
     {
      "kennung": "d",
-     "text": "Beim Verarbeiten prüft der Rechner, ob die gespeicherten oder übertragenen Bits noch unversehrt sind.",
-     "begruendung": "Das ist eine Anwendung von Verarbeitung, die Prüfsumme, aber nicht ihre Definition. Verarbeitung umfasst genauso Rechnen, Komprimieren oder Verschlüsseln."
+     "text": {
+      "de": "Beim Verarbeiten prüft der Rechner, ob die gespeicherten oder übertragenen Bits noch unversehrt sind.",
+      "en": "Processing is the computer checking whether the stored or transmitted bits are still intact."
+     },
+     "begruendung": {
+      "de": "Das ist eine Anwendung von Verarbeitung, die Prüfsumme, aber nicht ihre Definition. Verarbeitung umfasst genauso Rechnen, Komprimieren oder Verschlüsseln.",
+      "en": "That is one application of processing, the checksum, but not its definition. Processing equally covers arithmetic, compression or encryption."
+     }
     }
    ]
   },
   {
    "id": "pc-002",
    "niveau": "anwenden",
-   "frage": "Die Verknüpfung XOR (exklusives Oder) liefert 1, wenn genau eine der\nbeiden Eingaben 1 ist. Was liefert sie für die Eingaben 1 und 1?",
+   "frage": {
+    "de": "Die Verknüpfung XOR (exklusives Oder) liefert 1, wenn genau eine der\nbeiden Eingaben 1 ist. Was liefert sie für die Eingaben 1 und 1?",
+    "en": "The operation XOR (exclusive or) yields 1 when exactly one of the two\ninputs is 1. What does it yield for the inputs 1 and 1?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "0, denn beide Eingaben sind 1, also nicht genau eine.",
-     "begruendung": "Genau: XOR fragt nach 'verschieden oder gleich'. Zwei gleiche Eingaben ergeben 0, zwei verschiedene 1. Diese Eigenschaft macht XOR zum Baustein für Prüfsummen und Verschlüsselung."
+     "text": {
+      "de": "0, denn beide Eingaben sind 1, also nicht genau eine.",
+      "en": "0, because both inputs are 1, so not exactly one."
+     },
+     "begruendung": {
+      "de": "Genau: XOR fragt nach 'verschieden oder gleich'. Zwei gleiche Eingaben ergeben 0, zwei verschiedene 1. Diese Eigenschaft macht XOR zum Baustein für Prüfsummen und Verschlüsselung.",
+      "en": "Exactly: XOR asks 'different or the same'. Two equal inputs give 0, two different ones give 1. This property makes XOR the building block for checksums and encryption."
+     }
     },
     {
      "kennung": "b",
-     "text": "1, denn mindestens eine der beiden Eingaben ist 1.",
-     "begruendung": "Das ist das gewöhnliche Oder, das bei 'mindestens eine' 1 liefert. Das exklusive Oder verlangt 'genau eine', und bei zwei Einsen ist das verletzt."
+     "text": {
+      "de": "1, denn mindestens eine der beiden Eingaben ist 1.",
+      "en": "1, because at least one of the two inputs is 1."
+     },
+     "begruendung": {
+      "de": "Das ist das gewöhnliche Oder, das bei 'mindestens eine' 1 liefert. Das exklusive Oder verlangt 'genau eine', und bei zwei Einsen ist das verletzt.",
+      "en": "That is the ordinary or, which yields 1 for 'at least one'. The exclusive or demands 'exactly one', and two ones violate that."
+     }
     },
     {
      "kennung": "c",
-     "text": "2, denn 1 plus 1 ergibt 2, und XOR ist die Addition einzelner Bits.",
-     "begruendung": "Ein Bit kann nur 0 oder 1 sein, eine 2 gibt es nicht. XOR liefert die Einerstelle der Bitaddition (0), den Übertrag (1) liefert eine andere Verknüpfung, das Und."
+     "text": {
+      "de": "2, denn 1 plus 1 ergibt 2, und XOR ist die Addition einzelner Bits.",
+      "en": "2, because 1 plus 1 is 2, and XOR is the addition of single bits."
+     },
+     "begruendung": {
+      "de": "Ein Bit kann nur 0 oder 1 sein, eine 2 gibt es nicht. XOR liefert die Einerstelle der Bitaddition (0), den Übertrag (1) liefert eine andere Verknüpfung, das Und.",
+      "en": "A bit can only be 0 or 1, there is no 2. XOR yields the ones digit of bit addition (0); the carry (1) comes from a different operation, the and."
+     }
     },
     {
      "kennung": "d",
-     "text": "10, denn 1 plus 1 ist binär 10, und genau das gibt XOR zurück.",
-     "begruendung": "Die Rechnung 1 plus 1 gleich binär 10 stimmt, aber XOR liefert nur ein einziges Bit, nicht zwei. Es gibt die 0 der Einerstelle zurück; die 1 davor ist der Übertrag aus dem Und."
+     "text": {
+      "de": "10, denn 1 plus 1 ist binär 10, und genau das gibt XOR zurück.",
+      "en": "10, because 1 plus 1 is 10 in binary, and that is exactly what XOR returns."
+     },
+     "begruendung": {
+      "de": "Die Rechnung 1 plus 1 gleich binär 10 stimmt, aber XOR liefert nur ein einziges Bit, nicht zwei. Es gibt die 0 der Einerstelle zurück; die 1 davor ist der Übertrag aus dem Und.",
+      "en": "The sum 1 plus 1 equals binary 10 is right, but XOR yields only a single bit, not two. It returns the 0 of the ones digit; the 1 in front is the carry from the and."
+     }
     }
    ]
   },
   {
    "id": "pc-003",
    "niveau": "verstehen",
-   "frage": "Eine Maschine addiert zwei einzelne Bits. Das Ergebnis hat zwei Stellen:\ndie Summe (0 oder 1) und den Übertrag (0 oder 1). Welche Verknüpfungen\nliefern die beiden Stellen?",
+   "frage": {
+    "de": "Eine Maschine addiert zwei einzelne Bits. Das Ergebnis hat zwei Stellen:\ndie Summe (0 oder 1) und den Übertrag (0 oder 1). Welche Verknüpfungen\nliefern die beiden Stellen?",
+    "en": "A machine adds two single bits. The result has two digits: the sum\n(0 or 1) and the carry (0 or 1). Which operations produce the two digits?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -74,30 +131,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Summe liefert das Oder, den Übertrag das Und, denn Oder zählt zusammen und Und behält das Doppelte.",
-     "begruendung": "Fast: Der Übertrag stimmt, die Summe nicht. Bei 1 und 1 liefert das Oder eine 1, die Summenstelle muss aber 0 sein (1 plus 1 ist binär 10). Das gewöhnliche Oder zählt nicht, es vereinigt."
+     "text": {
+      "de": "Die Summe liefert das Oder, den Übertrag das Und, denn Oder zählt zusammen und Und behält das Doppelte.",
+      "en": "The sum comes from or, the carry from and, since or adds up and and keeps what is doubled."
+     },
+     "begruendung": {
+      "de": "Fast: Der Übertrag stimmt, die Summe nicht. Bei 1 und 1 liefert das Oder eine 1, die Summenstelle muss aber 0 sein (1 plus 1 ist binär 10). Das gewöhnliche Oder zählt nicht, es vereinigt.",
+      "en": "Almost: the carry is right, the sum is not. For 1 and 1, or yields a 1, but the sum digit must be 0 (1 plus 1 is 10 in binary). The ordinary or does not add, it merges."
+     }
     },
     {
      "kennung": "b",
-     "text": "Beide Stellen liefert das Und, einmal auf die Bits selbst und einmal auf ihre Umkehrung angewendet.",
-     "begruendung": "Das Und der Umkehrungen ist 1, wenn beide Bits 0 sind, also gerade nicht die Summe. Für die Summenstelle braucht es die Frage 'sind die Bits verschieden?', und die stellt XOR."
+     "text": {
+      "de": "Beide Stellen liefert das Und, einmal auf die Bits selbst und einmal auf ihre Umkehrung angewendet.",
+      "en": "Both digits come from and, applied once to the bits themselves and once to their inverses."
+     },
+     "begruendung": {
+      "de": "Das Und der Umkehrungen ist 1, wenn beide Bits 0 sind, also gerade nicht die Summe. Für die Summenstelle braucht es die Frage 'sind die Bits verschieden?', und die stellt XOR.",
+      "en": "The and of the inverses is 1 when both bits are 0, which is precisely not the sum. The sum digit needs the question 'are the bits different?', and that is what XOR asks."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Summe liefert XOR, den Übertrag das Und, denn XOR ist 1 bei genau einer 1 und Und ist 1 bei zwei Einsen.",
-     "begruendung": "Genau, das ist der Halbaddierer: 0 plus 1 und 1 plus 0 ergeben Summe 1 ohne Übertrag, 1 plus 1 ergibt Summe 0 mit Übertrag 1. Aus vielen solcher Bausteine nebeneinander entsteht ein Addierwerk für ganze Zahlen."
+     "text": {
+      "de": "Die Summe liefert XOR, den Übertrag das Und, denn XOR ist 1 bei genau einer 1 und Und ist 1 bei zwei Einsen.",
+      "en": "The sum comes from XOR, the carry from and, since XOR is 1 for exactly one 1 and and is 1 for two ones."
+     },
+     "begruendung": {
+      "de": "Genau, das ist der Halbaddierer: 0 plus 1 und 1 plus 0 ergeben Summe 1 ohne Übertrag, 1 plus 1 ergibt Summe 0 mit Übertrag 1. Aus vielen solcher Bausteine nebeneinander entsteht ein Addierwerk für ganze Zahlen.",
+      "en": "Exactly, that is the half adder: 0 plus 1 and 1 plus 0 give sum 1 without carry, 1 plus 1 gives sum 0 with carry 1. Many such blocks side by side make an adder for whole numbers."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Summe liefert das Und, den Übertrag XOR, denn der Übertrag entsteht nur, wenn sich die Bits unterscheiden.",
-     "begruendung": "Genau vertauscht. Ein Übertrag entsteht, wenn beide Bits 1 sind, also bei Gleichheit, nicht bei Unterschied. Das ist die Und-Frage; XOR beantwortet die Summenstelle."
+     "text": {
+      "de": "Die Summe liefert das Und, den Übertrag XOR, denn der Übertrag entsteht nur, wenn sich die Bits unterscheiden.",
+      "en": "The sum comes from and, the carry from XOR, since a carry only arises when the bits differ."
+     },
+     "begruendung": {
+      "de": "Genau vertauscht. Ein Übertrag entsteht, wenn beide Bits 1 sind, also bei Gleichheit, nicht bei Unterschied. Das ist die Und-Frage; XOR beantwortet die Summenstelle.",
+      "en": "Exactly swapped. A carry arises when both bits are 1, that is, when they are equal, not different. That is the and question; XOR answers the sum digit."
+     }
     }
    ]
   },
   {
    "id": "pc-004",
    "niveau": "anwenden",
-   "frage": "Ein Team hängt an jedes Byte ein Paritätsbit, sodass die Zahl der Einsen\ninsgesamt gerade ist. Welches Paritätsbit bekommt das Byte 10110010?",
+   "frage": {
+    "de": "Ein Team hängt an jedes Byte ein Paritätsbit, sodass die Zahl der Einsen\ninsgesamt gerade ist. Welches Paritätsbit bekommt das Byte 10110010?",
+    "en": "A team appends a parity bit to every byte so that the total number of\nones is even. Which parity bit does the byte 10110010 get?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -105,30 +189,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "0, denn das Byte enthält vier Einsen, die Zahl ist schon gerade.",
-     "begruendung": "Genau. Und das ist nichts anderes als XOR über alle acht Bits: Es liefert 1 bei ungerader und 0 bei gerader Zahl von Einsen. Ein Baustein, acht Eingaben, ein Prüfbit."
+     "text": {
+      "de": "0, denn das Byte enthält vier Einsen, die Zahl ist schon gerade.",
+      "en": "0, because the byte contains four ones, the count is already even."
+     },
+     "begruendung": {
+      "de": "Genau. Und das ist nichts anderes als XOR über alle acht Bits: Es liefert 1 bei ungerader und 0 bei gerader Zahl von Einsen. Ein Baustein, acht Eingaben, ein Prüfbit.",
+      "en": "Exactly. And that is nothing but XOR over all eight bits: it yields 1 for an odd and 0 for an even number of ones. One building block, eight inputs, one check bit."
+     }
     },
     {
      "kennung": "b",
-     "text": "1, denn das Byte enthält vier Einsen, und mit dem Prüfbit werden es fünf, eine Zahl je Byte.",
-     "begruendung": "Die Zählung stimmt, der Schluss nicht: Das Prüfbit soll die Zahl der Einsen gerade machen, nicht um eins erhöhen. Bei vier Einsen bleibt es bei 0."
+     "text": {
+      "de": "1, denn das Byte enthält vier Einsen, und mit dem Prüfbit werden es fünf, eine Zahl je Byte.",
+      "en": "1, because the byte contains four ones, and with the check bit it becomes five, one number per byte."
+     },
+     "begruendung": {
+      "de": "Die Zählung stimmt, der Schluss nicht: Das Prüfbit soll die Zahl der Einsen gerade machen, nicht um eins erhöhen. Bei vier Einsen bleibt es bei 0.",
+      "en": "The count is right, the conclusion is not: the check bit is meant to make the number of ones even, not increase it by one. With four ones it stays 0."
+     }
     },
     {
      "kennung": "c",
-     "text": "1, denn das Byte hat den Wert 178, und 178 ist gerade, also wird eine 1 angehängt.",
-     "begruendung": "Der Zahlenwert 178 stimmt, spielt aber keine Rolle. Parität zählt Einsen, nicht den Wert des Bytes; 178 hat vier Einsen, also Prüfbit 0."
+     "text": {
+      "de": "1, denn das Byte hat den Wert 178, und 178 ist gerade, also wird eine 1 angehängt.",
+      "en": "1, because the byte has the value 178, and 178 is even, so a 1 is appended."
+     },
+     "begruendung": {
+      "de": "Der Zahlenwert 178 stimmt, spielt aber keine Rolle. Parität zählt Einsen, nicht den Wert des Bytes; 178 hat vier Einsen, also Prüfbit 0.",
+      "en": "The value 178 is right but irrelevant. Parity counts ones, not the value of the byte; 178 has four ones, so check bit 0."
+     }
     },
     {
      "kennung": "d",
-     "text": "4, denn das Prüfbit hält fest, wie viele Einsen das Byte enthält, damit der Empfänger nachzählen kann.",
-     "begruendung": "Ein Bit kann keine 4 speichern. Das ist gerade der Witz der Parität: Statt die Anzahl zu übertragen, wird nur ihre Eigenschaft gerade oder ungerade übertragen, ein einziges Bit."
+     "text": {
+      "de": "4, denn das Prüfbit hält fest, wie viele Einsen das Byte enthält, damit der Empfänger nachzählen kann.",
+      "en": "4, because the check bit records how many ones the byte contains, so that the receiver can count again."
+     },
+     "begruendung": {
+      "de": "Ein Bit kann keine 4 speichern. Das ist gerade der Witz der Parität: Statt die Anzahl zu übertragen, wird nur ihre Eigenschaft gerade oder ungerade übertragen, ein einziges Bit.",
+      "en": "A bit cannot store a 4. That is the whole point of parity: instead of transmitting the count, only its property even or odd is transmitted, a single bit."
+     }
     }
    ]
   },
   {
    "id": "pc-005",
    "niveau": "verstehen",
-   "frage": "Ein Team verschlüsselt, indem es jedes Bit der Nachricht per XOR mit dem\npassenden Bit eines Schlüssels verknüpft. Der Empfänger wendet auf das\nErgebnis noch einmal XOR mit demselben Schlüssel an. Was kommt heraus?",
+   "frage": {
+    "de": "Ein Team verschlüsselt, indem es jedes Bit der Nachricht per XOR mit dem\npassenden Bit eines Schlüssels verknüpft. Der Empfänger wendet auf das\nErgebnis noch einmal XOR mit demselben Schlüssel an. Was kommt heraus?",
+    "en": "A team encrypts by combining each bit of the message with the matching\nbit of a key using XOR. The receiver applies XOR with the same key to\nthe result once more. What comes out?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -136,30 +247,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Schlüssel, denn zweimal XOR mit derselben Eingabe hebt die Nachricht auf und lässt den Schlüssel stehen.",
-     "begruendung": "Es hebt sich das auf, was zweimal vorkommt, und das ist der Schlüssel, nicht die Nachricht. Bit für Bit: Ein Bit XOR Schlüsselbit XOR Schlüsselbit ist das ursprüngliche Bit."
+     "text": {
+      "de": "Der Schlüssel, denn zweimal XOR mit derselben Eingabe hebt die Nachricht auf und lässt den Schlüssel stehen.",
+      "en": "The key, because XOR twice with the same input cancels the message and leaves the key."
+     },
+     "begruendung": {
+      "de": "Es hebt sich das auf, was zweimal vorkommt, und das ist der Schlüssel, nicht die Nachricht. Bit für Bit: Ein Bit XOR Schlüsselbit XOR Schlüsselbit ist das ursprüngliche Bit.",
+      "en": "What cancels is what occurs twice, and that is the key, not the message. Bit by bit: a bit XOR key bit XOR key bit is the original bit."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die ursprüngliche Nachricht, denn XOR mit demselben Bit zweimal hintereinander macht sich selbst rückgängig.",
-     "begruendung": "Genau: Ist das Schlüsselbit 0, ändert XOR nichts, zweimal nichts. Ist es 1, kippt XOR das Bit, und zweimal kippen ist wieder das Original. Dieselbe Verknüpfung ver- und entschlüsselt, mit demselben Schlüssel."
+     "text": {
+      "de": "Die ursprüngliche Nachricht, denn XOR mit demselben Bit zweimal hintereinander macht sich selbst rückgängig.",
+      "en": "The original message, because XOR with the same bit twice in a row undoes itself."
+     },
+     "begruendung": {
+      "de": "Genau: Ist das Schlüsselbit 0, ändert XOR nichts, zweimal nichts. Ist es 1, kippt XOR das Bit, und zweimal kippen ist wieder das Original. Dieselbe Verknüpfung ver- und entschlüsselt, mit demselben Schlüssel.",
+      "en": "Exactly: if the key bit is 0, XOR changes nothing, twice nothing. If it is 1, XOR flips the bit, and flipping twice is the original again. The same operation encrypts and decrypts, with the same key."
+     }
     },
     {
      "kennung": "c",
-     "text": "Lauter Nullen, denn XOR zweier gleicher Werte ergibt 0, und der Schlüssel wurde zweimal angewendet.",
-     "begruendung": "Schlüssel XOR Schlüssel wäre tatsächlich 0. Aber die Nachricht steckt dazwischen, und 0 XOR Nachrichtenbit ist das Nachrichtenbit. Die Nullen bleiben nicht übrig, sie verschwinden gerade."
+     "text": {
+      "de": "Lauter Nullen, denn XOR zweier gleicher Werte ergibt 0, und der Schlüssel wurde zweimal angewendet.",
+      "en": "All zeros, because XOR of two equal values is 0, and the key was applied twice."
+     },
+     "begruendung": {
+      "de": "Schlüssel XOR Schlüssel wäre tatsächlich 0. Aber die Nachricht steckt dazwischen, und 0 XOR Nachrichtenbit ist das Nachrichtenbit. Die Nullen bleiben nicht übrig, sie verschwinden gerade.",
+      "en": "Key XOR key would indeed be 0. But the message sits in between, and 0 XOR message bit is the message bit. The zeros are not left over, they are precisely what vanishes."
+     }
     },
     {
      "kennung": "d",
-     "text": "Eine doppelt verschlüsselte Nachricht, die nur mit dem Schlüssel in umgekehrter Reihenfolge lesbar wird.",
-     "begruendung": "Das gilt für manche Verfahren, nicht für XOR. XOR ist sein eigenes Gegenteil; eine zweite Anwendung verschlüsselt nicht tiefer, sie entschlüsselt. Eine Reihenfolge gibt es bei einem einzelnen Schlüssel nicht."
+     "text": {
+      "de": "Eine doppelt verschlüsselte Nachricht, die nur mit dem Schlüssel in umgekehrter Reihenfolge lesbar wird.",
+      "en": "A doubly encrypted message that only becomes readable with the key in reverse order."
+     },
+     "begruendung": {
+      "de": "Das gilt für manche Verfahren, nicht für XOR. XOR ist sein eigenes Gegenteil; eine zweite Anwendung verschlüsselt nicht tiefer, sie entschlüsselt. Eine Reihenfolge gibt es bei einem einzelnen Schlüssel nicht.",
+      "en": "That holds for some methods, not for XOR. XOR is its own inverse; a second application does not encrypt deeper, it decrypts. There is no order with a single key."
+     }
     }
    ]
   },
   {
    "id": "pc-006",
    "niveau": "anwenden",
-   "frage": "Ein Team verschlüsselt per XOR und wählt als Schlüssel lauter Nullen,\n'damit es einfach bleibt'. Was passiert mit der Nachricht?",
+   "frage": {
+    "de": "Ein Team verschlüsselt per XOR und wählt als Schlüssel lauter Nullen,\n'damit es einfach bleibt'. Was passiert mit der Nachricht?",
+    "en": "A team encrypts with XOR and picks all zeros as the key, 'to keep it\nsimple'. What happens to the message?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -167,30 +305,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie wird zu lauter Nullen, denn jedes Bit wird mit 0 verknüpft und übernimmt diesen Wert.",
-     "begruendung": "XOR übernimmt keinen Wert, es vergleicht. Ein Bit XOR 0 ist 'unterscheidet sich das Bit von 0?', und das ist das Bit selbst. Die Nachricht bleibt, wie sie war."
+     "text": {
+      "de": "Sie wird zu lauter Nullen, denn jedes Bit wird mit 0 verknüpft und übernimmt diesen Wert.",
+      "en": "It turns into all zeros, since every bit is combined with 0 and takes on that value."
+     },
+     "begruendung": {
+      "de": "XOR übernimmt keinen Wert, es vergleicht. Ein Bit XOR 0 ist 'unterscheidet sich das Bit von 0?', und das ist das Bit selbst. Die Nachricht bleibt, wie sie war.",
+      "en": "XOR does not take on a value, it compares. A bit XOR 0 is 'does the bit differ from 0?', and that is the bit itself. The message stays as it was."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sie wird verschlüsselt wie mit jedem anderen Schlüssel auch, denn das Verfahren ist dasselbe.",
-     "begruendung": "Das Verfahren ist dasselbe, das Ergebnis nicht. Die Sicherheit steckt nicht im Verfahren, sondern im Schlüssel; ein Schlüssel aus Nullen ist ein Schlüssel, der nichts kippt."
+     "text": {
+      "de": "Sie wird verschlüsselt wie mit jedem anderen Schlüssel auch, denn das Verfahren ist dasselbe.",
+      "en": "It is encrypted just as with any other key, since the procedure is the same."
+     },
+     "begruendung": {
+      "de": "Das Verfahren ist dasselbe, das Ergebnis nicht. Die Sicherheit steckt nicht im Verfahren, sondern im Schlüssel; ein Schlüssel aus Nullen ist ein Schlüssel, der nichts kippt.",
+      "en": "The procedure is the same, the result is not. The security lies not in the procedure but in the key; a key of zeros is a key that flips nothing."
+     }
     },
     {
      "kennung": "c",
-     "text": "Sie bleibt unverändert, denn ein Bit XOR 0 ergibt immer das Bit selbst; die Verschlüsselung tut nichts.",
-     "begruendung": "Genau. XOR kippt ein Bit dort, wo der Schlüssel eine 1 hat, und lässt es dort, wo er eine 0 hat. Ein Schlüssel ohne Einsen kippt nichts. Das Team sendet im Klartext und merkt es nicht."
+     "text": {
+      "de": "Sie bleibt unverändert, denn ein Bit XOR 0 ergibt immer das Bit selbst; die Verschlüsselung tut nichts.",
+      "en": "It stays unchanged, because a bit XOR 0 always yields the bit itself; the encryption does nothing."
+     },
+     "begruendung": {
+      "de": "Genau. XOR kippt ein Bit dort, wo der Schlüssel eine 1 hat, und lässt es dort, wo er eine 0 hat. Ein Schlüssel ohne Einsen kippt nichts. Das Team sendet im Klartext und merkt es nicht.",
+      "en": "Exactly. XOR flips a bit where the key has a 1 and leaves it where it has a 0. A key without ones flips nothing. The team sends in plain text without noticing."
+     }
     },
     {
      "kennung": "d",
-     "text": "Sie wird zwar verschlüsselt, lässt sich aber nicht mehr entschlüsseln, weil XOR mit 0 nicht umkehrbar ist.",
-     "begruendung": "XOR ist mit jedem Schlüssel umkehrbar, auch mit 0. Nur ist hier nichts umzukehren: Die Nachricht ist nach dem Verschlüsseln dieselbe wie davor."
+     "text": {
+      "de": "Sie wird zwar verschlüsselt, lässt sich aber nicht mehr entschlüsseln, weil XOR mit 0 nicht umkehrbar ist.",
+      "en": "It is encrypted but can no longer be decrypted, because XOR with 0 is not reversible."
+     },
+     "begruendung": {
+      "de": "XOR ist mit jedem Schlüssel umkehrbar, auch mit 0. Nur ist hier nichts umzukehren: Die Nachricht ist nach dem Verschlüsseln dieselbe wie davor.",
+      "en": "XOR is reversible with any key, including 0. Only there is nothing to reverse here: after encryption the message is the same as before."
+     }
     }
    ]
   },
   {
    "id": "pc-007",
    "niveau": "anwenden",
-   "frage": "In Python verknüpft der Operator ^ zwei Zahlen bitweise per XOR. Was gibt\ndas Programm aus?",
+   "frage": {
+    "de": "In Python verknüpft der Operator ^ zwei Zahlen bitweise per XOR. Was gibt\ndas Programm aus?",
+    "en": "In Python the operator ^ combines two numbers bitwise with XOR. What does\nthe program print?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -199,30 +364,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "8, denn nur an der ersten Stelle haben beide Zahlen eine 1.",
-     "begruendung": "Das ist das bitweise Und (a & b): 1000, also 8. XOR fragt nicht, wo beide eine 1 haben, sondern wo sich die Bits unterscheiden."
+     "text": {
+      "de": "8, denn nur an der ersten Stelle haben beide Zahlen eine 1.",
+      "en": "8, because only in the first position do both numbers have a 1."
+     },
+     "begruendung": {
+      "de": "Das ist das bitweise Und (a & b): 1000, also 8. XOR fragt nicht, wo beide eine 1 haben, sondern wo sich die Bits unterscheiden.",
+      "en": "That is the bitwise and (a & b): 1000, that is 8. XOR does not ask where both have a 1, but where the bits differ."
+     }
     },
     {
      "kennung": "b",
-     "text": "6, denn an der zweiten und dritten Stelle unterscheiden sich die Bits, das ergibt 0110.",
-     "begruendung": "Genau: 1100 XOR 1010, Stelle für Stelle: 1 und 1 ergibt 0, 1 und 0 ergibt 1, 0 und 1 ergibt 1, 0 und 0 ergibt 0. Das ist 0110, dezimal 6."
+     "text": {
+      "de": "6, denn an der zweiten und dritten Stelle unterscheiden sich die Bits, das ergibt 0110.",
+      "en": "6, because the bits differ in the second and third positions, which gives 0110."
+     },
+     "begruendung": {
+      "de": "Genau: 1100 XOR 1010, Stelle für Stelle: 1 und 1 ergibt 0, 1 und 0 ergibt 1, 0 und 1 ergibt 1, 0 und 0 ergibt 0. Das ist 0110, dezimal 6.",
+      "en": "Exactly: 1100 XOR 1010, digit by digit: 1 and 1 gives 0, 1 and 0 gives 1, 0 and 1 gives 1, 0 and 0 gives 0. That is 0110, decimal 6."
+     }
     },
     {
      "kennung": "c",
-     "text": "14, denn an drei Stellen hat mindestens eine der Zahlen eine 1, das ergibt 1110.",
-     "begruendung": "Das ist das bitweise Oder (a | b): 1110, also 14. Beim exklusiven Oder fällt die Stelle weg, an der beide eine 1 haben."
+     "text": {
+      "de": "14, denn an drei Stellen hat mindestens eine der Zahlen eine 1, das ergibt 1110.",
+      "en": "14, because in three positions at least one of the numbers has a 1, which gives 1110."
+     },
+     "begruendung": {
+      "de": "Das ist das bitweise Oder (a | b): 1110, also 14. Beim exklusiven Oder fällt die Stelle weg, an der beide eine 1 haben.",
+      "en": "That is the bitwise or (a | b): 1110, that is 14. With the exclusive or, the position where both have a 1 drops out."
+     }
     },
     {
      "kennung": "d",
-     "text": "22, denn 12 plus 10 ergibt 22, und ^ ist die Addition der beiden Zahlen.",
-     "begruendung": "Die Werte 12 und 10 stimmen, aber ^ addiert nicht. XOR ist die Addition ohne Übertrag, Stelle für Stelle; die Überträge, die 22 erst ergeben würden, wirft es weg."
+     "text": {
+      "de": "22, denn 12 plus 10 ergibt 22, und ^ ist die Addition der beiden Zahlen.",
+      "en": "22, because 12 plus 10 is 22, and ^ is the addition of the two numbers."
+     },
+     "begruendung": {
+      "de": "Die Werte 12 und 10 stimmen, aber ^ addiert nicht. XOR ist die Addition ohne Übertrag, Stelle für Stelle; die Überträge, die 22 erst ergeben würden, wirft es weg.",
+      "en": "The values 12 and 10 are right, but ^ does not add. XOR is addition without carry, digit by digit; the carries that would make 22 are dropped."
+     }
     }
    ]
   },
   {
    "id": "pc-008",
    "niveau": "verstehen",
-   "frage": "Welche dieser Schritte aus eurem Projekt sind Verarbeitung, also erzeugen\nnach festen Regeln neue Bits aus vorhandenen? (Mehrere richtige Antworten\nmöglich.)",
+   "frage": {
+    "de": "Welche dieser Schritte aus eurem Projekt sind Verarbeitung, also erzeugen\nnach festen Regeln neue Bits aus vorhandenen? (Mehrere richtige Antworten\nmöglich.)",
+    "en": "Which of these steps from your project are processing, that is, produce\nnew bits from existing ones by fixed rules? (Several answers may be\ncorrect.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -232,35 +424,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Prüfsumme über alle Bytes der Datei berechnen, bevor sie gesendet wird.",
-     "begruendung": "Richtig: Aus zweitausend Bytes entsteht nach einer festen Regel eine kurze Zahl, die vorher nirgends stand."
+     "text": {
+      "de": "Die Prüfsumme über alle Bytes der Datei berechnen, bevor sie gesendet wird.",
+      "en": "Computing the checksum over all bytes of the file before it is sent."
+     },
+     "begruendung": {
+      "de": "Richtig: Aus zweitausend Bytes entsteht nach einer festen Regel eine kurze Zahl, die vorher nirgends stand.",
+      "en": "Correct: from two thousand bytes a short number arises by a fixed rule, one that existed nowhere before."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Bits der Datei als Farbfolge über die Lichtstrecke an den Empfänger schicken.",
-     "begruendung": "Das ist Übertragen. Die Bits sollen beim Empfänger exakt so ankommen, wie sie losgingen; entstehen darf dabei nichts Neues, sonst wäre es ein Fehler."
+     "text": {
+      "de": "Die Bits der Datei als Farbfolge über die Lichtstrecke an den Empfänger schicken.",
+      "en": "Sending the bits of the file as a colour sequence across the light link to the receiver."
+     },
+     "begruendung": {
+      "de": "Das ist Übertragen. Die Bits sollen beim Empfänger exakt so ankommen, wie sie losgingen; entstehen darf dabei nichts Neues, sonst wäre es ein Fehler.",
+      "en": "That is transmitting. The bits are supposed to arrive at the receiver exactly as they left; nothing new may arise, otherwise it would be an error."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Datei vor dem Senden komprimieren, damit weniger Bits über die Strecke müssen.",
-     "begruendung": "Richtig: Aus der Datei entsteht nach festen Regeln eine kürzere Bitfolge, aus der sich die alte wieder herstellen lässt. Das ist Verarbeitung im Dienst der Übertragung."
+     "text": {
+      "de": "Die Datei vor dem Senden komprimieren, damit weniger Bits über die Strecke müssen.",
+      "en": "Compressing the file before sending so that fewer bits have to cross the link."
+     },
+     "begruendung": {
+      "de": "Richtig: Aus der Datei entsteht nach festen Regeln eine kürzere Bitfolge, aus der sich die alte wieder herstellen lässt. Das ist Verarbeitung im Dienst der Übertragung.",
+      "en": "Correct: from the file a shorter bit sequence arises by fixed rules, from which the old one can be restored. That is processing in the service of transmission."
+     }
     },
     {
      "kennung": "d",
-     "text": "Aus den vier Sensorwerten r, g, b und c entscheiden, welches Symbol gerade anliegt.",
-     "begruendung": "Richtig: Vier Zahlen gehen hinein, ein Symbol kommt heraus, nach den Regeln eurer Kalibrierung. Das ist der Verarbeitungsschritt, den ihr seit Challenge 1 selbst schreibt."
+     "text": {
+      "de": "Aus den vier Sensorwerten r, g, b und c entscheiden, welches Symbol gerade anliegt.",
+      "en": "Deciding from the four sensor values r, g, b and c which symbol is currently present."
+     },
+     "begruendung": {
+      "de": "Richtig: Vier Zahlen gehen hinein, ein Symbol kommt heraus, nach den Regeln eurer Kalibrierung. Das ist der Verarbeitungsschritt, den ihr seit Challenge 1 selbst schreibt.",
+      "en": "Correct: four numbers go in, one symbol comes out, according to the rules of your calibration. That is the processing step you have been writing yourselves since challenge 1."
+     }
     },
     {
      "kennung": "e",
-     "text": "Die empfangene Datei auf der Festplatte ablegen, damit sie nach dem Lauf noch da ist.",
-     "begruendung": "Das ist Speichern. Die Bits werden aufbewahrt, nicht verändert; morgen liest man dieselben Bytes wieder heraus."
+     "text": {
+      "de": "Die empfangene Datei auf der Festplatte ablegen, damit sie nach dem Lauf noch da ist.",
+      "en": "Saving the received file to the hard disk so that it is still there after the run."
+     },
+     "begruendung": {
+      "de": "Das ist Speichern. Die Bits werden aufbewahrt, nicht verändert; morgen liest man dieselben Bytes wieder heraus.",
+      "en": "That is storing. The bits are kept, not changed; tomorrow the same bytes are read back out."
+     }
     }
    ]
   },
   {
    "id": "pc-009",
    "niveau": "anwenden",
-   "frage": "Ein Graustufenbild speichert jeden Bildpunkt als Byte, 0 ist schwarz, 255\nweiß. Ein Filter 'heller' addiert zu jedem Bildpunkt 40, mit einem\ngewöhnlichen 8-Bit-Addierer und ohne weitere Vorkehrung. Was wird aus einem\nBildpunkt mit dem Wert 230?",
+   "frage": {
+    "de": "Ein Graustufenbild speichert jeden Bildpunkt als Byte, 0 ist schwarz, 255\nweiß. Ein Filter 'heller' addiert zu jedem Bildpunkt 40, mit einem\ngewöhnlichen 8-Bit-Addierer und ohne weitere Vorkehrung. Was wird aus einem\nBildpunkt mit dem Wert 230?",
+    "en": "A greyscale image stores every pixel as a byte, 0 is black, 255 white. A\nfilter 'brighter' adds 40 to every pixel, with an ordinary 8-bit adder and\nno further precaution. What becomes of a pixel with the value 230?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -268,30 +493,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "255, denn heller als weiß geht nicht, und der Addierer bleibt beim größten darstellbaren Wert stehen.",
-     "begruendung": "So sollte es sein, aber dafür muss jemand sorgen: ein Vergleich (größer als 255?) und eine Entscheidung. Der Addierer allein kennt kein Maximum; er rechnet stur weiter und wirft den Übertrag weg."
+     "text": {
+      "de": "255, denn heller als weiß geht nicht, und der Addierer bleibt beim größten darstellbaren Wert stehen.",
+      "en": "255, because brighter than white is impossible, and the adder stops at the largest representable value."
+     },
+     "begruendung": {
+      "de": "So sollte es sein, aber dafür muss jemand sorgen: ein Vergleich (größer als 255?) und eine Entscheidung. Der Addierer allein kennt kein Maximum; er rechnet stur weiter und wirft den Übertrag weg.",
+      "en": "That is how it should be, but someone has to make it so: a comparison (greater than 255?) and a decision. The adder alone knows no maximum; it stubbornly carries on and drops the carry."
+     }
     },
     {
      "kennung": "b",
-     "text": "270, denn der Addierer rechnet richtig, und erst beim Anzeigen wird der Wert auf Weiß gerundet.",
-     "begruendung": "Die 270 existiert im Byte nicht; sie bräuchte neun Bits. Was der 8-Bit-Addierer ablegt, sind die unteren acht Bits von 270, und das ist nicht Weiß."
+     "text": {
+      "de": "270, denn der Addierer rechnet richtig, und erst beim Anzeigen wird der Wert auf Weiß gerundet.",
+      "en": "270, because the adder calculates correctly, and only when displaying is the value rounded to white."
+     },
+     "begruendung": {
+      "de": "Die 270 existiert im Byte nicht; sie bräuchte neun Bits. Was der 8-Bit-Addierer ablegt, sind die unteren acht Bits von 270, und das ist nicht Weiß.",
+      "en": "The 270 does not exist in the byte; it would need nine bits. What the 8-bit adder stores is the lower eight bits of 270, and that is not white."
+     }
     },
     {
      "kennung": "c",
-     "text": "14, denn 270 braucht neun Bits; der neunte Übertrag geht verloren, und 270 minus 256 bleibt übrig.",
-     "begruendung": "Genau. Das ist der Überlauf: Ein fast weißer Bildpunkt wird fast schwarz, und ein heller Himmel bekommt schwarze Sprenkel. Die Reparatur heißt Begrenzen (clamp): erst vergleichen, dann bei Bedarf 255 setzen."
+     "text": {
+      "de": "14, denn 270 braucht neun Bits; der neunte Übertrag geht verloren, und 270 minus 256 bleibt übrig.",
+      "en": "14, because 270 needs nine bits; the ninth carry is lost, and 270 minus 256 remains."
+     },
+     "begruendung": {
+      "de": "Genau. Das ist der Überlauf: Ein fast weißer Bildpunkt wird fast schwarz, und ein heller Himmel bekommt schwarze Sprenkel. Die Reparatur heißt Begrenzen (clamp): erst vergleichen, dann bei Bedarf 255 setzen.",
+      "en": "Exactly. That is overflow: an almost white pixel turns almost black, and a bright sky gets black speckles. The fix is called clamping: compare first, then set 255 if needed."
+     }
     },
     {
      "kennung": "d",
-     "text": "230, denn ein Addierer, der das Ergebnis nicht darstellen kann, lässt den Wert unverändert.",
-     "begruendung": "Ein Addierer lässt nichts unverändert; er hat kein Gedächtnis für den alten Wert und keine Meldung für 'passt nicht'. Er liefert immer ein Ergebnis, nur eben ein falsches."
+     "text": {
+      "de": "230, denn ein Addierer, der das Ergebnis nicht darstellen kann, lässt den Wert unverändert.",
+      "en": "230, because an adder that cannot represent the result leaves the value unchanged."
+     },
+     "begruendung": {
+      "de": "Ein Addierer lässt nichts unverändert; er hat kein Gedächtnis für den alten Wert und keine Meldung für 'passt nicht'. Er liefert immer ein Ergebnis, nur eben ein falsches.",
+      "en": "An adder leaves nothing unchanged; it has no memory of the old value and no message for 'does not fit'. It always delivers a result, just a wrong one."
+     }
     }
    ]
   },
   {
    "id": "pc-010",
    "niveau": "verstehen",
-   "frage": "Der Filter 'Negativ' ersetzt jeden Bildpunkt durch 255 minus seinen Wert.\nAus 178 (binär 10110010) wird 77 (binär 01001101). Welche Verknüpfung\nsteckt dahinter?",
+   "frage": {
+    "de": "Der Filter 'Negativ' ersetzt jeden Bildpunkt durch 255 minus seinen Wert.\nAus 178 (binär 10110010) wird 77 (binär 01001101). Welche Verknüpfung\nsteckt dahinter?",
+    "en": "The filter 'negative' replaces every pixel by 255 minus its value. 178\n(binary 10110010) becomes 77 (binary 01001101). Which operation is behind\nit?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -299,30 +551,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Eine Subtraktion mit Übertrag, die acht Volladdierer braucht, genau wie das Aufhellen.",
-     "begruendung": "So könnte man es bauen, aber es ist unnötig aufwendig: Bei 255 minus Wert entsteht nie ein Übertrag, denn 255 hat an jeder Stelle eine 1. Jede Stelle wird einzeln zu 1 minus Bit, und das ist ein Kippen."
+     "text": {
+      "de": "Eine Subtraktion mit Übertrag, die acht Volladdierer braucht, genau wie das Aufhellen.",
+      "en": "A subtraction with carry that needs eight full adders, just like brightening."
+     },
+     "begruendung": {
+      "de": "So könnte man es bauen, aber es ist unnötig aufwendig: Bei 255 minus Wert entsteht nie ein Übertrag, denn 255 hat an jeder Stelle eine 1. Jede Stelle wird einzeln zu 1 minus Bit, und das ist ein Kippen.",
+      "en": "You could build it that way, but it is needlessly costly: with 255 minus value no carry ever arises, since 255 has a 1 in every position. Every position becomes 1 minus bit, and that is a flip."
+     }
     },
     {
      "kennung": "b",
-     "text": "Ein Nicht auf jedem einzelnen Bit: Jede 1 wird 0, jede 0 wird 1, ganz ohne Übertrag.",
-     "begruendung": "Genau. 255 ist binär 11111111, und 1 minus Bit ist das gekippte Bit. Acht Nicht-Gatter nebeneinander, kein Übertrag, kein Addierer. Der Filter, der am dramatischsten aussieht, ist der einfachste."
+     "text": {
+      "de": "Ein Nicht auf jedem einzelnen Bit: Jede 1 wird 0, jede 0 wird 1, ganz ohne Übertrag.",
+      "en": "A not on every single bit: every 1 becomes 0, every 0 becomes 1, without any carry."
+     },
+     "begruendung": {
+      "de": "Genau. 255 ist binär 11111111, und 1 minus Bit ist das gekippte Bit. Acht Nicht-Gatter nebeneinander, kein Übertrag, kein Addierer. Der Filter, der am dramatischsten aussieht, ist der einfachste.",
+      "en": "Exactly. 255 is 11111111 in binary, and 1 minus bit is the flipped bit. Eight not gates side by side, no carry, no adder. The filter that looks most dramatic is the simplest."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein XOR jedes Bits mit dem entsprechenden Bit von 178, denn XOR eines Werts mit sich selbst kippt ihn.",
-     "begruendung": "XOR eines Werts mit sich selbst ergibt lauter Nullen, nicht das Gegenteil. Ein XOR mit lauter Einsen dagegen wäre tatsächlich ein Kippen; das ist nur ein anderer Name für das Nicht auf jedem Bit."
+     "text": {
+      "de": "Ein XOR jedes Bits mit dem entsprechenden Bit von 178, denn XOR eines Werts mit sich selbst kippt ihn.",
+      "en": "An XOR of every bit with the matching bit of 178, since XOR of a value with itself flips it."
+     },
+     "begruendung": {
+      "de": "XOR eines Werts mit sich selbst ergibt lauter Nullen, nicht das Gegenteil. Ein XOR mit lauter Einsen dagegen wäre tatsächlich ein Kippen; das ist nur ein anderer Name für das Nicht auf jedem Bit.",
+      "en": "XOR of a value with itself gives all zeros, not the opposite. An XOR with all ones, however, would indeed be a flip; that is just another name for the not on every bit."
+     }
     },
     {
      "kennung": "d",
-     "text": "Ein Vertauschen der Bitreihenfolge, denn 01001101 ist 10110010 von hinten gelesen.",
-     "begruendung": "Sieht auf den ersten Blick so aus, stimmt aber nicht: 10110010 rückwärts ist 01001101 nur zufällig ähnlich; an der zweiten und dritten Stelle passt es nicht. Stelle für Stelle gekippt passt es überall."
+     "text": {
+      "de": "Ein Vertauschen der Bitreihenfolge, denn 01001101 ist 10110010 von hinten gelesen.",
+      "en": "A reversal of the bit order, since 01001101 is 10110010 read backwards."
+     },
+     "begruendung": {
+      "de": "Sieht auf den ersten Blick so aus, stimmt aber nicht: 10110010 rückwärts ist 01001101 nur zufällig ähnlich; an der zweiten und dritten Stelle passt es nicht. Stelle für Stelle gekippt passt es überall.",
+      "en": "It looks that way at first glance but is not right: 10110010 backwards only happens to resemble 01001101; it fails in the second and third positions. Flipped position by position, it fits everywhere."
+     }
     }
    ]
   },
   {
    "id": "pc-011",
    "niveau": "verstehen",
-   "frage": "Eine Foto-App macht ein Bild mit einem Tastendruck heller. Was tut der\nRechner dabei?",
+   "frage": {
+    "de": "Eine Foto-App macht ein Bild mit einem Tastendruck heller. Was tut der\nRechner dabei?",
+    "en": "A photo app makes a picture brighter with one tap. What does the computer\ndo in the process?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -330,30 +609,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er erkennt die dunklen Bereiche des Bildes und hellt gezielt diese auf, damit die hellen nicht überstrahlen.",
-     "begruendung": "Für den einfachen Filter erkennt der Rechner gar nichts; er addiert zu jedem Bildpunkt dieselbe Zahl. Ob die hellen überstrahlen, hängt davon ab, ob jemand die Begrenzung bei 255 eingebaut hat, nicht von einem Verständnis des Bildes."
+     "text": {
+      "de": "Er erkennt die dunklen Bereiche des Bildes und hellt gezielt diese auf, damit die hellen nicht überstrahlen.",
+      "en": "It recognises the dark areas of the picture and brightens precisely those, so that the bright ones do not wash out."
+     },
+     "begruendung": {
+      "de": "Für den einfachen Filter erkennt der Rechner gar nichts; er addiert zu jedem Bildpunkt dieselbe Zahl. Ob die hellen überstrahlen, hängt davon ab, ob jemand die Begrenzung bei 255 eingebaut hat, nicht von einem Verständnis des Bildes.",
+      "en": "For the simple filter the computer recognises nothing at all; it adds the same number to every pixel. Whether the bright ones wash out depends on whether someone built in the limit at 255, not on any understanding of the picture."
+     }
     },
     {
      "kennung": "b",
-     "text": "Er erhöht die Leuchtkraft des Bildschirms an den Stellen, an denen das Bild angezeigt wird.",
-     "begruendung": "Der Bildschirm bleibt, wie er ist; geändert wird die Datei. Sonst wäre das hellere Bild nach dem Speichern wieder dunkel. Die Zahlen im Bild sind größer geworden, nicht die Lampe dahinter."
+     "text": {
+      "de": "Er erhöht die Leuchtkraft des Bildschirms an den Stellen, an denen das Bild angezeigt wird.",
+      "en": "It increases the brightness of the screen in the places where the picture is displayed."
+     },
+     "begruendung": {
+      "de": "Der Bildschirm bleibt, wie er ist; geändert wird die Datei. Sonst wäre das hellere Bild nach dem Speichern wieder dunkel. Die Zahlen im Bild sind größer geworden, nicht die Lampe dahinter.",
+      "en": "The screen stays as it is; what changes is the file. Otherwise the brighter picture would be dark again after saving. The numbers in the picture have grown, not the lamp behind it."
+     }
     },
     {
      "kennung": "c",
-     "text": "Er addiert zu jedem einzelnen Bildpunkt dieselbe Zahl, zigtausendmal dieselbe Rechnung, ohne etwas vom Bild zu wissen.",
-     "begruendung": "Genau. Ein Bildpunkt ist ein Byte, heller heißt plus 40, und das für jeden Bildpunkt einzeln. Kein Schritt weiß, dass er Teil eines Bildes ist. Was den Filter mächtig wirken lässt, ist die Zahl der Wiederholungen und ihre Geschwindigkeit."
+     "text": {
+      "de": "Er addiert zu jedem einzelnen Bildpunkt dieselbe Zahl, zigtausendmal dieselbe Rechnung, ohne etwas vom Bild zu wissen.",
+      "en": "It adds the same number to every single pixel, the same calculation tens of thousands of times, without knowing anything about the picture."
+     },
+     "begruendung": {
+      "de": "Genau. Ein Bildpunkt ist ein Byte, heller heißt plus 40, und das für jeden Bildpunkt einzeln. Kein Schritt weiß, dass er Teil eines Bildes ist. Was den Filter mächtig wirken lässt, ist die Zahl der Wiederholungen und ihre Geschwindigkeit.",
+      "en": "Exactly. A pixel is a byte, brighter means plus 40, and that for every pixel individually. No step knows it is part of a picture. What makes the filter look powerful is the number of repetitions and their speed."
+     }
     },
     {
      "kennung": "d",
-     "text": "Er verschiebt jeden Bildpunkt um eine Stufe in einer Farbtabelle, in der die helleren Farben weiter oben stehen.",
-     "begruendung": "Eine Tabelle braucht es nicht; der Wert selbst ist die Helligkeit, 0 schwarz, 255 weiß. Eine Stufe weiter wäre außerdem plus 1, kaum sichtbar. Heller ist eine Addition mit einer spürbaren Zahl, direkt auf dem Byte."
+     "text": {
+      "de": "Er verschiebt jeden Bildpunkt um eine Stufe in einer Farbtabelle, in der die helleren Farben weiter oben stehen.",
+      "en": "It moves every pixel one step up in a colour table in which the brighter colours sit higher."
+     },
+     "begruendung": {
+      "de": "Eine Tabelle braucht es nicht; der Wert selbst ist die Helligkeit, 0 schwarz, 255 weiß. Eine Stufe weiter wäre außerdem plus 1, kaum sichtbar. Heller ist eine Addition mit einer spürbaren Zahl, direkt auf dem Byte.",
+      "en": "No table is needed; the value itself is the brightness, 0 black, 255 white. One step up would also be plus 1, hardly visible. Brighter is an addition with a noticeable number, directly on the byte."
+     }
     }
    ]
   },
   {
    "id": "pc-012",
    "niveau": "verstehen",
-   "frage": "Die Werkzeugkiste zeigt vier Gatter: Und, Oder, Nicht und XOR. Ein Chip\nbesteht aber fast nur aus NAND-Gattern (Und mit anschließendem Nicht).\nWie passt das zusammen?",
+   "frage": {
+    "de": "Die Werkzeugkiste zeigt vier Gatter: Und, Oder, Nicht und XOR. Ein Chip\nbesteht aber fast nur aus NAND-Gattern (Und mit anschließendem Nicht).\nWie passt das zusammen?",
+    "en": "The toolbox shows four gates: and, or, not and xor. A chip, however,\nconsists almost entirely of nand gates (and followed by not). How do the\ntwo fit together?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -361,30 +667,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Es passt nicht: Ein Chip braucht für jede Verknüpfung ein eigenes Bauteil, und NAND ist nur das häufigste davon.",
-     "begruendung": "NAND ist nicht nur das häufigste, es genügt. Nicht ist ein NAND mit demselben Bit an beiden Eingängen, Und ist ein umgedrehtes NAND, Oder ein NAND mit vorher gekippten Eingängen. Eigene Bauteile je Verknüpfung sind nicht nötig."
+     "text": {
+      "de": "Es passt nicht: Ein Chip braucht für jede Verknüpfung ein eigenes Bauteil, und NAND ist nur das häufigste davon.",
+      "en": "It does not fit: a chip needs a separate part for every operation, and nand is merely the most common one."
+     },
+     "begruendung": {
+      "de": "NAND ist nicht nur das häufigste, es genügt. Nicht ist ein NAND mit demselben Bit an beiden Eingängen, Und ist ein umgedrehtes NAND, Oder ein NAND mit vorher gekippten Eingängen. Eigene Bauteile je Verknüpfung sind nicht nötig.",
+      "en": "Nand is not merely the most common, it suffices. Not is a nand with the same bit on both inputs, and is an inverted nand, or is a nand with both inputs flipped first. Separate parts per operation are not needed."
+     }
     },
     {
      "kennung": "b",
-     "text": "Aus NAND allein lassen sich Nicht, Und und Oder zusammensetzen; die vier Gatter sind Kurzschreibweisen für kleine NAND-Schaltungen.",
-     "begruendung": "Genau. Ein einziges Gatter genügt, um jede Verarbeitung zu bauen; die vier aus der Kiste sind das Vokabular, mit dem man bequemer spricht. NAND ist außerdem das, was ein Transistorpaar von sich aus tut, deshalb ist es auf dem Chip die Grundform."
+     "text": {
+      "de": "Aus NAND allein lassen sich Nicht, Und und Oder zusammensetzen; die vier Gatter sind Kurzschreibweisen für kleine NAND-Schaltungen.",
+      "en": "Not, and and or can all be assembled from nand alone; the four gates are shorthand for small nand circuits."
+     },
+     "begruendung": {
+      "de": "Genau. Ein einziges Gatter genügt, um jede Verarbeitung zu bauen; die vier aus der Kiste sind das Vokabular, mit dem man bequemer spricht. NAND ist außerdem das, was ein Transistorpaar von sich aus tut, deshalb ist es auf dem Chip die Grundform.",
+      "en": "Exactly. A single gate is enough to build any processing; the four from the toolbox are the vocabulary that is easier to talk in. Nand is also what a transistor pair does by itself, which is why it is the basic form on the chip."
+     }
     },
     {
      "kennung": "c",
-     "text": "NAND ersetzt nur das Und; für Oder und Nicht braucht der Chip zusätzlich NOR-Gatter, sonst fehlt eine Hälfte der Kiste.",
-     "begruendung": "NOR könnte es genauso allein, aber nötig ist es nicht: Oder entsteht aus NAND, indem man beide Eingänge vorher mit NAND kippt. Beide Gatter sind je für sich vollständig."
+     "text": {
+      "de": "NAND ersetzt nur das Und; für Oder und Nicht braucht der Chip zusätzlich NOR-Gatter, sonst fehlt eine Hälfte der Kiste.",
+      "en": "Nand only replaces the and; for or and not the chip additionally needs nor gates, otherwise half the toolbox is missing."
+     },
+     "begruendung": {
+      "de": "NOR könnte es genauso allein, aber nötig ist es nicht: Oder entsteht aus NAND, indem man beide Eingänge vorher mit NAND kippt. Beide Gatter sind je für sich vollständig.",
+      "en": "Nor could do it alone just as well, but it is not required: or arises from nand by flipping both inputs with nand first. Each of the two gates is complete on its own."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die vier Gatter sind die Bausteine für Rechnen, NAND die für Speichern; ein Chip braucht beides, deshalb überwiegt NAND.",
-     "begruendung": "Speichern und Rechnen benutzen dieselben Gatter, nur anders verdrahtet; das Flip-Flop besteht aus zwei NOR oder zwei NAND, der Addierer aus XOR und Und. Es gibt keine Aufgabenteilung nach Gattersorte."
+     "text": {
+      "de": "Die vier Gatter sind die Bausteine für Rechnen, NAND die für Speichern; ein Chip braucht beides, deshalb überwiegt NAND.",
+      "en": "The four gates are the building blocks for arithmetic, nand those for storing; a chip needs both, which is why nand dominates."
+     },
+     "begruendung": {
+      "de": "Speichern und Rechnen benutzen dieselben Gatter, nur anders verdrahtet; das Flip-Flop besteht aus zwei NOR oder zwei NAND, der Addierer aus XOR und Und. Es gibt keine Aufgabenteilung nach Gattersorte.",
+      "en": "Storing and arithmetic use the same gates, just wired differently; the flip-flop is two nor or two nand gates, the adder is xor and and. There is no division of labour by gate type."
+     }
     }
    ]
   },
   {
    "id": "pc-013",
    "niveau": "verstehen",
-   "frage": "Ein Flip-Flop besteht aus zwei NOR-Gattern, deren Ausgänge über Kreuz in\nden jeweils anderen Eingang laufen. Man legt set kurz auf 1 und dann\nwieder auf 0. Was zeigt der Ausgang q danach?",
+   "frage": {
+    "de": "Ein Flip-Flop besteht aus zwei NOR-Gattern, deren Ausgänge über Kreuz in\nden jeweils anderen Eingang laufen. Man legt set kurz auf 1 und dann\nwieder auf 0. Was zeigt der Ausgang q danach?",
+    "en": "A flip-flop consists of two nor gates whose outputs cross over into each\nother's input. You put set to 1 briefly and then back to 0. What does the\noutput q show afterwards?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -392,23 +725,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "0, denn ohne Eingangssignal liefert ein Gatter nichts; sobald set weg ist, fällt q zurück.",
-     "begruendung": "Das gälte für ein einzelnes Gatter. Hier liefert das andere Gatter über die Rückkopplung weiter ein Eingangssignal, und genau das hält q oben. Die Schaltung braucht set nur zum Anstoßen."
+     "text": {
+      "de": "0, denn ohne Eingangssignal liefert ein Gatter nichts; sobald set weg ist, fällt q zurück.",
+      "en": "0, because without an input signal a gate delivers nothing; as soon as set is gone, q falls back."
+     },
+     "begruendung": {
+      "de": "Das gälte für ein einzelnes Gatter. Hier liefert das andere Gatter über die Rückkopplung weiter ein Eingangssignal, und genau das hält q oben. Die Schaltung braucht set nur zum Anstoßen.",
+      "en": "That would hold for a single gate. Here the other gate keeps supplying an input via the feedback, and that is exactly what keeps q up. The circuit needs set only as a trigger."
+     }
     },
     {
      "kennung": "b",
-     "text": "1 für einen Moment, dann 0, weil das Signal in der Schleife bei jedem Umlauf schwächer wird.",
-     "begruendung": "Ein Gatter gibt kein abgeschwächtes Signal weiter, es erzeugt jedes Mal eine frische 0 oder 1. Die Schleife nutzt sich nicht ab; sie hält, solange Strom fließt."
+     "text": {
+      "de": "1 für einen Moment, dann 0, weil das Signal in der Schleife bei jedem Umlauf schwächer wird.",
+      "en": "1 for a moment, then 0, because the signal in the loop grows weaker with every round."
+     },
+     "begruendung": {
+      "de": "Ein Gatter gibt kein abgeschwächtes Signal weiter, es erzeugt jedes Mal eine frische 0 oder 1. Die Schleife nutzt sich nicht ab; sie hält, solange Strom fließt.",
+      "en": "A gate does not pass on a weakened signal, it produces a fresh 0 or 1 every time. The loop does not wear out; it holds as long as power flows."
+     }
     },
     {
      "kennung": "c",
-     "text": "1, und zwar so lange, bis reset kommt: Die Kreuzverbindung hält die Gatter gegenseitig in ihrem Zustand fest.",
-     "begruendung": "Genau. Die 1 des oberen Gatters hält das untere auf 0, die 0 des unteren hält das obere auf 1. Die Schaltung erinnert sich an den Impuls; das ist ein Bit Speicher aus zwei Gattern, und acht davon sind ein Register."
+     "text": {
+      "de": "1, und zwar so lange, bis reset kommt: Die Kreuzverbindung hält die Gatter gegenseitig in ihrem Zustand fest.",
+      "en": "1, and for as long as it takes until reset arrives: the cross-connection holds the gates in their state mutually."
+     },
+     "begruendung": {
+      "de": "Genau. Die 1 des oberen Gatters hält das untere auf 0, die 0 des unteren hält das obere auf 1. Die Schaltung erinnert sich an den Impuls; das ist ein Bit Speicher aus zwei Gattern, und acht davon sind ein Register.",
+      "en": "Exactly. The upper gate's 1 holds the lower one at 0, the lower gate's 0 holds the upper one at 1. The circuit remembers the pulse; that is one bit of memory from two gates, and eight of them make a register."
+     }
     },
     {
      "kennung": "d",
-     "text": "Abwechselnd 0 und 1, weil die beiden Gatter sich über die Rückkopplung ständig gegenseitig umkippen.",
-     "begruendung": "Kippen würden sie sich bei einer Rückkopplung durch eine ungerade Zahl von Nicht-Gattern; das gibt einen Taktgeber. Zwei NOR über Kreuz stabilisieren sich gegenseitig, sie kippen nicht, sie halten."
+     "text": {
+      "de": "Abwechselnd 0 und 1, weil die beiden Gatter sich über die Rückkopplung ständig gegenseitig umkippen.",
+      "en": "Alternately 0 and 1, because the two gates keep flipping each other via the feedback."
+     },
+     "begruendung": {
+      "de": "Kippen würden sie sich bei einer Rückkopplung durch eine ungerade Zahl von Nicht-Gattern; das gibt einen Taktgeber. Zwei NOR über Kreuz stabilisieren sich gegenseitig, sie kippen nicht, sie halten.",
+      "en": "They would flip each other with feedback through an odd number of not gates; that makes an oscillator. Two nor gates crossed over stabilise each other, they do not flip, they hold."
+     }
     }
    ]
   }

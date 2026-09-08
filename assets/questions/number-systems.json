@@ -4,7 +4,10 @@
   {
    "id": "ns-001",
    "niveau": "erinnern",
-   "frage": "Warum bedeutet die Ziffernfolge 123 einhundertdreiundzwanzig?",
+   "frage": {
+    "de": "Warum bedeutet die Ziffernfolge 123 einhundertdreiundzwanzig?",
+    "en": "Why does the digit sequence 123 mean one hundred and twenty-three?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die Ziffern zusammen ein festes Symbol für diese Zahl bilden.",
-     "begruendung": "Dann bräuchte jede Zahl ihr eigenes Symbol, und ihr müsstet unendlich viele lernen. Der Trick des Stellenwertsystems ist gerade, mit zehn Ziffern jede Zahl zu schreiben."
+     "text": {
+      "de": "Weil die Ziffern zusammen ein festes Symbol für diese Zahl bilden.",
+      "en": "Because together the digits form one fixed symbol for this number."
+     },
+     "begruendung": {
+      "de": "Dann bräuchte jede Zahl ihr eigenes Symbol, und ihr müsstet unendlich viele lernen. Der Trick des Stellenwertsystems ist gerade, mit zehn Ziffern jede Zahl zu schreiben.",
+      "en": "Then every number would need its own symbol and you would have to learn infinitely many. The whole trick of place value is writing any number with ten digits."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil jede Stelle eine Zehnerpotenz wert ist: 1 mal 100 plus 2 mal 10 plus 3 mal 1.",
-     "begruendung": "Genau: Die Ziffer sagt wie oft, die Stelle sagt was. Dieselbe Ziffer 1 ist vorn hundert wert und hinten eins. Diese Bauanleitung heißt Stellenwertsystem, und sie funktioniert mit jeder Basis, nicht nur mit der Zehn."
+     "text": {
+      "de": "Weil jede Stelle eine Zehnerpotenz wert ist: 1 mal 100 plus 2 mal 10 plus 3 mal 1.",
+      "en": "Because each position is worth a power of ten: 1 times 100 plus 2 times 10 plus 3 times 1."
+     },
+     "begruendung": {
+      "de": "Genau: Die Ziffer sagt wie oft, die Stelle sagt was. Dieselbe Ziffer 1 ist vorn hundert wert und hinten eins. Diese Bauanleitung heißt Stellenwertsystem, und sie funktioniert mit jeder Basis, nicht nur mit der Zehn.",
+      "en": "Exactly: the digit says how many, the position says of what. The same digit 1 is worth a hundred at the front and one at the back. This recipe is called place value, and it works with any base, not just ten."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil die Ziffern von links nach rechts der Größe nach aufsteigen und so die Zahl aufbauen.",
-     "begruendung": "Zufall dieses Beispiels. 321 funktioniert nach derselben Regel: 3 mal 100 plus 2 mal 10 plus 1 mal 1."
+     "text": {
+      "de": "Weil die Ziffern von links nach rechts der Größe nach aufsteigen und so die Zahl aufbauen.",
+      "en": "Because the digits increase in size from left to right and build up the number that way."
+     },
+     "begruendung": {
+      "de": "Zufall dieses Beispiels. 321 funktioniert nach derselben Regel: 3 mal 100 plus 2 mal 10 plus 1 mal 1.",
+      "en": "A coincidence of this example. 321 follows the same rule: 3 times 100 plus 2 times 10 plus 1 times 1."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil jede Stelle zehnmal so viel zählt wie die davor: 1 mal 1 plus 2 mal 10 plus 3 mal 100.",
-     "begruendung": "Die Zehnerpotenzen stimmen, die Richtung nicht: Diese Rechnung ergibt 321. Die Stellenwerte wachsen von rechts nach links, die Einer stehen ganz rechts."
+     "text": {
+      "de": "Weil jede Stelle zehnmal so viel zählt wie die davor: 1 mal 1 plus 2 mal 10 plus 3 mal 100.",
+      "en": "Because each position counts ten times as much as the one before: 1 times 1 plus 2 times 10 plus 3 times 100."
+     },
+     "begruendung": {
+      "de": "Die Zehnerpotenzen stimmen, die Richtung nicht: Diese Rechnung ergibt 321. Die Stellenwerte wachsen von rechts nach links, die Einer stehen ganz rechts.",
+      "en": "The powers of ten are right, the direction is not: this calculation gives 321. Place values grow from right to left, the ones are at the far right."
+     }
     }
    ]
   },
   {
    "id": "ns-002",
    "niveau": "verstehen",
-   "frage": "Was ist an der Basis 10 unseres Zahlensystems besonders?",
+   "frage": {
+    "de": "Was ist an der Basis 10 unseres Zahlensystems besonders?",
+    "en": "What is special about the base 10 of our number system?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie ist die einzige Basis, mit der sich jede beliebige Zahl darstellen lässt.",
-     "begruendung": "Mathematisch ist keine Basis ausgezeichnet. Jede Basis ab 2 kann jede Zahl darstellen, nach derselben Bauanleitung."
+     "text": {
+      "de": "Sie ist die einzige Basis, mit der sich jede beliebige Zahl darstellen lässt.",
+      "en": "It is the only base in which every possible number can be represented."
+     },
+     "begruendung": {
+      "de": "Mathematisch ist keine Basis ausgezeichnet. Jede Basis ab 2 kann jede Zahl darstellen, nach derselben Bauanleitung.",
+      "en": "Mathematically no base is privileged. Every base from 2 upwards can represent every number, following the same recipe."
+     }
     },
     {
      "kennung": "b",
-     "text": "Computer sind auf die Basis 10 angewiesen, weil ihre Eingaben und Ausgaben dezimal sind.",
-     "begruendung": "Dezimal ist nur die Oberfläche für Menschen. Innen rechnen Computer zur Basis 2 und übersetzen an Ein- und Ausgabe hin und her; für sie ist die Zehn eher unpraktisch."
+     "text": {
+      "de": "Computer sind auf die Basis 10 angewiesen, weil ihre Eingaben und Ausgaben dezimal sind.",
+      "en": "Computers depend on base 10 because their inputs and outputs are decimal."
+     },
+     "begruendung": {
+      "de": "Dezimal ist nur die Oberfläche für Menschen. Innen rechnen Computer zur Basis 2 und übersetzen an Ein- und Ausgabe hin und her; für sie ist die Zehn eher unpraktisch.",
+      "en": "Decimal is only the surface for humans. Inside, computers work in base 2 and translate at input and output; for them, ten is rather impractical."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nichts, außer dass wir zehn Finger haben.",
-     "begruendung": "Genau: Die Zehn ist Anatomie, kein Naturgesetz. Ein Wesen mit acht Fingern würde zur Basis 8 zählen und käme genauso weit. Die Bauanleitung (Ziffer mal Stellenwert, aufsummiert) bleibt bei jeder Basis dieselbe."
+     "text": {
+      "de": "Nichts, außer dass wir zehn Finger haben.",
+      "en": "Nothing, except that we have ten fingers."
+     },
+     "begruendung": {
+      "de": "Genau: Die Zehn ist Anatomie, kein Naturgesetz. Ein Wesen mit acht Fingern würde zur Basis 8 zählen und käme genauso weit. Die Bauanleitung (Ziffer mal Stellenwert, aufsummiert) bleibt bei jeder Basis dieselbe.",
+      "en": "Exactly: ten is anatomy, not a law of nature. A creature with eight fingers would count in base 8 and get just as far. The recipe (digit times place value, summed up) stays the same for every base."
+     }
     },
     {
      "kennung": "d",
-     "text": "Nur zur Basis 10 gibt es die Ziffer 0, die eine leere Stelle markiert.",
-     "begruendung": "Jede Basis braucht die Null, sonst ließe sich eine leere Stelle nicht von einer fehlenden unterscheiden. Zur Basis R gibt es die Ziffern 0 bis R minus 1."
+     "text": {
+      "de": "Nur zur Basis 10 gibt es die Ziffer 0, die eine leere Stelle markiert.",
+      "en": "Only base 10 has the digit 0, which marks an empty position."
+     },
+     "begruendung": {
+      "de": "Jede Basis braucht die Null, sonst ließe sich eine leere Stelle nicht von einer fehlenden unterscheiden. Zur Basis R gibt es die Ziffern 0 bis R minus 1.",
+      "en": "Every base needs zero, otherwise an empty position could not be told from a missing one. Base R uses the digits 0 to R minus 1."
+     }
     }
    ]
   },
   {
    "id": "ns-003",
    "niveau": "anwenden",
-   "frage": "Welche Zahl bedeutet die Binärfolge 110?",
+   "frage": {
+    "de": "Welche Zahl bedeutet die Binärfolge 110?",
+    "en": "Which number does the binary sequence 110 represent?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -74,30 +131,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "110, die Schreibweise ändert nichts am Wert.",
-     "begruendung": "Die Schreibweise ändert alles: Dieselben Ziffern bedeuten je nach Basis verschiedene Zahlen. Binär gelesen sind die Stellen 4, 2 und 1 wert."
+     "text": {
+      "de": "110, die Schreibweise ändert nichts am Wert.",
+      "en": "110, the notation does not change the value."
+     },
+     "begruendung": {
+      "de": "Die Schreibweise ändert alles: Dieselben Ziffern bedeuten je nach Basis verschiedene Zahlen. Binär gelesen sind die Stellen 4, 2 und 1 wert.",
+      "en": "The notation changes everything: the same digits mean different numbers depending on the base. Read as binary, the positions are worth 4, 2, and 1."
+     }
     },
     {
      "kennung": "b",
-     "text": "6, denn 1 mal 4 plus 1 mal 2 plus 0 mal 1.",
-     "begruendung": "Genau, dieselbe Bauanleitung wie im Dezimalsystem, nur mit Zweierpotenzen als Stellenwerten: 4, 2, 1 statt 100, 10, 1."
+     "text": {
+      "de": "6, denn 1 mal 4 plus 1 mal 2 plus 0 mal 1.",
+      "en": "6, because 1 times 4 plus 1 times 2 plus 0 times 1."
+     },
+     "begruendung": {
+      "de": "Genau, dieselbe Bauanleitung wie im Dezimalsystem, nur mit Zweierpotenzen als Stellenwerten: 4, 2, 1 statt 100, 10, 1.",
+      "en": "Exactly, the same recipe as in decimal, just with powers of two as place values: 4, 2, 1 instead of 100, 10, 1."
+     }
     },
     {
      "kennung": "c",
-     "text": "3, denn 1 mal 1 plus 1 mal 2 plus 0 mal 4.",
-     "begruendung": "Die Stellenwerte stimmen, die Richtung nicht: Die Einerstelle steht ganz rechts, nicht links. Von rechts gelesen sind die Stellen 1, 2 und 4 wert, also 0 plus 2 plus 4."
+     "text": {
+      "de": "3, denn 1 mal 1 plus 1 mal 2 plus 0 mal 4.",
+      "en": "3, because 1 times 1 plus 1 times 2 plus 0 times 4."
+     },
+     "begruendung": {
+      "de": "Die Stellenwerte stimmen, die Richtung nicht: Die Einerstelle steht ganz rechts, nicht links. Von rechts gelesen sind die Stellen 1, 2 und 4 wert, also 0 plus 2 plus 4.",
+      "en": "The place values are right, the direction is not: the ones position is at the far right, not the left. Read from the right, the positions are worth 1, 2, and 4, so 0 plus 2 plus 4."
+     }
     },
     {
      "kennung": "d",
-     "text": "220, denn jede Ziffer wird mit der Basis 2 multipliziert.",
-     "begruendung": "Nicht die Basis wird an jede Ziffer multipliziert, sondern der Stellenwert, und der ist je Stelle ein anderer: ganz rechts 1, dann 2, dann 4. Die Produkte werden anschließend addiert, nicht nebeneinander geschrieben."
+     "text": {
+      "de": "220, denn jede Ziffer wird mit der Basis 2 multipliziert.",
+      "en": "220, because each digit is multiplied by the base 2."
+     },
+     "begruendung": {
+      "de": "Nicht die Basis wird an jede Ziffer multipliziert, sondern der Stellenwert, und der ist je Stelle ein anderer: ganz rechts 1, dann 2, dann 4. Die Produkte werden anschließend addiert, nicht nebeneinander geschrieben.",
+      "en": "It is not the base that gets multiplied onto every digit but the place value, and that differs per position: rightmost 1, then 2, then 4. The products are then added, not written side by side."
+     }
     }
    ]
   },
   {
    "id": "ns-004",
    "niveau": "anwenden",
-   "frage": "Ihr zählt binär: 0, 1, 10, 11, 100, 101, und dann? Welche Zahl kommt als\nnächstes, und warum?",
+   "frage": {
+    "de": "Ihr zählt binär: 0, 1, 10, 11, 100, 101, und dann? Welche Zahl kommt als\nnächstes, und warum?",
+    "en": "You count in binary: 0, 1, 10, 11, 100, 101, and then? What comes next,\nand why?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -105,30 +189,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "102, denn die letzte Stelle zählt wie im Zehnersystem eine Ziffer weiter.",
-     "begruendung": "Zur Basis 2 gibt es nur die Ziffern 0 und 1. Eine 2 kann in keiner Binärzahl vorkommen, genau wie das Dezimalsystem keine eigene Ziffer für die Zehn hat."
+     "text": {
+      "de": "102, denn die letzte Stelle zählt wie im Zehnersystem eine Ziffer weiter.",
+      "en": "102, because the last position moves on by one digit, just as in decimal."
+     },
+     "begruendung": {
+      "de": "Zur Basis 2 gibt es nur die Ziffern 0 und 1. Eine 2 kann in keiner Binärzahl vorkommen, genau wie das Dezimalsystem keine eigene Ziffer für die Zehn hat.",
+      "en": "Base 2 only has the digits 0 and 1. A 2 can never appear in a binary number, just as decimal has no single digit for ten."
+     }
     },
     {
      "kennung": "b",
-     "text": "1000, denn mit 101 sind die drei Stellen ausgeschöpft und eine vierte kommt hinzu.",
-     "begruendung": "Zu früh übergelaufen: 101 ist die 5, danach kommt die 6, und die braucht noch keine vierte Stelle. Erst nach 111 (der 7) geht es mit 1000 weiter."
+     "text": {
+      "de": "1000, denn mit 101 sind die drei Stellen ausgeschöpft und eine vierte kommt hinzu.",
+      "en": "1000, because 101 exhausts the three positions and a fourth one is added."
+     },
+     "begruendung": {
+      "de": "Zu früh übergelaufen: 101 ist die 5, danach kommt die 6, und die braucht noch keine vierte Stelle. Erst nach 111 (der 7) geht es mit 1000 weiter.",
+      "en": "Carried too early: 101 is 5, next comes 6, which does not need a fourth digit yet. Only after 111 (which is 7) does 1000 follow."
+     }
     },
     {
      "kennung": "c",
-     "text": "110: Die letzte Stelle läuft über und reicht eine 1 weiter, wie beim Zählen von 09 auf 10.",
-     "begruendung": "Genau: Zählen funktioniert in jeder Basis gleich. Ist die höchste Ziffer erreicht, springt die Stelle auf 0, und die nächste Stelle zählt eins hoch. Binär passiert das nur viel öfter, weil nach der 1 schon Schluss ist."
+     "text": {
+      "de": "110: Die letzte Stelle läuft über und reicht eine 1 weiter, wie beim Zählen von 09 auf 10.",
+      "en": "110: the last digit overflows and carries a 1, just like counting from 09 to 10."
+     },
+     "begruendung": {
+      "de": "Genau: Zählen funktioniert in jeder Basis gleich. Ist die höchste Ziffer erreicht, springt die Stelle auf 0, und die nächste Stelle zählt eins hoch. Binär passiert das nur viel öfter, weil nach der 1 schon Schluss ist.",
+      "en": "Exactly: counting works the same in every base. When the highest digit is reached, the position resets to 0 and the next position goes up by one. In binary this just happens much more often, because after 1 you are done."
+     }
     },
     {
      "kennung": "d",
-     "text": "111, denn nach 101 werden die verbliebenen Nullen der Reihe nach zu Einsen.",
-     "begruendung": "Damit wäre eine Zahl übersprungen: 111 ist die 7, gesucht ist die 6. Beim Zählen wird nur die letzte Stelle um eins erhöht, und die 1 dort läuft über: 101 wird 110."
+     "text": {
+      "de": "111, denn nach 101 werden die verbliebenen Nullen der Reihe nach zu Einsen.",
+      "en": "111, because after 101 the remaining zeros turn into ones one after another."
+     },
+     "begruendung": {
+      "de": "Damit wäre eine Zahl übersprungen: 111 ist die 7, gesucht ist die 6. Beim Zählen wird nur die letzte Stelle um eins erhöht, und die 1 dort läuft über: 101 wird 110.",
+      "en": "That skips a number: 111 is 7, but we are looking for 6. Counting only raises the last position by one, and the 1 there overflows: 101 becomes 110."
+     }
     }
    ]
   },
   {
    "id": "ns-005",
    "niveau": "anwenden",
-   "frage": "Ein Comicwesen mit acht Fingern schreibt die Zahl 123 in seinem\nAchtersystem. Welche Zahl ist das in unserem Zehnersystem?",
+   "frage": {
+    "de": "Ein Comicwesen mit acht Fingern schreibt die Zahl 123 in seinem\nAchtersystem. Welche Zahl ist das in unserem Zehnersystem?",
+    "en": "A cartoon creature with eight fingers writes the number 123 in its\nbase-8 system. What number is that in our base-10 system?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -136,30 +247,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "123, denn eine Zahl bleibt dieselbe, egal mit wie vielen Fingern gezählt wird.",
-     "begruendung": "Die Zahl dahinter ist überall gleich, ihre Schreibweise nicht. Dieselben Ziffern bedeuten zur Basis 8 etwas anderes, weil die Stellen 64, 8 und 1 wert sind."
+     "text": {
+      "de": "123, denn eine Zahl bleibt dieselbe, egal mit wie vielen Fingern gezählt wird.",
+      "en": "123, because a number stays the same no matter how many fingers are used for counting."
+     },
+     "begruendung": {
+      "de": "Die Zahl dahinter ist überall gleich, ihre Schreibweise nicht. Dieselben Ziffern bedeuten zur Basis 8 etwas anderes, weil die Stellen 64, 8 und 1 wert sind.",
+      "en": "The number behind it is the same everywhere, its notation is not. The same digits mean something different in base 8, because the positions are worth 64, 8, and 1."
+     }
     },
     {
      "kennung": "b",
-     "text": "83, denn 1 mal 64 plus 2 mal 8 plus 3 mal 1.",
-     "begruendung": "Genau: gleiche Bauanleitung, andere Stellenwerte. Statt 100, 10, 1 sind die Stellen 64, 8, 1 wert, also Achterpotenzen. Wer das einmal gerechnet hat, kann jede Basis lesen."
+     "text": {
+      "de": "83, denn 1 mal 64 plus 2 mal 8 plus 3 mal 1.",
+      "en": "83, because 1 times 64 plus 2 times 8 plus 3 times 1."
+     },
+     "begruendung": {
+      "de": "Genau: gleiche Bauanleitung, andere Stellenwerte. Statt 100, 10, 1 sind die Stellen 64, 8, 1 wert, also Achterpotenzen. Wer das einmal gerechnet hat, kann jede Basis lesen.",
+      "en": "Exactly: same recipe, different place values. Instead of 100, 10, 1 the positions are worth 64, 8, 1, that is, powers of eight. Once you have done this calculation, you can read any base."
+     }
     },
     {
      "kennung": "c",
-     "text": "48, denn die Ziffernsumme 1 plus 2 plus 3, multipliziert mit der Basis 8.",
-     "begruendung": "Die Ziffern werden nicht erst addiert und dann mit der Basis verrechnet. Jede Ziffer wird einzeln mit ihrem eigenen Stellenwert multipliziert (64, 8, 1), erst dann wird summiert."
+     "text": {
+      "de": "48, denn die Ziffernsumme 1 plus 2 plus 3, multipliziert mit der Basis 8.",
+      "en": "48, because the digit sum 1 plus 2 plus 3, multiplied by the base 8."
+     },
+     "begruendung": {
+      "de": "Die Ziffern werden nicht erst addiert und dann mit der Basis verrechnet. Jede Ziffer wird einzeln mit ihrem eigenen Stellenwert multipliziert (64, 8, 1), erst dann wird summiert.",
+      "en": "The digits are not added first and then combined with the base. Each digit is multiplied by its own place value (64, 8, 1), and only then is everything summed."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das Achtersystem kann die Zahl 123 gar nicht darstellen.",
-     "begruendung": "Jede Basis ab 2 kann jede Zahl darstellen. Die Ziffern 1, 2 und 3 sind zur Basis 8 sogar alle erlaubt, verboten wären erst 8 und 9."
+     "text": {
+      "de": "Das Achtersystem kann die Zahl 123 gar nicht darstellen.",
+      "en": "Base 8 cannot represent the number 123 at all."
+     },
+     "begruendung": {
+      "de": "Jede Basis ab 2 kann jede Zahl darstellen. Die Ziffern 1, 2 und 3 sind zur Basis 8 sogar alle erlaubt, verboten wären erst 8 und 9.",
+      "en": "Every base from 2 upwards can represent every number. The digits 1, 2, and 3 are all allowed in base 8; only 8 and 9 would be forbidden."
+     }
     }
    ]
   },
   {
    "id": "ns-006",
    "niveau": "verstehen",
-   "frage": "Das Wort „Bit\" ist euch jetzt zweimal begegnet: als Maß für Information\n(eine Ja/Nein-Antwort) und als Binärziffer (eine 0 oder 1). Wie passen\ndie beiden zusammen?",
+   "frage": {
+    "de": "Das Wort „Bit\" ist euch jetzt zweimal begegnet: als Maß für Information\n(eine Ja/Nein-Antwort) und als Binärziffer (eine 0 oder 1). Wie passen\ndie beiden zusammen?",
+    "en": "You have now met the word \"bit\" twice: as a measure of information (one\nyes/no answer) and as a binary digit (a 0 or 1). How do the two fit\ntogether?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -167,30 +305,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Gar nicht: Das Maß stammt aus der Nachrichtentechnik, die Ziffer aus der Mathematik, und der gleiche Name ist Zufall.",
-     "begruendung": "Kein Zufall: Eine Binärziffer kann genau zwei Werte annehmen und trägt damit genau die Information einer Ja/Nein-Antwort. Die Ziffer ist der Behälter, die Information der Inhalt."
+     "text": {
+      "de": "Gar nicht: Das Maß stammt aus der Nachrichtentechnik, die Ziffer aus der Mathematik, und der gleiche Name ist Zufall.",
+      "en": "They do not: the measure comes from communications engineering, the digit from mathematics, and the shared name is coincidence."
+     },
+     "begruendung": {
+      "de": "Kein Zufall: Eine Binärziffer kann genau zwei Werte annehmen und trägt damit genau die Information einer Ja/Nein-Antwort. Die Ziffer ist der Behälter, die Information der Inhalt.",
+      "en": "No coincidence: a binary digit can take exactly two values and thus carries exactly the information of one yes/no answer. The digit is the container, the information the content."
+     }
     },
     {
      "kennung": "b",
-     "text": "Eine Binärziffer hat zwei mögliche Werte und fasst darum genau eine Ja/Nein-Antwort: Der Behälter ist nach dem Inhalt benannt.",
-     "begruendung": "Genau. Und die Unterscheidung bleibt nützlich: Ein Behälter kann auch halbleer sein. Eine Binärziffer, deren Wert fast sicher feststeht, trägt weniger als ein Bit Information, das war die Pointe der schiefen Fragen."
+     "text": {
+      "de": "Eine Binärziffer hat zwei mögliche Werte und fasst darum genau eine Ja/Nein-Antwort: Der Behälter ist nach dem Inhalt benannt.",
+      "en": "A binary digit has two possible values and therefore holds exactly one yes/no answer: the container is named after its content."
+     },
+     "begruendung": {
+      "de": "Genau. Und die Unterscheidung bleibt nützlich: Ein Behälter kann auch halbleer sein. Eine Binärziffer, deren Wert fast sicher feststeht, trägt weniger als ein Bit Information, das war die Pointe der schiefen Fragen.",
+      "en": "Exactly. And the distinction stays useful: a container can be half empty. A binary digit whose value is almost certain carries less than one bit of information, which was the point about lopsided questions."
+     }
     },
     {
      "kennung": "c",
-     "text": "Das Informationsmaß war die ursprüngliche Bedeutung; seit Computer in Binärziffern rechnen, meint Bit nur noch die Ziffer.",
-     "begruendung": "Beide Bedeutungen sind lebendig. Wer Kompression verstehen will, braucht sogar beide gleichzeitig: Dort werden Ziffern gespart, weil sie weniger als ein Bit Information trugen."
+     "text": {
+      "de": "Das Informationsmaß war die ursprüngliche Bedeutung; seit Computer in Binärziffern rechnen, meint Bit nur noch die Ziffer.",
+      "en": "The information measure was the original meaning; since computers calculate in binary digits, bit only means the digit."
+     },
+     "begruendung": {
+      "de": "Beide Bedeutungen sind lebendig. Wer Kompression verstehen will, braucht sogar beide gleichzeitig: Dort werden Ziffern gespart, weil sie weniger als ein Bit Information trugen.",
+      "en": "Both meanings are alive. To understand compression you even need both at once: digits get saved there precisely because they carried less than one bit of information."
+     }
     },
     {
      "kennung": "d",
-     "text": "Eine Ziffer speichert nur einen Zustand; für eine ganze Ja/Nein-Antwort braucht es zwei Ziffern, eine je Möglichkeit.",
-     "begruendung": "Eine Ziffer speichert nicht einen Zustand, sondern hat zwei mögliche Werte, und die decken die zwei Möglichkeiten der Antwort ab. Eine Ziffer fasst deshalb genau ein Bit; mehrere Ziffern braucht, wer mehr als ein Bit übertragen will."
+     "text": {
+      "de": "Eine Ziffer speichert nur einen Zustand; für eine ganze Ja/Nein-Antwort braucht es zwei Ziffern, eine je Möglichkeit.",
+      "en": "One digit stores only one state; a full yes/no answer needs two digits, one per possibility."
+     },
+     "begruendung": {
+      "de": "Eine Ziffer speichert nicht einen Zustand, sondern hat zwei mögliche Werte, und die decken die zwei Möglichkeiten der Antwort ab. Eine Ziffer fasst deshalb genau ein Bit; mehrere Ziffern braucht, wer mehr als ein Bit übertragen will.",
+      "en": "A digit does not store one state, it has two possible values, and those cover the two possibilities of the answer. One digit therefore holds exactly one bit; you need several digits to carry more than one bit."
+     }
     }
    ]
   },
   {
    "id": "ns-007",
    "niveau": "erinnern",
-   "frage": "Was ist ein Byte, und wie viele verschiedene Werte kann es annehmen?",
+   "frage": {
+    "de": "Was ist ein Byte, und wie viele verschiedene Werte kann es annehmen?",
+    "en": "What is a byte, and how many different values can it take?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -198,30 +363,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein Paket aus acht Bit, also acht verschiedene Werte, einer je Bit.",
-     "begruendung": "Acht Bit stimmt, aber die Werte multiplizieren sich: Jede der acht Stellen verdoppelt die Möglichkeiten. 2 hoch 8 sind 256, nicht 8."
+     "text": {
+      "de": "Ein Paket aus acht Bit, also acht verschiedene Werte, einer je Bit.",
+      "en": "A bundle of eight bits, so eight different values, one per bit."
+     },
+     "begruendung": {
+      "de": "Acht Bit stimmt, aber die Werte multiplizieren sich: Jede der acht Stellen verdoppelt die Möglichkeiten. 2 hoch 8 sind 256, nicht 8.",
+      "en": "Eight bits is right, but the values multiply: each of the eight positions doubles the possibilities. 2 to the power of 8 is 256, not 8."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die kleinste Zahl, die ein Computer speichern kann, mit 2 hoch 8 gleich 256 als größtem Wert.",
-     "begruendung": "Das Byte ist eine Verpackungseinheit, keine Zahl. Es ist die übliche kleinste adressierbare Einheit im Speicher, und was die acht Bit darin bedeuten, entscheidet die Vereinbarung. Als Zahl gelesen reicht es außerdem von 0 bis 255, nicht bis 256."
+     "text": {
+      "de": "Die kleinste Zahl, die ein Computer speichern kann, mit 2 hoch 8 gleich 256 als größtem Wert.",
+      "en": "The smallest number a computer can store, with 2 to the power of 8, that is 256, as its largest value."
+     },
+     "begruendung": {
+      "de": "Das Byte ist eine Verpackungseinheit, keine Zahl. Es ist die übliche kleinste adressierbare Einheit im Speicher, und was die acht Bit darin bedeuten, entscheidet die Vereinbarung. Als Zahl gelesen reicht es außerdem von 0 bis 255, nicht bis 256.",
+      "en": "A byte is a unit of packaging, not a number. It is the usual smallest addressable unit of memory, and what its eight bits mean is decided by an agreement. Read as a number it also runs from 0 to 255, not up to 256."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein Paket aus acht Bit, mit 2 hoch 8 gleich 256 möglichen Werten.",
-     "begruendung": "Genau: acht Stellen zur Basis 2, jede verdoppelt die Möglichkeiten, zusammen 256. Als Zahl gelesen reicht ein Byte von 0 bis 255, und genau deshalb laufen eure Farbkanäle von 0 bis 255."
+     "text": {
+      "de": "Ein Paket aus acht Bit, mit 2 hoch 8 gleich 256 möglichen Werten.",
+      "en": "A bundle of eight bits, with 2 to the power of 8, that is 256, possible values."
+     },
+     "begruendung": {
+      "de": "Genau: acht Stellen zur Basis 2, jede verdoppelt die Möglichkeiten, zusammen 256. Als Zahl gelesen reicht ein Byte von 0 bis 255, und genau deshalb laufen eure Farbkanäle von 0 bis 255.",
+      "en": "Exactly: eight base-2 positions, each doubling the possibilities, 256 in total. Read as a number, a byte runs from 0 to 255, which is exactly why your colour channels run from 0 to 255."
+     }
     },
     {
      "kennung": "d",
-     "text": "Ein Paket aus tausend Bit, daher die Vorsilbe Kilo im Kilobyte, mit tausend möglichen Werten.",
-     "begruendung": "Ein Byte sind acht Bit. Das Kilobyte ist die nächste Verpackungsstufe darüber, tausend Byte, nicht tausend Bit. Und selbst bei tausend Bit wären die Werte 2 hoch 1000, nicht tausend."
+     "text": {
+      "de": "Ein Paket aus tausend Bit, daher die Vorsilbe Kilo im Kilobyte, mit tausend möglichen Werten.",
+      "en": "A bundle of a thousand bits, hence the prefix kilo in kilobyte, with a thousand possible values."
+     },
+     "begruendung": {
+      "de": "Ein Byte sind acht Bit. Das Kilobyte ist die nächste Verpackungsstufe darüber, tausend Byte, nicht tausend Bit. Und selbst bei tausend Bit wären die Werte 2 hoch 1000, nicht tausend.",
+      "en": "A byte is eight bits. The kilobyte is the next packaging level above, a thousand bytes, not a thousand bits. And even with a thousand bits the values would be 2 to the power of 1000, not a thousand."
+     }
     }
    ]
   },
   {
    "id": "ns-008",
    "niveau": "anwenden",
-   "frage": "Hexadezimal ist das Stellenwertsystem zur Basis 16 mit den Ziffern 0 bis\n9 und A bis F. Warum passt ein Byte in genau zwei Hexadezimalstellen?",
+   "frage": {
+    "de": "Hexadezimal ist das Stellenwertsystem zur Basis 16 mit den Ziffern 0 bis\n9 und A bis F. Warum passt ein Byte in genau zwei Hexadezimalstellen?",
+    "en": "Hexadecimal is the place value system with base 16, using the digits 0\nto 9 and A to F. Why does one byte fit into exactly two hex digits?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -229,30 +421,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Zufall der Geschichte: Die ersten Rechner hatten zweistellige Anzeigen, und die Basis 16 wurde daran angepasst.",
-     "begruendung": "Es ist Arithmetik, kein Zufall: 16 mal 16 ist genau 256. Gerade deshalb hat sich die Basis 16 als Kurzschrift für Bytes durchgesetzt."
+     "text": {
+      "de": "Zufall der Geschichte: Die ersten Rechner hatten zweistellige Anzeigen, und die Basis 16 wurde daran angepasst.",
+      "en": "A historical accident: the first computers had two-digit displays, and base 16 was adapted to fit them."
+     },
+     "begruendung": {
+      "de": "Es ist Arithmetik, kein Zufall: 16 mal 16 ist genau 256. Gerade deshalb hat sich die Basis 16 als Kurzschrift für Bytes durchgesetzt.",
+      "en": "It is arithmetic, not accident: 16 times 16 is exactly 256. That is precisely why base 16 became the shorthand for bytes."
+     }
     },
     {
      "kennung": "b",
-     "text": "Eine Hexziffer fasst 16 Werte, also genau 4 Bit; zwei Ziffern fassen 8 Bit, und 16 mal 16 ist 256.",
-     "begruendung": "Genau, und deshalb ist Hex die Kurzschrift für Bytes: Menschen lesen AC leichter als 10101100, und beides ist die 172. Die Farbe #AC8909 ist schlicht drei Bytes, je zwei Stellen."
+     "text": {
+      "de": "Eine Hexziffer fasst 16 Werte, also genau 4 Bit; zwei Ziffern fassen 8 Bit, und 16 mal 16 ist 256.",
+      "en": "One hex digit holds 16 values, exactly 4 bits; two digits hold 8 bits, and 16 times 16 is 256."
+     },
+     "begruendung": {
+      "de": "Genau, und deshalb ist Hex die Kurzschrift für Bytes: Menschen lesen AC leichter als 10101100, und beides ist die 172. Die Farbe #AC8909 ist schlicht drei Bytes, je zwei Stellen.",
+      "en": "Exactly, and that is why hex is the shorthand for bytes: people read AC more easily than 10101100, and both are 172. The colour #AC8909 is simply three bytes, two digits each."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil die sechs Buchstaben A bis F genau die Bits ergänzen, die den zehn Ziffern zum Byte fehlen.",
-     "begruendung": "A bis F sind keine Bits, sondern gewöhnliche Ziffern mit den Werten 10 bis 15. Sie werden gebraucht, weil die Basis 16 sechzehn verschiedene Ziffern verlangt und unsere zehn nicht reichen. Mit dem Byte hat ihre Anzahl nichts zu tun."
+     "text": {
+      "de": "Weil die sechs Buchstaben A bis F genau die Bits ergänzen, die den zehn Ziffern zum Byte fehlen.",
+      "en": "Because the six letters A to F supply exactly the bits that the ten digits lack to make a byte."
+     },
+     "begruendung": {
+      "de": "A bis F sind keine Bits, sondern gewöhnliche Ziffern mit den Werten 10 bis 15. Sie werden gebraucht, weil die Basis 16 sechzehn verschiedene Ziffern verlangt und unsere zehn nicht reichen. Mit dem Byte hat ihre Anzahl nichts zu tun.",
+      "en": "A to F are not bits but ordinary digits with the values 10 to 15. They are needed because base 16 requires sixteen different digits and our ten are not enough. Their number has nothing to do with the byte."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil eine Hexziffer ein halbes Byte darstellt, nämlich 8 Werte, und zwei Hälften ein Ganzes ergeben.",
-     "begruendung": "Das halbe Byte stimmt, die Zahl nicht: Ein halbes Byte sind 4 Bit, also 2 hoch 4 gleich 16 Werte, nicht 8. Mit 8 Werten je Ziffer kämen zwei Ziffern nur auf 64, und das Byte mit seinen 256 Werten passte nicht hinein."
+     "text": {
+      "de": "Weil eine Hexziffer ein halbes Byte darstellt, nämlich 8 Werte, und zwei Hälften ein Ganzes ergeben.",
+      "en": "Because one hex digit represents half a byte, namely 8 values, and two halves make a whole."
+     },
+     "begruendung": {
+      "de": "Das halbe Byte stimmt, die Zahl nicht: Ein halbes Byte sind 4 Bit, also 2 hoch 4 gleich 16 Werte, nicht 8. Mit 8 Werten je Ziffer kämen zwei Ziffern nur auf 64, und das Byte mit seinen 256 Werten passte nicht hinein.",
+      "en": "Half a byte is right, the number is not: half a byte is 4 bits, so 2 to the power of 4, that is 16 values, not 8. With 8 values per digit two digits would only reach 64, and the byte with its 256 values would not fit."
+     }
     }
    ]
   },
   {
    "id": "ns-009",
    "niveau": "anwenden",
-   "frage": "Welchen Wert hat die Hexadezimalzahl FF?",
+   "frage": {
+    "de": "Welchen Wert hat die Hexadezimalzahl FF?",
+    "en": "What is the value of the hexadecimal number FF?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -260,30 +479,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "1515, denn F ist die 15, und beide Ziffernwerte werden hintereinander geschrieben.",
-     "begruendung": "Die Ziffernwerte werden nicht hintereinander geschrieben, sondern mit den Stellenwerten verrechnet: 15 mal 16 plus 15 mal 1."
+     "text": {
+      "de": "1515, denn F ist die 15, und beide Ziffernwerte werden hintereinander geschrieben.",
+      "en": "1515, because F is 15, and both digit values are written one after the other."
+     },
+     "begruendung": {
+      "de": "Die Ziffernwerte werden nicht hintereinander geschrieben, sondern mit den Stellenwerten verrechnet: 15 mal 16 plus 15 mal 1.",
+      "en": "You do not write the digit values next to each other; you combine them with the place values: 15 times 16 plus 15 times 1."
+     }
     },
     {
      "kennung": "b",
-     "text": "30, denn F ist die 15, und die beiden Stellen werden addiert.",
-     "begruendung": "Die linke Stelle ist Sechzehner wert, nicht Einer: 15 mal 16 plus 15 mal 1, nicht 15 plus 15."
+     "text": {
+      "de": "30, denn F ist die 15, und die beiden Stellen werden addiert.",
+      "en": "30, because F is 15, and the two positions are added together."
+     },
+     "begruendung": {
+      "de": "Die linke Stelle ist Sechzehner wert, nicht Einer: 15 mal 16 plus 15 mal 1, nicht 15 plus 15.",
+      "en": "The left position is worth sixteens, not ones: 15 times 16 plus 15 times 1, not 15 plus 15."
+     }
     },
     {
      "kennung": "c",
-     "text": "255, denn 15 mal 16 plus 15 mal 1, der größte Wert eines Bytes.",
-     "begruendung": "Genau. FF ist das volle Byte, binär 11111111. Deshalb bedeutet die Farbe #FF0000 volles Rot: erster Kanal auf Maximum, die anderen auf null."
+     "text": {
+      "de": "255, denn 15 mal 16 plus 15 mal 1, der größte Wert eines Bytes.",
+      "en": "255, because 15 times 16 plus 15 times 1, the largest value of a byte."
+     },
+     "begruendung": {
+      "de": "Genau. FF ist das volle Byte, binär 11111111. Deshalb bedeutet die Farbe #FF0000 volles Rot: erster Kanal auf Maximum, die anderen auf null.",
+      "en": "Exactly. FF is the full byte, 11111111 in binary. That is why the colour #FF0000 means full red: first channel at maximum, the others at zero."
+     }
     },
     {
      "kennung": "d",
-     "text": "240, denn F ist die 15, und 15 mal 16 ergibt 240.",
-     "begruendung": "Die linke Stelle stimmt, die rechte fehlt: Das zweite F ist noch einmal 15 mal 1. Zusammen 240 plus 15 gleich 255."
+     "text": {
+      "de": "240, denn F ist die 15, und 15 mal 16 ergibt 240.",
+      "en": "240, because F is 15, and 15 times 16 gives 240."
+     },
+     "begruendung": {
+      "de": "Die linke Stelle stimmt, die rechte fehlt: Das zweite F ist noch einmal 15 mal 1. Zusammen 240 plus 15 gleich 255.",
+      "en": "The left position is right, the right one is missing: the second F is another 15 times 1. Together 240 plus 15 equals 255."
+     }
     }
    ]
   },
   {
    "id": "ns-010",
    "niveau": "verstehen",
-   "frage": "Warum rechnen Computer zur Basis 2 und nicht gleich zur Basis 10?",
+   "frage": {
+    "de": "Warum rechnen Computer zur Basis 2 und nicht gleich zur Basis 10?",
+    "en": "Why do computers use base 2 and not base 10 right away?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -291,30 +537,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die Rechenwerke nur die einfachsten Rechenregeln beherrschen und das Einmaleins zur Basis 2 am kürzesten ist.",
-     "begruendung": "Das kurze Einmaleins ist eine angenehme Folge, nicht der Grund. Mathematisch ist jede Basis gleich mächtig; den Ausschlag gibt die Physik der Bauteile, die zwei Zustände am sichersten auseinanderhalten."
+     "text": {
+      "de": "Weil die Rechenwerke nur die einfachsten Rechenregeln beherrschen und das Einmaleins zur Basis 2 am kürzesten ist.",
+      "en": "Because the arithmetic units only master the simplest rules, and the multiplication table in base 2 is the shortest."
+     },
+     "begruendung": {
+      "de": "Das kurze Einmaleins ist eine angenehme Folge, nicht der Grund. Mathematisch ist jede Basis gleich mächtig; den Ausschlag gibt die Physik der Bauteile, die zwei Zustände am sichersten auseinanderhalten.",
+      "en": "The short multiplication table is a pleasant consequence, not the reason. Mathematically every base is equally powerful; the deciding factor is the physics of the components, which keep two states apart most reliably."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil zwei Zustände den größten Abstand haben und sich darum am zuverlässigsten unterscheiden lassen, milliardenfach und fehlerfrei.",
-     "begruendung": "Genau, und das kennt ihr von eurer Strecke: Je mehr Stufen auf denselben Wertebereich verteilt werden, desto kleiner die Abstände und desto eher schlägt das Rauschen zu. Basis 10 hieße zehn Spannungsstufen statt zwei, mit entsprechend mehr Fehlern. An und aus ist das robusteste Alphabet, das es gibt."
+     "text": {
+      "de": "Weil zwei Zustände den größten Abstand haben und sich darum am zuverlässigsten unterscheiden lassen, milliardenfach und fehlerfrei.",
+      "en": "Because two states have the largest separation and can therefore be told apart most reliably, billions of times without error."
+     },
+     "begruendung": {
+      "de": "Genau, und das kennt ihr von eurer Strecke: Je mehr Stufen auf denselben Wertebereich verteilt werden, desto kleiner die Abstände und desto eher schlägt das Rauschen zu. Basis 10 hieße zehn Spannungsstufen statt zwei, mit entsprechend mehr Fehlern. An und aus ist das robusteste Alphabet, das es gibt.",
+      "en": "Exactly, and you know this from your own link: the more levels you squeeze into the same range, the smaller the gaps and the sooner noise strikes. Base 10 would mean ten voltage levels instead of two, with correspondingly more errors. On and off is the most robust alphabet there is."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil sich zur Basis 2 kürzere Zahlen ergeben und der Speicher dadurch weniger Stellen braucht.",
-     "begruendung": "Das Gegenteil stimmt: Binärzahlen sind länger, die 255 braucht acht Stellen statt drei. Der Preis wird gern bezahlt, weil jede einzelne Stelle dafür fast unzerstörbar ist."
+     "text": {
+      "de": "Weil sich zur Basis 2 kürzere Zahlen ergeben und der Speicher dadurch weniger Stellen braucht.",
+      "en": "Because base 2 gives shorter numbers, so memory needs fewer digits."
+     },
+     "begruendung": {
+      "de": "Das Gegenteil stimmt: Binärzahlen sind länger, die 255 braucht acht Stellen statt drei. Der Preis wird gern bezahlt, weil jede einzelne Stelle dafür fast unzerstörbar ist.",
+      "en": "The opposite is true: binary numbers are longer, 255 needs eight digits instead of three. The price is happily paid because each digit is nearly indestructible."
+     }
     },
     {
      "kennung": "d",
-     "text": "Historischer Zufall: Die ersten Computer arbeiteten mit Relais, die nur zwei Stellungen kennen, und dabei ist es geblieben.",
-     "begruendung": "Es gab tatsächlich Dezimalrechner, und sie sind ausgestorben, weil sie fehleranfälliger und aufwendiger waren. Die Basis 2 hat sich aus einem physikalischen Grund durchgesetzt, nicht aus Gewohnheit."
+     "text": {
+      "de": "Historischer Zufall: Die ersten Computer arbeiteten mit Relais, die nur zwei Stellungen kennen, und dabei ist es geblieben.",
+      "en": "Historical accident: the first computers used relays, which only know two positions, and it stayed that way."
+     },
+     "begruendung": {
+      "de": "Es gab tatsächlich Dezimalrechner, und sie sind ausgestorben, weil sie fehleranfälliger und aufwendiger waren. Die Basis 2 hat sich aus einem physikalischen Grund durchgesetzt, nicht aus Gewohnheit.",
+      "en": "Decimal computers actually existed, and they died out because they were more error-prone and more complex. Base 2 won for a physical reason, not out of habit."
+     }
     }
    ]
   },
   {
    "id": "ns-011",
    "niveau": "verstehen",
-   "frage": "Eine Festplatte ist mit 1 Terabyte beschriftet, das Betriebssystem zeigt\naber nur 931 Gigabyte an. Wo sind die restlichen 69 Gigabyte?",
+   "frage": {
+    "de": "Eine Festplatte ist mit 1 Terabyte beschriftet, das Betriebssystem zeigt\naber nur 931 Gigabyte an. Wo sind die restlichen 69 Gigabyte?",
+    "en": "A hard drive is labelled 1 terabyte, but the operating system shows only\n931 gigabytes. Where are the missing 69 gigabytes?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -322,30 +595,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie sind Reservebereiche, die der Hersteller für defekte Stellen vorhält und die das System ausblendet.",
-     "begruendung": "Solche Reserven gibt es, sie sind aber winzig und in keiner der beiden Zahlen enthalten. Es fehlt kein einziges Byte: Beide Angaben beschreiben dieselbe Menge Speicher, nur mit verschiedenen Einheiten."
+     "text": {
+      "de": "Sie sind Reservebereiche, die der Hersteller für defekte Stellen vorhält und die das System ausblendet.",
+      "en": "They are spare areas the manufacturer keeps for defective spots, and the system hides them."
+     },
+     "begruendung": {
+      "de": "Solche Reserven gibt es, sie sind aber winzig und in keiner der beiden Zahlen enthalten. Es fehlt kein einziges Byte: Beide Angaben beschreiben dieselbe Menge Speicher, nur mit verschiedenen Einheiten.",
+      "en": "Such reserves exist, but they are tiny and included in neither figure. Not a single byte is missing: both figures describe the same amount of storage, just in different units."
+     }
     },
     {
      "kennung": "b",
-     "text": "Das Betriebssystem reserviert sie für eigene Dateien, Auslagerung und Wiederherstellung.",
-     "begruendung": "Systemdateien kosten etwas Platz, aber nicht sieben Prozent einer leeren Platte. Der Unterschied steckt in den Einheiten."
+     "text": {
+      "de": "Das Betriebssystem reserviert sie für eigene Dateien, Auslagerung und Wiederherstellung.",
+      "en": "The operating system reserves them for its own files, swap space and recovery."
+     },
+     "begruendung": {
+      "de": "Systemdateien kosten etwas Platz, aber nicht sieben Prozent einer leeren Platte. Der Unterschied steckt in den Einheiten.",
+      "en": "System files cost some space, but not seven percent of an empty drive. The difference is in the units."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nirgends: Der Hersteller rechnet mit 1000er-Schritten, das System mit 1024er-Schritten, und 1024 ist 2 hoch 10.",
-     "begruendung": "Genau: Kilo, Mega, Giga sind dezimal je Faktor 1000; Speicher wird aber binär organisiert, in Zweierpotenzen, und 2 hoch 10 gleich 1024 liegt nahe genug an 1000, um beide zu verwechseln. Über vier Stufen summiert sich der Unterschied auf rund sieben Prozent. Die sauberen Namen für die 1024er-Schritte sind Kibi, Mebi, Gibi."
+     "text": {
+      "de": "Nirgends: Der Hersteller rechnet mit 1000er-Schritten, das System mit 1024er-Schritten, und 1024 ist 2 hoch 10.",
+      "en": "Nowhere: the manufacturer counts in steps of 1000, the system in steps of 1024, and 1024 is 2 to the power of 10."
+     },
+     "begruendung": {
+      "de": "Genau: Kilo, Mega, Giga sind dezimal je Faktor 1000; Speicher wird aber binär organisiert, in Zweierpotenzen, und 2 hoch 10 gleich 1024 liegt nahe genug an 1000, um beide zu verwechseln. Über vier Stufen summiert sich der Unterschied auf rund sieben Prozent. Die sauberen Namen für die 1024er-Schritte sind Kibi, Mebi, Gibi.",
+      "en": "Exactly: kilo, mega, giga are decimal, factor 1000 each; storage is organised in powers of two, and 2 to the power of 10, which is 1024, is close enough to 1000 to confuse the two. Over four steps the difference adds up to about seven percent. The clean names for the 1024 steps are kibi, mebi, gibi."
+     }
     },
     {
      "kennung": "d",
-     "text": "Der Hersteller rundet großzügig auf, damit auf der Verpackung eine glatte Zahl steht.",
-     "begruendung": "Gerundet wird nicht, die Angabe stimmt exakt. Sie benutzt nur die dezimale Lesart, die günstiger klingt. Beide Lesarten sind definiert, ärgerlich ist nur, dass sie denselben Namen tragen."
+     "text": {
+      "de": "Der Hersteller rundet großzügig auf, damit auf der Verpackung eine glatte Zahl steht.",
+      "en": "The manufacturer rounds up generously so that the packaging shows a round number."
+     },
+     "begruendung": {
+      "de": "Gerundet wird nicht, die Angabe stimmt exakt. Sie benutzt nur die dezimale Lesart, die günstiger klingt. Beide Lesarten sind definiert, ärgerlich ist nur, dass sie denselben Namen tragen.",
+      "en": "Nothing is rounded, the figure is exact. It just uses the decimal reading, which sounds better. Both readings are defined; the annoyance is that they share the same name."
+     }
     }
    ]
   },
   {
    "id": "ns-012",
    "niveau": "verstehen",
-   "frage": "Euer Team überträgt Buchstaben als Folgen aus vier Farben, etwa\nrot-blau-grün. Inwiefern habt ihr damit bereits ein Stellenwertsystem\ngebaut?",
+   "frage": {
+    "de": "Euer Team überträgt Buchstaben als Folgen aus vier Farben, etwa\nrot-blau-grün. Inwiefern habt ihr damit bereits ein Stellenwertsystem\ngebaut?",
+    "en": "Your team transmits letters as sequences of four colours, say\nred-blue-green. In what sense have you already built a place value\nsystem?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -353,23 +653,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Gar nicht: Ein Stellenwertsystem braucht Ziffern mit Zahlenwerten, und Farben haben keinen Wert.",
-     "begruendung": "Ziffern müssen nicht wie Zahlen aussehen. Sobald jede Farbe für einen Wert steht und die Position zählt, ist es ein Stellenwertsystem, egal wie die Ziffern aussehen."
+     "text": {
+      "de": "Gar nicht: Ein Stellenwertsystem braucht Ziffern mit Zahlenwerten, und Farben haben keinen Wert.",
+      "en": "Not at all: a place value system needs digits with numeric values, and colours have no value."
+     },
+     "begruendung": {
+      "de": "Ziffern müssen nicht wie Zahlen aussehen. Sobald jede Farbe für einen Wert steht und die Position zählt, ist es ein Stellenwertsystem, egal wie die Ziffern aussehen.",
+      "en": "Digits do not have to look like numbers. As soon as each colour stands for a value and position matters, it is a place value system, whatever the digits look like."
+     }
     },
     {
      "kennung": "b",
-     "text": "Vier Farben sind vier Ziffern, also die Basis 4: Drei Stellen ergeben 4 hoch 3 gleich 64 Möglichkeiten, und die Position bestimmt den Stellenwert.",
-     "begruendung": "Genau, euer Farbalphabet ist ein Zahlensystem in Verkleidung: rot-blau-grün und grün-blau-rot sind verschiedene Codewörter, weil die Stelle zählt. Die Formel N gleich k hoch n aus den Codesystemen ist dieselbe Rechnung wie die Frage, wie viele Zahlen in n Stellen zur Basis k passen."
+     "text": {
+      "de": "Vier Farben sind vier Ziffern, also die Basis 4: Drei Stellen ergeben 4 hoch 3 gleich 64 Möglichkeiten, und die Position bestimmt den Stellenwert.",
+      "en": "Four colours are four digits, so base 4: three positions give 4 to the power of 3, that is 64 possibilities, and position determines place value."
+     },
+     "begruendung": {
+      "de": "Genau, euer Farbalphabet ist ein Zahlensystem in Verkleidung: rot-blau-grün und grün-blau-rot sind verschiedene Codewörter, weil die Stelle zählt. Die Formel N gleich k hoch n aus den Codesystemen ist dieselbe Rechnung wie die Frage, wie viele Zahlen in n Stellen zur Basis k passen.",
+      "en": "Exactly, your colour alphabet is a number system in disguise: red-blue-green and green-blue-red are different code words because position counts. The formula N equals k to the power of n from code systems is the same calculation as asking how many numbers fit into n digits of base k."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nur zur Hälfte: Die Position zählt zwar, aber ohne eine Farbe für die Null fehlt dem System seine wichtigste Ziffer.",
-     "begruendung": "Die Null fehlt nicht, sie hat nur keine Sonderstellung: Welche der vier Farben für 0 steht, ist Vereinbarung, genau wie bei 1, 2 und 3. Vier Farben sind vier vollwertige Ziffern."
+     "text": {
+      "de": "Nur zur Hälfte: Die Position zählt zwar, aber ohne eine Farbe für die Null fehlt dem System seine wichtigste Ziffer.",
+      "en": "Only halfway: position does count, but without a colour for zero the system lacks its most important digit."
+     },
+     "begruendung": {
+      "de": "Die Null fehlt nicht, sie hat nur keine Sonderstellung: Welche der vier Farben für 0 steht, ist Vereinbarung, genau wie bei 1, 2 und 3. Vier Farben sind vier vollwertige Ziffern.",
+      "en": "Zero is not missing, it just has no special status: which of the four colours stands for 0 is an agreement, exactly as for 1, 2 and 3. Four colours are four fully fledged digits."
+     }
     },
     {
      "kennung": "d",
-     "text": "Nur mit genau zwei Farben wäre es ein Stellenwertsystem, weil Computer intern mit Bits arbeiten.",
-     "begruendung": "Die Basis 2 ist ein Spezialfall, kein Privileg. Stellenwertsysteme funktionieren mit jeder Basis ab 2, eure vier Farben eingeschlossen."
+     "text": {
+      "de": "Nur mit genau zwei Farben wäre es ein Stellenwertsystem, weil Computer intern mit Bits arbeiten.",
+      "en": "Only with exactly two colours would it be a place value system, because computers work with bits internally."
+     },
+     "begruendung": {
+      "de": "Die Basis 2 ist ein Spezialfall, kein Privileg. Stellenwertsysteme funktionieren mit jeder Basis ab 2, eure vier Farben eingeschlossen.",
+      "en": "Base 2 is a special case, not a privilege. Place value systems work with any base from 2 upwards, your four colours included."
+     }
     }
    ]
   }

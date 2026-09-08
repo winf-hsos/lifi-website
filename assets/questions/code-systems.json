@@ -4,7 +4,10 @@
   {
    "id": "cs-001",
    "niveau": "erinnern",
-   "frage": "Was ist ein Codesystem?",
+   "frage": {
+    "de": "Was ist ein Codesystem?",
+    "en": "What is a code system?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein Verfahren, das Daten vor fremdem Zugriff schützt.",
-     "begruendung": "Das ist Verschlüsselung, ein eigenes Konzept. Ein Code verbirgt nichts, er ist im Gegenteil öffentlich, damit beide Seiten ihn benutzen können."
+     "text": {
+      "de": "Ein Verfahren, das Daten vor fremdem Zugriff schützt.",
+      "en": "A method that protects data from unauthorised access."
+     },
+     "begruendung": {
+      "de": "Das ist Verschlüsselung, ein eigenes Konzept. Ein Code verbirgt nichts, er ist im Gegenteil öffentlich, damit beide Seiten ihn benutzen können.",
+      "en": "That is encryption, a separate concept. A code hides nothing; on the contrary it is public so both sides can use it."
+     }
     },
     {
      "kennung": "b",
-     "text": "Eine vereinbarte Zuordnung von Zeichen zu Folgen von Symbolen oder Bits.",
-     "begruendung": "Genau: eine Vorschrift, welche Bitfolge welches Zeichen bedeutet. Vereinbart, nicht naturgegeben, und deshalb gibt es mehrere davon."
+     "text": {
+      "de": "Eine vereinbarte Zuordnung von Zeichen zu Folgen von Symbolen oder Bits.",
+      "en": "An agreed mapping from characters to sequences of symbols or bits."
+     },
+     "begruendung": {
+      "de": "Genau: eine Vorschrift, welche Bitfolge welches Zeichen bedeutet. Vereinbart, nicht naturgegeben, und deshalb gibt es mehrere davon.",
+      "en": "Exactly: a rule saying which bit sequence means which character. Agreed, not given by nature, which is why several exist."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein Verfahren, das Daten so umschreibt, dass sie weniger Speicherplatz belegen.",
-     "begruendung": "Das ist Kompression. Manche Codes sind nebenbei sparsam, aber kleiner machen ist nicht ihr Zweck."
+     "text": {
+      "de": "Ein Verfahren, das Daten so umschreibt, dass sie weniger Speicherplatz belegen.",
+      "en": "A method that rewrites data so that it takes up less storage space."
+     },
+     "begruendung": {
+      "de": "Das ist Kompression. Manche Codes sind nebenbei sparsam, aber kleiner machen ist nicht ihr Zweck.",
+      "en": "That is compression. Some codes are economical as a side effect, but making things smaller is not their purpose."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Programmiersprache, in der ein Programm geschrieben ist.",
-     "begruendung": "Das Wort „Code“ hat im Alltag mehrere Bedeutungen. Hier geht es nicht um Quelltext, sondern um die Zuordnung von Zeichen zu Bitfolgen."
+     "text": {
+      "de": "Die Programmiersprache, in der ein Programm geschrieben ist.",
+      "en": "The programming language a program is written in."
+     },
+     "begruendung": {
+      "de": "Das Wort „Code“ hat im Alltag mehrere Bedeutungen. Hier geht es nicht um Quelltext, sondern um die Zuordnung von Zeichen zu Bitfolgen.",
+      "en": "The word 'code' has several everyday meanings. Here it is not source code but the mapping from characters to bit sequences."
+     }
     }
    ]
   },
   {
    "id": "cs-002",
    "niveau": "erinnern",
-   "frage": "In ASCII steht das große A für die Zahl 65, B für 66, C für 67. Was\nfolgt daraus?",
+   "frage": {
+    "de": "In ASCII steht das große A für die Zahl 65, B für 66, C für 67. Was\nfolgt daraus?",
+    "en": "In ASCII, capital A stands for the number 65, B for 66, C for 67. What\nfollows from that?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass Buchstaben im Rechner als Buchstaben gespeichert werden, nur mit einer Nummer daneben.",
-     "begruendung": "Gespeichert wird nur die Zahl. Ein Buchstabe existiert im Rechner nicht als Form, sondern erst dann, wenn ein Programm die Zahl nach derselben Vereinbarung wieder darstellt."
+     "text": {
+      "de": "Dass Buchstaben im Rechner als Buchstaben gespeichert werden, nur mit einer Nummer daneben.",
+      "en": "That letters are stored as letters in the computer, just with a number next to them."
+     },
+     "begruendung": {
+      "de": "Gespeichert wird nur die Zahl. Ein Buchstabe existiert im Rechner nicht als Form, sondern erst dann, wenn ein Programm die Zahl nach derselben Vereinbarung wieder darstellt.",
+      "en": "Only the number is stored. A letter does not exist as a shape inside the computer; it appears only when a program renders the number using the same agreement."
+     }
     },
     {
      "kennung": "b",
-     "text": "Dass sich die 65 aus der Stellung von A im Alphabet ergibt, sobald man Ziffern und Satzzeichen mitzählt.",
-     "begruendung": "Die Zahl folgt aus keiner Rechnung. Sie wurde in der ASCII-Tabelle festgelegt, deren Anfang für Steuerzeichen und Satzzeichen reserviert ist; man hätte A ebenso gut die 1 oder die 200 geben können."
+     "text": {
+      "de": "Dass sich die 65 aus der Stellung von A im Alphabet ergibt, sobald man Ziffern und Satzzeichen mitzählt.",
+      "en": "That the 65 follows from A's position in the alphabet once you count digits and punctuation as well."
+     },
+     "begruendung": {
+      "de": "Die Zahl folgt aus keiner Rechnung. Sie wurde in der ASCII-Tabelle festgelegt, deren Anfang für Steuerzeichen und Satzzeichen reserviert ist; man hätte A ebenso gut die 1 oder die 200 geben können.",
+      "en": "The number does not follow from any calculation. It was fixed in the ASCII table, whose beginning is reserved for control and punctuation characters; A could just as well have been given 1 or 200."
+     }
     },
     {
      "kennung": "c",
-     "text": "Dass ein Buchstabe im Rechner nichts anderes ist als eine Zahl, der jemand diese Bedeutung zugewiesen hat.",
-     "begruendung": "Genau, und das ist die Pointe des ganzen Konzepts: Dieselben Bits sind Text, Bild oder Ton, je nachdem, welche Vereinbarung man auf sie anwendet."
+     "text": {
+      "de": "Dass ein Buchstabe im Rechner nichts anderes ist als eine Zahl, der jemand diese Bedeutung zugewiesen hat.",
+      "en": "That a letter in a computer is nothing but a number to which someone assigned this meaning."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist die Pointe des ganzen Konzepts: Dieselben Bits sind Text, Bild oder Ton, je nachdem, welche Vereinbarung man auf sie anwendet.",
+      "en": "Exactly, and that is the point of the whole concept: the same bits are text, image, or sound depending on which agreement you apply to them."
+     }
     },
     {
      "kennung": "d",
-     "text": "Dass jeder Rechner Buchstaben nach dieser Tabelle ablegen muss, weil die Zahlen in der Hardware festgelegt sind.",
-     "begruendung": "Die Tabelle ist eine Vereinbarung zwischen Programmen, keine Eigenschaft der Hardware. Es gibt viele Zuordnungen: UTF-8, ältere Zeichensätze, euer eigenes Farbalphabet. ASCII ist verbreitet, nicht notwendig."
+     "text": {
+      "de": "Dass jeder Rechner Buchstaben nach dieser Tabelle ablegen muss, weil die Zahlen in der Hardware festgelegt sind.",
+      "en": "That every computer has to store letters according to this table, because the numbers are fixed in the hardware."
+     },
+     "begruendung": {
+      "de": "Die Tabelle ist eine Vereinbarung zwischen Programmen, keine Eigenschaft der Hardware. Es gibt viele Zuordnungen: UTF-8, ältere Zeichensätze, euer eigenes Farbalphabet. ASCII ist verbreitet, nicht notwendig.",
+      "en": "The table is an agreement between programs, not a property of the hardware. There are many mappings: UTF-8, older character sets, your own colour alphabet. ASCII is common, not necessary."
+     }
     }
    ]
   },
   {
    "id": "cs-003",
    "niveau": "verstehen",
-   "frage": "Im Morsecode ist das E ein einzelner Punkt, das Q dagegen vier Zeichen\nlang. In ASCII ist jedes Zeichen genau ein Byte lang. Was ist der\nVorteil der festen Länge?",
+   "frage": {
+    "de": "Im Morsecode ist das E ein einzelner Punkt, das Q dagegen vier Zeichen\nlang. In ASCII ist jedes Zeichen genau ein Byte lang. Was ist der\nVorteil der festen Länge?",
+    "en": "In Morse code E is a single dot while Q is four symbols long. In ASCII\nevery character is exactly one byte. What is the advantage of the fixed\nlength?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -74,30 +131,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Nachricht wird insgesamt kürzer, weil kein Zeichen mehr Symbole belegt als die anderen.",
-     "begruendung": "Meistens umgekehrt: Variable Länge kann kürzer werden, weil häufige Zeichen kurze Codes bekommen. Feste Länge kauft etwas anderes ein."
+     "text": {
+      "de": "Die Nachricht wird insgesamt kürzer, weil kein Zeichen mehr Symbole belegt als die anderen.",
+      "en": "The message becomes shorter overall, because no character occupies more symbols than the others."
+     },
+     "begruendung": {
+      "de": "Meistens umgekehrt: Variable Länge kann kürzer werden, weil häufige Zeichen kurze Codes bekommen. Feste Länge kauft etwas anderes ein.",
+      "en": "Usually the opposite: variable length can be shorter because frequent characters get short codes. Fixed length buys something else."
+     }
     },
     {
      "kennung": "b",
-     "text": "Der Empfänger weiß immer, wo ein Zeichen endet, ohne Trennzeichen und ohne Nachdenken.",
-     "begruendung": "Genau: Er zählt einfach immer gleich viele Symbole ab. Bei variabler Länge muss aus dem Code selbst hervorgehen, wo Schluss ist, sonst braucht es Pausen oder Trennzeichen. Morse braucht sie deshalb wirklich."
+     "text": {
+      "de": "Der Empfänger weiß immer, wo ein Zeichen endet, ohne Trennzeichen und ohne Nachdenken.",
+      "en": "The receiver always knows where a character ends, without separators and without thinking."
+     },
+     "begruendung": {
+      "de": "Genau: Er zählt einfach immer gleich viele Symbole ab. Bei variabler Länge muss aus dem Code selbst hervorgehen, wo Schluss ist, sonst braucht es Pausen oder Trennzeichen. Morse braucht sie deshalb wirklich.",
+      "en": "Exactly: it just counts the same number of symbols every time. With variable length the code itself must reveal where a character ends, otherwise pauses or separators are needed. Morse really does need them."
+     }
     },
     {
      "kennung": "c",
-     "text": "Feste Länge ist störungssicherer gegen Rauschen.",
-     "begruendung": "Gegen Rauschen hilft Abstand zwischen den Symbolen, nicht die Codelänge. Ein Fehler kann in beiden Systemen passieren, er wirkt bei variabler Länge nur schlimmer, weil danach alles verrutscht."
+     "text": {
+      "de": "Feste Länge ist störungssicherer gegen Rauschen.",
+      "en": "Fixed length is more robust against noise."
+     },
+     "begruendung": {
+      "de": "Gegen Rauschen hilft Abstand zwischen den Symbolen, nicht die Codelänge. Ein Fehler kann in beiden Systemen passieren, er wirkt bei variabler Länge nur schlimmer, weil danach alles verrutscht.",
+      "en": "Against noise, distance between symbols helps, not code length. An error can happen in both; with variable length it is worse because everything after it shifts."
+     }
     },
     {
      "kennung": "d",
-     "text": "Feste Länge kommt ohne vorher vereinbarte Tabelle aus, weil die Position im Byte schon sagt, welches Zeichen gemeint ist.",
-     "begruendung": "Auch feste Länge muss vereinbart werden: welche Länge, und welche Bitfolge welches Zeichen bedeutet. Die Position sagt nur, wo ein Zeichen anfängt, nicht, was es bedeutet."
+     "text": {
+      "de": "Feste Länge kommt ohne vorher vereinbarte Tabelle aus, weil die Position im Byte schon sagt, welches Zeichen gemeint ist.",
+      "en": "Fixed length works without a previously agreed table, because the position within the byte already tells which character is meant."
+     },
+     "begruendung": {
+      "de": "Auch feste Länge muss vereinbart werden: welche Länge, und welche Bitfolge welches Zeichen bedeutet. Die Position sagt nur, wo ein Zeichen anfängt, nicht, was es bedeutet.",
+      "en": "Fixed length must be agreed too: which length, and which bit sequence means which character. The position only tells where a character starts, not what it means."
+     }
     }
    ]
   },
   {
    "id": "cs-004",
    "niveau": "anwenden",
-   "frage": "Ein Team vereinbart: a = 0, b = 01, c = 10. Gesendet wird die Folge\n010. Warum ist dieser Code unbrauchbar?",
+   "frage": {
+    "de": "Ein Team vereinbart: a = 0, b = 01, c = 10. Gesendet wird die Folge\n010. Warum ist dieser Code unbrauchbar?",
+    "en": "A team agrees: a = 0, b = 01, c = 10. The sequence 010 is sent. Why is\nthis code unusable?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -105,30 +189,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die Codewörter verschieden lang sind und ein Code nur mit fester Länge lesbar bleibt.",
-     "begruendung": "Variable Länge ist an sich erlaubt, Morse lebt davon. Der Fehler liegt nicht in den Längen, sondern darin, dass ein Codewort der Anfang eines anderen ist."
+     "text": {
+      "de": "Weil die Codewörter verschieden lang sind und ein Code nur mit fester Länge lesbar bleibt.",
+      "en": "Because the code words differ in length, and a code stays readable only with fixed length."
+     },
+     "begruendung": {
+      "de": "Variable Länge ist an sich erlaubt, Morse lebt davon. Der Fehler liegt nicht in den Längen, sondern darin, dass ein Codewort der Anfang eines anderen ist.",
+      "en": "Variable length is allowed as such, Morse lives on it. The fault is not the lengths but that one code word is the prefix of another."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil die Folge zwei Lesarten hat: „a c“ und „b a“ passen beide.",
-     "begruendung": "Genau: 0 + 10 ergibt „a c“, 01 + 0 ergibt „b a“. Ein Code muss eindeutig decodierbar sein. Hier ist der Code von a der Anfang des Codes von b, deshalb weiß der Empfänger nie, ob ein Zeichen schon zu Ende ist. Abhilfe: feste Länge, ein Trennzeichen, oder Codewörter, von denen keines der Anfang eines anderen ist."
+     "text": {
+      "de": "Weil die Folge zwei Lesarten hat: „a c“ und „b a“ passen beide.",
+      "en": "Because the sequence has two readings: 'a c' and 'b a' both fit."
+     },
+     "begruendung": {
+      "de": "Genau: 0 + 10 ergibt „a c“, 01 + 0 ergibt „b a“. Ein Code muss eindeutig decodierbar sein. Hier ist der Code von a der Anfang des Codes von b, deshalb weiß der Empfänger nie, ob ein Zeichen schon zu Ende ist. Abhilfe: feste Länge, ein Trennzeichen, oder Codewörter, von denen keines der Anfang eines anderen ist.",
+      "en": "Exactly: 0 + 10 gives 'a c', 01 + 0 gives 'b a'. A code must be uniquely decodable. Here a's code is the start of b's, so the receiver never knows whether a character has ended. Remedies: fixed length, a separator, or code words where none is the prefix of another."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil 0 und 1 zu wenige Symbole sind; für drei Zeichen bräuchte es ein drittes Symbol als Trenner.",
-     "begruendung": "Zwei Symbole genügen für jede Nachricht, wie ihr in Sitzung 4 gesehen habt. Der Fehler liegt nicht in der Anzahl, sondern in der Wahl der Codewörter."
+     "text": {
+      "de": "Weil 0 und 1 zu wenige Symbole sind; für drei Zeichen bräuchte es ein drittes Symbol als Trenner.",
+      "en": "Because 0 and 1 are too few symbols; three characters would need a third symbol as a separator."
+     },
+     "begruendung": {
+      "de": "Zwei Symbole genügen für jede Nachricht, wie ihr in Sitzung 4 gesehen habt. Der Fehler liegt nicht in der Anzahl, sondern in der Wahl der Codewörter.",
+      "en": "Two symbols suffice for any message, as you saw in session 4. The fault is not the count but the choice of code words."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil ein Alphabet aus nur drei Zeichen zu wenige Kombinationen ergibt, um Wörter eindeutig zu bilden.",
-     "begruendung": "Drei Zeichen sind vollkommen in Ordnung. Mit a = 00, b = 01, c = 10 wäre derselbe Vorrat eindeutig lesbar."
+     "text": {
+      "de": "Weil ein Alphabet aus nur drei Zeichen zu wenige Kombinationen ergibt, um Wörter eindeutig zu bilden.",
+      "en": "Because an alphabet of only three characters yields too few combinations to form words unambiguously."
+     },
+     "begruendung": {
+      "de": "Drei Zeichen sind vollkommen in Ordnung. Mit a = 00, b = 01, c = 10 wäre derselbe Vorrat eindeutig lesbar.",
+      "en": "Three characters are perfectly fine. With a = 00, b = 01, c = 10 the same repertoire would be unambiguous."
+     }
     }
    ]
   },
   {
    "id": "cs-005",
    "niveau": "anwenden",
-   "frage": "Euer Alphabet hat vier Farben, ihr wollt die 26 Buchstaben übertragen.\nWie viele Farbsymbole braucht ihr mindestens je Buchstabe, wenn alle\nBuchstaben gleich lang kodiert werden?",
+   "frage": {
+    "de": "Euer Alphabet hat vier Farben, ihr wollt die 26 Buchstaben übertragen.\nWie viele Farbsymbole braucht ihr mindestens je Buchstabe, wenn alle\nBuchstaben gleich lang kodiert werden?",
+    "en": "Your alphabet has four colours and you want to transmit the 26 letters.\nAt least how many colour symbols per letter do you need if all letters\nare coded with the same length?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -136,30 +247,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "7, denn 4 mal 7 sind 28, und das ist die kleinste Zahl über 26.",
-     "begruendung": "Multipliziert wird nicht, potenziert: Jedes weitere Symbol vervierfacht die Möglichkeiten. Schon zwei Symbole ergeben 4 mal 4 gleich 16, drei ergeben 64. Sieben wären enorm verschwenderisch."
+     "text": {
+      "de": "7, denn 4 mal 7 sind 28, und das ist die kleinste Zahl über 26.",
+      "en": "7, because 4 times 7 is 28, the smallest number above 26."
+     },
+     "begruendung": {
+      "de": "Multipliziert wird nicht, potenziert: Jedes weitere Symbol vervierfacht die Möglichkeiten. Schon zwei Symbole ergeben 4 mal 4 gleich 16, drei ergeben 64. Sieben wären enorm verschwenderisch.",
+      "en": "You do not multiply, you exponentiate: each extra symbol quadruples the possibilities. Two symbols already give 4 times 4 = 16, three give 64. Seven would be hugely wasteful."
+     }
     },
     {
      "kennung": "b",
-     "text": "5, wie beim Zahlenraten mit Ja/Nein-Fragen: 2 hoch 5 sind 32, und das reicht für 26.",
-     "begruendung": "Das sind 5 Bit, und die Rechnung stimmt für ein Alphabet aus zwei Symbolen. Eine von vier Farben trägt aber 2 Bit, zwei Möglichkeiten je Schritt sind hier also zu wenig gerechnet: 5 Bit passen in drei Farbsymbole."
+     "text": {
+      "de": "5, wie beim Zahlenraten mit Ja/Nein-Fragen: 2 hoch 5 sind 32, und das reicht für 26.",
+      "en": "5, as in the guessing game with yes/no questions: 2 to the power of 5 is 32, which covers 26."
+     },
+     "begruendung": {
+      "de": "Das sind 5 Bit, und die Rechnung stimmt für ein Alphabet aus zwei Symbolen. Eine von vier Farben trägt aber 2 Bit, zwei Möglichkeiten je Schritt sind hier also zu wenig gerechnet: 5 Bit passen in drei Farbsymbole.",
+      "en": "That is 5 bits, and the calculation holds for a two-symbol alphabet. One of four colours carries 2 bits, though, so two possibilities per step undercounts: 5 bits fit into three colour symbols."
+     }
     },
     {
      "kennung": "c",
-     "text": "3, denn 4 hoch 3 sind 64 Kombinationen, und 4 hoch 2 wären nur 16.",
-     "begruendung": "Genau, und allgemein ist das N = k hoch n: vier Symbole im Alphabet, drei je Zeichen, also 64 Möglichkeiten. In Bits gerechnet trägt jede Farbe 2 Bit, drei Farben also 6. Man verschenkt dabei 38 ungenutzte Kombinationen; die kann man für Ziffern, Leerzeichen oder Steuerzeichen gebrauchen."
+     "text": {
+      "de": "3, denn 4 hoch 3 sind 64 Kombinationen, und 4 hoch 2 wären nur 16.",
+      "en": "3, because 4 to the power of 3 is 64 combinations, while 4 squared is only 16."
+     },
+     "begruendung": {
+      "de": "Genau, und allgemein ist das N = k hoch n: vier Symbole im Alphabet, drei je Zeichen, also 64 Möglichkeiten. In Bits gerechnet trägt jede Farbe 2 Bit, drei Farben also 6. Man verschenkt dabei 38 ungenutzte Kombinationen; die kann man für Ziffern, Leerzeichen oder Steuerzeichen gebrauchen.",
+      "en": "Exactly, and the same calculation in bits: each colour carries 2 bits, so three colours carry 6 bits, that is 64 possibilities. This wastes 38 unused combinations, which you can spend on digits, spaces, or control characters."
+     }
     },
     {
      "kennung": "d",
-     "text": "1, wenn ihr jede der vier Farben in Helligkeitsstufen unterteilt, bis 26 unterscheidbare Töne erreicht sind.",
-     "begruendung": "Das wäre ein neues Alphabet aus 26 Symbolen, nicht mehr das aus vier Farben, um das die Frage geht. Und ob 26 Töne an eurer Strecke sicher unterscheidbar sind, entscheidet die Streuung; genau daran scheitert es meist, deshalb setzt man Buchstaben aus mehreren Symbolen zusammen."
+     "text": {
+      "de": "1, wenn ihr jede der vier Farben in Helligkeitsstufen unterteilt, bis 26 unterscheidbare Töne erreicht sind.",
+      "en": "1, if you split each of the four colours into brightness levels until 26 distinguishable shades are reached."
+     },
+     "begruendung": {
+      "de": "Das wäre ein neues Alphabet aus 26 Symbolen, nicht mehr das aus vier Farben, um das die Frage geht. Und ob 26 Töne an eurer Strecke sicher unterscheidbar sind, entscheidet die Streuung; genau daran scheitert es meist, deshalb setzt man Buchstaben aus mehreren Symbolen zusammen.",
+      "en": "That would be a new alphabet of 26 symbols, no longer the four-colour one the question is about. And whether 26 shades are reliably distinguishable on your link is decided by scatter; that is usually where it fails, which is why letters are assembled from several symbols."
+     }
     }
    ]
   },
   {
    "id": "cs-006",
    "niveau": "verstehen",
-   "frage": "ASCII kennt 128 Zeichen. Warum gibt es trotzdem noch Unicode und UTF-8?",
+   "frage": {
+    "de": "ASCII kennt 128 Zeichen. Warum gibt es trotzdem noch Unicode und UTF-8?",
+    "en": "ASCII has 128 characters. So why do Unicode and UTF-8 exist as well?"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -168,30 +306,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil 128 Zeichen für die Schriften der Welt bei weitem nicht reichen.",
-     "begruendung": "Richtig: Umlaute, Griechisch, Kyrillisch, Chinesisch, Emoji. Unicode vergibt für jedes Zeichen eine Nummer, aktuell über 100.000 Stück."
+     "text": {
+      "de": "Weil 128 Zeichen für die Schriften der Welt bei weitem nicht reichen.",
+      "en": "Because 128 characters are nowhere near enough for the world's writing systems."
+     },
+     "begruendung": {
+      "de": "Richtig: Umlaute, Griechisch, Kyrillisch, Chinesisch, Emoji. Unicode vergibt für jedes Zeichen eine Nummer, aktuell über 100.000 Stück.",
+      "en": "Correct: umlauts, Greek, Cyrillic, Chinese, emoji. Unicode assigns a number to every character, currently over 100,000 of them."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil ASCII mit einem Byte je Zeichen für heutige Rechner zu langsam zu verarbeiten ist.",
-     "begruendung": "ASCII ist denkbar schnell zu decodieren, ein Byte je Zeichen. Der Grund für Unicode ist der Vorrat, nicht das Tempo."
+     "text": {
+      "de": "Weil ASCII mit einem Byte je Zeichen für heutige Rechner zu langsam zu verarbeiten ist.",
+      "en": "Because ASCII, at one byte per character, is too slow for today's computers to process."
+     },
+     "begruendung": {
+      "de": "ASCII ist denkbar schnell zu decodieren, ein Byte je Zeichen. Der Grund für Unicode ist der Vorrat, nicht das Tempo.",
+      "en": "ASCII is as fast to decode as it gets, one byte per character. The reason for Unicode is the repertoire, not speed."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil UTF-8 mit variabler Länge arbeitet: gängige Zeichen bleiben ein Byte, seltene brauchen mehr.",
-     "begruendung": "Richtig, und das ist derselbe Gedanke wie bei Morse: häufig heißt kurz. Deshalb ist ein englischer Text in UTF-8 fast so kompakt wie in ASCII, und deutsche Umlaute kosten je ein Byte mehr."
+     "text": {
+      "de": "Weil UTF-8 mit variabler Länge arbeitet: gängige Zeichen bleiben ein Byte, seltene brauchen mehr.",
+      "en": "Because UTF-8 uses variable length: common characters stay one byte, rare ones need more."
+     },
+     "begruendung": {
+      "de": "Richtig, und das ist derselbe Gedanke wie bei Morse: häufig heißt kurz. Deshalb ist ein englischer Text in UTF-8 fast so kompakt wie in ASCII, und deutsche Umlaute kosten je ein Byte mehr.",
+      "en": "Correct, and it is the same idea as Morse: frequent means short. That is why English text in UTF-8 is almost as compact as ASCII, while German umlauts cost one extra byte each."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil Unicode neben Zeichen auch Bilder und Töne kodiert, die in ASCII fehlen.",
-     "begruendung": "Unicode kodiert Zeichen, auch Emoji, aber keine Bilder oder Töne. Dafür gibt es eigene Codesysteme, und die kommen im selben Input vor."
+     "text": {
+      "de": "Weil Unicode neben Zeichen auch Bilder und Töne kodiert, die in ASCII fehlen.",
+      "en": "Because Unicode encodes images and sound alongside characters, which ASCII lacks."
+     },
+     "begruendung": {
+      "de": "Unicode kodiert Zeichen, auch Emoji, aber keine Bilder oder Töne. Dafür gibt es eigene Codesysteme, und die kommen im selben Input vor.",
+      "en": "Unicode encodes characters, emoji included, but not images or sound. Those have their own code systems, covered in the same input."
+     }
     }
    ]
   },
   {
    "id": "cs-007",
    "niveau": "verstehen",
-   "frage": "Auf einer Festplatte liegt die Bytefolge `48 65 6C 6C 6F`. Woher weiß\nein Programm, ob das ein Text, ein Bildausschnitt oder ein Stück Ton\nist?",
+   "frage": {
+    "de": "Auf einer Festplatte liegt die Bytefolge `48 65 6C 6C 6F`. Woher weiß\nein Programm, ob das ein Text, ein Bildausschnitt oder ein Stück Ton\nist?",
+    "en": "A disk holds the byte sequence `48 65 6C 6C 6F`. How does a program know\nwhether this is text, part of an image, or a piece of sound?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -199,30 +364,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Bytes selbst verraten es, Textbytes sehen anders aus als Bildbytes.",
-     "begruendung": "Dieselben Bytes können alles bedeuten. `48 65 6C 6C 6F` ist in ASCII „Hello“, könnte aber genauso fünf Grauwerte oder fünf Tonabtastwerte sein."
+     "text": {
+      "de": "Die Bytes selbst verraten es, Textbytes sehen anders aus als Bildbytes.",
+      "en": "The bytes themselves reveal it; text bytes look different from image bytes."
+     },
+     "begruendung": {
+      "de": "Dieselben Bytes können alles bedeuten. `48 65 6C 6C 6F` ist in ASCII „Hello“, könnte aber genauso fünf Grauwerte oder fünf Tonabtastwerte sein.",
+      "en": "The same bytes can mean anything. `48 65 6C 6C 6F` is 'Hello' in ASCII but could equally be five grey values or five audio samples."
+     }
     },
     {
      "kennung": "b",
-     "text": "Aus dem Speicherort: Text, Bilder und Töne liegen auf der Platte in getrennten Bereichen.",
-     "begruendung": "Die Platte kennt keine Bereiche für Datentypen, sie speichert Bytes, wo Platz ist. Die Konvention, was die Bytes bedeuten, muss anderswo herkommen."
+     "text": {
+      "de": "Aus dem Speicherort: Text, Bilder und Töne liegen auf der Platte in getrennten Bereichen.",
+      "en": "From the storage location: text, images and sound live in separate areas of the disk."
+     },
+     "begruendung": {
+      "de": "Die Platte kennt keine Bereiche für Datentypen, sie speichert Bytes, wo Platz ist. Die Konvention, was die Bytes bedeuten, muss anderswo herkommen.",
+      "en": "The disk has no areas for data types; it stores bytes wherever there is room. The convention about what the bytes mean has to come from elsewhere."
+     }
     },
     {
      "kennung": "c",
-     "text": "Aus zusätzlichen Absprachen: Dateiendung, Kopfdaten der Datei, oder weil das Programm es schlicht voraussetzt.",
-     "begruendung": "Genau: Der Typ ist selbst wieder eine Vereinbarung, die mitgeliefert oder vorausgesetzt wird. Deshalb bekommt euer Rahmen in Challenge 3 ein Typfeld: Der Empfänger soll nicht raten müssen, was da kommt."
+     "text": {
+      "de": "Aus zusätzlichen Absprachen: Dateiendung, Kopfdaten der Datei, oder weil das Programm es schlicht voraussetzt.",
+      "en": "From additional agreements: the file extension, a header inside the file, or because the program simply assumes it."
+     },
+     "begruendung": {
+      "de": "Genau: Der Typ ist selbst wieder eine Vereinbarung, die mitgeliefert oder vorausgesetzt wird. Deshalb bekommt euer Rahmen in Challenge 3 ein Typfeld: Der Empfänger soll nicht raten müssen, was da kommt.",
+      "en": "Exactly: the type is itself an agreement, either shipped along or assumed. That is why your frame in challenge 3 gets a type field: the receiver should not have to guess what is arriving."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das Betriebssystem speichert zu jedem Byte, was es bedeutet.",
-     "begruendung": "Es speichert Bytes und einen Dateinamen, mehr nicht. Die Deutung passiert erst beim Öffnen, und dann kann sie auch schiefgehen: Wer ein Bild als Text öffnet, sieht Zeichensalat."
+     "text": {
+      "de": "Das Betriebssystem speichert zu jedem Byte, was es bedeutet.",
+      "en": "The operating system stores the meaning of every byte."
+     },
+     "begruendung": {
+      "de": "Es speichert Bytes und einen Dateinamen, mehr nicht. Die Deutung passiert erst beim Öffnen, und dann kann sie auch schiefgehen: Wer ein Bild als Text öffnet, sieht Zeichensalat.",
+      "en": "It stores bytes and a file name, nothing more. Interpretation happens on opening, and it can go wrong: open an image as text and you see garbage."
+     }
     }
    ]
   },
   {
    "id": "cs-008",
    "niveau": "verstehen",
-   "frage": "Ein Bildpunkt wird mit je einem Byte für Rot, Grün und Blau gespeichert.\nWie viele verschiedene Farben lassen sich damit darstellen?",
+   "frage": {
+    "de": "Ein Bildpunkt wird mit je einem Byte für Rot, Grün und Blau gespeichert.\nWie viele verschiedene Farben lassen sich damit darstellen?",
+    "en": "A pixel is stored with one byte each for red, green, and blue. How many\ndifferent colours can be represented?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -230,30 +422,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "768, also 3 mal 256.",
-     "begruendung": "Addiert wird nicht: Jede der 256 Rotstufen lässt sich mit jeder Grün- und jeder Blaustufe kombinieren. Deshalb wird multipliziert."
+     "text": {
+      "de": "768, also 3 mal 256.",
+      "en": "768, that is 3 times 256."
+     },
+     "begruendung": {
+      "de": "Addiert wird nicht: Jede der 256 Rotstufen lässt sich mit jeder Grün- und jeder Blaustufe kombinieren. Deshalb wird multipliziert.",
+      "en": "You do not add: each of the 256 red levels can be combined with every green and every blue level. So you multiply."
+     }
     },
     {
      "kennung": "b",
-     "text": "Rund 16,7 Millionen, also 256 mal 256 mal 256.",
-     "begruendung": "Genau, und in Bits gerechnet: 8 plus 8 plus 8 sind 24 Bit je Bildpunkt, also 2 hoch 24 Möglichkeiten. Genau diese Zahl steckt hinter der Angabe „24 Bit Farbtiefe“. Dieselben drei Kanäle steuert ihr mit led.set_color an, und euer Sensor misst sie wieder."
+     "text": {
+      "de": "Rund 16,7 Millionen, also 256 mal 256 mal 256.",
+      "en": "About 16.7 million, that is 256 times 256 times 256."
+     },
+     "begruendung": {
+      "de": "Genau, und in Bits gerechnet: 8 plus 8 plus 8 sind 24 Bit je Bildpunkt, also 2 hoch 24 Möglichkeiten. Genau diese Zahl steckt hinter der Angabe „24 Bit Farbtiefe“. Dieselben drei Kanäle steuert ihr mit led.set_color an, und euer Sensor misst sie wieder.",
+      "en": "Exactly, and in bits: 8 plus 8 plus 8 is 24 bits per pixel, so 2 to the power of 24 possibilities. That number is what '24-bit colour depth' means."
+     }
     },
     {
      "kennung": "c",
-     "text": "256, ein Byte reicht ja für eine Farbe.",
-     "begruendung": "Ein Byte reicht für einen Kanal. Erst drei Kanäle zusammen ergeben die Farbe, und ihre Kombinationen multiplizieren sich."
+     "text": {
+      "de": "256, ein Byte reicht ja für eine Farbe.",
+      "en": "256, since one byte is enough for a colour."
+     },
+     "begruendung": {
+      "de": "Ein Byte reicht für einen Kanal. Erst drei Kanäle zusammen ergeben die Farbe, und ihre Kombinationen multiplizieren sich.",
+      "en": "One byte is enough for one channel. Only three channels together make the colour, and their combinations multiply."
+     }
     },
     {
      "kennung": "d",
-     "text": "Unbegrenzt viele, weil Farbe stufenlos ist.",
-     "begruendung": "Farbe in der Welt ist stufenlos, im Speicher nicht: Drei Bytes ergeben endlich viele Zustände. Genau das ist die Digitalisierung aus Sitzung 4."
+     "text": {
+      "de": "Unbegrenzt viele, weil Farbe stufenlos ist.",
+      "en": "Unlimited, because colour is continuous."
+     },
+     "begruendung": {
+      "de": "Farbe in der Welt ist stufenlos, im Speicher nicht: Drei Bytes ergeben endlich viele Zustände. Genau das ist die Digitalisierung aus Sitzung 4.",
+      "en": "Colour in the world is continuous, in memory it is not: three bytes give finitely many states. That is exactly the digitising from session 4."
+     }
     }
    ]
   },
   {
    "id": "cs-009",
    "niveau": "erinnern",
-   "frage": "Eine Farbe wird als `#AC8909` notiert. Was ist das für eine Schreibweise\nund wozu dient sie?",
+   "frage": {
+    "de": "Eine Farbe wird als `#AC8909` notiert. Was ist das für eine Schreibweise\nund wozu dient sie?",
+    "en": "A colour is written as `#AC8909`. What notation is this and what is it\nfor?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -261,30 +480,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein eigenes Codesystem für Farben, unabhängig von RGB.",
-     "begruendung": "Es sind dieselben drei RGB-Anteile, nur anders aufgeschrieben: AC ist 172 (viel Rot), 89 ist 137 (etwas weniger Grün), 09 ist 9 (fast kein Blau)."
+     "text": {
+      "de": "Ein eigenes Codesystem für Farben, unabhängig von RGB.",
+      "en": "A separate code system for colours, independent of RGB."
+     },
+     "begruendung": {
+      "de": "Es sind dieselben drei RGB-Anteile, nur anders aufgeschrieben: AC ist 172 (viel Rot), 89 ist 137 (etwas weniger Grün), 09 ist 9 (fast kein Blau).",
+      "en": "These are the same three RGB values, just written differently: AC is 172, 89 is 137, 09 is 9."
+     }
     },
     {
      "kennung": "b",
-     "text": "Hexadezimal: eine kompakte Schreibweise für Bytes, bei der zwei Stellen genau ein Byte ergeben.",
-     "begruendung": "Genau: 16 Ziffern (0 bis 9 und A bis F), also 4 Bit je Stelle und 8 Bit je Paar. Deshalb sind drei Paare genau die drei Farbbytes. Menschen lesen `AC` leichter als `10101100`."
+     "text": {
+      "de": "Hexadezimal: eine kompakte Schreibweise für Bytes, bei der zwei Stellen genau ein Byte ergeben.",
+      "en": "Hexadecimal: a compact notation for bytes where two digits are exactly one byte."
+     },
+     "begruendung": {
+      "de": "Genau: 16 Ziffern (0 bis 9 und A bis F), also 4 Bit je Stelle und 8 Bit je Paar. Deshalb sind drei Paare genau die drei Farbbytes. Menschen lesen `AC` leichter als `10101100`.",
+      "en": "Exactly: 16 digits (0 to 9 and A to F), so 4 bits per digit and 8 bits per pair. That is why three pairs are exactly the three colour bytes. People read `AC` more easily than `10101100`."
+     }
     },
     {
      "kennung": "c",
-     "text": "Eine Prüfsumme aus sechs Zeichen, an der ein Programm erkennt, ob der Farbwert unbeschädigt angekommen ist.",
-     "begruendung": "Prüfsummen kommen später, in Challenge 3. Hier steht schlicht der Farbwert selbst, nur in anderer Basis."
+     "text": {
+      "de": "Eine Prüfsumme aus sechs Zeichen, an der ein Programm erkennt, ob der Farbwert unbeschädigt angekommen ist.",
+      "en": "A six-character checksum by which a program tells whether the colour value arrived undamaged."
+     },
+     "begruendung": {
+      "de": "Prüfsummen kommen später, in Challenge 3. Hier steht schlicht der Farbwert selbst, nur in anderer Basis.",
+      "en": "Checksums come later, in challenge 3. Here it is simply the colour value itself, just in a different base."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Speicheradresse, an der der Farbwert im Arbeitsspeicher abgelegt ist; daher das Raute-Zeichen davor.",
-     "begruendung": "Adressen schreibt man auch hexadezimal, daher die Verwechslung. Hier ist es aber der Inhalt, nicht der Ort."
+     "text": {
+      "de": "Die Speicheradresse, an der der Farbwert im Arbeitsspeicher abgelegt ist; daher das Raute-Zeichen davor.",
+      "en": "The memory address at which the colour value is stored in RAM; hence the hash sign in front."
+     },
+     "begruendung": {
+      "de": "Adressen schreibt man auch hexadezimal, daher die Verwechslung. Hier ist es aber der Inhalt, nicht der Ort.",
+      "en": "Addresses are also written in hex, hence the confusion. Here it is the content, not the location."
+     }
     }
    ]
   },
   {
    "id": "cs-010",
    "niveau": "verstehen",
-   "frage": "Dasselbe Logo lässt sich als Bitmap (eine Farbe je Bildpunkt) oder als\nVektorgrafik (Anweisungen wie „Kreis, Mittelpunkt, Radius, Farbe“)\nspeichern. Welche Aussagen treffen zu?",
+   "frage": {
+    "de": "Dasselbe Logo lässt sich als Bitmap (eine Farbe je Bildpunkt) oder als\nVektorgrafik (Anweisungen wie „Kreis, Mittelpunkt, Radius, Farbe“)\nspeichern. Welche Aussagen treffen zu?",
+    "en": "The same logo can be stored as a bitmap (one colour per pixel) or as\nvector graphics (instructions like \"circle, centre, radius, colour\").\nWhich statements are true?"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -293,30 +539,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Beides sind Codesysteme: Sie beschreiben dasselbe Bild nach verschiedenen Vereinbarungen.",
-     "begruendung": "Richtig, und das ist der Kern: Es gibt nicht die eine richtige Darstellung, sondern verschiedene Zuordnungen mit verschiedenen Stärken."
+     "text": {
+      "de": "Beides sind Codesysteme: Sie beschreiben dasselbe Bild nach verschiedenen Vereinbarungen.",
+      "en": "Both are code systems: they describe the same image under different agreements."
+     },
+     "begruendung": {
+      "de": "Richtig, und das ist der Kern: Es gibt nicht die eine richtige Darstellung, sondern verschiedene Zuordnungen mit verschiedenen Stärken.",
+      "en": "Correct, and that is the core: there is no single right representation, only different mappings with different strengths."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Vektorfassung ergibt bei jedem Motiv die kleinere Datei, weil Anweisungen weniger Platz brauchen als Bildpunkte.",
-     "begruendung": "Bei einfachen Formen meistens, bei einem Foto keineswegs: Ein Foto als Vektorgrafik zu beschreiben, wäre absurd aufwendig. Es hängt am Motiv."
+     "text": {
+      "de": "Die Vektorfassung ergibt bei jedem Motiv die kleinere Datei, weil Anweisungen weniger Platz brauchen als Bildpunkte.",
+      "en": "The vector version gives the smaller file for any motif, because instructions take less space than pixels."
+     },
+     "begruendung": {
+      "de": "Bei einfachen Formen meistens, bei einem Foto keineswegs: Ein Foto als Vektorgrafik zu beschreiben, wäre absurd aufwendig. Es hängt am Motiv.",
+      "en": "For simple shapes usually, for a photo certainly not: describing a photo as vectors would be absurdly expensive. It depends on the content."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nur die Vektorfassung lässt sich beliebig vergrößern, ohne dass Treppenstufen entstehen.",
-     "begruendung": "Richtig: Die Anweisung „Kreis mit Radius r“ lässt sich in jeder Größe neu zeichnen, ein Raster aus Bildpunkten dagegen nicht."
+     "text": {
+      "de": "Nur die Vektorfassung lässt sich beliebig vergrößern, ohne dass Treppenstufen entstehen.",
+      "en": "Only the vector version can be enlarged arbitrarily without producing jagged edges."
+     },
+     "begruendung": {
+      "de": "Richtig: Die Anweisung „Kreis mit Radius r“ lässt sich in jeder Größe neu zeichnen, ein Raster aus Bildpunkten dagegen nicht.",
+      "en": "Correct: the instruction 'circle with radius r' can be redrawn at any size, a grid of pixels cannot."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Bitmapfassung braucht keine eigene Vereinbarung, weil eine Farbe je Bildpunkt ohnehin die natürliche Form eines Bildes ist.",
-     "begruendung": "Auch sie braucht Absprachen: Breite, Höhe, Reihenfolge der Bildpunkte, Farbtiefe, Kanalreihenfolge. Ohne die ist eine Bitmap nur eine Bytefolge."
+     "text": {
+      "de": "Die Bitmapfassung braucht keine eigene Vereinbarung, weil eine Farbe je Bildpunkt ohnehin die natürliche Form eines Bildes ist.",
+      "en": "The bitmap version needs no agreement of its own, because one colour per pixel is the natural form of an image anyway."
+     },
+     "begruendung": {
+      "de": "Auch sie braucht Absprachen: Breite, Höhe, Reihenfolge der Bildpunkte, Farbtiefe, Kanalreihenfolge. Ohne die ist eine Bitmap nur eine Bytefolge.",
+      "en": "It needs agreements too: width, height, pixel order, colour depth, channel order. Without those a bitmap is just a byte sequence."
+     }
     }
    ]
   },
   {
    "id": "cs-011",
    "niveau": "anwenden",
-   "frage": "`encode(\"cab\")` liefert eine Bitfolge. Wie lautet sie, und wie findet\nder Empfänger die Zeichen darin wieder?",
+   "frage": {
+    "de": "`encode(\"cab\")` liefert eine Bitfolge. Wie lautet sie, und wie findet\nder Empfänger die Zeichen darin wieder?",
+    "en": "`encode(\"cab\")` returns a bit sequence. What is it, and how does the\nreceiver recover the characters?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -325,30 +598,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "100001, und der Empfänger schneidet die Folge einfach in Zweiergruppen.",
-     "begruendung": "Genau: c ist 10, a ist 00, b ist 01. Weil alle Codewörter gleich lang sind, genügt Abzählen; ein Trennzeichen ist überflüssig. Genau dieses Wörterbuch braucht ihr in Challenge 2 zweimal, einmal je Richtung."
+     "text": {
+      "de": "100001, und der Empfänger schneidet die Folge einfach in Zweiergruppen.",
+      "en": "100001, and the receiver simply cuts the sequence into pairs."
+     },
+     "begruendung": {
+      "de": "Genau: c ist 10, a ist 00, b ist 01. Weil alle Codewörter gleich lang sind, genügt Abzählen; ein Trennzeichen ist überflüssig. Genau dieses Wörterbuch braucht ihr in Challenge 2 zweimal, einmal je Richtung.",
+      "en": "Exactly: c is 10, a is 00, b is 01. Because all code words have the same length, counting suffices; no separator is needed. You need exactly this dictionary twice in challenge 2, once per direction."
+     }
     },
     {
      "kennung": "b",
-     "text": "100001, aber ohne Trennzeichen ist die Folge nicht wieder lesbar.",
-     "begruendung": "Die Bitfolge stimmt. Trennzeichen braucht nur variable Länge; hier ist jedes Zeichen genau zwei Bit lang, das reicht als Regel."
+     "text": {
+      "de": "100001, aber ohne Trennzeichen ist die Folge nicht wieder lesbar.",
+      "en": "100001, but without separators the sequence cannot be read back."
+     },
+     "begruendung": {
+      "de": "Die Bitfolge stimmt. Trennzeichen braucht nur variable Länge; hier ist jedes Zeichen genau zwei Bit lang, das reicht als Regel.",
+      "en": "The bit sequence is right. Separators are needed only for variable length; here every character is exactly two bits, which is rule enough."
+     }
     },
     {
      "kennung": "c",
-     "text": "cab, denn join setzt die nachgeschlagenen Zeichen am Ende wieder zum ursprünglichen Text zusammen.",
-     "begruendung": "join fügt zusammen, was die Schleife liefert, und die liefert je Zeichen das Codewort aus dem Wörterbuch, nicht das Zeichen selbst. Zurück kommt eine Zeichenkette aus Nullen und Einsen."
+     "text": {
+      "de": "cab, denn join setzt die nachgeschlagenen Zeichen am Ende wieder zum ursprünglichen Text zusammen.",
+      "en": "cab, because join reassembles the looked-up characters into the original text at the end."
+     },
+     "begruendung": {
+      "de": "join fügt zusammen, was die Schleife liefert, und die liefert je Zeichen das Codewort aus dem Wörterbuch, nicht das Zeichen selbst. Zurück kommt eine Zeichenkette aus Nullen und Einsen.",
+      "en": "join concatenates what the loop yields, and the loop yields each character's code word from the dictionary, not the character itself. What comes back is a string of zeros and ones."
+     }
     },
     {
      "kennung": "d",
-     "text": "001001, die Reihenfolge im Wörterbuch entscheidet.",
-     "begruendung": "Die Reihenfolge im Wörterbuch spielt keine Rolle, nur die Zuordnung. Gelesen wird der Text von links nach rechts: c, a, b."
+     "text": {
+      "de": "001001, die Reihenfolge im Wörterbuch entscheidet.",
+      "en": "001001; the order in the dictionary decides."
+     },
+     "begruendung": {
+      "de": "Die Reihenfolge im Wörterbuch spielt keine Rolle, nur die Zuordnung. Gelesen wird der Text von links nach rechts: c, a, b.",
+      "en": "The order inside the dictionary is irrelevant, only the mapping. The text is read left to right: c, a, b."
+     }
     }
    ]
   },
   {
    "id": "cs-012",
    "niveau": "verstehen",
-   "frage": "Welche der folgenden Dinge sind Codesysteme im Sinn dieses Konzepts?",
+   "frage": {
+    "de": "Welche der folgenden Dinge sind Codesysteme im Sinn dieses Konzepts?",
+    "en": "Which of the following are code systems in the sense of this concept?"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -359,35 +659,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein Strichcode auf einer Verpackung",
-     "begruendung": "Ja: Strichbreiten stehen für Ziffern, nach einer öffentlich festgelegten Vereinbarung."
+     "text": {
+      "de": "Ein Strichcode auf einer Verpackung",
+      "en": "A barcode on a package"
+     },
+     "begruendung": {
+      "de": "Ja: Strichbreiten stehen für Ziffern, nach einer öffentlich festgelegten Vereinbarung.",
+      "en": "Yes: bar widths stand for digits, following a publicly fixed agreement."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Blindenschrift Braille",
-     "begruendung": "Ja: sechs Punktpositionen, jede gesetzt oder nicht. Das sind 6 Bit je Zeichen, tastbar statt sichtbar."
+     "text": {
+      "de": "Die Blindenschrift Braille",
+      "en": "Braille"
+     },
+     "begruendung": {
+      "de": "Ja: sechs Punktpositionen, jede gesetzt oder nicht. Das sind 6 Bit je Zeichen, tastbar statt sichtbar.",
+      "en": "Yes: six dot positions, each raised or not. That is 6 bits per character, felt instead of seen."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die DNA in einer Zelle",
-     "begruendung": "Ja, und der älteste Code von allen: Drei Basen in Folge stehen für eine Aminosäure, und diese Zuordnung ist bei allen Lebewesen dieselbe. Eine Vereinbarung, die niemand ausgehandelt hat und die trotzdem alle einhalten."
+     "text": {
+      "de": "Die DNA in einer Zelle",
+      "en": "The DNA in a cell"
+     },
+     "begruendung": {
+      "de": "Ja, und der älteste Code von allen: Drei Basen in Folge stehen für eine Aminosäure, und diese Zuordnung ist bei allen Lebewesen dieselbe. Eine Vereinbarung, die niemand ausgehandelt hat und die trotzdem alle einhalten.",
+      "en": "Yes, and the oldest code of all: three bases in a row stand for one amino acid, and this mapping is the same in every living thing. An agreement nobody negotiated and everybody keeps."
+     }
     },
     {
      "kennung": "d",
-     "text": "Euer Farbalphabet aus Challenge 1",
-     "begruendung": "Ja, und das ist die Pointe: Ihr habt längst eines gebaut. Ein Codesystem braucht keinen Computer, nur eine Vereinbarung und unterscheidbare Zustände."
+     "text": {
+      "de": "Euer Farbalphabet aus Challenge 1",
+      "en": "Your colour alphabet from challenge 1"
+     },
+     "begruendung": {
+      "de": "Ja, und das ist die Pointe: Ihr habt längst eines gebaut. Ein Codesystem braucht keinen Computer, nur eine Vereinbarung und unterscheidbare Zustände.",
+      "en": "Yes, and that is the point: you built one long ago. A code system needs no computer, only an agreement and distinguishable states."
+     }
     },
     {
      "kennung": "e",
-     "text": "Die Lautstärke eines Geräuschs",
-     "begruendung": "Nein: eine stufenlose physikalische Größe, ohne vereinbarte Zuordnung. Erst wenn ihr festlegt, was leise und laut bedeuten sollen, wird ein Code daraus."
+     "text": {
+      "de": "Die Lautstärke eines Geräuschs",
+      "en": "The loudness of a sound"
+     },
+     "begruendung": {
+      "de": "Nein: eine stufenlose physikalische Größe, ohne vereinbarte Zuordnung. Erst wenn ihr festlegt, was leise und laut bedeuten sollen, wird ein Code daraus.",
+      "en": "No: a continuous physical quantity with no agreed mapping. It becomes a code only once you decide what quiet and loud are meant to mean."
+     }
     }
    ]
   },
   {
    "id": "cs-013",
    "niveau": "anwenden",
-   "frage": "Für die Zahl der codierbaren Zeichen gilt N = k^n, mit k Symbolen im\nAlphabet und n Symbolen je Zeichen. Ein Team hat nur zwei sicher\nunterscheidbare Farben und will 26 Buchstaben übertragen. Wie viele\nSymbole braucht ein Buchstabe?",
+   "frage": {
+    "de": "Für die Zahl der codierbaren Zeichen gilt N = k^n, mit k Symbolen im\nAlphabet und n Symbolen je Zeichen. Ein Team hat nur zwei sicher\nunterscheidbare Farben und will 26 Buchstaben übertragen. Wie viele\nSymbole braucht ein Buchstabe?",
+    "en": "The number of codable characters is N = k^n, with k symbols in the\nalphabet and n symbols per character. A team has only two reliably\ndistinguishable colours and wants to transmit 26 letters. How many\nsymbols does one letter need?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -395,30 +728,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "13, denn 26 Buchstaben verteilt auf 2 Farben ergeben 13 Symbole je Buchstabe.",
-     "begruendung": "Geteilt wird hier nichts. Mit jedem zusätzlichen Symbol verdoppelt sich die Zahl der Möglichkeiten, sie wächst also viel schneller."
+     "text": {
+      "de": "13, denn 26 Buchstaben verteilt auf 2 Farben ergeben 13 Symbole je Buchstabe.",
+      "en": "13, because 26 letters spread over 2 colours make 13 symbols per letter."
+     },
+     "begruendung": {
+      "de": "Geteilt wird hier nichts. Mit jedem zusätzlichen Symbol verdoppelt sich die Zahl der Möglichkeiten, sie wächst also viel schneller.",
+      "en": "Nothing is divided here. Each additional symbol doubles the number of possibilities, so it grows far faster."
+     }
     },
     {
      "kennung": "b",
-     "text": "4, denn 2 hoch 4 sind 16, und die seltenen Buchstaben lassen sich zusammenlegen.",
-     "begruendung": "Die Rechnung stimmt, das Ergebnis reicht aber nicht: 16 Kombinationen für 26 Buchstaben lassen zehn Buchstaben ohne Code. Zusammengelegte Buchstaben kann der Empfänger nicht mehr auseinanderhalten, der Code wäre nicht eindeutig."
+     "text": {
+      "de": "4, denn 2 hoch 4 sind 16, und die seltenen Buchstaben lassen sich zusammenlegen.",
+      "en": "4, because 2 to the power of 4 is 16, and the rare letters can share codes."
+     },
+     "begruendung": {
+      "de": "Die Rechnung stimmt, das Ergebnis reicht aber nicht: 16 Kombinationen für 26 Buchstaben lassen zehn Buchstaben ohne Code. Zusammengelegte Buchstaben kann der Empfänger nicht mehr auseinanderhalten, der Code wäre nicht eindeutig.",
+      "en": "The calculation is right but the result is too small: 16 combinations for 26 letters leave ten letters without a code. Letters that share a code can no longer be told apart by the receiver, so the code would be ambiguous."
+     }
     },
     {
      "kennung": "c",
-     "text": "5, denn 2 hoch 5 sind 32, die erste Zweierpotenz, die 26 erreicht.",
-     "begruendung": "Genau: Der Logarithmus zur Basis 2 von 26 ist etwa 4,7, und weil es keine halben Symbole gibt, wird aufgerundet. Mit 32 Kombinationen bleiben sechs für Leerzeichen und Ziffern übrig. Nebenbei: Genau das ist der Preis eines kleinen Alphabets, mit vier Farben wären es nur drei Symbole."
+     "text": {
+      "de": "5, denn 2 hoch 5 sind 32, die erste Zweierpotenz, die 26 erreicht.",
+      "en": "5, because 2 to the power of 5 is 32, the first power of two that reaches 26."
+     },
+     "begruendung": {
+      "de": "Genau: Der Logarithmus zur Basis 2 von 26 ist etwa 4,7, und weil es keine halben Symbole gibt, wird aufgerundet. Mit 32 Kombinationen bleiben sechs für Leerzeichen und Ziffern übrig. Nebenbei: Genau das ist der Preis eines kleinen Alphabets, mit vier Farben wären es nur drei Symbole.",
+      "en": "Exactly: the base-2 logarithm of 26 is about 4.7, and since there are no half symbols you round up. With 32 combinations, six are left for spaces and digits. Note the price of a small alphabet: with four colours it would be three symbols."
+     }
     },
     {
      "kennung": "d",
-     "text": "26, denn jeder Buchstabe braucht sein eigenes, von den anderen unterscheidbares Symbol.",
-     "begruendung": "Das wäre die Zahl der Buchstaben, nicht die Länge eines Codeworts. Mit zwei Farben lassen sich Buchstaben nur aus mehreren Symbolen zusammensetzen."
+     "text": {
+      "de": "26, denn jeder Buchstabe braucht sein eigenes, von den anderen unterscheidbares Symbol.",
+      "en": "26, because each letter needs its own symbol, distinguishable from all the others."
+     },
+     "begruendung": {
+      "de": "Das wäre die Zahl der Buchstaben, nicht die Länge eines Codeworts. Mit zwei Farben lassen sich Buchstaben nur aus mehreren Symbolen zusammensetzen.",
+      "en": "That is the number of letters, not the length of a code word. With two colours, letters can only be assembled from several symbols."
+     }
     }
    ]
   },
   {
    "id": "cs-014",
    "niveau": "verstehen",
-   "frage": "Diese Zeile lässt eure LED in einem warmen Gold leuchten. Was bedeuten\ndie drei Zahlen?",
+   "frage": {
+    "de": "Diese Zeile lässt eure LED in einem warmen Gold leuchten. Was bedeuten\ndie drei Zahlen?",
+    "en": "This line makes your LED glow a warm gold. What do the three numbers\nmean?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -427,23 +787,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Drei Nummern aus einer Tabelle, in der jede darstellbare Farbe mit einem eigenen Eintrag steht.",
-     "begruendung": "Eine solche Tabelle gibt es nicht, und ein Eintrag bräuchte auch nur eine Nummer, nicht drei. Die Farbe entsteht durch Mischen dreier Anteile, nicht durch Nachschlagen."
+     "text": {
+      "de": "Drei Nummern aus einer Tabelle, in der jede darstellbare Farbe mit einem eigenen Eintrag steht.",
+      "en": "Three numbers from a table in which every displayable colour has its own entry."
+     },
+     "begruendung": {
+      "de": "Eine solche Tabelle gibt es nicht, und ein Eintrag bräuchte auch nur eine Nummer, nicht drei. Die Farbe entsteht durch Mischen dreier Anteile, nicht durch Nachschlagen.",
+      "en": "There is no such table, and one entry would need a single number, not three. The colour is mixed from three shares, not looked up."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Anteile der drei Grundfarben: viel Rot, etwas weniger Grün, fast kein Blau, jeder Anteil von 0 bis 255.",
-     "begruendung": "Genau, und dieselbe Vereinbarung benutzt jeder Bildschirm: drei Kanäle, je ein Byte, zusammen 16,7 Millionen Farben. Als Hex geschrieben ist das #AC8909."
+     "text": {
+      "de": "Die Anteile der drei Grundfarben: viel Rot, etwas weniger Grün, fast kein Blau, jeder Anteil von 0 bis 255.",
+      "en": "The shares of the three primary colours: much red, slightly less green, almost no blue, each from 0 to 255."
+     },
+     "begruendung": {
+      "de": "Genau, und dieselbe Vereinbarung benutzt jeder Bildschirm: drei Kanäle, je ein Byte, zusammen 16,7 Millionen Farben. Als Hex geschrieben ist das #AC8909.",
+      "en": "Exactly, and every screen uses the same agreement: three channels, one byte each, together 16.7 million colours. Written as hex that is #AC8909."
+     }
     },
     {
      "kennung": "c",
-     "text": "Helligkeit, Farbton und Sättigung der Farbe, in dieser Reihenfolge, jeweils als Wert von 0 bis 255.",
-     "begruendung": "Das wäre eine andere Vereinbarung, es gibt sie tatsächlich (HSV), aber `set_color` erwartet die drei Grundfarbenanteile. Wieder gilt: Zahlen bedeuten nur das, was vereinbart ist."
+     "text": {
+      "de": "Helligkeit, Farbton und Sättigung der Farbe, in dieser Reihenfolge, jeweils als Wert von 0 bis 255.",
+      "en": "Brightness, hue and saturation of the colour, in that order, each as a value from 0 to 255."
+     },
+     "begruendung": {
+      "de": "Das wäre eine andere Vereinbarung, es gibt sie tatsächlich (HSV), aber `set_color` erwartet die drei Grundfarbenanteile. Wieder gilt: Zahlen bedeuten nur das, was vereinbart ist.",
+      "en": "That would be a different agreement; it exists (HSV), but `set_color` expects the three primary shares. Again: numbers mean only what has been agreed."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Wellenlänge des Lichts in Nanometern.",
-     "begruendung": "Eine Wellenlänge wäre eine einzige Zahl und läge bei sichtbarem Licht zwischen etwa 380 und 750. Eure LED erzeugt Farben nicht über die Wellenlänge, sondern durch Mischen dreier fester Grundfarben."
+     "text": {
+      "de": "Die Wellenlänge des Lichts in Nanometern.",
+      "en": "The wavelength of the light in nanometres."
+     },
+     "begruendung": {
+      "de": "Eine Wellenlänge wäre eine einzige Zahl und läge bei sichtbarem Licht zwischen etwa 380 und 750. Eure LED erzeugt Farben nicht über die Wellenlänge, sondern durch Mischen dreier fester Grundfarben.",
+      "en": "A wavelength would be a single number, roughly 380 to 750 for visible light. Your LED does not produce colours by wavelength but by mixing three fixed primaries."
+     }
     }
    ]
   }

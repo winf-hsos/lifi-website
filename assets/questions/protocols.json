@@ -4,7 +4,10 @@
   {
    "id": "pr-001",
    "niveau": "erinnern",
-   "frage": "Was gehört zu einem Protokoll, also zu der Absprache, die zwei Seiten vor\nder ersten Übertragung treffen müssen? (Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Was gehört zu einem Protokoll, also zu der Absprache, die zwei Seiten vor\nder ersten Übertragung treffen müssen? (Mehrere richtige Antworten möglich.)",
+    "en": "What belongs to a protocol, the agreement two sides have to make before\nthe first transmission? (Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -14,35 +17,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Bedeutung der Symbole: welche Farbe für welche Bits oder welches Zeichen steht.",
-     "begruendung": "Richtig, das ist der Teil, an den jeder zuerst denkt. Er ist aber nur einer von mehreren."
+     "text": {
+      "de": "Die Bedeutung der Symbole: welche Farbe für welche Bits oder welches Zeichen steht.",
+      "en": "The meaning of the symbols: which colour stands for which bits or which character."
+     },
+     "begruendung": {
+      "de": "Richtig, das ist der Teil, an den jeder zuerst denkt. Er ist aber nur einer von mehreren.",
+      "en": "Correct, this is the part everyone thinks of first. But it is only one of several."
+     }
     },
     {
      "kennung": "b",
-     "text": "Woran der Empfänger den Anfang und das Ende einer Nachricht erkennt.",
-     "begruendung": "Richtig: Ohne Anfangs- und Endregel weiß ein laufender Empfänger nicht, welche Messwerte gemeint sind und welche nur das Zimmer zeigen."
+     "text": {
+      "de": "Woran der Empfänger den Anfang und das Ende einer Nachricht erkennt.",
+      "en": "How the receiver recognises the beginning and the end of a message."
+     },
+     "begruendung": {
+      "de": "Richtig: Ohne Anfangs- und Endregel weiß ein laufender Empfänger nicht, welche Messwerte gemeint sind und welche nur das Zimmer zeigen.",
+      "en": "Correct: without a rule for start and end, a running receiver cannot tell which readings are meant and which merely show the room."
+     }
     },
     {
      "kennung": "c",
-     "text": "Was beide Seiten tun, wenn etwas schiefgeht, etwa wenn ein erwartetes Muster ausbleibt.",
-     "begruendung": "Richtig: Eine Absprache, die nur den Normalfall regelt, lässt den Empfänger im Fehlerfall raten. Dann verhält sich jede Umsetzung anders."
+     "text": {
+      "de": "Was beide Seiten tun, wenn etwas schiefgeht, etwa wenn ein erwartetes Muster ausbleibt.",
+      "en": "What both sides do when something goes wrong, for instance when an expected pattern fails to appear."
+     },
+     "begruendung": {
+      "de": "Richtig: Eine Absprache, die nur den Normalfall regelt, lässt den Empfänger im Fehlerfall raten. Dann verhält sich jede Umsetzung anders.",
+      "en": "Correct: an agreement that covers only the normal case leaves the receiver guessing when errors occur. Every implementation then behaves differently."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Messwerte, die der Sensor beim Empfänger für jede Farbe liefert.",
-     "begruendung": "Die Messwerte hängen von Abstand, Raumlicht und Gerät ab und lassen sich nicht vereinbaren. Vereinbart wird, was der Sender tut und wie der Empfänger es deutet; die Zahlen findet jeder Empfänger durch seine eigene Kalibrierung."
+     "text": {
+      "de": "Die Messwerte, die der Sensor beim Empfänger für jede Farbe liefert.",
+      "en": "The readings the receiver's sensor delivers for each colour."
+     },
+     "begruendung": {
+      "de": "Die Messwerte hängen von Abstand, Raumlicht und Gerät ab und lassen sich nicht vereinbaren. Vereinbart wird, was der Sender tut und wie der Empfänger es deutet; die Zahlen findet jeder Empfänger durch seine eigene Kalibrierung.",
+      "en": "Readings depend on distance, room light and device and cannot be agreed upon. What is agreed is what the sender does and how the receiver interprets it; the numbers come from each receiver's own calibration."
+     }
     },
     {
      "kennung": "e",
-     "text": "Die Programmiersprache, in der Sender und Empfänger geschrieben sind.",
-     "begruendung": "Ein Protokoll beschreibt das Verhalten auf der Strecke, nicht den Code dahinter. Genau deshalb kann ein anderes Team einen eigenen Empfänger dafür bauen, in welcher Sprache auch immer."
+     "text": {
+      "de": "Die Programmiersprache, in der Sender und Empfänger geschrieben sind.",
+      "en": "The programming language the sender and receiver are written in."
+     },
+     "begruendung": {
+      "de": "Ein Protokoll beschreibt das Verhalten auf der Strecke, nicht den Code dahinter. Genau deshalb kann ein anderes Team einen eigenen Empfänger dafür bauen, in welcher Sprache auch immer.",
+      "en": "A protocol describes the behaviour on the link, not the code behind it. That is precisely why another team can build its own receiver for it, in whatever language."
+     }
     }
    ]
   },
   {
    "id": "pr-002",
    "niveau": "verstehen",
-   "frage": "Im Experiment 'Der Horcher' sendet die Lehrperson erst zufällige Farben, dann\ndie Nachricht, dann wieder zufällige Farben; der Saal findet den Anfang nicht.\nIm zweiten Durchgang beginnt jede Nachricht mit dreimal Rot-Blau im\nWechsel, und der Saal erkennt den Anfang von selbst. Was hat der Saal damit\nerfunden?",
+   "frage": {
+    "de": "Im Experiment 'Der Horcher' sendet die Lehrperson erst zufällige Farben, dann\ndie Nachricht, dann wieder zufällige Farben; der Saal findet den Anfang nicht.\nIm zweiten Durchgang beginnt jede Nachricht mit dreimal Rot-Blau im\nWechsel, und der Saal erkennt den Anfang von selbst. Was hat der Saal damit\nerfunden?",
+    "en": "In the 'listener' experiment the lecturer first sends random colours, then\nthe message, then random colours again; the audience cannot find the start.\nIn the second run every message begins with red-blue alternating three\ntimes, and the audience spots the start by itself. What has the audience\ninvented?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -50,30 +86,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Eine Kalibrierung: An Rot und Blau lernt der Saal, wie die beiden Farben von vorn aussehen.",
-     "begruendung": "Das könnte dieselbe Folge nebenbei leisten, erklärt aber nicht den Unterschied zum ersten Durchgang. Dort waren die Farben genauso gut sichtbar; was fehlte, war ein erkennbarer Anfang."
+     "text": {
+      "de": "Eine Kalibrierung: An Rot und Blau lernt der Saal, wie die beiden Farben von vorn aussehen.",
+      "en": "A calibration: red and blue teach the audience what the two colours look like from the front."
+     },
+     "begruendung": {
+      "de": "Das könnte dieselbe Folge nebenbei leisten, erklärt aber nicht den Unterschied zum ersten Durchgang. Dort waren die Farben genauso gut sichtbar; was fehlte, war ein erkennbarer Anfang.",
+      "en": "The same sequence might do that on the side, but it does not explain the difference from the first run. The colours were just as visible there; what was missing was a recognisable start."
+     }
     },
     {
      "kennung": "b",
-     "text": "Eine Prüfsumme: Die dreifache Wiederholung bestätigt, dass die Farben richtig gesehen wurden.",
-     "begruendung": "Die Wiederholung dient nicht der Kontrolle, sondern der Auffälligkeit: Dreimal Rot-Blau entsteht im Zufall praktisch nie. Ob die Nachricht danach richtig gesehen wurde, sagt das Muster nicht."
+     "text": {
+      "de": "Eine Prüfsumme: Die dreifache Wiederholung bestätigt, dass die Farben richtig gesehen wurden.",
+      "en": "A checksum: the threefold repetition confirms that the colours were seen correctly."
+     },
+     "begruendung": {
+      "de": "Die Wiederholung dient nicht der Kontrolle, sondern der Auffälligkeit: Dreimal Rot-Blau entsteht im Zufall praktisch nie. Ob die Nachricht danach richtig gesehen wurde, sagt das Muster nicht.",
+      "en": "The repetition is not there for checking but for being conspicuous: red-blue three times practically never occurs by chance. Whether the message afterwards was seen correctly, the pattern does not tell."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein Anfangsmuster (Präambel): eine vereinbarte, auffällige Folge, die im Rauschen nicht vorkommt.",
-     "begruendung": "Genau. Der Saal hat das Muster erkannt, ohne dass jemand 'jetzt' gesagt hat. Das ist die Aufgabe einer Präambel: Sie ersetzt den Menschen, der bisher den Start gegeben hat."
+     "text": {
+      "de": "Ein Anfangsmuster (Präambel): eine vereinbarte, auffällige Folge, die im Rauschen nicht vorkommt.",
+      "en": "A start pattern (preamble): an agreed, conspicuous sequence that does not occur in the noise."
+     },
+     "begruendung": {
+      "de": "Genau. Der Saal hat das Muster erkannt, ohne dass jemand 'jetzt' gesagt hat. Das ist die Aufgabe einer Präambel: Sie ersetzt den Menschen, der bisher den Start gegeben hat.",
+      "en": "Exactly. The audience recognised the pattern without anyone saying 'now'. That is the job of a preamble: it replaces the person who used to give the start."
+     }
     },
     {
      "kennung": "d",
-     "text": "Einen Zeichencode: Dreimal Rot-Blau steht für das erste Zeichen der Nachricht.",
-     "begruendung": "Das Muster trägt keinen Inhalt, es sagt nur 'ab hier'. Würde es ein Zeichen bedeuten, könnte dasselbe Zeichen mitten im Text den Saal wieder von vorn anfangen lassen."
+     "text": {
+      "de": "Einen Zeichencode: Dreimal Rot-Blau steht für das erste Zeichen der Nachricht.",
+      "en": "A character code: red-blue three times stands for the first character of the message."
+     },
+     "begruendung": {
+      "de": "Das Muster trägt keinen Inhalt, es sagt nur 'ab hier'. Würde es ein Zeichen bedeuten, könnte dasselbe Zeichen mitten im Text den Saal wieder von vorn anfangen lassen.",
+      "en": "The pattern carries no content, it only says 'from here on'. If it meant a character, the same character in the middle of the text could make the audience start over."
+     }
     }
    ]
   },
   {
    "id": "pr-003",
    "niveau": "anwenden",
-   "frage": "Vier Teams schlagen ein Anfangsmuster vor. Der Empfänger läuft bereits in\neinem beleuchteten Raum und sieht dauernd Messwerte. Welches Muster erkennt\ner am zuverlässigsten als Anfang?",
+   "frage": {
+    "de": "Vier Teams schlagen ein Anfangsmuster vor. Der Empfänger läuft bereits in\neinem beleuchteten Raum und sieht dauernd Messwerte. Welches Muster erkennt\ner am zuverlässigsten als Anfang?",
+    "en": "Four teams propose a start pattern. The receiver is already running in a lit\nroom and sees readings all the time. Which pattern will it recognise most\nreliably as the start?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -81,30 +144,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein einzelnes Rot, damit die Nachricht selbst möglichst schnell beginnen kann.",
-     "begruendung": "Ein einzelnes Symbol entsteht zu leicht von selbst: eine Lampe, ein Schatten, eine Schwankung, und der Empfänger hält das Zimmer für den Anfang. Die gesparte Zeit ist klein, das Risiko groß."
+     "text": {
+      "de": "Ein einzelnes Rot, damit die Nachricht selbst möglichst schnell beginnen kann.",
+      "en": "A single red, so that the message itself can start as quickly as possible."
+     },
+     "begruendung": {
+      "de": "Ein einzelnes Symbol entsteht zu leicht von selbst: eine Lampe, ein Schatten, eine Schwankung, und der Empfänger hält das Zimmer für den Anfang. Die gesparte Zeit ist klein, das Risiko groß.",
+      "en": "A single symbol arises too easily on its own: a lamp, a shadow, a fluctuation, and the receiver takes the room for the start. The time saved is small, the risk large."
+     }
     },
     {
      "kennung": "b",
-     "text": "Rot und Blau im Wechsel, sechs Symbole lang, damit Zufallsschwankungen die Folge nicht nachbilden.",
-     "begruendung": "Genau: Je länger und je regelmäßiger das Muster, desto unwahrscheinlicher entsteht es zufällig, und der Wechsel zwischen zwei gut unterscheidbaren Farben ist auch bei Störlicht klar zu sehen. Die paar Symbole Vorlauf sind der Preis für einen sicheren Start."
+     "text": {
+      "de": "Rot und Blau im Wechsel, sechs Symbole lang, damit Zufallsschwankungen die Folge nicht nachbilden.",
+      "en": "Red and blue alternating, six symbols long, so that random fluctuations cannot mimic the sequence."
+     },
+     "begruendung": {
+      "de": "Genau: Je länger und je regelmäßiger das Muster, desto unwahrscheinlicher entsteht es zufällig, und der Wechsel zwischen zwei gut unterscheidbaren Farben ist auch bei Störlicht klar zu sehen. Die paar Symbole Vorlauf sind der Preis für einen sicheren Start.",
+      "en": "Exactly: the longer and more regular the pattern, the less likely it arises by chance, and the alternation between two clearly distinguishable colours is easy to see even with stray light. The few symbols of lead-in are the price of a safe start."
+     }
     },
     {
      "kennung": "c",
-     "text": "Das erste Zeichen der Nachricht doppelt senden, damit der Anfang keinen eigenen Vorlauf braucht.",
-     "begruendung": "Der Empfänger kennt das erste Zeichen nicht und kann deshalb nicht nach ihm suchen. Und ein doppeltes Zeichen kommt in jeder Nachricht vor, etwa in 'HALLO', der Anfang wäre also nicht eindeutig."
+     "text": {
+      "de": "Das erste Zeichen der Nachricht doppelt senden, damit der Anfang keinen eigenen Vorlauf braucht.",
+      "en": "Send the first character of the message twice, so that the start needs no lead-in of its own."
+     },
+     "begruendung": {
+      "de": "Der Empfänger kennt das erste Zeichen nicht und kann deshalb nicht nach ihm suchen. Und ein doppeltes Zeichen kommt in jeder Nachricht vor, etwa in 'HALLO', der Anfang wäre also nicht eindeutig.",
+      "en": "The receiver does not know the first character and therefore cannot look for it. And a doubled character occurs in any message, as in 'HELLO', so the start would not be unambiguous."
+     }
     },
     {
      "kennung": "d",
-     "text": "Fünf Sekunden LED aus, dann die Nachricht, damit der Empfänger sich erst beruhigen kann.",
-     "begruendung": "LED aus sieht für den Empfänger genauso aus wie 'kein Sender da'. Er kann die Pause nicht von der Wartezeit davor unterscheiden, und die Nachricht beginnt dann so unangekündigt wie ganz ohne Muster."
+     "text": {
+      "de": "Fünf Sekunden LED aus, dann die Nachricht, damit der Empfänger sich erst beruhigen kann.",
+      "en": "LED off for five seconds, then the message, so that the receiver can settle first."
+     },
+     "begruendung": {
+      "de": "LED aus sieht für den Empfänger genauso aus wie 'kein Sender da'. Er kann die Pause nicht von der Wartezeit davor unterscheiden, und die Nachricht beginnt dann so unangekündigt wie ganz ohne Muster.",
+      "en": "LED off looks to the receiver exactly like 'no sender present'. It cannot tell the pause from the waiting time before it, and the message then begins as unannounced as with no pattern at all."
+     }
     }
    ]
   },
   {
    "id": "pr-004",
    "niveau": "anwenden",
-   "frage": "Euer Empfänger meldet immer wieder 'Nachricht beginnt', obwohl der Sender\nnoch gar nicht läuft. Als Anfangsmuster benutzt ihr ein einzelnes Grün.\nWelche Änderung behebt das Problem an der Wurzel?",
+   "frage": {
+    "de": "Euer Empfänger meldet immer wieder 'Nachricht beginnt', obwohl der Sender\nnoch gar nicht läuft. Als Anfangsmuster benutzt ihr ein einzelnes Grün.\nWelche Änderung behebt das Problem an der Wurzel?",
+    "en": "Your receiver keeps reporting 'message starts' although the sender is not\neven running yet. Your start pattern is a single green. Which change fixes\nthe problem at its root?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -112,30 +202,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Das Anfangsmuster länger und auffälliger machen, damit zufällige Messwerte es nicht nachbilden.",
-     "begruendung": "Genau: Ein einzelnes Grün entsteht im Raumlicht ständig von selbst. Eine Folge aus mehreren Wechseln entsteht zufällig praktisch nie. Das Problem liegt in der Absprache, also wird die Absprache geändert."
+     "text": {
+      "de": "Das Anfangsmuster länger und auffälliger machen, damit zufällige Messwerte es nicht nachbilden.",
+      "en": "Make the start pattern longer and more conspicuous, so that random readings cannot mimic it."
+     },
+     "begruendung": {
+      "de": "Genau: Ein einzelnes Grün entsteht im Raumlicht ständig von selbst. Eine Folge aus mehreren Wechseln entsteht zufällig praktisch nie. Das Problem liegt in der Absprache, also wird die Absprache geändert.",
+      "en": "Exactly: a single green arises in room light all the time. A sequence of several alternations practically never arises by chance. The problem lies in the agreement, so the agreement is changed."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Verstärkung des Sensors erhöhen, damit sich das echte Grün deutlicher vom Raumlicht abhebt.",
-     "begruendung": "Die Verstärkung hebt Raumlicht und Schwankungen genauso an wie das Signal. Der Empfänger sieht danach dieselben Fehlstarts, nur mit größeren Zahlen."
+     "text": {
+      "de": "Die Verstärkung des Sensors erhöhen, damit sich das echte Grün deutlicher vom Raumlicht abhebt.",
+      "en": "Increase the sensor gain, so that the real green stands out more clearly from the room light."
+     },
+     "begruendung": {
+      "de": "Die Verstärkung hebt Raumlicht und Schwankungen genauso an wie das Signal. Der Empfänger sieht danach dieselben Fehlstarts, nur mit größeren Zahlen.",
+      "en": "Gain raises room light and fluctuations just as much as the signal. The receiver afterwards sees the same false starts, only with bigger numbers."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Integrationszeit verkürzen, damit der Empfänger schneller merkt, dass es doch kein Anfang war.",
-     "begruendung": "Kürzere Fenster machen die Werte unruhiger, also entstehen mehr zufällige Treffer, nicht weniger. Und ob es ein Anfang war, kann der Empfänger ohnehin erst an dem beurteilen, was danach kommt."
+     "text": {
+      "de": "Die Integrationszeit verkürzen, damit der Empfänger schneller merkt, dass es doch kein Anfang war.",
+      "en": "Shorten the integration time, so that the receiver notices faster that it was not a start after all."
+     },
+     "begruendung": {
+      "de": "Kürzere Fenster machen die Werte unruhiger, also entstehen mehr zufällige Treffer, nicht weniger. Und ob es ein Anfang war, kann der Empfänger ohnehin erst an dem beurteilen, was danach kommt.",
+      "en": "Shorter windows make the values noisier, so more random hits arise, not fewer. And whether it was a start, the receiver can only judge from what follows anyway."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das Grün nur noch einmal ganz kurz senden, damit es seltener mit dem Raumlicht verwechselt wird.",
-     "begruendung": "Das ändert nichts daran, wie oft das Raumlicht zufällig grün aussieht, macht aber das echte Muster leichter zu verpassen. Die Richtung ist verkehrt: Das Muster muss seltener werden, nicht kürzer."
+     "text": {
+      "de": "Das Grün nur noch einmal ganz kurz senden, damit es seltener mit dem Raumlicht verwechselt wird.",
+      "en": "Send the green only once and very briefly, so that it is confused with the room light less often."
+     },
+     "begruendung": {
+      "de": "Das ändert nichts daran, wie oft das Raumlicht zufällig grün aussieht, macht aber das echte Muster leichter zu verpassen. Die Richtung ist verkehrt: Das Muster muss seltener werden, nicht kürzer.",
+      "en": "That changes nothing about how often the room light happens to look green, but makes the real pattern easier to miss. The direction is wrong: the pattern must become rarer, not shorter."
+     }
     }
    ]
   },
   {
    "id": "pr-005",
    "niveau": "verstehen",
-   "frage": "Die Vorlage für eure Protokollspezifikation fragt: 'Was passiert, wenn das\nAnfangsmuster zufällig auch mitten in einer Nachricht auftaucht?' Warum\nist diese Frage wichtig?",
+   "frage": {
+    "de": "Die Vorlage für eure Protokollspezifikation fragt: 'Was passiert, wenn das\nAnfangsmuster zufällig auch mitten in einer Nachricht auftaucht?' Warum\nist diese Frage wichtig?",
+    "en": "The template for your protocol specification asks: 'What happens if the\nstart pattern happens to appear in the middle of a message?' Why does this\nquestion matter?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -143,30 +260,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil das Muster in den Daten zeigt, dass die Nachricht verfälscht wurde und neu gesendet werden muss.",
-     "begruendung": "Das Muster in den Daten ist kein Fehler, sondern Zufall: Bei einem kurzen Muster und einer langen Nachricht ist es sogar wahrscheinlich. Die Nachricht ist in Ordnung, nur der Empfänger könnte sie missverstehen."
+     "text": {
+      "de": "Weil das Muster in den Daten zeigt, dass die Nachricht verfälscht wurde und neu gesendet werden muss.",
+      "en": "Because the pattern in the data shows that the message was corrupted and has to be sent again."
+     },
+     "begruendung": {
+      "de": "Das Muster in den Daten ist kein Fehler, sondern Zufall: Bei einem kurzen Muster und einer langen Nachricht ist es sogar wahrscheinlich. Die Nachricht ist in Ordnung, nur der Empfänger könnte sie missverstehen.",
+      "en": "The pattern in the data is not an error but chance: with a short pattern and a long message it is even likely. The message is fine, only the receiver might misread it."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil ein Empfänger, der nach dem Muster sucht, Daten für einen neuen Anfang halten kann und die Nachricht mittendrin neu beginnt.",
-     "begruendung": "Genau. Die Spezifikation muss sagen, wie das verhindert oder behandelt wird, sonst verhält sich jeder Empfänger anders. Das Problem ist echt und hat in der Praxis einen Namen; die Lösung findet ihr in Challenge 3 selbst."
+     "text": {
+      "de": "Weil ein Empfänger, der nach dem Muster sucht, Daten für einen neuen Anfang halten kann und die Nachricht mittendrin neu beginnt.",
+      "en": "Because a receiver looking for the pattern may take data for a new start and begin the message afresh in the middle."
+     },
+     "begruendung": {
+      "de": "Genau. Die Spezifikation muss sagen, wie das verhindert oder behandelt wird, sonst verhält sich jeder Empfänger anders. Das Problem ist echt und hat in der Praxis einen Namen; die Lösung findet ihr in Challenge 3 selbst.",
+      "en": "Exactly. The specification must say how this is prevented or handled, otherwise every receiver behaves differently. The problem is real and has a name in practice; you will find the solution yourselves in challenge 3."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil der Sender dann für jede Nachricht ein anderes Anfangsmuster wählen muss, das nicht im Text vorkommt.",
-     "begruendung": "Ein wechselndes Muster kann der Empfänger nicht erkennen, denn er müsste es vorher kennen. Das Anfangsmuster ist fest vereinbart; die Spezifikation muss mit dem festen Muster umgehen."
+     "text": {
+      "de": "Weil der Sender dann für jede Nachricht ein anderes Anfangsmuster wählen muss, das nicht im Text vorkommt.",
+      "en": "Because the sender then has to choose a different start pattern for every message, one that does not occur in the text."
+     },
+     "begruendung": {
+      "de": "Ein wechselndes Muster kann der Empfänger nicht erkennen, denn er müsste es vorher kennen. Das Anfangsmuster ist fest vereinbart; die Spezifikation muss mit dem festen Muster umgehen.",
+      "en": "The receiver cannot recognise a changing pattern, since it would have to know it in advance. The start pattern is fixed by agreement; the specification must cope with the fixed pattern."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil der Empfänger das Muster sonst als Teil des Textes liest und ein paar Zeichen zu viel ausgibt.",
-     "begruendung": "Die Verwechslung läuft andersherum: Nicht das Muster wird als Text gelesen, sondern Text wird als Muster gelesen. Die Folge ist kein Zeichen zu viel, sondern ein Empfänger, der die bisherige Nachricht verwirft."
+     "text": {
+      "de": "Weil der Empfänger das Muster sonst als Teil des Textes liest und ein paar Zeichen zu viel ausgibt.",
+      "en": "Because the receiver would otherwise read the pattern as part of the text and output a few characters too many."
+     },
+     "begruendung": {
+      "de": "Die Verwechslung läuft andersherum: Nicht das Muster wird als Text gelesen, sondern Text wird als Muster gelesen. Die Folge ist kein Zeichen zu viel, sondern ein Empfänger, der die bisherige Nachricht verwirft.",
+      "en": "The confusion runs the other way: it is not the pattern being read as text, but text being read as the pattern. The result is not an extra character but a receiver that discards the message so far."
+     }
     }
    ]
   },
   {
    "id": "pr-006",
    "niveau": "verstehen",
-   "frage": "Der Sender schickt zwei Nachrichten direkt hintereinander. Woran kann der\nEmpfänger erkennen, wo die erste aufhört? (Mehrere richtige Antworten\nmöglich.)",
+   "frage": {
+    "de": "Der Sender schickt zwei Nachrichten direkt hintereinander. Woran kann der\nEmpfänger erkennen, wo die erste aufhört? (Mehrere richtige Antworten\nmöglich.)",
+    "en": "The sender transmits two messages back to back. How can the receiver tell\nwhere the first one ends? (Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -175,30 +319,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "An einem Längenfeld am Anfang, das sagt, wie viele Zeichen folgen.",
-     "begruendung": "Richtig: Der Empfänger zählt mit und weiß nach der angesagten Zahl, dass Schluss ist. Preis: Das Feld muss fehlerfrei ankommen, und die Länge ist durch die Feldgröße begrenzt."
+     "text": {
+      "de": "An einem Längenfeld am Anfang, das sagt, wie viele Zeichen folgen.",
+      "en": "By a length field at the start that says how many characters follow."
+     },
+     "begruendung": {
+      "de": "Richtig: Der Empfänger zählt mit und weiß nach der angesagten Zahl, dass Schluss ist. Preis: Das Feld muss fehlerfrei ankommen, und die Länge ist durch die Feldgröße begrenzt.",
+      "en": "Correct: the receiver counts along and knows after the announced number that it is over. Price: the field must arrive error-free, and the length is limited by the field size."
+     }
     },
     {
      "kennung": "b",
-     "text": "An einer vereinbarten Endmarkierung, die nach dem letzten Zeichen gesendet wird.",
-     "begruendung": "Richtig: Die Nachricht darf beliebig lang sein, und der Empfänger hört auf, sobald die Marke kommt. Preis: Die Marke darf nicht zufällig in den Daten vorkommen, dieselbe Frage wie beim Anfangsmuster."
+     "text": {
+      "de": "An einer vereinbarten Endmarkierung, die nach dem letzten Zeichen gesendet wird.",
+      "en": "By an agreed end marker sent after the last character."
+     },
+     "begruendung": {
+      "de": "Richtig: Die Nachricht darf beliebig lang sein, und der Empfänger hört auf, sobald die Marke kommt. Preis: Die Marke darf nicht zufällig in den Daten vorkommen, dieselbe Frage wie beim Anfangsmuster.",
+      "en": "Correct: the message may be of any length, and the receiver stops as soon as the marker arrives. Price: the marker must not occur in the data by chance, the same question as for the start pattern."
+     }
     },
     {
      "kennung": "c",
-     "text": "Daran, dass die Zeichen ein sinnvolles Wort ergeben; sobald es vollständig ist, beginnt die nächste Nachricht.",
-     "begruendung": "Der Empfänger kennt den Inhalt nicht und kann 'sinnvoll' nicht entscheiden: 'HALLO' könnte auch der Anfang von 'HALLOWEEN' sein. Das Ende muss aus der Absprache folgen, nicht aus dem Inhalt."
+     "text": {
+      "de": "Daran, dass die Zeichen ein sinnvolles Wort ergeben; sobald es vollständig ist, beginnt die nächste Nachricht.",
+      "en": "By the characters forming a meaningful word; as soon as it is complete, the next message begins."
+     },
+     "begruendung": {
+      "de": "Der Empfänger kennt den Inhalt nicht und kann 'sinnvoll' nicht entscheiden: 'HALLO' könnte auch der Anfang von 'HALLOWEEN' sein. Das Ende muss aus der Absprache folgen, nicht aus dem Inhalt.",
+      "en": "The receiver does not know the content and cannot decide 'meaningful': 'HALLO' could also be the start of 'HALLOWEEN'. The end must follow from the agreement, not from the content."
+     }
     },
     {
      "kennung": "d",
-     "text": "Daran, dass die zweite Nachricht mit dem Anfangsmuster beginnt; sobald es wieder auftaucht, ist die erste beendet.",
-     "begruendung": "Klingt sparsam, hat aber eine Lücke: Die letzte Nachricht endet dann nie, denn nach ihr kommt kein Anfangsmuster mehr. Der Empfänger würde ewig auf ein Ende warten, das nur bei der vorletzten Nachricht funktioniert."
+     "text": {
+      "de": "Daran, dass die zweite Nachricht mit dem Anfangsmuster beginnt; sobald es wieder auftaucht, ist die erste beendet.",
+      "en": "By the second message starting with the start pattern; as soon as it appears again, the first one is over."
+     },
+     "begruendung": {
+      "de": "Klingt sparsam, hat aber eine Lücke: Die letzte Nachricht endet dann nie, denn nach ihr kommt kein Anfangsmuster mehr. Der Empfänger würde ewig auf ein Ende warten, das nur bei der vorletzten Nachricht funktioniert.",
+      "en": "Sounds economical but has a gap: the last message then never ends, since no start pattern follows it. The receiver would wait forever for an end that only works for the second-to-last message."
+     }
     }
    ]
   },
   {
    "id": "pr-007",
    "niveau": "anwenden",
-   "frage": "Team A beendet seine Nachrichten mit der Endmarkierung Blau-Rot-Blau.\nTeam B schickt stattdessen am Anfang ein Längenfeld mit 8 Bit, das die Zahl\nder Zeichen angibt. Welche Aussage über die beiden Verfahren trifft zu?",
+   "frage": {
+    "de": "Team A beendet seine Nachrichten mit der Endmarkierung Blau-Rot-Blau.\nTeam B schickt stattdessen am Anfang ein Längenfeld mit 8 Bit, das die Zahl\nder Zeichen angibt. Welche Aussage über die beiden Verfahren trifft zu?",
+    "en": "Team A ends its messages with the end marker blue-red-blue. Team B\ninstead sends an 8-bit length field at the start giving the number of\ncharacters. Which statement about the two approaches is true?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -206,30 +377,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Bei Team B ist eine Nachricht höchstens 255 Zeichen lang, bei Team A gibt es keine solche Obergrenze.",
-     "begruendung": "Genau: 8 Bit zählen von 0 bis 255, mehr Zeichen kann das Feld nicht ansagen. Die Endmarkierung kennt keine Grenze, dafür muss sie sich von den Daten unterscheiden lassen. Beide Wege sind richtig, sie zahlen nur verschiedene Preise."
+     "text": {
+      "de": "Bei Team B ist eine Nachricht höchstens 255 Zeichen lang, bei Team A gibt es keine solche Obergrenze.",
+      "en": "With team B a message is at most 255 characters long, with team A there is no such upper limit."
+     },
+     "begruendung": {
+      "de": "Genau: 8 Bit zählen von 0 bis 255, mehr Zeichen kann das Feld nicht ansagen. Die Endmarkierung kennt keine Grenze, dafür muss sie sich von den Daten unterscheiden lassen. Beide Wege sind richtig, sie zahlen nur verschiedene Preise.",
+      "en": "Exactly: 8 bits count from 0 to 255, the field cannot announce more characters. The end marker has no limit, but it must be distinguishable from the data. Both approaches are right, they just pay different prices."
+     }
     },
     {
      "kennung": "b",
-     "text": "Team A ist im Vorteil, denn ein Übertragungsfehler in der Endmarkierung kostet nur das letzte Zeichen, ein Fehler im Längenfeld die ganze Nachricht.",
-     "begruendung": "Halb richtig: Ein falsches Längenfeld verdirbt tatsächlich die ganze Nachricht. Aber eine verpasste Endmarkierung kostet nicht ein Zeichen, sondern das Ende: Der Empfänger liest weiter und hängt sich an allem auf, was danach kommt."
+     "text": {
+      "de": "Team A ist im Vorteil, denn ein Übertragungsfehler in der Endmarkierung kostet nur das letzte Zeichen, ein Fehler im Längenfeld die ganze Nachricht.",
+      "en": "Team A has the advantage, since a transmission error in the end marker costs only the last character, an error in the length field the whole message."
+     },
+     "begruendung": {
+      "de": "Halb richtig: Ein falsches Längenfeld verdirbt tatsächlich die ganze Nachricht. Aber eine verpasste Endmarkierung kostet nicht ein Zeichen, sondern das Ende: Der Empfänger liest weiter und hängt sich an allem auf, was danach kommt.",
+      "en": "Half right: a wrong length field does indeed spoil the whole message. But a missed end marker costs not one character but the end: the receiver keeps reading and gets stuck on whatever comes next."
+     }
     },
     {
      "kennung": "c",
-     "text": "Team B braucht zusätzlich eine Endmarkierung, denn das Längenfeld sagt dem Empfänger nur, wie lang die Nachricht ist, nicht wann sie aufhört.",
-     "begruendung": "Wer die Länge kennt und mitzählt, weiß genau, wann Schluss ist. Das Längenfeld ersetzt die Endmarkierung, es ergänzt sie nicht; eine Marke dazu wäre ein zweiter Weg für dieselbe Information."
+     "text": {
+      "de": "Team B braucht zusätzlich eine Endmarkierung, denn das Längenfeld sagt dem Empfänger nur, wie lang die Nachricht ist, nicht wann sie aufhört.",
+      "en": "Team B additionally needs an end marker, since the length field only tells the receiver how long the message is, not when it stops."
+     },
+     "begruendung": {
+      "de": "Wer die Länge kennt und mitzählt, weiß genau, wann Schluss ist. Das Längenfeld ersetzt die Endmarkierung, es ergänzt sie nicht; eine Marke dazu wäre ein zweiter Weg für dieselbe Information.",
+      "en": "Whoever knows the length and counts along knows exactly when it is over. The length field replaces the end marker, it does not supplement it; a marker on top would be a second route for the same information."
+     }
     },
     {
      "kennung": "d",
-     "text": "Team A muss die ganze Nachricht erst vollständig empfangen haben, bevor es das erste Zeichen anzeigen darf, Team B kann sofort ausgeben.",
-     "begruendung": "Ob Zeichen sofort oder erst am Ende angezeigt werden, entscheidet das Programm, nicht das Verfahren. Beide Empfänger können jedes Zeichen ausgeben, sobald es gelesen ist; das Ende brauchen sie nur, um zu wissen, wann sie aufhören."
+     "text": {
+      "de": "Team A muss die ganze Nachricht erst vollständig empfangen haben, bevor es das erste Zeichen anzeigen darf, Team B kann sofort ausgeben.",
+      "en": "Team A has to receive the whole message completely before it may display the first character, team B can output immediately."
+     },
+     "begruendung": {
+      "de": "Ob Zeichen sofort oder erst am Ende angezeigt werden, entscheidet das Programm, nicht das Verfahren. Beide Empfänger können jedes Zeichen ausgeben, sobald es gelesen ist; das Ende brauchen sie nur, um zu wissen, wann sie aufhören.",
+      "en": "Whether characters are displayed at once or only at the end is decided by the program, not the approach. Both receivers can output each character as soon as it is read; they need the end only to know when to stop."
+     }
     }
    ]
   },
   {
    "id": "pr-008",
    "niveau": "anwenden",
-   "frage": "So verarbeitet ein Empfänger seine Symbole. Bei der Abnahme kommt die\nLive-Änderung: 'Übertragt zwei Nachrichten hintereinander, ohne den\nEmpfänger neu zu starten.' Was passiert?",
+   "frage": {
+    "de": "So verarbeitet ein Empfänger seine Symbole. Bei der Abnahme kommt die\nLive-Änderung: 'Übertragt zwei Nachrichten hintereinander, ohne den\nEmpfänger neu zu starten.' Was passiert?",
+    "en": "This is how a receiver processes its symbols. At the acceptance test comes\nthe live change: 'Transmit two messages back to back without restarting the\nreceiver.' What happens?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -238,30 +436,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Beide Nachrichten kommen an, denn im Zustand 'done' wartet der Empfänger von selbst wieder auf das Anfangsmuster.",
-     "begruendung": "Von selbst passiert nichts. Für 'done' gibt es keinen Zweig, also läuft die Schleife weiter, liest Symbole und lässt sie fallen. Zurück nach 'waiting' kommt der Empfänger nur, wenn es jemand hinschreibt."
+     "text": {
+      "de": "Beide Nachrichten kommen an, denn im Zustand 'done' wartet der Empfänger von selbst wieder auf das Anfangsmuster.",
+      "en": "Both messages arrive, since in state 'done' the receiver automatically waits for the start pattern again."
+     },
+     "begruendung": {
+      "de": "Von selbst passiert nichts. Für 'done' gibt es keinen Zweig, also läuft die Schleife weiter, liest Symbole und lässt sie fallen. Zurück nach 'waiting' kommt der Empfänger nur, wenn es jemand hinschreibt.",
+      "en": "Nothing happens by itself. There is no branch for 'done', so the loop keeps running, reads symbols and drops them. The receiver only gets back to 'waiting' if someone writes that down."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die zweite Nachricht wird an die erste angehängt und am Ende als eine lange Nachricht ausgegeben, weil message nie geleert wird.",
-     "begruendung": "Das wäre der Fehler, wenn der Empfänger nach 'done' wieder ins Lesen käme. So weit kommt er aber gar nicht: Nach der ersten Endmarkierung steckt er in 'done' fest, und dort wird nichts mehr angehängt und nichts mehr ausgegeben."
+     "text": {
+      "de": "Die zweite Nachricht wird an die erste angehängt und am Ende als eine lange Nachricht ausgegeben, weil message nie geleert wird.",
+      "en": "The second message is appended to the first and printed at the end as one long message, because message is never cleared."
+     },
+     "begruendung": {
+      "de": "Das wäre der Fehler, wenn der Empfänger nach 'done' wieder ins Lesen käme. So weit kommt er aber gar nicht: Nach der ersten Endmarkierung steckt er in 'done' fest, und dort wird nichts mehr angehängt und nichts mehr ausgegeben.",
+      "en": "That would be the bug if the receiver got back to reading after 'done'. But it never gets that far: after the first end marker it is stuck in 'done', where nothing is appended and nothing is printed."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die erste Nachricht wird ausgegeben, dann bleibt der Empfänger im Zustand 'done' und übergeht die zweite vollständig.",
-     "begruendung": "Genau. Das Gedächtnis des Programms hat einen Zustand ohne Rückweg. Die Reparatur ist klein: nach der Ausgabe message leeren und zurück nach 'waiting', dann ist 'done' gar nicht nötig."
+     "text": {
+      "de": "Die erste Nachricht wird ausgegeben, dann bleibt der Empfänger im Zustand 'done' und übergeht die zweite vollständig.",
+      "en": "The first message is printed, then the receiver stays in state 'done' and ignores the second one completely."
+     },
+     "begruendung": {
+      "de": "Genau. Das Gedächtnis des Programms hat einen Zustand ohne Rückweg. Die Reparatur ist klein: nach der Ausgabe message leeren und zurück nach 'waiting', dann ist 'done' gar nicht nötig.",
+      "en": "Exactly. The program's memory has a state with no way back. The repair is small: after printing, clear message and return to 'waiting', then 'done' is not needed at all."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das Programm bricht mit einer Fehlermeldung ab, sobald es im Zustand 'done' ein weiteres Symbol liest, weil dieser Fall nicht behandelt ist.",
-     "begruendung": "Ein nicht behandelter Fall ist in Python kein Fehler. Trifft keine Bedingung zu, wird einfach nichts getan, und die Schleife geht zum nächsten Symbol. Das Programm läuft stumm weiter, und genau das macht den Fehler bei der Abnahme so unangenehm."
+     "text": {
+      "de": "Das Programm bricht mit einer Fehlermeldung ab, sobald es im Zustand 'done' ein weiteres Symbol liest, weil dieser Fall nicht behandelt ist.",
+      "en": "The program aborts with an error message as soon as it reads another symbol in state 'done', because this case is not handled."
+     },
+     "begruendung": {
+      "de": "Ein nicht behandelter Fall ist in Python kein Fehler. Trifft keine Bedingung zu, wird einfach nichts getan, und die Schleife geht zum nächsten Symbol. Das Programm läuft stumm weiter, und genau das macht den Fehler bei der Abnahme so unangenehm.",
+      "en": "An unhandled case is not an error in Python. If no condition matches, nothing is done and the loop moves to the next symbol. The program runs on silently, which is exactly what makes the bug so awkward at the acceptance test."
+     }
     }
    ]
   },
   {
    "id": "pr-009",
    "niveau": "verstehen",
-   "frage": "Euer Empfänger erkennt gerade das Symbol Rot. Warum genügt diese Messung\nallein nicht, um zu entscheiden, was das Programm damit tun soll?",
+   "frage": {
+    "de": "Euer Empfänger erkennt gerade das Symbol Rot. Warum genügt diese Messung\nallein nicht, um zu entscheiden, was das Programm damit tun soll?",
+    "en": "Your receiver has just recognised the symbol red. Why is this reading alone\nnot enough to decide what the program should do with it?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -269,30 +494,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil eine einzelne Messung zu unsicher ist; erst der Mittelwert mehrerer Messungen sagt, ob es wirklich Rot war.",
-     "begruendung": "Stimmt als Messregel, beantwortet aber eine andere Frage. Hier ist das Rot bereits sicher erkannt, und trotzdem bleibt offen, was es bedeutet: Das entscheidet nicht die Messung, sondern die Lage, in der der Empfänger gerade ist."
+     "text": {
+      "de": "Weil eine einzelne Messung zu unsicher ist; erst der Mittelwert mehrerer Messungen sagt, ob es wirklich Rot war.",
+      "en": "Because a single reading is too uncertain; only the average of several readings tells whether it really was red."
+     },
+     "begruendung": {
+      "de": "Stimmt als Messregel, beantwortet aber eine andere Frage. Hier ist das Rot bereits sicher erkannt, und trotzdem bleibt offen, was es bedeutet: Das entscheidet nicht die Messung, sondern die Lage, in der der Empfänger gerade ist.",
+      "en": "True as a measurement rule, but it answers a different question. Here the red is already recognised for certain, and still it is open what it means: that is decided not by the reading but by the situation the receiver is in."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil die Bedeutung vom Zustand abhängt: Beim Warten kann Rot Teil des Anfangsmusters oder Zufall sein, beim Lesen ist es ein Datensymbol.",
-     "begruendung": "Genau. Dieselbe Messung, verschiedene Reaktionen, je nachdem, was vorher war. Deshalb braucht der Empfänger ein Gedächtnis, meist eine Variable wie state, die festhält, wo er gerade steht."
+     "text": {
+      "de": "Weil die Bedeutung vom Zustand abhängt: Beim Warten kann Rot Teil des Anfangsmusters oder Zufall sein, beim Lesen ist es ein Datensymbol.",
+      "en": "Because the meaning depends on the state: while waiting, red may be part of the start pattern or chance, while reading it is a data symbol."
+     },
+     "begruendung": {
+      "de": "Genau. Dieselbe Messung, verschiedene Reaktionen, je nachdem, was vorher war. Deshalb braucht der Empfänger ein Gedächtnis, meist eine Variable wie state, die festhält, wo er gerade steht.",
+      "en": "Exactly. Same reading, different reactions, depending on what came before. That is why the receiver needs a memory, usually a variable like state, which records where it currently is."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil Rot in jedem Protokoll für das Anfangsmuster reserviert ist und deshalb nie als Zeichen vorkommen darf.",
-     "begruendung": "Welche Farbe wofür steht, legt jedes Team selbst fest; es gibt keine allgemeine Reservierung. Und selbst wenn ein Team Rot für den Anfang reserviert, muss sein Empfänger trotzdem wissen, ob er gerade wartet oder liest."
+     "text": {
+      "de": "Weil Rot in jedem Protokoll für das Anfangsmuster reserviert ist und deshalb nie als Zeichen vorkommen darf.",
+      "en": "Because red is reserved for the start pattern in every protocol and may therefore never occur as a character."
+     },
+     "begruendung": {
+      "de": "Welche Farbe wofür steht, legt jedes Team selbst fest; es gibt keine allgemeine Reservierung. Und selbst wenn ein Team Rot für den Anfang reserviert, muss sein Empfänger trotzdem wissen, ob er gerade wartet oder liest.",
+      "en": "Which colour stands for what is decided by each team; there is no general reservation. And even if a team reserves red for the start, its receiver still has to know whether it is currently waiting or reading."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil der Empfänger zuerst prüfen muss, ob der Sender überhaupt eingeschaltet ist, bevor er ein Symbol deuten darf.",
-     "begruendung": "Genau das kann der Empfänger nicht: Er sieht nur Licht und weiß nie direkt, ob ein Sender dahintersteckt. Ob 'Sender da' gilt, schließt er aus dem Anfangsmuster, also wieder aus seinem Zustand, nicht aus einer eigenen Prüfung."
+     "text": {
+      "de": "Weil der Empfänger zuerst prüfen muss, ob der Sender überhaupt eingeschaltet ist, bevor er ein Symbol deuten darf.",
+      "en": "Because the receiver first has to check whether the sender is switched on at all before it may interpret a symbol."
+     },
+     "begruendung": {
+      "de": "Genau das kann der Empfänger nicht: Er sieht nur Licht und weiß nie direkt, ob ein Sender dahintersteckt. Ob 'Sender da' gilt, schließt er aus dem Anfangsmuster, also wieder aus seinem Zustand, nicht aus einer eigenen Prüfung.",
+      "en": "That is precisely what the receiver cannot do: it only sees light and never knows directly whether a sender is behind it. Whether 'sender present' holds, it concludes from the start pattern, that is, from its state again, not from a check of its own."
+     }
     }
    ]
   },
   {
    "id": "pr-010",
    "niveau": "anwenden",
-   "frage": "Ein Team gibt beim Interop-Test diese Spezifikation ab: 'Symbole: 0 ist Rot,\n1 ist Blau. Anfang: dreimal Rot-Blau. Zeichen: 8 Bit je Zeichen nach der\nASCII-Tabelle. Ende: dreimal Blau-Rot.' Was fehlt, damit ein anderes Team\ndanach einen Empfänger bauen kann?",
+   "frage": {
+    "de": "Ein Team gibt beim Interop-Test diese Spezifikation ab: 'Symbole: 0 ist Rot,\n1 ist Blau. Anfang: dreimal Rot-Blau. Zeichen: 8 Bit je Zeichen nach der\nASCII-Tabelle. Ende: dreimal Blau-Rot.' Was fehlt, damit ein anderes Team\ndanach einen Empfänger bauen kann?",
+    "en": "At the interop test a team hands in this specification: 'Symbols: 0 is red,\n1 is blue. Start: red-blue three times. Characters: 8 bits per character\naccording to the ASCII table. End: blue-red three times.' What is missing\nfor another team to build a receiver from it?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -300,30 +552,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein Teamname und eine Versionsnummer, damit das Partnerteam sicher ist, die aktuelle Fassung des Protokolls umzusetzen.",
-     "begruendung": "Ordentlich, aber nicht das, woran der Empfänger scheitert. Mit Namen und Version, aber ohne die fehlende Angabe kann das Partnerteam immer noch nichts bauen."
+     "text": {
+      "de": "Ein Teamname und eine Versionsnummer, damit das Partnerteam sicher ist, die aktuelle Fassung des Protokolls umzusetzen.",
+      "en": "A team name and a version number, so that the partner team can be sure to implement the current version of the protocol."
+     },
+     "begruendung": {
+      "de": "Ordentlich, aber nicht das, woran der Empfänger scheitert. Mit Namen und Version, aber ohne die fehlende Angabe kann das Partnerteam immer noch nichts bauen.",
+      "en": "Tidy, but not what the receiver fails on. With name and version but without the missing item, the partner team still cannot build anything."
+     }
     },
     {
      "kennung": "b",
-     "text": "Eine Prüfsumme, denn ohne sie kann das Partnerteam nicht feststellen, ob es das Protokoll richtig umgesetzt hat.",
-     "begruendung": "Ob die Umsetzung stimmt, prüft das Partnerteam, indem es eine bekannte Nachricht überträgt und vergleicht; dafür braucht es keine Prüfsumme. Die Prüfsumme wäre ein Zusatz für Challenge 4, kein Lückenfüller für diese Spezifikation."
+     "text": {
+      "de": "Eine Prüfsumme, denn ohne sie kann das Partnerteam nicht feststellen, ob es das Protokoll richtig umgesetzt hat.",
+      "en": "A checksum, since without it the partner team cannot determine whether it has implemented the protocol correctly."
+     },
+     "begruendung": {
+      "de": "Ob die Umsetzung stimmt, prüft das Partnerteam, indem es eine bekannte Nachricht überträgt und vergleicht; dafür braucht es keine Prüfsumme. Die Prüfsumme wäre ein Zusatz für Challenge 4, kein Lückenfüller für diese Spezifikation.",
+      "en": "Whether the implementation is right, the partner team checks by transmitting a known message and comparing; no checksum is needed for that. The checksum would be an addition for challenge 4, not a gap-filler for this specification."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Zeit: wie lange ein Symbol steht, sonst weiß der Empfänger weder, wann er messen soll, noch, wann das nächste Symbol beginnt.",
-     "begruendung": "Genau. Das Team hat die Symbolrate weggelassen, weil es sie selbst kennt. Das ist die klassische Lücke: Alles, was man weiß, aber nicht aufschreibt, fehlt dem, der danach bauen muss. Die Probe aus der Vorlage lautet deshalb: Streicht in Gedanken alles, was ihr wisst und nicht aufgeschrieben habt."
+     "text": {
+      "de": "Die Zeit: wie lange ein Symbol steht, sonst weiß der Empfänger weder, wann er messen soll, noch, wann das nächste Symbol beginnt.",
+      "en": "The timing: how long a symbol lasts, otherwise the receiver knows neither when to measure nor when the next symbol begins."
+     },
+     "begruendung": {
+      "de": "Genau. Das Team hat die Symbolrate weggelassen, weil es sie selbst kennt. Das ist die klassische Lücke: Alles, was man weiß, aber nicht aufschreibt, fehlt dem, der danach bauen muss. Die Probe aus der Vorlage lautet deshalb: Streicht in Gedanken alles, was ihr wisst und nicht aufgeschrieben habt.",
+      "en": "Exactly. The team left out the symbol rate because it knows it itself. That is the classic gap: everything you know but do not write down is missing for whoever has to build from it. Hence the test from the template: mentally cross out everything you know but have not written down."
+     }
     },
     {
      "kennung": "d",
-     "text": "Nichts, die Angaben genügen: Symbolbedeutung, Anfang, Zeichencode und Ende sind vollständig festgelegt.",
-     "begruendung": "Genau so liest sich die Spezifikation für das Team, das sie geschrieben hat. Für ein fremdes Team fehlt die Zeit: Ohne Symboldauer kann es nicht einmal das Anfangsmuster zuverlässig abtasten."
+     "text": {
+      "de": "Nichts, die Angaben genügen: Symbolbedeutung, Anfang, Zeichencode und Ende sind vollständig festgelegt.",
+      "en": "Nothing, the information is sufficient: symbol meaning, start, character code and end are all fully specified."
+     },
+     "begruendung": {
+      "de": "Genau so liest sich die Spezifikation für das Team, das sie geschrieben hat. Für ein fremdes Team fehlt die Zeit: Ohne Symboldauer kann es nicht einmal das Anfangsmuster zuverlässig abtasten.",
+      "en": "That is exactly how the specification reads to the team that wrote it. For a foreign team the timing is missing: without the symbol duration it cannot even sample the start pattern reliably."
+     }
     }
    ]
   },
   {
    "id": "pr-011",
    "niveau": "verstehen",
-   "frage": "Beim Interop-Test baut das Partnerteam nach eurer Spezifikation einen\nEmpfänger, und er versteht eure Nachrichten nicht. Zwischen euren eigenen\nGeräten läuft alles. Was zeigt das zuerst?",
+   "frage": {
+    "de": "Beim Interop-Test baut das Partnerteam nach eurer Spezifikation einen\nEmpfänger, und er versteht eure Nachrichten nicht. Zwischen euren eigenen\nGeräten läuft alles. Was zeigt das zuerst?",
+    "en": "At the interop test the partner team builds a receiver from your\nspecification, and it does not understand your messages. Between your own\ndevices everything works. What does this show first of all?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -331,30 +610,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass eure Spezifikation Lücken hat, die ihr selbst nie bemerkt habt, weil ihr sie stillschweigend aus dem eigenen Wissen gefüllt habt.",
-     "begruendung": "Genau. Eine Absprache, die nur zwischen euch beiden funktioniert, ist noch kein Protokoll. Der Interop-Test ist die einzige ehrliche Prüfung eurer Dokumentation, und ein Scheitern ist ihr Ergebnis, nicht ihr Versagen."
+     "text": {
+      "de": "Dass eure Spezifikation Lücken hat, die ihr selbst nie bemerkt habt, weil ihr sie stillschweigend aus dem eigenen Wissen gefüllt habt.",
+      "en": "That your specification has gaps you never noticed yourselves, because you silently filled them from your own knowledge."
+     },
+     "begruendung": {
+      "de": "Genau. Eine Absprache, die nur zwischen euch beiden funktioniert, ist noch kein Protokoll. Der Interop-Test ist die einzige ehrliche Prüfung eurer Dokumentation, und ein Scheitern ist ihr Ergebnis, nicht ihr Versagen.",
+      "en": "Exactly. An agreement that only works between the two of you is not yet a protocol. The interop test is the only honest check of your documentation, and a failure is its result, not its breakdown."
+     }
     },
     {
      "kennung": "b",
-     "text": "Dass das Partnerteam die Spezifikation nicht sorgfältig gelesen hat; geprüft wird beim Interop-Test vor allem, wie genau jemand ein Dokument umsetzt.",
-     "begruendung": "Möglich, aber nicht die erste Erklärung und nicht der Zweck des Tests. Geprüft wird die Spezifikation, nicht der Leser. Wo ein sorgfältiger Leser scheitert, hat meist das Dokument etwas verschwiegen."
+     "text": {
+      "de": "Dass das Partnerteam die Spezifikation nicht sorgfältig gelesen hat; geprüft wird beim Interop-Test vor allem, wie genau jemand ein Dokument umsetzt.",
+      "en": "That the partner team did not read the specification carefully; the interop test mainly checks how precisely someone implements a document."
+     },
+     "begruendung": {
+      "de": "Möglich, aber nicht die erste Erklärung und nicht der Zweck des Tests. Geprüft wird die Spezifikation, nicht der Leser. Wo ein sorgfältiger Leser scheitert, hat meist das Dokument etwas verschwiegen.",
+      "en": "Possible, but not the first explanation and not the purpose of the test. What is tested is the specification, not the reader. Where a careful reader fails, the document has usually left something unsaid."
+     }
     },
     {
      "kennung": "c",
-     "text": "Dass euer Verfahren technisch schwächer ist als das des Partnerteams und bei der Normung besser nicht zur Wahl steht.",
-     "begruendung": "Zwischen euren Geräten läuft es, das Verfahren funktioniert also. Gescheitert ist die Beschreibung, nicht die Technik. Für die Normung zählt beides, und ein gut beschriebenes einfaches Verfahren schlägt ein schlecht beschriebenes raffiniertes."
+     "text": {
+      "de": "Dass euer Verfahren technisch schwächer ist als das des Partnerteams und bei der Normung besser nicht zur Wahl steht.",
+      "en": "That your approach is technically weaker than the partner team's and had better not be a candidate in the standardisation."
+     },
+     "begruendung": {
+      "de": "Zwischen euren Geräten läuft es, das Verfahren funktioniert also. Gescheitert ist die Beschreibung, nicht die Technik. Für die Normung zählt beides, und ein gut beschriebenes einfaches Verfahren schlägt ein schlecht beschriebenes raffiniertes.",
+      "en": "It works between your devices, so the approach functions. What failed is the description, not the technology. Both count for standardisation, and a well-described simple approach beats a poorly described clever one."
+     }
     },
     {
      "kennung": "d",
-     "text": "Dass die Geräte der beiden Teams unterschiedlich kalibriert sind, und das lässt sich durch keine Spezifikation ausgleichen.",
-     "begruendung": "Verschiedene Geräte messen verschieden, das stimmt. Gerade deshalb gehört in die Spezifikation, wie die Kalibrierung abläuft: welche Farben wie lange in welcher Reihenfolge kommen. Fehlt das, ist es wieder eine Lücke im Dokument."
+     "text": {
+      "de": "Dass die Geräte der beiden Teams unterschiedlich kalibriert sind, und das lässt sich durch keine Spezifikation ausgleichen.",
+      "en": "That the two teams' devices are calibrated differently, and no specification can compensate for that."
+     },
+     "begruendung": {
+      "de": "Verschiedene Geräte messen verschieden, das stimmt. Gerade deshalb gehört in die Spezifikation, wie die Kalibrierung abläuft: welche Farben wie lange in welcher Reihenfolge kommen. Fehlt das, ist es wieder eine Lücke im Dokument.",
+      "en": "Different devices measure differently, that is true. That is precisely why the specification must say how calibration works: which colours come for how long in which order. If that is missing, it is again a gap in the document."
+     }
     }
    ]
   },
   {
    "id": "pr-012",
    "niveau": "erinnern",
-   "frage": "Am Ende von Challenge 3 einigt sich die Klasse in einer Normungssitzung auf\neinen gemeinsamen Rahmen. Was zeigt diese Sitzung darüber, wie Standards\nentstehen?",
+   "frage": {
+    "de": "Am Ende von Challenge 3 einigt sich die Klasse in einer Normungssitzung auf\neinen gemeinsamen Rahmen. Was zeigt diese Sitzung darüber, wie Standards\nentstehen?",
+    "en": "At the end of challenge 3 the class agrees on a common frame in a\nstandardisation session. What does this session show about how standards\ncome about?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -362,23 +668,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Standards werden von Fachleuten am Reißbrett entworfen, bevor jemand etwas baut, damit alle von Anfang an gleich arbeiten.",
-     "begruendung": "Genau umgekehrt: Erst haben alle Teams eigene Rahmen gebaut und im Interop-Test gemerkt, was fehlt. Der Standard entsteht aus dem Vergleich funktionierender Lösungen, und diese Reihenfolge ist Absicht."
+     "text": {
+      "de": "Standards werden von Fachleuten am Reißbrett entworfen, bevor jemand etwas baut, damit alle von Anfang an gleich arbeiten.",
+      "en": "Standards are designed by experts at the drawing board before anyone builds anything, so that everyone works the same way from the start."
+     },
+     "begruendung": {
+      "de": "Genau umgekehrt: Erst haben alle Teams eigene Rahmen gebaut und im Interop-Test gemerkt, was fehlt. Der Standard entsteht aus dem Vergleich funktionierender Lösungen, und diese Reihenfolge ist Absicht.",
+      "en": "The other way round: first all teams built their own frames and found out in the interop test what was missing. The standard emerges from comparing working solutions, and this order is deliberate."
+     }
     },
     {
      "kennung": "b",
-     "text": "Ein Standard ist eine Vereinbarung zwischen Menschen: Aus mehreren funktionierenden Lösungen wird eine gewählt, damit alle dieselbe benutzen.",
-     "begruendung": "Genau. Wessen Präambel war robuster, wer hatte an ein Längenfeld gedacht? Daraus wird ein gemeinsamer Rahmen. So entstehen auch echte Standards: durch Vergleich und Einigung, nicht durch Notwendigkeit."
+     "text": {
+      "de": "Ein Standard ist eine Vereinbarung zwischen Menschen: Aus mehreren funktionierenden Lösungen wird eine gewählt, damit alle dieselbe benutzen.",
+      "en": "A standard is an agreement between people: out of several working solutions one is chosen so that everyone uses the same."
+     },
+     "begruendung": {
+      "de": "Genau. Wessen Präambel war robuster, wer hatte an ein Längenfeld gedacht? Daraus wird ein gemeinsamer Rahmen. So entstehen auch echte Standards: durch Vergleich und Einigung, nicht durch Notwendigkeit.",
+      "en": "Exactly. Whose preamble was more robust, who had thought of a length field? From that a common frame emerges. Real standards come about the same way: through comparison and agreement, not through necessity."
+     }
     },
     {
      "kennung": "c",
-     "text": "Der Standard ist die technisch beste Lösung; die Abstimmung in der Klasse stellt nur fest, welche das ist.",
-     "begruendung": "Mehrere Rahmen können gleich gut funktionieren, etwa einer mit Längenfeld und einer mit Endmarkierung. Die Klasse wählt einen davon, weil alle denselben brauchen, nicht weil die anderen falsch wären."
+     "text": {
+      "de": "Der Standard ist die technisch beste Lösung; die Abstimmung in der Klasse stellt nur fest, welche das ist.",
+      "en": "The standard is the technically best solution; the vote in class merely establishes which one that is."
+     },
+     "begruendung": {
+      "de": "Mehrere Rahmen können gleich gut funktionieren, etwa einer mit Längenfeld und einer mit Endmarkierung. Die Klasse wählt einen davon, weil alle denselben brauchen, nicht weil die anderen falsch wären.",
+      "en": "Several frames can work equally well, say one with a length field and one with an end marker. The class picks one of them because everyone needs the same, not because the others would be wrong."
+     }
     },
     {
      "kennung": "d",
-     "text": "Ein Standard muss auch festlegen, wie aus Bits Licht wird, sonst wären die Übertragungen der Teams nicht vergleichbar.",
-     "begruendung": "Der Klassenstandard regelt nur den Rahmen des Bitstroms. Alles darunter, Farben, Tempo, Kalibrierung, bleibt jedem Team überlassen. Gerade dadurch bleibt der Wettbewerb in Challenge 4 offen."
+     "text": {
+      "de": "Ein Standard muss auch festlegen, wie aus Bits Licht wird, sonst wären die Übertragungen der Teams nicht vergleichbar.",
+      "en": "A standard also has to specify how bits become light, otherwise the teams' transmissions would not be comparable."
+     },
+     "begruendung": {
+      "de": "Der Klassenstandard regelt nur den Rahmen des Bitstroms. Alles darunter, Farben, Tempo, Kalibrierung, bleibt jedem Team überlassen. Gerade dadurch bleibt der Wettbewerb in Challenge 4 offen.",
+      "en": "The class standard governs only the frame of the bit stream. Everything below it, colours, speed, calibration, remains up to each team. That is exactly what keeps the competition in challenge 4 open."
+     }
     }
    ]
   }

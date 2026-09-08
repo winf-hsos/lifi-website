@@ -4,7 +4,10 @@
   {
    "id": "si-001",
    "niveau": "erinnern",
-   "frage": "Was ist im Sinn dieses Konzepts ein Symbol?",
+   "frage": {
+    "de": "Was ist im Sinn dieses Konzepts ein Symbol?",
+    "en": "In the sense of this concept, what is a symbol?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein kleines Bild, etwa ein Icon auf dem Bildschirm.",
-     "begruendung": "Das ist die Alltagsbedeutung. Hier meint Symbol etwas Allgemeineres, das auch eine Farbe, ein Ton oder eine Handbewegung sein kann."
+     "text": {
+      "de": "Ein kleines Bild, etwa ein Icon auf dem Bildschirm.",
+      "en": "A small picture, such as an icon on a screen."
+     },
+     "begruendung": {
+      "de": "Das ist die Alltagsbedeutung. Hier meint Symbol etwas Allgemeineres, das auch eine Farbe, ein Ton oder eine Handbewegung sein kann.",
+      "en": "That is the everyday meaning. Here, symbol means something more general that can also be a colour, a tone, or a hand gesture."
+     }
     },
     {
      "kennung": "b",
-     "text": "Ein Schriftzeichen wie ein Buchstabe oder eine Ziffer, also etwas, das man aufschreiben kann.",
-     "begruendung": "Schriftzeichen sind ein Beispiel für Symbole, aber nur eines. Eure Farben sind genauso Symbole, obwohl sich keine davon aufschreiben lässt."
+     "text": {
+      "de": "Ein Schriftzeichen wie ein Buchstabe oder eine Ziffer, also etwas, das man aufschreiben kann.",
+      "en": "A written character such as a letter or a digit, that is, something you can write down."
+     },
+     "begruendung": {
+      "de": "Schriftzeichen sind ein Beispiel für Symbole, aber nur eines. Eure Farben sind genauso Symbole, obwohl sich keine davon aufschreiben lässt.",
+      "en": "Written characters are one example of symbols, but only one. Your colours are symbols just as much, although none of them can be written down."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein vereinbarter, unterscheidbarer Zustand.",
-     "begruendung": "Genau, und beide Wörter tragen: unterscheidbar (der Empfänger muss ihn sicher von allen anderen trennen können) und vereinbart (ohne Absprache trägt der Zustand keine Bedeutung)."
+     "text": {
+      "de": "Ein vereinbarter, unterscheidbarer Zustand.",
+      "en": "An agreed, distinguishable state."
+     },
+     "begruendung": {
+      "de": "Genau, und beide Wörter tragen: unterscheidbar (der Empfänger muss ihn sicher von allen anderen trennen können) und vereinbart (ohne Absprache trägt der Zustand keine Bedeutung).",
+      "en": "Exactly, and both words matter: distinguishable (the receiver must reliably tell it apart from all others) and agreed (without an agreement, the state carries no meaning)."
+     }
     },
     {
      "kennung": "d",
-     "text": "Ein einzelner Messwert des Sensors, etwa eine bestimmte Helligkeit.",
-     "begruendung": "Ein Messwert ist erst einmal nur eine Zahl. Zum Symbol wird ein Bereich von Messwerten erst dadurch, dass ihr ihm gemeinsam eine Bedeutung gebt."
+     "text": {
+      "de": "Ein einzelner Messwert des Sensors, etwa eine bestimmte Helligkeit.",
+      "en": "A single sensor reading, such as a particular brightness."
+     },
+     "begruendung": {
+      "de": "Ein Messwert ist erst einmal nur eine Zahl. Zum Symbol wird ein Bereich von Messwerten erst dadurch, dass ihr ihm gemeinsam eine Bedeutung gebt.",
+      "en": "A reading is just a number at first. A range of readings only becomes a symbol once you jointly give it a meaning."
+     }
     }
    ]
   },
   {
    "id": "si-002",
    "niveau": "erinnern",
-   "frage": "Was ist ein Alphabet im Sinn dieses Konzepts?",
+   "frage": {
+    "de": "Was ist ein Alphabet im Sinn dieses Konzepts?",
+    "en": "What is an alphabet in the sense of this concept?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -43,25 +73,46 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die 26 Buchstaben von A bis Z, mit denen sich jeder Text schreiben lässt.",
-     "begruendung": "Das ist ein Alphabet, aber nur ein Beispiel. Eure vier Farben bilden genauso eines, mit vier statt 26 Symbolen."
+     "text": {
+      "de": "Die 26 Buchstaben von A bis Z, mit denen sich jeder Text schreiben lässt.",
+      "en": "The 26 letters from A to Z, with which any text can be written."
+     },
+     "begruendung": {
+      "de": "Das ist ein Alphabet, aber nur ein Beispiel. Eure vier Farben bilden genauso eines, mit vier statt 26 Symbolen.",
+      "en": "That is one alphabet, but only an example. Your four colours form one just as well, with four symbols instead of 26."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Menge aller Symbole, die Sender und Empfänger vereinbart haben.",
-     "begruendung": "Genau. Wie groß diese Menge sein darf, entscheidet ihr nicht allein: Eure Hardware und euer Raum entscheiden mit, das ist die Messfrage von Challenge 1."
+     "text": {
+      "de": "Die Menge aller Symbole, die Sender und Empfänger vereinbart haben.",
+      "en": "The set of all symbols agreed between sender and receiver."
+     },
+     "begruendung": {
+      "de": "Genau. Wie groß diese Menge sein darf, entscheidet ihr nicht allein: Eure Hardware und euer Raum entscheiden mit, das ist die Messfrage von Challenge 1.",
+      "en": "Exactly. How large this set may be is not your decision alone: your hardware and your room have a say, which is the measurement question of Challenge 1."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Reihenfolge, in der die Symbole einer Nachricht gesendet werden.",
-     "begruendung": "Die Reihenfolge ist die Nachricht selbst. Das Alphabet ist der Vorrat, aus dem sie zusammengesetzt wird."
+     "text": {
+      "de": "Die Reihenfolge, in der die Symbole einer Nachricht gesendet werden.",
+      "en": "The order in which the symbols of a message are sent."
+     },
+     "begruendung": {
+      "de": "Die Reihenfolge ist die Nachricht selbst. Das Alphabet ist der Vorrat, aus dem sie zusammengesetzt wird.",
+      "en": "The order is the message itself. The alphabet is the stock from which it is assembled."
+     }
     }
    ]
   },
   {
    "id": "si-003",
    "niveau": "verstehen",
-   "frage": "Wer legt fest, dass auf eurer Strecke ein grünes Aufleuchten „A“ bedeutet?",
+   "frage": {
+    "de": "Wer legt fest, dass auf eurer Strecke ein grünes Aufleuchten „A“ bedeutet?",
+    "en": "Who decides that on your link a green flash means \"A\"?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -69,30 +120,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Physik des Lichts: Jede Farbe hat eine feste Wellenlänge, und an der erkennt der Empfänger, welches Zeichen gemeint ist.",
-     "begruendung": "Die Wellenlänge macht Grün unterscheidbar, mehr nicht. Welches Zeichen dahintersteht, steht nicht im Licht, sondern entsteht ausschließlich durch Vereinbarung."
+     "text": {
+      "de": "Die Physik des Lichts: Jede Farbe hat eine feste Wellenlänge, und an der erkennt der Empfänger, welches Zeichen gemeint ist.",
+      "en": "The physics of light: each colour has a fixed wavelength, and from that the receiver recognises which character is meant."
+     },
+     "begruendung": {
+      "de": "Die Wellenlänge macht Grün unterscheidbar, mehr nicht. Welches Zeichen dahintersteht, steht nicht im Licht, sondern entsteht ausschließlich durch Vereinbarung.",
+      "en": "The wavelength makes green distinguishable, nothing more. Which character stands behind it is not in the light; it arises exclusively from agreement."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sender und Empfänger gemeinsam, durch eine Vereinbarung vor der Übertragung.",
-     "begruendung": "Genau, und beide Seiten müssen exakt dieselbe Zuordnung benutzen. In eurem Team ist diese Vereinbarung ein Stück Dokumentation und zwei Stellen im Code, eine im Sender, eine im Empfänger."
+     "text": {
+      "de": "Sender und Empfänger gemeinsam, durch eine Vereinbarung vor der Übertragung.",
+      "en": "Sender and receiver together, by an agreement made before the transmission."
+     },
+     "begruendung": {
+      "de": "Genau, und beide Seiten müssen exakt dieselbe Zuordnung benutzen. In eurem Team ist diese Vereinbarung ein Stück Dokumentation und zwei Stellen im Code, eine im Sender, eine im Empfänger.",
+      "en": "Exactly, and both sides must use exactly the same mapping. In your team this agreement is a piece of documentation and two places in the code, one in the sender, one in the receiver."
+     }
     },
     {
      "kennung": "c",
-     "text": "Eine Norm für Lichtübertragung, an die sich alle Teams halten, damit sich die Geräte untereinander verstehen.",
-     "begruendung": "Für eure Strecke gibt es keine Norm, und genau das ist der Punkt: In den Challenges 1 bis 3 ist die Zuordnung eure freie Entwurfsentscheidung. Erst der Klassenstandard in Challenge 4 ist so etwas wie eine Norm, und auch der wird vereinbart, nicht gefunden."
+     "text": {
+      "de": "Eine Norm für Lichtübertragung, an die sich alle Teams halten, damit sich die Geräte untereinander verstehen.",
+      "en": "A standard for light transmission that all teams follow so that the devices understand each other."
+     },
+     "begruendung": {
+      "de": "Für eure Strecke gibt es keine Norm, und genau das ist der Punkt: In den Challenges 1 bis 3 ist die Zuordnung eure freie Entwurfsentscheidung. Erst der Klassenstandard in Challenge 4 ist so etwas wie eine Norm, und auch der wird vereinbart, nicht gefunden.",
+      "en": "There is no standard for your link, and that is the point: in challenges 1 to 3 the mapping is your free design decision. Only the class standard in challenge 4 resembles a norm, and even that is agreed, not discovered."
+     }
     },
     {
      "kennung": "d",
-     "text": "Der Empfänger allein, denn er ist die Seite, die aus Messwerten Zeichen machen muss.",
-     "begruendung": "Ein Empfänger, der allein entscheidet, rät. Ohne dass der Sender dieselbe Zuordnung benutzt, kommt zuverlässig Unsinn heraus."
+     "text": {
+      "de": "Der Empfänger allein, denn er ist die Seite, die aus Messwerten Zeichen machen muss.",
+      "en": "The receiver alone, since it is the side that has to turn readings into characters."
+     },
+     "begruendung": {
+      "de": "Ein Empfänger, der allein entscheidet, rät. Ohne dass der Sender dieselbe Zuordnung benutzt, kommt zuverlässig Unsinn heraus.",
+      "en": "A receiver deciding alone is guessing. Unless the sender uses the same mapping, the result is reliably nonsense."
+     }
     }
    ]
   },
   {
    "id": "si-004",
    "niveau": "erinnern",
-   "frage": "Was ist ein Bit?",
+   "frage": {
+    "de": "Was ist ein Bit?",
+    "en": "What is a bit?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -100,30 +178,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein winziges Bauteil im Computer, das Strom entweder durchlässt oder sperrt.",
-     "begruendung": "Ein Bit ist kein Ding, sondern eine Maßeinheit. Es lässt sich in Bauteilen speichern, aber genauso in einem Lichtblitz oder einer Handbewegung."
+     "text": {
+      "de": "Ein winziges Bauteil im Computer, das Strom entweder durchlässt oder sperrt.",
+      "en": "A tiny component inside a computer that either passes or blocks current."
+     },
+     "begruendung": {
+      "de": "Ein Bit ist kein Ding, sondern eine Maßeinheit. Es lässt sich in Bauteilen speichern, aber genauso in einem Lichtblitz oder einer Handbewegung.",
+      "en": "A bit is not a thing but a unit of measurement. It can be stored in components, but just as well in a light flash or a hand gesture."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Speichermenge, die ein Computer für ein einzelnes Zeichen wie „A“ braucht.",
-     "begruendung": "Das beschreibt ein Byte, eine Gruppe von acht Bit. Die Verwechslung ist verbreitet, kostet aber gleich den Faktor acht."
+     "text": {
+      "de": "Die Speichermenge, die ein Computer für ein einzelnes Zeichen wie „A“ braucht.",
+      "en": "The amount of storage a computer needs for a single character such as \"A\"."
+     },
+     "begruendung": {
+      "de": "Das beschreibt ein Byte, eine Gruppe von acht Bit. Die Verwechslung ist verbreitet, kostet aber gleich den Faktor acht.",
+      "en": "That describes a byte, a group of eight bits. The mix-up is common but immediately costs a factor of eight."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Informationsmenge einer Entscheidung zwischen zwei gleichberechtigten Möglichkeiten.",
-     "begruendung": "Genau: ein Ja oder Nein, ein An oder Aus. Das Bit ist die kleinste Währung, in der sich Information zählen lässt, und jede größere Menge wird in dieser Währung gemessen."
+     "text": {
+      "de": "Die Informationsmenge einer Entscheidung zwischen zwei gleichberechtigten Möglichkeiten.",
+      "en": "The amount of information in a decision between two equally likely possibilities."
+     },
+     "begruendung": {
+      "de": "Genau: ein Ja oder Nein, ein An oder Aus. Das Bit ist die kleinste Währung, in der sich Information zählen lässt, und jede größere Menge wird in dieser Währung gemessen.",
+      "en": "Exactly: one yes or no, one on or off. The bit is the smallest currency in which information can be counted, and every larger amount is measured in it."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die kleinste Helligkeit, die der Sensor noch messen kann.",
-     "begruendung": "Das wäre eine Eigenschaft eures Sensors. Ein Bit ist von jeder Hardware unabhängig, es zählt Möglichkeiten, nicht Helligkeiten."
+     "text": {
+      "de": "Die kleinste Helligkeit, die der Sensor noch messen kann.",
+      "en": "The smallest brightness the sensor can still measure."
+     },
+     "begruendung": {
+      "de": "Das wäre eine Eigenschaft eures Sensors. Ein Bit ist von jeder Hardware unabhängig, es zählt Möglichkeiten, nicht Helligkeiten.",
+      "en": "That would be a property of your sensor. A bit is independent of any hardware; it counts possibilities, not brightness."
+     }
     }
    ]
   },
   {
    "id": "si-005",
    "niveau": "verstehen",
-   "frage": "Euer Alphabet hat vier Farben. Wie viel Information trägt ein einzelnes\nempfangenes Symbol, und warum?",
+   "frage": {
+    "de": "Euer Alphabet hat vier Farben. Wie viel Information trägt ein einzelnes\nempfangenes Symbol, und warum?",
+    "en": "Your alphabet has four colours. How much information does a single\nreceived symbol carry, and why?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -131,30 +236,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "4 Bit, denn jede der vier Farben ist eine eigene Möglichkeit, und jede Möglichkeit zählt ein Bit.",
-     "begruendung": "Bits zählen nicht die Möglichkeiten selbst, sondern die Ja/Nein-Entscheidungen, die nötig sind, um eine davon zu bestimmen. Das sind deutlich weniger: Bei vier Möglichkeiten zwei."
+     "text": {
+      "de": "4 Bit, denn jede der vier Farben ist eine eigene Möglichkeit, und jede Möglichkeit zählt ein Bit.",
+      "en": "4 bits, because each of the four colours is a possibility of its own, and each possibility counts as one bit."
+     },
+     "begruendung": {
+      "de": "Bits zählen nicht die Möglichkeiten selbst, sondern die Ja/Nein-Entscheidungen, die nötig sind, um eine davon zu bestimmen. Das sind deutlich weniger: Bei vier Möglichkeiten zwei.",
+      "en": "Bits do not count the possibilities themselves but the yes/no decisions needed to pin one down. That is considerably fewer: two for four possibilities."
+     }
     },
     {
      "kennung": "b",
-     "text": "2 Bit, denn zwei Ja/Nein-Entscheidungen genügen, um eine von vier Farben sicher zu bestimmen.",
-     "begruendung": "Genau, und die Begründung kennt ihr aus Sitzung 1: Halbieren. Erste Frage teilt die vier in zwei Hälften, zweite Frage trifft die Farbe. Jede Verdopplung des Alphabets schenkt genau ein weiteres Bit je Symbol."
+     "text": {
+      "de": "2 Bit, denn zwei Ja/Nein-Entscheidungen genügen, um eine von vier Farben sicher zu bestimmen.",
+      "en": "2 bits, because two yes/no decisions suffice to determine one of four colours."
+     },
+     "begruendung": {
+      "de": "Genau, und die Begründung kennt ihr aus Sitzung 1: Halbieren. Erste Frage teilt die vier in zwei Hälften, zweite Frage trifft die Farbe. Jede Verdopplung des Alphabets schenkt genau ein weiteres Bit je Symbol.",
+      "en": "Exactly, and you know the reasoning from session 1: halving. The first question splits the four in half, the second hits the colour. Every doubling of the alphabet grants exactly one more bit per symbol."
+     }
     },
     {
      "kennung": "c",
-     "text": "1 Bit, denn der Empfänger trifft je Symbol eine Entscheidung: Es ist angekommen oder nicht.",
-     "begruendung": "Ob etwas ankommt, ist nicht die Frage; welche der vier Farben es ist, ist sie. Ein Symbol ist nicht automatisch ein Bit: Wie viel es trägt, hängt davon ab, aus wie vielen Möglichkeiten es ausgewählt wurde."
+     "text": {
+      "de": "1 Bit, denn der Empfänger trifft je Symbol eine Entscheidung: Es ist angekommen oder nicht.",
+      "en": "1 bit, because the receiver makes one decision per symbol: it has arrived or it has not."
+     },
+     "begruendung": {
+      "de": "Ob etwas ankommt, ist nicht die Frage; welche der vier Farben es ist, ist sie. Ein Symbol ist nicht automatisch ein Bit: Wie viel es trägt, hängt davon ab, aus wie vielen Möglichkeiten es ausgewählt wurde.",
+      "en": "Whether something arrives is not the question; which of the four colours it is, is. A symbol is not automatically one bit: how much it carries depends on how many possibilities it was chosen from."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das hängt von der gesendeten Farbe ab, denn eine gut erkennbare Farbe wie Rot trägt mehr als eine schwer erkennbare wie Gelb.",
-     "begruendung": "Erkennbarkeit betrifft die Zuverlässigkeit, nicht die Menge. Bei vier gleichberechtigten Farben trägt jede dieselbe Information: Entscheidend ist die Zahl der Möglichkeiten, nicht die getroffene Wahl."
+     "text": {
+      "de": "Das hängt von der gesendeten Farbe ab, denn eine gut erkennbare Farbe wie Rot trägt mehr als eine schwer erkennbare wie Gelb.",
+      "en": "It depends on the colour sent, because an easily recognised colour such as red carries more than a hard one such as yellow."
+     },
+     "begruendung": {
+      "de": "Erkennbarkeit betrifft die Zuverlässigkeit, nicht die Menge. Bei vier gleichberechtigten Farben trägt jede dieselbe Information: Entscheidend ist die Zahl der Möglichkeiten, nicht die getroffene Wahl.",
+      "en": "Recognisability affects reliability, not amount. With four equally likely colours, each carries the same information: what counts is the number of possibilities, not the actual choice."
+     }
     }
    ]
   },
   {
    "id": "si-006",
    "niveau": "anwenden",
-   "frage": "Ein Team wechselt von 2 auf 8 Farben und sendet weiterhin gleich viele\nSymbole pro Sekunde. Wie ändert sich die Übertragungsdauer derselben\nDatei?",
+   "frage": {
+    "de": "Ein Team wechselt von 2 auf 8 Farben und sendet weiterhin gleich viele\nSymbole pro Sekunde. Wie ändert sich die Übertragungsdauer derselben\nDatei?",
+    "en": "A team switches from 2 to 8 colours and still sends the same number of\nsymbols per second. How does the transfer time of the same file change?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -162,30 +294,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie sinkt auf ein Viertel, denn 8 geteilt durch 2 ist 4.",
-     "begruendung": "Die Farbzahl teilt man nicht: Information wächst mit dem Verdoppeln. Von 2 auf 8 sind zwei Verdopplungen mehr, also von 1 auf 3 Bit je Symbol."
+     "text": {
+      "de": "Sie sinkt auf ein Viertel, denn 8 geteilt durch 2 ist 4.",
+      "en": "It drops to a quarter, because 8 divided by 2 is 4."
+     },
+     "begruendung": {
+      "de": "Die Farbzahl teilt man nicht: Information wächst mit dem Verdoppeln. Von 2 auf 8 sind zwei Verdopplungen mehr, also von 1 auf 3 Bit je Symbol.",
+      "en": "You do not divide the colour counts: information grows with doubling. From 2 to 8 is two more doublings, from 1 to 3 bits per symbol."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sie sinkt auf ein Drittel: Jedes Symbol trägt jetzt 3 Bit statt 1.",
-     "begruendung": "Genau: 2 Farben tragen 1 Bit je Symbol, 8 Farben tragen 3 (dreimal halbieren). Gleiche Symbolrate, dreifache Bitrate, ein Drittel der Zeit. Vorausgesetzt, die acht Farben bleiben unterscheidbar, und genau das ist die Grenze aus dem Konzept Analog und digital."
+     "text": {
+      "de": "Sie sinkt auf ein Drittel: Jedes Symbol trägt jetzt 3 Bit statt 1.",
+      "en": "It drops to a third: each symbol now carries 3 bits instead of 1."
+     },
+     "begruendung": {
+      "de": "Genau: 2 Farben tragen 1 Bit je Symbol, 8 Farben tragen 3 (dreimal halbieren). Gleiche Symbolrate, dreifache Bitrate, ein Drittel der Zeit. Vorausgesetzt, die acht Farben bleiben unterscheidbar, und genau das ist die Grenze aus dem Konzept Analog und digital.",
+      "en": "Exactly: 2 colours carry 1 bit per symbol, 8 colours carry 3 (halve three times). Same symbol rate, triple bit rate, a third of the time. Provided the eight colours stay distinguishable, which is the limit from the analog-and-digital concept."
+     }
     },
     {
      "kennung": "c",
-     "text": "Sie bleibt gleich, denn die Symbolrate hat sich nicht geändert.",
-     "begruendung": "Die Symbolrate ist gleich, aber jedes Symbol transportiert jetzt mehr. Zeit spart, wer mehr Bit je Symbol unterbringt, nicht nur, wer schneller blinkt."
+     "text": {
+      "de": "Sie bleibt gleich, denn die Symbolrate hat sich nicht geändert.",
+      "en": "It stays the same, since the symbol rate has not changed."
+     },
+     "begruendung": {
+      "de": "Die Symbolrate ist gleich, aber jedes Symbol transportiert jetzt mehr. Zeit spart, wer mehr Bit je Symbol unterbringt, nicht nur, wer schneller blinkt.",
+      "en": "The symbol rate is the same, but each symbol now transports more. Time is saved by packing more bits per symbol, not only by blinking faster."
+     }
     },
     {
      "kennung": "d",
-     "text": "Sie sinkt auf ein Achtel, ein Achtel je Farbe.",
-     "begruendung": "Dann müsste jede zusätzliche Farbe gleich viel bringen. Information wächst aber nur mit jeder Verdopplung des Alphabets um ein Bit, nicht mit jeder einzelnen Farbe."
+     "text": {
+      "de": "Sie sinkt auf ein Achtel, ein Achtel je Farbe.",
+      "en": "It drops to an eighth, one eighth per colour."
+     },
+     "begruendung": {
+      "de": "Dann müsste jede zusätzliche Farbe gleich viel bringen. Information wächst aber nur mit jeder Verdopplung des Alphabets um ein Bit, nicht mit jeder einzelnen Farbe.",
+      "en": "That would require every additional colour to contribute equally. Information grows by one bit only per doubling of the alphabet, not per single colour."
+     }
     }
    ]
   },
   {
    "id": "si-007",
    "niveau": "verstehen",
-   "frage": "Mehr Symbole je Alphabet heißt mehr Bit je Symbol. Warum macht man das\nAlphabet dann nicht einfach riesig, etwa 256 Farben?",
+   "frage": {
+    "de": "Mehr Symbole je Alphabet heißt mehr Bit je Symbol. Warum macht man das\nAlphabet dann nicht einfach riesig, etwa 256 Farben?",
+    "en": "More symbols per alphabet means more bits per symbol. Why not simply make\nthe alphabet huge, say 256 colours?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -193,30 +352,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die LED aus ihren drei Lämpchen nur eine begrenzte Zahl verschiedener Farben mischen kann.",
-     "begruendung": "Die LED mischt aus drei Kanälen Millionen Farbtöne, am Senden scheitert es nicht. Das Nadelöhr sitzt auf der anderen Seite."
+     "text": {
+      "de": "Weil die LED aus ihren drei Lämpchen nur eine begrenzte Zahl verschiedener Farben mischen kann.",
+      "en": "Because the LED can mix only a limited number of distinct colours from its three little lamps."
+     },
+     "begruendung": {
+      "de": "Die LED mischt aus drei Kanälen Millionen Farbtöne, am Senden scheitert es nicht. Das Nadelöhr sitzt auf der anderen Seite.",
+      "en": "The LED mixes millions of shades from three channels; sending is not the problem. The bottleneck sits on the other side."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil der Empfänger für 256 Farben eine Zuordnungstabelle bräuchte, deren Durchsuchen je Symbol zu lange dauert.",
-     "begruendung": "256 Einträge sind für einen Rechner nichts, ein einzelnes Byte hat so viele Werte, und das Nachschlagen dauert Bruchteile einer Mikrosekunde. Die Grenze ist nicht rechnerisch."
+     "text": {
+      "de": "Weil der Empfänger für 256 Farben eine Zuordnungstabelle bräuchte, deren Durchsuchen je Symbol zu lange dauert.",
+      "en": "Because the receiver would need a lookup table for 256 colours whose search per symbol takes too long."
+     },
+     "begruendung": {
+      "de": "256 Einträge sind für einen Rechner nichts, ein einzelnes Byte hat so viele Werte, und das Nachschlagen dauert Bruchteile einer Mikrosekunde. Die Grenze ist nicht rechnerisch.",
+      "en": "256 entries are nothing for a computer; a single byte has that many values, and the lookup takes a fraction of a microsecond. The limit is not computational."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil der Empfänger die Symbole noch sicher auseinanderhalten muss: Je mehr es sind, desto enger rücken ihre Messbereiche zusammen.",
-     "begruendung": "Genau, hier greifen die beiden Konzepte der Sitzung ineinander: Symbole und Information sagt, was ein größeres Alphabet bringt; Analog und digital sagt, was es kostet. Wo das Gleichgewicht liegt, entscheiden Rauschen, Umgebungslicht und eure Messreihe."
+     "text": {
+      "de": "Weil der Empfänger die Symbole noch sicher auseinanderhalten muss: Je mehr es sind, desto enger rücken ihre Messbereiche zusammen.",
+      "en": "Because the receiver must still tell the symbols apart reliably: the more there are, the closer their measurement regions crowd together."
+     },
+     "begruendung": {
+      "de": "Genau, hier greifen die beiden Konzepte der Sitzung ineinander: Symbole und Information sagt, was ein größeres Alphabet bringt; Analog und digital sagt, was es kostet. Wo das Gleichgewicht liegt, entscheiden Rauschen, Umgebungslicht und eure Messreihe.",
+      "en": "Exactly, this is where the two concepts of the session interlock: symbols-and-information says what a larger alphabet buys; analog-and-digital says what it costs. Where the balance lies is decided by noise, ambient light, and your measurements."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil ein Alphabet nur so viele Symbole braucht, wie der Text verschiedene Zeichen hat; weitere Farben blieben ungenutzt.",
-     "begruendung": "Zeichenvorrat und Alphabet hängen nicht so zusammen: Mehr Farben je Symbol heißt weniger Symbole je Zeichen, also schneller. Ungenutzt bliebe nichts; die Grenze liegt beim Empfänger, nicht beim Text."
+     "text": {
+      "de": "Weil ein Alphabet nur so viele Symbole braucht, wie der Text verschiedene Zeichen hat; weitere Farben blieben ungenutzt.",
+      "en": "Because an alphabet needs only as many symbols as the text has distinct characters; further colours would go unused."
+     },
+     "begruendung": {
+      "de": "Zeichenvorrat und Alphabet hängen nicht so zusammen: Mehr Farben je Symbol heißt weniger Symbole je Zeichen, also schneller. Ungenutzt bliebe nichts; die Grenze liegt beim Empfänger, nicht beim Text.",
+      "en": "Character set and alphabet are not tied like that: more colours per symbol means fewer symbols per character, hence faster. Nothing would go unused; the limit lies with the receiver, not the text."
+     }
     }
    ]
   },
   {
    "id": "si-008",
    "niveau": "anwenden",
-   "frage": "Ein Team empfängt jede Farbe fehlerfrei, die Trefferquote der Erkennung\nliegt bei 100 Prozent. Trotzdem kommt als Text nur Unsinn heraus. Was ist\ndie wahrscheinlichste Ursache?",
+   "frage": {
+    "de": "Ein Team empfängt jede Farbe fehlerfrei, die Trefferquote der Erkennung\nliegt bei 100 Prozent. Trotzdem kommt als Text nur Unsinn heraus. Was ist\ndie wahrscheinlichste Ursache?",
+    "en": "A team receives every colour without error; recognition accuracy is 100\npercent. Yet the resulting text is nonsense. What is the most likely\ncause?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -224,30 +410,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Sensor liefert verfälschte Werte, etwa weil die Verstärkung zu hoch eingestellt ist.",
-     "begruendung": "Verfälschte Werte würden schon die Farberkennung verderben. Die ist aber makellos, der Fehler liegt hinter ihr."
+     "text": {
+      "de": "Der Sensor liefert verfälschte Werte, etwa weil die Verstärkung zu hoch eingestellt ist.",
+      "en": "The sensor delivers distorted readings, for instance because the gain is set too high."
+     },
+     "begruendung": {
+      "de": "Verfälschte Werte würden schon die Farberkennung verderben. Die ist aber makellos, der Fehler liegt hinter ihr.",
+      "en": "Distorted readings would already spoil colour recognition. But that is flawless; the fault lies behind it."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sender und Empfänger benutzen unterschiedliche Zuordnungen von Farben zu Zeichen.",
-     "begruendung": "Genau: Das Signal kommt perfekt an, aber die Vereinbarung ist gebrochen. Bedeutung steckt nicht im Licht, sondern in der Zuordnung, und die muss auf beiden Seiten identisch sein. Ein Klassiker nach getrenntem Arbeiten an Sender- und Empfängercode."
+     "text": {
+      "de": "Sender und Empfänger benutzen unterschiedliche Zuordnungen von Farben zu Zeichen.",
+      "en": "Sender and receiver use different mappings from colours to characters."
+     },
+     "begruendung": {
+      "de": "Genau: Das Signal kommt perfekt an, aber die Vereinbarung ist gebrochen. Bedeutung steckt nicht im Licht, sondern in der Zuordnung, und die muss auf beiden Seiten identisch sein. Ein Klassiker nach getrenntem Arbeiten an Sender- und Empfängercode.",
+      "en": "Exactly: the signal arrives perfectly, but the agreement is broken. Meaning is not in the light but in the mapping, which must be identical on both sides. A classic after working separately on sender and receiver code."
+     }
     },
     {
      "kennung": "c",
-     "text": "Das Umgebungslicht verschiebt die Messwerte, sodass der Empfänger die Farben zwar sieht, aber falsch einsortiert.",
-     "begruendung": "Falsch einsortierte Farben wären Erkennungsfehler, und die stünden dann nicht bei null. Die Erkennung ist hier aber makellos; der Fehler liegt hinter ihr."
+     "text": {
+      "de": "Das Umgebungslicht verschiebt die Messwerte, sodass der Empfänger die Farben zwar sieht, aber falsch einsortiert.",
+      "en": "Ambient light shifts the readings, so the receiver sees the colours but sorts them into the wrong bins."
+     },
+     "begruendung": {
+      "de": "Falsch einsortierte Farben wären Erkennungsfehler, und die stünden dann nicht bei null. Die Erkennung ist hier aber makellos; der Fehler liegt hinter ihr.",
+      "en": "Colours sorted into the wrong bins would be recognition errors, and those would not be at zero. Recognition here is flawless; the fault lies behind it."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das Alphabet hat weniger Farben als der Text verschiedene Zeichen, deshalb landen mehrere Zeichen auf derselben Farbe.",
-     "begruendung": "So ordnet niemand zu. Ein kleines Alphabet bildet Zeichen auf Gruppen von Symbolen ab; das macht die Übertragung langsamer, nicht falscher."
+     "text": {
+      "de": "Das Alphabet hat weniger Farben als der Text verschiedene Zeichen, deshalb landen mehrere Zeichen auf derselben Farbe.",
+      "en": "The alphabet has fewer colours than the text has distinct characters, so several characters end up on the same colour."
+     },
+     "begruendung": {
+      "de": "So ordnet niemand zu. Ein kleines Alphabet bildet Zeichen auf Gruppen von Symbolen ab; das macht die Übertragung langsamer, nicht falscher.",
+      "en": "Nobody maps it like that. A small alphabet maps characters to groups of symbols; that makes transmission slower, not wrong."
+     }
     }
    ]
   },
   {
    "id": "si-009",
    "niveau": "anwenden",
-   "frage": "Ein Alphabet hat 16 Symbole. Wie viele Ja/Nein-Fragen braucht man\nhöchstens, um ein empfangenes Symbol sicher zu bestimmen?",
+   "frage": {
+    "de": "Ein Alphabet hat 16 Symbole. Wie viele Ja/Nein-Fragen braucht man\nhöchstens, um ein empfangenes Symbol sicher zu bestimmen?",
+    "en": "An alphabet has 16 symbols. At most how many yes/no questions are needed\nto determine a received symbol with certainty?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -255,30 +468,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "4, denn viermal halbieren führt von 16 Möglichkeiten auf eine.",
-     "begruendung": "Genau: 16, 8, 4, 2, 1. Dieselbe Rechnung wie beim Zahlenraten aus Sitzung 1, und zugleich die Aussage: Ein Symbol aus 16 trägt 4 Bit."
+     "text": {
+      "de": "4, denn viermal halbieren führt von 16 Möglichkeiten auf eine.",
+      "en": "4, because halving four times leads from 16 possibilities to one."
+     },
+     "begruendung": {
+      "de": "Genau: 16, 8, 4, 2, 1. Dieselbe Rechnung wie beim Zahlenraten aus Sitzung 1, und zugleich die Aussage: Ein Symbol aus 16 trägt 4 Bit.",
+      "en": "Exactly: 16, 8, 4, 2, 1. The same calculation as the guessing game from session 1, and at the same time the statement: a symbol out of 16 carries 4 bits."
+     }
     },
     {
      "kennung": "b",
-     "text": "8, denn jede Frage halbiert, und die Hälfte von 16 Möglichkeiten sind 8.",
-     "begruendung": "Halbieren heißt nicht, die Anzahl zu halbieren, sondern zu zählen, wie oft man halbieren kann. Das sind bei 16 nur vier Schritte."
+     "text": {
+      "de": "8, denn jede Frage halbiert, und die Hälfte von 16 Möglichkeiten sind 8.",
+      "en": "8, because each question halves, and half of 16 possibilities is 8."
+     },
+     "begruendung": {
+      "de": "Halbieren heißt nicht, die Anzahl zu halbieren, sondern zu zählen, wie oft man halbieren kann. Das sind bei 16 nur vier Schritte.",
+      "en": "Halving does not mean halving the count but counting how often you can halve. For 16 that is only four steps."
+     }
     },
     {
      "kennung": "c",
-     "text": "15, denn im schlechtesten Fall muss man 15 Symbole einzeln ausschließen.",
-     "begruendung": "So fragt, wer einzeln durchgeht. Das funktioniert, ist aber das langsame Verfahren aus Sitzung 1; mit geschickten Fragen fällt pro Antwort die Hälfte weg."
+     "text": {
+      "de": "15, denn im schlechtesten Fall muss man 15 Symbole einzeln ausschließen.",
+      "en": "15, because in the worst case you have to rule out 15 symbols one by one."
+     },
+     "begruendung": {
+      "de": "So fragt, wer einzeln durchgeht. Das funktioniert, ist aber das langsame Verfahren aus Sitzung 1; mit geschickten Fragen fällt pro Antwort die Hälfte weg.",
+      "en": "That is asking one by one. It works, but it is the slow procedure from session 1; with clever questions, half the candidates drop per answer."
+     }
     },
     {
      "kennung": "d",
-     "text": "2, denn jede Frage hat zwei Antworten, und zweimal zwei Antworten decken 16 ab.",
-     "begruendung": "Zwei Fragen trennen nur vier Möglichkeiten (zwei mal zwei). Für 16 braucht es vier Verdopplungen."
+     "text": {
+      "de": "2, denn jede Frage hat zwei Antworten, und zweimal zwei Antworten decken 16 ab.",
+      "en": "2, because every question has two answers, and two times two answers cover 16."
+     },
+     "begruendung": {
+      "de": "Zwei Fragen trennen nur vier Möglichkeiten (zwei mal zwei). Für 16 braucht es vier Verdopplungen.",
+      "en": "Two questions separate only four possibilities (two times two). For 16 you need four doublings."
+     }
     }
    ]
   },
   {
    "id": "si-010",
    "niveau": "verstehen",
-   "frage": "Welche Aussagen über Bits treffen zu?",
+   "frage": {
+    "de": "Welche Aussagen über Bits treffen zu?",
+    "en": "Which statements about bits are true?"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -287,35 +527,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein Bit unterscheidet genau zwei Möglichkeiten.",
-     "begruendung": "Genau, das ist die Definition: an oder aus, ja oder nein, hell oder dunkel."
+     "text": {
+      "de": "Ein Bit unterscheidet genau zwei Möglichkeiten.",
+      "en": "One bit distinguishes exactly two possibilities."
+     },
+     "begruendung": {
+      "de": "Genau, das ist die Definition: an oder aus, ja oder nein, hell oder dunkel.",
+      "en": "Exactly, that is the definition: on or off, yes or no, bright or dark."
+     }
     },
     {
      "kennung": "b",
-     "text": "Ein Bit und ein Byte bezeichnen dieselbe Menge, nur in verschiedenen Zusammenhängen.",
-     "begruendung": "Ein Byte sind acht Bit. Wer beides verwechselt, verrechnet sich bei jeder Größenangabe um den Faktor acht."
+     "text": {
+      "de": "Ein Bit und ein Byte bezeichnen dieselbe Menge, nur in verschiedenen Zusammenhängen.",
+      "en": "A bit and a byte denote the same amount, just in different contexts."
+     },
+     "begruendung": {
+      "de": "Ein Byte sind acht Bit. Wer beides verwechselt, verrechnet sich bei jeder Größenangabe um den Faktor acht.",
+      "en": "A byte is eight bits. Confusing the two throws every size estimate off by a factor of eight."
+     }
     },
     {
      "kennung": "c",
-     "text": "Jede Information lässt sich als Folge von Bits darstellen.",
-     "begruendung": "Richtig, und das ist der Grund, warum ein und dieselbe Technik Texte, Bilder und Töne transportieren kann. Wie die Zuordnung im Einzelnen aussieht, behandeln die Codesysteme in einer späteren Sitzung."
+     "text": {
+      "de": "Jede Information lässt sich als Folge von Bits darstellen.",
+      "en": "Any information can be represented as a sequence of bits."
+     },
+     "begruendung": {
+      "de": "Richtig, und das ist der Grund, warum ein und dieselbe Technik Texte, Bilder und Töne transportieren kann. Wie die Zuordnung im Einzelnen aussieht, behandeln die Codesysteme in einer späteren Sitzung.",
+      "en": "Correct, and that is why one and the same technology can transport text, images, and sound. How the mapping works in detail is covered by code systems in a later session."
+     }
     },
     {
      "kennung": "d",
-     "text": "Bits gibt es nur in Computern, denn nur dort werden Zustände elektrisch gespeichert.",
-     "begruendung": "Ein Lichtschalter, ein Münzwurf, eine hochgezogene Flagge: alles ein Bit, ganz ohne Computer. Bits zählen Möglichkeiten, egal worin sie stecken."
+     "text": {
+      "de": "Bits gibt es nur in Computern, denn nur dort werden Zustände elektrisch gespeichert.",
+      "en": "Bits exist only in computers, because only there are states stored electrically."
+     },
+     "begruendung": {
+      "de": "Ein Lichtschalter, ein Münzwurf, eine hochgezogene Flagge: alles ein Bit, ganz ohne Computer. Bits zählen Möglichkeiten, egal worin sie stecken.",
+      "en": "A light switch, a coin toss, a raised flag: all one bit, no computer involved. Bits count possibilities, whatever they live in."
+     }
     },
     {
      "kennung": "e",
-     "text": "Eine Nachricht enthält mehr Bits, wenn ihr Inhalt wichtiger ist.",
-     "begruendung": "Information misst Möglichkeiten, nicht Wichtigkeit. Ein „ja“ vor dem Traualtar und ein „ja“ an der Wursttheke tragen dasselbe eine Bit."
+     "text": {
+      "de": "Eine Nachricht enthält mehr Bits, wenn ihr Inhalt wichtiger ist.",
+      "en": "A message contains more bits if its content is more important."
+     },
+     "begruendung": {
+      "de": "Information misst Möglichkeiten, nicht Wichtigkeit. Ein „ja“ vor dem Traualtar und ein „ja“ an der Wursttheke tragen dasselbe eine Bit.",
+      "en": "Information measures possibilities, not importance. A 'yes' at the altar and a 'yes' at the deli counter carry the same single bit."
+     }
     }
    ]
   },
   {
    "id": "si-011",
    "niveau": "anwenden",
-   "frage": "Ein Team benutzt vier Farben, jedes Symbol trägt also 2 Bit. Es will eine\nKennung mit 12 Bit übertragen. Wie viele Symbole braucht das mindestens?",
+   "frage": {
+    "de": "Ein Team benutzt vier Farben, jedes Symbol trägt also 2 Bit. Es will eine\nKennung mit 12 Bit übertragen. Wie viele Symbole braucht das mindestens?",
+    "en": "A team uses four colours, so each symbol carries 2 bits. It wants to\ntransmit a 12-bit identifier. How many symbols does that take at least?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -323,30 +596,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "12, ein Symbol je Bit.",
-     "begruendung": "So wäre es bei nur zwei Farben. Vier Farben packen zwei Bit in jedes Symbol, das halbiert die Länge."
+     "text": {
+      "de": "12, ein Symbol je Bit.",
+      "en": "12, one symbol per bit."
+     },
+     "begruendung": {
+      "de": "So wäre es bei nur zwei Farben. Vier Farben packen zwei Bit in jedes Symbol, das halbiert die Länge.",
+      "en": "That would be the case with only two colours. Four colours pack two bits into each symbol, halving the length."
+     }
     },
     {
      "kennung": "b",
-     "text": "6, denn 12 Bit geteilt durch 2 Bit je Symbol.",
-     "begruendung": "Genau diese Division ist später die halbe Durchsatzrechnung: Bits geteilt durch Bits je Symbol ergibt die Symbolzahl, und mal Sekunden je Symbol die Dauer."
+     "text": {
+      "de": "6, denn 12 Bit geteilt durch 2 Bit je Symbol.",
+      "en": "6, because 12 bits divided by 2 bits per symbol."
+     },
+     "begruendung": {
+      "de": "Genau diese Division ist später die halbe Durchsatzrechnung: Bits geteilt durch Bits je Symbol ergibt die Symbolzahl, und mal Sekunden je Symbol die Dauer.",
+      "en": "Exactly this division is later half of every throughput calculation: bits divided by bits per symbol gives the symbol count, and times seconds per symbol the duration."
+     }
     },
     {
      "kennung": "c",
-     "text": "3, denn 12 geteilt durch 4 Farben.",
-     "begruendung": "Geteilt wird durch die Bits je Symbol, nicht durch die Farbzahl. Vier Farben tragen 2 Bit, nicht 4."
+     "text": {
+      "de": "3, denn 12 geteilt durch 4 Farben.",
+      "en": "3, because 12 divided by 4 colours."
+     },
+     "begruendung": {
+      "de": "Geteilt wird durch die Bits je Symbol, nicht durch die Farbzahl. Vier Farben tragen 2 Bit, nicht 4.",
+      "en": "You divide by bits per symbol, not by the number of colours. Four colours carry 2 bits, not 4."
+     }
     },
     {
      "kennung": "d",
-     "text": "24, zur Sicherheit jedes Bit doppelt.",
-     "begruendung": "Absichern durch Wiederholung ist eine echte Technik, aber eine eigene Entscheidung (sie kommt bei Redundanz und Fehlern). Gefragt war das Minimum."
+     "text": {
+      "de": "24, zur Sicherheit jedes Bit doppelt.",
+      "en": "24, each bit twice to be safe."
+     },
+     "begruendung": {
+      "de": "Absichern durch Wiederholung ist eine echte Technik, aber eine eigene Entscheidung (sie kommt bei Redundanz und Fehlern). Gefragt war das Minimum.",
+      "en": "Securing by repetition is a real technique, but a separate decision (it comes with redundancy and errors). The question asked for the minimum."
+     }
     }
    ]
   },
   {
    "id": "si-012",
    "niveau": "verstehen",
-   "frage": "Warum genügt im Prinzip ein Alphabet aus nur zwei Symbolen für jede noch\nso komplizierte Nachricht?",
+   "frage": {
+    "de": "Warum genügt im Prinzip ein Alphabet aus nur zwei Symbolen für jede noch\nso komplizierte Nachricht?",
+    "en": "Why is an alphabet of just two symbols in principle enough for any\nmessage, however complicated?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -354,30 +654,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Es genügt nicht: Für Texte braucht man mindestens 26 Symbole.",
-     "begruendung": "Der Ausweg ist die Gruppe: Fünf Zweiersymbole ergeben 32 Kombinationen, mehr als genug für 26 Buchstaben."
+     "text": {
+      "de": "Es genügt nicht: Für Texte braucht man mindestens 26 Symbole.",
+      "en": "It is not enough: text needs at least 26 symbols."
+     },
+     "begruendung": {
+      "de": "Der Ausweg ist die Gruppe: Fünf Zweiersymbole ergeben 32 Kombinationen, mehr als genug für 26 Buchstaben.",
+      "en": "The way out is grouping: five two-way symbols give 32 combinations, more than enough for 26 letters."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil zwei Symbole im Signal am weitesten auseinanderliegen und der Empfänger sie deshalb nie verwechselt.",
-     "begruendung": "Das stimmt, beantwortet aber die Frage nicht: Robust erkennbar heißt nicht ausdrucksfähig. Dass zwei Symbole für jede Nachricht reichen, liegt am Gruppieren, nicht am Abstand."
+     "text": {
+      "de": "Weil zwei Symbole im Signal am weitesten auseinanderliegen und der Empfänger sie deshalb nie verwechselt.",
+      "en": "Because two symbols lie furthest apart in the signal, so the receiver never confuses them."
+     },
+     "begruendung": {
+      "de": "Das stimmt, beantwortet aber die Frage nicht: Robust erkennbar heißt nicht ausdrucksfähig. Dass zwei Symbole für jede Nachricht reichen, liegt am Gruppieren, nicht am Abstand.",
+      "en": "True, but it does not answer the question: being robustly recognisable is not the same as being expressive. That two symbols suffice for any message is due to grouping, not to the gap."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil sich jedes Symbol eines größeren Alphabets durch eine feste Gruppe von Zweiersymbolen ersetzen lässt; es kostet nur Länge.",
-     "begruendung": "Genau, und deshalb ist das Bit die Universalwährung: Alles lässt sich in Zweierentscheidungen wechseln. Aus demselben Grund wird der Klassenstandard in Challenge 4 in Bits definiert und nicht in Farben: Bits überleben sogar den Tausch des Trägers, etwa Ton statt Licht."
+     "text": {
+      "de": "Weil sich jedes Symbol eines größeren Alphabets durch eine feste Gruppe von Zweiersymbolen ersetzen lässt; es kostet nur Länge.",
+      "en": "Because every symbol of a larger alphabet can be replaced by a fixed group of two-way symbols; it only costs length."
+     },
+     "begruendung": {
+      "de": "Genau, und deshalb ist das Bit die Universalwährung: Alles lässt sich in Zweierentscheidungen wechseln. Aus demselben Grund wird der Klassenstandard in Challenge 4 in Bits definiert und nicht in Farben: Bits überleben sogar den Tausch des Trägers, etwa Ton statt Licht.",
+      "en": "Exactly, and that is why the bit is the universal currency: everything can be exchanged into binary decisions. For the same reason the class standard in challenge 4 is defined in bits, not colours: bits even survive swapping the carrier, say sound instead of light."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil Computer intern ohnehin mit zwei Zuständen arbeiten und jede Nachricht schon vor dem Senden in dieser Form vorliegt.",
-     "begruendung": "Das ist eine Beobachtung, keine Begründung: Computer arbeiten so, weil das Gruppieren funktioniert, nicht umgekehrt. Der Grund liegt darin, dass sich jedes größere Symbol durch eine feste Zweiergruppe ersetzen lässt."
+     "text": {
+      "de": "Weil Computer intern ohnehin mit zwei Zuständen arbeiten und jede Nachricht schon vor dem Senden in dieser Form vorliegt.",
+      "en": "Because computers work with two states internally anyway, so every message is already in that form before sending."
+     },
+     "begruendung": {
+      "de": "Das ist eine Beobachtung, keine Begründung: Computer arbeiten so, weil das Gruppieren funktioniert, nicht umgekehrt. Der Grund liegt darin, dass sich jedes größere Symbol durch eine feste Zweiergruppe ersetzen lässt.",
+      "en": "That is an observation, not a reason: computers work that way because grouping works, not the other way round. The reason is that every larger symbol can be replaced by a fixed binary group."
+     }
     }
    ]
   },
   {
    "id": "si-013",
    "niveau": "verstehen",
-   "frage": "Was legt dieses Wörterbuch im Sinn des Konzepts fest?",
+   "frage": {
+    "de": "Was legt dieses Wörterbuch im Sinn des Konzepts fest?",
+    "en": "In terms of this concept, what does this dictionary establish?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -386,23 +713,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die vier Farben, die die LED erzeugen kann, jeweils mit dem Code, den der Hersteller dafür vorgesehen hat.",
-     "begruendung": "Die LED kann weit mehr Farben, als hier stehen, und die Codes stammen vom Team, nicht vom Hersteller. Das Wörterbuch wählt aus und ordnet zu, es beschreibt keine Hardwaregrenze."
+     "text": {
+      "de": "Die vier Farben, die die LED erzeugen kann, jeweils mit dem Code, den der Hersteller dafür vorgesehen hat.",
+      "en": "The four colours the LED can produce, each with the code the manufacturer assigned to it."
+     },
+     "begruendung": {
+      "de": "Die LED kann weit mehr Farben, als hier stehen, und die Codes stammen vom Team, nicht vom Hersteller. Das Wörterbuch wählt aus und ordnet zu, es beschreibt keine Hardwaregrenze.",
+      "en": "The LED can produce far more colours than listed, and the codes come from the team, not the manufacturer. The dictionary selects and assigns; it describes no hardware limit."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Vereinbarung: welches Symbol welche Bitgruppe trägt. Der Empfänger braucht exakt dieselbe Zuordnung, nur in Gegenrichtung.",
-     "begruendung": "Genau: Hier steht euer Alphabet als Code, vier Symbole, je 2 Bit. Diese Zeilen sind die eine Hälfte der Absprache; weichen Sender und Empfänger auch nur in einem Eintrag ab, wird aus perfektem Empfang perfekter Unsinn."
+     "text": {
+      "de": "Die Vereinbarung: welches Symbol welche Bitgruppe trägt. Der Empfänger braucht exakt dieselbe Zuordnung, nur in Gegenrichtung.",
+      "en": "The agreement: which symbol carries which bit group. The receiver needs exactly the same mapping, only in reverse."
+     },
+     "begruendung": {
+      "de": "Genau: Hier steht euer Alphabet als Code, vier Symbole, je 2 Bit. Diese Zeilen sind die eine Hälfte der Absprache; weichen Sender und Empfänger auch nur in einem Eintrag ab, wird aus perfektem Empfang perfekter Unsinn.",
+      "en": "Exactly: this is your alphabet as code, four symbols of 2 bits each. These lines are one half of the agreement; if sender and receiver differ in even one entry, perfect reception becomes perfect nonsense."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Reihenfolge, in der die Farben gesendet werden: erst Rot, dann Grün, dann Blau, dann Gelb.",
-     "begruendung": "Die Reihenfolge bestimmt die Nachricht, nicht das Wörterbuch. Hier steht nur, was jede Farbe bedeutet, wann sie drankommt, entscheidet der Text."
+     "text": {
+      "de": "Die Reihenfolge, in der die Farben gesendet werden: erst Rot, dann Grün, dann Blau, dann Gelb.",
+      "en": "The order in which the colours are sent: first red, then green, then blue, then yellow."
+     },
+     "begruendung": {
+      "de": "Die Reihenfolge bestimmt die Nachricht, nicht das Wörterbuch. Hier steht nur, was jede Farbe bedeutet, wann sie drankommt, entscheidet der Text.",
+      "en": "The order is determined by the message, not the dictionary. This only says what each colour means; when it appears is decided by the text."
+     }
     },
     {
      "kennung": "d",
-     "text": "Wie viele Symbole je Sekunde gesendet werden, denn zwei Bit je Symbol legen das Tempo der Übertragung fest.",
-     "begruendung": "Bits je Symbol sagen, wie viel ein Symbol trägt, nicht wie lange es dauert. Über Zeit sagt das Wörterbuch nichts, und das ist Absicht: Die Bedeutung der Symbole und das Tempo der Übertragung sind getrennte Entscheidungen."
+     "text": {
+      "de": "Wie viele Symbole je Sekunde gesendet werden, denn zwei Bit je Symbol legen das Tempo der Übertragung fest.",
+      "en": "How many symbols are sent per second, because two bits per symbol determine the pace of the transmission."
+     },
+     "begruendung": {
+      "de": "Bits je Symbol sagen, wie viel ein Symbol trägt, nicht wie lange es dauert. Über Zeit sagt das Wörterbuch nichts, und das ist Absicht: Die Bedeutung der Symbole und das Tempo der Übertragung sind getrennte Entscheidungen.",
+      "en": "Bits per symbol say how much a symbol carries, not how long it lasts. The dictionary says nothing about time, and deliberately so: the meaning of symbols and the pace of transmission are separate decisions."
+     }
     }
    ]
   }

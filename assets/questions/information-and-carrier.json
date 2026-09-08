@@ -4,7 +4,10 @@
   {
    "id": "ic-001",
    "niveau": "verstehen",
-   "frage": "Ihr öffnet eine kleine Bilddatei in einem Texteditor. Statt eines Bildes\nerscheint eine Seite voller Unsinnszeichen. Was zeigt das?",
+   "frage": {
+    "de": "Ihr öffnet eine kleine Bilddatei in einem Texteditor. Statt eines Bildes\nerscheint eine Seite voller Unsinnszeichen. Was zeigt das?",
+    "en": "You open a small image file in a text editor. Instead of an image, a page\nfull of nonsense characters appears. What does that show?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass die Datei beschädigt ist, denn eine intakte Bilddatei würde auch im Texteditor als Bild erscheinen.",
-     "begruendung": "Die Datei ist in Ordnung; der Bildbetrachter zeigt sie danach unverändert an. Der Texteditor liest dieselben Bytes nur als Zeichen, und als Zeichen ergeben sie keinen Sinn."
+     "text": {
+      "de": "Dass die Datei beschädigt ist, denn eine intakte Bilddatei würde auch im Texteditor als Bild erscheinen.",
+      "en": "That the file is damaged, since an intact image file would appear as an image in the text editor too."
+     },
+     "begruendung": {
+      "de": "Die Datei ist in Ordnung; der Bildbetrachter zeigt sie danach unverändert an. Der Texteditor liest dieselben Bytes nur als Zeichen, und als Zeichen ergeben sie keinen Sinn.",
+      "en": "The file is fine; the image viewer displays it unchanged afterwards. The text editor merely reads the same bytes as characters, and as characters they make no sense."
+     }
     },
     {
      "kennung": "b",
-     "text": "Dass die Bytes selbst nicht sagen, was sie bedeuten; der Editor liest sie als Zeichen, der Bildbetrachter als Bildpunkte.",
-     "begruendung": "Genau. Dieselben zweitausend Bytes sind ein Bild, ein Text oder Krach, je nachdem, wie man sie liest. Die Bedeutung steckt nicht in den Bytes, sondern in der Lesevorschrift, und die muss jemand dazusagen."
+     "text": {
+      "de": "Dass die Bytes selbst nicht sagen, was sie bedeuten; der Editor liest sie als Zeichen, der Bildbetrachter als Bildpunkte.",
+      "en": "That the bytes themselves do not say what they mean; the editor reads them as characters, the image viewer as pixels."
+     },
+     "begruendung": {
+      "de": "Genau. Dieselben zweitausend Bytes sind ein Bild, ein Text oder Krach, je nachdem, wie man sie liest. Die Bedeutung steckt nicht in den Bytes, sondern in der Lesevorschrift, und die muss jemand dazusagen.",
+      "en": "Exactly. The same two thousand bytes are an image, a text or noise, depending on how you read them. The meaning is not in the bytes but in the reading rule, and someone has to say which one."
+     }
     },
     {
      "kennung": "c",
-     "text": "Dass Bilder und Texte auf der Festplatte in verschiedenen Bereichen liegen und der Editor im falschen Bereich sucht.",
-     "begruendung": "Es gibt keine getrennten Bereiche; jede Datei ist eine Folge von Bytes, und der Editor hat genau diese Folge gefunden und gezeigt. Er hat sie nur anders gelesen als der Bildbetrachter."
+     "text": {
+      "de": "Dass Bilder und Texte auf der Festplatte in verschiedenen Bereichen liegen und der Editor im falschen Bereich sucht.",
+      "en": "That images and texts sit in different areas of the hard disk and the editor is looking in the wrong area."
+     },
+     "begruendung": {
+      "de": "Es gibt keine getrennten Bereiche; jede Datei ist eine Folge von Bytes, und der Editor hat genau diese Folge gefunden und gezeigt. Er hat sie nur anders gelesen als der Bildbetrachter.",
+      "en": "There are no separate areas; every file is a sequence of bytes, and the editor found and showed exactly that sequence. It just read it differently from the image viewer."
+     }
     },
     {
      "kennung": "d",
-     "text": "Dass der Texteditor die Bildbytes zuerst in Zeichen umrechnet und dabei die Bildinformation verloren geht.",
-     "begruendung": "Umgerechnet und verloren wird nichts; die Datei bleibt, wie sie ist. Der Editor zeigt jedes Byte als das Zeichen mit dieser Nummer. Die Bildinformation ist noch da, nur nicht als Bild lesbar."
+     "text": {
+      "de": "Dass der Texteditor die Bildbytes zuerst in Zeichen umrechnet und dabei die Bildinformation verloren geht.",
+      "en": "That the text editor first converts the image bytes into characters and the image information is lost in the process."
+     },
+     "begruendung": {
+      "de": "Umgerechnet und verloren wird nichts; die Datei bleibt, wie sie ist. Der Editor zeigt jedes Byte als das Zeichen mit dieser Nummer. Die Bildinformation ist noch da, nur nicht als Bild lesbar.",
+      "en": "Nothing is converted or lost; the file stays as it is. The editor shows every byte as the character with that number. The image information is still there, just not readable as an image."
+     }
     }
    ]
   },
   {
    "id": "ic-002",
    "niveau": "anwenden",
-   "frage": "Ihr benennt die Datei bild.png in bild.txt um. Was ändert sich an den\nBytes der Datei, und was ändert sich sonst?",
+   "frage": {
+    "de": "Ihr benennt die Datei bild.png in bild.txt um. Was ändert sich an den\nBytes der Datei, und was ändert sich sonst?",
+    "en": "You rename the file image.png to image.txt. What changes in the bytes of\nthe file, and what else changes?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "An den Bytes nichts; nur das System schlägt jetzt ein anderes Programm zum Öffnen vor, weil die Endung eine Lesevorschrift neben der Datei ist.",
-     "begruendung": "Genau. Die Endung steht nicht in der Datei, sondern in ihrem Namen. Sie sagt dem System, wie die Bytes zu lesen sind, so wie das Typfeld im Rahmen es dem Empfänger sagt. Ändert man sie, ändert sich die Deutung, nicht der Inhalt."
+     "text": {
+      "de": "An den Bytes nichts; nur das System schlägt jetzt ein anderes Programm zum Öffnen vor, weil die Endung eine Lesevorschrift neben der Datei ist.",
+      "en": "Nothing in the bytes; only the system now suggests a different program to open it, because the extension is a reading rule beside the file."
+     },
+     "begruendung": {
+      "de": "Genau. Die Endung steht nicht in der Datei, sondern in ihrem Namen. Sie sagt dem System, wie die Bytes zu lesen sind, so wie das Typfeld im Rahmen es dem Empfänger sagt. Ändert man sie, ändert sich die Deutung, nicht der Inhalt.",
+      "en": "Exactly. The extension is not in the file but in its name. It tells the system how to read the bytes, just as the type field in the frame tells the receiver. Change it and the interpretation changes, not the content."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Bytes werden beim Umbenennen in Textzeichen umgewandelt, deshalb lässt sich die Datei danach als Text lesen.",
-     "begruendung": "Umbenennen fasst den Inhalt nicht an; die Datei ist danach byteweise dieselbe. Dass ein Editor sie öffnet, heißt nicht, dass sie Text geworden ist, es erscheint derselbe Unsinn wie zuvor."
+     "text": {
+      "de": "Die Bytes werden beim Umbenennen in Textzeichen umgewandelt, deshalb lässt sich die Datei danach als Text lesen.",
+      "en": "The bytes are converted into text characters when renaming, which is why the file can be read as text afterwards."
+     },
+     "begruendung": {
+      "de": "Umbenennen fasst den Inhalt nicht an; die Datei ist danach byteweise dieselbe. Dass ein Editor sie öffnet, heißt nicht, dass sie Text geworden ist, es erscheint derselbe Unsinn wie zuvor.",
+      "en": "Renaming does not touch the content; the file is byte for byte the same afterwards. That an editor opens it does not mean it has become text; the same nonsense appears as before."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Bytes bleiben gleich, aber das Bild ist verloren, denn ohne die Endung .png weiß kein Programm mehr, dass es ein Bild war.",
-     "begruendung": "Verloren ist nichts: Wer die Datei wieder umbenennt oder sie gezielt mit dem Bildbetrachter öffnet, sieht das Bild. Die Endung ist eine Empfehlung, keine Eigenschaft der Bytes."
+     "text": {
+      "de": "Die Bytes bleiben gleich, aber das Bild ist verloren, denn ohne die Endung .png weiß kein Programm mehr, dass es ein Bild war.",
+      "en": "The bytes stay the same, but the image is lost, since without the .png extension no program knows any more that it was an image."
+     },
+     "begruendung": {
+      "de": "Verloren ist nichts: Wer die Datei wieder umbenennt oder sie gezielt mit dem Bildbetrachter öffnet, sieht das Bild. Die Endung ist eine Empfehlung, keine Eigenschaft der Bytes.",
+      "en": "Nothing is lost: whoever renames the file back or deliberately opens it with the image viewer sees the image. The extension is a recommendation, not a property of the bytes."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das System schreibt beim Umbenennen die ersten Bytes neu, damit sie zum neuen Typ passen, der Rest bleibt gleich.",
-     "begruendung": "Das System kennt den Inhalt nicht und rührt ihn nicht an. Die Kennbytes am Anfang einer PNG-Datei bleiben stehen; sie widersprechen dann der Endung, und genau daran könnte ein Programm den Widerspruch bemerken."
+     "text": {
+      "de": "Das System schreibt beim Umbenennen die ersten Bytes neu, damit sie zum neuen Typ passen, der Rest bleibt gleich.",
+      "en": "The system rewrites the first bytes when renaming so that they match the new type; the rest stays the same."
+     },
+     "begruendung": {
+      "de": "Das System kennt den Inhalt nicht und rührt ihn nicht an. Die Kennbytes am Anfang einer PNG-Datei bleiben stehen; sie widersprechen dann der Endung, und genau daran könnte ein Programm den Widerspruch bemerken.",
+      "en": "The system does not know the content and does not touch it. The identifying bytes at the start of a PNG file remain; they then contradict the extension, and that is exactly how a program could notice the mismatch."
+     }
     }
    ]
   },
   {
    "id": "ic-003",
    "niveau": "erinnern",
-   "frage": "Wie hängen Information und ihr physikalischer Träger zusammen?",
+   "frage": {
+    "de": "Wie hängen Information und ihr physikalischer Träger zusammen?",
+    "en": "How are information and its physical carrier related?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -74,30 +131,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Information ist der Träger: Ein Bit ist die Spannung auf der Leitung oder das Licht in der Luft, nichts darüber hinaus.",
-     "begruendung": "Dann könnte dasselbe Bit nicht gleichzeitig als Spannung, als Lichtimpuls und als Magnetisierung existieren, und dieselbe Datei nicht über Kabel und Funk ankommen. Das Bit ist das, was allen diesen Trägern gemeinsam ist."
+     "text": {
+      "de": "Information ist der Träger: Ein Bit ist die Spannung auf der Leitung oder das Licht in der Luft, nichts darüber hinaus.",
+      "en": "Information is the carrier: a bit is the voltage on the wire or the light in the air, nothing beyond that."
+     },
+     "begruendung": {
+      "de": "Dann könnte dasselbe Bit nicht gleichzeitig als Spannung, als Lichtimpuls und als Magnetisierung existieren, und dieselbe Datei nicht über Kabel und Funk ankommen. Das Bit ist das, was allen diesen Trägern gemeinsam ist.",
+      "en": "Then the same bit could not exist simultaneously as voltage, as a light pulse and as magnetisation, and the same file could not arrive over cable and radio. The bit is what all these carriers have in common."
+     }
     },
     {
      "kennung": "b",
-     "text": "Information braucht keinen Träger; sie existiert unabhängig davon, ob sie irgendwo gespeichert oder gesendet wird.",
-     "begruendung": "Ohne Träger ist Information nirgends. Jedes Bit, das ihr sendet, ist in diesem Moment Licht, und jedes gespeicherte ist Ladung oder Magnetisierung. Unabhängig ist sie nur davon, welcher Träger es ist."
+     "text": {
+      "de": "Information braucht keinen Träger; sie existiert unabhängig davon, ob sie irgendwo gespeichert oder gesendet wird.",
+      "en": "Information needs no carrier; it exists independently of whether it is stored or sent anywhere."
+     },
+     "begruendung": {
+      "de": "Ohne Träger ist Information nirgends. Jedes Bit, das ihr sendet, ist in diesem Moment Licht, und jedes gespeicherte ist Ladung oder Magnetisierung. Unabhängig ist sie nur davon, welcher Träger es ist.",
+      "en": "Without a carrier, information is nowhere. Every bit you send is light at that moment, and every stored one is charge or magnetisation. It is independent only of which carrier it is."
+     }
     },
     {
      "kennung": "c",
-     "text": "Information braucht immer einen Träger, ist aber nicht mit ihm identisch; derselbe Bitstrom kann über Licht, Kabel oder Ton laufen.",
-     "begruendung": "Genau. Etwas Physikalisches muss die Bits tragen, aber welches, ist austauschbar, solange die Schichten darüber nur Bits sehen. Deshalb kommt dieselbe Webseite über WLAN, Glasfaser und Mobilfunk an."
+     "text": {
+      "de": "Information braucht immer einen Träger, ist aber nicht mit ihm identisch; derselbe Bitstrom kann über Licht, Kabel oder Ton laufen.",
+      "en": "Information always needs a carrier but is not identical with it; the same bit stream can travel by light, cable or sound."
+     },
+     "begruendung": {
+      "de": "Genau. Etwas Physikalisches muss die Bits tragen, aber welches, ist austauschbar, solange die Schichten darüber nur Bits sehen. Deshalb kommt dieselbe Webseite über WLAN, Glasfaser und Mobilfunk an.",
+      "en": "Exactly. Something physical has to carry the bits, but which one is interchangeable as long as the layers above see only bits. That is why the same web page arrives over wifi, fibre and mobile networks."
+     }
     },
     {
      "kennung": "d",
-     "text": "Information ist an ihren ersten Träger gebunden; wird sie umkopiert, entsteht eine Kopie, die etwas weniger enthält als das Original.",
-     "begruendung": "Das gilt für analoge Kopien, nicht für Bits. Eine digitale Kopie ist bitgenau dasselbe, und genau das macht ihr im Finale mit dem Hash sichtbar: Dieselben Bytes auf einem anderen Rechner sind nicht weniger, sie sind identisch."
+     "text": {
+      "de": "Information ist an ihren ersten Träger gebunden; wird sie umkopiert, entsteht eine Kopie, die etwas weniger enthält als das Original.",
+      "en": "Information is bound to its first carrier; when copied over, a copy arises that contains a little less than the original."
+     },
+     "begruendung": {
+      "de": "Das gilt für analoge Kopien, nicht für Bits. Eine digitale Kopie ist bitgenau dasselbe, und genau das macht ihr im Finale mit dem Hash sichtbar: Dieselben Bytes auf einem anderen Rechner sind nicht weniger, sie sind identisch.",
+      "en": "That holds for analogue copies, not for bits. A digital copy is bit for bit the same, and that is exactly what you make visible in the final with the hash: the same bytes on another computer are not less, they are identical."
+     }
     }
    ]
   },
   {
    "id": "ic-004",
    "niveau": "anwenden",
-   "frage": "Ein Team ersetzt in Challenge 4 die LED durch den Lautsprecher und den\nFarbsensor durch das Mikrofon. Der Rahmencode bleibt unverändert, und die\nDatei kommt mit demselben Hash an. Was hat das Team damit gezeigt?",
+   "frage": {
+    "de": "Ein Team ersetzt in Challenge 4 die LED durch den Lautsprecher und den\nFarbsensor durch das Mikrofon. Der Rahmencode bleibt unverändert, und die\nDatei kommt mit demselben Hash an. Was hat das Team damit gezeigt?",
+    "en": "In challenge 4 a team replaces the LED with the loudspeaker and the colour\nsensor with the microphone. The frame code stays unchanged, and the file\narrives with the same hash. What has the team shown?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -105,30 +189,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass Ton der bessere Träger ist, denn er hat dieselbe Datei ohne Änderung am restlichen Code übertragen.",
-     "begruendung": "Über besser oder schlechter sagt der Versuch nichts; das würde erst ein Vergleich von Tempo und Fehlerrate zeigen. Gezeigt ist etwas anderes: dass es auf den Träger gar nicht ankam."
+     "text": {
+      "de": "Dass Ton der bessere Träger ist, denn er hat dieselbe Datei ohne Änderung am restlichen Code übertragen.",
+      "en": "That sound is the better carrier, since it transmitted the same file without changes to the rest of the code."
+     },
+     "begruendung": {
+      "de": "Über besser oder schlechter sagt der Versuch nichts; das würde erst ein Vergleich von Tempo und Fehlerrate zeigen. Gezeigt ist etwas anderes: dass es auf den Träger gar nicht ankam.",
+      "en": "The experiment says nothing about better or worse; only a comparison of speed and error rate would. What is shown is something else: that the carrier did not matter at all."
+     }
     },
     {
      "kennung": "b",
-     "text": "Dass die Information nicht am Licht hängt, sondern an den Bits und ihrer Deutung; der Träger war nur ihr Fahrzeug.",
-     "begruendung": "Genau. Derselbe Rahmen, dieselben Bytes, derselbe Hash, nur der Träger ist ein anderer. Was gleich blieb, ist die Information; was wechselte, war nur ihr Fahrzeug. Und die Probe prüft sich selbst: Wer Licht und Rahmen im Code vermischt hätte, hätte den Tausch nicht geschafft."
+     "text": {
+      "de": "Dass die Information nicht am Licht hängt, sondern an den Bits und ihrer Deutung; der Träger war nur ihr Fahrzeug.",
+      "en": "That the information does not depend on the light but on the bits and their interpretation; the carrier was only its vehicle."
+     },
+     "begruendung": {
+      "de": "Genau. Derselbe Rahmen, dieselben Bytes, derselbe Hash, nur der Träger ist ein anderer. Was gleich blieb, ist die Information; was wechselte, war nur ihr Fahrzeug. Und die Probe prüft sich selbst: Wer Licht und Rahmen im Code vermischt hätte, hätte den Tausch nicht geschafft.",
+      "en": "Exactly. The same frame, the same bytes, the same hash, only the carrier is different. What stayed the same is the information; what changed was merely its vehicle. And the test checks itself: whoever had mixed light and frame in the code would not have managed the swap."
+     }
     },
     {
      "kennung": "c",
-     "text": "Dass der Hash unabhängig vom Übertragungsweg berechnet wird und deshalb auch bei einem anderen Träger gleich bleibt.",
-     "begruendung": "Das stimmt, beantwortet aber nicht die Frage. Der Hash ist nur das Messinstrument, das zeigt, dass dieselben Bytes angekommen sind. Die Erkenntnis ist, was das über die Information sagt: Sie hing nie am Licht."
+     "text": {
+      "de": "Dass der Hash unabhängig vom Übertragungsweg berechnet wird und deshalb auch bei einem anderen Träger gleich bleibt.",
+      "en": "That the hash is computed independently of the transmission path and therefore stays the same with a different carrier."
+     },
+     "begruendung": {
+      "de": "Das stimmt, beantwortet aber nicht die Frage. Der Hash ist nur das Messinstrument, das zeigt, dass dieselben Bytes angekommen sind. Die Erkenntnis ist, was das über die Information sagt: Sie hing nie am Licht.",
+      "en": "True, but it does not answer the question. The hash is only the measuring instrument showing that the same bytes arrived. The insight is what that says about the information: it never depended on the light."
+     }
     },
     {
      "kennung": "d",
-     "text": "Dass Licht als Träger überflüssig war und die Klasse den Rahmen von Anfang an für Ton hätte auslegen können.",
-     "begruendung": "Der Rahmen ist für keinen Träger ausgelegt, und genau das ist der Punkt: Er ist in Bits definiert und weiß nichts von Licht oder Ton. Deshalb konnte er beides. Ein Rahmen 'für Ton' wäre derselbe Fehler in die andere Richtung."
+     "text": {
+      "de": "Dass Licht als Träger überflüssig war und die Klasse den Rahmen von Anfang an für Ton hätte auslegen können.",
+      "en": "That light as a carrier was superfluous and the class could have designed the frame for sound from the start."
+     },
+     "begruendung": {
+      "de": "Der Rahmen ist für keinen Träger ausgelegt, und genau das ist der Punkt: Er ist in Bits definiert und weiß nichts von Licht oder Ton. Deshalb konnte er beides. Ein Rahmen 'für Ton' wäre derselbe Fehler in die andere Richtung.",
+      "en": "The frame is designed for no carrier, and that is exactly the point: it is defined in bits and knows nothing of light or sound. That is why it could do both. A frame 'for sound' would be the same mistake in the other direction."
+     }
     }
    ]
   },
   {
    "id": "ic-005",
    "niveau": "verstehen",
-   "frage": "Wenn Licht, Kabel und Ton austauschbar sind: Was genau ist dann die\nInformation, die von einem Rechner zum anderen gelangt?",
+   "frage": {
+    "de": "Wenn Licht, Kabel und Ton austauschbar sind: Was genau ist dann die\nInformation, die von einem Rechner zum anderen gelangt?",
+    "en": "If light, cable and sound are interchangeable: what exactly is the\ninformation that gets from one computer to the other?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -136,30 +247,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Das physikalische Signal, das gerade unterwegs ist; ohne Licht oder Ton ist nichts da, was ankommen könnte.",
-     "begruendung": "Das Signal ist der Träger, und der ist austauschbar; die Frage fragt nach dem, was beim Tausch gleich bleibt. Das Licht kommt nicht auf dem anderen Rechner an, die Bits schon."
+     "text": {
+      "de": "Das physikalische Signal, das gerade unterwegs ist; ohne Licht oder Ton ist nichts da, was ankommen könnte.",
+      "en": "The physical signal currently on its way; without light or sound there is nothing that could arrive."
+     },
+     "begruendung": {
+      "de": "Das Signal ist der Träger, und der ist austauschbar; die Frage fragt nach dem, was beim Tausch gleich bleibt. Das Licht kommt nicht auf dem anderen Rechner an, die Bits schon.",
+      "en": "The signal is the carrier, and that is interchangeable; the question asks about what stays the same in the swap. The light does not arrive on the other computer, the bits do."
+     }
     },
     {
      "kennung": "b",
-     "text": "Der Dateiname mit seiner Endung, denn er sagt dem Empfänger, was er bekommen hat und wie er es öffnen soll.",
-     "begruendung": "Der Name ist ein Etikett neben der Information, nicht die Information; die Bytes bleiben dieselben, wenn man ihn ändert. Ohne die Bytes wäre der Name ein Etikett an nichts."
+     "text": {
+      "de": "Der Dateiname mit seiner Endung, denn er sagt dem Empfänger, was er bekommen hat und wie er es öffnen soll.",
+      "en": "The file name with its extension, since it tells the receiver what it got and how to open it."
+     },
+     "begruendung": {
+      "de": "Der Name ist ein Etikett neben der Information, nicht die Information; die Bytes bleiben dieselben, wenn man ihn ändert. Ohne die Bytes wäre der Name ein Etikett an nichts.",
+      "en": "The name is a label beside the information, not the information; the bytes stay the same if you change it. Without the bytes the name would be a label on nothing."
+     }
     },
     {
      "kennung": "c",
-     "text": "Das Muster, also die Bitfolge, zusammen mit der Vereinbarung, wie sie zu lesen ist; beides bleibt gleich, egal was es trägt.",
-     "begruendung": "Genau. Was über den Tausch hinweg erhalten bleibt, ist die Anordnung der Zustände und die Absprache über ihre Bedeutung: Codierung, Rahmen, Typfeld. Nehmt eines davon weg, und aus den Bytes wird Krach; nehmt den Träger weg und setzt einen anderen ein, und nichts fehlt."
+     "text": {
+      "de": "Das Muster, also die Bitfolge, zusammen mit der Vereinbarung, wie sie zu lesen ist; beides bleibt gleich, egal was es trägt.",
+      "en": "The pattern, that is the bit sequence, together with the agreement on how to read it; both stay the same no matter what carries them."
+     },
+     "begruendung": {
+      "de": "Genau. Was über den Tausch hinweg erhalten bleibt, ist die Anordnung der Zustände und die Absprache über ihre Bedeutung: Codierung, Rahmen, Typfeld. Nehmt eines davon weg, und aus den Bytes wird Krach; nehmt den Träger weg und setzt einen anderen ein, und nichts fehlt.",
+      "en": "Exactly. What survives the swap is the arrangement of the states and the agreement about their meaning: encoding, frame, type field. Take one of those away and the bytes turn into noise; take the carrier away and put in another, and nothing is missing."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das Programm, das die Datei erzeugt hat, denn nur damit lässt sich der Inhalt auf dem anderen Rechner wiederherstellen.",
-     "begruendung": "Das erzeugende Programm reist nicht mit, und der Empfänger braucht es auch nicht; ein beliebiger Bildbetrachter genügt, wenn er die Lesevorschrift kennt. Die Information hängt an der Vereinbarung, nicht an einem bestimmten Programm."
+     "text": {
+      "de": "Das Programm, das die Datei erzeugt hat, denn nur damit lässt sich der Inhalt auf dem anderen Rechner wiederherstellen.",
+      "en": "The program that produced the file, since only with it can the content be restored on the other computer."
+     },
+     "begruendung": {
+      "de": "Das erzeugende Programm reist nicht mit, und der Empfänger braucht es auch nicht; ein beliebiger Bildbetrachter genügt, wenn er die Lesevorschrift kennt. Die Information hängt an der Vereinbarung, nicht an einem bestimmten Programm.",
+      "en": "The producing program does not travel along, and the receiver does not need it either; any image viewer will do if it knows the reading rule. The information depends on the agreement, not on a particular program."
+     }
     }
    ]
   },
   {
    "id": "ic-006",
    "niveau": "verstehen",
-   "frage": "Der Klassenstandard hat ein Typfeld im Kopf des Rahmens. Ein Team fragt:\n'Kann der Empfänger den Dateityp nicht einfach an den Bytes selbst\nerkennen?' Was ist die beste Antwort?",
+   "frage": {
+    "de": "Der Klassenstandard hat ein Typfeld im Kopf des Rahmens. Ein Team fragt:\n'Kann der Empfänger den Dateityp nicht einfach an den Bytes selbst\nerkennen?' Was ist die beste Antwort?",
+    "en": "The class standard has a type field in the frame header. A team asks:\n'Can the receiver not simply recognise the file type from the bytes\nthemselves?' What is the best answer?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -167,23 +305,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Doch, jede Datei beginnt mit Bytes, die ihren Typ nennen; das Typfeld ist nur eine Abkürzung, damit der Empfänger nicht nachsehen muss.",
-     "begruendung": "Manche Formate haben solche Kennbytes, PNG etwa. Eine Textdatei hat keine: Sie beginnt mit ihrem ersten Buchstaben, und Binärdaten mit irgendetwas. Am Inhalt lässt sich der Typ nicht zuverlässig ablesen."
+     "text": {
+      "de": "Doch, jede Datei beginnt mit Bytes, die ihren Typ nennen; das Typfeld ist nur eine Abkürzung, damit der Empfänger nicht nachsehen muss.",
+      "en": "Yes, every file begins with bytes naming its type; the type field is merely a shortcut so the receiver does not have to look."
+     },
+     "begruendung": {
+      "de": "Manche Formate haben solche Kennbytes, PNG etwa. Eine Textdatei hat keine: Sie beginnt mit ihrem ersten Buchstaben, und Binärdaten mit irgendetwas. Am Inhalt lässt sich der Typ nicht zuverlässig ablesen.",
+      "en": "Some formats have such identifying bytes, PNG for instance. A text file has none: it begins with its first letter, and binary data with anything at all. The type cannot be read reliably from the content."
+     }
     },
     {
      "kennung": "b",
-     "text": "Nein, denn die Bytes werden beim Senden verschlüsselt und komprimiert, und danach ist der Typ nicht mehr erkennbar.",
-     "begruendung": "Verschlüsseln und Komprimieren sind Zusatzaufgaben, nicht der Grund. Auch eine unveränderte Textdatei verrät ihren Typ nicht; die Bytes 72, 73 sind 'HI' oder zwei Helligkeitswerte, je nach Lesart."
+     "text": {
+      "de": "Nein, denn die Bytes werden beim Senden verschlüsselt und komprimiert, und danach ist der Typ nicht mehr erkennbar.",
+      "en": "No, because the bytes are encrypted and compressed when sending, and afterwards the type is no longer recognisable."
+     },
+     "begruendung": {
+      "de": "Verschlüsseln und Komprimieren sind Zusatzaufgaben, nicht der Grund. Auch eine unveränderte Textdatei verrät ihren Typ nicht; die Bytes 72, 73 sind 'HI' oder zwei Helligkeitswerte, je nach Lesart.",
+      "en": "Encrypting and compressing are optional extras, not the reason. Even an unchanged text file does not reveal its type; the bytes 72, 73 are 'HI' or two brightness values, depending on the reading."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nein, denn dieselben Bytes können Bild, Text oder Krach sein; der Typ steht nicht in den Daten, sondern muss dazugesagt werden.",
-     "begruendung": "Genau. Daten allein bedeuten nichts; die Bedeutung ist eine Vereinbarung, und das Typfeld überträgt sie mit. Dateiendungen und die Typangaben im Internet lösen dasselbe Problem auf dieselbe Weise: ein Etikett neben den Daten."
+     "text": {
+      "de": "Nein, denn dieselben Bytes können Bild, Text oder Krach sein; der Typ steht nicht in den Daten, sondern muss dazugesagt werden.",
+      "en": "No, because the same bytes can be an image, text or noise; the type is not in the data but has to be stated alongside."
+     },
+     "begruendung": {
+      "de": "Genau. Daten allein bedeuten nichts; die Bedeutung ist eine Vereinbarung, und das Typfeld überträgt sie mit. Dateiendungen und die Typangaben im Internet lösen dasselbe Problem auf dieselbe Weise: ein Etikett neben den Daten.",
+      "en": "Exactly. Data alone means nothing; meaning is an agreement, and the type field carries it along. File extensions and the type labels on the internet solve the same problem in the same way: a label beside the data."
+     }
     },
     {
      "kennung": "d",
-     "text": "Doch, aber nur bei Bildern; deshalb steht das Typfeld nur für Textdateien im Rahmen und bleibt bei Bildern leer.",
-     "begruendung": "Das Typfeld ist für jede Datei gefüllt, das ist der Sinn eines Standards. Und selbst bei Bildern wäre Raten riskant: Ein zufälliger Bytestrom kann mit denselben Kennbytes beginnen wie eine PNG-Datei."
+     "text": {
+      "de": "Doch, aber nur bei Bildern; deshalb steht das Typfeld nur für Textdateien im Rahmen und bleibt bei Bildern leer.",
+      "en": "Yes, but only for images; that is why the type field is in the frame only for text files and stays empty for images."
+     },
+     "begruendung": {
+      "de": "Das Typfeld ist für jede Datei gefüllt, das ist der Sinn eines Standards. Und selbst bei Bildern wäre Raten riskant: Ein zufälliger Bytestrom kann mit denselben Kennbytes beginnen wie eine PNG-Datei.",
+      "en": "The type field is filled for every file, that is the point of a standard. And even for images, guessing would be risky: a random byte stream can begin with the same identifying bytes as a PNG file."
+     }
     }
    ]
   }

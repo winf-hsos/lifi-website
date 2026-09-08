@@ -4,7 +4,10 @@
   {
    "id": "ad-001",
    "niveau": "erinnern",
-   "frage": "Was bedeutet es, wenn eine Größe „analog“ ist?",
+   "frage": {
+    "de": "Was bedeutet es, wenn eine Größe „analog“ ist?",
+    "en": "What does it mean for a quantity to be \"analog\"?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie ändert sich stufenlos: Zwischen zwei Werten liegen immer noch weitere.",
-     "begruendung": "Genau: stufenlos heißt, es gibt keine kleinste Stufe. Die Helligkeit von Licht ist so eine Größe, und euer Sensor blickt genau auf so eine Welt."
+     "text": {
+      "de": "Sie ändert sich stufenlos: Zwischen zwei Werten liegen immer noch weitere.",
+      "en": "It changes continuously: between any two values there are always more."
+     },
+     "begruendung": {
+      "de": "Genau: stufenlos heißt, es gibt keine kleinste Stufe. Die Helligkeit von Licht ist so eine Größe, und euer Sensor blickt genau auf so eine Welt.",
+      "en": "Exactly: continuous means there is no smallest step. The brightness of light is such a quantity, and your sensor looks at exactly such a world."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sie stammt aus einem Gerät, das ohne Rechner und Programm auskommt, etwa aus einem Verstärker oder einem Plattenspieler.",
-     "begruendung": "Ob ein Rechner beteiligt ist, entscheidet nichts. Ein Verstärker arbeitet ohne Programm und trotzdem stufenlos, und ein Computer kann umgekehrt stufenlose Größen messen. Es geht allein um die Frage: stufenlos oder endlich viele Zustände?"
+     "text": {
+      "de": "Sie stammt aus einem Gerät, das ohne Rechner und Programm auskommt, etwa aus einem Verstärker oder einem Plattenspieler.",
+      "en": "It comes from a device that works without a computer or program, such as an amplifier or a record player."
+     },
+     "begruendung": {
+      "de": "Ob ein Rechner beteiligt ist, entscheidet nichts. Ein Verstärker arbeitet ohne Programm und trotzdem stufenlos, und ein Computer kann umgekehrt stufenlose Größen messen. Es geht allein um die Frage: stufenlos oder endlich viele Zustände?",
+      "en": "Whether a computer is involved decides nothing. An amplifier works without a program and still continuously, and conversely a computer can measure continuous quantities. The only question is: continuous, or finitely many states?"
+     }
     },
     {
      "kennung": "c",
-     "text": "Sie gehört zu einer älteren, mechanischen Technik, so wie bei der analogen Fotografie oder der Schallplatte.",
-     "begruendung": "Das ist die Alltagsbedeutung („analoge Fotografie“), nicht der Fachbegriff. Fachlich geht es nur um die Frage: stufenlos oder endlich viele Zustände?"
+     "text": {
+      "de": "Sie gehört zu einer älteren, mechanischen Technik, so wie bei der analogen Fotografie oder der Schallplatte.",
+      "en": "It belongs to an older, mechanical technology, as with analog photography or the vinyl record."
+     },
+     "begruendung": {
+      "de": "Das ist die Alltagsbedeutung („analoge Fotografie“), nicht der Fachbegriff. Fachlich geht es nur um die Frage: stufenlos oder endlich viele Zustände?",
+      "en": "That is the everyday meaning, not the technical term. Technically the only question is: continuous, or finitely many states?"
+     }
     },
     {
      "kennung": "d",
-     "text": "Sie lässt sich nur ungefähr bestimmen: Ihr Wert ist nie exakt, sondern immer nur eine Schätzung.",
-     "begruendung": "Eine analoge Größe kann beliebig genau sein, sie hat sogar unendlich viele Zwischenwerte. Das Problem ist nicht ihre Genauigkeit, sondern dass ein Computer sie so nicht fassen kann."
+     "text": {
+      "de": "Sie lässt sich nur ungefähr bestimmen: Ihr Wert ist nie exakt, sondern immer nur eine Schätzung.",
+      "en": "It can only be determined roughly: its value is never exact, only ever an estimate."
+     },
+     "begruendung": {
+      "de": "Eine analoge Größe kann beliebig genau sein, sie hat sogar unendlich viele Zwischenwerte. Das Problem ist nicht ihre Genauigkeit, sondern dass ein Computer sie so nicht fassen kann.",
+      "en": "An analog quantity can be arbitrarily precise; it even has infinitely many intermediate values. The problem is not its precision but that a computer cannot handle it as it is."
+     }
     }
    ]
   },
   {
    "id": "ad-002",
    "niveau": "erinnern",
-   "frage": "Was zeichnet ein digitales System aus?",
+   "frage": {
+    "de": "Was zeichnet ein digitales System aus?",
+    "en": "What characterises a digital system?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Es arbeitet elektronisch: Seine Zustände werden durch Strom oder Spannung dargestellt.",
-     "begruendung": "Strom ist nur der übliche Träger, nicht das Merkmal. Man kann digital auch mit Lichtblitzen, Flaggen oder Zetteln arbeiten, ihr macht im Semester nichts anderes."
+     "text": {
+      "de": "Es arbeitet elektronisch: Seine Zustände werden durch Strom oder Spannung dargestellt.",
+      "en": "It works electronically: its states are represented by current or voltage."
+     },
+     "begruendung": {
+      "de": "Strom ist nur der übliche Träger, nicht das Merkmal. Man kann digital auch mit Lichtblitzen, Flaggen oder Zetteln arbeiten, ihr macht im Semester nichts anderes.",
+      "en": "Electricity is just the usual carrier, not the defining feature. You can be digital with light flashes, flags, or paper notes; that is what you do all semester."
+     }
     },
     {
      "kennung": "b",
-     "text": "Es kennt nur endlich viele, klar voneinander getrennte Zustände.",
-     "begruendung": "Genau das ist die Definition. Alles Weitere in diesem Konzept folgt aus den zwei Wörtern „endlich“ und „getrennt“."
+     "text": {
+      "de": "Es kennt nur endlich viele, klar voneinander getrennte Zustände.",
+      "en": "It knows only finitely many, clearly separated states."
+     },
+     "begruendung": {
+      "de": "Genau das ist die Definition. Alles Weitere in diesem Konzept folgt aus den zwei Wörtern „endlich“ und „getrennt“.",
+      "en": "That is the definition. Everything else in this concept follows from the two words 'finite' and 'separated'."
+     }
     },
     {
      "kennung": "c",
-     "text": "Es ist automatisch genauer als ein analoges System.",
-     "begruendung": "Im Gegenteil: Beim Übergang ins Digitale wird Genauigkeit bewusst weggeworfen. Was digital besser wird, ist nicht die Genauigkeit, sondern die Zuverlässigkeit."
+     "text": {
+      "de": "Es ist automatisch genauer als ein analoges System.",
+      "en": "It is automatically more precise than an analog system."
+     },
+     "begruendung": {
+      "de": "Im Gegenteil: Beim Übergang ins Digitale wird Genauigkeit bewusst weggeworfen. Was digital besser wird, ist nicht die Genauigkeit, sondern die Zuverlässigkeit.",
+      "en": "On the contrary: crossing into digital deliberately throws precision away. What improves is not precision but reliability."
+     }
     },
     {
      "kennung": "d",
-     "text": "Es speichert Informationen als Zeichen und Text, so dass ein Mensch sie im Prinzip lesen könnte.",
-     "begruendung": "Gespeichert werden Zustände, meistens als Folgen von zwei Zuständen. Ob die mal Text, Bild oder Ton bedeuten, ist eine Frage der Codierung, die kommt in einem späteren Konzept."
+     "text": {
+      "de": "Es speichert Informationen als Zeichen und Text, so dass ein Mensch sie im Prinzip lesen könnte.",
+      "en": "It stores information as characters and text, so that a person could in principle read it."
+     },
+     "begruendung": {
+      "de": "Gespeichert werden Zustände, meistens als Folgen von zwei Zuständen. Ob die mal Text, Bild oder Ton bedeuten, ist eine Frage der Codierung, die kommt in einem späteren Konzept.",
+      "en": "What is stored are states, usually sequences of two states. Whether they mean text, image, or sound is a question of coding, which comes in a later concept."
+     }
     }
    ]
   },
   {
    "id": "ad-003",
    "niveau": "verstehen",
-   "frage": "In allen vier Feldern liegt dasselbe Rauschen auf demselben Signal, nur die\nZahl der Bereiche wächst. Warum werden die Messungen trotzdem unsicherer,\nje mehr Bereiche es gibt?",
+   "frage": {
+    "de": "In allen vier Feldern liegt dasselbe Rauschen auf demselben Signal, nur die\nZahl der Bereiche wächst. Warum werden die Messungen trotzdem unsicherer,\nje mehr Bereiche es gibt?",
+    "en": "All four panels show the same noise on the same signal; only the number of\nregions grows. Why do the measurements still become less reliable the more\nregions there are?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -75,30 +132,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil das Rauschen mit jeder zusätzlichen Grenze zunimmt: Jede Grenze bringt ihre eigenen Störungen ins Signal.",
-     "begruendung": "Nein, das Rauschen ist in allen vier Feldern identisch. Was sich ändert, steht auf der anderen Seite des Vergleichs."
+     "text": {
+      "de": "Weil das Rauschen mit jeder zusätzlichen Grenze zunimmt: Jede Grenze bringt ihre eigenen Störungen ins Signal.",
+      "en": "Because the noise grows with every additional boundary: each boundary adds its own disturbances to the signal."
+     },
+     "begruendung": {
+      "de": "Nein, das Rauschen ist in allen vier Feldern identisch. Was sich ändert, steht auf der anderen Seite des Vergleichs.",
+      "en": "No, the noise is identical in all four panels. What changes is the other side of the comparison."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil der Abstand zwischen den Bereichen schrumpft, bis dieselbe Störung in den Nachbarbereich reicht.",
-     "begruendung": "Genau: Nicht das Rauschen wächst, der Sicherheitsabstand schrumpft. Der Abstand zwischen den Bereichen ist eure Reserve gegen Störungen, und die verteilt sich auf immer mehr Grenzen."
+     "text": {
+      "de": "Weil der Abstand zwischen den Bereichen schrumpft, bis dieselbe Störung in den Nachbarbereich reicht.",
+      "en": "Because the distance between regions shrinks until the same disturbance reaches into the neighbouring region."
+     },
+     "begruendung": {
+      "de": "Genau: Nicht das Rauschen wächst, der Sicherheitsabstand schrumpft. Der Abstand zwischen den Bereichen ist eure Reserve gegen Störungen, und die verteilt sich auf immer mehr Grenzen.",
+      "en": "Exactly: the noise does not grow, the safety margin shrinks. The distance between regions is your reserve against disturbance, spread over ever more boundaries."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil der Sensor bei feinen Stufen ungenauer misst: Kleine Unterschiede zwischen Nachbarbereichen kann er nicht mehr sauber auflösen.",
-     "begruendung": "Der Sensor weiß nichts von euren Bereichen, er liefert einfach Werte. Die Bereiche zieht ihr erst danach ein, im Programm."
+     "text": {
+      "de": "Weil der Sensor bei feinen Stufen ungenauer misst: Kleine Unterschiede zwischen Nachbarbereichen kann er nicht mehr sauber auflösen.",
+      "en": "Because the sensor measures less precisely at fine steps: it can no longer resolve small differences between neighbouring regions cleanly."
+     },
+     "begruendung": {
+      "de": "Der Sensor weiß nichts von euren Bereichen, er liefert einfach Werte. Die Bereiche zieht ihr erst danach ein, im Programm.",
+      "en": "The sensor knows nothing about your regions; it just delivers values. You draw the regions afterwards, in your program."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil mehr Bereiche mehr Rechenzeit kosten und dabei Messungen verloren gehen.",
-     "begruendung": "Ein Vergleich mit sieben Grenzen statt einer ist für den Rechner kein messbarer Unterschied. Das Problem ist geometrisch, nicht rechnerisch."
+     "text": {
+      "de": "Weil mehr Bereiche mehr Rechenzeit kosten und dabei Messungen verloren gehen.",
+      "en": "Because more regions cost more computing time and measurements get lost."
+     },
+     "begruendung": {
+      "de": "Ein Vergleich mit sieben Grenzen statt einer ist für den Rechner kein messbarer Unterschied. Das Problem ist geometrisch, nicht rechnerisch.",
+      "en": "Comparing against seven boundaries instead of one makes no measurable difference to the computer. The problem is geometric, not computational."
+     }
     }
    ]
   },
   {
    "id": "ad-004",
    "niveau": "verstehen",
-   "frage": "Beim Digitalisieren wird ein stufenloser Wertebereich in endlich viele\nBereiche geteilt. Welche Aussagen treffen zu?",
+   "frage": {
+    "de": "Beim Digitalisieren wird ein stufenloser Wertebereich in endlich viele\nBereiche geteilt. Welche Aussagen treffen zu?",
+    "en": "Digitising splits a continuous range of values into finitely many regions.\nWhich statements are true?"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -107,35 +191,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Alle Werte innerhalb desselben Bereichs gelten danach als ein und derselbe Zustand.",
-     "begruendung": "Genau das ist der Kern: Die Unterschiede innerhalb eines Bereichs werden bewusst aufgegeben, damit die Unterschiede zwischen den Bereichen zählen."
+     "text": {
+      "de": "Alle Werte innerhalb desselben Bereichs gelten danach als ein und derselbe Zustand.",
+      "en": "All values within the same region count as one and the same state afterwards."
+     },
+     "begruendung": {
+      "de": "Genau das ist der Kern: Die Unterschiede innerhalb eines Bereichs werden bewusst aufgegeben, damit die Unterschiede zwischen den Bereichen zählen.",
+      "en": "That is the core: differences within a region are deliberately given up so that the differences between regions count."
+     }
     },
     {
      "kennung": "b",
-     "text": "Mit genügend vielen Stufen verschwindet der Unterschied zur analogen Größe vollständig.",
-     "begruendung": "Er wird kleiner, aber er verschwindet nie: Endlich viele Stufen bleiben endlich viele. Und feinere Stufen erkauft man sich mit schrumpfendem Störabstand."
+     "text": {
+      "de": "Mit genügend vielen Stufen verschwindet der Unterschied zur analogen Größe vollständig.",
+      "en": "With enough steps, the difference to the analog quantity disappears completely."
+     },
+     "begruendung": {
+      "de": "Er wird kleiner, aber er verschwindet nie: Endlich viele Stufen bleiben endlich viele. Und feinere Stufen erkauft man sich mit schrumpfendem Störabstand.",
+      "en": "It gets smaller but never disappears: finitely many steps remain finitely many. And finer steps are paid for with a shrinking noise margin."
+     }
     },
     {
      "kennung": "c",
-     "text": "Beim Digitalisieren wird das Signal von Störungen befreit, weil danach nur noch der Bereich zählt und nicht mehr der genaue Wert.",
-     "begruendung": "Das Digitalisieren selbst reinigt nichts; eine Störung, die groß genug ist, landet mit im Bereich nebenan. Robust wird es nur, wenn die Bereiche weiter auseinanderliegen als die Störung."
+     "text": {
+      "de": "Beim Digitalisieren wird das Signal von Störungen befreit, weil danach nur noch der Bereich zählt und nicht mehr der genaue Wert.",
+      "en": "Digitising cleans the signal of disturbances, because afterwards only the region counts and no longer the exact value."
+     },
+     "begruendung": {
+      "de": "Das Digitalisieren selbst reinigt nichts; eine Störung, die groß genug ist, landet mit im Bereich nebenan. Robust wird es nur, wenn die Bereiche weiter auseinanderliegen als die Störung.",
+      "en": "Digitising itself cleans nothing; a disturbance that is large enough lands in the neighbouring region. It only becomes robust if the regions are further apart than the disturbance."
+     }
     },
     {
      "kennung": "d",
-     "text": "Aus der digitalen Fassung lässt sich der ursprüngliche exakte Wert nicht zurückgewinnen.",
-     "begruendung": "Richtig: Welcher der unendlich vielen Werte im Bereich es war, ist nach der Zuordnung nicht mehr feststellbar. Digitalisieren ist eine Einbahnstraße."
+     "text": {
+      "de": "Aus der digitalen Fassung lässt sich der ursprüngliche exakte Wert nicht zurückgewinnen.",
+      "en": "The original exact value cannot be recovered from the digital version."
+     },
+     "begruendung": {
+      "de": "Richtig: Welcher der unendlich vielen Werte im Bereich es war, ist nach der Zuordnung nicht mehr feststellbar. Digitalisieren ist eine Einbahnstraße.",
+      "en": "Correct: which of the infinitely many values in the region it was can no longer be determined after the assignment. Digitising is a one-way street."
+     }
     },
     {
      "kennung": "e",
-     "text": "Digitalisieren funktioniert nur bei Signalen wie Licht und Ton, die sich als Welle beschreiben lassen.",
-     "begruendung": "Es funktioniert bei allem, was sich messen lässt: Temperatur, Druck, Tastenwege, Mausbewegungen. Überall dieselben zwei Schritte: messen, einem Bereich zuordnen."
+     "text": {
+      "de": "Digitalisieren funktioniert nur bei Signalen wie Licht und Ton, die sich als Welle beschreiben lassen.",
+      "en": "Digitising only works for signals such as light and sound that can be described as waves."
+     },
+     "begruendung": {
+      "de": "Es funktioniert bei allem, was sich messen lässt: Temperatur, Druck, Tastenwege, Mausbewegungen. Überall dieselben zwei Schritte: messen, einem Bereich zuordnen.",
+      "en": "It works for anything measurable: temperature, pressure, key travel, mouse movement. Everywhere the same two steps: measure, assign to a region."
+     }
     }
    ]
   },
   {
    "id": "ad-005",
    "niveau": "verstehen",
-   "frage": "Digitale Technik wirft beim Digitalisieren Information weg und ist\ntrotzdem zuverlässiger als analoge. Warum?",
+   "frage": {
+    "de": "Digitale Technik wirft beim Digitalisieren Information weg und ist\ntrotzdem zuverlässiger als analoge. Warum?",
+    "en": "Digital technology throws information away when digitising and is still\nmore reliable than analog. Why?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -143,30 +260,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil die wenigen Zustände weit auseinanderliegen: Eine kleine Störung ändert den Zustand nicht und ist beim nächsten Ablesen spurlos verschwunden.",
-     "begruendung": "Genau: Die weggeworfene Genauigkeit ist der Preis, der gekaufte Abstand ist die Reserve. Solange die Störung kleiner bleibt als der Abstand, wird sie bei jedem Ablesen komplett getilgt."
+     "text": {
+      "de": "Weil die wenigen Zustände weit auseinanderliegen: Eine kleine Störung ändert den Zustand nicht und ist beim nächsten Ablesen spurlos verschwunden.",
+      "en": "Because the few states are far apart: a small disturbance does not change the state and vanishes without trace at the next read-out."
+     },
+     "begruendung": {
+      "de": "Genau: Die weggeworfene Genauigkeit ist der Preis, der gekaufte Abstand ist die Reserve. Solange die Störung kleiner bleibt als der Abstand, wird sie bei jedem Ablesen komplett getilgt.",
+      "en": "Exactly: the discarded precision is the price, the purchased distance is the reserve. As long as the disturbance stays smaller than the distance, every read-out erases it completely."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil digitale Bauteile nicht rauschen: Sie schalten nur zwischen an und aus, und dabei entsteht keine Störung.",
-     "begruendung": "Auch digitale Schaltungen rauschen, die Physik macht keine Ausnahme. Der Unterschied ist, dass das Rauschen unterhalb des Zustandsabstands folgenlos bleibt."
+     "text": {
+      "de": "Weil digitale Bauteile nicht rauschen: Sie schalten nur zwischen an und aus, und dabei entsteht keine Störung.",
+      "en": "Because digital components do not produce noise: they only switch between on and off, and no disturbance arises in doing so."
+     },
+     "begruendung": {
+      "de": "Auch digitale Schaltungen rauschen, die Physik macht keine Ausnahme. Der Unterschied ist, dass das Rauschen unterhalb des Zustandsabstands folgenlos bleibt.",
+      "en": "Digital circuits are noisy too; physics makes no exception. The difference is that noise below the state distance has no consequences."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil weniger Information übertragen wird und dadurch weniger Fehler passieren können.",
-     "begruendung": "Klingt plausibel, ist aber nicht der Mechanismus. Ein leises analoges Signal trägt auch wenig Information und ist trotzdem störanfällig. Entscheidend ist der Abstand zwischen den Zuständen, nicht die Menge."
+     "text": {
+      "de": "Weil weniger Information übertragen wird und dadurch weniger Fehler passieren können.",
+      "en": "Because less information is transferred, so fewer errors can happen."
+     },
+     "begruendung": {
+      "de": "Klingt plausibel, ist aber nicht der Mechanismus. Ein leises analoges Signal trägt auch wenig Information und ist trotzdem störanfällig. Entscheidend ist der Abstand zwischen den Zuständen, nicht die Menge.",
+      "en": "Sounds plausible but is not the mechanism. A quiet analog signal also carries little information and is still fragile. What matters is the distance between states, not the amount."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil Computer Fehler automatisch erkennen und herausrechnen, sobald ein Wert nicht zu den umliegenden passt.",
-     "begruendung": "Fehlererkennung gibt es, aber sie ist eine eigene, zusätzliche Zutat (sie kommt später bei Redundanz und Prüfsummen). Die Grundrobustheit kommt schon vorher aus dem Zustandsabstand."
+     "text": {
+      "de": "Weil Computer Fehler automatisch erkennen und herausrechnen, sobald ein Wert nicht zu den umliegenden passt.",
+      "en": "Because computers automatically detect and remove errors as soon as a value does not fit its surroundings."
+     },
+     "begruendung": {
+      "de": "Fehlererkennung gibt es, aber sie ist eine eigene, zusätzliche Zutat (sie kommt später bei Redundanz und Prüfsummen). Die Grundrobustheit kommt schon vorher aus dem Zustandsabstand.",
+      "en": "Error detection exists, but it is a separate, additional ingredient (it comes later with redundancy and checksums). The basic robustness comes earlier, from the state distance."
+     }
     }
    ]
   },
   {
    "id": "ad-006",
    "niveau": "anwenden",
-   "frage": "Ein Team misst mit dem Clear-Kanal: Die Werte seiner Farben liegen\nzwischen 100 und 400, jede Einzelmessung schwankt um bis zu ±40. Was\nfolgt daraus für die Zahl der Farben?",
+   "frage": {
+    "de": "Ein Team misst mit dem Clear-Kanal: Die Werte seiner Farben liegen\nzwischen 100 und 400, jede Einzelmessung schwankt um bis zu ±40. Was\nfolgt daraus für die Zahl der Farben?",
+    "en": "A team measures with the clear channel: its colour values lie between 100\nand 400, each single measurement varies by up to ±40. What follows for\nthe number of colours?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -174,30 +318,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Zwei Farben (Bereiche à 150) sind sicher; bei acht Farben ist jeder Bereich schmaler als die Schwankung, einzelne Messungen landen im Nachbarbereich.",
-     "begruendung": "Genau die Rechnung, um die es geht: 300 geteilt durch 8 sind knapp 38 je Bereich, die Schwankung von ±40 sprengt das. Bei zwei Bereichen à 150 bleibt dagegen üppig Reserve. Wie viele dazwischen noch sicher sind, sagt euch nur eure eigene Messreihe."
+     "text": {
+      "de": "Zwei Farben (Bereiche à 150) sind sicher; bei acht Farben ist jeder Bereich schmaler als die Schwankung, einzelne Messungen landen im Nachbarbereich.",
+      "en": "Two colours (regions of 150 each) are safe; with eight colours each region is narrower than the variation, single measurements land in the neighbouring region."
+     },
+     "begruendung": {
+      "de": "Genau die Rechnung, um die es geht: 300 geteilt durch 8 sind knapp 38 je Bereich, die Schwankung von ±40 sprengt das. Bei zwei Bereichen à 150 bleibt dagegen üppig Reserve. Wie viele dazwischen noch sicher sind, sagt euch nur eure eigene Messreihe.",
+      "en": "Exactly the calculation that matters: 300 divided by 8 is barely 38 per region; a variation of ±40 breaks that. With two regions of 150 there is ample reserve. How many in between are still safe, only your own measurements can tell."
+     }
     },
     {
      "kennung": "b",
-     "text": "Acht Farben sind unproblematisch, denn die Zahl 8 ist viel kleiner als die Schwankung von 40, es bleibt also Reserve.",
-     "begruendung": "Die beiden Zahlen messen verschiedene Dinge (Anzahl gegen Sensorwert), man kann sie nicht vergleichen. Verglichen werden muss die Breite eines Bereichs mit der Schwankung."
+     "text": {
+      "de": "Acht Farben sind unproblematisch, denn die Zahl 8 ist viel kleiner als die Schwankung von 40, es bleibt also Reserve.",
+      "en": "Eight colours are unproblematic, because the number 8 is much smaller than the variation of 40, so there is reserve left."
+     },
+     "begruendung": {
+      "de": "Die beiden Zahlen messen verschiedene Dinge (Anzahl gegen Sensorwert), man kann sie nicht vergleichen. Verglichen werden muss die Breite eines Bereichs mit der Schwankung.",
+      "en": "The two numbers measure different things (a count versus a sensor value); they cannot be compared. What must be compared is the width of a region with the variation."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Schwankung spielt keine Rolle, weil der Sensor bereits Zahlen liefert; ein digitaler Wert ist richtig oder falsch, nicht ungefähr.",
-     "begruendung": "Dass der Sensor Zahlen liefert, macht die Schwankung nicht kleiner: Sie steckt schon im Licht und in der Messung selbst. Digital heißt nicht störungsfrei."
+     "text": {
+      "de": "Die Schwankung spielt keine Rolle, weil der Sensor bereits Zahlen liefert; ein digitaler Wert ist richtig oder falsch, nicht ungefähr.",
+      "en": "The variation does not matter because the sensor already delivers numbers; a digital value is right or wrong, not approximate."
+     },
+     "begruendung": {
+      "de": "Dass der Sensor Zahlen liefert, macht die Schwankung nicht kleiner: Sie steckt schon im Licht und in der Messung selbst. Digital heißt nicht störungsfrei.",
+      "en": "The sensor delivering numbers does not shrink the variation: it is already in the light and in the measurement itself. Digital does not mean disturbance-free."
+     }
     },
     {
      "kennung": "d",
-     "text": "Mehr als zwei Farben sind nicht sinnvoll, weil jede zusätzliche Grenze eine weitere Fehlerquelle ist und ±40 dafür zu viel Schwankung sind.",
-     "begruendung": "Zu vorsichtig: Bei drei Bereichen ist jeder 100 breit, bei vier noch 75, beides deutlich mehr als die Schwankung von ±40. Wo die Grenze wirklich liegt, ist eine Messfrage, und genau die entscheidet euren Wettbewerb."
+     "text": {
+      "de": "Mehr als zwei Farben sind nicht sinnvoll, weil jede zusätzliche Grenze eine weitere Fehlerquelle ist und ±40 dafür zu viel Schwankung sind.",
+      "en": "More than two colours are not sensible, because every additional boundary is another source of error and ±40 is too much variation for that."
+     },
+     "begruendung": {
+      "de": "Zu vorsichtig: Bei drei Bereichen ist jeder 100 breit, bei vier noch 75, beides deutlich mehr als die Schwankung von ±40. Wo die Grenze wirklich liegt, ist eine Messfrage, und genau die entscheidet euren Wettbewerb.",
+      "en": "Too cautious: with three regions each is 100 wide, with four still 75, both clearly more than the variation of ±40. Where the limit really lies is a measurement question, and exactly that decides your competition."
+     }
     }
    ]
   },
   {
    "id": "ad-007",
    "niveau": "anwenden",
-   "frage": "Der Sensorwert ist bereits eine Zahl. Was leistet der Vergleich\n`value > 250` im Sinn dieses Konzepts?",
+   "frage": {
+    "de": "Der Sensorwert ist bereits eine Zahl. Was leistet der Vergleich\n`value > 250` im Sinn dieses Konzepts?",
+    "en": "The sensor value is already a number. In terms of this concept, what does\nthe comparison `value > 250` do?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -206,30 +377,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Er wandelt das analoge Licht in einen digitalen Wert um, denn erst nach dem Vergleich liegt ein echter digitaler Zustand vor.",
-     "begruendung": "Das ist schon passiert: `get_clear()` hat den Wert geliefert, die Wandlung steckt im Sensor. Hier wird nur noch mit Zahlen gearbeitet."
+     "text": {
+      "de": "Er wandelt das analoge Licht in einen digitalen Wert um, denn erst nach dem Vergleich liegt ein echter digitaler Zustand vor.",
+      "en": "It converts the analog light into a digital value, since only after the comparison is there a genuine digital state."
+     },
+     "begruendung": {
+      "de": "Das ist schon passiert: `get_clear()` hat den Wert geliefert, die Wandlung steckt im Sensor. Hier wird nur noch mit Zahlen gearbeitet.",
+      "en": "That has already happened: `get_clear()` delivered the value; the conversion sits in the sensor. From here on, it is numbers only."
+     }
     },
     {
      "kennung": "b",
-     "text": "Er misst die Helligkeit ein zweites Mal, zur Kontrolle, damit ein Ausreißer der ersten Messung nicht durchrutscht.",
-     "begruendung": "Ein Vergleich misst nichts, er entscheidet nur über einen bereits vorhandenen Wert. Gemessen wird ausschließlich in der Zeile darüber."
+     "text": {
+      "de": "Er misst die Helligkeit ein zweites Mal, zur Kontrolle, damit ein Ausreißer der ersten Messung nicht durchrutscht.",
+      "en": "It measures the brightness a second time, as a check, so that an outlier from the first measurement does not slip through."
+     },
+     "begruendung": {
+      "de": "Ein Vergleich misst nichts, er entscheidet nur über einen bereits vorhandenen Wert. Gemessen wird ausschließlich in der Zeile darüber.",
+      "en": "A comparison measures nothing; it only decides about an existing value. Measuring happens exclusively in the line above."
+     }
     },
     {
      "kennung": "c",
-     "text": "Er zieht die Grenze, die viele mögliche Zahlenwerte auf zwei bedeutungstragende Zustände reduziert: Hier entsteht euer Alphabet.",
-     "begruendung": "Genau: Der Sensor liefert Hunderte möglicher Werte, erst eure Grenze macht daraus Symbole. Wo sie liegt und wie viele es werden, ist die Entwurfsentscheidung von Challenge 1."
+     "text": {
+      "de": "Er zieht die Grenze, die viele mögliche Zahlenwerte auf zwei bedeutungstragende Zustände reduziert: Hier entsteht euer Alphabet.",
+      "en": "It draws the boundary that reduces many possible numbers to two meaningful states: this is where your alphabet is made."
+     },
+     "begruendung": {
+      "de": "Genau: Der Sensor liefert Hunderte möglicher Werte, erst eure Grenze macht daraus Symbole. Wo sie liegt und wie viele es werden, ist die Entwurfsentscheidung von Challenge 1.",
+      "en": "Exactly: the sensor delivers hundreds of possible values; only your boundary turns them into symbols. Where it lies and how many there are is the design decision of Challenge 1."
+     }
     },
     {
      "kennung": "d",
-     "text": "Er erhöht die Genauigkeit des Messwerts, weil aus einem schwankenden Zahlenwert ein eindeutiges Ergebnis wird.",
-     "begruendung": "Das Gegenteil: Aus vielen unterscheidbaren Werten werden zwei. Genau dieses bewusste Vergröbern kauft die Robustheit."
+     "text": {
+      "de": "Er erhöht die Genauigkeit des Messwerts, weil aus einem schwankenden Zahlenwert ein eindeutiges Ergebnis wird.",
+      "en": "It increases the precision of the measured value, because a fluctuating number becomes an unambiguous result."
+     },
+     "begruendung": {
+      "de": "Das Gegenteil: Aus vielen unterscheidbaren Werten werden zwei. Genau dieses bewusste Vergröbern kauft die Robustheit.",
+      "en": "The opposite: many distinguishable values become two. Exactly this deliberate coarsening buys the robustness."
+     }
     }
    ]
   },
   {
    "id": "ad-008",
    "niveau": "verstehen",
-   "frage": "Eine Musikkassette verliert bei jedem Überspielen hörbar Qualität, eine\nkopierte Datei ist auch nach der tausendsten Kopie identisch. Warum?",
+   "frage": {
+    "de": "Eine Musikkassette verliert bei jedem Überspielen hörbar Qualität, eine\nkopierte Datei ist auch nach der tausendsten Kopie identisch. Warum?",
+    "en": "A music cassette audibly loses quality with every dubbing; a copied file\nis identical even after the thousandth copy. Why?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -237,30 +435,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil Dateien komprimiert gespeichert sind und beim Kopieren deshalb weniger Daten kaputtgehen können.",
-     "begruendung": "Kompression ist ein anderes Thema (und macht Daten eher empfindlicher gegen Fehler, nicht robuster). Auch eine unkomprimierte Datei kopiert sich perfekt."
+     "text": {
+      "de": "Weil Dateien komprimiert gespeichert sind und beim Kopieren deshalb weniger Daten kaputtgehen können.",
+      "en": "Because files are stored compressed, so less data can break during copying."
+     },
+     "begruendung": {
+      "de": "Kompression ist ein anderes Thema (und macht Daten eher empfindlicher gegen Fehler, nicht robuster). Auch eine unkomprimierte Datei kopiert sich perfekt.",
+      "en": "Compression is a different topic (and tends to make data more sensitive to errors, not less). An uncompressed file also copies perfectly."
+     }
     },
     {
      "kennung": "b",
-     "text": "Beim digitalen Kopieren werden Zustände abgelesen und frisch neu gesetzt; kleine Störungen unterhalb des Zustandsabstands verschwinden dabei jedes Mal vollständig.",
-     "begruendung": "Genau: Jede digitale Kopie ist eine Neugeburt aus sauberen Zuständen. Die Kassette kopiert dagegen die stufenlose Wellenform mitsamt allem Rauschen und legt eigenes obendrauf, bei jeder Generation."
+     "text": {
+      "de": "Beim digitalen Kopieren werden Zustände abgelesen und frisch neu gesetzt; kleine Störungen unterhalb des Zustandsabstands verschwinden dabei jedes Mal vollständig.",
+      "en": "Digital copying reads states and sets them afresh; small disturbances below the state distance vanish completely each time."
+     },
+     "begruendung": {
+      "de": "Genau: Jede digitale Kopie ist eine Neugeburt aus sauberen Zuständen. Die Kassette kopiert dagegen die stufenlose Wellenform mitsamt allem Rauschen und legt eigenes obendrauf, bei jeder Generation.",
+      "en": "Exactly: every digital copy is a rebirth from clean states. The cassette copies the continuous waveform with all its noise and adds its own on top, every generation."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil Computer viel schneller kopieren als ein Kassettendeck, bleibt kaum Zeit, in der sich Störungen einschleichen können.",
-     "begruendung": "Die Geschwindigkeit hat damit nichts zu tun. Eine langsame digitale Kopie ist genauso perfekt wie eine schnelle."
+     "text": {
+      "de": "Weil Computer viel schneller kopieren als ein Kassettendeck, bleibt kaum Zeit, in der sich Störungen einschleichen können.",
+      "en": "Because computers copy far faster than a cassette deck, there is hardly any time for disturbances to creep in."
+     },
+     "begruendung": {
+      "de": "Die Geschwindigkeit hat damit nichts zu tun. Eine langsame digitale Kopie ist genauso perfekt wie eine schnelle.",
+      "en": "Speed has nothing to do with it. A slow digital copy is just as perfect as a fast one."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil Dateien beim Kopieren nicht neu geschrieben, sondern nur verknüpft werden; eine zweite Fassung entsteht also gar nicht.",
-     "begruendung": "Verknüpfungen gibt es, aber eine echte Kopie ist eine echte zweite Folge von Zuständen, und die ist trotzdem identisch. Genau das ist die Pointe."
+     "text": {
+      "de": "Weil Dateien beim Kopieren nicht neu geschrieben, sondern nur verknüpft werden; eine zweite Fassung entsteht also gar nicht.",
+      "en": "Because files are not rewritten when copied, only linked; no second version actually comes into being."
+     },
+     "begruendung": {
+      "de": "Verknüpfungen gibt es, aber eine echte Kopie ist eine echte zweite Folge von Zuständen, und die ist trotzdem identisch. Genau das ist die Pointe.",
+      "en": "Links exist, but a real copy is a real second sequence of states, and it is still identical. That is precisely the point."
+     }
     }
    ]
   },
   {
    "id": "ad-009",
    "niveau": "erinnern",
-   "frage": "Was heißt es, ein Signal zu „digitalisieren“?",
+   "frage": {
+    "de": "Was heißt es, ein Signal zu „digitalisieren“?",
+    "en": "What does it mean to \"digitise\" a signal?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -268,25 +493,46 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Es durch eine endliche Folge von Zahlen darstellen.",
-     "begruendung": "Genau. Mehr steckt nicht im Wort: messen und die Messwerte endlich vielen Zuständen zuordnen. Was die Zahlen bedeuten, regelt später die Codierung."
+     "text": {
+      "de": "Es durch eine endliche Folge von Zahlen darstellen.",
+      "en": "To represent it by a finite sequence of numbers."
+     },
+     "begruendung": {
+      "de": "Genau. Mehr steckt nicht im Wort: messen und die Messwerte endlich vielen Zuständen zuordnen. Was die Zahlen bedeuten, regelt später die Codierung.",
+      "en": "Exactly. That is all the word contains: measure, and assign the measurements to finitely many states. What the numbers mean is settled later by coding."
+     }
     },
     {
      "kennung": "b",
-     "text": "Es in eine Form bringen, die sich über das Internet übertragen lässt.",
-     "begruendung": "Übertragung ist ein eigener Schritt und setzt die Zahlenform meist schon voraus. Digitalisieren passiert davor, am Übergang von der Welt zur Zahl."
+     "text": {
+      "de": "Es in eine Form bringen, die sich über das Internet übertragen lässt.",
+      "en": "To put it into a form that can be transmitted over the internet."
+     },
+     "begruendung": {
+      "de": "Übertragung ist ein eigener Schritt und setzt die Zahlenform meist schon voraus. Digitalisieren passiert davor, am Übergang von der Welt zur Zahl.",
+      "en": "Transmission is a separate step and usually presupposes the numeric form. Digitising happens before, at the crossing from world to number."
+     }
     },
     {
      "kennung": "c",
-     "text": "Es verkleinern, damit es weniger Speicher braucht.",
-     "begruendung": "Das ist Kompression, ein späteres Konzept. Digitalisieren kann die Datenmenge sogar riesig machen, man denke an unkomprimiertes Video."
+     "text": {
+      "de": "Es verkleinern, damit es weniger Speicher braucht.",
+      "en": "To shrink it so it needs less storage."
+     },
+     "begruendung": {
+      "de": "Das ist Kompression, ein späteres Konzept. Digitalisieren kann die Datenmenge sogar riesig machen, man denke an unkomprimiertes Video.",
+      "en": "That is compression, a later concept. Digitising can even make the data huge; think of uncompressed video."
+     }
     }
    ]
   },
   {
    "id": "ad-010",
    "niveau": "verstehen",
-   "frage": "Auf eurer Übertragungsstrecke: Wo verläuft die Grenze zwischen analog und\ndigital?",
+   "frage": {
+    "de": "Auf eurer Übertragungsstrecke: Wo verläuft die Grenze zwischen analog und\ndigital?",
+    "en": "On your transmission link: where is the boundary between analog and\ndigital?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -294,30 +540,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Schon am Sender: Weil die LED mit Zahlen von 0 bis 255 angesteuert wird, ist auch ihr Licht digital.",
-     "begruendung": "Die Ansteuerung ist digital, das Licht selbst nicht: Seine Helligkeit ist stufenlos, sie hängt von Abstand und Winkel ab, und das Umgebungslicht addiert sich dazu. Zwischen den Geräten ist eure Strecke analog."
+     "text": {
+      "de": "Schon am Sender: Weil die LED mit Zahlen von 0 bis 255 angesteuert wird, ist auch ihr Licht digital.",
+      "en": "Already at the sender: because the LED is driven with numbers from 0 to 255, its light is digital too."
+     },
+     "begruendung": {
+      "de": "Die Ansteuerung ist digital, das Licht selbst nicht: Seine Helligkeit ist stufenlos, sie hängt von Abstand und Winkel ab, und das Umgebungslicht addiert sich dazu. Zwischen den Geräten ist eure Strecke analog.",
+      "en": "The control is digital, the light itself is not: its brightness is continuous, depends on distance and angle, and ambient light adds to it. Between the devices your link is analog."
+     }
     },
     {
      "kennung": "b",
-     "text": "Erst im Python-Programm, wenn ihr den Messwert mit einer Grenze vergleicht.",
-     "begruendung": "Da ist der Wert längst eine Zahl. Der Vergleich reduziert viele Zahlen auf wenige Symbole, das ist wichtig, aber digital war es schon vorher."
+     "text": {
+      "de": "Erst im Python-Programm, wenn ihr den Messwert mit einer Grenze vergleicht.",
+      "en": "Only in the Python program, when you compare the measured value against a boundary."
+     },
+     "begruendung": {
+      "de": "Da ist der Wert längst eine Zahl. Der Vergleich reduziert viele Zahlen auf wenige Symbole, das ist wichtig, aber digital war es schon vorher.",
+      "en": "By then the value has long been a number. The comparison reduces many numbers to a few symbols, which matters, but it was digital before that."
+     }
     },
     {
      "kennung": "c",
-     "text": "Im Farbsensor: Er setzt das stufenlose Licht in Zahlen um, ab dort rechnet alles mit Zahlen.",
-     "begruendung": "Genau. Die ganze Strecke läuft digital, analog, digital: Der Sender macht aus Zahlen Licht, das Licht fliegt stufenlos und gestört durch den Raum, der Sensor macht daraus wieder Zahlen. Das analoge Mittelstück ist der Teil, den kein Programm kontrolliert, und genau dort entscheidet sich euer Wettbewerb."
+     "text": {
+      "de": "Im Farbsensor: Er setzt das stufenlose Licht in Zahlen um, ab dort rechnet alles mit Zahlen.",
+      "en": "In the colour sensor: it turns the continuous light into numbers; from there on everything computes with numbers."
+     },
+     "begruendung": {
+      "de": "Genau. Die ganze Strecke läuft digital, analog, digital: Der Sender macht aus Zahlen Licht, das Licht fliegt stufenlos und gestört durch den Raum, der Sensor macht daraus wieder Zahlen. Das analoge Mittelstück ist der Teil, den kein Programm kontrolliert, und genau dort entscheidet sich euer Wettbewerb.",
+      "en": "Exactly. The whole link runs digital, analog, digital: the sender turns numbers into light, the light travels continuously and disturbed through the room, the sensor turns it back into numbers. The analog middle is the part no program controls, and that is where your competition is decided."
+     }
     },
     {
      "kennung": "d",
-     "text": "Nirgends: Die ganze Strecke ist digital, weil an beiden Enden Computer stehen.",
-     "begruendung": "Die Computer an den Enden ändern nichts daran, dass dazwischen Physik liegt. Wer das analoge Mittelstück vergisst, wundert sich später über jede Störung."
+     "text": {
+      "de": "Nirgends: Die ganze Strecke ist digital, weil an beiden Enden Computer stehen.",
+      "en": "Nowhere: the whole link is digital because there are computers at both ends."
+     },
+     "begruendung": {
+      "de": "Die Computer an den Enden ändern nichts daran, dass dazwischen Physik liegt. Wer das analoge Mittelstück vergisst, wundert sich später über jede Störung.",
+      "en": "The computers at the ends do not change the physics in between. Whoever forgets the analog middle will later be surprised by every disturbance."
+     }
     }
    ]
   },
   {
    "id": "ad-011",
    "niveau": "verstehen",
-   "frage": "Welche dieser Dinge arbeiten im Sinn dieses Konzepts digital, also mit\nendlich vielen, klar getrennten Zuständen?",
+   "frage": {
+    "de": "Welche dieser Dinge arbeiten im Sinn dieses Konzepts digital, also mit\nendlich vielen, klar getrennten Zuständen?",
+    "en": "Which of these things work digitally in the sense of this concept, that\nis, with finitely many clearly separated states?"
+   },
    "typ": "mc",
    "richtig": [
     "b",
@@ -326,35 +599,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein stufenloser Lichtdimmer",
-     "begruendung": "Stufenlos ist das Gegenteil von digital: Zwischen zwei Helligkeiten liegt immer noch eine dritte."
+     "text": {
+      "de": "Ein stufenloser Lichtdimmer",
+      "en": "A continuously variable light dimmer"
+     },
+     "begruendung": {
+      "de": "Stufenlos ist das Gegenteil von digital: Zwischen zwei Helligkeiten liegt immer noch eine dritte.",
+      "en": "Continuous is the opposite of digital: between two brightness levels there is always a third."
+     }
     },
     {
      "kennung": "b",
-     "text": "Ein Lichtschalter mit an und aus",
-     "begruendung": "Zwei Zustände, nichts dazwischen gilt: Das ist digital in Reinform, ganz ohne Computer. Halb gedrückt ist kein gültiger Zustand, der Schalter schnappt in einen von beiden."
+     "text": {
+      "de": "Ein Lichtschalter mit an und aus",
+      "en": "A light switch with on and off"
+     },
+     "begruendung": {
+      "de": "Zwei Zustände, nichts dazwischen gilt: Das ist digital in Reinform, ganz ohne Computer. Halb gedrückt ist kein gültiger Zustand, der Schalter schnappt in einen von beiden.",
+      "en": "Two states, nothing in between counts: digital in its purest form, no computer involved. Half-pressed is not a valid state; the switch snaps into one of the two."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein Zeigerthermometer",
-     "begruendung": "Der Zeiger wandert stufenlos, jede Zwischenstellung ist möglich und gültig. Erst wer eine Skala mit Bereichen darüberlegt und abliest, digitalisiert."
+     "text": {
+      "de": "Ein Zeigerthermometer",
+      "en": "A dial thermometer"
+     },
+     "begruendung": {
+      "de": "Der Zeiger wandert stufenlos, jede Zwischenstellung ist möglich und gültig. Erst wer eine Skala mit Bereichen darüberlegt und abliest, digitalisiert.",
+      "en": "The needle moves continuously; every intermediate position is possible and valid. Only reading it against a scale of regions digitises."
+     }
     },
     {
      "kennung": "d",
-     "text": "Ein Würfel",
-     "begruendung": "Sechs Zustände, und dazwischen gibt es nichts Gültiges: Ein Würfel auf der Kante kippt in eine Lage. Genau dieses Einrasten in getrennte Zustände macht digital aus."
+     "text": {
+      "de": "Ein Würfel",
+      "en": "A die"
+     },
+     "begruendung": {
+      "de": "Sechs Zustände, und dazwischen gibt es nichts Gültiges: Ein Würfel auf der Kante kippt in eine Lage. Genau dieses Einrasten in getrennte Zustände macht digital aus.",
+      "en": "Six states, and nothing valid in between: a die on its edge tips into one position. Exactly this snapping into separated states is what digital means."
+     }
     },
     {
      "kennung": "e",
-     "text": "Eine Sanduhr",
-     "begruendung": "Der Sandstand sinkt stufenlos. (Wer mag, kann über die einzelnen Körner streiten, aber abgelesen wird der stufenlose Füllstand.)"
+     "text": {
+      "de": "Eine Sanduhr",
+      "en": "An hourglass"
+     },
+     "begruendung": {
+      "de": "Der Sandstand sinkt stufenlos. (Wer mag, kann über die einzelnen Körner streiten, aber abgelesen wird der stufenlose Füllstand.)",
+      "en": "The sand level falls continuously. (You may quibble about individual grains, but what is read off is the continuous level.)"
+     }
     }
    ]
   },
   {
    "id": "ad-012",
    "niveau": "verstehen",
-   "frage": "In Challenge 1 legt ihr fest, wie viele Farben euer Alphabet hat. Was ist\nder Kern dieser Entscheidung?",
+   "frage": {
+    "de": "In Challenge 1 legt ihr fest, wie viele Farben euer Alphabet hat. Was ist\nder Kern dieser Entscheidung?",
+    "en": "In Challenge 1 you decide how many colours your alphabet has. What is the\ncore of this decision?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -362,30 +668,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Ein Tauschgeschäft: Mehr Farben tragen mehr pro Messung, rücken die Bereiche aber enger zusammen; wie viele sicher sind, entscheidet eure Messreihe.",
-     "begruendung": "Genau: Es gibt keine allgemein richtige Zahl, es gibt nur die richtige Zahl für euren Aufbau, euer Licht und euer Rauschen. Deshalb gewinnt in Challenge 1 nicht das mutigste Team, sondern das bestvermessene."
+     "text": {
+      "de": "Ein Tauschgeschäft: Mehr Farben tragen mehr pro Messung, rücken die Bereiche aber enger zusammen; wie viele sicher sind, entscheidet eure Messreihe.",
+      "en": "A trade-off: more colours carry more per measurement but push the regions closer together; how many are safe is decided by your measurements."
+     },
+     "begruendung": {
+      "de": "Genau: Es gibt keine allgemein richtige Zahl, es gibt nur die richtige Zahl für euren Aufbau, euer Licht und euer Rauschen. Deshalb gewinnt in Challenge 1 nicht das mutigste Team, sondern das bestvermessene.",
+      "en": "Exactly: there is no generally correct number, only the correct number for your setup, your light, and your noise. That is why Challenge 1 is won not by the boldest team but by the best-measured one."
+     }
     },
     {
      "kennung": "b",
-     "text": "Mehr Farben lohnen sich, weil jede Messung dann mehr Bits trägt und die Übertragung entsprechend schneller wird.",
-     "begruendung": "Nur solange jede Messung noch stimmt. Ab einer gewissen Enge kosten die Erkennungsfehler mehr Zeit, als das größere Alphabet einspart."
+     "text": {
+      "de": "Mehr Farben lohnen sich, weil jede Messung dann mehr Bits trägt und die Übertragung entsprechend schneller wird.",
+      "en": "More colours pay off, because each measurement then carries more bits and the transmission gets correspondingly faster."
+     },
+     "begruendung": {
+      "de": "Nur solange jede Messung noch stimmt. Ab einer gewissen Enge kosten die Erkennungsfehler mehr Zeit, als das größere Alphabet einspart.",
+      "en": "Only as long as every measurement is still correct. Beyond a certain tightness, recognition errors cost more time than the larger alphabet saves."
+     }
     },
     {
      "kennung": "c",
-     "text": "Zwei Farben sind die sichere Wahl, weil der größte Abstand die wenigsten Fehler bringt und ein Fehler mehr kostet als etwas Tempo.",
-     "begruendung": "Wer bei großem Störabstand trotzdem nur zwei Farben nutzt, verschenkt Tempo. Auch Vorsicht hat einen Preis, und ob er gerechtfertigt ist, zeigt wieder nur die Messung."
+     "text": {
+      "de": "Zwei Farben sind die sichere Wahl, weil der größte Abstand die wenigsten Fehler bringt und ein Fehler mehr kostet als etwas Tempo.",
+      "en": "Two colours are the safe choice, because the largest distance brings the fewest errors and an error costs more than a little speed."
+     },
+     "begruendung": {
+      "de": "Wer bei großem Störabstand trotzdem nur zwei Farben nutzt, verschenkt Tempo. Auch Vorsicht hat einen Preis, und ob er gerechtfertigt ist, zeigt wieder nur die Messung.",
+      "en": "Using only two colours despite a large noise margin gives away speed. Caution has a price too, and only measurement shows whether it is justified."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Zahl ist Geschmackssache, solange sauber kalibriert wird: Die Kalibrierung legt die Grenzen dorthin, wo sie sicher liegen.",
-     "begruendung": "Kalibrieren verschiebt die Grenzen an die richtigen Stellen, aber es vergrößert nicht den Abstand zwischen ihnen. Gegen zu enge Bereiche hilft keine noch so gute Kalibrierung."
+     "text": {
+      "de": "Die Zahl ist Geschmackssache, solange sauber kalibriert wird: Die Kalibrierung legt die Grenzen dorthin, wo sie sicher liegen.",
+      "en": "The number is a matter of taste as long as calibration is done properly: calibration puts the boundaries where they are safe."
+     },
+     "begruendung": {
+      "de": "Kalibrieren verschiebt die Grenzen an die richtigen Stellen, aber es vergrößert nicht den Abstand zwischen ihnen. Gegen zu enge Bereiche hilft keine noch so gute Kalibrierung.",
+      "en": "Calibration moves the boundaries to the right places, but it does not enlarge the distance between them. No amount of calibration helps against regions that are too narrow."
+     }
     }
    ]
   },
   {
    "id": "ad-013",
    "niveau": "verstehen",
-   "frage": "Beim Digitalisieren eines Fotos entstehen aus dem stufenlosen Bild 64 × 64\nBildpunkte mit je 256 Helligkeitsstufen. Welcher der beiden Schritte ist\ndie Abtastung (sampling)?",
+   "frage": {
+    "de": "Beim Digitalisieren eines Fotos entstehen aus dem stufenlosen Bild 64 × 64\nBildpunkte mit je 256 Helligkeitsstufen. Welcher der beiden Schritte ist\ndie Abtastung (sampling)?",
+    "en": "When digitising a photo, the continuous image becomes 64 × 64 points with\n256 brightness levels each. Which of the two steps is the sampling?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -393,30 +726,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Das Runden jeder Helligkeit auf eine der 256 vereinbarten Stufen.",
-     "begruendung": "Das ist der zweite Schnitt, die Quantisierung: Sie zerlegt den Wert. Die Abtastung zerlegt die Achse, hier also die Bildfläche."
+     "text": {
+      "de": "Das Runden jeder Helligkeit auf eine der 256 vereinbarten Stufen.",
+      "en": "Rounding each brightness to one of the 256 agreed levels."
+     },
+     "begruendung": {
+      "de": "Das ist der zweite Schnitt, die Quantisierung: Sie zerlegt den Wert. Die Abtastung zerlegt die Achse, hier also die Bildfläche.",
+      "en": "That is the second cut, quantization: it slices the value. Sampling slices the axis, here the image area."
+     }
     },
     {
      "kennung": "b",
-     "text": "Das Umrechnen der fertigen Stufenwerte in Binärzahlen.",
-     "begruendung": "Die Binärdarstellung kommt erst nach beiden Schnitten; sie ändert nichts mehr daran, wie viele Punkte und Stufen es gibt."
+     "text": {
+      "de": "Das Umrechnen der fertigen Stufenwerte in Binärzahlen.",
+      "en": "Converting the finished level values into binary numbers."
+     },
+     "begruendung": {
+      "de": "Die Binärdarstellung kommt erst nach beiden Schnitten; sie ändert nichts mehr daran, wie viele Punkte und Stufen es gibt.",
+      "en": "The binary representation comes after both cuts; it no longer changes how many points and levels there are."
+     }
     },
     {
      "kennung": "c",
-     "text": "Das Zerlegen der stufenlosen Bildfläche in die 64 × 64 Messpunkte.",
-     "begruendung": "Genau: Die Abtastung zerlegt die Achse (Fläche oder Zeit) in endlich viele Messpunkte. Wie fein, das ist die Auflösung. Die Quantisierung zerlegt danach den gemessenen Wert in Stufen."
+     "text": {
+      "de": "Das Zerlegen der stufenlosen Bildfläche in die 64 × 64 Messpunkte.",
+      "en": "Slicing the continuous image area into the 64 × 64 measurement points."
+     },
+     "begruendung": {
+      "de": "Genau: Die Abtastung zerlegt die Achse (Fläche oder Zeit) in endlich viele Messpunkte. Wie fein, das ist die Auflösung. Die Quantisierung zerlegt danach den gemessenen Wert in Stufen.",
+      "en": "Exactly: sampling slices the axis (area or time) into finitely many measurement points. How finely is the resolution. Quantization then slices the measured value into levels."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das Speichern der Bildpunkte in einer Datei mit Kopfdaten.",
-     "begruendung": "Das Speichern verpackt nur, was Abtastung und Quantisierung vorher erzeugt haben. Die beiden Schnitte sind da längst passiert."
+     "text": {
+      "de": "Das Speichern der Bildpunkte in einer Datei mit Kopfdaten.",
+      "en": "Storing the image points in a file with header data."
+     },
+     "begruendung": {
+      "de": "Das Speichern verpackt nur, was Abtastung und Quantisierung vorher erzeugt haben. Die beiden Schnitte sind da längst passiert.",
+      "en": "Storing merely packages what sampling and quantization produced before. Both cuts have long happened by then."
+     }
     }
    ]
   },
   {
    "id": "ad-014",
    "niveau": "anwenden",
-   "frage": "Ein Graustufenbild wird mit 100 × 100 Bildpunkten und 8 Bit je Bildpunkt\ndigitalisiert. Wie groß ist die entstehende Datei?",
+   "frage": {
+    "de": "Ein Graustufenbild wird mit 100 × 100 Bildpunkten und 8 Bit je Bildpunkt\ndigitalisiert. Wie groß ist die entstehende Datei?",
+    "en": "A greyscale picture is digitised with 100 × 100 points and 8 bit per\npoint. How large is the resulting file?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -424,30 +784,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "80.000 Byte, denn 100 · 100 · 8 ergibt 80.000.",
-     "begruendung": "Die Rechnung stimmt, aber ihr Ergebnis sind Bit, nicht Byte. Erst die Division durch 8 macht daraus die Dateigröße in Byte."
+     "text": {
+      "de": "80.000 Byte, denn 100 · 100 · 8 ergibt 80.000.",
+      "en": "80,000 bytes, because 100 · 100 · 8 makes 80,000."
+     },
+     "begruendung": {
+      "de": "Die Rechnung stimmt, aber ihr Ergebnis sind Bit, nicht Byte. Erst die Division durch 8 macht daraus die Dateigröße in Byte.",
+      "en": "The arithmetic is right, but its result is bits, not bytes. Only dividing by 8 turns it into the file size in bytes."
+     }
     },
     {
      "kennung": "b",
-     "text": "10.000 Byte, denn 100 · 100 · 8 = 80.000 Bit, und 8 Bit sind ein Byte.",
-     "begruendung": "Genau: Punkte mal Bits je Punkt ergibt die Größe in Bit, geteilt durch 8 die Größe in Byte. Diese eine Rechnung trägt jede Dateigrößenabschätzung."
+     "text": {
+      "de": "10.000 Byte, denn 100 · 100 · 8 = 80.000 Bit, und 8 Bit sind ein Byte.",
+      "en": "10,000 bytes, because 100 · 100 · 8 = 80,000 bits, and 8 bits make one byte."
+     },
+     "begruendung": {
+      "de": "Genau: Punkte mal Bits je Punkt ergibt die Größe in Bit, geteilt durch 8 die Größe in Byte. Diese eine Rechnung trägt jede Dateigrößenabschätzung.",
+      "en": "Exactly: points times bits per point gives the size in bits, divided by 8 the size in bytes. This one calculation carries every file-size estimate."
+     }
     },
     {
      "kennung": "c",
-     "text": "30.000 Byte, denn jeder Bildpunkt braucht drei Farbkanäle zu je einem Byte.",
-     "begruendung": "Die drei Kanäle gehören zu Farbbildern mit 24 Bit je Punkt. Hier ist Graustufen mit 8 Bit vereinbart, also ein Byte je Punkt."
+     "text": {
+      "de": "30.000 Byte, denn jeder Bildpunkt braucht drei Farbkanäle zu je einem Byte.",
+      "en": "30,000 bytes, because every point needs three colour channels of one byte each."
+     },
+     "begruendung": {
+      "de": "Die drei Kanäle gehören zu Farbbildern mit 24 Bit je Punkt. Hier ist Graustufen mit 8 Bit vereinbart, also ein Byte je Punkt.",
+      "en": "The three channels belong to colour images with 24 bit per point. Here greyscale with 8 bit is agreed, so one byte per point."
+     }
     },
     {
      "kennung": "d",
-     "text": "1.250 Byte, denn die 100 · 100 Bit werden noch durch 8 geteilt.",
-     "begruendung": "Hier ist die Farbtiefe verloren gegangen: 100 · 100 zählt nur die Punkte. Jeder Punkt trägt aber 8 Bit, nicht eines."
+     "text": {
+      "de": "1.250 Byte, denn die 100 · 100 Bit werden noch durch 8 geteilt.",
+      "en": "1,250 bytes, because the 100 · 100 bits are further divided by 8."
+     },
+     "begruendung": {
+      "de": "Hier ist die Farbtiefe verloren gegangen: 100 · 100 zählt nur die Punkte. Jeder Punkt trägt aber 8 Bit, nicht eines.",
+      "en": "The colour depth got lost here: 100 · 100 only counts the points. But each point carries 8 bits, not one."
+     }
     }
    ]
   },
   {
    "id": "ad-015",
    "niveau": "verstehen",
-   "frage": "Ein digitalisiertes Foto zeigt deutlich erkennbare Klötzchen, die Farben\ninnerhalb der Klötzchen wirken aber natürlich und fein abgestuft. Welcher\nSchritt der Digitalisierung war zu grob?",
+   "frage": {
+    "de": "Ein digitalisiertes Foto zeigt deutlich erkennbare Klötzchen, die Farben\ninnerhalb der Klötzchen wirken aber natürlich und fein abgestuft. Welcher\nSchritt der Digitalisierung war zu grob?",
+    "en": "A digitised photo shows clearly visible blocks, but the colours within\nthe blocks look natural and finely graded. Which digitisation step was\ntoo coarse?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -455,30 +842,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Abtastung: zu wenige Bildpunkte für die Fläche.",
-     "begruendung": "Genau: Klötzchen sind sichtbare Abtastpunkte. Die Farbtiefe war dagegen offenbar ausreichend, sonst wären Streifen in den Verläufen oder harte Farbsprünge zu sehen."
+     "text": {
+      "de": "Die Abtastung: zu wenige Bildpunkte für die Fläche.",
+      "en": "The sampling: too few points for the area."
+     },
+     "begruendung": {
+      "de": "Genau: Klötzchen sind sichtbare Abtastpunkte. Die Farbtiefe war dagegen offenbar ausreichend, sonst wären Streifen in den Verläufen oder harte Farbsprünge zu sehen.",
+      "en": "Exactly: blocks are visible sampling points. The colour depth was evidently sufficient, otherwise you would see stripes in the gradients or hard colour jumps."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Quantisierung: zu wenige Stufen je Farbkanal.",
-     "begruendung": "Zu grobe Quantisierung zeigt sich anders: als Streifen in glatten Verläufen (Banding) oder als harte Farbsprünge, nicht als Klötzchen. Die Klötzchen kommen von der Abtastung."
+     "text": {
+      "de": "Die Quantisierung: zu wenige Stufen je Farbkanal.",
+      "en": "The quantization: too few levels per colour channel."
+     },
+     "begruendung": {
+      "de": "Zu grobe Quantisierung zeigt sich anders: als Streifen in glatten Verläufen (Banding) oder als harte Farbsprünge, nicht als Klötzchen. Die Klötzchen kommen von der Abtastung.",
+      "en": "Too-coarse quantization looks different: as stripes in smooth gradients (banding) or hard colour jumps, not as blocks. The blocks come from the sampling."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Übertragung: Beim Kopieren der Datei hat sich Rauschen aufaddiert.",
-     "begruendung": "Digitale Kopien addieren kein Rauschen, das ist ja gerade ihr Vorteil. Aufaddiertes Rauschen wäre außerdem körnig und unregelmäßig, nicht ordentlich klötzchenförmig."
+     "text": {
+      "de": "Die Übertragung: Beim Kopieren der Datei hat sich Rauschen aufaddiert.",
+      "en": "The transfer: noise accumulated while copying the file."
+     },
+     "begruendung": {
+      "de": "Digitale Kopien addieren kein Rauschen, das ist ja gerade ihr Vorteil. Aufaddiertes Rauschen wäre außerdem körnig und unregelmäßig, nicht ordentlich klötzchenförmig.",
+      "en": "Digital copies add no noise, that is precisely their advantage. Accumulated noise would look grainy and irregular anyway, not neatly block-shaped."
+     }
     },
     {
      "kennung": "d",
-     "text": "Beide Schritte gleichermaßen: Klötzchen entstehen immer aus dem Zusammenspiel.",
-     "begruendung": "Die beiden Schnitte hinterlassen getrennte Spuren, und genau daran erkennt man sie: Klötzchen zeigen auf die Abtastung, Streifen auf die Quantisierung. Hier zeigt das Bild nur Klötzchen."
+     "text": {
+      "de": "Beide Schritte gleichermaßen: Klötzchen entstehen immer aus dem Zusammenspiel.",
+      "en": "Both steps equally: blocks always arise from the interplay."
+     },
+     "begruendung": {
+      "de": "Die beiden Schnitte hinterlassen getrennte Spuren, und genau daran erkennt man sie: Klötzchen zeigen auf die Abtastung, Streifen auf die Quantisierung. Hier zeigt das Bild nur Klötzchen.",
+      "en": "The two cuts leave separate traces, and that is exactly how you recognise them: blocks point to sampling, stripes to quantization. This picture shows only blocks."
+     }
     }
    ]
   },
   {
    "id": "ad-016",
    "niveau": "verstehen",
-   "frage": "Warum digitalisiert man ein Bild für die Übertragung über die Lichtstrecke\nnicht einfach immer mit höchster Auflösung und 24 Bit Farbtiefe?",
+   "frage": {
+    "de": "Warum digitalisiert man ein Bild für die Übertragung über die Lichtstrecke\nnicht einfach immer mit höchster Auflösung und 24 Bit Farbtiefe?",
+    "en": "Why not simply digitise a picture at the highest resolution and 24-bit\ncolour depth for transfer over the light link?"
+   },
    "typ": "sc",
    "richtig": [
     "d"
@@ -486,23 +900,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil der Farbsensor nur drei Kanäle misst und deshalb höchstens 3 Bit je Bildpunkt ankommen können.",
-     "begruendung": "Die drei Kanäle des Sensors begrenzen nicht, wie viele Bits je Bildpunkt übertragen werden können; die Bits werden ohnehin nacheinander als Symbole gesendet. Die Grenze liegt woanders."
+     "text": {
+      "de": "Weil der Farbsensor nur drei Kanäle misst und deshalb höchstens 3 Bit je Bildpunkt ankommen können.",
+      "en": "Because the colour sensor measures only three channels, so at most 3 bits per point can arrive."
+     },
+     "begruendung": {
+      "de": "Die drei Kanäle des Sensors begrenzen nicht, wie viele Bits je Bildpunkt übertragen werden können; die Bits werden ohnehin nacheinander als Symbole gesendet. Die Grenze liegt woanders.",
+      "en": "The sensor's three channels do not limit how many bits per point can be transferred; the bits are sent one after another as symbols anyway. The limit lies elsewhere."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil sich große Dateien beim Übertragen stärker verrauschen als kleine.",
-     "begruendung": "Die Fehlerwahrscheinlichkeit je Symbol hängt vom Kanal ab, nicht von der Dateigröße. Eine große Datei bietet nur mehr Gelegenheiten, sie kostet aber vor allem eines: Zeit."
+     "text": {
+      "de": "Weil sich große Dateien beim Übertragen stärker verrauschen als kleine.",
+      "en": "Because large files pick up more noise in transfer than small ones."
+     },
+     "begruendung": {
+      "de": "Die Fehlerwahrscheinlichkeit je Symbol hängt vom Kanal ab, nicht von der Dateigröße. Eine große Datei bietet nur mehr Gelegenheiten, sie kostet aber vor allem eines: Zeit.",
+      "en": "The error probability per symbol depends on the channel, not on the file size. A large file merely offers more opportunities; above all it costs one thing: time."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil mehr als 8 Bit Farbtiefe auf dem Empfängerbildschirm nicht darstellbar sind.",
-     "begruendung": "Übliche Bildschirme zeigen gerade die 24 Bit (8 je Kanal). Die Darstellbarkeit ist nicht das Problem, sondern der Preis jedes behaltenen Bits auf dem Weg dorthin."
+     "text": {
+      "de": "Weil mehr als 8 Bit Farbtiefe auf dem Empfängerbildschirm nicht darstellbar sind.",
+      "en": "Because more than 8 bits of colour depth cannot be displayed on the receiver's screen."
+     },
+     "begruendung": {
+      "de": "Übliche Bildschirme zeigen gerade die 24 Bit (8 je Kanal). Die Darstellbarkeit ist nicht das Problem, sondern der Preis jedes behaltenen Bits auf dem Weg dorthin.",
+      "en": "Ordinary screens display exactly those 24 bits (8 per channel). Displayability is not the problem; the price of every kept bit on the way there is."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil jeder Bildpunkt und jede Stufe Bits kostet und die Übertragung bei 10 bis 50 bit/s sonst Stunden bis Tage dauert.",
-     "begruendung": "Genau: Punkte mal Bits je Punkt ergibt die Dateigröße, und die Symbolrate der Strecke macht daraus Übertragungszeit. Digitalisieren heißt deshalb abwägen, welches Detail die Zeit wert ist."
+     "text": {
+      "de": "Weil jeder Bildpunkt und jede Stufe Bits kostet und die Übertragung bei 10 bis 50 bit/s sonst Stunden bis Tage dauert.",
+      "en": "Because every point and every level costs bits, and at 10 to 50 bit/s the transfer would otherwise take hours to days."
+     },
+     "begruendung": {
+      "de": "Genau: Punkte mal Bits je Punkt ergibt die Dateigröße, und die Symbolrate der Strecke macht daraus Übertragungszeit. Digitalisieren heißt deshalb abwägen, welches Detail die Zeit wert ist.",
+      "en": "Exactly: points times bits per point gives the file size, and the link's symbol rate turns that into transfer time. Digitising therefore means weighing which detail is worth the time."
+     }
     }
    ]
   }

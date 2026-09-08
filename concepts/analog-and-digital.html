@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3195b598eb1f03154f53c883785ef3f3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6afc368e6f6fa7c79ac664f908235de2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Das Modul <code>lifi_hardware</code></span></a>
+ <span class="menu-text">The module <code>lifi_hardware</code></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -233,13 +233,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probleme zerlegen</span></a>
+ <span class="menu-text">Cutting Problems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/input-processing-output.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probleme lösen mit Computern</span></a>
+ <span class="menu-text">Problem Solving with Computers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -379,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Logik und Arithmetik</span></a>
+ <span class="menu-text">Logic and Arithmetic</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -495,11 +495,13 @@ Abbildung&nbsp;1: In allen vier Feldern liegt dasselbe Rauschen auf demselben Si
 <h3 class="anchored" data-anchor-id="abtasten-und-quantisieren-die-zwei-schnitte">Abtasten und Quantisieren: die zwei Schnitte</h3>
 <p>Digitalisieren besteht immer aus zwei Schnitten, und beide könnt ihr an einem Foto sehen. Der erste Schnitt geht durch die Fläche: Das stufenlose Bild wird in einzelne Messpunkte zerlegt, etwa 64 mal 64 Bildpunkte. Diesen Schnitt nennt man <strong>Abtastung</strong> (englisch sampling), und wie fein er ausfällt, ist die <strong>Auflösung</strong>. Der zweite Schnitt geht durch den Wert: Die gemessene Helligkeit jedes Punkts wird auf eine der vereinbarten Stufen gerundet, zwei Stufen für Schwarz-Weiß, 256 für Graustufen, 16,7 Millionen für volle Farbe. Das ist die <strong>Quantisierung</strong>, und die Zahl der Stufen ist die <strong>Farbtiefe</strong>. Die Stufen kennt ihr schon: Es sind genau die Bereiche aus dem Abschnitt darüber.</p>
 <p>Beide Schnitte werfen Detail weg, mit Absicht, und beide hinterlassen unterschiedliche Spuren. Zu grobe Abtastung zeigt sich als Klötzchen, zu grobe Quantisierung als Streifen in glatten Verläufen. Und beides hat denselben Preis: Punkte mal Bits je Punkt ergibt die Dateigröße. Ein Bild mit 64 mal 64 Punkten in 24 Bit Farbe sind 98.304 Bit, also 12 KB; dasselbe Bild in Schwarz-Weiß sind 512 Byte. Über eure Lichtstrecke mit ihren 10 bis 50 bit/s heißt das: knapp eine Stunde gegen zwei Minuten. Digitalisieren ist deshalb keine Fleißaufgabe mit „so fein wie möglich”, sondern eine Abwägung, welches Detail die Übertragungszeit wert ist. Genau diese Abwägung könnt ihr in <a href="https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/">The Photo Digitiser</a> selbst durchspielen, von 256 mal 256 Punkten bis hinunter zum Extrem von einem einzigen Pixel, und mit Farbtiefen vom heutigen Standard bis zu den vier Graustufen des ersten Game Boy. Dieselben zwei Schnitte gelten für Ton: Dort zerlegt die Abtastrate die Zeit und die Bit-Tiefe die Lautstärke, und im <a href="https://winf-hsos.github.io/lifi-concept-demos/audio-digitiser/">Audio Digitiser</a> könnt ihr hören, was jeder Schnitt wegwirft.</p>
+<p><a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the photo digitiser</span><span class="linkcard-desc">turn an analog photo into numbers: pick resolution and colour depth (down to the game boy's four greys), see the picture change, and watch the byte count grow.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/693dfa3d8140.png" alt=""></a> <a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/audio-digitiser/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the audio digitiser</span><span class="linkcard-desc">the same two cuts for sound: choose sampling rate and bit depth, see the staircase on the wave — and hear what gets thrown away.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/344709270e70.png" alt=""></a></p>
 </section>
 <section id="warum-der-umweg-sich-lohnt" class="level3">
 <h3 class="anchored" data-anchor-id="warum-der-umweg-sich-lohnt">Warum der Umweg sich lohnt</h3>
 <p>Beim Digitalisieren wird Genauigkeit absichtlich weggeworfen: Aus unendlich vielen Helligkeiten werden vier Farben. Was man dafür bekommt, ist Zuverlässigkeit. Eine Kopie einer Kopie einer Kassette rauscht hörbar mehr als das Original, weil sich analoge Fehler bei jedem Schritt aufaddieren. Eine kopierte Datei ist auch nach der tausendsten Kopie identisch, weil kleine Störungen bei jedem Schritt verschwinden: Solange der Wert in seinem Bereich bleibt, wird er wieder als derselbe Zustand gelesen, und der Fehler wird nicht mitgenommen, sondern gelöscht. Die Grenzziehung selbst ist am Ende eine <code>if</code>-Abfrage in eurem Code: Ihr entscheidet, wo die Bereiche liegen, und ab da gilt eure Entscheidung, nicht die Physik.</p>
 <p>Genau dieses Experiment könnt ihr in <a href="https://winf-hsos.github.io/lifi-concept-demos/copier/">The Copier</a> selbst durchführen: Jeder Druck auf „copy” hängt die nächste analoge Generation an die Wand, und ihr seht das Original Kopie um Kopie verschwinden; der Knopf „and as a file?” hängt zum Vergleich die Dateikopie dazu, die auch nach dreißig Kopien das Original ist. Und die Entscheidung, die am Anfang jeder Datei steht, zeigt <a href="https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/">The Photo Digitiser</a>: Auflösung und Farbtiefe wählen, das Bild sofort sehen, und die Dateigröße samt Übertragungsdauer über eure Lichtstrecke gleich mit. Mehr davon auf der <a href="../links.html#demonstrators">Übersicht aller Demonstratoren</a>.</p>
+<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/copier/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the copier</span><span class="linkcard-desc">press copy and hang each generation on the wall: watch the analog picture fade copy by copy, then ask what a file would have done.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/03e5b965b44e.png" alt=""></a>
 </section>
 </section>
 <section id="folien" class="level2">
@@ -601,10 +603,45 @@ Abbildung&nbsp;1: In allen vier Feldern liegt dasselbe Rauschen auf demselben Si
      können ein Bild (aus assets/diagrams) und einen Codeblock zeigen.
      Eingebunden auf jeder Seite über include-after-body in _quarto.yml;
      aktiv nur, wo ein <div class="fragen-quiz" data-quelle="..."> steht.
+
+     Sprache: Die JSON-Dateien enthalten beide Sprachen. Welche angezeigt
+     wird, sagt data-sprache am Kasten ("de" oder "en", Standard "de"); die
+     Seite entscheidet also, passend zu ihrem eigenen Text. Fehlt eine
+     Übersetzung, wird die deutsche Fassung gezeigt.
+
      Die JSON-Dateien erzeugt tools/build_questions.py. Es wird nichts
      erhoben und nichts gespeichert; das Quiz läuft komplett im Browser. -->
 <script>
 (function () {
+  var TEXTE = {
+    de: {
+      frageVon: function (i, n) { return "frage " + i + " von " + n; },
+      mehrfach: " · mehrere richtige antworten möglich",
+      pruefen: "antwort prüfen",
+      neustart: "von vorn",
+      stand: function (a, r) { return a + " beantwortet, " + r + " richtig"; },
+      zurueck: "vorherige frage",
+      weiter: "nächste frage",
+      vollbild: "vollbild",
+      bildAlt: "abbildung zur frage",
+      fehler: "fragen konnten nicht geladen werden.",
+      niveau: {erinnern: "erinnern", verstehen: "verstehen", anwenden: "anwenden"}
+    },
+    en: {
+      frageVon: function (i, n) { return "question " + i + " of " + n; },
+      mehrfach: " · several answers may be correct",
+      pruefen: "check answer",
+      neustart: "start over",
+      stand: function (a, r) { return a + " answered, " + r + " correct"; },
+      zurueck: "previous question",
+      weiter: "next question",
+      vollbild: "fullscreen",
+      bildAlt: "figure for the question",
+      fehler: "the questions could not be loaded.",
+      niveau: {erinnern: "remember", verstehen: "understand", anwenden: "apply"}
+    }
+  };
+
   function mischen(liste) {
     for (var i = liste.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -618,8 +655,15 @@ Abbildung&nbsp;1: In allen vier Feldern liegt dasselbe Rauschen auf demselben Si
     return a.slice().sort().join(",") === b.slice().sort().join(",");
   }
 
-  function bauen(kasten, daten) {
+  function bauen(kasten, daten, sprache) {
     var fragen, reihenfolgen, antworten, auswahl, index;
+    var t = TEXTE[sprache] || TEXTE.de;
+
+    // ein zweisprachiges Feld in der gewählten Sprache; fehlt sie, deutsch
+    function s(feld) {
+      if (typeof feld === "string") { return feld; }
+      return (feld && (feld[sprache] || feld.de)) || "";
+    }
 
     function neustart() {
       fragen = mischen(daten.fragen.slice());
@@ -645,30 +689,31 @@ Abbildung&nbsp;1: In allen vier Feldern liegt dasselbe Rauschen auf demselben Si
 
       kasten.innerHTML =
         '<div class="fq-kopf">' +
-        '<span>frage ' + (index + 1) + " von " + fragen.length +
-        '</span><span class="fq-niveau">' + frage.niveau +
-        (mehrfach ? " · mehrere richtige antworten möglich" : "") + "</span>" +
+        "<span>" + t.frageVon(index + 1, fragen.length) +
+        '</span><span class="fq-niveau">' +
+        (t.niveau[frage.niveau] || frage.niveau) +
+        (mehrfach ? t.mehrfach : "") + "</span>" +
         '<span class="fq-platz"></span>' +
-        '<button class="fq-nav fq-zurueck" title="vorherige frage">&#8249;</button>' +
-        '<button class="fq-nav fq-weiter-pfeil" title="nächste frage">&#8250;</button>' +
-        '<button class="fq-nav fq-vollbild" title="vollbild">&#x26F6;</button>' +
+        '<button class="fq-nav fq-zurueck" title="' + t.zurueck + '">&#8249;</button>' +
+        '<button class="fq-nav fq-weiter-pfeil" title="' + t.weiter + '">&#8250;</button>' +
+        '<button class="fq-nav fq-vollbild" title="' + t.vollbild + '">&#x26F6;</button>' +
         "</div>" +
         '<div class="fq-frage"></div>' +
         '<div class="fq-medien"></div>' +
         '<div class="fq-optionen"></div>' +
-        '<div class="fq-fuss"><button class="fq-neustart">von vorn</button>' +
+        '<div class="fq-fuss"><button class="fq-neustart">' + t.neustart + "</button>" +
         '<span class="fq-stand"></span></div>';
 
-      kasten.querySelector(".fq-frage").textContent = frage.frage;
+      kasten.querySelector(".fq-frage").textContent = s(frage.frage);
       kasten.querySelector(".fq-stand").textContent =
-        beantwortet.length + " beantwortet, " + richtig + " richtig";
+        t.stand(beantwortet.length, richtig);
 
       var medien = kasten.querySelector(".fq-medien");
       if (frage.bild) {
         var bild = document.createElement("img");
         bild.className = "fq-bild";
         bild.src = "../assets/diagrams/" + frage.bild + ".svg";
-        bild.alt = "abbildung zur frage";
+        bild.alt = t.bildAlt;
         medien.appendChild(bild);
       }
       if (frage.code) {
@@ -689,7 +734,7 @@ Abbildung&nbsp;1: In allen vier Feldern liegt dasselbe Rauschen auf demselben Si
         knopf.appendChild(marker);
         var inhalt = document.createElement("span");
         inhalt.className = "fq-text";
-        inhalt.textContent = option.text;
+        inhalt.textContent = s(option.text);
         knopf.appendChild(inhalt);
         knopf.dataset.kennung = option.kennung;
         knopf.addEventListener("click", function () {
@@ -715,7 +760,7 @@ Abbildung&nbsp;1: In allen vier Feldern liegt dasselbe Rauschen auf demselben Si
       if (mehrfach && antworten[index] === null) {
         var pruefen = document.createElement("button");
         pruefen.className = "fq-pruefen";
-        pruefen.textContent = "antwort prüfen";
+        pruefen.textContent = t.pruefen;
         pruefen.disabled = auswahl[index].length === 0;
         pruefen.addEventListener("click", function () {
           antworten[index] = auswahl[index].slice();
@@ -754,7 +799,7 @@ Abbildung&nbsp;1: In allen vier Feldern liegt dasselbe Rauschen auf demselben Si
         });
         var erklaerung = document.createElement("div");
         erklaerung.className = "fq-begruendung";
-        erklaerung.textContent = option.begruendung;
+        erklaerung.textContent = s(option.begruendung);
         knopf.insertAdjacentElement("afterend", erklaerung);
       });
     }
@@ -774,11 +819,12 @@ Abbildung&nbsp;1: In allen vier Feldern liegt dasselbe Rauschen auf demselben Si
   }
 
   document.querySelectorAll(".fragen-quiz[data-quelle]").forEach(function (kasten) {
+    var sprache = kasten.dataset.sprache === "en" ? "en" : "de";
     fetch(kasten.dataset.quelle)
       .then(function (antwort) { return antwort.json(); })
-      .then(function (daten) { bauen(kasten, daten); })
+      .then(function (daten) { bauen(kasten, daten, sprache); })
       .catch(function () {
-        kasten.textContent = "fragen konnten nicht geladen werden.";
+        kasten.textContent = (TEXTE[sprache] || TEXTE.de).fehler;
       });
   });
 })();

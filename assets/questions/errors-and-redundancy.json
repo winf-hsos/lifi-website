@@ -4,7 +4,10 @@
   {
    "id": "er-001",
    "niveau": "verstehen",
-   "frage": "Eure Strecke überträgt zehn Zeichen fehlerfrei, hundertmal hintereinander.\nBei einer Datei von 2 KB kippt trotzdem ein Bit. Warum ist das kein\nWiderspruch?",
+   "frage": {
+    "de": "Eure Strecke überträgt zehn Zeichen fehlerfrei, hundertmal hintereinander.\nBei einer Datei von 2 KB kippt trotzdem ein Bit. Warum ist das kein\nWiderspruch?",
+    "en": "Your link transmits ten characters without error, a hundred times in a\nrow. With a 2 KB file a bit still flips. Why is that no contradiction?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil bei einer langen Datei der Sensor warm wird und gegen Ende ungenauer misst als am Anfang.",
-     "begruendung": "Für den Fehler braucht es keine Erwärmung. Die Streuung, die ihr seit Sitzung 5 kennt, ist von der ersten Sekunde an da; sie trifft nur selten, und selten mal sehr viele Symbole ergibt irgendwann einen Treffer."
+     "text": {
+      "de": "Weil bei einer langen Datei der Sensor warm wird und gegen Ende ungenauer misst als am Anfang.",
+      "en": "Because with a long file the sensor warms up and measures less accurately towards the end than at the start."
+     },
+     "begruendung": {
+      "de": "Für den Fehler braucht es keine Erwärmung. Die Streuung, die ihr seit Sitzung 5 kennt, ist von der ersten Sekunde an da; sie trifft nur selten, und selten mal sehr viele Symbole ergibt irgendwann einen Treffer.",
+      "en": "No warming is needed for the error. The scatter you have known since session 5 is there from the first second; it strikes rarely, and rarely times a great many symbols eventually yields a hit."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil die Datei Bytes enthält, die als Farben schlechter zu unterscheiden sind als die Buchstaben der kurzen Tests.",
-     "begruendung": "Bytes und Buchstaben sind auf der Strecke dieselben Bits, und Bits werden mit demselben Alphabet gesendet. Der Unterschied liegt nicht im Inhalt, sondern in der Menge."
+     "text": {
+      "de": "Weil die Datei Bytes enthält, die als Farben schlechter zu unterscheiden sind als die Buchstaben der kurzen Tests.",
+      "en": "Because the file contains bytes that are harder to tell apart as colours than the letters of the short tests."
+     },
+     "begruendung": {
+      "de": "Bytes und Buchstaben sind auf der Strecke dieselben Bits, und Bits werden mit demselben Alphabet gesendet. Der Unterschied liegt nicht im Inhalt, sondern in der Menge.",
+      "en": "Bytes and letters are the same bits on the link, and bits are sent with the same alphabet. The difference lies not in the content but in the quantity."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil jedes Symbol eine kleine Fehlerwahrscheinlichkeit hat; bei tausend Symbolen fällt sie nicht auf, bei zwanzigtausend schlägt sie zu.",
-     "begruendung": "Genau. Rauschen lässt sich verkleinern, aber nicht abschalten; bei genügend vielen Symbolen geht irgendwann eines daneben. Deshalb lautet die Frage nicht, wie man Fehler verhindert, sondern wie man sie bemerkt."
+     "text": {
+      "de": "Weil jedes Symbol eine kleine Fehlerwahrscheinlichkeit hat; bei tausend Symbolen fällt sie nicht auf, bei zwanzigtausend schlägt sie zu.",
+      "en": "Because every symbol has a small probability of error; with a thousand symbols it goes unnoticed, with twenty thousand it strikes."
+     },
+     "begruendung": {
+      "de": "Genau. Rauschen lässt sich verkleinern, aber nicht abschalten; bei genügend vielen Symbolen geht irgendwann eines daneben. Deshalb lautet die Frage nicht, wie man Fehler verhindert, sondern wie man sie bemerkt.",
+      "en": "Exactly. Noise can be reduced but not switched off; with enough symbols one eventually goes wrong. That is why the question is not how to prevent errors but how to notice them."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil der Empfänger bei langen Übertragungen den Takt verliert; kurze Tests sind vorbei, bevor die Uhren auseinanderlaufen.",
-     "begruendung": "Drift ist ein echtes Problem langer Übertragungen, aber ein anderes: Sie verschiebt ganze Symbolreihen und kippt nicht ein einzelnes Bit. Ein einzelner Kipp ist die Handschrift des Rauschens."
+     "text": {
+      "de": "Weil der Empfänger bei langen Übertragungen den Takt verliert; kurze Tests sind vorbei, bevor die Uhren auseinanderlaufen.",
+      "en": "Because the receiver loses the clock on long transmissions; short tests are over before the clocks drift apart."
+     },
+     "begruendung": {
+      "de": "Drift ist ein echtes Problem langer Übertragungen, aber ein anderes: Sie verschiebt ganze Symbolreihen und kippt nicht ein einzelnes Bit. Ein einzelner Kipp ist die Handschrift des Rauschens.",
+      "en": "Drift is a real problem of long transmissions, but a different one: it shifts whole runs of symbols rather than flipping a single bit. A single flip is the signature of noise."
+     }
     }
    ]
   },
   {
    "id": "er-002",
    "niveau": "erinnern",
-   "frage": "Was bedeutet Redundanz bei einer Übertragung?",
+   "frage": {
+    "de": "Was bedeutet Redundanz bei einer Übertragung?",
+    "en": "What does redundancy mean in a transmission?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Bits, die zufällig doppelt in der Nachricht vorkommen und deshalb beim Komprimieren wegfallen können.",
-     "begruendung": "Das beschreibt, was Kompression entfernt, nämlich Wiederholungen im Inhalt. Redundanz im Sinn dieses Konzepts wird absichtlich hinzugefügt, nicht zufällig vorgefunden."
+     "text": {
+      "de": "Bits, die zufällig doppelt in der Nachricht vorkommen und deshalb beim Komprimieren wegfallen können.",
+      "en": "Bits that happen to occur twice in the message and can therefore be dropped when compressing."
+     },
+     "begruendung": {
+      "de": "Das beschreibt, was Kompression entfernt, nämlich Wiederholungen im Inhalt. Redundanz im Sinn dieses Konzepts wird absichtlich hinzugefügt, nicht zufällig vorgefunden.",
+      "en": "That describes what compression removes, namely repetition in the content. Redundancy in the sense of this concept is added deliberately, not found by chance."
+     }
     },
     {
      "kennung": "b",
-     "text": "Zusätzliche Bits, die keinen neuen Inhalt tragen, aber erkennbar machen, ob unterwegs etwas gekippt ist.",
-     "begruendung": "Genau. Ein Paritätsbit oder eine Prüfsumme sagt dem Empfänger nichts Neues über die Nachricht; sie sagt ihm, ob die Nachricht noch die ist, die losgeschickt wurde. Das kostet Übertragungszeit."
+     "text": {
+      "de": "Zusätzliche Bits, die keinen neuen Inhalt tragen, aber erkennbar machen, ob unterwegs etwas gekippt ist.",
+      "en": "Additional bits that carry no new content but make it detectable whether something flipped on the way."
+     },
+     "begruendung": {
+      "de": "Genau. Ein Paritätsbit oder eine Prüfsumme sagt dem Empfänger nichts Neues über die Nachricht; sie sagt ihm, ob die Nachricht noch die ist, die losgeschickt wurde. Das kostet Übertragungszeit.",
+      "en": "Exactly. A parity bit or a checksum tells the receiver nothing new about the message; it tells him whether the message is still the one that was sent. That costs transmission time."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein zweiter Übertragungsweg, etwa Ton neben Licht, damit die Nachricht auch bei Ausfall eines Wegs ankommt.",
-     "begruendung": "Auch das nennt man Redundanz, aber in der Technik von Anlagen, nicht bei Bits. Hier geht es um Zusatzinformation im selben Bitstrom, die Fehler erkennbar macht."
+     "text": {
+      "de": "Ein zweiter Übertragungsweg, etwa Ton neben Licht, damit die Nachricht auch bei Ausfall eines Wegs ankommt.",
+      "en": "A second transmission path, say sound alongside light, so that the message arrives even if one path fails."
+     },
+     "begruendung": {
+      "de": "Auch das nennt man Redundanz, aber in der Technik von Anlagen, nicht bei Bits. Hier geht es um Zusatzinformation im selben Bitstrom, die Fehler erkennbar macht.",
+      "en": "That is also called redundancy, but in plant engineering, not with bits. Here it is about extra information in the same bit stream that makes errors detectable."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Bits einer Nachricht, die der Empfänger schon kennt und deshalb nicht mehr empfangen muss.",
-     "begruendung": "Was der Empfänger schon kennt, muss tatsächlich nicht gesendet werden, aber das ist eine Frage der Kompression. Redundanz gegen Fehler wird gerade zusätzlich gesendet, obwohl sie nichts Neues sagt."
+     "text": {
+      "de": "Die Bits einer Nachricht, die der Empfänger schon kennt und deshalb nicht mehr empfangen muss.",
+      "en": "The bits of a message the receiver already knows and therefore no longer needs to receive."
+     },
+     "begruendung": {
+      "de": "Was der Empfänger schon kennt, muss tatsächlich nicht gesendet werden, aber das ist eine Frage der Kompression. Redundanz gegen Fehler wird gerade zusätzlich gesendet, obwohl sie nichts Neues sagt.",
+      "en": "What the receiver already knows indeed need not be sent, but that is a matter of compression. Redundancy against errors is sent in addition, precisely although it says nothing new."
+     }
     }
    ]
   },
   {
    "id": "er-003",
    "niveau": "anwenden",
-   "frage": "Sender und Empfänger haben gerade Parität vereinbart: Byte plus\nParitätsbit enthalten zusammen eine gerade Zahl von Einsen. Es kommt an:\n10110010 mit Paritätsbit 1. Was weiß der Empfänger jetzt?",
+   "frage": {
+    "de": "Sender und Empfänger haben gerade Parität vereinbart: Byte plus\nParitätsbit enthalten zusammen eine gerade Zahl von Einsen. Es kommt an:\n10110010 mit Paritätsbit 1. Was weiß der Empfänger jetzt?",
+    "en": "Sender and receiver have agreed on even parity: byte plus parity bit\ntogether contain an even number of ones. What arrives: 10110010 with\nparity bit 1. What does the receiver know now?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -74,30 +131,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Dass das Paritätsbit gekippt ist, denn das Byte selbst hat vier Einsen und ist damit in Ordnung.",
-     "begruendung": "Vier Einsen im Byte sind das, was ankam, nicht das, was gesendet wurde. Ob das Byte oder das Paritätsbit gekippt ist, lässt sich aus den neun Bits nicht unterscheiden; beide Fälle sehen gleich aus."
+     "text": {
+      "de": "Dass das Paritätsbit gekippt ist, denn das Byte selbst hat vier Einsen und ist damit in Ordnung.",
+      "en": "That the parity bit flipped, since the byte itself has four ones and is therefore fine."
+     },
+     "begruendung": {
+      "de": "Vier Einsen im Byte sind das, was ankam, nicht das, was gesendet wurde. Ob das Byte oder das Paritätsbit gekippt ist, lässt sich aus den neun Bits nicht unterscheiden; beide Fälle sehen gleich aus.",
+      "en": "Four ones in the byte is what arrived, not what was sent. Whether the byte or the parity bit flipped cannot be told from the nine bits; both cases look the same."
+     }
     },
     {
      "kennung": "b",
-     "text": "Dass mindestens ein Bit gekippt ist, aber nicht welches; er kann den Fehler melden, nicht reparieren.",
-     "begruendung": "Genau. Fünf Einsen in neun Bits verletzen die Vereinbarung, also ist unterwegs etwas passiert. Wo, sagt das Prüfbit nicht. Erkennen ist billig, ein Bit je Byte; Reparieren kostet mehr."
+     "text": {
+      "de": "Dass mindestens ein Bit gekippt ist, aber nicht welches; er kann den Fehler melden, nicht reparieren.",
+      "en": "That at least one bit flipped, but not which one; he can report the error, not repair it."
+     },
+     "begruendung": {
+      "de": "Genau. Fünf Einsen in neun Bits verletzen die Vereinbarung, also ist unterwegs etwas passiert. Wo, sagt das Prüfbit nicht. Erkennen ist billig, ein Bit je Byte; Reparieren kostet mehr.",
+      "en": "Exactly. Five ones in nine bits violate the agreement, so something happened on the way. Where, the check bit does not say. Detecting is cheap, one bit per byte; repairing costs more."
+     }
     },
     {
      "kennung": "c",
-     "text": "Dass genau ein Bit gekippt ist, denn die Zahl der Einsen weicht um genau eins von einer geraden Zahl ab.",
-     "begruendung": "Ungerade heißt nur: eine ungerade Zahl von Kipps, also eins, drei oder fünf. Drei gekippte Bits sähen genauso aus. Parität zählt nicht, sie unterscheidet nur gerade von ungerade."
+     "text": {
+      "de": "Dass genau ein Bit gekippt ist, denn die Zahl der Einsen weicht um genau eins von einer geraden Zahl ab.",
+      "en": "That exactly one bit flipped, since the count of ones is off from an even number by exactly one."
+     },
+     "begruendung": {
+      "de": "Ungerade heißt nur: eine ungerade Zahl von Kipps, also eins, drei oder fünf. Drei gekippte Bits sähen genauso aus. Parität zählt nicht, sie unterscheidet nur gerade von ungerade.",
+      "en": "Odd only means: an odd number of flips, so one, three or five. Three flipped bits would look the same. Parity does not count, it only distinguishes even from odd."
+     }
     },
     {
      "kennung": "d",
-     "text": "Dass alles in Ordnung ist, denn das Byte hat vier Einsen und vier ist gerade, wie vereinbart.",
-     "begruendung": "Vereinbart war die Parität über Byte und Prüfbit zusammen, und das sind fünf Einsen. Wer das Prüfbit beim Zählen weglässt, prüft gar nichts."
+     "text": {
+      "de": "Dass alles in Ordnung ist, denn das Byte hat vier Einsen und vier ist gerade, wie vereinbart.",
+      "en": "That everything is fine, since the byte has four ones and four is even, as agreed."
+     },
+     "begruendung": {
+      "de": "Vereinbart war die Parität über Byte und Prüfbit zusammen, und das sind fünf Einsen. Wer das Prüfbit beim Zählen weglässt, prüft gar nichts.",
+      "en": "What was agreed was parity over byte and check bit together, and that is five ones. Whoever leaves out the check bit when counting checks nothing at all."
+     }
     }
    ]
   },
   {
    "id": "er-004",
    "niveau": "verstehen",
-   "frage": "Ein Team sichert jedes Byte mit einem Paritätsbit. Welche Fehler bleiben\ndabei unbemerkt?",
+   "frage": {
+    "de": "Ein Team sichert jedes Byte mit einem Paritätsbit. Welche Fehler bleiben\ndabei unbemerkt?",
+    "en": "A team protects every byte with a parity bit. Which errors go unnoticed?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -105,30 +189,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Fehler im Paritätsbit selbst, denn das Prüfbit kann sich nicht selbst prüfen.",
-     "begruendung": "Kippt das Prüfbit allein, stimmt die Parität nicht mehr, und der Empfänger meldet einen Fehler. Er weiß nur nicht, dass es das Prüfbit war; bemerkt wird der Fehler trotzdem."
+     "text": {
+      "de": "Fehler im Paritätsbit selbst, denn das Prüfbit kann sich nicht selbst prüfen.",
+      "en": "Errors in the parity bit itself, since the check bit cannot check itself."
+     },
+     "begruendung": {
+      "de": "Kippt das Prüfbit allein, stimmt die Parität nicht mehr, und der Empfänger meldet einen Fehler. Er weiß nur nicht, dass es das Prüfbit war; bemerkt wird der Fehler trotzdem.",
+      "en": "If the check bit alone flips, the parity no longer holds, and the receiver reports an error. He just does not know it was the check bit; the error is noticed nonetheless."
+     }
     },
     {
      "kennung": "b",
-     "text": "Fehler in den hohen Bits, denn die Parität zählt nur die niedrigen Stellen des Bytes.",
-     "begruendung": "Parität zählt Einsen, egal an welcher Stelle; ein Kipp im höchsten Bit ändert die Zahl der Einsen genauso wie einer im niedrigsten."
+     "text": {
+      "de": "Fehler in den hohen Bits, denn die Parität zählt nur die niedrigen Stellen des Bytes.",
+      "en": "Errors in the high bits, since parity only counts the low digits of the byte."
+     },
+     "begruendung": {
+      "de": "Parität zählt Einsen, egal an welcher Stelle; ein Kipp im höchsten Bit ändert die Zahl der Einsen genauso wie einer im niedrigsten.",
+      "en": "Parity counts ones regardless of position; a flip in the highest bit changes the count of ones just as one in the lowest does."
+     }
     },
     {
      "kennung": "c",
-     "text": "Fehler, bei denen eine gerade Zahl von Bits kippt, etwa zwei, denn die Zahl der Einsen bleibt dann gerade.",
-     "begruendung": "Genau. Zwei Kipps im selben Byte heben sich in der Zählung auf, die Parität stimmt wieder, und das Byte gilt als in Ordnung. Ein Bit Redundanz erkennt jeden einzelnen Fehler, aber nicht jeden Doppelfehler. Mehr Sicherheit kostet mehr Bits."
+     "text": {
+      "de": "Fehler, bei denen eine gerade Zahl von Bits kippt, etwa zwei, denn die Zahl der Einsen bleibt dann gerade.",
+      "en": "Errors in which an even number of bits flip, say two, since the count of ones then stays even."
+     },
+     "begruendung": {
+      "de": "Genau. Zwei Kipps im selben Byte heben sich in der Zählung auf, die Parität stimmt wieder, und das Byte gilt als in Ordnung. Ein Bit Redundanz erkennt jeden einzelnen Fehler, aber nicht jeden Doppelfehler. Mehr Sicherheit kostet mehr Bits.",
+      "en": "Exactly. Two flips in the same byte cancel out in the count, the parity holds again, and the byte passes as fine. One bit of redundancy detects every single error, but not every double error. More security costs more bits."
+     }
     },
     {
      "kennung": "d",
-     "text": "Keine, denn jeder Kipp verändert die Zahl der Einsen, und genau das misst die Parität.",
-     "begruendung": "Jeder einzelne Kipp verändert die Zahl, zwei Kipps können sie aber wieder zurückstellen: Eine 1 wird 0, eine 0 wird 1, die Summe bleibt. Die Parität misst nur gerade oder ungerade, nicht die Zahl selbst."
+     "text": {
+      "de": "Keine, denn jeder Kipp verändert die Zahl der Einsen, und genau das misst die Parität.",
+      "en": "None, since every flip changes the count of ones, and that is exactly what parity measures."
+     },
+     "begruendung": {
+      "de": "Jeder einzelne Kipp verändert die Zahl, zwei Kipps können sie aber wieder zurückstellen: Eine 1 wird 0, eine 0 wird 1, die Summe bleibt. Die Parität misst nur gerade oder ungerade, nicht die Zahl selbst.",
+      "en": "Every single flip changes the count, but two flips can put it back: a 1 becomes 0, a 0 becomes 1, the sum stays. Parity measures only even or odd, not the count itself."
+     }
     }
    ]
   },
   {
    "id": "er-005",
    "niveau": "verstehen",
-   "frage": "Im Finale öffnet euer Empfänger das übertragene Bild, und es sieht\neinwandfrei aus. Gewertet wird trotzdem nur der Hash, eine Prüfsumme über\nalle Bytes. Warum reicht die Anzeige nicht als Beweis?",
+   "frage": {
+    "de": "Im Finale öffnet euer Empfänger das übertragene Bild, und es sieht\neinwandfrei aus. Gewertet wird trotzdem nur der Hash, eine Prüfsumme über\nalle Bytes. Warum reicht die Anzeige nicht als Beweis?",
+    "en": "In the final your receiver opens the transmitted image, and it looks\nperfect. Yet only the hash counts, a checksum over all bytes. Why is the\ndisplay not enough as proof?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -136,30 +247,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil ein Bildbetrachter auch gekippte Bytes meist noch anzeigt, nur leicht verdorben; der Hash dagegen ändert sich bei jedem einzelnen Byte.",
-     "begruendung": "Genau. Die Anzeige ist die Vorführung, der Hash der Beweis: Er ist so gebaut, dass schon ein einziges gekipptes Bit eine völlig andere Zahl ergibt. Das menschliche Auge übersieht ein falsches Pixel, die Prüfsumme nicht."
+     "text": {
+      "de": "Weil ein Bildbetrachter auch gekippte Bytes meist noch anzeigt, nur leicht verdorben; der Hash dagegen ändert sich bei jedem einzelnen Byte.",
+      "en": "Because an image viewer usually still displays flipped bytes, just slightly spoiled; the hash, by contrast, changes with every single byte."
+     },
+     "begruendung": {
+      "de": "Genau. Die Anzeige ist die Vorführung, der Hash der Beweis: Er ist so gebaut, dass schon ein einziges gekipptes Bit eine völlig andere Zahl ergibt. Das menschliche Auge übersieht ein falsches Pixel, die Prüfsumme nicht.",
+      "en": "Exactly. The display is the show, the hash the proof: it is built so that even a single flipped bit yields a completely different number. The human eye overlooks a wrong pixel, the checksum does not."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil der Hash zusätzlich zeigt, wie lange die Übertragung gedauert hat, und im Finale die Zeit gewertet wird.",
-     "begruendung": "Der Hash weiß nichts von Zeit; er hängt nur vom Inhalt der Datei ab. Die Dauer wird getrennt gemessen, und sie zählt erst, wenn der Hash stimmt."
+     "text": {
+      "de": "Weil der Hash zusätzlich zeigt, wie lange die Übertragung gedauert hat, und im Finale die Zeit gewertet wird.",
+      "en": "Because the hash additionally shows how long the transmission took, and time is scored in the final."
+     },
+     "begruendung": {
+      "de": "Der Hash weiß nichts von Zeit; er hängt nur vom Inhalt der Datei ab. Die Dauer wird getrennt gemessen, und sie zählt erst, wenn der Hash stimmt.",
+      "en": "The hash knows nothing about time; it depends only on the file's content. Duration is measured separately, and it only counts once the hash matches."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil das Bild auf dem Empfängerrechner in einer anderen Auflösung angezeigt werden könnte als auf dem Sender.",
-     "begruendung": "Die Anzeige kann sich unterscheiden, ohne dass die Bytes es tun, und das ist gerade der Punkt: Verglichen werden die Bytes, nicht ihr Aussehen. Die Auflösung der Anzeige ist dafür ohne Belang."
+     "text": {
+      "de": "Weil das Bild auf dem Empfängerrechner in einer anderen Auflösung angezeigt werden könnte als auf dem Sender.",
+      "en": "Because the image might be displayed at a different resolution on the receiving computer than on the sender."
+     },
+     "begruendung": {
+      "de": "Die Anzeige kann sich unterscheiden, ohne dass die Bytes es tun, und das ist gerade der Punkt: Verglichen werden die Bytes, nicht ihr Aussehen. Die Auflösung der Anzeige ist dafür ohne Belang.",
+      "en": "The display can differ without the bytes doing so, and that is exactly the point: what is compared are the bytes, not their appearance. The display resolution is irrelevant for that."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil der Hash beweist, dass die Datei komprimiert übertragen wurde, was die Anzeige nicht zeigen kann.",
-     "begruendung": "Der Hash wird über die fertige Datei gebildet, egal wie sie unterwegs verpackt war. Ob komprimiert wurde, ist ihm gleichgültig; er sagt nur, ob am Ende dieselben Bytes dastehen wie am Anfang."
+     "text": {
+      "de": "Weil der Hash beweist, dass die Datei komprimiert übertragen wurde, was die Anzeige nicht zeigen kann.",
+      "en": "Because the hash proves the file was transmitted compressed, which the display cannot show."
+     },
+     "begruendung": {
+      "de": "Der Hash wird über die fertige Datei gebildet, egal wie sie unterwegs verpackt war. Ob komprimiert wurde, ist ihm gleichgültig; er sagt nur, ob am Ende dieselben Bytes dastehen wie am Anfang.",
+      "en": "The hash is formed over the finished file, no matter how it was packed on the way. Whether it was compressed is of no concern to it; it only says whether the same bytes stand at the end as at the start."
+     }
     }
    ]
   },
   {
    "id": "er-006",
    "niveau": "anwenden",
-   "frage": "Eine Datei von 2 KB hat 16.000 Bit. Ein Team hängt an jedes Byte ein\nParitätsbit. Wie viele Bits gehen über die Strecke?",
+   "frage": {
+    "de": "Eine Datei von 2 KB hat 16.000 Bit. Ein Team hängt an jedes Byte ein\nParitätsbit. Wie viele Bits gehen über die Strecke?",
+    "en": "A 2 KB file has 16,000 bits. A team appends a parity bit to every byte.\nHow many bits cross the link?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -167,30 +305,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "16.001, denn die Parität ist ein einzelnes Bit, das hinten an die Datei kommt.",
-     "begruendung": "Ein einziges Prüfbit über die ganze Datei gäbe es auch, aber vereinbart ist eins je Byte. 2.000 Bytes bekommen 2.000 Prüfbits."
+     "text": {
+      "de": "16.001, denn die Parität ist ein einzelnes Bit, das hinten an die Datei kommt.",
+      "en": "16,001, because parity is a single bit appended at the end of the file."
+     },
+     "begruendung": {
+      "de": "Ein einziges Prüfbit über die ganze Datei gäbe es auch, aber vereinbart ist eins je Byte. 2.000 Bytes bekommen 2.000 Prüfbits.",
+      "en": "A single check bit over the whole file would exist too, but what was agreed is one per byte. 2,000 bytes get 2,000 check bits."
+     }
     },
     {
      "kennung": "b",
-     "text": "18.000, denn 2.000 Bytes bekommen je ein Bit dazu, also ein Achtel mehr.",
-     "begruendung": "Genau: 16.000 geteilt durch 8 sind 2.000 Bytes, jedes wird 9 Bit lang, also 18.000 Bit. Das ist das Preisschild der Parität: zwölfeinhalb Prozent mehr Übertragungszeit, und dafür wird jeder einzelne Kipp bemerkt."
+     "text": {
+      "de": "18.000, denn 2.000 Bytes bekommen je ein Bit dazu, also ein Achtel mehr.",
+      "en": "18,000, because 2,000 bytes each get one extra bit, that is one eighth more."
+     },
+     "begruendung": {
+      "de": "Genau: 16.000 geteilt durch 8 sind 2.000 Bytes, jedes wird 9 Bit lang, also 18.000 Bit. Das ist das Preisschild der Parität: zwölfeinhalb Prozent mehr Übertragungszeit, und dafür wird jeder einzelne Kipp bemerkt.",
+      "en": "Exactly: 16,000 divided by 8 is 2,000 bytes, each becomes 9 bits long, so 18,000 bits. That is the price tag of parity: twelve and a half percent more transmission time, and for that every single flip is noticed."
+     }
     },
     {
      "kennung": "c",
-     "text": "32.000, denn zum Prüfen muss der Empfänger jedes Byte doppelt bekommen, einmal zum Lesen und einmal zum Vergleichen.",
-     "begruendung": "Doppelt senden wäre ein anderes Verfahren und ein sehr teures. Die Parität fasst die acht Bits zu einem einzigen Prüfbit zusammen; darin liegt ihre Sparsamkeit."
+     "text": {
+      "de": "32.000, denn zum Prüfen muss der Empfänger jedes Byte doppelt bekommen, einmal zum Lesen und einmal zum Vergleichen.",
+      "en": "32,000, because to check, the receiver must get every byte twice, once to read and once to compare."
+     },
+     "begruendung": {
+      "de": "Doppelt senden wäre ein anderes Verfahren und ein sehr teures. Die Parität fasst die acht Bits zu einem einzigen Prüfbit zusammen; darin liegt ihre Sparsamkeit.",
+      "en": "Sending twice would be a different and very expensive method. Parity condenses the eight bits into a single check bit; that is where its economy lies."
+     }
     },
     {
      "kennung": "d",
-     "text": "17.000, denn ein Bit je Byte sind bei 16.000 Bit ein Sechzehntel mehr.",
-     "begruendung": "Ein Byte hat acht Bit, nicht sechzehn. Ein Zusatzbit je Byte ist ein Achtel mehr, also 2.000 Bit, nicht 1.000."
+     "text": {
+      "de": "17.000, denn ein Bit je Byte sind bei 16.000 Bit ein Sechzehntel mehr.",
+      "en": "17,000, because one bit per byte is a sixteenth more on 16,000 bits."
+     },
+     "begruendung": {
+      "de": "Ein Byte hat acht Bit, nicht sechzehn. Ein Zusatzbit je Byte ist ein Achtel mehr, also 2.000 Bit, nicht 1.000.",
+      "en": "A byte has eight bits, not sixteen. One extra bit per byte is one eighth more, so 2,000 bits, not 1,000."
+     }
     }
    ]
   },
   {
    "id": "er-007",
    "niveau": "verstehen",
-   "frage": "Ein Team sendet jedes Bit dreimal hintereinander, und der Empfänger nimmt\njeweils den Wert, der mindestens zweimal vorkommt. Was leistet dieses\nVerfahren, und was kostet es?",
+   "frage": {
+    "de": "Ein Team sendet jedes Bit dreimal hintereinander, und der Empfänger nimmt\njeweils den Wert, der mindestens zweimal vorkommt. Was leistet dieses\nVerfahren, und was kostet es?",
+    "en": "A team sends every bit three times in a row, and the receiver takes the\nvalue that occurs at least twice. What does this method achieve, and what\ndoes it cost?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -198,30 +363,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Es erkennt jeden Fehler, kann ihn aber nicht beheben; dafür wird die Übertragung dreimal so lang.",
-     "begruendung": "Der Preis stimmt, die Leistung ist unterschätzt: Wenn von drei Kopien eine kippt, gewinnt die Mehrheit, und das richtige Bit steht wieder da. Das Verfahren repariert, nicht nur erkennt."
+     "text": {
+      "de": "Es erkennt jeden Fehler, kann ihn aber nicht beheben; dafür wird die Übertragung dreimal so lang.",
+      "en": "It detects every error but cannot fix it; in return the transmission becomes three times as long."
+     },
+     "begruendung": {
+      "de": "Der Preis stimmt, die Leistung ist unterschätzt: Wenn von drei Kopien eine kippt, gewinnt die Mehrheit, und das richtige Bit steht wieder da. Das Verfahren repariert, nicht nur erkennt.",
+      "en": "The price is right, the achievement underestimated: if one of three copies flips, the majority wins, and the correct bit is back. The method repairs, not just detects."
+     }
     },
     {
      "kennung": "b",
-     "text": "Es behebt jeden Fehler, egal wie viele Kopien kippen, denn die Mehrheit findet immer den richtigen Wert.",
-     "begruendung": "Kippen zwei von drei Kopien, gewinnt die falsche Mehrheit, und der Empfänger übernimmt den Fehler mit gutem Gewissen. Ein Kipp je Dreiergruppe ist die Grenze."
+     "text": {
+      "de": "Es behebt jeden Fehler, egal wie viele Kopien kippen, denn die Mehrheit findet immer den richtigen Wert.",
+      "en": "It fixes every error, no matter how many copies flip, because the majority always finds the right value."
+     },
+     "begruendung": {
+      "de": "Kippen zwei von drei Kopien, gewinnt die falsche Mehrheit, und der Empfänger übernimmt den Fehler mit gutem Gewissen. Ein Kipp je Dreiergruppe ist die Grenze.",
+      "en": "If two of three copies flip, the wrong majority wins, and the receiver adopts the error in good conscience. One flip per group of three is the limit."
+     }
     },
     {
      "kennung": "c",
-     "text": "Es behebt einen einzelnen Kipp je Dreiergruppe, ohne nachzufragen; dafür wird die Übertragung dreimal so lang.",
-     "begruendung": "Genau. Das ist der Unterschied zwischen Erkennen und Korrigieren: Korrigieren braucht viel mehr Redundanz (hier das Doppelte der Nutzdaten), lohnt sich aber, wenn Nachfragen nicht möglich ist."
+     "text": {
+      "de": "Es behebt einen einzelnen Kipp je Dreiergruppe, ohne nachzufragen; dafür wird die Übertragung dreimal so lang.",
+      "en": "It fixes a single flip per group of three without asking back; in return the transmission becomes three times as long."
+     },
+     "begruendung": {
+      "de": "Genau. Das ist der Unterschied zwischen Erkennen und Korrigieren: Korrigieren braucht viel mehr Redundanz (hier das Doppelte der Nutzdaten), lohnt sich aber, wenn Nachfragen nicht möglich ist.",
+      "en": "Exactly. That is the difference between detecting and correcting: correcting needs far more redundancy (here twice the payload), but pays off when asking back is not possible."
+     }
     },
     {
      "kennung": "d",
-     "text": "Es macht die Übertragung sicherer und schneller zugleich, denn drei kurze Symbole sind leichter zu erkennen als ein langes.",
-     "begruendung": "Die drei Kopien sind drei ganze Symbole, nicht drei Drittel eines Symbols. Die Datei braucht dreimal so lange. Sicherheit gegen Fehler wird immer in Übertragungszeit bezahlt, nie geschenkt."
+     "text": {
+      "de": "Es macht die Übertragung sicherer und schneller zugleich, denn drei kurze Symbole sind leichter zu erkennen als ein langes.",
+      "en": "It makes the transmission both safer and faster, since three short symbols are easier to recognise than one long one."
+     },
+     "begruendung": {
+      "de": "Die drei Kopien sind drei ganze Symbole, nicht drei Drittel eines Symbols. Die Datei braucht dreimal so lange. Sicherheit gegen Fehler wird immer in Übertragungszeit bezahlt, nie geschenkt.",
+      "en": "The three copies are three whole symbols, not three thirds of one. The file takes three times as long. Security against errors is always paid in transmission time, never given for free."
+     }
     }
    ]
   },
   {
    "id": "er-008",
    "niveau": "anwenden",
-   "frage": "Ab Challenge 4 darf der Empfänger antworten. Ein Team überlegt, wie es\nden Rückkanal gegen Übertragungsfehler einsetzt. Welche Kombination nutzt\nihn sinnvoll?",
+   "frage": {
+    "de": "Ab Challenge 4 darf der Empfänger antworten. Ein Team überlegt, wie es\nden Rückkanal gegen Übertragungsfehler einsetzt. Welche Kombination nutzt\nihn sinnvoll?",
+    "en": "From challenge 4 on the receiver may reply. A team considers how to use\nthe return channel against transmission errors. Which combination uses it\nsensibly?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -229,30 +421,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Jedes Bit dreimal senden und zusätzlich jeden Block quittieren lassen, damit doppelt abgesichert ist.",
-     "begruendung": "Doppelt abgesichert heißt doppelt bezahlt. Wer nachfragen kann, braucht die teure Korrektur im Voraus nicht; ein Block, der nicht stimmt, wird einfach noch einmal geschickt. Dreifach senden verschenkt zwei Drittel der Zeit."
+     "text": {
+      "de": "Jedes Bit dreimal senden und zusätzlich jeden Block quittieren lassen, damit doppelt abgesichert ist.",
+      "en": "Send every bit three times and additionally have every block acknowledged, so that it is doubly secured."
+     },
+     "begruendung": {
+      "de": "Doppelt abgesichert heißt doppelt bezahlt. Wer nachfragen kann, braucht die teure Korrektur im Voraus nicht; ein Block, der nicht stimmt, wird einfach noch einmal geschickt. Dreifach senden verschenkt zwei Drittel der Zeit.",
+      "en": "Doubly secured means doubly paid. Whoever can ask back does not need the expensive correction in advance; a block that is wrong is simply sent again. Sending threefold gives away two thirds of the time."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Datei in Blöcke mit je einer Prüfsumme teilen; stimmt eine nicht, fordert der Empfänger nur diesen Block noch einmal an.",
-     "begruendung": "Genau. Mit Rückkanal genügt Erkennen, die Reparatur ist die Wiederholung. Die Prüfsumme je Block ist billig, und wiederholt wird nur, was kaputt war, nicht die ganze Datei. So arbeiten echte Netze."
+     "text": {
+      "de": "Die Datei in Blöcke mit je einer Prüfsumme teilen; stimmt eine nicht, fordert der Empfänger nur diesen Block noch einmal an.",
+      "en": "Split the file into blocks with a checksum each; if one fails, the receiver requests only that block again."
+     },
+     "begruendung": {
+      "de": "Genau. Mit Rückkanal genügt Erkennen, die Reparatur ist die Wiederholung. Die Prüfsumme je Block ist billig, und wiederholt wird nur, was kaputt war, nicht die ganze Datei. So arbeiten echte Netze.",
+      "en": "Exactly. With a return channel, detecting is enough; the repair is the repetition. The checksum per block is cheap, and only what was broken is repeated, not the whole file. That is how real networks work."
+     }
     },
     {
      "kennung": "c",
-     "text": "Auf Prüfsummen verzichten und stattdessen den Empfänger nach jedem Byte melden lassen, ob es angekommen ist.",
-     "begruendung": "Ob etwas angekommen ist, weiß der Empfänger ohne Prüfsumme nicht; er sieht nur, dass irgendein Byte kam, nicht, ob es das richtige war. Und eine Rückmeldung je Byte kostet mehr Zeit als jede Prüfsumme."
+     "text": {
+      "de": "Auf Prüfsummen verzichten und stattdessen den Empfänger nach jedem Byte melden lassen, ob es angekommen ist.",
+      "en": "Drop checksums and instead have the receiver report after every byte whether it has arrived."
+     },
+     "begruendung": {
+      "de": "Ob etwas angekommen ist, weiß der Empfänger ohne Prüfsumme nicht; er sieht nur, dass irgendein Byte kam, nicht, ob es das richtige war. Und eine Rückmeldung je Byte kostet mehr Zeit als jede Prüfsumme.",
+      "en": "Without a checksum the receiver does not know whether something arrived correctly; he only sees that some byte came, not whether it was the right one. And a reply per byte costs more time than any checksum."
+     }
     },
     {
      "kennung": "d",
-     "text": "Am Ende die ganze Datei per Hash prüfen und bei Abweichung die ganze Datei noch einmal senden.",
-     "begruendung": "Das nutzt den Rückkanal, aber schlecht: Ein einziger Kipp in Minute 20 kostet die ganze Übertragung noch einmal. Prüfsummen je Block machen die Wiederholung klein."
+     "text": {
+      "de": "Am Ende die ganze Datei per Hash prüfen und bei Abweichung die ganze Datei noch einmal senden.",
+      "en": "Check the whole file by hash at the end and, on mismatch, send the whole file again."
+     },
+     "begruendung": {
+      "de": "Das nutzt den Rückkanal, aber schlecht: Ein einziger Kipp in Minute 20 kostet die ganze Übertragung noch einmal. Prüfsummen je Block machen die Wiederholung klein.",
+      "en": "That uses the return channel, but poorly: a single flip in minute 20 costs the whole transmission again. Checksums per block keep the repetition small."
+     }
     }
    ]
   },
   {
    "id": "er-009",
    "niveau": "verstehen",
-   "frage": "Welche Aussagen über eine Prüfsumme treffen zu? (Mehrere richtige\nAntworten möglich.)",
+   "frage": {
+    "de": "Welche Aussagen über eine Prüfsumme treffen zu? (Mehrere richtige\nAntworten möglich.)",
+    "en": "Which statements about a checksum are true? (Several answers may be\ncorrect.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -262,28 +481,58 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie wird nach einer festen Regel aus allen Bytes berechnet und ist viel kürzer als die Daten selbst.",
-     "begruendung": "Richtig, und genau darin liegt ihr Nutzen: wenige Bits Redundanz für eine Aussage über viele Bytes."
+     "text": {
+      "de": "Sie wird nach einer festen Regel aus allen Bytes berechnet und ist viel kürzer als die Daten selbst.",
+      "en": "It is computed from all bytes by a fixed rule and is much shorter than the data itself."
+     },
+     "begruendung": {
+      "de": "Richtig, und genau darin liegt ihr Nutzen: wenige Bits Redundanz für eine Aussage über viele Bytes.",
+      "en": "Correct, and that is precisely its use: a few bits of redundancy for a statement about many bytes."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sie sagt dem Empfänger, dass etwas gekippt ist, aber nicht, welches Byte.",
-     "begruendung": "Richtig: Eine Prüfsumme erkennt, sie lokalisiert nicht. Wer wissen will, wo, braucht mehr Redundanz oder eine Wiederholung."
+     "text": {
+      "de": "Sie sagt dem Empfänger, dass etwas gekippt ist, aber nicht, welches Byte.",
+      "en": "It tells the receiver that something flipped, but not which byte."
+     },
+     "begruendung": {
+      "de": "Richtig: Eine Prüfsumme erkennt, sie lokalisiert nicht. Wer wissen will, wo, braucht mehr Redundanz oder eine Wiederholung.",
+      "en": "Correct: a checksum detects, it does not locate. Whoever wants to know where needs more redundancy or a repetition."
+     }
     },
     {
      "kennung": "c",
-     "text": "Sie verhindert, dass Bits unterwegs kippen, weil der Sender die Daten vor dem Senden damit absichert.",
-     "begruendung": "Gegen das Kippen selbst hilft keine Rechnung; das Rauschen kennt die Prüfsumme nicht. Sie macht den Kipp nur bemerkbar, nachdem er passiert ist."
+     "text": {
+      "de": "Sie verhindert, dass Bits unterwegs kippen, weil der Sender die Daten vor dem Senden damit absichert.",
+      "en": "It prevents bits from flipping on the way, because the sender secures the data with it before sending."
+     },
+     "begruendung": {
+      "de": "Gegen das Kippen selbst hilft keine Rechnung; das Rauschen kennt die Prüfsumme nicht. Sie macht den Kipp nur bemerkbar, nachdem er passiert ist.",
+      "en": "No calculation helps against the flipping itself; the noise does not know the checksum. It only makes the flip noticeable after it has happened."
+     }
     },
     {
      "kennung": "d",
-     "text": "Zwei verschiedene Dateien können dieselbe Prüfsumme haben, denn eine kurze Zahl kann nicht jede lange Datei eindeutig kennzeichnen.",
-     "begruendung": "Richtig: Es gibt mehr mögliche Dateien als mögliche Prüfsummen, also müssen sich welche eine teilen. Gute Verfahren wie der SHA-256 im Finale machen solche Zusammenstöße nur so unwahrscheinlich, dass sie praktisch nie vorkommen."
+     "text": {
+      "de": "Zwei verschiedene Dateien können dieselbe Prüfsumme haben, denn eine kurze Zahl kann nicht jede lange Datei eindeutig kennzeichnen.",
+      "en": "Two different files can have the same checksum, since a short number cannot uniquely identify every long file."
+     },
+     "begruendung": {
+      "de": "Richtig: Es gibt mehr mögliche Dateien als mögliche Prüfsummen, also müssen sich welche eine teilen. Gute Verfahren wie der SHA-256 im Finale machen solche Zusammenstöße nur so unwahrscheinlich, dass sie praktisch nie vorkommen.",
+      "en": "Correct: there are more possible files than possible checksums, so some must share one. Good methods like the SHA-256 in the final merely make such collisions so unlikely that they practically never occur."
+     }
     },
     {
      "kennung": "e",
-     "text": "Sie muss vor den Daten gesendet werden, damit der Empfänger beim Lesen jedes Byte sofort dagegen prüfen kann.",
-     "begruendung": "Geprüft wird erst, wenn alle Bytes da sind, denn die Prüfsumme hängt von allen ab. Ob sie vorn oder hinten im Rahmen steht, ist eine Vereinbarung der Klasse, keine Notwendigkeit."
+     "text": {
+      "de": "Sie muss vor den Daten gesendet werden, damit der Empfänger beim Lesen jedes Byte sofort dagegen prüfen kann.",
+      "en": "It must be sent before the data so that the receiver can check every byte against it immediately while reading."
+     },
+     "begruendung": {
+      "de": "Geprüft wird erst, wenn alle Bytes da sind, denn die Prüfsumme hängt von allen ab. Ob sie vorn oder hinten im Rahmen steht, ist eine Vereinbarung der Klasse, keine Notwendigkeit.",
+      "en": "Checking happens only once all bytes are there, since the checksum depends on all of them. Whether it sits at the front or the back of the frame is a class agreement, not a necessity."
+     }
     }
    ]
   }

@@ -4,7 +4,10 @@
   {
    "id": "pd-001",
    "niveau": "erinnern",
-   "frage": "Woran erkennt man, dass eine Teilaufgabe gut geschnitten ist?",
+   "frage": {
+    "de": "Woran erkennt man, dass eine Teilaufgabe gut geschnitten ist?",
+    "en": "How can you tell that a subtask has been cut well?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie ist so klein wie möglich.",
-     "begruendung": "Kleinheit allein hilft nicht. Auch ein winziges Teil kann unprüfbar sein, und zu viele Kleinstteile erzeugen unnötigen Abstimmungsaufwand."
+     "text": {
+      "de": "Sie ist so klein wie möglich.",
+      "en": "It is as small as possible."
+     },
+     "begruendung": {
+      "de": "Kleinheit allein hilft nicht. Auch ein winziges Teil kann unprüfbar sein, und zu viele Kleinstteile erzeugen unnötigen Abstimmungsaufwand.",
+      "en": "Being small is not the point. Even a tiny piece can be untestable, and too many micro-pieces create needless coordination."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sie lässt sich in einer Stunde erledigen.",
-     "begruendung": "Die Bearbeitungszeit sagt nichts darüber, ob man hinterher weiß, ob das Teil sitzt."
+     "text": {
+      "de": "Sie lässt sich in einer Stunde erledigen.",
+      "en": "It can be finished within one hour."
+     },
+     "begruendung": {
+      "de": "Die Bearbeitungszeit sagt nichts darüber, ob man hinterher weiß, ob das Teil sitzt.",
+      "en": "How long it takes says nothing about whether you can tell afterwards that the piece works."
+     }
     },
     {
      "kennung": "c",
-     "text": "Sie hat einen eingebauten Test, der Ja oder Nein sagt.",
-     "begruendung": "Genau das ist der Kern: Ein gutes Teil ist eines, bei dem man nach dem Bearbeiten prüfen kann, ob es erledigt ist."
+     "text": {
+      "de": "Sie hat einen eingebauten Test, der Ja oder Nein sagt.",
+      "en": "It has a built-in test that answers yes or no."
+     },
+     "begruendung": {
+      "de": "Genau das ist der Kern: Ein gutes Teil ist eines, bei dem man nach dem Bearbeiten prüfen kann, ob es erledigt ist.",
+      "en": "That is the core idea: a good piece is one where you can check afterwards whether it is done."
+     }
     },
     {
      "kennung": "d",
-     "text": "Sie kommt im Aufgabentext ausdrücklich vor.",
-     "begruendung": "Die Zerlegung ist eure eigene Entscheidung. Gute Schnitte stehen selten fertig in der Aufgabe."
+     "text": {
+      "de": "Sie kommt im Aufgabentext ausdrücklich vor.",
+      "en": "It is explicitly mentioned in the task description."
+     },
+     "begruendung": {
+      "de": "Die Zerlegung ist eure eigene Entscheidung. Gute Schnitte stehen selten fertig in der Aufgabe.",
+      "en": "Decomposition is your own decision. Good cuts are rarely spelled out in the task."
+     }
     }
    ]
   },
   {
    "id": "pd-002",
    "niveau": "verstehen",
-   "frage": "Vier Teams beschreiben den Stand ihrer Arbeit. Welche Beschreibung ist prüfbar?",
+   "frage": {
+    "de": "Vier Teams beschreiben den Stand ihrer Arbeit. Welche Beschreibung ist prüfbar?",
+    "en": "Four teams describe the state of their work. Which description is testable?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Übertragung funktioniert inzwischen ziemlich zuverlässig.",
-     "begruendung": "'Ziemlich zuverlässig' ist ein Gefühl. Es gibt keinen Test, der daraus Ja oder Nein macht."
+     "text": {
+      "de": "Die Übertragung funktioniert inzwischen ziemlich zuverlässig.",
+      "en": "The transmission works quite reliably by now."
+     },
+     "begruendung": {
+      "de": "'Ziemlich zuverlässig' ist ein Gefühl. Es gibt keinen Test, der daraus Ja oder Nein macht.",
+      "en": "'Quite reliably' is a feeling. There is no test that turns it into yes or no."
+     }
     },
     {
      "kennung": "b",
-     "text": "Der Empfänger unterscheidet Rot und Blau in 50 von 50 Versuchen.",
-     "begruendung": "50 aus 50 ist ein Messwert: Man kann den Versuch ausführen und bekommt ein eindeutiges Ergebnis."
+     "text": {
+      "de": "Der Empfänger unterscheidet Rot und Blau in 50 von 50 Versuchen.",
+      "en": "The receiver tells red from blue in 50 out of 50 attempts."
+     },
+     "begruendung": {
+      "de": "50 aus 50 ist ein Messwert: Man kann den Versuch ausführen und bekommt ein eindeutiges Ergebnis.",
+      "en": "50 out of 50 is a measurement: you can run the trial and get an unambiguous result."
+     }
     },
     {
      "kennung": "c",
-     "text": "Der Code für den Empfänger ist fertig geschrieben.",
-     "begruendung": "'Fertig geschrieben' sagt nichts über das Verhalten. Code kann vollständig aussehen und trotzdem das Falsche tun."
+     "text": {
+      "de": "Der Code für den Empfänger ist fertig geschrieben.",
+      "en": "The code for the receiver is fully written."
+     },
+     "begruendung": {
+      "de": "'Fertig geschrieben' sagt nichts über das Verhalten. Code kann vollständig aussehen und trotzdem das Falsche tun.",
+      "en": "'Fully written' says nothing about behaviour. Code can look complete and still do the wrong thing."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die LED ist hell genug für die Übertragung.",
-     "begruendung": "'Hell genug' ist ohne Messvorschrift kein Test: hell genug wofür, gemessen wie?"
+     "text": {
+      "de": "Die LED ist hell genug für die Übertragung.",
+      "en": "The LED is bright enough for the transmission."
+     },
+     "begruendung": {
+      "de": "'Hell genug' ist ohne Messvorschrift kein Test: hell genug wofür, gemessen wie?",
+      "en": "'Bright enough' is not a test without a measurement rule: bright enough for what, measured how?"
+     }
     }
    ]
   },
   {
    "id": "pd-003",
    "niveau": "verstehen",
-   "frage": "Jemand denkt sich eine Zahl zwischen 1 und 100. Ihr dürft nur Ja/Nein-Fragen stellen.\nWie viele Fragen genügen im schlechtesten Fall sicher, wenn ihr geschickt fragt?",
+   "frage": {
+    "de": "Jemand denkt sich eine Zahl zwischen 1 und 100. Ihr dürft nur Ja/Nein-Fragen stellen.\nWie viele Fragen genügen im schlechtesten Fall sicher, wenn ihr geschickt fragt?",
+    "en": "Someone thinks of a number between 1 and 100. You may only ask yes/no questions.\nHow many questions are guaranteed to suffice in the worst case if you ask cleverly?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -74,30 +131,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "6",
-     "begruendung": "Eine zu wenig: Sechs Halbierungen unterscheiden höchstens 64 Möglichkeiten, es gibt aber 100."
+     "text": {
+      "de": "6",
+      "en": "6"
+     },
+     "begruendung": {
+      "de": "Eine zu wenig: Sechs Halbierungen unterscheiden höchstens 64 Möglichkeiten, es gibt aber 100.",
+      "en": "One too few: six halvings distinguish at most 64 possibilities, but there are 100."
+     }
     },
     {
      "kennung": "b",
-     "text": "7",
-     "begruendung": "Jede geschickte Frage halbiert den Bereich: 100, 50, 25, 13, 7, 4, 2, 1. Sieben Halbierungen unterscheiden bis zu 128 Möglichkeiten."
+     "text": {
+      "de": "7",
+      "en": "7"
+     },
+     "begruendung": {
+      "de": "Jede geschickte Frage halbiert den Bereich: 100, 50, 25, 13, 7, 4, 2, 1. Sieben Halbierungen unterscheiden bis zu 128 Möglichkeiten.",
+      "en": "Each clever question halves the range: 100, 50, 25, 13, 7, 4, 2, 1. Seven halvings distinguish up to 128 possibilities."
+     }
     },
     {
      "kennung": "c",
-     "text": "50",
-     "begruendung": "Das wäre die halbe Liste, Zahl für Zahl geraten. Halbieren des Bereichs ist viel stärker als Abfragen einzelner Zahlen."
+     "text": {
+      "de": "50",
+      "en": "50"
+     },
+     "begruendung": {
+      "de": "Das wäre die halbe Liste, Zahl für Zahl geraten. Halbieren des Bereichs ist viel stärker als Abfragen einzelner Zahlen.",
+      "en": "That would be guessing half the list, number by number. Halving the range is far stronger than probing single numbers."
+     }
     },
     {
      "kennung": "d",
-     "text": "99",
-     "begruendung": "So viele braucht nur, wer jede Zahl einzeln durchprobiert und nie halbiert."
+     "text": {
+      "de": "99",
+      "en": "99"
+     },
+     "begruendung": {
+      "de": "So viele braucht nur, wer jede Zahl einzeln durchprobiert und nie halbiert.",
+      "en": "Only someone who tries every number one by one, never halving, needs that many."
+     }
     }
    ]
   },
   {
    "id": "pd-004",
    "niveau": "anwenden",
-   "frage": "Zu Hause ist das Internet ausgefallen. Die Kette der Verdächtigen: Laptop, WLAN,\nRouter, Anbieter. Ihr verbindet den Laptop mit dem Handy-Hotspot, und alles\nfunktioniert. Was wisst ihr jetzt?",
+   "frage": {
+    "de": "Zu Hause ist das Internet ausgefallen. Die Kette der Verdächtigen: Laptop, WLAN,\nRouter, Anbieter. Ihr verbindet den Laptop mit dem Handy-Hotspot, und alles\nfunktioniert. Was wisst ihr jetzt?",
+    "en": "Your home internet is down. The chain of suspects: laptop, wifi, router, provider.\nYou connect the laptop to your phone's hotspot and everything works. What do you\nknow now?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -105,30 +189,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Laptop scheidet als Ursache praktisch aus; das Problem liegt weiter hinten in der Kette.",
-     "begruendung": "Genau das leistet der Test: Er halbiert die Kette. Der Laptop kann ins Internet, also liegt es an WLAN, Router oder Anbieter."
+     "text": {
+      "de": "Der Laptop scheidet als Ursache praktisch aus; das Problem liegt weiter hinten in der Kette.",
+      "en": "The laptop is practically ruled out; the problem lies further down the chain."
+     },
+     "begruendung": {
+      "de": "Genau das leistet der Test: Er halbiert die Kette. Der Laptop kann ins Internet, also liegt es an WLAN, Router oder Anbieter.",
+      "en": "That is exactly what the test does: it halves the chain. The laptop can reach the internet, so wifi, router or provider must be at fault."
+     }
     },
     {
      "kennung": "b",
-     "text": "Das WLAN ist die Ursache, denn der Hotspot ersetzt genau dieses Glied, und damit läuft es.",
-     "begruendung": "Der Hotspot ersetzt nicht nur das WLAN, sondern auch Router und Anbieter. Der Test schließt den Laptop aus, unterscheidet aber nicht zwischen den drei übrigen Gliedern."
+     "text": {
+      "de": "Das WLAN ist die Ursache, denn der Hotspot ersetzt genau dieses Glied, und damit läuft es.",
+      "en": "The wifi is the cause, because the hotspot replaces exactly that link, and then it works."
+     },
+     "begruendung": {
+      "de": "Der Hotspot ersetzt nicht nur das WLAN, sondern auch Router und Anbieter. Der Test schließt den Laptop aus, unterscheidet aber nicht zwischen den drei übrigen Gliedern.",
+      "en": "The hotspot replaces not only the wifi but also the router and the provider. The test rules out the laptop but does not distinguish between the three remaining links."
+     }
     },
     {
      "kennung": "c",
-     "text": "Der Anbieter hat eine Störung, denn über das Mobilfunknetz kommt der Laptop ja problemlos ins Internet.",
-     "begruendung": "Dass ein anderer Weg funktioniert, belastet nicht den Anbieter allein. WLAN und Router liegen ebenfalls auf dem ausgefallenen Weg und bleiben Verdächtige."
+     "text": {
+      "de": "Der Anbieter hat eine Störung, denn über das Mobilfunknetz kommt der Laptop ja problemlos ins Internet.",
+      "en": "The provider has an outage, because via the mobile network the laptop reaches the internet without trouble."
+     },
+     "begruendung": {
+      "de": "Dass ein anderer Weg funktioniert, belastet nicht den Anbieter allein. WLAN und Router liegen ebenfalls auf dem ausgefallenen Weg und bleiben Verdächtige.",
+      "en": "That a different route works does not single out the provider. Wifi and router also sit on the failed route and remain suspects."
+     }
     },
     {
      "kennung": "d",
-     "text": "Noch nichts Belastbares, denn der Hotspot nimmt einen anderen Weg und sagt über die Heimkette nichts aus.",
-     "begruendung": "Gerade weil der Weg ein anderer ist, ist der Test aussagekräftig: Er prüft den Laptop isoliert vom Rest der Kette."
+     "text": {
+      "de": "Noch nichts Belastbares, denn der Hotspot nimmt einen anderen Weg und sagt über die Heimkette nichts aus.",
+      "en": "Nothing solid yet, since the hotspot takes a different route and says nothing about the home chain."
+     },
+     "begruendung": {
+      "de": "Gerade weil der Weg ein anderer ist, ist der Test aussagekräftig: Er prüft den Laptop isoliert vom Rest der Kette.",
+      "en": "Precisely because the route is different, the test is informative: it checks the laptop in isolation from the rest of the chain."
+     }
     }
    ]
   },
   {
    "id": "pd-005",
    "niveau": "anwenden",
-   "frage": "Eure Übertragungsstrecke besteht aus Sender, LED, Luft, Sensor und Empfänger.\nDer Empfänger gibt nichts aus, und ihr wisst nicht, woran es liegt. Welcher\nerste Test grenzt das Problem am wirkungsvollsten ein?",
+   "frage": {
+    "de": "Eure Übertragungsstrecke besteht aus Sender, LED, Luft, Sensor und Empfänger.\nDer Empfänger gibt nichts aus, und ihr wisst nicht, woran es liegt. Welcher\nerste Test grenzt das Problem am wirkungsvollsten ein?",
+    "en": "Your transmission chain consists of sender, LED, air, sensor and receiver.\nThe receiver outputs nothing and you do not know why. Which first test\nnarrows the problem down most effectively?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -136,30 +247,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Den Code des Senders Zeile für Zeile durchgehen und prüfen, ob die Farbwerte richtig gesetzt werden.",
-     "begruendung": "Das prüft ein einzelnes Glied am Anfang der Kette, und zwar nur durch Lesen. Selbst wenn der Code fehlerfrei ist, bleiben vier Verdächtige übrig; die Suche hat kaum etwas ausgeschlossen."
+     "text": {
+      "de": "Den Code des Senders Zeile für Zeile durchgehen und prüfen, ob die Farbwerte richtig gesetzt werden.",
+      "en": "Go through the sender's code line by line and check whether the colour values are set correctly."
+     },
+     "begruendung": {
+      "de": "Das prüft ein einzelnes Glied am Anfang der Kette, und zwar nur durch Lesen. Selbst wenn der Code fehlerfrei ist, bleiben vier Verdächtige übrig; die Suche hat kaum etwas ausgeschlossen.",
+      "en": "That checks a single link at the start of the chain, and only by reading. Even if the code is flawless, four suspects remain; the search has ruled out almost nothing."
+     }
     },
     {
      "kennung": "b",
-     "text": "Beide Geräte neu starten, damit ein hängen gebliebener Zustand als Ursache ausscheidet.",
-     "begruendung": "Der Neustart-Reflex. Er verändert alle Glieder auf einmal; selbst wenn es danach geht, wisst ihr nicht, welches kaputt war, und das Problem kommt wieder."
+     "text": {
+      "de": "Beide Geräte neu starten, damit ein hängen gebliebener Zustand als Ursache ausscheidet.",
+      "en": "Restart both devices so that a stuck state can be ruled out as the cause."
+     },
+     "begruendung": {
+      "de": "Der Neustart-Reflex. Er verändert alle Glieder auf einmal; selbst wenn es danach geht, wisst ihr nicht, welches kaputt war, und das Problem kommt wieder.",
+      "en": "The restart reflex. It changes all links at once; even if it works afterwards, you do not know which one was broken, and the problem will come back."
+     }
     },
     {
      "kennung": "c",
-     "text": "Eine Taschenlampe vor den Sensor halten und schauen, ob sich die Messwerte ändern.",
-     "begruendung": "Ein Test in der Mitte der Kette: Reagiert der Sensor, ist die Empfängerhälfte in Ordnung, und ihr sucht nur noch bei Sender und LED. Reagiert er nicht, umgekehrt."
+     "text": {
+      "de": "Eine Taschenlampe vor den Sensor halten und schauen, ob sich die Messwerte ändern.",
+      "en": "Hold a torch in front of the sensor and check whether the readings change."
+     },
+     "begruendung": {
+      "de": "Ein Test in der Mitte der Kette: Reagiert der Sensor, ist die Empfängerhälfte in Ordnung, und ihr sucht nur noch bei Sender und LED. Reagiert er nicht, umgekehrt.",
+      "en": "A test in the middle of the chain: if the sensor reacts, the receiver half is fine and you only search sender and LED. If not, the other way round."
+     }
     },
     {
      "kennung": "d",
-     "text": "Den Abstand zwischen den Geräten verringern, damit mehr Licht am Sensor ankommt.",
-     "begruendung": "Das verändert eine Bedingung, prüft aber kein Kettenglied gezielt. Wenn es hilft, wisst ihr immer noch nicht warum, und wenn nicht, habt ihr nichts ausgeschlossen."
+     "text": {
+      "de": "Den Abstand zwischen den Geräten verringern, damit mehr Licht am Sensor ankommt.",
+      "en": "Reduce the distance between the devices so that more light reaches the sensor."
+     },
+     "begruendung": {
+      "de": "Das verändert eine Bedingung, prüft aber kein Kettenglied gezielt. Wenn es hilft, wisst ihr immer noch nicht warum, und wenn nicht, habt ihr nichts ausgeschlossen.",
+      "en": "That changes a condition but does not target any link. If it helps, you still do not know why, and if not, you have ruled out nothing."
+     }
     }
    ]
   },
   {
    "id": "pd-006",
    "niveau": "verstehen",
-   "frage": "Zwei Personen bereiten das Essen für eine Party vor. Warum funktioniert die\nAufteilung \"du machst die Vorspeise, ich den Nachtisch\" besser als \"wir machen\nbeide irgendwie das Essen\"?",
+   "frage": {
+    "de": "Zwei Personen bereiten das Essen für eine Party vor. Warum funktioniert die\nAufteilung \"du machst die Vorspeise, ich den Nachtisch\" besser als \"wir machen\nbeide irgendwie das Essen\"?",
+    "en": "Two people prepare the food for a party. Why does the split \"you do starters,\nI do dessert\" work better than \"we both kind of do the food\"?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -167,30 +305,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil dann jede Person weniger Arbeit hat.",
-     "begruendung": "Die Arbeitsmenge ist in beiden Fällen gleich. Der Unterschied liegt nicht in der Menge, sondern im Schnitt."
+     "text": {
+      "de": "Weil dann jede Person weniger Arbeit hat.",
+      "en": "Because each person has less work that way."
+     },
+     "begruendung": {
+      "de": "Die Arbeitsmenge ist in beiden Fällen gleich. Der Unterschied liegt nicht in der Menge, sondern im Schnitt.",
+      "en": "The amount of work is the same in both cases. The difference is not the amount but the cut."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil die Grenze klar ist und kaum Abstimmung nötig wird.",
-     "begruendung": "Genau: Wo man schneidet, entscheidet, wie viel man reden muss. Klare Grenzen machen Teile unabhängig bearbeitbar."
+     "text": {
+      "de": "Weil die Grenze klar ist und kaum Abstimmung nötig wird.",
+      "en": "Because the boundary is clear and hardly any coordination is needed."
+     },
+     "begruendung": {
+      "de": "Genau: Wo man schneidet, entscheidet, wie viel man reden muss. Klare Grenzen machen Teile unabhängig bearbeitbar.",
+      "en": "Exactly: where you cut decides how much you must talk. Clear boundaries make pieces independently workable."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil zwei getrennte Aufgaben parallel laufen und das Essen so doppelt so schnell fertig ist.",
-     "begruendung": "Parallel arbeiten könnten beide auch bei 'wir machen beide das Essen'. Der Gewinn des Schnitts liegt nicht im Tempo, sondern darin, dass jede Person ohne Rückfragen weiß, was ihres ist."
+     "text": {
+      "de": "Weil zwei getrennte Aufgaben parallel laufen und das Essen so doppelt so schnell fertig ist.",
+      "en": "Because two separate tasks run in parallel, so the food is ready twice as fast."
+     },
+     "begruendung": {
+      "de": "Parallel arbeiten könnten beide auch bei 'wir machen beide das Essen'. Der Gewinn des Schnitts liegt nicht im Tempo, sondern darin, dass jede Person ohne Rückfragen weiß, was ihres ist.",
+      "en": "Both could work in parallel under 'we both kind of do the food' as well. The gain of the cut is not speed but that each person knows what is theirs without asking."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil man sich bei zwei getrennten Aufgaben nicht mehr absprechen muss.",
-     "begruendung": "Fast, aber zu absolut: Was die Grenze überquert (Zeitplan, Ofen, Budget), muss weiterhin abgesprochen werden. Der gute Schnitt macht die Absprache klein, nicht überflüssig."
+     "text": {
+      "de": "Weil man sich bei zwei getrennten Aufgaben nicht mehr absprechen muss.",
+      "en": "Because with two separate tasks no agreement is needed at all."
+     },
+     "begruendung": {
+      "de": "Fast, aber zu absolut: Was die Grenze überquert (Zeitplan, Ofen, Budget), muss weiterhin abgesprochen werden. Der gute Schnitt macht die Absprache klein, nicht überflüssig.",
+      "en": "Close, but too absolute: whatever crosses the boundary (timing, oven, budget) still needs agreement. A good cut makes the agreement small, not unnecessary."
+     }
     }
    ]
   },
   {
    "id": "pd-007",
    "niveau": "anwenden",
-   "frage": "In einer alphabetisch sortierten Liste mit 1000 Namen sucht ihr einen bestimmten\nNamen, indem ihr immer in der Mitte des verbleibenden Bereichs nachschaut.\nWie oft müsst ihr höchstens nachschauen, ungefähr?",
+   "frage": {
+    "de": "In einer alphabetisch sortierten Liste mit 1000 Namen sucht ihr einen bestimmten\nNamen, indem ihr immer in der Mitte des verbleibenden Bereichs nachschaut.\nWie oft müsst ihr höchstens nachschauen, ungefähr?",
+    "en": "In an alphabetically sorted list of 1000 names you look for one name by always\nchecking the middle of the remaining range. Roughly how many checks do you need\nat most?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -198,30 +363,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Etwa 10",
-     "begruendung": "Jeder Blick halbiert den Bereich, und zehn Halbierungen unterscheiden 1024 Möglichkeiten. Deshalb wächst der Aufwand nur um eins, wenn sich die Liste verdoppelt."
+     "text": {
+      "de": "Etwa 10",
+      "en": "About 10"
+     },
+     "begruendung": {
+      "de": "Jeder Blick halbiert den Bereich, und zehn Halbierungen unterscheiden 1024 Möglichkeiten. Deshalb wächst der Aufwand nur um eins, wenn sich die Liste verdoppelt.",
+      "en": "Each check halves the range, and ten halvings distinguish 1024 possibilities. That is why doubling the list adds only one more check."
+     }
     },
     {
      "kennung": "b",
-     "text": "Etwa 100",
-     "begruendung": "Das unterschätzt die Kraft des Halbierens: Schon 10 Halbierungen reichen für 1000 Einträge, nicht erst 100."
+     "text": {
+      "de": "Etwa 100",
+      "en": "About 100"
+     },
+     "begruendung": {
+      "de": "Das unterschätzt die Kraft des Halbierens: Schon 10 Halbierungen reichen für 1000 Einträge, nicht erst 100.",
+      "en": "This underestimates halving: 10 halvings already cover 1000 entries, not 100."
+     }
     },
     {
      "kennung": "c",
-     "text": "Etwa 500",
-     "begruendung": "500 wäre der Erwartungswert, wenn man die Liste von vorn durchgeht, Name für Name, ohne zu halbieren."
+     "text": {
+      "de": "Etwa 500",
+      "en": "About 500"
+     },
+     "begruendung": {
+      "de": "500 wäre der Erwartungswert, wenn man die Liste von vorn durchgeht, Name für Name, ohne zu halbieren.",
+      "en": "500 would be the average if you scanned the list from the front, name by name, without halving."
+     }
     },
     {
      "kennung": "d",
-     "text": "Etwa 1000",
-     "begruendung": "So oft schaut nur, wer die Sortierung ignoriert und schlimmstenfalls jeden Eintrag prüft."
+     "text": {
+      "de": "Etwa 1000",
+      "en": "About 1000"
+     },
+     "begruendung": {
+      "de": "So oft schaut nur, wer die Sortierung ignoriert und schlimmstenfalls jeden Eintrag prüft.",
+      "en": "Only someone ignoring the sorting and checking every entry in the worst case needs that many."
+     }
     }
    ]
   },
   {
    "id": "pd-008",
    "niveau": "erinnern",
-   "frage": "Welches Vorgehen folgt dem Muster \"erst eine kleinere Version des Problems lösen\"?",
+   "frage": {
+    "de": "Welches Vorgehen folgt dem Muster \"erst eine kleinere Version des Problems lösen\"?",
+    "en": "Which approach follows the pattern \"solve a smaller version of the problem first\"?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -229,30 +421,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sofort die vollständige Dateiübertragung bauen und danach die Fehler suchen.",
-     "begruendung": "Das ist der Big Bang: Wenn am Ende nichts funktioniert, weiß niemand, welcher der vielen Teile schuld ist."
+     "text": {
+      "de": "Sofort die vollständige Dateiübertragung bauen und danach die Fehler suchen.",
+      "en": "Build the complete file transfer right away and look for the errors afterwards."
+     },
+     "begruendung": {
+      "de": "Das ist der Big Bang: Wenn am Ende nichts funktioniert, weiß niemand, welcher der vielen Teile schuld ist.",
+      "en": "That is the big bang: when nothing works at the end, nobody knows which of the many parts is to blame."
+     }
     },
     {
      "kennung": "b",
-     "text": "Mit allen Teilproblemen gleichzeitig anfangen, damit keine Zeit verloren geht.",
-     "begruendung": "Parallel anfangen ist kein Stufenplan. Ohne eine funktionierende kleine Version fehlt die Grundlage, auf der die nächste Stufe aufbaut."
+     "text": {
+      "de": "Mit allen Teilproblemen gleichzeitig anfangen, damit keine Zeit verloren geht.",
+      "en": "Start on all subproblems at the same time so no time is lost."
+     },
+     "begruendung": {
+      "de": "Parallel anfangen ist kein Stufenplan. Ohne eine funktionierende kleine Version fehlt die Grundlage, auf der die nächste Stufe aufbaut.",
+      "en": "Starting everything in parallel is not a staircase. Without a working small version there is no base for the next step."
+     }
     },
     {
      "kennung": "c",
-     "text": "Erst das Licht an- und ausschalten, dann zwei Farben unterscheiden, dann Zeichen übertragen.",
-     "begruendung": "Genau die Treppe: Jede Stufe ist eine etwas größere Fassung desselben Problems, und jede funktioniert, bevor die nächste beginnt."
+     "text": {
+      "de": "Erst das Licht an- und ausschalten, dann zwei Farben unterscheiden, dann Zeichen übertragen.",
+      "en": "First switch the light on and off, then tell two colours apart, then transmit characters."
+     },
+     "begruendung": {
+      "de": "Genau die Treppe: Jede Stufe ist eine etwas größere Fassung desselben Problems, und jede funktioniert, bevor die nächste beginnt.",
+      "en": "Exactly the staircase: each step is a slightly bigger version of the same problem, and each one works before the next begins."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Aufgabe so lange verschieben, bis alle Grundlagen im Kurs behandelt wurden.",
-     "begruendung": "Warten ist keine Zerlegungsstrategie. Die kleine Version kann man sofort lösen, mit dem, was man schon kann."
+     "text": {
+      "de": "Die Aufgabe so lange verschieben, bis alle Grundlagen im Kurs behandelt wurden.",
+      "en": "Postpone the task until all the basics have been covered in class."
+     },
+     "begruendung": {
+      "de": "Warten ist keine Zerlegungsstrategie. Die kleine Version kann man sofort lösen, mit dem, was man schon kann.",
+      "en": "Waiting is not a decomposition strategy. The small version can be solved right away with what you already know."
+     }
     }
    ]
   },
   {
    "id": "pd-009",
    "niveau": "anwenden",
-   "frage": "Ihr arbeitet mit dem KI-Assistenten an eurem Empfänger. Welcher Auftrag passt\nzur Arbeitsteilung \"ihr schneidet, die Maschine löst Teile, ihr prüft\"?",
+   "frage": {
+    "de": "Ihr arbeitet mit dem KI-Assistenten an eurem Empfänger. Welcher Auftrag passt\nzur Arbeitsteilung \"ihr schneidet, die Maschine löst Teile, ihr prüft\"?",
+    "en": "You are working on your receiver with the AI assistant. Which request fits the\ndivision of labour \"you cut, the machine solves pieces, you check\"?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -260,30 +479,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Baue mir den kompletten Empfänger für unsere Lichtübertragung. Ich prüfe am Ende, ob der gesendete Text ankommt.",
-     "begruendung": "Ein Test ist zwar mitgedacht, aber das Stück ist zu groß: Kommt kein Text an, wisst ihr nicht, welcher der vielen Teile schuld ist. Und die Zerlegung hätte die Maschine übernommen statt ihr."
+     "text": {
+      "de": "Baue mir den kompletten Empfänger für unsere Lichtübertragung. Ich prüfe am Ende, ob der gesendete Text ankommt.",
+      "en": "Build me the complete receiver for our light transmission. At the end I will check whether the sent text arrives."
+     },
+     "begruendung": {
+      "de": "Ein Test ist zwar mitgedacht, aber das Stück ist zu groß: Kommt kein Text an, wisst ihr nicht, welcher der vielen Teile schuld ist. Und die Zerlegung hätte die Maschine übernommen statt ihr.",
+      "en": "A test is planned, but the piece is too large: if no text arrives, you do not know which of the many parts is to blame. And the machine would have done the cutting instead of you."
+     }
     },
     {
      "kennung": "b",
-     "text": "Schreibe eine Funktion, die den Sensor zehnmal liest und den Mittelwert zurückgibt. Ich teste sie mit LED aus und LED an.",
-     "begruendung": "Kleiner Auftrag, klare Ein- und Ausgabe, und der Test ist schon mitgedacht. Ihr bleibt Herr der Lage."
+     "text": {
+      "de": "Schreibe eine Funktion, die den Sensor zehnmal liest und den Mittelwert zurückgibt. Ich teste sie mit LED aus und LED an.",
+      "en": "Write a function that reads the sensor ten times and returns the average. I will test it with the LED off and on."
+     },
+     "begruendung": {
+      "de": "Kleiner Auftrag, klare Ein- und Ausgabe, und der Test ist schon mitgedacht. Ihr bleibt Herr der Lage.",
+      "en": "Small task, clear input and output, and the test is already planned. You stay in control."
+     }
     },
     {
      "kennung": "c",
-     "text": "Überarbeite meinen Empfängercode so, dass er zuverlässiger wird, und erkläre mir anschließend die Änderungen.",
-     "begruendung": "'Zuverlässiger' ist kein prüfbares Ziel, und was geändert wird, entscheidet die Maschine. Ihr könntet hinterher nicht sagen, ob der Auftrag erfüllt wurde, auch nicht mit Erklärung."
+     "text": {
+      "de": "Überarbeite meinen Empfängercode so, dass er zuverlässiger wird, und erkläre mir anschließend die Änderungen.",
+      "en": "Rework my receiver code so that it becomes more reliable, and explain the changes to me afterwards."
+     },
+     "begruendung": {
+      "de": "'Zuverlässiger' ist kein prüfbares Ziel, und was geändert wird, entscheidet die Maschine. Ihr könntet hinterher nicht sagen, ob der Auftrag erfüllt wurde, auch nicht mit Erklärung.",
+      "en": "'More reliable' is not a testable goal, and the machine decides what gets changed. Afterwards you could not tell whether the request was fulfilled, explanation or not."
+     }
     },
     {
      "kennung": "d",
-     "text": "Schreibe eine Funktion, die den Sensor liest und die erkannte Farbe zurückgibt. Wenn der Code schlüssig aussieht, übernehme ich ihn.",
-     "begruendung": "Der Schnitt ist gut, die Prüfung fehlt: 'Sieht schlüssig aus' ist ein Gefühl, kein Test. Der dritte Teil der Arbeitsteilung, das Prüfen am Gerät, wäre übersprungen."
+     "text": {
+      "de": "Schreibe eine Funktion, die den Sensor liest und die erkannte Farbe zurückgibt. Wenn der Code schlüssig aussieht, übernehme ich ihn.",
+      "en": "Write a function that reads the sensor and returns the detected colour. If the code looks plausible, I will keep it."
+     },
+     "begruendung": {
+      "de": "Der Schnitt ist gut, die Prüfung fehlt: 'Sieht schlüssig aus' ist ein Gefühl, kein Test. Der dritte Teil der Arbeitsteilung, das Prüfen am Gerät, wäre übersprungen.",
+      "en": "The cut is fine, the check is missing: 'looks plausible' is a feeling, not a test. The third part of the division of labour, checking on the device, would be skipped."
+     }
     }
    ]
   },
   {
    "id": "pd-010",
    "niveau": "verstehen",
-   "frage": "Im Modul gilt die Werkstattregel \"fertig heißt: der Test läuft durch\".\nWann ist die Aufgabe \"die LED blinkt einmal pro Sekunde\" danach fertig?",
+   "frage": {
+    "de": "Im Modul gilt die Werkstattregel \"fertig heißt: der Test läuft durch\".\nWann ist die Aufgabe \"die LED blinkt einmal pro Sekunde\" danach fertig?",
+    "en": "The module's workshop rule says \"done means: the test passes\".\nAccording to it, when is the task \"the LED blinks once per second\" done?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -291,30 +537,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Wenn das Programm ohne Fehlermeldung durchläuft und die LED dabei sichtbar blinkt.",
-     "begruendung": "Keine Fehlermeldung heißt nur: Die Maschine konnte ausführen, was dastand. Ob das Richtige passiert, sagt sie damit nicht."
+     "text": {
+      "de": "Wenn das Programm ohne Fehlermeldung durchläuft und die LED dabei sichtbar blinkt.",
+      "en": "When the program runs without an error message and the LED visibly blinks while it does."
+     },
+     "begruendung": {
+      "de": "Keine Fehlermeldung heißt nur: Die Maschine konnte ausführen, was dastand. Ob das Richtige passiert, sagt sie damit nicht.",
+      "en": "No error message only means the machine could execute what was written. It does not say the right thing happened."
+     }
     },
     {
      "kennung": "b",
-     "text": "Wenn das Blinken beim Zuschauen gleichmäßig wirkt und ungefähr im Sekundentakt liegt.",
-     "begruendung": "'Wirkt gleichmäßig' und 'ungefähr' sind Gefühle. Ob es wirklich eine Sekunde ist, verrät nur eine Messung mit vereinbarter Toleranz."
+     "text": {
+      "de": "Wenn das Blinken beim Zuschauen gleichmäßig wirkt und ungefähr im Sekundentakt liegt.",
+      "en": "When the blinking looks even to the eye and seems to be roughly once per second."
+     },
+     "begruendung": {
+      "de": "'Wirkt gleichmäßig' und 'ungefähr' sind Gefühle. Ob es wirklich eine Sekunde ist, verrät nur eine Messung mit vereinbarter Toleranz.",
+      "en": "'Looks even' and 'roughly' are feelings. Only a measurement with an agreed tolerance tells whether it is really one second."
+     }
     },
     {
      "kennung": "c",
-     "text": "Wenn der vereinbarte Prüfschritt bestanden ist, etwa zehn Blinkzyklen in gemessenen zehn Sekunden.",
-     "begruendung": "Genau die Regel: Fertig ist, was seinen vereinbarten Test besteht, ausführbar von euch selbst, ohne auf jemanden zu warten."
+     "text": {
+      "de": "Wenn der vereinbarte Prüfschritt bestanden ist, etwa zehn Blinkzyklen in gemessenen zehn Sekunden.",
+      "en": "When the agreed check passes, for example ten blink cycles in a measured ten seconds."
+     },
+     "begruendung": {
+      "de": "Genau die Regel: Fertig ist, was seinen vereinbarten Test besteht, ausführbar von euch selbst, ohne auf jemanden zu warten.",
+      "en": "Exactly the rule: done is what passes its agreed test, executable by yourselves without waiting for anyone."
+     }
     },
     {
      "kennung": "d",
-     "text": "Wenn der KI-Assistent den Code geprüft hat und bestätigt, dass er einmal pro Sekunde blinkt.",
-     "begruendung": "Der Assistent hat keinen Zugang zur echten LED. Die Ground Truth liegt am Gerät, und geprüft wird dort, nicht im Chat."
+     "text": {
+      "de": "Wenn der KI-Assistent den Code geprüft hat und bestätigt, dass er einmal pro Sekunde blinkt.",
+      "en": "When the AI assistant has reviewed the code and confirms that it blinks once per second."
+     },
+     "begruendung": {
+      "de": "Der Assistent hat keinen Zugang zur echten LED. Die Ground Truth liegt am Gerät, und geprüft wird dort, nicht im Chat.",
+      "en": "The assistant has no access to the real LED. The ground truth is at the device, and that is where checking happens, not in the chat."
+     }
     }
    ]
   },
   {
    "id": "pd-011",
    "niveau": "verstehen",
-   "frage": "Die Abbildung zeigt das Zahlenraten zwischen 1 und 100: Blau ist der Bereich, in dem\ndie gesuchte Zahl noch stecken kann, die rote Linie ist die gesuchte 73.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Die Abbildung zeigt das Zahlenraten zwischen 1 und 100: Blau ist der Bereich, in dem\ndie gesuchte Zahl noch stecken kann, die rote Linie ist die gesuchte 73.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+    "en": "The figure shows the guessing game between 1 and 100: blue is the range where the\nnumber can still be, the red line is the target 73.\nWhich statements are true? (Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -325,35 +598,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Jede Frage halbiert ungefähr den blauen Bereich.",
-     "begruendung": "Richtig, das ist der Kern der Strategie: Jede geschickte Ja/Nein-Frage schließt etwa die Hälfte der verbleibenden Möglichkeiten aus."
+     "text": {
+      "de": "Jede Frage halbiert ungefähr den blauen Bereich.",
+      "en": "Each question roughly halves the blue range."
+     },
+     "begruendung": {
+      "de": "Richtig, das ist der Kern der Strategie: Jede geschickte Ja/Nein-Frage schließt etwa die Hälfte der verbleibenden Möglichkeiten aus.",
+      "en": "Correct, that is the core of the strategy: each clever yes/no question rules out about half of the remaining possibilities."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die rote Linie wandert mit jeder Frage weiter nach rechts.",
-     "begruendung": "Falsch: Die gesuchte Zahl steht von Anfang an fest. Es bewegt sich nur der blaue Bereich, der auf sie zusammenschrumpft."
+     "text": {
+      "de": "Die rote Linie wandert mit jeder Frage weiter nach rechts.",
+      "en": "The red line moves further right with each question."
+     },
+     "begruendung": {
+      "de": "Falsch: Die gesuchte Zahl steht von Anfang an fest. Es bewegt sich nur der blaue Bereich, der auf sie zusammenschrumpft.",
+      "en": "Wrong: the target number is fixed from the start. Only the blue range moves as it shrinks onto it."
+     }
     },
     {
      "kennung": "c",
-     "text": "Am Ende bleibt genau eine Zahl übrig.",
-     "begruendung": "Richtig: Halbieren endet erst, wenn der Bereich nur noch eine Möglichkeit enthält, und die ist dann die Antwort."
+     "text": {
+      "de": "Am Ende bleibt genau eine Zahl übrig.",
+      "en": "In the end exactly one number remains."
+     },
+     "begruendung": {
+      "de": "Richtig: Halbieren endet erst, wenn der Bereich nur noch eine Möglichkeit enthält, und die ist dann die Antwort.",
+      "en": "Correct: halving only ends when the range contains a single possibility, which is then the answer."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die erste Frage schließt die meisten Zahlen auf einmal aus.",
-     "begruendung": "Richtig: Die erste Halbierung streicht rund 50 Zahlen, die zweite noch 25, und so weiter. Absolut gesehen leistet der erste Schnitt am meisten."
+     "text": {
+      "de": "Die erste Frage schließt die meisten Zahlen auf einmal aus.",
+      "en": "The first question rules out the most numbers at once."
+     },
+     "begruendung": {
+      "de": "Richtig: Die erste Halbierung streicht rund 50 Zahlen, die zweite noch 25, und so weiter. Absolut gesehen leistet der erste Schnitt am meisten.",
+      "en": "Correct: the first halving removes about 50 numbers, the second 25, and so on. In absolute terms the first cut does the most."
+     }
     },
     {
      "kennung": "e",
-     "text": "Eine Nein-Antwort liefert keine Information.",
-     "begruendung": "Falsch: Auch ein Nein halbiert den Bereich, nur eben zur anderen Seite. Beide Antworten sind gleich wertvoll."
+     "text": {
+      "de": "Eine Nein-Antwort liefert keine Information.",
+      "en": "A 'no' answer provides no information."
+     },
+     "begruendung": {
+      "de": "Falsch: Auch ein Nein halbiert den Bereich, nur eben zur anderen Seite. Beide Antworten sind gleich wertvoll.",
+      "en": "Wrong: a 'no' also halves the range, just towards the other side. Both answers are equally valuable."
+     }
     }
    ]
   },
   {
    "id": "pd-012",
    "niveau": "anwenden",
-   "frage": "Der KI-Assistent liefert euch diese Funktion. Welcher Umgang damit passt zur\nWerkstattregel?",
+   "frage": {
+    "de": "Der KI-Assistent liefert euch diese Funktion. Welcher Umgang damit passt zur\nWerkstattregel?",
+    "en": "The AI assistant delivers this function. Which way of handling it fits the\nworkshop rule?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -362,18 +668,36 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Den Code Zeile für Zeile lesen und ihn übernehmen, sobald jede Zeile schlüssig ist.",
-     "begruendung": "Lesen ist gut, reicht aber nicht: 'Sieht schlüssig aus' ist ein Gefühl, kein Test. Plausibler Code kann trotzdem das Falsche tun."
+     "text": {
+      "de": "Den Code Zeile für Zeile lesen und ihn übernehmen, sobald jede Zeile schlüssig ist.",
+      "en": "Read the code line by line and keep it once every line makes sense."
+     },
+     "begruendung": {
+      "de": "Lesen ist gut, reicht aber nicht: 'Sieht schlüssig aus' ist ein Gefühl, kein Test. Plausibler Code kann trotzdem das Falsche tun.",
+      "en": "Reading is good but not enough: 'looks plausible' is a feeling, not a test. Plausible code can still do the wrong thing."
+     }
     },
     {
      "kennung": "b",
-     "text": "Einmal mit LED an und einmal mit LED aus aufrufen und prüfen, ob sich die Rückgabe deutlich unterscheidet.",
-     "begruendung": "Genau: ein kleiner, selbst ausführbarer Test mit bekannter Eingabe und erwartbarer Ausgabe. Er prüft die Funktion am echten Gerät, der Ground Truth."
+     "text": {
+      "de": "Einmal mit LED an und einmal mit LED aus aufrufen und prüfen, ob sich die Rückgabe deutlich unterscheidet.",
+      "en": "Call it once with the LED on and once with it off, and check that the return value clearly differs."
+     },
+     "begruendung": {
+      "de": "Genau: ein kleiner, selbst ausführbarer Test mit bekannter Eingabe und erwartbarer Ausgabe. Er prüft die Funktion am echten Gerät, der Ground Truth.",
+      "en": "Exactly: a small, self-executable test with known input and expected output. It checks the function on the real device, the ground truth."
+     }
     },
     {
      "kennung": "c",
-     "text": "Den Assistenten fragen, ob die Funktion korrekt ist, und die Antwort dokumentieren.",
-     "begruendung": "Der Assistent hat keinen Zugang zum echten Sensor. Er kann den Code erklären, aber nicht an der Wirklichkeit prüfen; das könnt nur ihr."
+     "text": {
+      "de": "Den Assistenten fragen, ob die Funktion korrekt ist, und die Antwort dokumentieren.",
+      "en": "Ask the assistant whether the function is correct and document the answer."
+     },
+     "begruendung": {
+      "de": "Der Assistent hat keinen Zugang zum echten Sensor. Er kann den Code erklären, aber nicht an der Wirklichkeit prüfen; das könnt nur ihr.",
+      "en": "The assistant has no access to the real sensor. It can explain the code but cannot check it against reality; only you can."
+     }
     }
    ]
   }

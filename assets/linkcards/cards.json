@@ -1,0 +1,93 @@
+{
+  "https://lifi.uber.space/cockpit": {
+    "url": "https://lifi.uber.space/cockpit",
+    "title": "Team Cockpit",
+    "description": "Your link, live: what your LED sends and what your sensor measures, on one shared timeline. If the two do not match, you are looking at your bug.",
+    "site": "LiFi Project",
+    "image": "6f3db8aa698a.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/",
+    "title": "the photo digitiser",
+    "description": "turn an analog photo into numbers: pick resolution and colour depth (down to the game boy's four greys), see the picture change, and watch the byte count grow.",
+    "site": "LiFi Project · concept demos",
+    "image": "693dfa3d8140.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/audio-digitiser/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/audio-digitiser/",
+    "title": "the audio digitiser",
+    "description": "the same two cuts for sound: choose sampling rate and bit depth, see the staircase on the wave — and hear what gets thrown away.",
+    "site": "LiFi Project · concept demos",
+    "image": "344709270e70.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/copier/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/copier/",
+    "title": "the copier",
+    "description": "press copy and hang each generation on the wall: watch the analog picture fade copy by copy, then ask what a file would have done.",
+    "site": "LiFi Project · concept demos",
+    "image": "03e5b965b44e.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/pixel-painter/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/pixel-painter/",
+    "title": "pixel painter",
+    "description": "an 8×8 picture, one bit per pixel: paint and watch the bytes write themselves, edit the hex and paint with numbers, then break a byte and see the damage.",
+    "site": "LiFi Project · concept demos",
+    "image": "11ada88949e1.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/inside-a-file/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/inside-a-file/",
+    "title": "inside a file",
+    "description": "a real bitmap in a hex editor: header fields underlined, click a pixel to find its three bytes, then change a byte — and watch the picture obey, or the viewer refuse.",
+    "site": "LiFi Project · concept demos",
+    "image": "d5eb19b4ff45.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/byte-switchboard/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/byte-switchboard/",
+    "title": "byte switchboard",
+    "description": "flip eight bits and watch the number appear: binary, decimal, hex, and the ascii character behind it.",
+    "site": "LiFi Project · concept demos",
+    "image": "c9fb0ea02da8.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/drift-simulator/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/drift-simulator/",
+    "title": "drift simulator",
+    "description": "two clocks, slightly apart: watch the receiver’s sampling points wander out of the time slots until the message turns to garbage, then let a sync marker save it.",
+    "site": "LiFi Project · concept demos",
+    "image": "cedc16accee0.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/distinguishability-lab/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/distinguishability-lab/",
+    "title": "distinguishability lab",
+    "description": "send symbols over a noisy channel, oscilloscope style: grow the alphabet, tune the window, inject a disturbance, and watch the error rate fight the throughput.",
+    "site": "LiFi Project · concept demos",
+    "image": "ed296b426a89.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/question-game/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/question-game/",
+    "title": "question game",
+    "description": "find the secret face among sixteen: every answer shrinks the crowd, the shrinking is measured in bits, and the halving strategy shows why four questions are enough.",
+    "site": "LiFi Project · concept demos",
+    "image": "3a613d234545.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/pixel-filter/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/pixel-filter/",
+    "title": "the pixel filter",
+    "description": "make a photo brighter one addition at a time: step through a single pixel with its bits and carries, then let the machine do the other sixteen thousand in a blink, and see what happens at 255.",
+    "site": "LiFi Project · concept demos",
+    "image": "bef129f53feb.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/gate-lab/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/gate-lab/",
+    "title": "the gate lab",
+    "description": "switches in, lamps out: flip the inputs of a single gate, watch a half adder carry, chain eight full adders into a byte adder, and make two gates remember a bit.",
+    "site": "LiFi Project · concept demos",
+    "image": "16bdaaa72507.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/ipo-test-lab/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/ipo-test-lab/",
+    "title": "",
+    "description": "",
+    "site": "winf-hsos.github.io",
+    "image": ""
+  }
+}

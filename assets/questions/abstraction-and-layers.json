@@ -4,7 +4,10 @@
   {
    "id": "al-001",
    "niveau": "erinnern",
-   "frage": "Was leistet eine Abstraktion?",
+   "frage": {
+    "de": "Was leistet eine Abstraktion?",
+    "en": "What does an abstraction accomplish?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie beschleunigt die Ausführung, weil häufige Abläufe der unteren Ebene vorbereitet bereitliegen.",
-     "begruendung": "Geschwindigkeit ist nicht ihr Zweck, eher im Gegenteil: Der Umweg über eine Schnittstelle kostet meist etwas Leistung. Bezahlt wird das mit dem eigentlichen Gewinn, der Unabhängigkeit vom Innenleben."
+     "text": {
+      "de": "Sie beschleunigt die Ausführung, weil häufige Abläufe der unteren Ebene vorbereitet bereitliegen.",
+      "en": "It speeds up execution because frequent lower-level operations are prepared in advance."
+     },
+     "begruendung": {
+      "de": "Geschwindigkeit ist nicht ihr Zweck, eher im Gegenteil: Der Umweg über eine Schnittstelle kostet meist etwas Leistung. Bezahlt wird das mit dem eigentlichen Gewinn, der Unabhängigkeit vom Innenleben.",
+      "en": "Speed is not its purpose; if anything, the detour through an interface usually costs a little performance. That price buys the real gain: independence from the internals."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sie fängt Fehler der darunterliegenden Ebene ab, bevor sie nach oben durchschlagen.",
-     "begruendung": "Fehlerbehandlung kann eine Schnittstelle zusätzlich anbieten, sie ist aber nicht das Wesen der Abstraktion. Verborgen werden Einzelheiten, nicht Fehler; ein Defekt darunter bleibt ein Defekt."
+     "text": {
+      "de": "Sie fängt Fehler der darunterliegenden Ebene ab, bevor sie nach oben durchschlagen.",
+      "en": "It catches errors of the layer below before they propagate upwards."
+     },
+     "begruendung": {
+      "de": "Fehlerbehandlung kann eine Schnittstelle zusätzlich anbieten, sie ist aber nicht das Wesen der Abstraktion. Verborgen werden Einzelheiten, nicht Fehler; ein Defekt darunter bleibt ein Defekt.",
+      "en": "An interface may additionally offer error handling, but that is not the essence of abstraction. What gets hidden are details, not errors; a defect below remains a defect."
+     }
     },
     {
      "kennung": "c",
-     "text": "Sie verbirgt Einzelheiten hinter einer Schnittstelle, sodass man etwas benutzen kann, ohne sein Innenleben zu kennen.",
-     "begruendung": "Genau: Wer led.set_color aufruft, muss nichts über Strom und Chips wissen. Erst dieses Verbergen macht Systeme möglich, die größer sind, als eine Person überblicken kann."
+     "text": {
+      "de": "Sie verbirgt Einzelheiten hinter einer Schnittstelle, sodass man etwas benutzen kann, ohne sein Innenleben zu kennen.",
+      "en": "It hides details behind an interface, so something can be used without knowing its internals."
+     },
+     "begruendung": {
+      "de": "Genau: Wer led.set_color aufruft, muss nichts über Strom und Chips wissen. Erst dieses Verbergen macht Systeme möglich, die größer sind, als eine Person überblicken kann.",
+      "en": "Exactly: whoever calls led.set_color needs to know nothing about currents and chips. This hiding is what makes systems possible that are larger than one person can oversee."
+     }
     },
     {
      "kennung": "d",
-     "text": "Sie beschreibt das Innenleben so genau, dass man es bei Bedarf schnell nachvollziehen kann.",
-     "begruendung": "Das leistet Dokumentation, und sie zeigt in die entgegengesetzte Richtung: Sie erklärt das Innenleben, die Abstraktion macht es entbehrlich."
+     "text": {
+      "de": "Sie beschreibt das Innenleben so genau, dass man es bei Bedarf schnell nachvollziehen kann.",
+      "en": "It describes the internals precisely enough that they can be understood quickly when needed."
+     },
+     "begruendung": {
+      "de": "Das leistet Dokumentation, und sie zeigt in die entgegengesetzte Richtung: Sie erklärt das Innenleben, die Abstraktion macht es entbehrlich.",
+      "en": "That is what documentation accomplishes, and it points the opposite way: it explains the internals, while abstraction makes them dispensable."
+     }
     }
    ]
   },
   {
    "id": "al-002",
    "niveau": "verstehen",
-   "frage": "Eure Funktion, die Text in Bits übersetzt, weiß nichts über Farben. Warum\nist das eine Stärke und kein Versäumnis?",
+   "frage": {
+    "de": "Eure Funktion, die Text in Bits übersetzt, weiß nichts über Farben. Warum\nist das eine Stärke und kein Versäumnis?",
+    "en": "Your function that translates text into bits knows nothing about\ncolours. Why is that a strength rather than an omission?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil Farbwissen in der Kodierung zusätzlichen Speicher belegen würde, der bei langen Texten fehlt.",
-     "begruendung": "Der Speicherbedarf wäre winzig und ist nicht der Punkt. Es geht um Abhängigkeit: Was die Kodierung nicht kennt, kann sie auch nicht an sich binden."
+     "text": {
+      "de": "Weil Farbwissen in der Kodierung zusätzlichen Speicher belegen würde, der bei langen Texten fehlt.",
+      "en": "Because colour knowledge inside the encoding would occupy extra memory that long texts need."
+     },
+     "begruendung": {
+      "de": "Der Speicherbedarf wäre winzig und ist nicht der Punkt. Es geht um Abhängigkeit: Was die Kodierung nicht kennt, kann sie auch nicht an sich binden.",
+      "en": "The memory involved would be tiny and is beside the point. This is about dependency: what the encoding does not know, it cannot become tied to."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil das Farbalphabet dann austauschbar bleibt: Die Kodierung spricht nur mit der Bit-Schnittstelle und merkt von einem Wechsel darunter nichts.",
-     "begruendung": "Genau: Wechselt ihr von vier auf acht Farben oder von Licht auf Ton, bleibt die Kodierung unangetastet. Jede Schicht benutzt nur die unmittelbar darunter, das ist der ganze Trick."
+     "text": {
+      "de": "Weil das Farbalphabet dann austauschbar bleibt: Die Kodierung spricht nur mit der Bit-Schnittstelle und merkt von einem Wechsel darunter nichts.",
+      "en": "Because the colour alphabet stays exchangeable: the encoding talks only to the bit interface and never notices a change below."
+     },
+     "begruendung": {
+      "de": "Genau: Wechselt ihr von vier auf acht Farben oder von Licht auf Ton, bleibt die Kodierung unangetastet. Jede Schicht benutzt nur die unmittelbar darunter, das ist der ganze Trick.",
+      "en": "Exactly: whether you switch from four colours to eight, or from light to sound, the encoding stays untouched. Each layer uses only the one directly below, and that is the whole trick."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil eine Funktion nach guter Praxis genau eine Aufgabe erfüllen soll und die Farbwahl eine zweite wäre.",
-     "begruendung": "Die Faustregel ist verwandt, begründet die Trennung aber nicht: Sie sagt nicht, welche Aufgaben zusammengehören. Die Antwort darauf gibt erst der Schichtgedanke: Farbwissen gehört in die Symbolschicht, weil es sich unabhängig vom Text ändert."
+     "text": {
+      "de": "Weil eine Funktion nach guter Praxis genau eine Aufgabe erfüllen soll und die Farbwahl eine zweite wäre.",
+      "en": "Because good practice says a function should do exactly one thing, and choosing colours would be a second one."
+     },
+     "begruendung": {
+      "de": "Die Faustregel ist verwandt, begründet die Trennung aber nicht: Sie sagt nicht, welche Aufgaben zusammengehören. Die Antwort darauf gibt erst der Schichtgedanke: Farbwissen gehört in die Symbolschicht, weil es sich unabhängig vom Text ändert.",
+      "en": "The rule of thumb is related but does not justify the split: it does not say which jobs belong together. The layer idea answers that: colour knowledge belongs in the symbol layer because it changes independently of the text."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil die Kodierung so auch dann korrekt weiterläuft, wenn der Farbsensor gestört ist.",
-     "begruendung": "Gegen einen gestörten Sensor hilft die Unwissenheit der Kodierung nicht, die Nachricht kommt dann trotzdem falsch an. Schichten begrenzen Änderungsaufwand, keine Störungen."
+     "text": {
+      "de": "Weil die Kodierung so auch dann korrekt weiterläuft, wenn der Farbsensor gestört ist.",
+      "en": "Because the encoding then keeps working correctly even when the colour sensor is disturbed."
+     },
+     "begruendung": {
+      "de": "Gegen einen gestörten Sensor hilft die Unwissenheit der Kodierung nicht, die Nachricht kommt dann trotzdem falsch an. Schichten begrenzen Änderungsaufwand, keine Störungen.",
+      "en": "The encoding's ignorance does not help against a disturbed sensor; the message still arrives wrong. Layers limit the cost of change, not physical disturbances."
+     }
     }
    ]
   },
   {
    "id": "al-003",
    "niveau": "anwenden",
-   "frage": "Ein Team erweitert sein Alphabet von vier auf acht Farben. Welche Teile\ndes Systems müssen sich ändern?",
+   "frage": {
+    "de": "Ein Team erweitert sein Alphabet von vier auf acht Farben. Welche Teile\ndes Systems müssen sich ändern?",
+    "en": "A team extends its alphabet from four to eight colours. Which parts of\nthe system have to change?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -74,30 +131,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Alle Schichten, denn mit acht Farben trägt jedes Symbol mehr Bits, und diese Änderung zieht sich durch das ganze System.",
-     "begruendung": "Dass ein Symbol jetzt 3 Bit trägt, ist gerade das Geheimnis der Symbolschicht. Oben kommen weiter Bits an, nur schneller. Wer hier alles anfassen muss, hat die Schichten vorher vermischt."
+     "text": {
+      "de": "Alle Schichten, denn mit acht Farben trägt jedes Symbol mehr Bits, und diese Änderung zieht sich durch das ganze System.",
+      "en": "All layers, because with eight colours each symbol carries more bits, and that change runs through the whole system."
+     },
+     "begruendung": {
+      "de": "Dass ein Symbol jetzt 3 Bit trägt, ist gerade das Geheimnis der Symbolschicht. Oben kommen weiter Bits an, nur schneller. Wer hier alles anfassen muss, hat die Schichten vorher vermischt.",
+      "en": "That a symbol now carries 3 bits is precisely the symbol layer's secret. Above it, bits keep arriving, just faster. If everything needs touching here, the layers were mixed to begin with."
+     }
     },
     {
      "kennung": "b",
-     "text": "Der Rahmen und die Symbolschicht, denn der Empfänger muss im Rahmen erfahren, mit wie vielen Farben gesendet wird.",
-     "begruendung": "Klingt fürsorglich, widerspricht aber der Vereinbarung: Der Rahmen ist in Bits definiert und weiß nichts von Farben. Die Farbzahl klären beide Enden in ihrer eigenen Symbolschicht, etwa über die Kalibrierung."
+     "text": {
+      "de": "Der Rahmen und die Symbolschicht, denn der Empfänger muss im Rahmen erfahren, mit wie vielen Farben gesendet wird.",
+      "en": "The frame and the symbol layer, because the receiver must learn from the frame how many colours are being used."
+     },
+     "begruendung": {
+      "de": "Klingt fürsorglich, widerspricht aber der Vereinbarung: Der Rahmen ist in Bits definiert und weiß nichts von Farben. Die Farbzahl klären beide Enden in ihrer eigenen Symbolschicht, etwa über die Kalibrierung.",
+      "en": "Sounds considerate but contradicts the agreement: the frame is defined in bits and knows nothing about colours. Both ends settle the colour count inside their own symbol layer, for instance during calibration."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nur die Symbolschicht: Farbzuordnung, Kalibrierung und die Übersetzung zwischen Bits und Symbolen. Rahmen und Textkodierung bleiben unverändert.",
-     "begruendung": "Genau, und daran erkennt man saubere Schichten: Die Änderung bleibt dort eingesperrt, wo ihr Wissen liegt. Alles oberhalb der Bit-Schnittstelle profitiert nur vom höheren Durchsatz."
+     "text": {
+      "de": "Nur die Symbolschicht: Farbzuordnung, Kalibrierung und die Übersetzung zwischen Bits und Symbolen. Rahmen und Textkodierung bleiben unverändert.",
+      "en": "Only the symbol layer: colour mapping, calibration, and the translation between bits and symbols. Frame and text encoding stay unchanged."
+     },
+     "begruendung": {
+      "de": "Genau, und daran erkennt man saubere Schichten: Die Änderung bleibt dort eingesperrt, wo ihr Wissen liegt. Alles oberhalb der Bit-Schnittstelle profitiert nur vom höheren Durchsatz.",
+      "en": "Exactly, and that is how you recognise clean layers: the change stays locked where its knowledge lives. Everything above the bit interface merely enjoys the higher throughput."
+     }
     },
     {
      "kennung": "d",
-     "text": "Nur die Textkodierung, denn sie legt fest, wie viele verschiedene Zeichen gebraucht werden und damit auch die Farbzahl.",
-     "begruendung": "Die Richtung stimmt nicht: Die Farbzahl bestimmt nicht der Text, sondern die Physik der Strecke, nämlich wie viele Farben sicher unterscheidbar sind. Die Kodierung arbeitet mit Bits und bleibt von der Farbzahl unberührt."
+     "text": {
+      "de": "Nur die Textkodierung, denn sie legt fest, wie viele verschiedene Zeichen gebraucht werden und damit auch die Farbzahl.",
+      "en": "Only the text encoding, since it determines how many distinct characters are needed and therefore the number of colours."
+     },
+     "begruendung": {
+      "de": "Die Richtung stimmt nicht: Die Farbzahl bestimmt nicht der Text, sondern die Physik der Strecke, nämlich wie viele Farben sicher unterscheidbar sind. Die Kodierung arbeitet mit Bits und bleibt von der Farbzahl unberührt.",
+      "en": "The direction is wrong: the number of colours is set not by the text but by the physics of the link, that is, how many colours can be told apart reliably. The encoding works in bits and is untouched by the colour count."
+     }
     }
    ]
   },
   {
    "id": "al-004",
    "niveau": "verstehen",
-   "frage": "Ein Team ersetzt Licht durch Ton: Statt der LED sendet ein Lautsprecher\nTöne, statt des Farbsensors hört ein Mikrofon zu. Was muss sich am\nrestlichen System ändern, wenn die Schichten sauber getrennt sind?",
+   "frage": {
+    "de": "Ein Team ersetzt Licht durch Ton: Statt der LED sendet ein Lautsprecher\nTöne, statt des Farbsensors hört ein Mikrofon zu. Was muss sich am\nrestlichen System ändern, wenn die Schichten sauber getrennt sind?",
+    "en": "A team replaces light with sound: a speaker sends tones instead of the\nLED, a microphone listens instead of the colour sensor. With cleanly\nseparated layers, what has to change in the rest of the system?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -105,30 +189,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Nichts oberhalb der Symbolschicht: Sobald aus Tönen wieder Bits werden, laufen Rahmen, Kodierung und Anwendung unverändert weiter.",
-     "begruendung": "Genau, und dieser Substrattausch ist der ehrlichste Prüfstein für saubere Schichten: Nur die unterste Schicht wird ersetzt. Deshalb steht im Rahmen auch nichts über Zeit oder Farben, beides ist Sache des Übertragungswegs."
+     "text": {
+      "de": "Nichts oberhalb der Symbolschicht: Sobald aus Tönen wieder Bits werden, laufen Rahmen, Kodierung und Anwendung unverändert weiter.",
+      "en": "Nothing above the symbol layer: once tones become bits again, frame, encoding, and application keep running unchanged."
+     },
+     "begruendung": {
+      "de": "Genau, und dieser Substrattausch ist der ehrlichste Prüfstein für saubere Schichten: Nur die unterste Schicht wird ersetzt. Deshalb steht im Rahmen auch nichts über Zeit oder Farben, beides ist Sache des Übertragungswegs.",
+      "en": "Exactly, and this substrate swap is the most honest test of clean layering: only the lowest layer is replaced. That is also why the frame says nothing about time or colours; both belong to the transmission medium."
+     }
     },
     {
      "kennung": "b",
-     "text": "Der Rahmen muss angepasst werden, weil Töne andere Anfangs- und Endmarkierungen brauchen als Farben.",
-     "begruendung": "Die Präambel des Rahmens ist ein Bitmuster, keine Farbe und kein Ton. Wie dieses Bitmuster physikalisch klingt oder leuchtet, entscheidet allein die Schicht darunter."
+     "text": {
+      "de": "Der Rahmen muss angepasst werden, weil Töne andere Anfangs- und Endmarkierungen brauchen als Farben.",
+      "en": "The frame must be adapted, because tones need different start and end markers than colours."
+     },
+     "begruendung": {
+      "de": "Die Präambel des Rahmens ist ein Bitmuster, keine Farbe und kein Ton. Wie dieses Bitmuster physikalisch klingt oder leuchtet, entscheidet allein die Schicht darunter.",
+      "en": "The frame's preamble is a bit pattern, neither a colour nor a tone. How that pattern sounds or shines physically is decided solely by the layer below."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Textkodierung muss angepasst werden, weil Töne feiner abgestuft werden können als Farben und damit mehr Zeichen tragen.",
-     "begruendung": "Ob Töne feiner abstufbar sind, entscheidet über die Symbolrate der untersten Schicht, nicht über die Kodierung: Die übersetzt Zeichen in Bits und fragt nicht, wie die Bits reisen."
+     "text": {
+      "de": "Die Textkodierung muss angepasst werden, weil Töne feiner abgestuft werden können als Farben und damit mehr Zeichen tragen.",
+      "en": "The text encoding must be adapted, because tones can be graded more finely than colours and thus carry more characters."
+     },
+     "begruendung": {
+      "de": "Ob Töne feiner abstufbar sind, entscheidet über die Symbolrate der untersten Schicht, nicht über die Kodierung: Die übersetzt Zeichen in Bits und fragt nicht, wie die Bits reisen.",
+      "en": "Whether tones grade more finely affects the lowest layer's symbol rate, not the encoding: it translates characters into bits and does not ask how the bits travel."
+     }
     },
     {
      "kennung": "d",
-     "text": "Das gesamte System muss neu abgestimmt werden, denn Mikrofone rauschen anders als Farbsensoren.",
-     "begruendung": "Das andere Rauschen betrifft genau eine Schicht: die neue unterste. Dort werden Kalibrierung und Schwellen neu bestimmt, und genau dafür wurde die Grenze gezogen; darüber ändert sich nichts."
+     "text": {
+      "de": "Das gesamte System muss neu abgestimmt werden, denn Mikrofone rauschen anders als Farbsensoren.",
+      "en": "The whole system must be retuned, because microphones exhibit different noise than colour sensors."
+     },
+     "begruendung": {
+      "de": "Das andere Rauschen betrifft genau eine Schicht: die neue unterste. Dort werden Kalibrierung und Schwellen neu bestimmt, und genau dafür wurde die Grenze gezogen; darüber ändert sich nichts.",
+      "en": "The different noise concerns exactly one layer: the new lowest one. Calibration and thresholds are redone there, which is precisely why the boundary was drawn; above it nothing changes."
+     }
     }
    ]
   },
   {
    "id": "al-005",
    "niveau": "verstehen",
-   "frage": "Schichten bringen Austauschbarkeit und Arbeitsteilung. Was ist ihr\nPreis?",
+   "frage": {
+    "de": "Schichten bringen Austauschbarkeit und Arbeitsteilung. Was ist ihr\nPreis?",
+    "en": "Layers buy exchangeability and division of labour. What is their price?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -136,30 +247,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Es gibt keinen: Solange jede Schicht ihre Schnittstelle einhält, verhält sich das System wie ein einziges Programm.",
-     "begruendung": "Verhalten ja, Kosten nein: Auch bei perfekt eingehaltenen Schnittstellen bezahlt man mit Zusatzdaten und mit verlorenem Durchgriff. Kostenlose Struktur gibt es nicht."
+     "text": {
+      "de": "Es gibt keinen: Solange jede Schicht ihre Schnittstelle einhält, verhält sich das System wie ein einziges Programm.",
+      "en": "There is none: as long as each layer honours its interface, the system behaves like a single program."
+     },
+     "begruendung": {
+      "de": "Verhalten ja, Kosten nein: Auch bei perfekt eingehaltenen Schnittstellen bezahlt man mit Zusatzdaten und mit verlorenem Durchgriff. Kostenlose Struktur gibt es nicht.",
+      "en": "Behaviour yes, cost no: even with perfectly honoured interfaces you pay in extra data and lost direct access. There is no such thing as free structure."
+     }
     },
     {
      "kennung": "b",
-     "text": "Zusatzaufwand und verlorener Durchgriff: Jede Schicht fügt eigene Daten hinzu, etwa den Rahmen, und verbirgt Stellschrauben, an die man gelegentlich doch heranmuss.",
-     "begruendung": "Genau: Der Rahmen kostet Bits, die keine Nutzdaten sind, und wer das Letzte aus der Strecke holen will, muss gelegentlich unter die bequeme Schnittstelle greifen. Deshalb zeigt euer lifi_hardware Integrationszeit und Verstärkung offen an."
+     "text": {
+      "de": "Zusatzaufwand und verlorener Durchgriff: Jede Schicht fügt eigene Daten hinzu, etwa den Rahmen, und verbirgt Stellschrauben, an die man gelegentlich doch heranmuss.",
+      "en": "Overhead and lost direct access: each layer adds its own data, such as the frame, and hides knobs one occasionally still needs to reach."
+     },
+     "begruendung": {
+      "de": "Genau: Der Rahmen kostet Bits, die keine Nutzdaten sind, und wer das Letzte aus der Strecke holen will, muss gelegentlich unter die bequeme Schnittstelle greifen. Deshalb zeigt euer lifi_hardware Integrationszeit und Verstärkung offen an.",
+      "en": "Exactly: the frame costs bits that carry no payload, and squeezing the last bit out of the link sometimes means reaching below the comfortable interface. That is why your lifi_hardware exposes integration time and gain."
+     }
     },
     {
      "kennung": "c",
-     "text": "Deutlich mehr Code, weil jede Schicht die Funktionen der darunterliegenden noch einmal bereitstellen muss.",
-     "begruendung": "Eine Schicht reicht die untere nicht durch, sie übersetzt in eine neue, kleinere Sprache: aus set_color wird send_symbol, daraus send_bits. Der Code je Schicht ist meist kurz; teuer ist etwas anderes."
+     "text": {
+      "de": "Deutlich mehr Code, weil jede Schicht die Funktionen der darunterliegenden noch einmal bereitstellen muss.",
+      "en": "Substantially more code, because each layer has to provide the functions of the one below once again."
+     },
+     "begruendung": {
+      "de": "Eine Schicht reicht die untere nicht durch, sie übersetzt in eine neue, kleinere Sprache: aus set_color wird send_symbol, daraus send_bits. Der Code je Schicht ist meist kurz; teuer ist etwas anderes.",
+      "en": "A layer does not pass the lower one through; it translates into a new, smaller vocabulary: set_color becomes send_symbol becomes send_bits. The code per layer is usually short; the real cost lies elsewhere."
+     }
     },
     {
      "kennung": "d",
-     "text": "Längere Entwicklungszeit am Anfang, die sich im Betrieb aber vollständig zurückzahlt.",
-     "begruendung": "Der Entwurfsaufwand ist real, aber die Rechnung geht so nicht auf: Auch im Betrieb bleibt der laufende Preis, jedes gesendete Rahmenbit und jeder Umweg über eine Schnittstelle. Man zahlt ihn gern, aber man zahlt ihn."
+     "text": {
+      "de": "Längere Entwicklungszeit am Anfang, die sich im Betrieb aber vollständig zurückzahlt.",
+      "en": "Longer development time at the start, which is fully recouped during operation."
+     },
+     "begruendung": {
+      "de": "Der Entwurfsaufwand ist real, aber die Rechnung geht so nicht auf: Auch im Betrieb bleibt der laufende Preis, jedes gesendete Rahmenbit und jeder Umweg über eine Schnittstelle. Man zahlt ihn gern, aber man zahlt ihn.",
+      "en": "The design effort is real, but the sum does not work out that way: the running price remains in operation, every transmitted frame bit and every detour through an interface. You pay it gladly, but you do pay it."
+     }
     }
    ]
   },
   {
    "id": "al-006",
    "niveau": "anwenden",
-   "frage": "Bei einem Team kommen falsche Buchstaben an. Ein Test zeigt: Die\nFarberkennung liefert die gesendeten Symbole zu 100 Prozent richtig.\nWo sucht ihr den Fehler zuerst?",
+   "frage": {
+    "de": "Bei einem Team kommen falsche Buchstaben an. Ein Test zeigt: Die\nFarberkennung liefert die gesendeten Symbole zu 100 Prozent richtig.\nWo sucht ihr den Fehler zuerst?",
+    "en": "A team receives wrong letters. A test shows the colour recognition\nreturns the transmitted symbols 100 percent correctly. Where do you\nlook for the error first?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -167,30 +305,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Beim Sensor: Eine Trefferquote von 100 Prozent im Test schließt seltene Ausreißer im echten Lauf nicht aus.",
-     "begruendung": "Der Einwand ist methodisch berechtigt, beantwortet aber die Frage nach dem ersten Suchort falsch: Wenn die untere Schicht im Test besteht, sucht man zuerst dort, wo noch gar nicht geprüft wurde. Ausreißer wären außerdem gelegentliche Fehler, keine systematisch falschen Buchstaben."
+     "text": {
+      "de": "Beim Sensor: Eine Trefferquote von 100 Prozent im Test schließt seltene Ausreißer im echten Lauf nicht aus.",
+      "en": "At the sensor: a 100 percent hit rate in the test does not rule out rare outliers in the real run."
+     },
+     "begruendung": {
+      "de": "Der Einwand ist methodisch berechtigt, beantwortet aber die Frage nach dem ersten Suchort falsch: Wenn die untere Schicht im Test besteht, sucht man zuerst dort, wo noch gar nicht geprüft wurde. Ausreißer wären außerdem gelegentliche Fehler, keine systematisch falschen Buchstaben.",
+      "en": "The objection is methodically fair but answers the question of where to look first wrongly: when the lower layer passes its test, you first search where nothing has been tested yet. Outliers would also cause occasional errors, not systematically wrong letters."
+     }
     },
     {
      "kennung": "b",
-     "text": "Auf der Strecke: Zwischen Senden und Messen kann Umgebungslicht einzelne Symbole verfälschen.",
-     "begruendung": "Verfälschte Symbole würden als falsche Farberkennungen auftauchen, und genau die hat der Test ausgeschlossen. Die Störung, die es laut Messung nicht gibt, kann nicht die Ursache sein."
+     "text": {
+      "de": "Auf der Strecke: Zwischen Senden und Messen kann Umgebungslicht einzelne Symbole verfälschen.",
+      "en": "On the link: between sending and measuring, ambient light can corrupt individual symbols."
+     },
+     "begruendung": {
+      "de": "Verfälschte Symbole würden als falsche Farberkennungen auftauchen, und genau die hat der Test ausgeschlossen. Die Störung, die es laut Messung nicht gibt, kann nicht die Ursache sein.",
+      "en": "Corrupted symbols would show up as wrong colour recognitions, and the test ruled exactly those out. A disturbance the measurement says is absent cannot be the cause."
+     }
     },
     {
      "kennung": "c",
-     "text": "Oberhalb der Symbolschicht: In der Übersetzung von Symbolen zu Bits und Buchstaben, denn die untere Schicht ist durch den Test entlastet.",
-     "begruendung": "Genau, und das ist der praktische Wert der Schichten beim Fehlersuchen: Man prüft eine Schnittstelle nach der anderen und grenzt den Fehler ein, statt überall gleichzeitig zu suchen. Hier liegt er zwischen korrekt erkannten Symbolen und falschen Buchstaben, also in der Kodierung oder der Rahmung."
+     "text": {
+      "de": "Oberhalb der Symbolschicht: In der Übersetzung von Symbolen zu Bits und Buchstaben, denn die untere Schicht ist durch den Test entlastet.",
+      "en": "Above the symbol layer: in the translation from symbols to bits and letters, since the test has cleared the lower layer."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist der praktische Wert der Schichten beim Fehlersuchen: Man prüft eine Schnittstelle nach der anderen und grenzt den Fehler ein, statt überall gleichzeitig zu suchen. Hier liegt er zwischen korrekt erkannten Symbolen und falschen Buchstaben, also in der Kodierung oder der Rahmung.",
+      "en": "Exactly, and this is the practical value of layers when debugging: you test one interface after another and corner the error instead of searching everywhere at once. Here it lies between correctly recognised symbols and wrong letters, so in the encoding or the framing."
+     }
     },
     {
      "kennung": "d",
-     "text": "Auf der Senderseite: Wahrscheinlich werden schon die falschen Symbole losgeschickt.",
-     "begruendung": "Möglich ist das, aber es ist derselbe Verdacht eine Etage höher: Auch dann läge der Fehler in einer Übersetzungsschicht, nur der des Senders. Der Test sagt zunächst nur, dass die Symbole unverfälscht ankommen; als Nächstes vergleicht man gesendete Bits mit empfangenen Bits."
+     "text": {
+      "de": "Auf der Senderseite: Wahrscheinlich werden schon die falschen Symbole losgeschickt.",
+      "en": "On the sender side: probably the wrong symbols are being sent in the first place."
+     },
+     "begruendung": {
+      "de": "Möglich ist das, aber es ist derselbe Verdacht eine Etage höher: Auch dann läge der Fehler in einer Übersetzungsschicht, nur der des Senders. Der Test sagt zunächst nur, dass die Symbole unverfälscht ankommen; als Nächstes vergleicht man gesendete Bits mit empfangenen Bits.",
+      "en": "Possible, but it is the same suspicion one floor up: the error would still sit in a translation layer, just the sender's. The test so far only says symbols arrive unaltered; the next step is comparing sent bits with received bits."
+     }
     }
    ]
   },
   {
    "id": "al-007",
    "niveau": "verstehen",
-   "frage": "Der Klassenstandard für Challenge 4 definiert den Rahmen in Bits, nicht\nin Farben. Warum?",
+   "frage": {
+    "de": "Der Klassenstandard für Challenge 4 definiert den Rahmen in Bits, nicht\nin Farben. Warum?",
+    "en": "The class standard for challenge 4 defines the frame in bits, not in\ncolours. Why?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -198,30 +363,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil sich Farben zwischen verschiedenen Geräten nie exakt gleich messen lassen und ein Standard exakte Werte braucht.",
-     "begruendung": "Die Beobachtung stimmt, nur zieht sie den falschen Schluss: Genau weil Farben Gerätesache sind, gehören sie in die Symbolschicht jedes Teams und nicht in den Standard. Der Standard weicht ihnen nicht aus Verlegenheit aus, sondern aus Prinzip."
+     "text": {
+      "de": "Weil sich Farben zwischen verschiedenen Geräten nie exakt gleich messen lassen und ein Standard exakte Werte braucht.",
+      "en": "Because colours never measure exactly the same across devices, and a standard needs exact values."
+     },
+     "begruendung": {
+      "de": "Die Beobachtung stimmt, nur zieht sie den falschen Schluss: Genau weil Farben Gerätesache sind, gehören sie in die Symbolschicht jedes Teams und nicht in den Standard. Der Standard weicht ihnen nicht aus Verlegenheit aus, sondern aus Prinzip.",
+      "en": "The observation is true, but it draws the wrong conclusion: precisely because colours are a device matter, they belong in each team's symbol layer, not in the standard. The standard avoids them on principle, not out of embarrassment."
+     }
     },
     {
      "kennung": "b",
-     "text": "Damit der Rahmen über jeder Symbolschicht funktioniert: Jedes Team bleibt unterhalb der Bits frei, bis hin zum Tausch von Licht gegen Ton.",
-     "begruendung": "Genau: Bits sind die gemeinsame Sprache oberhalb aller Alphabete. Vier Farben, acht Farben, Helligkeitsstufen oder Töne, der Rahmen bleibt derselbe, und die Teams können unterhalb der Schnittstelle gegeneinander optimieren."
+     "text": {
+      "de": "Damit der Rahmen über jeder Symbolschicht funktioniert: Jedes Team bleibt unterhalb der Bits frei, bis hin zum Tausch von Licht gegen Ton.",
+      "en": "So the frame works above any symbol layer: each team stays free below the bits, up to and including swapping light for sound."
+     },
+     "begruendung": {
+      "de": "Genau: Bits sind die gemeinsame Sprache oberhalb aller Alphabete. Vier Farben, acht Farben, Helligkeitsstufen oder Töne, der Rahmen bleibt derselbe, und die Teams können unterhalb der Schnittstelle gegeneinander optimieren.",
+      "en": "Exactly: bits are the shared language above all alphabets. Four colours, eight colours, brightness levels or tones, the frame stays the same, and teams can optimise against each other below the interface."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil die Prüfsumme des Rahmens mathematisch nur über Bitfolgen definiert ist und über Farben nicht berechnet werden kann.",
-     "begruendung": "Man könnte eine Prüfsumme auch über Farbnummern definieren, mathematisch spricht nichts dagegen. Die Bits sind nicht rechnerisch nötig, sondern architektonisch gewollt: als Grenze, unter der alles Teamsache ist."
+     "text": {
+      "de": "Weil die Prüfsumme des Rahmens mathematisch nur über Bitfolgen definiert ist und über Farben nicht berechnet werden kann.",
+      "en": "Because the frame's checksum is mathematically defined only over bit sequences and cannot be computed over colours."
+     },
+     "begruendung": {
+      "de": "Man könnte eine Prüfsumme auch über Farbnummern definieren, mathematisch spricht nichts dagegen. Die Bits sind nicht rechnerisch nötig, sondern architektonisch gewollt: als Grenze, unter der alles Teamsache ist.",
+      "en": "A checksum could just as well be defined over colour numbers; mathematically nothing forbids it. Bits are not a computational necessity but an architectural choice: the boundary below which everything is team business."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil eine Bitfolge weniger Übertragungszeit braucht als die entsprechende Farbfolge.",
-     "begruendung": "Übertragen werden am Ende immer Farben, die Bits reisen in ihnen. Die Definitionsebene des Rahmens ändert an der Übertragungszeit nichts; sie legt nur fest, worüber gesprochen wird."
+     "text": {
+      "de": "Weil eine Bitfolge weniger Übertragungszeit braucht als die entsprechende Farbfolge.",
+      "en": "Because a bit sequence takes less transmission time than the corresponding colour sequence."
+     },
+     "begruendung": {
+      "de": "Übertragen werden am Ende immer Farben, die Bits reisen in ihnen. Die Definitionsebene des Rahmens ändert an der Übertragungszeit nichts; sie legt nur fest, worüber gesprochen wird.",
+      "en": "What travels in the end is always colours; the bits ride inside them. The frame's level of definition changes nothing about transmission time; it only fixes what is being talked about."
+     }
     }
    ]
   },
   {
    "id": "al-008",
    "niveau": "verstehen",
-   "frage": "Euer Modul lifi_hardware verbirgt vieles, zeigt aber Integrationszeit\nund Verstärkung offen in der Schnittstelle. Warum versteckt eine gute\nAbstraktion nicht einfach alles?",
+   "frage": {
+    "de": "Euer Modul lifi_hardware verbirgt vieles, zeigt aber Integrationszeit\nund Verstärkung offen in der Schnittstelle. Warum versteckt eine gute\nAbstraktion nicht einfach alles?",
+    "en": "Your lifi_hardware module hides a lot, but exposes integration time and\ngain in its interface. Why does a good abstraction not simply hide\neverything?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -229,30 +421,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil sich Hardware-Einstellungen technisch nicht dauerhaft verbergen lassen, sie schlagen immer irgendwo durch.",
-     "begruendung": "Technisch ließe sich beides mühelos verstecken, ein fest verdrahteter Standardwert genügt. Dass es nicht geschieht, ist eine Entwurfsentscheidung, keine technische Notwendigkeit."
+     "text": {
+      "de": "Weil sich Hardware-Einstellungen technisch nicht dauerhaft verbergen lassen, sie schlagen immer irgendwo durch.",
+      "en": "Because hardware settings cannot technically stay hidden; they always leak through somewhere."
+     },
+     "begruendung": {
+      "de": "Technisch ließe sich beides mühelos verstecken, ein fest verdrahteter Standardwert genügt. Dass es nicht geschieht, ist eine Entwurfsentscheidung, keine technische Notwendigkeit.",
+      "en": "Technically both could be hidden with ease; a hard-wired default would do. That it is not done is a design decision, not a technical necessity."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil ein fester Standardwert für beide Regler die Übertragung bei manchen Teams verlangsamen würde.",
-     "begruendung": "Das ist die halbe Wahrheit: Es geht nicht nur um Tempoverlust, sondern darum, dass genau an diesen zwei Reglern der zentrale Zielkonflikt des Projekts hängt. Wer sie versteckt, versteckt die Aufgabe."
+     "text": {
+      "de": "Weil ein fester Standardwert für beide Regler die Übertragung bei manchen Teams verlangsamen würde.",
+      "en": "Because a fixed default for both knobs would slow down transmission for some teams."
+     },
+     "begruendung": {
+      "de": "Das ist die halbe Wahrheit: Es geht nicht nur um Tempoverlust, sondern darum, dass genau an diesen zwei Reglern der zentrale Zielkonflikt des Projekts hängt. Wer sie versteckt, versteckt die Aufgabe.",
+      "en": "That is half the truth: the issue is not just lost speed, but that these two knobs carry the project's central trade-off. Hiding them hides the task itself."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil eine gute Abstraktion Nebensächliches verbirgt, nicht Wesentliches: Diese zwei Regler sind der Zielkonflikt, den ihr entscheiden sollt, also gehören sie in die Schnittstelle.",
-     "begruendung": "Genau: Registeradressen und Busprotokoll gehen euch nichts an, die Wahl zwischen ruhigen Werten und hoher Rate sehr wohl. Wo diese Grenze verläuft, ist die eigentliche Entwurfsarbeit an einer Schnittstelle."
+     "text": {
+      "de": "Weil eine gute Abstraktion Nebensächliches verbirgt, nicht Wesentliches: Diese zwei Regler sind der Zielkonflikt, den ihr entscheiden sollt, also gehören sie in die Schnittstelle.",
+      "en": "Because a good abstraction hides the incidental, not the essential: these two knobs are the trade-off you are meant to decide, so they belong in the interface."
+     },
+     "begruendung": {
+      "de": "Genau: Registeradressen und Busprotokoll gehen euch nichts an, die Wahl zwischen ruhigen Werten und hoher Rate sehr wohl. Wo diese Grenze verläuft, ist die eigentliche Entwurfsarbeit an einer Schnittstelle.",
+      "en": "Exactly: register addresses and bus protocol are none of your business; the choice between calm readings and a high rate very much is. Where that boundary runs is the real design work of an interface."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil offene Einstellungen die Fehlersuche erleichtern: Man sieht im Code sofort, mit welchen Werten gemessen wurde.",
-     "begruendung": "Ein angenehmer Nebeneffekt, aber nicht der Grund: Fürs Nachvollziehen würde ein Auslesen der Werte genügen. Die Regler sind beschreibbar, weil ihr sie einstellen sollt, nicht nur ablesen."
+     "text": {
+      "de": "Weil offene Einstellungen die Fehlersuche erleichtern: Man sieht im Code sofort, mit welchen Werten gemessen wurde.",
+      "en": "Because exposed settings ease debugging: the code shows at once which values were used for measuring."
+     },
+     "begruendung": {
+      "de": "Ein angenehmer Nebeneffekt, aber nicht der Grund: Fürs Nachvollziehen würde ein Auslesen der Werte genügen. Die Regler sind beschreibbar, weil ihr sie einstellen sollt, nicht nur ablesen.",
+      "en": "A pleasant side effect, but not the reason: reading the values back would suffice for tracing. The knobs are writable because you are meant to set them, not merely inspect them."
+     }
     }
    ]
   },
   {
    "id": "al-009",
    "niveau": "verstehen",
-   "frage": "Woran erkennt man eine gute Schnittstelle zwischen zwei Schichten?",
+   "frage": {
+    "de": "Woran erkennt man eine gute Schnittstelle zwischen zwei Schichten?",
+    "en": "How do you recognise a good interface between two layers?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -260,30 +479,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Sie bietet für jeden denkbaren Sonderfall eine eigene Funktion an, damit niemand an ihr vorbeiarbeiten muss.",
-     "begruendung": "Vollständigkeit klingt hilfreich, macht die Schnittstelle aber breit und träge: Jede zusätzliche Funktion ist ein Versprechen, das die Schicht für immer halten muss. Gute Schnittstellen versprechen wenig und halten das dafür verlässlich."
+     "text": {
+      "de": "Sie bietet für jeden denkbaren Sonderfall eine eigene Funktion an, damit niemand an ihr vorbeiarbeiten muss.",
+      "en": "It offers a dedicated function for every conceivable special case, so nobody has to work around it."
+     },
+     "begruendung": {
+      "de": "Vollständigkeit klingt hilfreich, macht die Schnittstelle aber breit und träge: Jede zusätzliche Funktion ist ein Versprechen, das die Schicht für immer halten muss. Gute Schnittstellen versprechen wenig und halten das dafür verlässlich.",
+      "en": "Completeness sounds helpful but makes the interface broad and rigid: every extra function is a promise the layer must keep forever. Good interfaces promise little and keep it reliably."
+     }
     },
     {
      "kennung": "b",
-     "text": "Sie ist klein und stabil: Das Innenleben darunter kann sich ändern, ohne dass sich für die Nutzer darüber etwas ändert.",
-     "begruendung": "Genau: send_symbol(index) verrät nicht, ob dahinter vier Farben, acht Farben oder Töne stecken, und genau deshalb darf sich das alles ändern. Die Schnittstelle ist der Vertrag; je kleiner er ist, desto leichter ist er zu halten."
+     "text": {
+      "de": "Sie ist klein und stabil: Das Innenleben darunter kann sich ändern, ohne dass sich für die Nutzer darüber etwas ändert.",
+      "en": "It is small and stable: the internals below can change without anything changing for the users above."
+     },
+     "begruendung": {
+      "de": "Genau: send_symbol(index) verrät nicht, ob dahinter vier Farben, acht Farben oder Töne stecken, und genau deshalb darf sich das alles ändern. Die Schnittstelle ist der Vertrag; je kleiner er ist, desto leichter ist er zu halten.",
+      "en": "Exactly: send_symbol(index) does not reveal whether four colours, eight colours, or tones sit behind it, and that is precisely why all of it may change. The interface is the contract; the smaller it is, the easier it is to keep."
+     }
     },
     {
      "kennung": "c",
-     "text": "Sie bildet den inneren Aufbau der Schicht getreu ab, damit Nutzer nachvollziehen können, was ihr Aufruf auslöst.",
-     "begruendung": "Das kehrt den Zweck um: Wer das Innenleben in die Schnittstelle spiegelt, kettet alle Nutzer daran, und jede innere Änderung bricht nach außen durch. Verbergen ist hier die Leistung, nicht ein Mangel an Transparenz."
+     "text": {
+      "de": "Sie bildet den inneren Aufbau der Schicht getreu ab, damit Nutzer nachvollziehen können, was ihr Aufruf auslöst.",
+      "en": "It faithfully mirrors the layer's internal structure, so users can trace what their call triggers."
+     },
+     "begruendung": {
+      "de": "Das kehrt den Zweck um: Wer das Innenleben in die Schnittstelle spiegelt, kettet alle Nutzer daran, und jede innere Änderung bricht nach außen durch. Verbergen ist hier die Leistung, nicht ein Mangel an Transparenz.",
+      "en": "That inverts the purpose: mirroring the internals into the interface chains every user to them, and each internal change breaks through to the outside. Hiding is the achievement here, not a lack of transparency."
+     }
     },
     {
      "kennung": "d",
-     "text": "Sie wird bei jeder Verbesserung der Schicht mit angepasst, damit sie den aktuellen Stand widerspiegelt.",
-     "begruendung": "Aktualität klingt wie eine Tugend, ist an einer Schnittstelle aber eine Last: Jede Änderung zwingt alle Nutzer zum Nachziehen. Der Wert einer Schnittstelle liegt gerade darin, dass sie sich seltener ändert als das, was sie verbirgt."
+     "text": {
+      "de": "Sie wird bei jeder Verbesserung der Schicht mit angepasst, damit sie den aktuellen Stand widerspiegelt.",
+      "en": "It is updated with every improvement of the layer, so it reflects the current state."
+     },
+     "begruendung": {
+      "de": "Aktualität klingt wie eine Tugend, ist an einer Schnittstelle aber eine Last: Jede Änderung zwingt alle Nutzer zum Nachziehen. Der Wert einer Schnittstelle liegt gerade darin, dass sie sich seltener ändert als das, was sie verbirgt.",
+      "en": "Currency sounds like a virtue but is a burden at an interface: every change forces all users to follow. An interface's value lies precisely in changing less often than what it hides."
+     }
     }
    ]
   },
   {
    "id": "al-010",
    "niveau": "anwenden",
-   "frage": "Drei Funktionen, drei Schichten. Welche davon darf led.set_color\ndirekt aufrufen?",
+   "frage": {
+    "de": "Drei Funktionen, drei Schichten. Welche davon darf led.set_color\ndirekt aufrufen?",
+    "en": "Three functions, three layers. Which of them may call led.set_color\ndirectly?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -292,23 +538,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Jede, denn led.set_color gehört zum Modul lifi_hardware und steht damit dem ganzen Programm zur Verfügung.",
-     "begruendung": "Verfügbar ist nicht dasselbe wie erlaubt: Technisch hindert Python niemanden, aber sobald send_text selbst Farben setzt, kennt die oberste Schicht die unterste, und das Alphabet ist nicht mehr austauschbar. Die Disziplin ist die Architektur."
+     "text": {
+      "de": "Jede, denn led.set_color gehört zum Modul lifi_hardware und steht damit dem ganzen Programm zur Verfügung.",
+      "en": "Any of them, since led.set_color belongs to lifi_hardware and is therefore available to the whole program."
+     },
+     "begruendung": {
+      "de": "Verfügbar ist nicht dasselbe wie erlaubt: Technisch hindert Python niemanden, aber sobald send_text selbst Farben setzt, kennt die oberste Schicht die unterste, und das Alphabet ist nicht mehr austauschbar. Die Disziplin ist die Architektur.",
+      "en": "Available is not the same as permitted: technically Python stops no one, but the moment send_text sets colours itself, the top layer knows the bottom one, and the alphabet is no longer exchangeable. The discipline is the architecture."
+     }
     },
     {
      "kennung": "b",
-     "text": "send_frame, denn der Rahmen markiert Anfang und Ende und muss dafür die LED unmittelbar steuern können.",
-     "begruendung": "Der Rahmen markiert Anfang und Ende in Bits, etwa mit der Präambel, und reicht diese Bits nach unten weiter. Wie sie leuchten, entscheidet die Symbolschicht; würde send_frame selbst leuchten, wäre der Rahmen an Licht gebunden und der Substrattausch dahin."
+     "text": {
+      "de": "send_frame, denn der Rahmen markiert Anfang und Ende und muss dafür die LED unmittelbar steuern können.",
+      "en": "send_frame, because the frame marks start and end and must control the LED directly for that."
+     },
+     "begruendung": {
+      "de": "Der Rahmen markiert Anfang und Ende in Bits, etwa mit der Präambel, und reicht diese Bits nach unten weiter. Wie sie leuchten, entscheidet die Symbolschicht; würde send_frame selbst leuchten, wäre der Rahmen an Licht gebunden und der Substrattausch dahin.",
+      "en": "The frame marks start and end in bits, via the preamble, and passes those bits downward. How they shine is the symbol layer's decision; if send_frame shone itself, the frame would be bound to light and the substrate swap gone."
+     }
     },
     {
      "kennung": "c",
-     "text": "Nur send_symbols: Sie ist die unterste der drei Schichten, und nur dort ist bekannt, welche Farbe ein Symbol trägt.",
-     "begruendung": "Genau: Jede Schicht spricht nur mit der unmittelbar darunter. send_text kennt Bits, send_frame kennt Bits, und erst send_symbols übersetzt in die physische Welt. Deshalb bleibt oben alles stehen, wenn unten das Alphabet oder gleich das ganze Medium wechselt."
+     "text": {
+      "de": "Nur send_symbols: Sie ist die unterste der drei Schichten, und nur dort ist bekannt, welche Farbe ein Symbol trägt.",
+      "en": "Only send_symbols: it is the lowest of the three layers, and only there is it known which colour a symbol carries."
+     },
+     "begruendung": {
+      "de": "Genau: Jede Schicht spricht nur mit der unmittelbar darunter. send_text kennt Bits, send_frame kennt Bits, und erst send_symbols übersetzt in die physische Welt. Deshalb bleibt oben alles stehen, wenn unten das Alphabet oder gleich das ganze Medium wechselt.",
+      "en": "Exactly: each layer talks only to the one directly below. send_text knows bits, send_frame knows bits, and only send_symbols translates into the physical world. That is why everything above stays put when the alphabet, or the whole medium, changes below."
+     }
     },
     {
      "kennung": "d",
-     "text": "send_text, denn sie stößt die Übertragung an und trägt damit die Verantwortung für das, was gesendet wird.",
-     "begruendung": "Verantwortung und Zugriff sind zweierlei: send_text verantwortet den Inhalt und delegiert die Ausführung nach unten, Schicht für Schicht. Wer oben anstößt, muss unten nichts anfassen, das ist der Sinn der Kette."
+     "text": {
+      "de": "send_text, denn sie stößt die Übertragung an und trägt damit die Verantwortung für das, was gesendet wird.",
+      "en": "send_text, since it initiates the transmission and thus bears responsibility for what is sent."
+     },
+     "begruendung": {
+      "de": "Verantwortung und Zugriff sind zweierlei: send_text verantwortet den Inhalt und delegiert die Ausführung nach unten, Schicht für Schicht. Wer oben anstößt, muss unten nichts anfassen, das ist der Sinn der Kette.",
+      "en": "Responsibility and access are two different things: send_text owns the content and delegates execution downward, layer by layer. Initiating at the top requires touching nothing at the bottom; that is the point of the chain."
+     }
     }
    ]
   }

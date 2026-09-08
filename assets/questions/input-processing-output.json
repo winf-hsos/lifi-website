@@ -4,7 +4,10 @@
   {
    "id": "ipo-001",
    "niveau": "erinnern",
-   "frage": "Aus welchen drei Teilen besteht nach dem IPO-Modell jedes Teilproblem, das ein\nComputer lösen kann?",
+   "frage": {
+    "de": "Aus welchen drei Teilen besteht nach dem IPO-Modell jedes Teilproblem, das ein\nComputer lösen kann?",
+    "en": "According to the IPO model, what are the three parts of every subproblem a\ncomputer can solve?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -12,30 +15,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Planung, Umsetzung, Dokumentation",
-     "begruendung": "Das beschreibt euren Arbeitsprozess, nicht die Form des Problems selbst."
+     "text": {
+      "de": "Planung, Umsetzung, Dokumentation",
+      "en": "Planning, implementation, documentation"
+     },
+     "begruendung": {
+      "de": "Das beschreibt euren Arbeitsprozess, nicht die Form des Problems selbst.",
+      "en": "That describes your working process, not the shape of the problem itself."
+     }
     },
     {
      "kennung": "b",
-     "text": "Hardware, Software, Daten",
-     "begruendung": "Das sind Bestandteile eines Computersystems, aber nicht das Muster, nach dem ein lösbares Teilproblem aufgebaut ist."
+     "text": {
+      "de": "Hardware, Software, Daten",
+      "en": "Hardware, software, data"
+     },
+     "begruendung": {
+      "de": "Das sind Bestandteile eines Computersystems, aber nicht das Muster, nach dem ein lösbares Teilproblem aufgebaut ist.",
+      "en": "Those are components of a computer system, not the pattern a solvable subproblem follows."
+     }
     },
     {
      "kennung": "c",
-     "text": "Eingabe, Verarbeitung, Ausgabe",
-     "begruendung": "Genau: Vorn geht etwas hinein, hinten kommt etwas heraus, dazwischen rechnet die Maschine. Input, processing, output, kurz IPO."
+     "text": {
+      "de": "Eingabe, Verarbeitung, Ausgabe",
+      "en": "Input, processing, output"
+     },
+     "begruendung": {
+      "de": "Genau: Vorn geht etwas hinein, hinten kommt etwas heraus, dazwischen rechnet die Maschine. Input, processing, output, kurz IPO.",
+      "en": "Exactly: something goes in at the front, something comes out at the back, and in between the machine computes. Input, processing, output, IPO for short."
+     }
     },
     {
      "kennung": "d",
-     "text": "Sender, Kanal, Empfänger",
-     "begruendung": "Das ist das Bild einer Übertragungsstrecke. Sie besteht ihrerseits aus IPO-Kästen, ist aber nicht das Grundmuster selbst."
+     "text": {
+      "de": "Sender, Kanal, Empfänger",
+      "en": "Sender, channel, receiver"
+     },
+     "begruendung": {
+      "de": "Das ist das Bild einer Übertragungsstrecke. Sie besteht ihrerseits aus IPO-Kästen, ist aber nicht das Grundmuster selbst.",
+      "en": "That is the picture of a transmission link. It is itself made of IPO boxes, but it is not the basic pattern."
+     }
     }
    ]
   },
   {
    "id": "ipo-002",
    "niveau": "verstehen",
-   "frage": "Warum bringt ein Kasten mit klarer Eingabe und klarer erwarteter Ausgabe seinen\nTest gleich mit?",
+   "frage": {
+    "de": "Warum bringt ein Kasten mit klarer Eingabe und klarer erwarteter Ausgabe seinen\nTest gleich mit?",
+    "en": "Why does a box with a clear input and a clear expected output come with its own\ntest built in?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -43,30 +73,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil der Computer bei jedem Aufruf selbst meldet, ob die gelieferte Ausgabe zur Eingabe passt.",
-     "begruendung": "Die Maschine kennt keine Erwartung. Sie führt aus, was dasteht, und meldet höchstens, dass sie es nicht konnte. Ob die Ausgabe passt, vergleicht ihr, nicht der Computer."
+     "text": {
+      "de": "Weil der Computer bei jedem Aufruf selbst meldet, ob die gelieferte Ausgabe zur Eingabe passt.",
+      "en": "Because the computer reports on every call whether the delivered output matches the input."
+     },
+     "begruendung": {
+      "de": "Die Maschine kennt keine Erwartung. Sie führt aus, was dasteht, und meldet höchstens, dass sie es nicht konnte. Ob die Ausgabe passt, vergleicht ihr, nicht der Computer.",
+      "en": "The machine has no expectation. It executes what is written and at most reports that it could not. Whether the output matches is your comparison, not the computer's."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil man eine bekannte Eingabe hineingeben und das Ergebnis mit der erwarteten Ausgabe vergleichen kann.",
-     "begruendung": "Genau das ist der Test: bekannte Eingabe, erwartete Ausgabe, Vergleich. Ja oder Nein, ohne Deutungsspielraum."
+     "text": {
+      "de": "Weil man eine bekannte Eingabe hineingeben und das Ergebnis mit der erwarteten Ausgabe vergleichen kann.",
+      "en": "Because you can feed in a known input and compare the result with the expected output."
+     },
+     "begruendung": {
+      "de": "Genau das ist der Test: bekannte Eingabe, erwartete Ausgabe, Vergleich. Ja oder Nein, ohne Deutungsspielraum.",
+      "en": "That is exactly the test: known input, expected output, comparison. Yes or no, with no room for interpretation."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil man in einem klar geschnittenen Kasten beim Lesen des Codes sofort sieht, welche Zeile welchen Teil der Ausgabe erzeugt.",
-     "begruendung": "Lesen ist kein Test. Auch ein sauber geschnittener Kasten kann falsch rechnen, und überzeugend aussehender Code tut das besonders unauffällig. Der Schnitt macht den Fehler findbar, nicht sichtbar."
+     "text": {
+      "de": "Weil man in einem klar geschnittenen Kasten beim Lesen des Codes sofort sieht, welche Zeile welchen Teil der Ausgabe erzeugt.",
+      "en": "Because in a cleanly cut box you can see at once, just by reading the code, which line produces which part of the output."
+     },
+     "begruendung": {
+      "de": "Lesen ist kein Test. Auch ein sauber geschnittener Kasten kann falsch rechnen, und überzeugend aussehender Code tut das besonders unauffällig. Der Schnitt macht den Fehler findbar, nicht sichtbar.",
+      "en": "Reading is not a test. Even a cleanly cut box can compute wrongly, and convincing-looking code does so especially quietly. The cut makes errors findable, not visible."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil die Verarbeitung im Kasten dann so überschaubar ist, dass sie kaum noch falsch sein kann.",
-     "begruendung": "Die Verarbeitung kann beliebig kompliziert sein. Prüfbar ist der Kasten trotzdem, solange Ein- und Ausgabe klar sind."
+     "text": {
+      "de": "Weil die Verarbeitung im Kasten dann so überschaubar ist, dass sie kaum noch falsch sein kann.",
+      "en": "Because the processing inside the box is then so manageable that it can hardly be wrong any more."
+     },
+     "begruendung": {
+      "de": "Die Verarbeitung kann beliebig kompliziert sein. Prüfbar ist der Kasten trotzdem, solange Ein- und Ausgabe klar sind.",
+      "en": "The processing can be arbitrarily complex. The box stays testable as long as input and output are clear."
+     }
     }
    ]
   },
   {
    "id": "ipo-003",
    "niveau": "anwenden",
-   "frage": "Vor dem Sensor leuchtet eine rote LED. Was ist die tatsächliche Eingabe, mit der\neuer Empfängerprogramm arbeitet?",
+   "frage": {
+    "de": "Vor dem Sensor leuchtet eine rote LED. Was ist die tatsächliche Eingabe, mit der\neuer Empfängerprogramm arbeitet?",
+    "en": "A red LED is shining in front of the sensor. What is the actual input your\nreceiver program works with?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -75,30 +132,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Farbe Rot, so wie sie auch ein Mensch sieht, der neben dem Sensor steht.",
-     "begruendung": "So erlebt es ein Mensch. Das Programm bekommt keine Farbe, sondern das, was der Sensor liefert, und das sind Zahlen."
+     "text": {
+      "de": "Die Farbe Rot, so wie sie auch ein Mensch sieht, der neben dem Sensor steht.",
+      "en": "The colour red, just as a person standing next to the sensor sees it."
+     },
+     "begruendung": {
+      "de": "So erlebt es ein Mensch. Das Programm bekommt keine Farbe, sondern das, was der Sensor liefert, und das sind Zahlen.",
+      "en": "That is how a human experiences it. The program does not receive a colour but what the sensor delivers, and that is numbers."
+     }
     },
     {
      "kennung": "b",
-     "text": "Das Wort 'red', das der Sensor als erkannte Farbe an das Programm meldet.",
-     "begruendung": "Der Sensor erkennt nichts, er misst. 'red' ist die Ausgabe, die euer Programm aus den Messwerten erst erzeugen muss. Genau diese Entscheidung ist seine Verarbeitung."
+     "text": {
+      "de": "Das Wort 'red', das der Sensor als erkannte Farbe an das Programm meldet.",
+      "en": "The word 'red', which the sensor reports to the program as the recognised colour."
+     },
+     "begruendung": {
+      "de": "Der Sensor erkennt nichts, er misst. 'red' ist die Ausgabe, die euer Programm aus den Messwerten erst erzeugen muss. Genau diese Entscheidung ist seine Verarbeitung.",
+      "en": "The sensor recognises nothing, it measures. 'red' is the output your program has to produce from the readings. Exactly that decision is its processing."
+     }
     },
     {
      "kennung": "c",
-     "text": "Vier Zahlen: die Anteile Rot, Grün, Blau und die Gesamthelligkeit.",
-     "begruendung": "Genau: Der Sensor liefert vier Messwerte, etwa r=203, g=41, b=57, c=310. Was davon 'Rot' bedeutet, muss das Programm aus den Zahlen entscheiden."
+     "text": {
+      "de": "Vier Zahlen: die Anteile Rot, Grün, Blau und die Gesamthelligkeit.",
+      "en": "Four numbers: the red, green and blue components plus overall brightness."
+     },
+     "begruendung": {
+      "de": "Genau: Der Sensor liefert vier Messwerte, etwa r=203, g=41, b=57, c=310. Was davon 'Rot' bedeutet, muss das Programm aus den Zahlen entscheiden.",
+      "en": "Exactly: the sensor delivers four readings, for example r=203, g=41, b=57, c=310. What counts as 'red' is a decision the program makes from the numbers."
+     }
     },
     {
      "kennung": "d",
-     "text": "Ein kleines Bild der LED, aus dem das Programm die Farbe an der hellsten Stelle abliest.",
-     "begruendung": "Der Farbsensor ist keine Kamera. Er hat keine Bildpunkte, sondern misst Anteile des einfallenden Lichts als Ganzes und liefert genau vier Zahlen, kein Bild."
+     "text": {
+      "de": "Ein kleines Bild der LED, aus dem das Programm die Farbe an der hellsten Stelle abliest.",
+      "en": "A small image of the LED, from which the program reads off the colour at the brightest spot."
+     },
+     "begruendung": {
+      "de": "Der Farbsensor ist keine Kamera. Er hat keine Bildpunkte, sondern misst Anteile des einfallenden Lichts als Ganzes und liefert genau vier Zahlen, kein Bild.",
+      "en": "The colour sensor is not a camera. It has no pixels; it measures components of the incoming light as a whole and delivers exactly four numbers, not an image."
+     }
     }
    ]
   },
   {
    "id": "ipo-004",
    "niveau": "verstehen",
-   "frage": "Die Abbildung zeigt eure Übertragungsstrecke als gesteckte Kästen.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Die Abbildung zeigt eure Übertragungsstrecke als gesteckte Kästen.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+    "en": "The figure shows your transmission link as plugged boxes.\nWhich statements are true? (Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -109,35 +193,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Ausgabe von encode() ist die Eingabe des nächsten Kastens.",
-     "begruendung": "Richtig, genau das heißt 'stecken': Kästen verbinden sich, indem Ausgabe zu Eingabe wird."
+     "text": {
+      "de": "Die Ausgabe von encode() ist die Eingabe des nächsten Kastens.",
+      "en": "The output of encode() is the input of the next box."
+     },
+     "begruendung": {
+      "de": "Richtig, genau das heißt 'stecken': Kästen verbinden sich, indem Ausgabe zu Eingabe wird.",
+      "en": "Correct, that is what 'plugging' means: boxes connect by output becoming input."
+     }
     },
     {
      "kennung": "b",
-     "text": "An der Steckstelle Licht muss abgesprochen sein, welche Farbe welches Zeichen bedeutet.",
-     "begruendung": "Richtig: Die Steckstelle ist eine Absprache. Ohne sie kann decode() die Farben nicht deuten."
+     "text": {
+      "de": "An der Steckstelle Licht muss abgesprochen sein, welche Farbe welches Zeichen bedeutet.",
+      "en": "At the light interface it must be agreed which colour means which character."
+     },
+     "begruendung": {
+      "de": "Richtig: Die Steckstelle ist eine Absprache. Ohne sie kann decode() die Farben nicht deuten.",
+      "en": "Correct: the interface is an agreement. Without it, decode() cannot interpret the colours."
+     }
     },
     {
      "kennung": "c",
-     "text": "decode() kann unabhängig davon arbeiten, was encode() tut.",
-     "begruendung": "Falsch: decode() muss exakt die Absprache umkehren, nach der encode() kodiert hat. Die beiden sind über die Steckstelle gekoppelt."
+     "text": {
+      "de": "decode() kann unabhängig davon arbeiten, was encode() tut.",
+      "en": "decode() can work independently of what encode() does."
+     },
+     "begruendung": {
+      "de": "Falsch: decode() muss exakt die Absprache umkehren, nach der encode() kodiert hat. Die beiden sind über die Steckstelle gekoppelt.",
+      "en": "Wrong: decode() must invert exactly the agreement encode() used. The two are coupled through the interface."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Kette zeigt, in welcher Reihenfolge Daten durch das System fließen.",
-     "begruendung": "Richtig: Kästen hintereinander zeigen den Datenfluss, von der Nachricht bis zur Nachricht."
+     "text": {
+      "de": "Die Kette zeigt, in welcher Reihenfolge Daten durch das System fließen.",
+      "en": "The chain shows the order in which data flows through the system."
+     },
+     "begruendung": {
+      "de": "Richtig: Kästen hintereinander zeigen den Datenfluss, von der Nachricht bis zur Nachricht.",
+      "en": "Correct: boxes in a row show the data flow, from message to message."
+     }
     },
     {
      "kennung": "e",
-     "text": "Die Kette zeigt die hierarchische Zerlegung des Problems in Unterprobleme.",
-     "begruendung": "Falsch: Das leisten Kästen ineinander (ein geöffneter Kasten enthält kleinere). Kästen hintereinander zeigen den Fluss, nicht die Hierarchie."
+     "text": {
+      "de": "Die Kette zeigt die hierarchische Zerlegung des Problems in Unterprobleme.",
+      "en": "The chain shows the hierarchical decomposition of the problem into subproblems."
+     },
+     "begruendung": {
+      "de": "Falsch: Das leisten Kästen ineinander (ein geöffneter Kasten enthält kleinere). Kästen hintereinander zeigen den Fluss, nicht die Hierarchie.",
+      "en": "Wrong: that is what boxes inside boxes show (an opened box contains smaller ones). Boxes in a row show flow, not hierarchy."
+     }
     }
    ]
   },
   {
    "id": "ipo-005",
    "niveau": "verstehen",
-   "frage": "Betrachtet diese Funktion als IPO-Kasten. Was sind Eingabe und Ausgabe?",
+   "frage": {
+    "de": "Betrachtet diese Funktion als IPO-Kasten. Was sind Eingabe und Ausgabe?",
+    "en": "Look at this function as an IPO box. What are its input and output?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -146,25 +263,46 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Eingabe ist ein Text, Ausgabe ist eine Liste von Farben.",
-     "begruendung": "Richtig: 'text' geht hinein, für jedes Zeichen kommt eine Farbe in die Liste, und 'colours' kommt heraus. Das ist der Senderkasten."
+     "text": {
+      "de": "Eingabe ist ein Text, Ausgabe ist eine Liste von Farben.",
+      "en": "The input is a text, the output is a list of colours."
+     },
+     "begruendung": {
+      "de": "Richtig: 'text' geht hinein, für jedes Zeichen kommt eine Farbe in die Liste, und 'colours' kommt heraus. Das ist der Senderkasten.",
+      "en": "Correct: 'text' goes in, each character contributes a colour to the list, and 'colours' comes out. That is the sender box."
+     }
     },
     {
      "kennung": "b",
-     "text": "Eingabe ist eine Liste von Farben, Ausgabe ist ein Text.",
-     "begruendung": "Das wäre die Gegenrichtung, also decode() beim Empfänger. Hier steht es andersherum: Der Parameter ist der Text."
+     "text": {
+      "de": "Eingabe ist eine Liste von Farben, Ausgabe ist ein Text.",
+      "en": "The input is a list of colours, the output is a text."
+     },
+     "begruendung": {
+      "de": "Das wäre die Gegenrichtung, also decode() beim Empfänger. Hier steht es andersherum: Der Parameter ist der Text.",
+      "en": "That would be the opposite direction, decode() on the receiver side. Here it is the other way round: the parameter is the text."
+     }
     },
     {
      "kennung": "c",
-     "text": "Eingabe ist Licht, Ausgabe sind vier Sensorzahlen.",
-     "begruendung": "Das beschreibt den Sensor, einen ganz anderen Kasten der Strecke. Diese Funktion arbeitet nur mit Text und Farben."
+     "text": {
+      "de": "Eingabe ist Licht, Ausgabe sind vier Sensorzahlen.",
+      "en": "The input is light, the output is four sensor readings."
+     },
+     "begruendung": {
+      "de": "Das beschreibt den Sensor, einen ganz anderen Kasten der Strecke. Diese Funktion arbeitet nur mit Text und Farben.",
+      "en": "That describes the sensor, a different box of the chain. This function only works with text and colours."
+     }
     }
    ]
   },
   {
    "id": "ipo-006",
    "niveau": "anwenden",
-   "frage": "Ihr wollt euren Kasten classify() prüfen, der aus vier Sensorzahlen eine Farbe\nentscheidet. Welcher Test passt zum IPO-Modell?",
+   "frage": {
+    "de": "Ihr wollt euren Kasten classify() prüfen, der aus vier Sensorzahlen eine Farbe\nentscheidet. Welcher Test passt zum IPO-Modell?",
+    "en": "You want to check your classify() box, which decides a colour from four sensor\nreadings. Which test fits the IPO model?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -172,30 +310,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "classify() eine Stunde lang mit Live-Messwerten laufen lassen und schauen, ob es ohne Absturz durchhält.",
-     "begruendung": "Ein Dauerlauf prüft Stabilität, aber nicht, ob die Entscheidung stimmt. Ohne erwartete Ausgabe ist es kein IPO-Test."
+     "text": {
+      "de": "classify() eine Stunde lang mit Live-Messwerten laufen lassen und schauen, ob es ohne Absturz durchhält.",
+      "en": "Run classify() for an hour on live readings and see whether it holds up without crashing."
+     },
+     "begruendung": {
+      "de": "Ein Dauerlauf prüft Stabilität, aber nicht, ob die Entscheidung stimmt. Ohne erwartete Ausgabe ist es kein IPO-Test.",
+      "en": "An endurance run checks stability, not whether the decision is right. Without an expected output it is no IPO test."
+     }
     },
     {
      "kennung": "b",
-     "text": "classify() mit zufälligen Zahlen aufrufen und prüfen, dass keine Fehlermeldung kommt.",
-     "begruendung": "'Keine Fehlermeldung' heißt nur, dass die Maschine ausführen konnte, was dastand. Ob die Farbe stimmt, sagt das nicht."
+     "text": {
+      "de": "classify() mit zufälligen Zahlen aufrufen und prüfen, dass keine Fehlermeldung kommt.",
+      "en": "Call classify() with random numbers and check that no error message appears."
+     },
+     "begruendung": {
+      "de": "'Keine Fehlermeldung' heißt nur, dass die Maschine ausführen konnte, was dastand. Ob die Farbe stimmt, sagt das nicht.",
+      "en": "'No error message' only means the machine could execute what was written. It says nothing about the colour being right."
+     }
     },
     {
      "kennung": "c",
-     "text": "Gespeicherte Messwerte, die sicher bei roter LED entstanden sind, hineingeben und prüfen, ob 'red' herauskommt.",
-     "begruendung": "Genau: bekannte Eingabe, erwartete Ausgabe, Vergleich. Der Kasten wird an Daten geprüft, deren Wahrheit ihr kennt."
+     "text": {
+      "de": "Gespeicherte Messwerte, die sicher bei roter LED entstanden sind, hineingeben und prüfen, ob 'red' herauskommt.",
+      "en": "Feed in stored readings that were definitely taken with a red LED and check that 'red' comes out."
+     },
+     "begruendung": {
+      "de": "Genau: bekannte Eingabe, erwartete Ausgabe, Vergleich. Der Kasten wird an Daten geprüft, deren Wahrheit ihr kennt.",
+      "en": "Exactly: known input, expected output, comparison. The box is checked against data whose truth you know."
+     }
     },
     {
      "kennung": "d",
-     "text": "Den Quelltext von classify() Zeile für Zeile durchlesen und jede Bedingung im Kopf mit Beispielwerten nachvollziehen.",
-     "begruendung": "Lesen hilft beim Verstehen, ersetzt aber keinen Test: Auch überzeugend aussehender Code kann falsch entscheiden."
+     "text": {
+      "de": "Den Quelltext von classify() Zeile für Zeile durchlesen und jede Bedingung im Kopf mit Beispielwerten nachvollziehen.",
+      "en": "Read the source code of classify() line by line and trace every condition in your head with example values."
+     },
+     "begruendung": {
+      "de": "Lesen hilft beim Verstehen, ersetzt aber keinen Test: Auch überzeugend aussehender Code kann falsch entscheiden.",
+      "en": "Reading helps understanding but does not replace a test: convincing-looking code can still decide wrongly."
+     }
     }
    ]
   },
   {
    "id": "ipo-007",
    "niveau": "verstehen",
-   "frage": "Aus dem IPO-Kasten fallen zwei Fragen: Wie arbeitet der Kasten, und wie stellen\nwir Eingabe und Ausgabe für die Maschine dar. Welche davon beantwortet ein\nProgramm?",
+   "frage": {
+    "de": "Aus dem IPO-Kasten fallen zwei Fragen: Wie arbeitet der Kasten, und wie stellen\nwir Eingabe und Ausgabe für die Maschine dar. Welche davon beantwortet ein\nProgramm?",
+    "en": "The IPO box raises two questions: how does the box do its work, and how do we\nrepresent input and output for the machine. Which one does a program answer?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -203,30 +368,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Beide: Ein Programm legt auch fest, wie Farben und Zeichen dargestellt werden.",
-     "begruendung": "Verlockend, aber die Darstellung ist eine eigene Entscheidung (Symbole, Codes), die vor dem Programm getroffen wird. Das Programm setzt sie nur um."
+     "text": {
+      "de": "Beide: Ein Programm legt auch fest, wie Farben und Zeichen dargestellt werden.",
+      "en": "Both: a program also defines how colours and characters are represented."
+     },
+     "begruendung": {
+      "de": "Verlockend, aber die Darstellung ist eine eigene Entscheidung (Symbole, Codes), die vor dem Programm getroffen wird. Das Programm setzt sie nur um.",
+      "en": "Tempting, but representation is a separate decision (symbols, codes) made before the program. The program only implements it."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Verarbeitungsfrage: Ein Programm beschreibt, wie der Kasten seine Arbeit tut.",
-     "begruendung": "Genau: Ein Programm ist das, was im Kasten passiert. Die Darstellungsfrage bleibt offen und wird mit Messwerten, Symbolen und Codesystemen beantwortet."
+     "text": {
+      "de": "Die Verarbeitungsfrage: Ein Programm beschreibt, wie der Kasten seine Arbeit tut.",
+      "en": "The processing question: a program describes how the box does its work."
+     },
+     "begruendung": {
+      "de": "Genau: Ein Programm ist das, was im Kasten passiert. Die Darstellungsfrage bleibt offen und wird mit Messwerten, Symbolen und Codesystemen beantwortet.",
+      "en": "Exactly: a program is what happens inside the box. The representation question stays open and is answered by readings, symbols and code systems."
+     }
     },
     {
      "kennung": "c",
-     "text": "Die Darstellungsfrage: Ein Programm legt fest, wie Daten aussehen.",
-     "begruendung": "Andersherum: Wie Daten dargestellt werden, ist die Frage, die das Programm gerade nicht beantwortet. Es arbeitet mit einer Darstellung, die vorher vereinbart wurde."
+     "text": {
+      "de": "Die Darstellungsfrage: Ein Programm legt fest, wie Daten aussehen.",
+      "en": "The representation question: a program defines what data looks like."
+     },
+     "begruendung": {
+      "de": "Andersherum: Wie Daten dargestellt werden, ist die Frage, die das Programm gerade nicht beantwortet. Es arbeitet mit einer Darstellung, die vorher vereinbart wurde.",
+      "en": "The other way round: how data is represented is precisely the question a program does not answer. It works with a representation agreed beforehand."
+     }
     },
     {
      "kennung": "d",
-     "text": "Keine von beiden: Programme sind ein eigenes, drittes Thema.",
-     "begruendung": "Programme sind kein drittes Thema, sondern die Antwort auf die erste Frage. Deshalb geht der Input nahtlos in 'Was ein Programm eigentlich ist' über."
+     "text": {
+      "de": "Keine von beiden: Programme sind ein eigenes, drittes Thema.",
+      "en": "Neither: programs are a separate, third topic."
+     },
+     "begruendung": {
+      "de": "Programme sind kein drittes Thema, sondern die Antwort auf die erste Frage. Deshalb geht der Input nahtlos in 'Was ein Programm eigentlich ist' über.",
+      "en": "Programs are not a third topic but the answer to the first question. That is why the session moves straight on to 'what a program really is'."
+     }
     }
    ]
   },
   {
    "id": "ipo-008",
    "niveau": "anwenden",
-   "frage": "Die Abbildung zeigt dasselbe IPO-Modell auf mehreren Ebenen.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Die Abbildung zeigt dasselbe IPO-Modell auf mehreren Ebenen.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+    "en": "The figure shows the same IPO model on several levels.\nWhich statements are true? (Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "a",
@@ -237,30 +429,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Von außen betrachtet ist der ganze Sender ein einziger Kasten: Nachricht hinein, Licht heraus.",
-     "begruendung": "Richtig: send() ist dann der Name für die gesamte Verarbeitung im Inneren."
+     "text": {
+      "de": "Von außen betrachtet ist der ganze Sender ein einziger Kasten: Nachricht hinein, Licht heraus.",
+      "en": "Seen from outside, the whole sender is a single box: message in, light out."
+     },
+     "begruendung": {
+      "de": "Richtig: send() ist dann der Name für die gesamte Verarbeitung im Inneren.",
+      "en": "Correct: send() is then the name for all the processing inside."
+     }
     },
     {
      "kennung": "b",
-     "text": "Öffnet man den Kasten, wird seine Verarbeitung zu einer Kette kleinerer Kästen mit eigenen Ein- und Ausgaben.",
-     "begruendung": "Richtig, und jeder dieser kleineren Kästen kann einzeln geprüft werden. Genau das macht die Ebenen so nützlich."
+     "text": {
+      "de": "Öffnet man den Kasten, wird seine Verarbeitung zu einer Kette kleinerer Kästen mit eigenen Ein- und Ausgaben.",
+      "en": "Opening the box turns its processing into a chain of smaller boxes with their own inputs and outputs."
+     },
+     "begruendung": {
+      "de": "Richtig, und jeder dieser kleineren Kästen kann einzeln geprüft werden. Genau das macht die Ebenen so nützlich.",
+      "en": "Correct, and each of those smaller boxes can be checked on its own. That is what makes the levels so useful."
+     }
     },
     {
      "kennung": "c",
-     "text": "Ein einzelnes Logikgatter ist zu klein für das IPO-Modell, weil es nichts verarbeitet, sondern nur Strom durchlässt oder sperrt.",
-     "begruendung": "Falsch: Durchlassen oder Sperren nach einer festen Regel ist bereits Verarbeitung. Ein UND-Gatter hat Eingaben (zwei Wahrheitswerte), eine Verarbeitungsregel und eine Ausgabe. Dieselbe Form, andere Auflösung."
+     "text": {
+      "de": "Ein einzelnes Logikgatter ist zu klein für das IPO-Modell, weil es nichts verarbeitet, sondern nur Strom durchlässt oder sperrt.",
+      "en": "A single logic gate is too small for the IPO model, because it does not process anything but merely passes or blocks current."
+     },
+     "begruendung": {
+      "de": "Falsch: Durchlassen oder Sperren nach einer festen Regel ist bereits Verarbeitung. Ein UND-Gatter hat Eingaben (zwei Wahrheitswerte), eine Verarbeitungsregel und eine Ausgabe. Dieselbe Form, andere Auflösung.",
+      "en": "Wrong: passing or blocking according to a fixed rule already is processing. An AND gate has inputs (two truth values), a processing rule and an output. Same shape, different resolution."
+     }
     },
     {
      "kennung": "d",
-     "text": "Welche Ebene die richtige ist, hängt von der Frage ab, die man gerade untersucht.",
-     "begruendung": "Richtig: Wer das Gesamtsystem testet, braucht andere Ein- und Ausgaben als jemand, der nur encode() untersucht."
+     "text": {
+      "de": "Welche Ebene die richtige ist, hängt von der Frage ab, die man gerade untersucht.",
+      "en": "Which level is the right one depends on the question you are investigating."
+     },
+     "begruendung": {
+      "de": "Richtig: Wer das Gesamtsystem testet, braucht andere Ein- und Ausgaben als jemand, der nur encode() untersucht.",
+      "en": "Correct: testing the whole system needs different inputs and outputs than examining just encode()."
+     }
     }
    ]
   },
   {
    "id": "ipo-009",
    "niveau": "anwenden",
-   "frage": "Eure Gesamtübertragung liefert am Ende falschen Text. Was ist nach dem\nKastenmodell der sinnvollste nächste Schritt?",
+   "frage": {
+    "de": "Eure Gesamtübertragung liefert am Ende falschen Text. Was ist nach dem\nKastenmodell der sinnvollste nächste Schritt?",
+    "en": "Your end-to-end transmission delivers wrong text. According to the box model,\nwhat is the most sensible next step?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -268,30 +487,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die Gesamtübertragung mehrfach wiederholen, bis der Text stimmt.",
-     "begruendung": "Wiederholen ohne Eingrenzung testet immer denselben großen Kasten. Selbst wenn es einmal klappt, wisst ihr nicht, was vorher falsch war."
+     "text": {
+      "de": "Die Gesamtübertragung mehrfach wiederholen, bis der Text stimmt.",
+      "en": "Repeat the end-to-end transmission until the text comes out right."
+     },
+     "begruendung": {
+      "de": "Wiederholen ohne Eingrenzung testet immer denselben großen Kasten. Selbst wenn es einmal klappt, wisst ihr nicht, was vorher falsch war.",
+      "en": "Repeating without narrowing down keeps testing the same big box. Even if it works once, you do not know what was wrong before."
+     }
     },
     {
      "kennung": "b",
-     "text": "Den großen Kasten öffnen und einen inneren Kasten, etwa encode(), isoliert mit bekannter Eingabe prüfen.",
-     "begruendung": "Genau: Eine Ebene tiefer haben die kleinen Kästen eigene Ein- und Ausgaben und lassen sich einzeln prüfen. So wird aus 'irgendwo falsch' ein 'hier falsch'."
+     "text": {
+      "de": "Den großen Kasten öffnen und einen inneren Kasten, etwa encode(), isoliert mit bekannter Eingabe prüfen.",
+      "en": "Open the big box and check an inner box, say encode(), in isolation with a known input."
+     },
+     "begruendung": {
+      "de": "Genau: Eine Ebene tiefer haben die kleinen Kästen eigene Ein- und Ausgaben und lassen sich einzeln prüfen. So wird aus 'irgendwo falsch' ein 'hier falsch'.",
+      "en": "Exactly: one level down, the small boxes have their own inputs and outputs and can be checked individually. 'Wrong somewhere' becomes 'wrong here'."
+     }
     },
     {
      "kennung": "c",
-     "text": "Den Quelltext von Sender und Empfänger nebeneinanderlegen und die Stelle suchen, an der die Absprache nicht zusammenpasst.",
-     "begruendung": "Lesen kann helfen, ersetzt aber keine Prüfung: Ob encode() wirklich liefert, was im Code zu stehen scheint, zeigt erst ein Aufruf mit bekannter Eingabe. Und der Fehler kann in einem Kasten stecken, der gar kein Code ist, etwa im Sensor oder in der Kalibrierung."
+     "text": {
+      "de": "Den Quelltext von Sender und Empfänger nebeneinanderlegen und die Stelle suchen, an der die Absprache nicht zusammenpasst.",
+      "en": "Put the source code of sender and receiver side by side and look for the spot where the agreement does not match."
+     },
+     "begruendung": {
+      "de": "Lesen kann helfen, ersetzt aber keine Prüfung: Ob encode() wirklich liefert, was im Code zu stehen scheint, zeigt erst ein Aufruf mit bekannter Eingabe. Und der Fehler kann in einem Kasten stecken, der gar kein Code ist, etwa im Sensor oder in der Kalibrierung.",
+      "en": "Reading can help but does not replace a check: whether encode() really delivers what the code seems to say only shows when you call it with a known input. And the fault may sit in a box that is not code at all, such as the sensor or the calibration."
+     }
     },
     {
      "kennung": "d",
-     "text": "Den Abstand zwischen den Geräten verändern und erneut senden.",
-     "begruendung": "Das dreht an einer Umgebungsbedingung, prüft aber keinen Kasten. Wenn es zufällig hilft, bleibt die Ursache unbekannt."
+     "text": {
+      "de": "Den Abstand zwischen den Geräten verändern und erneut senden.",
+      "en": "Change the distance between the devices and send again."
+     },
+     "begruendung": {
+      "de": "Das dreht an einer Umgebungsbedingung, prüft aber keinen Kasten. Wenn es zufällig hilft, bleibt die Ursache unbekannt.",
+      "en": "That changes an environmental condition but checks no box. If it happens to help, the cause remains unknown."
+     }
     }
    ]
   },
   {
    "id": "ipo-010",
    "niveau": "verstehen",
-   "frage": "Warum \"sieht\" der Computer keine Farbe, sondern nur Zahlen?",
+   "frage": {
+    "de": "Warum \"sieht\" der Computer keine Farbe, sondern nur Zahlen?",
+    "en": "Why does the computer not \"see\" a colour, only numbers?"
+   },
    "typ": "sc",
    "richtig": [
     "b"
@@ -299,35 +545,68 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Weil unser Farbsensor zu billig ist; ein besserer würde Farben direkt liefern.",
-     "begruendung": "Auch der beste Sensor liefert Messwerte, also Zahlen. Der Unterschied liegt in der Genauigkeit, nicht in der Art der Lieferung."
+     "text": {
+      "de": "Weil unser Farbsensor zu billig ist; ein besserer würde Farben direkt liefern.",
+      "en": "Because our colour sensor is too cheap; a better one would deliver colours directly."
+     },
+     "begruendung": {
+      "de": "Auch der beste Sensor liefert Messwerte, also Zahlen. Der Unterschied liegt in der Genauigkeit, nicht in der Art der Lieferung.",
+      "en": "Even the best sensor delivers readings, that is, numbers. The difference is precision, not the kind of delivery."
+     }
     },
     {
      "kennung": "b",
-     "text": "Weil eine Maschine nur mit Dingen arbeiten kann, die als verarbeitbare Darstellung vorliegen, meistens als Zahlen.",
-     "begruendung": "Genau die Kernaussage: Bevor ein Computer mit etwas arbeiten kann, muss es dargestellt sein. Eure Augen sehen Rot, der Kasten sieht 203, 41, 57, 310."
+     "text": {
+      "de": "Weil eine Maschine nur mit Dingen arbeiten kann, die als verarbeitbare Darstellung vorliegen, meistens als Zahlen.",
+      "en": "Because a machine can only work with things that exist in a processable representation, usually numbers."
+     },
+     "begruendung": {
+      "de": "Genau die Kernaussage: Bevor ein Computer mit etwas arbeiten kann, muss es dargestellt sein. Eure Augen sehen Rot, der Kasten sieht 203, 41, 57, 310.",
+      "en": "Exactly the core point: before a computer can work with something, it must be represented. Your eyes see red, the box sees 203, 41, 57, 310."
+     }
     },
     {
      "kennung": "c",
-     "text": "Weil der Umweg über Zahlen eine Eigenheit der Programmiersprache ist; eine Sprache mit eingebautem Farbtyp würde die Farbe direkt sehen.",
-     "begruendung": "Mit der Programmiersprache hat das nichts zu tun. Auch ein eingebauter Farbtyp wäre nur eine Darstellung, im Inneren wieder Zahlen. Jede Sprache arbeitet am Ende mit Darstellungen; die Frage liegt tiefer als Python."
+     "text": {
+      "de": "Weil der Umweg über Zahlen eine Eigenheit der Programmiersprache ist; eine Sprache mit eingebautem Farbtyp würde die Farbe direkt sehen.",
+      "en": "Because the detour via numbers is a quirk of the programming language; a language with a built-in colour type would see the colour directly."
+     },
+     "begruendung": {
+      "de": "Mit der Programmiersprache hat das nichts zu tun. Auch ein eingebauter Farbtyp wäre nur eine Darstellung, im Inneren wieder Zahlen. Jede Sprache arbeitet am Ende mit Darstellungen; die Frage liegt tiefer als Python.",
+      "en": "This has nothing to do with the programming language. A built-in colour type would itself be just a representation, numbers underneath. Every language ultimately works with representations; the question is deeper than Python."
+     }
     },
     {
      "kennung": "d",
-     "text": "Weil die LED nie reines Rot leuchtet.",
-     "begruendung": "Das ist ein echtes Messproblem, erklärt aber nicht das Prinzip: Selbst reinstes Rot käme als Zahlen an."
+     "text": {
+      "de": "Weil die LED nie reines Rot leuchtet.",
+      "en": "Because the LED never emits pure red."
+     },
+     "begruendung": {
+      "de": "Das ist ein echtes Messproblem, erklärt aber nicht das Prinzip: Selbst reinstes Rot käme als Zahlen an.",
+      "en": "That is a real measurement issue, but it does not explain the principle: even the purest red would arrive as numbers."
+     }
     },
     {
      "kennung": "e",
-     "text": "Weil er die Farbe sehr wohl erkennt, sie intern aber als Zahlen ablegt und deshalb nur so weitergeben kann.",
-     "begruendung": "Die Reihenfolge stimmt nicht: Es gibt kein 'Erkennen', das vor den Zahlen läge. 'Sehen' im menschlichen Sinn gibt es in der Maschine nicht; es gibt nur die vier Zahlen und das, was das Programm daraus entscheidet."
+     "text": {
+      "de": "Weil er die Farbe sehr wohl erkennt, sie intern aber als Zahlen ablegt und deshalb nur so weitergeben kann.",
+      "en": "Because it does recognise the colour, but stores it internally as numbers and can therefore only pass it on that way."
+     },
+     "begruendung": {
+      "de": "Die Reihenfolge stimmt nicht: Es gibt kein 'Erkennen', das vor den Zahlen läge. 'Sehen' im menschlichen Sinn gibt es in der Maschine nicht; es gibt nur die vier Zahlen und das, was das Programm daraus entscheidet.",
+      "en": "The order is wrong: there is no 'recognising' that comes before the numbers. There is no 'seeing' in the human sense inside the machine; there are only the four numbers and whatever the program decides from them."
+     }
     }
    ]
   },
   {
    "id": "ipo-011",
    "niveau": "verstehen",
-   "frage": "Auch der KI-Assistent ist ein IPO-Kasten: eure Worte hinein, Code heraus. Auf der\nFolie ist dieser Kasten als einziger gefüllt gezeichnet. Was bedeutet das, und\nwas folgt daraus?",
+   "frage": {
+    "de": "Auch der KI-Assistent ist ein IPO-Kasten: eure Worte hinein, Code heraus. Auf der\nFolie ist dieser Kasten als einziger gefüllt gezeichnet. Was bedeutet das, und\nwas folgt daraus?",
+    "en": "The AI assistant is also an IPO box: your words in, code out. On the slide this\nbox is the only one drawn filled. What does that mean, and what follows from it?"
+   },
    "typ": "sc",
    "richtig": [
     "c"
@@ -335,25 +614,46 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Der Kasten ist fertig und muss nicht mehr geprüft werden.",
-     "begruendung": "Das Gegenteil ist gemeint: Gerade weil man nicht hineinschauen kann, muss die Ausgabe umso gründlicher geprüft werden."
+     "text": {
+      "de": "Der Kasten ist fertig und muss nicht mehr geprüft werden.",
+      "en": "The box is finished and no longer needs checking."
+     },
+     "begruendung": {
+      "de": "Das Gegenteil ist gemeint: Gerade weil man nicht hineinschauen kann, muss die Ausgabe umso gründlicher geprüft werden.",
+      "en": "The opposite is meant: precisely because you cannot look inside, the output needs checking all the more."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die Eingabe spielt kaum eine Rolle: Der Assistent liefert zu jeder Frage ähnlich guten Code, egal wie ihr sie stellt.",
-     "begruendung": "Nein, die Eingabe seid ihr: Eure Worte bestimmen, was herauskommt, und ein vager Auftrag liefert vage Ergebnisse. Deshalb lohnt es sich, Aufträge klein und prüfbar zu formulieren."
+     "text": {
+      "de": "Die Eingabe spielt kaum eine Rolle: Der Assistent liefert zu jeder Frage ähnlich guten Code, egal wie ihr sie stellt.",
+      "en": "The input hardly matters: the assistant delivers similarly good code for any question, no matter how you phrase it."
+     },
+     "begruendung": {
+      "de": "Nein, die Eingabe seid ihr: Eure Worte bestimmen, was herauskommt, und ein vager Auftrag liefert vage Ergebnisse. Deshalb lohnt es sich, Aufträge klein und prüfbar zu formulieren.",
+      "en": "No, the input is you: your words determine what comes out, and a vague request yields vague results. That is why it pays to phrase requests small and testable."
+     }
     },
     {
      "kennung": "c",
-     "text": "Man kann nicht hineinschauen; deshalb kennt ihr die Eingabe und prüft die Ausgabe.",
-     "begruendung": "Genau: 'the box is not yours. the test is.' Die Verarbeitung ist unzugänglich, aber Ein- und Ausgabe gehören euch, und am Ausgang wird geprüft."
+     "text": {
+      "de": "Man kann nicht hineinschauen; deshalb kennt ihr die Eingabe und prüft die Ausgabe.",
+      "en": "You cannot look inside; therefore you know the input and check the output."
+     },
+     "begruendung": {
+      "de": "Genau: 'the box is not yours. the test is.' Die Verarbeitung ist unzugänglich, aber Ein- und Ausgabe gehören euch, und am Ausgang wird geprüft.",
+      "en": "Exactly: 'the box is not yours. the test is.' The processing is inaccessible, but input and output are yours, and checking happens at the output."
+     }
     }
    ]
   },
   {
    "id": "ipo-012",
    "niveau": "anwenden",
-   "frage": "Welcher der folgenden Aufrufe ist ein Test mit eingebauter Erwartung?",
+   "frage": {
+    "de": "Welcher der folgenden Aufrufe ist ein Test mit eingebauter Erwartung?",
+    "en": "Which of the following calls is a test with a built-in expectation?"
+   },
    "typ": "sc",
    "richtig": [
     "a"
@@ -362,30 +662,57 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "to_signal(150) aufrufen und prüfen, dass 'on' herauskommt.",
-     "begruendung": "Genau: bekannte Eingabe (150), erwartete Ausgabe ('on', denn 150 ist größer als 100), Vergleich. Ein Ja/Nein-Ergebnis ohne Deutung."
+     "text": {
+      "de": "to_signal(150) aufrufen und prüfen, dass 'on' herauskommt.",
+      "en": "Call to_signal(150) and check that 'on' comes out."
+     },
+     "begruendung": {
+      "de": "Genau: bekannte Eingabe (150), erwartete Ausgabe ('on', denn 150 ist größer als 100), Vergleich. Ein Ja/Nein-Ergebnis ohne Deutung.",
+      "en": "Exactly: known input (150), expected output ('on', since 150 is greater than 100), comparison. A yes/no result with no interpretation."
+     }
     },
     {
      "kennung": "b",
-     "text": "to_signal(150) aufrufen und sich das Ergebnis ansehen.",
-     "begruendung": "Fast, aber die Erwartung fehlt: Wer vorher nicht festlegt, was herauskommen muss, nickt hinterher alles ab."
+     "text": {
+      "de": "to_signal(150) aufrufen und sich das Ergebnis ansehen.",
+      "en": "Call to_signal(150) and look at the result."
+     },
+     "begruendung": {
+      "de": "Fast, aber die Erwartung fehlt: Wer vorher nicht festlegt, was herauskommen muss, nickt hinterher alles ab.",
+      "en": "Close, but the expectation is missing: without deciding beforehand what must come out, you will nod at anything afterwards."
+     }
     },
     {
      "kennung": "c",
-     "text": "to_signal() mit vielen verschiedenen Werten aufrufen, um die Funktion gut auszulasten.",
-     "begruendung": "Viele Aufrufe ohne Erwartungen sind viel Beschäftigung ohne Prüfung. Erst die erwartete Ausgabe je Eingabe macht daraus Tests."
+     "text": {
+      "de": "to_signal() mit vielen verschiedenen Werten aufrufen, um die Funktion gut auszulasten.",
+      "en": "Call to_signal() with many different values to exercise the function well."
+     },
+     "begruendung": {
+      "de": "Viele Aufrufe ohne Erwartungen sind viel Beschäftigung ohne Prüfung. Erst die erwartete Ausgabe je Eingabe macht daraus Tests.",
+      "en": "Many calls without expectations are lots of activity and no checking. Only an expected output per input turns them into tests."
+     }
     },
     {
      "kennung": "d",
-     "text": "Prüfen, dass der Aufruf keine Fehlermeldung erzeugt.",
-     "begruendung": "'Läuft ohne Fehler' heißt nur: Die Maschine konnte ausführen, was dastand. Eine Funktion kann fehlerfrei das Falsche zurückgeben."
+     "text": {
+      "de": "Prüfen, dass der Aufruf keine Fehlermeldung erzeugt.",
+      "en": "Check that the call produces no error message."
+     },
+     "begruendung": {
+      "de": "'Läuft ohne Fehler' heißt nur: Die Maschine konnte ausführen, was dastand. Eine Funktion kann fehlerfrei das Falsche zurückgeben.",
+      "en": "'Runs without errors' only means the machine could execute what was written. A function can return the wrong thing without any error."
+     }
     }
    ]
   },
   {
    "id": "ipo-013",
    "niveau": "verstehen",
-   "frage": "Kreuzt alles an, was zur Eingabe des Kastens classify() gehört.\n(Mehrere richtige Antworten möglich.)",
+   "frage": {
+    "de": "Kreuzt alles an, was zur Eingabe des Kastens classify() gehört.\n(Mehrere richtige Antworten möglich.)",
+    "en": "Tick everything that belongs to the input of the classify() box.\n(Several answers may be correct.)"
+   },
    "typ": "mc",
    "richtig": [
     "b"
@@ -393,23 +720,47 @@
    "optionen": [
     {
      "kennung": "a",
-     "text": "Die erkannte Farbe, zum Beispiel 'red'.",
-     "begruendung": "Das ist die Ausgabe: Die Farbe ist das Ergebnis der Entscheidung, nicht ihr Ausgangsmaterial."
+     "text": {
+      "de": "Die erkannte Farbe, zum Beispiel 'red'.",
+      "en": "The recognised colour, for example 'red'."
+     },
+     "begruendung": {
+      "de": "Das ist die Ausgabe: Die Farbe ist das Ergebnis der Entscheidung, nicht ihr Ausgangsmaterial.",
+      "en": "That is the output: the colour is the result of the decision, not its raw material."
+     }
     },
     {
      "kennung": "b",
-     "text": "Die vier Messwerte des Sensors.",
-     "begruendung": "Richtig, und zwar als einziges: Die vier Zahlen sind alles, was der Kasten hineinbekommt."
+     "text": {
+      "de": "Die vier Messwerte des Sensors.",
+      "en": "The four sensor readings."
+     },
+     "begruendung": {
+      "de": "Richtig, und zwar als einziges: Die vier Zahlen sind alles, was der Kasten hineinbekommt.",
+      "en": "Correct, and it is the only one: the four numbers are all the box receives."
+     }
     },
     {
      "kennung": "c",
-     "text": "Der Quelltext von classify().",
-     "begruendung": "Der Quelltext ist die Verarbeitung selbst, das Innere des Kastens, keine Eingabe."
+     "text": {
+      "de": "Der Quelltext von classify().",
+      "en": "The source code of classify()."
+     },
+     "begruendung": {
+      "de": "Der Quelltext ist die Verarbeitung selbst, das Innere des Kastens, keine Eingabe.",
+      "en": "The source code is the processing itself, the inside of the box, not an input."
+     }
     },
     {
      "kennung": "d",
-     "text": "Die Farbe, wie ein Mensch sie durch die Blende sieht.",
-     "begruendung": "Was Menschen sehen, erreicht den Kasten nie. Er bekommt nur die Darstellung, die der Sensor liefert: Zahlen."
+     "text": {
+      "de": "Die Farbe, wie ein Mensch sie durch die Blende sieht.",
+      "en": "The colour as a human sees it through the aperture."
+     },
+     "begruendung": {
+      "de": "Was Menschen sehen, erreicht den Kasten nie. Er bekommt nur die Darstellung, die der Sensor liefert: Zahlen.",
+      "en": "What humans see never reaches the box. It only gets the representation the sensor delivers: numbers."
+     }
     }
    ]
   }
