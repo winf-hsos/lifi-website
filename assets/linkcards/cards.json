@@ -85,9 +85,16 @@
   },
   "https://winf-hsos.github.io/lifi-concept-demos/ipo-test-lab/": {
     "url": "https://winf-hsos.github.io/lifi-concept-demos/ipo-test-lab/",
-    "title": "",
-    "description": "",
-    "site": "winf-hsos.github.io",
-    "image": ""
+    "title": "the ipo test lab",
+    "description": "change sensor values and the classification rule, compare actual with expected output, and watch the test pass or fail.",
+    "site": "LiFi Project · concept demos",
+    "image": "890b89bd8ba9.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/",
+    "title": "the noisy sensor",
+    "description": "One reading is a draw. A series reveals the distribution.",
+    "site": "LiFi Project · concept demos",
+    "image": "7896a11a80c6.png"
   }
 }

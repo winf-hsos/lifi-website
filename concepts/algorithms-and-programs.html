@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.3">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Algorithmen und Programme – LiFi Project</title>
+<title>Algorithms and Programs – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../concepts/logic-and-arithmetic.html" rel="next">
-<link href="../concepts/throughput-and-limits.html" rel="prev">
+<link href="../concepts/measurement-and-experiments.html" rel="next">
+<link href="../concepts/input-processing-output.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -62,17 +62,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -92,16 +92,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
         <div class="quarto-navbar-tools tools-end">
 </div>
-          <div id="quarto-search" class="" title="Suchen"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/algorithms-and-programs.html">Processing Information</a></li><li class="breadcrumb-item"><a href="../concepts/algorithms-and-programs.html">Algorithmen und Programme</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/algorithms-and-programs.html">Algorithms and Programs</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">LiFi Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -223,13 +223,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Solving Problems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/problem-decomposition.html" class="sidebar-item-text sidebar-link">
@@ -244,8 +244,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Algorithms and Programs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Messen und Experimentieren</span></a>
+ <span class="menu-text">Measuring and Experimenting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -260,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -295,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -318,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Transferring Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -363,19 +369,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Processing Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Algorithmen und Programme</span></a>
-  </div>
-</li>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
@@ -417,30 +417,30 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  <li><a href="#the-four-building-blocks" id="toc-the-four-building-blocks" class="nav-link" data-scroll-target="#the-four-building-blocks">The four building blocks</a></li>
+  <li><a href="#when-does-it-end" id="toc-when-does-it-end" class="nav-link" data-scroll-target="#when-does-it-end">When does it end?</a></li>
+  <li><a href="#correct-is-the-minimum" id="toc-correct-is-the-minimum" class="nav-link" data-scroll-target="#correct-is-the-minimum">Correct is the minimum</a></li>
+  <li><a href="#the-error-message-is-information" id="toc-the-error-message-is-information" class="nav-link" data-scroll-target="#the-error-message-is-information">The error message is information</a></li>
+  <li><a href="#working-with-the-assistant" id="toc-working-with-the-assistant" class="nav-link" data-scroll-target="#working-with-the-assistant">Working with the assistant</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a>
-  <ul class="collapse">
-  <li><a href="#wann-endet-das" id="toc-wann-endet-das" class="nav-link" data-scroll-target="#wann-endet-das">Wann endet das?</a></li>
-  <li><a href="#richtig-ist-die-mindestanforderung" id="toc-richtig-ist-die-mindestanforderung" class="nav-link" data-scroll-target="#richtig-ist-die-mindestanforderung">Richtig ist die Mindestanforderung</a></li>
-  </ul></li>
-  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
-  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/algorithms-and-programs.html">Processing Information</a></li><li class="breadcrumb-item"><a href="../concepts/algorithms-and-programs.html">Algorithmen und Programme</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/algorithms-and-programs.html">Algorithms and Programs</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Algorithmen und Programme</h1>
+<h1 class="title">Algorithms and Programs</h1>
 </div>
 
 
@@ -457,87 +457,143 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="zusammenfassung" class="level2">
-<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
-<p>Ein Algorithmus beschreibt eine eindeutige Schrittfolge zur Lösung einer Aufgabe. Ein Programm schreibt diese Schrittfolge so vollständig auf, dass eine Maschine sie ausführen kann. Die Maschine ergänzt nichts und arbeitet genau in der festgelegten Reihenfolge.</p>
-<section id="fragen-um-die-es-geht" class="level3">
-<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>An algorithm is a sequence of steps described so precisely that someone can carry it out without understanding what it is for. A program is that same sequence, written down completely enough for a machine to run it. The machine adds nothing and works in exactly the order you wrote.</p>
+<p>In this chapter, we address the following questions:</p>
 <ul>
-<li>Was macht aus einer Beschreibung einen Algorithmus?</li>
-<li>Wo verläuft die Grenze zwischen einem Verfahren und einem ausführbaren Programm?</li>
-<li>Aus welchen Bausteinen besteht jedes Programm?</li>
-<li>Warum tut ein Programm nicht das, was gemeint war, sondern das, was dasteht?</li>
-<li>Warum endet ein Algorithmus manchmal nicht?</li>
-<li>Warum kann eine Lösung richtig und trotzdem unbrauchbar sein?</li>
-<li>Wie vergleiche ich zwei Lösungen für dasselbe Problem?</li>
+<li>What turns a description into an algorithm?</li>
+<li>Where is the line between a procedure and a program a machine can run?</li>
+<li>Which building blocks does every program consist of?</li>
+<li>Why does a program not do what you meant, but what you wrote?</li>
+<li>Why does an algorithm sometimes never end?</li>
+<li>Why can a solution be correct and still be useless?</li>
+<li>How do you compare two solutions to the same problem?</li>
 </ul>
-<p>Dieses Konzept beginnt schon in <a href="../challenges/challenge-0.html">Challenge 0</a>, wenn ihr die ersten eigenen Zeilen schreibt. Richtig gebraucht wird es ab <a href="../challenges/challenge-1.html">Challenge 1</a> und <a href="../challenges/challenge-2.html">Challenge 2</a>, danach begleitet es euch durchgehend.</p>
+<p>This concept starts in <a href="../challenges/challenge-0.html">Challenge 0</a>, with your first lines of code. You need it properly from <a href="../challenges/challenge-1.html">Challenge 1</a> and <a href="../challenges/challenge-2.html">Challenge 2</a> onwards, and it stays with you after that.</p>
 </section>
-</section>
-<section id="erläuterung-des-konzepts" class="level2">
-<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>In <a href="../concepts/input-processing-output.html">Problem Solving with Computers</a> blieb offen, wie der Kasten seine Arbeit eigentlich tut. Hier kommt die Antwort, in zwei Stufen: erst der Algorithmus, dann das Programm.</p>
-<p>Ein Algorithmus ist eine Schrittfolge, die so genau beschrieben ist, dass keine Frage offen bleibt. Wer sie ausführt, muss nicht verstehen, worum es geht. Darin liegt der Unterschied zum Zerlegen: Zerlegen sagt, aus welchen Teilen eine Aufgabe besteht, ein Algorithmus löst einen dieser Teile.</p>
-<p>Ein Algorithmus ist noch kein Programm. Er kann auf einem Zettel stehen, und ein Mensch kann ihn ausführen. Ein Programm ist derselbe Ablauf, aber so aufgeschrieben, dass eine Maschine ihn abarbeiten kann. Dabei kommt etwas dazu, das die Zettelfassung nicht braucht: Es muss vollständig sein. Ein Mensch ergänzt beim Lesen, was offensichtlich gemeint war. Eine Maschine tut das nicht. Sie führt aus, was dasteht, in der Reihenfolge, in der es dasteht, und nichts sonst.</p>
-<p>Genau daraus entstehen fast alle Fehler, die euch in diesem Semester begegnen. Nicht daraus, dass etwas kaputt ist, sondern daraus, dass etwas anderes dasteht als gemeint war.</p>
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
+<p><a href="../concepts/input-processing-output.html">Problem Solving with Computers</a> left one question open: how does the box actually do its work? Here is the answer, in two steps. First the algorithm, then the program.</p>
+<p>You have already run one. In the first session you were the receiver: look at the card, decide which colour it is, write down the matching symbol, wait for the next one. Four lines, and you followed them without knowing what the message would say. That is what an algorithm is: a sequence of steps described so precisely that no question is left open, and whoever carries it out does not need to understand the purpose. That is also the difference from cutting problems. Cutting says which parts a task has; an algorithm solves one of those parts.</p>
+<p>An algorithm is not yet a program. It can live on a piece of paper, and a person can run it. A program is the same sequence, written so that a machine can work through it, and that adds one requirement the paper version never had: it must be complete. A person fills in what was obviously meant. A machine does not. It runs what is written, in the order it is written, and nothing else.</p>
+<p>Almost every error you will meet this semester comes from that gap. Not from something being broken, but from something else being written than was meant.</p>
 <div id="fig-instruction-follower" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-instruction-follower-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/instruction-follower.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;1: Ein Programm ist eine Liste. Sie wird Zeile für Zeile abgearbeitet, von oben nach unten, und jede Zeile verändert etwas: Die LED wird rot, bleibt eine Sekunde rot, wird blau."><img src="../assets/diagrams/instruction-follower.svg" class="img-fluid figure-img" style="width:75.0%"></a>
+<a href="../assets/diagrams/instruction-follower.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: A program is a list. It is worked through line by line, top to bottom, and every line changes something: the LED turns red, stays red for a second, turns blue."><img src="../assets/diagrams/instruction-follower.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-instruction-follower-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1: Ein Programm ist eine Liste. Sie wird Zeile für Zeile abgearbeitet, von oben nach unten, und jede Zeile verändert etwas: Die LED wird rot, bleibt eine Sekunde rot, wird blau.
+Figure&nbsp;1: A program is a list. It is worked through line by line, top to bottom, and every line changes something: the LED turns red, stays red for a second, turns blue.
 </figcaption>
 </figure>
 </div>
-<p>Dass die Maschine wörtlich nimmt, was dasteht, heißt auch: Sie wartet nur, wenn es dasteht. Die beiden Programme unten sind beide richtig. Links bleibt Rot eine Sekunde sichtbar. Rechts lebt Rot eine Millisekunde, viel zu kurz für ein Auge. Das Programm ist nicht kaputt, es ist zu schnell.</p>
+<p>A single line has three parts. The first says which thing you are talking to, the second says what it should do, and the third says with which values. Change the values and you change the result, without touching the instruction itself.</p>
+<div id="fig-one-line" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-one-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/one-line.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: One line, taken apart: which thing, what to do with it, and with which values."><img src="../assets/diagrams/one-line.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-one-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: One line, taken apart: which thing, what to do with it, and with which values.
+</figcaption>
+</figure>
+</div>
+<section id="the-four-building-blocks" class="level3">
+<h3 class="anchored" data-anchor-id="the-four-building-blocks">The four building blocks</h3>
+<p>Every program in the world is built from four blocks, and you can see all four on one LED. Instructions <strong>one after another</strong>. A <strong>value with a name</strong>, so that a number you use in several places has exactly one place to change it. <strong>Repetition</strong>, so the same lines run again with the next value. And a <strong>condition</strong>, so a program can react instead of always doing the same.</p>
+<p>Because the machine takes you literally, it also waits only when you tell it to. Both programs below are correct. On the left, red stays visible for a second. On the right, red lives for about a millisecond, far too short for an eye, and you only ever see blue. The program is not broken. It is too fast for you.</p>
 <div id="fig-sequence-and-time" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sequence-and-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/sequence-and-time.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;2: Zwei richtige Programme im selben Zeitfenster von zwei Sekunden. Der einzige Unterschied ist die Zeile wait(1)."><img src="../assets/diagrams/sequence-and-time.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/sequence-and-time.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Two correct programs in the same two-second window. The only difference is the line that waits."><img src="../assets/diagrams/sequence-and-time.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sequence-and-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;2: Zwei richtige Programme im selben Zeitfenster von zwei Sekunden. Der einzige Unterschied ist die Zeile <code>wait(1)</code>.
+Figure&nbsp;3: Two correct programs in the same two-second window. The only difference is the line that waits.
 </figcaption>
 </figure>
 </div>
-<p>Und eine Schleife ist keine Magie, sondern eine Schreibweise: Dieselben Zeilen laufen mehrmals, mit jeweils dem nächsten Wert aus der Liste, ein Durchlauf nach dem anderen. Auch das kostet Zeit, vier Durchläufe mit einer Sekunde Pause sind vier Sekunden.</p>
+<p>The order is part of the program too. Move the pause to the end and the machine switches red, switches blue immediately, and then waits a second with a blue LED. No line is missing, and it is still a different program.</p>
+<div id="fig-order-matters" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-order-matters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/order-matters.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The same three lines, once with the pause in the middle and once at the end."><img src="../assets/diagrams/order-matters.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-order-matters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: The same three lines, once with the pause in the middle and once at the end.
+</figcaption>
+</figure>
+</div>
+<p>A loop is not magic either, it is a way of writing. The same lines run several times, each time with the next value from a list, one pass after another. That costs time as well: four passes with a one-second pause are four seconds.</p>
 <div id="fig-repetition" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-repetition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/repetition.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Abbildung&nbsp;3: Eine Schleife, gegen die Zeit ausgerollt: dieselben zwei Zeilen, viermal ausgeführt, ein Wert und eine Sekunde je Durchlauf."><img src="../assets/diagrams/repetition.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/repetition.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: A loop rolled out against time: the same two lines, run four times, one value and one second per pass."><img src="../assets/diagrams/repetition.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-repetition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;3: Eine Schleife, gegen die Zeit ausgerollt: dieselben zwei Zeilen, viermal ausgeführt, ein Wert und eine Sekunde je Durchlauf.
+Figure&nbsp;5: A loop rolled out against time: the same two lines, run four times, one value and one second per pass.
 </figcaption>
 </figure>
 </div>
-<section id="wann-endet-das" class="level3">
-<h3 class="anchored" data-anchor-id="wann-endet-das">Wann endet das?</h3>
-<p>Ein Ablauf endet nur, wenn sein Ende erreichbar ist. Eine Schleife wie <code>while True:</code> ohne Ausweg im Rumpf endet nie: Die Maschine merkt nicht, „dass nichts Neues passiert”, sie führt aus, was dasteht, für immer. Das ist nicht automatisch ein Fehler. Fürs Dauerblinken ist die Endlosschleife genau richtig, und auch euer Empfänger wird im Kern eine lange laufende Schleife sein; die braucht dann aber eine Abbruchbedingung. Wenn in der Werkstatt „mein Programm hängt” fällt, heißt das fast immer: Die Schleife hat keinen erreichbaren Ausweg.</p>
 </section>
-<section id="richtig-ist-die-mindestanforderung" class="level3">
-<h3 class="anchored" data-anchor-id="richtig-ist-die-mindestanforderung">Richtig ist die Mindestanforderung</h3>
-<p>Zwei Verfahren können beide korrekt sein und sich trotzdem dramatisch unterscheiden. Beim Zahlenraten aus <a href="../concepts/problem-decomposition.html">Probleme zerlegen</a> führen beide Wege sicher zum Ziel: alle Zahlen einzeln durchfragen (bis zu 99 Fragen) oder den Bereich halbieren (höchstens 7). Eine Lösung kann also richtig und trotzdem unbrauchbar sein, und Verfahren vergleicht man deshalb über ihren <strong>Aufwand</strong>: Wie viele Schritte, wie viel Zeit, wie viele Messungen braucht es? Für eure Übertragung wird daraus ganz konkret die Frage, wie viele Sekunden eine Datei unterwegs ist.</p>
+<section id="when-does-it-end" class="level3">
+<h3 class="anchored" data-anchor-id="when-does-it-end">When does it end?</h3>
+<p>A run ends only when its end is reachable. A loop whose condition is always true and whose body has no way out never ends. The machine does not notice that “nothing new is happening”; it runs what is written, forever. That is not automatically a mistake. For a blinking light the endless loop is exactly right, and your receiver will be a long-running loop at heart too. That one then needs a way out. When someone in the workshop says “my program hangs”, it almost always means the loop has no reachable exit.</p>
+</section>
+<section id="correct-is-the-minimum" class="level3">
+<h3 class="anchored" data-anchor-id="correct-is-the-minimum">Correct is the minimum</h3>
+<p>Two procedures can both be correct and still be worlds apart. Take the number guessing game from <a href="../concepts/problem-decomposition.html">Cutting Problems</a>: asking for every number one by one gets there, and so does halving the range. Both are correct. One of them asks up to 99 questions where the other needs seven, and with a thousand numbers it is 999 against ten.</p>
+<div id="fig-cost-of-an-algorithm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cost-of-an-algorithm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/cost-of-an-algorithm.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Two correct procedures, one difference: how the cost grows with the size of the problem."><img src="../assets/diagrams/cost-of-an-algorithm.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cost-of-an-algorithm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Two correct procedures, one difference: how the cost grows with the size of the problem.
+</figcaption>
+</figure>
+</div>
+<p>So a solution can be correct and still be useless, and that is why procedures are compared by their <strong>cost</strong>: how many steps, how much time, how many measurements does it take, and how does that grow when the problem grows? For your transmission this becomes a concrete question: how many seconds is a file on its way?</p>
+</section>
+<section id="the-error-message-is-information" class="level3">
+<h3 class="anchored" data-anchor-id="the-error-message-is-information">The error message is information</h3>
+<p>Sooner or later a red block of text appears instead of a running program. It looks threatening and it is in fact a precise report: which file, which line, what stands there, and what exactly does not exist.</p>
+<div id="fig-error-message" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-error-message-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/error-message.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: A traceback, read line by line. The last line names the actual problem: a method that does not exist, because the name was spelled with a u."><img src="../assets/diagrams/error-message.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-error-message-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: A traceback, read line by line. The last line names the actual problem: a method that does not exist, because the name was spelled with a u.
+</figcaption>
+</figure>
+</div>
+<p>The machine did not fail. It did what was written and tells you exactly where it got stuck. Read the message out loud; most of the time it says literally what is wrong. And it is information about the program, not a verdict about you.</p>
+</section>
+<section id="working-with-the-assistant" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-the-assistant">Working with the assistant</h3>
+<p>Asking “write me a program for the LED” gets you code. Asking “the LED should be red for three seconds, then blue, and explain each line before you write it” gets you code and understanding. The difference is that you said what should come out, which is also the test.</p>
+<p>One rule holds this together: never keep code you cannot change. Every hand-over ends with a small change you make yourself, another colour, another waiting time. If you cannot make that change, you did not take the code over. You copied it.</p>
 </section>
 </section>
-<section id="folien" class="level2">
-<h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<p>Die Folien aus dem Input, zum Nachsehen:</p>
-<div class="folien-viewer" data-quelle="../assets/slides/algorithms-and-programs"></div>
-<p class="folien-links">
-  Blättern mit den Pfeiltasten oder per Klick auf die Folie ·
-  <a href="../assets/slides/algorithms-and-programs.pdf" download="">als PDF herunterladen</a>
-</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
+<div class="deck-embed">
+  <iframe src="../assets/decks/algorithms-and-programs/index.html?bar=1&amp;pdf=../algorithms-and-programs.pdf" title="what is a program?" allowfullscreen="" loading="lazy"></iframe>
+</div>
 </section>
-<section id="fragen-üben" class="level2">
-<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Hier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.</p>
-<div class="fragen-quiz" data-quelle="../assets/questions/algorithms-and-programs.json"></div>
+<section id="practice-questions" class="level2">
+<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
+<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/algorithms-and-programs.json"></div>
 </section>
-<section id="literatur" class="level2">
-<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
-<!-- TODO: weiterführende Literatur ergänzen -->
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li>Donald Knuth: The Art of Computer Programming, Volume 1. 3rd edition, Addison-Wesley 1997. The opening chapter defines what an algorithm is, and the five properties it names (finiteness, definiteness, input, output, effectiveness) are exactly the demands this page makes on your first programs.</li>
+<li>Brian Kernighan: Understanding the Digital World. 2nd edition, Princeton University Press 2021. Chapters 4 and 5 walk from an algorithm to a running program without assuming any programming experience, and they explain why the same correct idea can be fast or hopelessly slow.</li>
+</ul>
 
 
 </section>
@@ -871,12 +927,12 @@ Abbildung&nbsp;3: Eine Schleife, gegen die Zeit ausgerollt: dieselben zwei Zeile
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1253,13 +1309,13 @@ Abbildung&nbsp;3: Eine Schleife, gegen die Zeit ausgerollt: dieselben zwei Zeile
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../concepts/throughput-and-limits.html" class="pagination-link" aria-label="Durchsatz und Grenzen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Durchsatz und Grenzen</span>
+      <a href="../concepts/input-processing-output.html" class="pagination-link" aria-label="Problem Solving with Computers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Solving with Computers</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../concepts/logic-and-arithmetic.html" class="pagination-link" aria-label="Logic and Arithmetic">
-        <span class="nav-page-text">Logic and Arithmetic</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../concepts/measurement-and-experiments.html" class="pagination-link" aria-label="Measuring and Experimenting">
+        <span class="nav-page-text">Measuring and Experimenting</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

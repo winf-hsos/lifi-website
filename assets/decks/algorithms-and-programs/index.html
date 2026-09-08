@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>what is a program?</title>
+  <link rel="stylesheet" href="theme.css?v=4">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=4">
+  <style>
+    /* deck-specific helpers, colours only from the theme */
+    .caption { position: absolute; left: var(--margin); bottom: calc(var(--margin) * 1.05); font-size: var(--small); color: var(--gray); }
+    .slide.has-punch .caption { bottom: calc(var(--margin) * 1.75); }
+    .steps { font-size: var(--normal); color: var(--gray-light); line-height: 1.6; }
+    .steps .n { display: inline-block; width: 2em; color: var(--gray); font-family: var(--mono); }
+    .steps .hot { color: var(--white); }
+    .drawing svg { width: 100%; height: auto; }   /* Zeichnung in einer Spalte statt in .figure */
+  </style>
+</head>
+<body>
+<div class="deck" data-title="what is a program?"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["last week", "the instruction follower", "four building blocks", "it does what is written", "working with the assistant"]'>
+
+  <section class="slide title"></section>
+  <section class="slide agenda"></section>
+
+  <!-- ===== part 1: last week ===== -->
+  <section class="slide part" data-part="last week">
+    <aside class="notes">Der IPO-Teil davor hat eine Frage offen gelassen: Wie verrichtet der Kasten seine Arbeit? Die Antwort kommt in zwei Stufen, und die erste kennt ihr schon.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/pianola.png" alt="">
+    <div class="photo-text">who is playing?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Ein Klavier spielt, die Tasten bewegen sich, die Bank ist leer. Solche selbstspielenden Klaviere standen um 1900 in vielen Salons. Der Spieler ist die Papierrolle über der Tastatur: Jedes gestanzte Loch bedeutet „drücke jetzt diese Taste“. Das Klavier versteht nichts von Musik, es führt nur aus. Der eigentliche Pianist ist der Mensch, der die Rolle gestanzt hat, vielleicht Jahrzehnte vorher. Die Rolle ist das Programm, das Klavier die Maschine, der Stanzer der Programmierer.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">last week, you were the receiver.</div>
+      <div class="steps" style="margin-top: 0.6em">
+        <div>look at the card.</div>
+        <div>decide which colour it is.</div>
+        <div>write down the matching symbol.</div>
+        <div>wait for the next one.</div>
+      </div>
+    </div>
+    <aside class="notes">In der ersten Sitzung habt ihr im Farbkarten-Experiment selbst empfangen: auf die Karte schauen, entscheiden, welche Farbe es ist, das passende Zeichen notieren, auf die nächste warten.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">that was an algorithm.<br>you were the machine.</div>
+      <div class="sidenote">steps so precise you could follow them without understanding a thing.</div>
+    </div>
+    <aside class="notes">Jetzt bekommt das Kind seinen Namen: Eine Schrittfolge, die so genau beschrieben ist, dass man sie ausführen kann, ohne zu verstehen, worum es geht, heißt Algorithmus. Er braucht keinen Computer, er kann auf einem Zettel stehen, und genau so habt ihr ihn abgearbeitet.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>four lines, one of them hard</h2>
+    <div class="content">
+      <div class="steps">
+        <div class="dim">look at the card.</div>
+        <div class="hot">decide which colour it is.</div>
+        <div class="dim">write down the matching symbol.</div>
+        <div class="dim">wait for the next one.</div>
+      </div>
+    </div>
+    <div class="punch">one of these four will take you three weeks to hand over.</div>
+    <aside class="notes">Dieselben vier Zeilen noch einmal. Drei davon übernimmt ab heute Stück für Stück der Rechner. Die zweite, das Entscheiden, ist Challenge 1 und wird euch drei Wochen beschäftigen.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>one more algorithm, live</h2>
+    <div class="content">
+      <div class="steps">
+        <div><span class="n">1</span>stand in a row.</div>
+        <div><span class="n">2</span>look at your right neighbour.</div>
+        <div><span class="n">3</span>if they are shorter than you, swap.</div>
+        <div><span class="n">4</span>at the end of the row, start again.</div>
+        <div><span class="n">5</span>a full pass without a swap: done.</div>
+      </div>
+    </div>
+    <aside class="notes">Live-Moment: Sechs Freiwillige stellen sich unsortiert in eine Reihe und führen strikt diese Regeln aus. Kein Nachdenken, nur Ausführen. Nach zwei, drei Minuten steht die Reihe der Größe nach. Zwei Beobachtungen für später: Woran hat der Ablauf sein Ende erkannt? Und wie viele Vergleiche waren das bei sechs Personen, was wäre es bei vierzig?</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <div class="content">
+      <div class="statement">you just ran bubble sort.<br>computers sort like this, only faster.</div>
+    </div>
+    <div class="punch">it ended because a full pass had no swap left. remember that.</div>
+    <aside class="notes">Das Verfahren heißt Bubble Sort, und so sortieren auch Computer, nur schneller. Das Ende hat der Ablauf selbst erkannt: ein vollständiger Durchlauf ohne Tausch. Das ist eine Terminierungsbedingung, sie kommt in Teil 3 wieder.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">a program is an algorithm<br>written for a machine.</div>
+      <div class="sidenote">and it must be complete: the machine adds nothing.</div>
+    </div>
+    <aside class="notes">Beim Übergang vom Zettel zur Maschine kommt eine Anforderung dazu, die der Zettel nicht hatte: Vollständigkeit. Ein Mensch ergänzt beim Lesen, was offensichtlich gemeint war. Die Maschine ergänzt nichts.</aside>
+  </section>
+
+  <!-- ===== part 2: the instruction follower ===== -->
+  <section class="slide part" data-part="the instruction follower">
+    <aside class="notes">Was folgt der Liste eigentlich, und wie sieht eine einzelne Zeile aus?</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">a program is a list of instructions.<br>something follows that list.<br>exactly, and in order.</div>
+    </div>
+    <aside class="notes">Mehr Magie ist nicht im Spiel. Eine Liste, und etwas, das sie abarbeitet, Zeile für Zeile, von oben nach unten.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the list at work</h2>
+    <div class="figure" id="fig-list"></div>
+    <div class="punch">one line at a time, top to bottom. every line changes what you see.</div>
+    <aside class="notes">Drei Zeilen von oben nach unten: Die erste macht die LED rot, die zweite lässt sie eine Sekunde rot, die dritte macht sie blau. Jede Zeile verändert etwas Sichtbares. Und die Maschine weiß dabei nicht, was gemeint war: Sie führt aus, was dasteht, in der Reihenfolge, in der es dasteht, und nichts sonst. Aus genau diesem Unterschied entstehen fast alle Fehler dieses Semesters.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawAnatomy" data-on-step="drawAnatomy">
+    <h2>one line</h2>
+    <div class="figure" id="fig-anatomy"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span>
+    <aside class="notes">Eine Zeile besteht aus drei Teilen. Schritt 1: „led“ sagt, welches Ding angesprochen wird. Schritt 2: „set_color“ sagt, was es tun soll. Schritt 3: die Klammer sagt, mit welchen Werten, hier voller Rotanteil, kein Grün, kein Blau. Dieselbe Anweisung mit anderen Werten ergibt ein anderes Ergebnis.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>same instruction, different values</h2>
+    <div class="content">
+      <div class="code">led.set_color(255, 0, 0)
+led.set_color(0, 0, 255)</div>
+    </div>
+    <div class="punch">same instruction, different values, different result.</div>
+    <aside class="notes">Zweimal dieselbe Anweisung, nur andere Werte: einmal rot, einmal blau. Der Name der Anweisung sagt, was passiert; die Werte sagen, wie stark.</aside>
+  </section>
+
+  <!-- ===== part 3: four building blocks ===== -->
+  <section class="slide part" data-part="four building blocks">
+    <aside class="notes">Jedes Programm dieser Welt besteht aus vier Bausteinen. Alle vier seht ihr gleich an der LED.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>1 · one after another</h2>
+    <div class="content">
+      <div class="code">led.set_color(255, 0, 0)
+wait(1)
+led.set_color(0, 0, 255)</div>
+      <div class="sidenote">two lines swapped is a different program.</div>
+    </div>
+    <aside class="notes">Der erste Baustein: Anweisungen laufen der Reihe nach. Die Reihenfolge ist Teil des Programms, nicht nur eine Schreibweise.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>with a pause, and without</h2>
+    <div class="figure" id="fig-pause"></div>
+    <div class="punch">the program is not broken. it is too fast for your eyes.</div>
+    <aside class="notes">Beide Programme sind richtig. Mit „wait(1)“ bleibt Rot eine Sekunde sichtbar. Ohne Pause lebt Rot etwa eine Millisekunde, viel zu kurz für ein Auge, und ihr seht nur Blau. Eure Augen sind langsam, die Maschine ist es nicht.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>pause in the middle, or at the end</h2>
+    <div class="figure" id="fig-order"></div>
+    <div class="punch">no line is missing. it is still a different program.</div>
+    <aside class="notes">Dieselben drei Zeilen, nur das „wait(1)“ ans Ende gerückt: Die Maschine schaltet Rot, schaltet sofort Blau und wartet dann eine Sekunde, mit blauer LED. Die Maschine ordnet nicht um, was gemeint war, sie führt aus, was wo steht.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>2 · a value with a name</h2>
+    <div class="content">
+      <div class="code">bright = 255
+led.set_color(bright, 0, 0)
+wait(1)
+led.set_color(bright, 0, 0)</div>
+    </div>
+    <div class="punch">one place to change instead of three.</div>
+    <aside class="notes">Der zweite Baustein gibt einem Wert einen Namen, den man danach überall benutzt. Der Gewinn ist nicht die Kürze, sondern die eine Stelle zum Ändern.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>3 · again</h2>
+    <div class="content">
+      <div class="code">colours = [red, green, blue, yellow]
+
+for colour in colours:
+    led.set_color(colour)
+    wait(1)</div>
+    </div>
+    <aside class="notes">Der dritte Baustein ist die Wiederholung. Eine Schleife ist keine Magie, sondern eine Schreibweise: Dieselben zwei Zeilen laufen viermal, mit jeweils dem nächsten Wert aus der Liste.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the loop you write, and what actually happens</h2>
+    <div class="two">
+      <div>
+        <div class="header">the loop you write</div>
+        <div class="code">colours = [red, green,
+           blue, yellow]
+
+for colour in colours:
+    led.set_color(colour)
+    wait(1)</div>
+      </div>
+      <div>
+        <div class="header">what actually happens</div>
+        <div class="drawing" id="fig-loop"></div>
+      </div>
+    </div>
+    <div class="punch">the same two lines, four times, one value and one second per pass.</div>
+    <aside class="notes">Links, was ihr schreibt, rechts, was daraus wird: vier Durchläufe, je ein Wert und je eine Sekunde, zusammen vier Sekunden.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>4 · only if</h2>
+    <div class="content">
+      <div class="code">for colour in colours:
+    led.set_color(colour)
+    if colour == yellow:
+        wait(3)
+    else:
+        wait(1)</div>
+      <div class="sidenote">now the run depends on something that changes along the way.</div>
+    </div>
+    <aside class="notes">Der vierte Baustein führt eine Zeile nur aus, wenn eine Bedingung zutrifft, und „else“ sagt, was sonst passiert. Damit kann ein Programm auf etwas reagieren, statt stur abzuspulen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>when does this end?</h2>
+    <div class="content">
+      <div class="code">while True:
+    led.set_color(red)
+    wait(1)
+    led.set_color(blue)
+    wait(1)</div>
+      <div class="sidenote">never: the condition is always true, and the body has no way out.</div>
+    </div>
+    <div class="punch">"my program hangs" almost always means "my loop has no way out".</div>
+    <aside class="notes">Die Terminierungsbedingung kennt ihr aus der Sortierübung, ein Durchlauf ohne Tausch. Hier fehlt sie. Fürs Dauerblinken ist die Endlosschleife sogar richtig; eine Empfänger-Hauptschleife braucht dagegen eine Abbruchbedingung.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what does it cost?</h2>
+    <div class="figure" id="fig-cost"></div>
+    <div class="punch">correct is the minimum. after that, compare how the cost grows.</div>
+    <aside class="notes">Zwei Verfahren können beide korrekt sein und trotzdem Welten trennen. Beim Zahlenraten aus Sitzung 1 führen beide sicher zum Ziel, aber eines fragt bis zu 99-mal, das andere höchstens siebenmal. Bei tausend Zahlen steht es 999 gegen 10. Für eure Übertragung wird daraus die handfeste Frage, wie viele Sekunden eine Datei unterwegs ist. Der Faden wird in Sitzung 13 wieder aufgenommen.</aside>
+  </section>
+
+  <!-- ===== part 4: it does what is written ===== -->
+  <section class="slide part" data-part="it does what is written">
+    <aside class="notes">Und jetzt der Moment, der im ersten Semester am meisten Nerven kostet: die rote Fehlermeldung.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawError" data-on-step="drawError">
+    <h2>an error message</h2>
+    <div class="figure" id="fig-error"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span>
+    <aside class="notes">Ein Traceback sieht bedrohlich aus, ist aber eine präzise Auskunft. Schritt 1: welche Datei. Schritt 2: welche Zeile und was dort stand. Schritt 3: was genau nicht existiert, hier die Schreibung „set_colour“ statt „set_color“. Die Maschine hat nicht versagt; sie hat getan, was dastand, und meldet exakt, woran sie gescheitert ist.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">an error message is information,<br>not a verdict.</div>
+      <div class="sidenote">read it out loud. most of the time it says exactly what is wrong.</div>
+    </div>
+    <aside class="notes">Eine Fehlermeldung ist Information über das Programm, keine Bewertung eurer Person. Lest sie laut vor; meistens sagt sie wortwörtlich, was falsch ist.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">now watch me get it wrong.</div>
+    </div>
+    <aside class="notes">Live-Moment: Ich baue vorn am Beamer absichtlich Fehler ein, einen nach dem anderen, und wir lesen gemeinsam, was die Meldung sagt. Tippfehler im Namen, vergessene Klammer, falsche Einrückung.</aside>
+  </section>
+
+  <!-- ===== part 5: working with the assistant ===== -->
+  <section class="slide part" data-part="working with the assistant">
+    <aside class="notes">Zum Schluss die Arbeitsteilung mit dem Assistenten, die euch durch das ganze Semester trägt.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawAsk" data-on-step="drawAsk">
+    <h2>two ways to ask</h2>
+    <div class="figure" id="fig-ask"></div>
+    <span data-step="1"></span>
+    <aside class="notes">Die erste Frage bringt euch Code, den ihr nicht versteht. Schritt 1: Die zweite bringt euch Code und Verständnis, weil sie sagt, was herauskommen soll, und die Erklärung gleich mitbestellt.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <div class="content">
+      <div class="statement">never keep code<br>you cannot change.</div>
+      <div class="sidenote">every hand-over ends with a small change: another colour, another waiting time.</div>
+    </div>
+    <div class="punch">if you cannot change it, you did not take it over. you copied it.</div>
+    <aside class="notes">Jede Übernahme endet mit einer kleinen Änderung durch euch selbst: eine Farbe tauschen, eine Wartezeit anpassen. Wer das nicht kann, hat den Code nicht übernommen, sondern nur kopiert.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>today</h2>
+    <div class="content">
+      <div class="steps">
+        <div><span class="n">1</span>one colour, on.</div>
+        <div><span class="n">2</span>four colours, in a loop.</div>
+        <div><span class="n">3</span>blinking, and you can change how fast.</div>
+      </div>
+      <div class="sidenote">number 3 is the real one: the speed must change in one place, without digging through the code.</div>
+    </div>
+    <aside class="notes">Der Werkstattauftrag. Nummer drei ist die eigentliche Aufgabe: Die Geschwindigkeit muss sich an genau einer Stelle ändern lassen, also Baustein 2 benutzen.</aside>
+  </section>
+
+</div>
+<script src="../stagekit/draw.js?v=4"></script>
+<script src="deck.js?v=4"></script>
+<script src="../stagekit/stagekit.js?v=4"></script>
+</body>
+</html>

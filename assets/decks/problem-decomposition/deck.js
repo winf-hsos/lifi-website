@@ -91,8 +91,8 @@ function drawMap() {
   const qy = 70;
   parts.push(d.label(W / 2, qy, "how can we solve complex problems\nwith computers?",
     { size: 48, color: c.white, anchor: "middle", lineHeight: 1.25 }));
-  parts.push(d.label(W / 2, qy + 130, "the skills for it:  cutting problems · input, processing, output · measuring · thinking in layers",
-    { size: 32, color: c.gray, anchor: "middle" }));
+  parts.push(d.label(W / 2, qy + 120, "the skills for it:  cutting problems · input, processing, output\nalgorithms and programs · measuring · thinking in layers",
+    { size: 32, color: c.gray, anchor: "middle", lineHeight: 1.35 }));
 
   const cols = [
     { q: "how do computers\nrepresent information?", ex: "colours into symbols,\nletters into bits" },

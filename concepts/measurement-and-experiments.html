@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.3">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Messen und Experimentieren – LiFi Project</title>
+<title>Measuring and Experimenting – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../concepts/abstraction-and-layers.html" rel="next">
-<link href="../concepts/input-processing-output.html" rel="prev">
+<link href="../concepts/algorithms-and-programs.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -62,17 +62,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -92,16 +92,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
         <div class="quarto-navbar-tools tools-end">
 </div>
-          <div id="quarto-search" class="" title="Suchen"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/measurement-and-experiments.html">Messen und Experimentieren</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/measurement-and-experiments.html">Measuring and Experimenting</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">LiFi Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -225,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Solving Problems</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -244,8 +244,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Algorithms and Programs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../concepts/measurement-and-experiments.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Messen und Experimentieren</span></a>
+ <span class="menu-text">Measuring and Experimenting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -260,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -295,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -318,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Transferring Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -365,17 +371,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Processing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/algorithms-and-programs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Algorithmen und Programme</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/logic-and-arithmetic.html" class="sidebar-item-text sidebar-link">
@@ -417,32 +417,29 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  <li><a href="#what-the-sensor-actually-delivers" id="toc-what-the-sensor-actually-delivers" class="nav-link" data-scroll-target="#what-the-sensor-actually-delivers">What the sensor actually delivers</a></li>
+  <li><a href="#one-reading-is-a-draw" id="toc-one-reading-is-a-draw" class="nav-link" data-scroll-target="#one-reading-is-a-draw">One reading is a draw</a></li>
+  <li><a href="#the-trade-off-integration-time" id="toc-the-trade-off-integration-time" class="nav-link" data-scroll-target="#the-trade-off-integration-time">The trade-off: integration time</a></li>
+  <li><a href="#measuring-on-purpose" id="toc-measuring-on-purpose" class="nav-link" data-scroll-target="#measuring-on-purpose">Measuring on purpose</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a>
-  <ul class="collapse">
-  <li><a href="#was-der-sensor-wirklich-liefert" id="toc-was-der-sensor-wirklich-liefert" class="nav-link" data-scroll-target="#was-der-sensor-wirklich-liefert">Was der Sensor wirklich liefert</a></li>
-  <li><a href="#eine-ablesung-ist-ein-wurf" id="toc-eine-ablesung-ist-ein-wurf" class="nav-link" data-scroll-target="#eine-ablesung-ist-ein-wurf">Eine Ablesung ist ein Wurf</a></li>
-  <li><a href="#der-zielkonflikt-integrationszeit" id="toc-der-zielkonflikt-integrationszeit" class="nav-link" data-scroll-target="#der-zielkonflikt-integrationszeit">Der Zielkonflikt: Integrationszeit</a></li>
-  <li><a href="#messen-mit-absicht" id="toc-messen-mit-absicht" class="nav-link" data-scroll-target="#messen-mit-absicht">Messen mit Absicht</a></li>
-  </ul></li>
-  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
-  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/measurement-and-experiments.html">Messen und Experimentieren</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/problem-decomposition.html">Solving Problems</a></li><li class="breadcrumb-item"><a href="../concepts/measurement-and-experiments.html">Measuring and Experimenting</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Messen und Experimentieren</h1>
+<h1 class="title">Measuring and Experimenting</h1>
 </div>
 
 
@@ -459,85 +456,126 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="zusammenfassung" class="level2">
-<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
-<p>Ob sich ein realer Aufbau wie erwartet verhält, lässt sich nur durch systematische Messungen entscheiden. Aussagekräftige Experimente verändern Bedingungen kontrolliert, wiederholen Messungen und halten Vorgehen sowie Ergebnisse nachvollziehbar fest. Dieses Konzept ist das Handwerk: Es gilt für jede Behauptung über euren Aufbau, nicht nur für Licht. Was die Messungen dann über die Grenzen eurer Strecke verraten, also wie viele Farben sicher unterscheidbar sind, ist das Thema von <a href="../concepts/signal-and-noise.html">Signal und Rauschen</a>.</p>
-<section id="fragen-um-die-es-geht" class="level3">
-<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Whether a real setup behaves the way you expect can only be decided by measuring it. An experiment that tells you something changes conditions on purpose, repeats readings, and records what was done and what came out. This concept is the craft of the module: it applies to every claim about your setup, not only to light. What those measurements then say about the limits of your link, how many colours you can safely tell apart, is the subject of <a href="../concepts/signal-and-noise.html">Signal und Rauschen</a>.</p>
+<p>In this chapter, we address the following questions:</p>
 <ul>
-<li>Warum reicht Nachdenken nicht, um zu wissen, wie sich mein Aufbau verhält?</li>
-<li>Was liefert der Farbsensor wirklich, und warum entspricht es nicht dem Gesendeten?</li>
-<li>Was gehört zu einer Messreihe, die wirklich etwas zeigt?</li>
-<li>Wozu brauche ich eine Kontrollmessung?</li>
-<li>Was bewirken Integrationszeit und Verstärkung, und worin liegt der Zielkonflikt?</li>
-<li>Wie oft muss ich wiederholen, damit ein Zufallstreffer auffällt?</li>
-<li>Wie halte ich fest, was ich gemessen habe?</li>
+<li>Why is thinking not enough to know how my setup behaves?</li>
+<li>What does the colour sensor actually deliver, and why does it not match what was sent?</li>
+<li>What belongs to a measurement series that really shows something?</li>
+<li>What is a control reading for?</li>
+<li>What do integration time and gain do, and where is the trade-off?</li>
+<li>How often do I have to repeat before a lucky hit stands out?</li>
+<li>How do I record what I measured?</li>
 </ul>
-<p>Dieses Konzept müsst ihr spätestens für <a href="../challenges/challenge-1.html">Challenge 1</a> verstanden haben, und ihr braucht es danach in jeder weiteren Challenge.</p>
+<p>You need this concept by <a href="../challenges/challenge-1.html">Challenge 1</a> at the latest, and you use it in every challenge after that.</p>
 </section>
-</section>
-<section id="erläuterung-des-konzepts" class="level2">
-<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>Über euren Aufbau könnt ihr fast nichts wissen, ohne es zu messen. Ob eine Änderung wirklich etwas gebracht hat, beantwortet kein Nachdenken, kein Bauchgefühl und auch kein KI-Assistent, sondern nur ein Versuch. Zweitausend Jahre lang glaubte man Aristoteles, dass schwere Körper schneller fallen als leichte; der Legende nach genügten zwei Kugeln vom Schiefen Turm von Pisa, um den Irrtum zu beenden. Euer Aufbau ist euer Turm: Der Assistent kennt Sensoren dieser Art, aber nur eine Messung kennt euren.</p>
-<section id="was-der-sensor-wirklich-liefert" class="level3">
-<h3 class="anchored" data-anchor-id="was-der-sensor-wirklich-liefert">Was der Sensor wirklich liefert</h3>
-<p>Der Farbsensor liefert nicht drei Werte, sondern vier: die gefilterten Anteile Rot, Grün und Blau, dazu <strong>Clear</strong>, gemessen ohne Farbfilter. Clear sieht das gesamte einfallende Licht und ist dadurch empfindlicher als die Farbkanäle; beim Unterscheiden von Hell und Dunkel ist er euer wichtigster Wert.</p>
-<p>Und keiner dieser Werte entspricht den Zahlen, die der Sender an seine LED schickt. Schickt ihr <code>(255, 0, 0)</code>, misst der Sensor etwas wie <code>r=203, g=41, b=57</code>: Die Farbfilter überlappen, der Abstand schluckt Licht, das Raumlicht misst immer mit. Das ist kein Defekt, sondern der Normalfall. Die Konsequenz: Ihr rechnet nicht zurück, was gesendet wurde (eine Formel, die heute stimmt, stimmt morgen nicht mehr), sondern <strong>messt für jede Sendefarbe, wie sie bei euch ankommt</strong>, und ordnet jede neue Messung dem nächstliegenden gelernten Muster zu. Kalibrieren, dann klassifizieren: Das ist der Kern von Challenge 1.</p>
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
+<p>You can know almost nothing about your setup without measuring it. Whether a change actually helped is not answered by thinking, by a gut feeling, or by an AI assistant, but by a trial. For two thousand years people believed Aristotle, that heavy bodies fall faster than light ones. As the story goes, two balls dropped from the leaning tower of Pisa were enough to end the error. Your setup is your tower. The assistant knows sensors of this kind, but only a measurement knows yours.</p>
+<section id="what-the-sensor-actually-delivers" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-sensor-actually-delivers">What the sensor actually delivers</h3>
+<p>The colour sensor does not return three values, it returns four: the filtered shares of red, green and blue, plus <strong>clear</strong>, measured without a colour filter. Clear sees all the incoming light and is therefore more sensitive than the colour channels. When you separate bright from dark, it is your most useful value.</p>
+<div id="fig-measurement-sensor" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-measurement-sensor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/measurement-sensor.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: One reading, four numbers. Clear has no colour filter, which makes it the most sensitive of the four."><img src="../assets/diagrams/measurement-sensor.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-measurement-sensor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: One reading, four numbers. Clear has no colour filter, which makes it the most sensitive of the four.
+</figcaption>
+</figure>
+</div>
+<p>And none of these values matches the numbers the sender gives its LED. Send <code>(255, 0, 0)</code> and the sensor measures something like <code>r=203, g=41, b=57</code>. The colour filters overlap, the distance swallows light, and the room light is always measured too. That is not a defect, it is the normal case. The consequence: you do not calculate backwards to what was sent, because a formula that fits today will not fit tomorrow. You <strong>measure how each transmitted colour arrives at your end</strong>, and you assign every new reading to the closest pattern you learned. Calibrate, then classify: that is the core of Challenge 1.</p>
 <div id="fig-calibration-clusters" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-calibration-clusters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/calibration-clusters.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;1: Kalibrierung als Bild: die Rot- und die Blau-Messungen als Wolken im Koordinatensystem aus Rot- und Blauanteil (der Grünanteil ist hier überall ähnlich). Eine neue Messung wird der näheren Wolke zugeordnet; die durchgezogene Distanz ist kurz, die gestrichelte lang."><img src="../assets/diagrams/calibration-clusters.svg" class="img-fluid figure-img" style="width:85.0%"></a>
+<a href="../assets/diagrams/calibration-clusters.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Calibration as a picture: the red and the blue readings as clouds in a coordinate system of red and blue share, with green roughly constant here. A new reading is assigned to the nearer cloud."><img src="../assets/diagrams/calibration-clusters.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-calibration-clusters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1: Kalibrierung als Bild: die Rot- und die Blau-Messungen als Wolken im Koordinatensystem aus Rot- und Blauanteil (der Grünanteil ist hier überall ähnlich). Eine neue Messung wird der näheren Wolke zugeordnet; die durchgezogene Distanz ist kurz, die gestrichelte lang.
+Figure&nbsp;2: Calibration as a picture: the red and the blue readings as clouds in a coordinate system of red and blue share, with green roughly constant here. A new reading is assigned to the nearer cloud.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="eine-ablesung-ist-ein-wurf" class="level3">
-<h3 class="anchored" data-anchor-id="eine-ablesung-ist-ein-wurf">Eine Ablesung ist ein Wurf</h3>
-<p>Fünfmal dieselbe rote LED gemessen ergibt fünf verschiedene Werte, etwa 198, 205, 201, 195, 206. Keiner davon ist „der wahre”: Jede echte Messung streut, Rauschen ist der Normalfall. Der Einzelwert springt, der Mittelwert liegt ruhig; wer einen stabilen Wert braucht, liest mehrfach und mittelt.</p>
-<p>Dazu kommt: Der Sensor misst nie Null, denn Raumlicht ist immer da. Deshalb beginnt jede Messreihe mit einer <strong>Kontrollmessung</strong> bei ausgeschalteter eigener LED. Sie ist der Nullpunkt, gegen den ihr jede Farbmessung lest, und sie verrät euch, wenn sich die Umgebung ändert, etwa durch Nachmittagssonne oder die LED des Nachbarteams.</p>
-</section>
-<section id="der-zielkonflikt-integrationszeit" class="level3">
-<h3 class="anchored" data-anchor-id="der-zielkonflikt-integrationszeit">Der Zielkonflikt: Integrationszeit</h3>
-<p>Die <strong>Integrationszeit</strong> ist das Ablesefenster des Sensors: Sie bestimmt, über wie viel Licht ein einzelner Messwert mittelt. Lange Fenster liefern ruhige Werte, aber wenige Messungen pro Sekunde. Kurze Fenster liefern viele Messungen, aber wackelige Werte, bis einzelne Ablesungen in den falschen Bereich rutschen und aus einem Rot ein vermeintliches Blau wird. (Die <strong>Verstärkung</strong> ist der zweite Drehknopf; sie skaliert die Werte und trägt einen verwandten Zielkonflikt.)</p>
-<div id="fig-signal-and-noise" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="one-reading-is-a-draw" class="level3">
+<h3 class="anchored" data-anchor-id="one-reading-is-a-draw">One reading is a draw</h3>
+<p>Measure the same red LED five times and you get five different values, say 198, 205, 201, 195, 206. None of them is “the true one”. Every real measurement scatters; noise is the normal case. A single reading jumps around, an average sits still. If you need a stable value, read several times and take the mean.</p>
+<div id="fig-measurement-spread" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-signal-and-noise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/signal-and-noise.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;2: Dasselbe Licht, abgelesen mit langen, mittleren und kurzen Fenstern: Je kürzer das Fenster, desto mehr Ablesungen pro Sekunde, aber desto stärker streuen sie, bis einzelne in den Nachbarbereich rutschen."><img src="../assets/diagrams/signal-and-noise.svg" class="img-fluid figure-img" style="width:80.0%"></a>
+<div aria-describedby="fig-measurement-spread-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/measurement-spread.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: The same light, read individually and as averages of five. The individual readings scatter widely, the averages huddle around the centre. Both series have the same mean."><img src="../assets/diagrams/measurement-spread.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-signal-and-noise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;2: Dasselbe Licht, abgelesen mit langen, mittleren und kurzen Fenstern: Je kürzer das Fenster, desto mehr Ablesungen pro Sekunde, aber desto stärker streuen sie, bis einzelne in den Nachbarbereich rutschen.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-measurement-spread-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The same light, read individually and as averages of five. The individual readings scatter widely, the averages huddle around the centre. Both series have the same mean.
 </figcaption>
 </figure>
 </div>
-<p>Länger ist ruhiger, kürzer ist schneller: Das ist der zentrale Zielkonflikt des ganzen Projekts, denn die Symbolrate eurer Übertragung hängt direkt daran. Wo die Grenze eures Aufbaus liegt, beantwortet keine Tabelle und kein Assistent, sondern nur eure Messreihe. Hier lernt ihr den Drehknopf kennen; was seine Stellung für euer Alphabet und euren Durchsatz bedeutet, rechnet <a href="../concepts/signal-and-noise.html">Signal und Rauschen</a> nach der ersten Challenge nach.</p>
+<p>You can try that yourself in <a href="https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/">the noisy sensor</a>: press measure a few times and watch how far single readings spread, then switch to averages of five and watch the same distribution collapse towards its centre.</p>
+<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the noisy sensor</span><span class="linkcard-desc">One reading is a draw. A series reveals the distribution.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/7896a11a80c6.png" alt=""></a>
+<p>There is a second reason to measure more than once. The sensor never reads zero, because room light is always there. So every measurement series starts with a <strong>control reading</strong>, with your own LED switched off. That is the zero point you read every colour measurement against, and it tells you when the surroundings change, through afternoon sun or the LED of the team next to you.</p>
+<div id="fig-control-reading" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-control-reading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/control-reading.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Measure the dark first. What the LED adds is the difference to the ambient level, and every reading carries ambient light and noise with it."><img src="../assets/diagrams/control-reading.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-control-reading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Measure the dark first. What the LED adds is the difference to the ambient level, and every reading carries ambient light and noise with it.
+</figcaption>
+</figure>
+</div>
 </section>
-<section id="messen-mit-absicht" class="level3">
-<h3 class="anchored" data-anchor-id="messen-mit-absicht">Messen mit Absicht</h3>
-<p>Eine <strong>Messreihe</strong> sind mehrere Messungen unter gleichen, festgehaltenen Bedingungen, bei denen gezielt höchstens eine Größe verändert wird. Jedes Wort trägt: Wer zwei Dinge gleichzeitig ändert (etwa Abstand und Integrationszeit) und ein besseres Ergebnis bekommt, weiß nur, <strong>dass</strong> es besser wurde, aber nicht, woran es lag. Wer die Erwartung nicht <strong>vorher</strong> notiert, kann hinterher fast jedes Ergebnis als Erfolg deuten. Und ins Messprotokoll gehören die Bedingungen, die veränderte Größe, die Anzahl der Wiederholungen und alle Werte, auch die unbequemen: Ausreißer sind oft die interessanteste Information.</p>
-<p>Wiederholungen sind kein Schmuck, sondern der Schutz vor dem Zufallstreffer. Bei zwei Farben trifft reines Raten jede zweite; fünf Treffer in Folge gelingen dem Zufall in etwa jedem 32. Anlauf. 50 aus 50 schafft er praktisch nie. Genau deshalb sind die Abnahmen der Challenges auf lange Serien geschnitten.</p>
-<p>Wenn schließlich eine saubere Messreihe einem Vorschlag des Assistenten widerspricht, gewinnt die Messreihe. Prüft kurz, ob sie wirklich sauber war (eine Größe, genug Wiederholungen, Kontrollmessung), dann gehört der Fall ins Irrtumsprotokoll: Vorschlag, Messung, Ergebnis. Kurz gesagt: Was ihr nicht gemessen habt, wisst ihr nicht.</p>
+<section id="the-trade-off-integration-time" class="level3">
+<h3 class="anchored" data-anchor-id="the-trade-off-integration-time">The trade-off: integration time</h3>
+<p>The <strong>integration time</strong> is the sensor’s reading window: it decides over how much light a single value is averaged. Long windows give calm values but few readings per second. Short windows give many readings but shaky values, until single readings slide into the wrong range and a red is read as a blue. (<strong>Gain</strong> is the second knob; it scales the values and carries a related trade-off.)</p>
+<div id="fig-measurement-integration-time" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-measurement-integration-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/measurement-integration-time.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The same light, read with long, medium and short windows. The shorter the window, the more readings per second, and the more they scatter, until single ones land outside the band that still reads correctly."><img src="../assets/diagrams/measurement-integration-time.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-measurement-integration-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: The same light, read with long, medium and short windows. The shorter the window, the more readings per second, and the more they scatter, until single ones land outside the band that still reads correctly.
+</figcaption>
+</figure>
+</div>
+<p>Longer is calmer, shorter is faster. That is the central trade-off of the whole project, because the symbol rate of your transmission hangs on it. Where the limit of your setup lies is answered by no table and no assistant, only by your own measurement series. Here you meet the knob; what its setting means for your alphabet and your throughput is worked out in <a href="../concepts/signal-and-noise.html">Signal und Rauschen</a> after the first challenge.</p>
+</section>
+<section id="measuring-on-purpose" class="level3">
+<h3 class="anchored" data-anchor-id="measuring-on-purpose">Measuring on purpose</h3>
+<p>A <strong>measurement series</strong> is several readings under equal, recorded conditions, in which at most one quantity is changed on purpose. Every word carries weight. Whoever changes two things at once, say distance and integration time, and gets a better result, knows only <strong>that</strong> it got better, not what did it. Whoever does not write the expectation down <strong>beforehand</strong> can read almost any result as a success afterwards. And the record needs the conditions, the changed quantity, the number of repetitions and all the values, including the uncomfortable ones: outliers are often the most interesting information.</p>
+<div id="fig-measurement-series" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-measurement-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/measurement-series.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: What makes a measurement series: write the conditions and the expectation before, change one variable and repeat during, keep every value and compare with the expectation after."><img src="../assets/diagrams/measurement-series.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-measurement-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: What makes a measurement series: write the conditions and the expectation before, change one variable and repeat during, keep every value and compare with the expectation after.
+</figcaption>
+</figure>
+</div>
+<p>Repetitions are not decoration, they are your protection against a lucky hit. With two colours, pure guessing gets every second one right; five in a row succeed by chance about once in 32 attempts. Fifty out of fifty essentially never happens by luck. That is exactly why the hand-overs in the challenges are cut to long series.</p>
+<p>And when a clean measurement series contradicts a suggestion from the assistant, the series wins. Check briefly whether it really was clean, one variable, enough repetitions, a control reading, and then the case belongs in your error log: suggestion, measurement, outcome. Put shortly: what you did not measure, you do not know.</p>
 </section>
 </section>
-<section id="folien" class="level2">
-<h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<p>Die Folien aus dem Input, zum Nachsehen:</p>
-<div class="folien-viewer" data-quelle="../assets/slides/measurement-and-experiments"></div>
-<p class="folien-links">
-  Blättern mit den Pfeiltasten oder per Klick auf die Folie ·
-  <a href="../assets/slides/measurement-and-experiments.pdf" download="">als PDF herunterladen</a>
-</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
+<div class="deck-embed">
+  <iframe src="../assets/decks/measurement-and-experiments/index.html?bar=1&amp;pdf=../measurement-and-experiments.pdf" title="measuring and experimenting" allowfullscreen="" loading="lazy"></iframe>
+</div>
 </section>
-<section id="fragen-üben" class="level2">
-<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Hier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.</p>
-<div class="fragen-quiz" data-quelle="../assets/questions/measurement-and-experiments.json"></div>
+<section id="practice-questions" class="level2">
+<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
+<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/measurement-and-experiments.json"></div>
 </section>
-<section id="literatur" class="level2">
-<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
-<!-- TODO: weiterführende Literatur ergänzen -->
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li>Richard Feynman: Cargo Cult Science. Caltech commencement address, 1974, freely available online. Six pages on the one habit that makes an experiment worth anything: reporting everything that could make your own result wrong. “The first principle is that you must not fool yourself, and you are the easiest person to fool.”</li>
+<li>David J. Hand: Measurement. A Very Short Introduction. Oxford University Press, 2016. What a measurement actually is, why every value carries a scale and an error, and how measurements get compared. Short, readable, and useful far beyond sensors.</li>
+</ul>
 
 
 </section>
@@ -871,12 +909,12 @@ Abbildung&nbsp;2: Dasselbe Licht, abgelesen mit langen, mittleren und kurzen Fen
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1253,8 +1291,8 @@ Abbildung&nbsp;2: Dasselbe Licht, abgelesen mit langen, mittleren und kurzen Fen
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../concepts/input-processing-output.html" class="pagination-link" aria-label="Problem Solving with Computers">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Solving with Computers</span>
+      <a href="../concepts/algorithms-and-programs.html" class="pagination-link" aria-label="Algorithms and Programs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Algorithms and Programs</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
