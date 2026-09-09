@@ -756,6 +756,180 @@
      }
     }
    ]
+  },
+  {
+   "id": "si-014",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Sechzehn Gesichter, eines ist gesucht. Frage A lautet „trägt es eine\nBrille?“ und acht der sechzehn tragen eine. Frage B lautet „ist es\nGesicht Nummer 7?“. Welche Frage bringt im Durchschnitt mehr?",
+    "en": "Sixteen faces, one of them is the secret. Question A is \"does it wear\nglasses?\", and eight of the sixteen do. Question B is \"is it face\nnumber 7?\". Which question is worth more on average?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Frage A: Sie bringt garantiert 1 Bit, Frage B im Durchschnitt nur etwa ein Drittel davon.",
+      "en": "Question A: it yields a guaranteed 1 bit, question B only about a third of that on average."
+     },
+     "begruendung": {
+      "de": "Frage A halbiert, egal wie die Antwort ausfällt: 16 werden zu 8, das ist genau 1 Bit. Frage B löst in einem von sechzehn Fällen alles auf (4 Bit), lässt aber in fünfzehn von sechzehn Fällen noch 15 Möglichkeiten übrig, was fast nichts einbringt. Im Mittel sind das etwa 0,34 Bit.",
+      "en": "Question A halves the field no matter how it turns out: 16 become 8, exactly 1 bit. Question B resolves everything in one case out of sixteen (4 bits) but leaves 15 possibilities in the other fifteen, which buys almost nothing. On average that is about 0.34 bits."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Frage B: Ein „ja“ löst das Rätsel sofort vollständig auf, das kann Frage A nie.",
+      "en": "Question B: a yes solves the puzzle completely at once, which A can never do."
+     },
+     "begruendung": {
+      "de": "Das stimmt für den seltenen Glücksfall und ist die häufigste Fehlvorstellung. Ihr könnt euch aber nicht aussuchen, welche Antwort ihr bekommt, und in fünfzehn von sechzehn Fällen erfahrt ihr fast nichts. Zählt, was die Frage im Mittel einbringt, nicht im besten Fall.",
+      "en": "True for the rare lucky case, and this is the most common misconception. But you do not get to choose which answer you receive, and in fifteen cases out of sixteen you learn almost nothing. Count what a question yields on average, not at its best."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Beide gleich viel: Es sind beides Ja/Nein-Fragen, und eine Ja/Nein-Antwort ist ein Bit.",
+      "en": "Both the same: they are both yes/no questions, and a yes/no answer is one bit."
+     },
+     "begruendung": {
+      "de": "Ein Bit ist die Obergrenze einer Ja/Nein-Antwort, nicht ihr Wert. Erreicht wird sie nur, wenn beide Ausgänge gleich wahrscheinlich sind. Je schiefer die Frage, desto weniger bleibt davon übrig.",
+      "en": "One bit is the ceiling of a yes/no answer, not its value. It is reached only when both outcomes are equally likely. The more lopsided the question, the less of it remains."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das hängt vom Glück ab und lässt sich vorher nicht sagen.",
+      "en": "That depends on luck and cannot be said in advance."
+     },
+     "begruendung": {
+      "de": "Der einzelne Ausgang hängt vom Glück ab, der Erwartungswert nicht. Genau deshalb kann man Fragen vor dem Stellen vergleichen, und genau das macht die halbierende Frage zur besten Strategie.",
+      "en": "The single outcome depends on luck, the expected value does not. That is exactly why questions can be compared before you ask them, and why halving is the best strategy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "si-015",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Im Morsecode ist das häufigste Zeichen, das „e“, auch das kürzeste: ein\neinzelner Punkt. Seltene Zeichen wie das „q“ sind lang. Warum lohnt sich\ndiese Ungleichbehandlung?",
+    "en": "In Morse code the most common letter, \"e\", is also the shortest: a single\ndot. Rare letters like \"q\" are long. Why does that unequal treatment pay\noff?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Weil kurze Codes weniger fehleranfällig sind und das häufigste Zeichen deshalb am besten geschützt sein sollte.",
+      "en": "Because short codes are less error-prone, so the most common letter should be the best protected."
+     },
+     "begruendung": {
+      "de": "Eher andersherum: Ein einzelner Punkt ist leichter zu übersehen als eine lange Folge. Der Gewinn liegt nicht bei der Sicherheit, sondern bei der Länge der ganzen Nachricht.",
+      "en": "If anything it is the other way round: a single dot is easier to miss than a long sequence. The gain is not in safety but in the length of the whole message."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Weil das „e“ der wichtigste Buchstabe ist und wichtige Zeichen zuerst ankommen sollen.",
+      "en": "Because \"e\" is the most important letter and important letters should arrive first."
+     },
+     "begruendung": {
+      "de": "Häufig ist nicht dasselbe wie wichtig, und die Reihenfolge der Zeichen ändert sich dadurch ohnehin nicht. Entscheidend ist allein, wie oft ein Zeichen vorkommt.",
+      "en": "Common is not the same as important, and the order of the letters does not change either way. All that matters is how often a letter occurs."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Weil die durchschnittliche Nachricht dadurch kürzer wird: Was oft vorkommt, kostet dann wenig.",
+      "en": "Because it makes the average message shorter: what occurs often then costs little."
+     },
+     "begruendung": {
+      "de": "Genau darum geht es. Wenn Zeichen nicht gleich wahrscheinlich sind, trägt ein seltenes Zeichen mehr Information als ein häufiges, und es darf deshalb auch mehr Platz kosten. Auf dieser Beobachtung beruht jede Kompression.",
+      "en": "Exactly the point. When letters are not equally likely, a rare letter carries more information than a common one, so it may also take up more room. Every compression scheme rests on that observation."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Weil ein Alphabet mit unterschiedlich langen Codes mehr Zeichen aufnehmen kann als eines mit gleich langen.",
+      "en": "Because an alphabet with codes of different lengths can hold more letters than one with equal lengths."
+     },
+     "begruendung": {
+      "de": "Die Zahl der darstellbaren Zeichen hängt an der Länge, nicht an ihrer Ungleichheit: Mit gleich langen Codes derselben Maximallänge lassen sich mindestens genauso viele Zeichen bilden. Der Gewinn ungleicher Längen liegt beim Durchschnitt.",
+      "en": "The number of representable letters depends on the length, not on its unevenness: equal-length codes of the same maximum length can represent at least as many. The gain from unequal lengths lies in the average."
+     }
+    }
+   ]
+  },
+  {
+   "id": "si-016",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ein Team schafft zuverlässig nur zwei Symbole, hell und dunkel. Es will\ntrotzdem ein Alphabet aus 32 Zeichen übertragen und fasst dafür mehrere\nBlitze zu einer Gruppe zusammen. Wie viele Blitze braucht eine Gruppe\nmindestens?",
+    "en": "A team can reliably manage only two symbols, bright and dark. It still\nwants to transmit an alphabet of 32 characters and groups several flashes\ntogether for that. How many flashes does one group need at least?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "16, also die Hälfte der Zeichenzahl.",
+      "en": "16, half the number of characters."
+     },
+     "begruendung": {
+      "de": "Die Zahl der Blitze wächst nicht proportional zur Zeichenzahl, sondern logarithmisch: Jeder zusätzliche Blitz verdoppelt die Zahl der Gruppen, statt sie um zwei zu erhöhen. 16 Blitze reichten für 65.536 Zeichen.",
+      "en": "The number of flashes does not grow in proportion to the number of characters but logarithmically: each extra flash doubles the number of groups instead of adding two. 16 flashes would cover 65,536 characters."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "5, denn zwei hoch fünf sind 32.",
+      "en": "5, because two to the fifth is 32."
+     },
+     "begruendung": {
+      "de": "Jeder Blitz trägt eine Entscheidung zwischen zwei Möglichkeiten, also ein Bit; fünf Blitze tragen fünf Bit und unterscheiden damit 32 Gruppen. Das ist genau die Halbierungsrechnung von vorhin, nur andersherum gelesen. Was ein großes Alphabet je Symbol leistet, leisten zwei Symbole in der Gruppe.",
+      "en": "Each flash carries one decision between two possibilities, so one bit; five flashes carry five bits and thus tell 32 groups apart. That is the halving calculation from before, read backwards. What a large alphabet does per symbol, two symbols do in a group."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "32, denn für jedes Zeichen wird ein Blitz gebraucht.",
+      "en": "32, because every character needs one flash."
+     },
+     "begruendung": {
+      "de": "Das wäre der Fall, wenn jedes Zeichen ein eigenes Symbol bekäme, aber es gibt nur zwei Symbole. Genau deshalb werden mehrere Blitze zu einer Gruppe zusammengefasst.",
+      "en": "That would be the case if every character had its own symbol, but there are only two symbols. Grouping several flashes is precisely the way around that."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "6, weil eine zusätzliche Stelle für die Abgrenzung der Gruppen gebraucht wird.",
+      "en": "6, because one extra place is needed to separate the groups."
+     },
+     "begruendung": {
+      "de": "Der Gedanke ist nicht dumm, denn irgendwie muss der Empfänger die Gruppen trennen. Dafür genügt aber die feste Länge selbst: Wer weiß, dass jede Gruppe fünf Blitze hat, zählt einfach mit. Eine eigene Trennstelle braucht nur, wer unterschiedlich lange Gruppen zulässt.",
+      "en": "Not a foolish thought, since the receiver has to separate the groups somehow. But the fixed length does that job by itself: if every group has five flashes, you simply count along. A separator is only needed when groups may differ in length."
+     }
+    }
+   ]
   }
  ]
 }

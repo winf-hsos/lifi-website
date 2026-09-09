@@ -943,6 +943,64 @@
      }
     }
    ]
+  },
+  {
+   "id": "ad-017",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "In Challenge 4 darf die Nutzlast höchstens 2 KB groß sein, also 16.384 Bit.\nWelche dieser Einstellungen für ein quadratisches Bild passt gerade noch\nhinein?",
+    "en": "In Challenge 4 the payload may be at most 2 KB, that is 16,384 bits. Which\nof these settings for a square picture still fits?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "64 × 64 Punkte mit 8 Bit je Punkt.",
+      "en": "64 × 64 points at 8 bits per point."
+     },
+     "begruendung": {
+      "de": "4.096 Punkte mal 8 Bit sind 32.768 Bit, also genau das Doppelte des Budgets. Wer hier landet, hat die Punktzahl gerechnet und die Bits je Punkt vergessen.",
+      "en": "4,096 points times 8 bits is 32,768 bits, exactly twice the budget. Getting here means the number of points was counted and the bits per point forgotten."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "128 × 128 Punkte mit 1 Bit je Punkt.",
+      "en": "128 × 128 points at 1 bit per point."
+     },
+     "begruendung": {
+      "de": "16.384 Punkte mal 1 Bit sind 16.384 Bit. Das ist rechnerisch genau das Budget, lässt aber keinen Platz für den Rahmen: Präambel, Typ, Länge, Prüfsumme und Ende kommen obendrauf. Rechnerisch reizvoll, praktisch zu knapp.",
+      "en": "16,384 points times 1 bit is 16,384 bits. That is exactly the budget on paper, but it leaves no room for the frame: preamble, type, length, checksum and end come on top. Tempting on paper, too tight in practice."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "64 × 64 Punkte mit 2 Bit je Punkt.",
+      "en": "64 × 64 points at 2 bits per point."
+     },
+     "begruendung": {
+      "de": "4.096 Punkte mal 2 Bit sind 8.192 Bit, also die Hälfte des Budgets. Es passt mit Luft für den Rahmen, und vier Stufen je Punkt reichen, um ein Motiv erkennbar zu halten. Genau so eine Abwägung verlangt Challenge 4.",
+      "en": "4,096 points times 2 bits is 8,192 bits, half the budget. It fits with room for the frame, and four levels per point are enough to keep a subject recognisable. That is exactly the trade-off Challenge 4 asks for."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "32 × 32 Punkte mit 24 Bit je Punkt.",
+      "en": "32 × 32 points at 24 bits per point."
+     },
+     "begruendung": {
+      "de": "1.024 Punkte mal 24 Bit sind 24.576 Bit und damit über dem Budget. Die volle Farbtiefe ist der teuerste Posten überhaupt; sie kostet hier mehr, als die kleine Auflösung einspart.",
+      "en": "1,024 points times 24 bits is 24,576 bits, over budget. Full colour depth is the most expensive item there is; here it costs more than the small resolution saves."
+     }
+    }
+   ]
   }
  ]
 }
