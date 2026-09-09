@@ -93,7 +93,7 @@
   "https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/": {
     "url": "https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/",
     "title": "the noisy sensor",
-    "description": "One reading is a draw. A series reveals the distribution.",
+    "description": "Send a symbol over a noisy link and let the same readings decide it three times: alone, averaged over five, averaged over ten. Fewer wrong decisions, less speed.",
     "site": "LiFi Project · concept demos",
     "image": "7896a11a80c6.png"
   }

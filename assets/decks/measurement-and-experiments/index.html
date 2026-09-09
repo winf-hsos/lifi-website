@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>measuring and experimenting</title>
-  <link rel="stylesheet" href="theme.css?v=20260909b">
-  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260909b">
+  <link rel="stylesheet" href="theme.css?v=20260909c">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260909c">
   <style>
     .figure.wide { left: 110px; right: 110px; }
     .figure.inset { left: 180px; right: 180px; }
@@ -98,9 +98,9 @@
   </section>
 
   <section class="slide">
-    <h2>try it: one reading or a series?</h2>
+    <h2>try it: how many readings per decision?</h2>
     <div class="embed z150"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/?embed=1" title="The Noisy Sensor interactive measurement demonstrator"></iframe></div>
-    <aside class="notes">Zuerst genau einmal messen und fragen, ob dieser Wert genügt. Dann zehn Einzelmessungen erzeugen. Anschließend „average n readings“ auf fünf und zehn stellen und dieselbe Anzahl Ausgaben erzeugen: Die Einzelmessungen streuen weiter, die gemittelten Ergebnisse rücken zusammen. Mit Reset beginnt dieselbe reproduzierbare Folge erneut. Die Demo simuliert die Struktur, nicht die konkreten Zahlen des Aufbaus.</aside>
+    <aside class="notes">Zuerst ein einzelnes Symbol senden und fragen, ob diese eine Ablesung genügt. Dann „send 25“: In der obersten Spur liegen einige Punkte auf der falschen Seite der Schwelle und sind rot, in den beiden unteren keiner. Rechts steht der Preis dafür: dieselbe Zahl Entscheidungen, aber 150 statt 30 Ablesungen und 4 statt 20 Symbole je Sekunde. Danach auf „high“ stellen, dort reicht auch das Mittel aus fünf nicht mehr ganz; und auf „low“, dort kostet Mitteln nur Tempo und bringt nichts. Wie oft gemittelt werden muss, steht deshalb in keiner Tabelle, das entscheidet der eigene Aufbau. Mit „reset“ beginnt dieselbe reproduzierbare Folge erneut. Die Zahlen sind simuliert, die Struktur ist echt.</aside>
   </section>
 
   <section class="slide has-punch" data-on-show="drawSpread" data-on-step="drawSpread">
@@ -176,8 +176,8 @@
   </section>
 
 </div>
-<script src="../stagekit/draw.js?v=20260909b"></script>
-<script src="deck.js?v=20260909b"></script>
-<script src="../stagekit/stagekit.js?v=20260909b"></script>
+<script src="../stagekit/draw.js?v=20260909c"></script>
+<script src="deck.js?v=20260909c"></script>
+<script src="../stagekit/stagekit.js?v=20260909c"></script>
 </body>
 </html>

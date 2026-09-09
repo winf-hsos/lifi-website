@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/abstraction-and-layers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Abstraktion und Schichten</span></a>
+ <span class="menu-text">Abstraction and Layers</span></a>
   </div>
 </li>
       </ul>
@@ -512,8 +512,8 @@ Figure&nbsp;3: The same light, read individually and as averages of five. The in
 </figcaption>
 </figure>
 </div>
-<p>You can try that yourself in <a href="https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/">the noisy sensor</a>: press measure a few times and watch how far single readings spread, then switch to averages of five and watch the same distribution collapse towards its centre.</p>
-<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the noisy sensor</span><span class="linkcard-desc">One reading is a draw. A series reveals the distribution.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/7896a11a80c6.png" alt=""></a>
+<p>You can try that yourself in <a href="https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/">the noisy sensor</a>. A sender there transmits one of two symbols, led off or led on, and the receiver decides at a threshold which one arrived. The same readings decide three times side by side: alone, averaged over five, averaged over ten. Send twenty-five symbols and the single readings put a few dots on the wrong side of the threshold, while the averaged ones no longer reach it. The price stands next to it: the same number of decisions costs five or ten times as many readings, and the symbol rate drops from twenty per second to four or two. Which of those you need is not a matter of taste, it depends on your own setup: with little noise a single reading already decides correctly every time, with much noise even the average of five slips occasionally.</p>
+<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/noisy-sensor/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the noisy sensor</span><span class="linkcard-desc">Send a symbol over a noisy link and let the same readings decide it three times: alone, averaged over five, averaged over ten. Fewer wrong decisions, less speed.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/7896a11a80c6.png" alt=""></a>
 <p>There is a second reason to measure more than once. The sensor never reads zero, because room light is always there. So every measurement series starts with a <strong>control reading</strong>, with your own LED switched off. That is the zero point you read every colour measurement against, and it tells you when the surroundings change, through afternoon sun or the LED of the team next to you.</p>
 <div id="fig-control-reading" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -532,10 +532,10 @@ Figure&nbsp;4: Measure the dark first. What the LED adds is the difference to th
 <div id="fig-measurement-integration-time" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-measurement-integration-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/measurement-integration-time.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The same light, read with long, medium and short windows. The shorter the window, the more readings per second, and the more they scatter, until single ones land outside the band that still reads correctly."><img src="../assets/diagrams/measurement-integration-time.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/measurement-integration-time.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The same second, read three times over. Every bar is one reading and its width is the window it averages over: four long ones fit into the second, or twelve short ones. The shorter the window, the more readings you get, and the more they scatter, until single ones land outside the band that still reads correctly."><img src="../assets/diagrams/measurement-integration-time.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-measurement-integration-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: The same light, read with long, medium and short windows. The shorter the window, the more readings per second, and the more they scatter, until single ones land outside the band that still reads correctly.
+Figure&nbsp;5: The same second, read three times over. Every bar is one reading and its width is the window it averages over: four long ones fit into the second, or twelve short ones. The shorter the window, the more readings you get, and the more they scatter, until single ones land outside the band that still reads correctly.
 </figcaption>
 </figure>
 </div>
@@ -573,7 +573,7 @@ Figure&nbsp;6: What makes a measurement series: write the conditions and the exp
 <section id="further-reading" class="level2">
 <h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
 <ul>
-<li>Richard Feynman: Cargo Cult Science. Caltech commencement address, 1974, freely available online. Six pages on the one habit that makes an experiment worth anything: reporting everything that could make your own result wrong. “The first principle is that you must not fool yourself, and you are the easiest person to fool.”</li>
+<li>Richard Feynman: Cargo Cult Science. Caltech commencement address, 1974, freely available <a href="https://calteches.library.caltech.edu/51/2/CargoCult.pdf">online</a>. Six pages on the one habit that makes an experiment worth anything: reporting everything that could make your own result wrong. “The first principle is that you must not fool yourself, and you are the easiest person to fool.”</li>
 <li>David J. Hand: Measurement. A Very Short Introduction. Oxford University Press, 2016. What a measurement actually is, why every value carries a scale and an error, and how measurements get compared. Short, readable, and useful far beyond sensors.</li>
 </ul>
 
@@ -1296,8 +1296,8 @@ Figure&nbsp;6: What makes a measurement series: write the conditions and the exp
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../concepts/abstraction-and-layers.html" class="pagination-link" aria-label="Abstraktion und Schichten">
-        <span class="nav-page-text">Abstraktion und Schichten</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../concepts/abstraction-and-layers.html" class="pagination-link" aria-label="Abstraction and Layers">
+        <span class="nav-page-text">Abstraction and Layers</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

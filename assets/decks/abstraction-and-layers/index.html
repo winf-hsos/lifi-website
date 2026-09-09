@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>what's under the switch?</title>
+  <link rel="stylesheet" href="theme.css?v=20260909e">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260909e">
+  <style>
+    .figure.wide { left: 110px; right: 110px; }
+    .figure.inset { left: 210px; right: 210px; }
+    .photo-text.narrow { width: 560px; }
+    .content.tight .statement { line-height: 1.14; }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="what's under the switch?"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["what you don&apos;t need to know", "your own stack", "swap the bottom", "what it costs"]'>
+
+  <section class="slide title">
+    <aside class="notes">Abstraktion verbirgt, wie etwas funktioniert, und zeigt, was man damit tun kann. Mehrere solcher Zusagen übereinander ergeben Schichten. Der Satz endet mit der Umkehrung des Semesters: Licht war der austauschbare Teil.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Vier Teile: erst der Alltag, in dem wir dauernd Dinge benutzen, die wir nicht verstehen. Dann der Stapel, den ihr selbst gebaut habt. Dann der Tausch der untersten Schicht. Zum Schluss der Preis und die praktische Nutzanwendung, die Fehlersuche.</aside>
+  </section>
+
+  <!-- ================= Teil 1 ================= -->
+
+  <section class="slide part" data-part="what you don't need to know">
+    <aside class="notes">Wir fangen nicht beim Rechner an, sondern an der Wand.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/switch.png" alt="">
+    <div class="photo-text narrow">what happens between your finger and the light?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Heute Morgen hat jeder hier einen Schalter gedrückt. Zwischen dem Finger und der Lampe liegen ein Kraftwerk, ein Netz über das ganze Land, ein Transformator in der Straße und ein Draht in der Wand. Nichts davon wusstet ihr, und nichts davon hat gefehlt. Das ist keine Bildungslücke, das ist der Grund, warum man Licht anmachen kann, ohne Elektrotechniker zu sein. Die Frage offen stehen lassen, ein paar Antworten aus dem Saal einsammeln.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawGrid" data-on-step="drawGrid">
+    <h2>behind the switch</h2>
+    <div class="figure wide" id="fig-grid"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <div class="punch" data-step="2">the switch is the whole contract: up, down.</div>
+    <aside class="notes">Schritt für Schritt die Kette aufbauen. Der Schalter verspricht genau zwei Dinge, hoch und runter. Was dahinter passiert, darf sich ändern: Kohle, Wind, Kernkraft. Der Schalter bleibt derselbe. Genau deshalb konnte sich die Stromversorgung eines ganzen Landes umbauen, ohne dass irgendjemand etwas Neues lernen musste.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="header">so here is the word for it</div>
+      <div class="statement">an abstraction hides how something works<br>and shows what you can do with it.</div>
+      <div class="remark">the part it shows you is called the interface.</div>
+    </div>
+    <aside class="notes">Erst die Erfahrung, dann das Wort. Die Definition kommt absichtlich spät, vorher bedeutet sie nichts. Wichtig ist der zweite Halbsatz: Eine Abstraktion verbirgt nicht nur, sie zeigt auch etwas her. Was sie zeigt, ist die Schnittstelle, und eine Schnittstelle ist eine Zusage: Solange du dich daran hältst, funktioniert es, egal was darunter passiert.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawHiding">
+    <h2>three you used today without noticing</h2>
+    <div class="figure wide" id="fig-hiding"></div>
+    <aside class="notes">Keine Zeile in diesem Projekt steht nicht auf mehreren solcher Zusagen. set_color ist der Lichtschalter dieses Kurses: drei Zahlen rein, Licht raus. Was zwischen dem Funktionsaufruf und der leuchtenden Diode liegt, hat euch nie interessiert, und das war richtig so. Wer bei jedem Aufruf an USB-Pakete denken müsste, käme nie zu einer Challenge.</aside>
+  </section>
+
+  <!-- ================= Teil 2 ================= -->
+
+  <section class="slide part" data-part="your own stack">
+    <aside class="notes">Jetzt der Perspektivwechsel: Ihr benutzt nicht nur Abstraktionen, ihr habt selbst welche gebaut.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawStack" data-on-step="drawStack">
+    <h2>from a photo to light, one layer at a time</h2>
+    <div class="figure wide" id="fig-stack"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span><span data-step="5"></span>
+    <aside class="notes">Das ist nicht die Zeichnung aus einem Lehrbuch, das ist euer eigenes System. Zu jeder dieser Schichten gehört eine Challenge. Von oben gelesen ist es ein Foto, von unten gelesen ist es Licht, das an und aus geht. Langsam aufbauen und je Schicht fragen, welche Challenge sie gebaut hat.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">each layer talks only to the one<br>directly below it.</div>
+      <div class="remark">that single rule is what makes everything else possible.</div>
+    </div>
+    <aside class="notes">Eine einzige Regel, und sie klingt harmlos. Sie ist der Grund für alles, was in den nächsten zehn Minuten kommt: Austauschbarkeit, Arbeitsteilung im Team und die Fehlersuche.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawSeparate">
+    <h2>what that buys you</h2>
+    <div class="figure wide" id="fig-separate"></div>
+    <div class="punch">not tidiness. this is why one can change without the other.</div>
+    <aside class="notes">Eure Funktion, die Text in Bits übersetzt, weiß nichts über Farben. Eure Farberkennung weiß nichts über Buchstaben. Die häufigste Fehlvorstellung ist, das sei Ordnungsliebe. Es ist eine Versicherung: Wer die Farbzuordnung ändert, kann die Textkodierung dabei nicht kaputt machen, weil er sie nicht anfasst.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawCalls" data-on-step="drawCalls">
+    <h2>which of these may talk to the led?</h2>
+    <div class="figure inset" id="fig-calls"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <aside class="notes">Erst abstimmen lassen. Die Frage ist kein Kastenrätsel, sondern eine Frage nach einem Aufruf, deshalb steht die Antwort am Pfeil. Grün ist der erlaubte Weg: Nur die unterste der drei Funktionen weiß überhaupt, welche Farbe ein Symbol trägt. Rot ist die Abkürzung, die jeder einmal nimmt, wenn es schnell gehen muss. Ihr Preis fällt später an: Wer sie nimmt, hat die Farben oben einbetoniert und kann das Alphabet nicht mehr ändern, ohne den Textcode anzufassen.</aside>
+  </section>
+
+  <!-- ================= Teil 3 ================= -->
+
+  <section class="slide part" data-part="swap the bottom">
+    <aside class="notes">Jetzt der Test, ob die Trennung wirklich trägt.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawSwap" data-on-step="drawSwap">
+    <h2>same stack, different bottom</h2>
+    <div class="figure wide" id="fig-swap"></div>
+    <span data-step="1"></span>
+    <div class="punch" data-step="1">five layers unchanged. one exchanged.</div>
+    <aside class="notes">Ein Lautsprecher statt der LED, ein Mikrofon statt des Farbsensors. Oberhalb der Symbolschicht ändert sich keine Zeile. Genau das ist die Zusatzaufgabe in Challenge 4, und sie ist deshalb machbar, nicht weil sie klein wäre. Ehrlich dazusagen: Die erreichbare Symbolrate ändert sich sehr wohl. Alles läuft weiter, aber anders schnell.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawAlphabet" data-on-step="drawAlphabet">
+    <h2>you extend your alphabet from four colours to eight</h2>
+    <div class="figure wide" id="fig-alphabet"></div>
+    <span data-step="1"></span>
+    <aside class="notes">Erst raten lassen, welche Schichten sich ändern müssen. Die Antwort steht im selben Stapel wie überall, damit die Einordnung ohne Umweg gelingt. Die verlockende falsche Antwort ist „alle, denn jedes Symbol trägt jetzt mehr Bits". Der Bitstrom ist aber derselbe Bitstrom, er wird nur anders übersetzt. Rahmen und Textkodierung bleiben unangetastet, und der Empfänger erfährt die Farbzahl nicht aus dem Rahmen, sondern weil er zum selben Team gehört.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="header">a frame is defined in bits, not in colours</div>
+      <div class="statement">and it says nothing about time.</div>
+      <div class="remark">time belongs to the path, not to the message. that is why sound works.</div>
+    </div>
+    <aside class="notes">Takt ist eine Eigenschaft der Strecke, nicht der Nachricht. Stünde im Rahmen ein Feld „Symbole pro Sekunde", wäre der Substrattausch nicht mehr sauber, denn Ton verträgt eine andere Rate als Licht. Wenn der Klassenstandard schon steht, hier darauf zeigen; wenn nicht, ist es die Vorgabe für die Normungssitzung.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content tight">
+      <div class="statement">everything here sits on light.</div>
+      <div class="sidenote" data-step="1">light is the layer you could replace.</div>
+    </div>
+    <aside class="notes">Diese Folie braucht Stille. Der Kurs heißt nicht Lichtkommunikation. Er hieß: Wie stellt man Information dar, wie zerlegt man ein Problem, wie baut man etwas, das größer ist als der eigene Kopf, und wie arbeitet man mit einem Assistenten, der alles behauptet. Licht ist der Gegenstand, an dem sich das zeigen lässt. Im Rückblick der letzten Sitzung lässt sich hier ergänzen, wie viele Wochen Arbeit an genau der Schicht hingen, die austauschbar war.</aside>
+  </section>
+
+  <!-- ================= Teil 4 ================= -->
+
+  <section class="slide part" data-part="what it costs">
+    <aside class="notes">Damit es keine Heilslehre wird: Schichten haben einen Preis, und den muss man kennen.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawCost" data-on-step="drawCost">
+    <h2>layers are not free</h2>
+    <div class="figure wide" id="fig-cost"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <aside class="notes">Drei Kosten, eine nach der anderen. Wichtig ist, dass die Antwort „es gibt keinen Preis" falsch ist. Schichten kosten Durchsatz, weil jede ihre eigenen Daten dazulegt, und sie kosten Durchgriff, weil die eine Stellschraube, die man gerade braucht, immer unter der Schnittstelle liegt. Sie sind trotzdem richtig, aber das ist eine Abwägung und kein Naturgesetz.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawFault" data-on-step="drawFault">
+    <h2>wrong letters arrive. where do you look first?</h2>
+    <div class="figure wide" id="fig-fault"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <div class="punch" data-step="2">a tested layer is a layer you can stop suspecting.</div>
+    <aside class="notes">Erst raten lassen. Der Reflex geht zum Sensor, weil dort das Geheimnisvolle sitzt. Aber der Test hat die untere Schicht entlastet: Wenn die Farberkennung nachweislich alle Symbole richtig liefert, liegt der Fehler darüber. Damit ist die Suche halbiert, ohne dass man irgendetwas repariert hat. Das ist dasselbe Vorgehen wie in Sitzung 1, angewendet auf einen Defekt.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="header">how to test one layer</div>
+      <div class="statement">feed it a known input, check its output,<br>with nothing below it.</div>
+      <div class="remark">bits in, bits out. no led, no sensor, no room light.</div>
+    </div>
+    <aside class="notes">Der praktische Kern für die Werkstatt. Die Übersetzung von Text zu Bits lässt sich am Schreibtisch prüfen, ohne Gerät, ohne Dunkelheit, in einer Sekunde statt in einem Durchlauf. Wer das einmal gemacht hat, sucht nie wieder eine Stunde am Sensor nach einem Fehler, der in einer Schleife steckt.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawInterface">
+    <h2>why doesn't it hide everything?</h2>
+    <div class="figure wide" id="fig-interface"></div>
+    <div class="punch">a good interface hides what you don't need and shows what you must decide.</div>
+    <aside class="notes">Unser Modul verbirgt USB, das Tinkerforge-Protokoll, Spannungen und den Treiber. Zwei Dinge zeigt es offen: Integrationszeit und Verstärkung. Warum? Weil genau diese beiden Regler der Zielkonflikt sind, den nur ihr entscheiden könnt, und zwar mit einer Messreihe. Eine Abstraktion, die euch die entscheidende Frage abnimmt, nimmt euch die Arbeit weg, für die ihr hier seid. Und was eine gute Schnittstelle ausmacht: Sie ist klein und stabil. Darunter darf sich alles ändern, oben merkt es niemand.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/switch.png" alt="">
+    <div class="photo-text narrow">you know what's under the switch.<br>every layer you write is one.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Der Bogen schließt sich. Wer selbst einen Stapel gebaut hat, sieht Schalter danach anders: als das schmale Ende von etwas Großem, das jemand absichtlich schmal gemacht hat. Und als Einladung, eine Ebene tiefer zu greifen, wenn es sein muss.</aside>
+  </section>
+
+</div>
+<script src="../stagekit/draw.js?v=20260909e"></script>
+<script src="deck.js?v=20260909e"></script>
+<script src="../stagekit/stagekit.js?v=20260909e"></script>
+</body>
+</html>

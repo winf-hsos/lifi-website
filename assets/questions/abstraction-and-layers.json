@@ -128,6 +128,7 @@
    "richtig": [
     "c"
    ],
+   "bild": "layer-stack",
    "optionen": [
     {
      "kennung": "a",
@@ -578,6 +579,64 @@
      "begruendung": {
       "de": "Verantwortung und Zugriff sind zweierlei: send_text verantwortet den Inhalt und delegiert die Ausführung nach unten, Schicht für Schicht. Wer oben anstößt, muss unten nichts anfassen, das ist der Sinn der Kette.",
       "en": "Responsibility and access are two different things: send_text owns the content and delegates execution downward, layer by layer. Initiating at the top requires touching nothing at the bottom; that is the point of the chain."
+     }
+    }
+   ]
+  },
+  {
+   "id": "al-011",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr habt die Symbolschicht entlastet und verdächtigt jetzt eure Funktion,\ndie Text in Bits übersetzt. Wie prüft ihr genau diese eine Schicht?",
+    "en": "You have cleared the symbol layer and now suspect the function that turns\ntext into bits. How do you test exactly that one layer?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Eine vollständige Übertragung im abgedunkelten Raum starten und vergleichen, was ankommt.",
+      "en": "Run a complete transmission in a darkened room and compare what arrives."
+     },
+     "begruendung": {
+      "de": "Damit prüft ihr wieder alle Schichten zusammen, und ein falsches Ergebnis sagt euch erneut nur, dass irgendwo etwas klemmt. Der ganze Gewinn der Schichten besteht darin, dass ihr sie einzeln anfassen könnt.",
+      "en": "That tests all the layers together again, and a wrong result tells you once more only that something is stuck somewhere. The whole point of layers is that you can take hold of them one at a time."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Der Funktion einen bekannten Text geben und ihre Bits mit der erwarteten Folge vergleichen, ohne Gerät.",
+      "en": "Give the function a known text and compare its bits with the expected sequence, with no device involved."
+     },
+     "begruendung": {
+      "de": "So prüft man eine Schicht: bekannte Eingabe hinein, Ausgabe ansehen, alles darunter weglassen. Bits hinein, Bits heraus, keine LED, kein Sensor, kein Raumlicht. Das dauert eine Sekunde statt eines ganzen Durchlaufs und liefert eine eindeutige Antwort.",
+      "en": "That is how you test a layer: known input in, output checked, everything below it left out. Bits in, bits out, no LED, no sensor, no room light. It takes a second instead of a full run and gives an unambiguous answer."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Die Integrationszeit variieren und beobachten, ab wann die Buchstaben stimmen.",
+      "en": "Vary the integration time and watch when the letters come out right."
+     },
+     "begruendung": {
+      "de": "Die Integrationszeit sitzt in der Symbolschicht, die schon geprüft ist. An ihr zu drehen verändert nichts an der Übersetzung von Text zu Bits, kann aber zufällig einen Durchlauf gelingen lassen und die Suche in die falsche Richtung schicken.",
+      "en": "Integration time belongs to the symbol layer, which has already been cleared. Turning it changes nothing about the text-to-bits translation, but it may make one run succeed by chance and send the search in the wrong direction."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Den Assistenten den Code lesen lassen und nach dem Fehler fragen.",
+      "en": "Have the assistant read the code and ask it where the error is."
+     },
+     "begruendung": {
+      "de": "Das ist ein guter zweiter Schritt und ein schlechter erster. Der Assistent kennt euren Code, aber nicht das Verhalten eurer Funktion; ein Test mit bekannter Eingabe entscheidet die Frage in einer Sekunde und liefert außerdem den Fall, an dem sich ein Vorschlag messen lässt.",
+      "en": "A good second step and a poor first one. The assistant knows your code but not the behaviour of your function; a test with known input settles the question in a second and also gives you the case against which any suggestion can be measured."
      }
     }
    ]

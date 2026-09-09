@@ -13,10 +13,6 @@ function circle(x, y, r, fill, stroke = "none", sw = 0) {
   return `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}"/>`;
 }
 
-function check(x, y, color) {
-  return `<path d="M${x},${y} l18,20 l38,-48" fill="none" stroke="${color}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>`;
-}
-
 window.drawAuthorities = function (_slide, step = 0) {
   const c = d.colors();
   const xs = [50, 610, 1170];
@@ -29,15 +25,10 @@ window.drawAuthorities = function (_slide, step = 0) {
   const visible = Math.min(2, step);
   const parts = [];
   for (let i = 0; i <= visible; i += 1) {
-    const border = i === 2 ? c.green : c.dark;
     parts.push(d.label(xs[i], 125, titles[i], { size: 32, color: c.gray }));
-    parts.push(d.box(xs[i], 165, 460, 300, bodies[i], {
-      size: 32, color: i === 2 ? c.white : c.light, border, mono: i > 0,
-    }));
-    if (i === 2) {
-      parts.push(check(xs[i] + 382, 245, c.green));
-      parts.push(d.label(xs[i] + 230, 535, "evidence from your setup", { size: 32, color: c.green, anchor: "middle" }));
-    }
+    const o = { size: 32, color: i === 2 ? c.white : c.light, mono: i > 0 };
+    parts.push(d.verdict(xs[i], 165, 460, 300, bodies[i], i === 2 ? true : null, { ...o, border: c.dark }));
+    if (i === 2) parts.push(d.label(xs[i] + 230, 535, "evidence from your setup", { size: 32, color: c.green, anchor: "middle" }));
   }
   return put("fig-authorities", d.svg(1680, 640, ...parts));
 };
@@ -197,19 +188,29 @@ window.drawSpread = function (_slide, step = 0) {
 
 window.drawIntegration = function (_slide, step = 0) {
   const c = d.colors();
+  // Jede Ablesung ist ein Balken, seine Breite ist ihr Zeitfenster: die
+  // Balken einer Zeile kacheln dieselbe Sekunde. Lang heisst breit und ruhig,
+  // kurz heisst schmal und zappelig.
   const rows = [
-    { label: "few long readings", y: 80, points: [[0.12, 0], [0.38, 8], [0.64, -6], [0.88, 4]], out: [] },
-    { label: "more, shorter readings", y: 285, points: [[0.08, 18], [0.18, -20], [0.29, 25], [0.41, -8], [0.53, 18], [0.65, -24], [0.77, 10], [0.90, -14]], out: [] },
-    { label: "many short readings", y: 490, points: [[0.05, 25], [0.14, -38], [0.22, 32], [0.31, -18], [0.43, 26], [0.52, -35], [0.61, 18], [0.71, -22], [0.82, 34], [0.93, -28]], out: [[0.36, -70], [0.76, 72]] },
+    { label: "few long readings", y: 80, offsets: [3, 9, -7, 5] },
+    { label: "more, shorter readings", y: 285, offsets: [10, -12, 13, -8, 11, -13, 9, -11] },
+    { label: "many short readings", y: 490, offsets: [14, -12, 15, -34, 10, 15, -13, 36, -10, 13, -15, 11] },
   ];
   const x = 75, w = 1230, h = 125, visible = Math.min(2, step);
+  const bandY = 39, bandH = 47, barH = 12, gap = 8;
   const parts = [];
   rows.slice(0, visible + 1).forEach((row) => {
+    const n = row.offsets.length;
+    const slot = w / n;
     parts.push(d.label(x, row.y - 18, row.label, { size: 32, color: c.gray }));
     parts.push(d.box(x, row.y, w, h, "", { border: c.dark, fill: c.bg, rounded: false }));
-    parts.push(rect(x + 2, row.y + 39, w - 4, 47, c.dark));
-    row.points.forEach(([p, off]) => parts.push(rect(x + p * w - 24, row.y + 62 + off - 6, 48, 12, c.white)));
-    row.out.forEach(([p, off]) => parts.push(rect(x + p * w - 24, row.y + 62 + off - 6, 48, 12, c.red)));
+    parts.push(rect(x + 2, row.y + bandY, w - 4, bandH, c.dark));
+    row.offsets.forEach((off, i) => {
+      // rot, sobald der Balken das Band verlaesst, das noch richtig liest
+      const raus = Math.abs(off) + barH / 2 > bandH / 2;
+      parts.push(rect(x + i * slot + gap / 2, row.y + bandY + bandH / 2 + off - barH / 2,
+                      slot - gap, barH, raus ? c.red : c.white));
+    });
   });
   // die waagerechte Achse ist Zeit: ohne diese Angabe sind die drei Zeilen nicht lesbar
   const lastY = rows[Math.min(visible, 2)].y + h;
@@ -223,7 +224,7 @@ window.drawIntegration = function (_slide, step = 0) {
     parts.push(d.label(1345, 560, "these land in the", { size: 32, color: c.red }));
     parts.push(d.label(1345, 610, "wrong colour", { size: 32, color: c.red }));
   }
-  return put("fig-integration", d.svg(1680, 780, ...parts));
+  return put("fig-integration", d.svg(1680, lastY + 125, ...parts));
 };
 
 window.drawTeams = function (_slide, step = 0) {
@@ -231,13 +232,17 @@ window.drawTeams = function (_slide, step = 0) {
   const parts = [
     d.label(100, 105, "team a", { size: 32, color: c.gray }),
     d.label(890, 105, "team b", { size: 32, color: c.gray }),
-    d.box(100, 155, 690, 300, "changed distance and\nintegration time\n\nrecognition improved", { size: 32, color: c.light, border: c.dark }),
-    d.box(890, 155, 690, 300, "changed only distance\n\nrecognition improved", { size: 32, color: c.white, border: c.light }),
   ];
+  const a = "changed distance and\nintegration time\n\nrecognition improved";
+  const b = "changed only distance\n\nrecognition improved";
   if (step >= 1) {
+    parts.push(d.verdict(100, 155, 690, 300, a, false, { size: 32, color: c.light }));
+    parts.push(d.verdict(890, 155, 690, 300, b, true, { size: 32, color: c.white }));
     parts.push(d.label(445, 545, "what caused it?", { size: 32, color: c.gray, anchor: "middle" }));
     parts.push(d.label(1235, 545, "distance", { size: 32, color: c.green, anchor: "middle", mono: true }));
-    parts.push(check(1500, 210, c.green));
+  } else {
+    parts.push(d.verdict(100, 155, 690, 300, a, null, { size: 32, color: c.light, border: c.dark }));
+    parts.push(d.verdict(890, 155, 690, 300, b, null, { size: 32, color: c.white, border: c.light }));
   }
   return put("fig-teams", d.svg(1680, 620, ...parts));
 };
@@ -264,16 +269,16 @@ window.drawSeries = function (_slide, step = 0) {
 
 window.drawLuck = function (_slide, step = 0) {
   const c = d.colors();
-  const parts = [
-    d.box(120, 100, 610, 390, "5 / 5", { size: 80, mono: true, border: c.dark, color: c.light }),
-    d.box(950, 100, 610, 390, "50 / 50", { size: 80, mono: true, border: step >= 2 ? c.green : c.light, color: c.white }),
-    d.label(425, 570, "guessing succeeds about once in 32 attempts", { size: 32, color: c.gray, anchor: "middle" }),
-  ];
-  if (step >= 1) parts.push(d.label(1255, 570, "guessing: about 1 in 1,125,899,906,842,624", { size: 32, color: c.gray, anchor: "middle", mono: true }));
+  const parts = [d.label(425, 570, "guessing succeeds about once in 32 attempts", { size: 32, color: c.gray, anchor: "middle" })];
   if (step >= 2) {
-    parts.push(check(1450, 165, c.green));
-    parts.push(d.label(1255, 650, "evidence", { size: 32, color: c.green, anchor: "middle" }));
+    parts.push(d.verdict(120, 100, 610, 390, "5 / 5", false, { size: 80, mono: true, color: c.light }));
+    parts.push(d.verdict(950, 100, 610, 390, "50 / 50", true, { size: 80, mono: true, color: c.white }));
+  } else {
+    parts.push(d.verdict(120, 100, 610, 390, "5 / 5", null, { size: 80, mono: true, border: c.dark, color: c.light }));
+    parts.push(d.verdict(950, 100, 610, 390, "50 / 50", null, { size: 80, mono: true, border: c.light, color: c.white }));
   }
+  if (step >= 1) parts.push(d.label(1255, 570, "guessing: about 1 in 1,125,899,906,842,624", { size: 32, color: c.gray, anchor: "middle", mono: true }));
+  if (step >= 2) parts.push(d.label(1255, 650, "evidence", { size: 32, color: c.green, anchor: "middle" }));
   return put("fig-luck", d.svg(1680, 680, ...parts));
 };
 
@@ -315,18 +320,22 @@ window.drawAssistant = function (_slide, step = 0) {
   const parts = [
     d.label(80, 80, "assistant suggestion", { size: 32, color: c.gray }),
     d.label(925, 80, "your measurement series", { size: 32, color: c.gray }),
-    d.box(80, 120, 700, 230, '"increase the gain —\nrecognition will improve"', { size: 32, border: c.dark, color: c.light }),
-    d.box(925, 120, 675, 230, "gain ↑\nrecognition: 94% → 82%", { size: 32, border: c.light, color: c.white, mono: true }),
   ];
+  const vorschlag = '"increase the gain —\nrecognition will improve"';
+  const reihe = "gain ↑\nrecognition: 94% → 82%";
+  if (step >= 2) {
+    parts.push(d.verdict(80, 120, 700, 230, vorschlag, false, { size: 32, color: c.light }));
+    parts.push(d.verdict(925, 120, 675, 230, reihe, true, { size: 32, color: c.white, mono: true }));
+  } else {
+    parts.push(d.verdict(80, 120, 700, 230, vorschlag, null, { size: 32, border: c.dark, color: c.light }));
+    parts.push(d.verdict(925, 120, 675, 230, reihe, null, { size: 32, border: c.light, color: c.white, mono: true }));
+  }
   if (step >= 1) {
     ["one variable", "enough repetitions", "control reading"].forEach((t, i) => {
       parts.push(d.label(960 + i * 215, 420, `✓ ${t}`, { size: 20, color: c.gray }));
     });
   }
-  if (step >= 2) {
-    parts.push(check(1510, 160, c.green));
-    parts.push(d.label(1260, 475, "ground truth for your setup", { size: 32, color: c.green, anchor: "middle" }));
-  }
+  if (step >= 2) parts.push(d.label(1260, 475, "ground truth for your setup", { size: 32, color: c.green, anchor: "middle" }));
   if (step >= 3) {
     const y = 585, xs = [300, 735, 1170], names = ["suggestion", "measurement", "outcome"];
     parts.push(d.arrow(500, y, 625, y, { color: c.gray, width: 3 }));
