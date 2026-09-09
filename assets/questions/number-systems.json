@@ -696,6 +696,122 @@
      }
     }
    ]
+  },
+  {
+   "id": "ns-013",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Bisher habt ihr Binärzahlen gelesen. Jetzt andersherum: Wie schreibt ihr\ndie Zahl 13 im Binärsystem?",
+    "en": "So far you have been reading binary numbers. Now the other way round: how\ndo you write the number 13 in binary?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "1011",
+      "en": "1011"
+     },
+     "begruendung": {
+      "de": "Das sind 8 + 2 + 1 = 11. Die Ziffern stimmen, aber die Reihenfolge nicht: Wer die Stellenwerte von rechts nach links abarbeitet und das Ergebnis dann so hinschreibt, wie er es gefunden hat, dreht die Zahl um.",
+      "en": "That is 8 + 2 + 1 = 11. The digits are right but their order is not: working through the place values from right to left and writing the result down in that order reverses the number."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "1101",
+      "en": "1101"
+     },
+     "begruendung": {
+      "de": "8 + 4 + 0 + 1 = 13. Der bequemste Weg geht von der größten Zweierpotenz abwärts: 16 ist zu groß, 8 passt (Rest 5), 4 passt (Rest 1), 2 passt nicht, 1 passt. Das ergibt von links nach rechts 1, 1, 0, 1.",
+      "en": "8 + 4 + 0 + 1 = 13. The easiest route goes down from the largest power of two: 16 is too big, 8 fits (5 left), 4 fits (1 left), 2 does not, 1 does. Left to right that gives 1, 1, 0, 1."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "1110",
+      "en": "1110"
+     },
+     "begruendung": {
+      "de": "Das sind 8 + 4 + 2 = 14, also eins zu viel. Ein Blick auf die letzte Stelle genügt zur Kontrolle: Sie trägt die 1, und ungerade Zahlen haben dort immer eine Eins.",
+      "en": "That is 8 + 4 + 2 = 14, one too many. A glance at the last digit is enough to check: it carries the 1, and odd numbers always have a one there."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "1100",
+      "en": "1100"
+     },
+     "begruendung": {
+      "de": "Das sind 8 + 4 = 12. Der Rest von 1 ist unterschlagen worden; nach der 4 bleibt genau eine 1 übrig, und die braucht die letzte Stelle.",
+      "en": "That is 8 + 4 = 12. The remainder of 1 has been dropped; after the 4 exactly one is left over, and it needs the last place."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ns-014",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Euer Alphabet hat vier Farben. Ihr wollt damit 26 Buchstaben unterscheiden\nund gebt jedem Buchstaben eine feste Zahl von Farbstellen. Wie viele\nStellen braucht ihr mindestens?",
+    "en": "Your alphabet has four colours. You want to tell 26 letters apart and give\nevery letter a fixed number of colour positions. How many positions do you\nneed at least?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Zwei, denn zwei Stellen sind schon 4 mal 4.",
+      "en": "Two, because two positions are already 4 times 4."
+     },
+     "begruendung": {
+      "de": "Zwei Stellen ergeben 4² = 16 Kombinationen, und 16 reichen für 26 Buchstaben nicht. Die Rechnung ist richtig angesetzt, das Ergebnis aber zu klein; es fehlen zehn Zeichen.",
+      "en": "Two positions give 4² = 16 combinations, and 16 is not enough for 26 letters. The calculation is set up correctly but comes out too small; ten characters are missing."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Drei, denn 4³ sind 64 und damit erstmals genug.",
+      "en": "Three, because 4³ is 64 and that is the first count that suffices."
+     },
+     "begruendung": {
+      "de": "Genau die Rechnung des Stellenwertsystems, nur andersherum gelesen: Mit k Ziffern und n Stellen sind kⁿ Kombinationen darstellbar. 4² = 16 ist zu wenig, 4³ = 64 reicht, und 38 Kombinationen bleiben ungenutzt. Diese Verschwendung ist der Preis der festen Länge.",
+      "en": "Exactly the place value calculation, read backwards: with k digits and n positions you can represent kⁿ combinations. 4² = 16 is too few, 4³ = 64 is enough, and 38 combinations go unused. That waste is the price of a fixed length."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Fünf, denn 26 Buchstaben brauchen fünf Bit, und jede Farbstelle ist eine Stelle.",
+      "en": "Five, because 26 letters need five bits, and every colour position is one position."
+     },
+     "begruendung": {
+      "de": "Fünf Bit stimmen, aber ein Bit ist eine Stelle mit **zwei** Möglichkeiten. Eine Farbstelle mit vier Farben trägt zwei Bit, also braucht ihr nur halb so viele Stellen, aufgerundet drei.",
+      "en": "Five bits is right, but a bit is a position with **two** possibilities. A colour position with four colours carries two bits, so you need only half as many positions, rounded up to three."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Sechsundzwanzig, denn jeder Buchstabe braucht seine eigene Stelle.",
+      "en": "Twenty-six, because every letter needs its own position."
+     },
+     "begruendung": {
+      "de": "Das wäre der Fall, wenn jede Stelle nur einen Buchstaben markieren könnte. Der ganze Trick des Stellenwertsystems ist aber, dass Stellen sich **kombinieren**: Jede zusätzliche Stelle vervierfacht die Zahl der Möglichkeiten, statt sie um eins zu erhöhen.",
+      "en": "That would be the case if a position could only mark one letter. The whole trick of a place value system is that positions **combine**: every extra position multiplies the number of possibilities by four instead of adding one."
+     }
+    }
+   ]
   }
  ]
 }

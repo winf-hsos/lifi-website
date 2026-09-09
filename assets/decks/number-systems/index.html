@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>why ten?</title>
+  <link rel="stylesheet" href="theme.css?v=20260909c">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260909c">
+  <style>
+    .figure.wide { left: 110px; right: 110px; }
+    .figure.inset { left: 210px; right: 210px; }
+    .photo-text.narrow { width: 560px; }
+    .content.tight .statement { line-height: 1.14; }
+    .embed.z125 { transform-origin: top left; }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="why ten?"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["the place value trick", "why two?", "reading bytes", "your own base"]'>
+
+  <section class="slide title">
+    <aside class="notes">Ein Stellenwertsystem ist eine Bauanleitung, und die Zehn darin ist reine Gewohnheit. Wer das einmal sieht, liest Binär und Hex ohne neue Regeln, und merkt am Ende, dass das eigene Farbalphabet dasselbe System ist.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Vier Teile: der Trick hinter jeder Zahl, warum Rechner ausgerechnet zwei Ziffern nehmen, wie man Bytes liest, und was das mit eurem Farbalphabet zu tun hat.</aside>
+  </section>
+
+  <!-- ================= Teil 1 ================= -->
+
+  <section class="slide part" data-part="the place value trick">
+    <aside class="notes">Wir fangen mit einer Frage an, die nie jemand stellt.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/hands.png" alt="">
+    <div class="photo-text narrow">why do we count to ten?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Erst raten lassen. Die Antwort ist entwaffnend banal: weil wir zehn Finger haben. Es steckt keine Mathematik dahinter, keine Naturkonstante, nur Anatomie. Das ist der ganze Grund, warum unser Zahlensystem zehn Ziffern hat, und es ist der Aufhänger für alles Weitere: Wenn die Zehn Zufall ist, geht es auch anders.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawPlace" data-on-step="drawPlace">
+    <h2>what 123 really says</h2>
+    <div class="figure wide" id="fig-place"></div>
+    <span data-step="1"></span>
+    <div class="punch" data-step="1">every place carries a power of ten.</div>
+    <aside class="notes">Jede Stelle trägt eine Zehnerpotenz: hundert, zehn, eins. Die Ziffer sagt, wie oft. Das weiß jeder, aber kaum jemand hat es je so hingeschrieben, und genau darauf baut der Rest des Inputs.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawEight" data-on-step="drawEight">
+    <h2>the eight-finger creature writes 123</h2>
+    <div class="figure wide" id="fig-eight"></div>
+    <span data-step="1"></span>
+    <div class="punch" data-step="1">same recipe. different base. different number.</div>
+    <aside class="notes">Live-Moment: erst rechnen lassen, dann auflösen. Dieselben drei Ziffern, dasselbe Schema, nur Achterpotenzen statt Zehnerpotenzen, und heraus kommt 83. Die Ziffernfolge allein sagt also gar nichts, solange die Basis nicht dabeisteht.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/dolphin.png" alt="">
+    <div class="photo-text narrow">and a creature with two flippers?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Der Delfin hat zwei Flossen, also zwei Ziffern. Erst fragen lassen, wie weit man damit kommt: Die meisten schaetzen viel zu wenig. Er kommt genauso weit wie wir, seine Zahlen werden nur laenger.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawBinaryCount">
+    <h2>two flippers: counting in binary</h2>
+    <div class="figure wide" id="fig-binary-count"></div>
+    <aside class="notes">Der Delfin hat zwei Flossen, also Basis 2: derselbe Trick am Anschlag. Nur noch zwei Ziffern, dafür wachsen die Zahlen schnell in die Länge. Gemeinsam bis acht zählen lassen; spätestens bei 100 fällt der Groschen, dass das dieselbe Mechanik ist wie beim Übergang von 9 auf 10.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawDolphin" data-on-step="drawDolphin">
+    <h2>the dolphin writes 110</h2>
+    <div class="figure wide" id="fig-dolphin"></div>
+    <span data-step="1"></span>
+    <div class="punch" data-step="1">nothing new. the third time is the same trick.</div>
+    <aside class="notes">Das Schema zum dritten Mal, jetzt sitzt es: Zweierpotenzen 4, 2, 1, und heraus kommt 6. Wer bis hierher mitgekommen ist, kann jede Basis lesen, ohne eine neue Regel zu lernen.</aside>
+  </section>
+
+  <!-- ================= Teil 2 ================= -->
+
+  <section class="slide part" data-part="why two?">
+    <aside class="notes">Und damit die Frage, die die ganze Rechnerei erklärt.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawWhyTwo" data-on-step="drawWhyTwo">
+    <h2>why two, of all things?</h2>
+    <div class="figure wide" id="fig-why-two"></div>
+    <span data-step="1"></span>
+    <div class="punch" data-step="1">two states are the cheapest thing you can build reliably.</div>
+    <aside class="notes">Erst die Frage stehen lassen und raten. Dann die Auflösung, und sie ist keine Mathematik, sondern Technik: Zehn Spannungsstufen zu bauen ist möglich, sie nach einem Meter Kabel noch auseinanderzuhalten ist es kaum. Mit zwei Zuständen ist der Abstand maximal, und genau das ist die Bereichsfolie aus „Analog und digital", nur von der anderen Seite. Der Preis dafür sind mehr Stellen, und die sind billig.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawByte" data-on-step="drawByte">
+    <h2>eight bits make a byte</h2>
+    <div class="figure wide" id="fig-byte"></div>
+    <span data-step="1"></span>
+    <div class="punch" data-step="1">256 values, and every one of them is a place value sum.</div>
+    <aside class="notes">Dasselbe Schema mit acht Stellen: 128, 64, 32, 16, 8, 4, 2, 1. Ein Byte fasst 2⁸ = 256 Werte, also 0 bis 255. Das Wort Bit kennt ihr aus Sitzung 4 als Informationsmaß; hier taucht es als Ziffer wieder auf, „binary digit". Beides passt zusammen: Eine Binärziffer trägt genau eine Ja/Nein-Antwort.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: eight switches, one number</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/byte-switchboard/?embed=1" title="The Byte Switchboard"></iframe></div>
+    <aside class="notes">Acht Schalter, und die Zahl läuft mit. Drei Fragen an den Saal: Welcher Schalter ändert am meisten? Wie stellt man 255 ein, wie die 1? Und was passiert, wenn man von 255 noch eins weiterzählen will? Die letzte Frage bleibt offen und kommt in Sitzung 12 zurück.</aside>
+  </section>
+
+  <!-- ================= Teil 3 ================= -->
+
+  <section class="slide part" data-part="reading bytes">
+    <aside class="notes">Acht Nullen und Einsen kann kein Mensch auf einen Blick lesen. Dafür gibt es eine Abkürzung.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawHex" data-on-step="drawHex">
+    <h2>hex: four bits at a time</h2>
+    <div class="figure wide" id="fig-hex"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <div class="punch" data-step="2">hex is not a new number world. it is a reading aid.</div>
+    <aside class="notes">Kein neues Prinzip, dasselbe Schema zur Basis 16. Der eigentliche Grund ist die Lesbarkeit: Vier Bit haben genau 16 Zustände, also passt eine Hexziffer auf ein Viererpäckchen, und ein Byte auf zwei Ziffern. Weil unsere zehn Ziffern nicht reichen, borgt man sich A bis F. Wer die Tabelle einmal gesehen hat, liest jeden Hex-Dump.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: the same file, twice</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/inside-a-file/?embed=1" title="Inside a File"></iframe></div>
+    <aside class="notes">Eine echte Datei, links die Bytes hexadezimal, rechts als Zeichen. Zeigen, dass die ersten Bytes den Typ verraten, und dass zwischen den lesbaren Stellen genauso viele unlesbare stehen. Wer hier einmal hingeschaut hat, glaubt nicht mehr, dass eine Datei etwas anderes ist als eine Folge von Zahlen.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawLadders">
+    <h2>two ladders of units</h2>
+    <div class="figure wide" id="fig-ladders"></div>
+    <aside class="notes">Zwei Leitern nebeneinander: die dezimale mit tausend je Stufe, die binäre mit 1024. Beide heißen im Alltag gleich, und daher kommt der Ärger auf der nächsten Folie. Wer es genau nimmt, sagt Kibibyte zur binären Stufe; im Alltag tut das fast niemand.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawDisk" data-on-step="drawDisk">
+    <h2>the missing 69 gigabytes</h2>
+    <div class="figure wide" id="fig-disk"></div>
+    <span data-step="1"></span>
+    <div class="punch" data-step="1">nobody cheated. two ladders, one word.</div>
+    <aside class="notes">Auf der Packung steht 1 Terabyte, im Rechner stehen 931 Gigabyte. Erst raten lassen, wer hier schummelt. Auflösung: niemand. Der Hersteller zählt die dezimale Leiter hinauf, das Betriebssystem die binäre hinunter, und beide nennen ihre Stufe Gigabyte. Die 69 fehlenden Gigabyte sind ein Wortproblem, kein Betrug.</aside>
+  </section>
+
+  <!-- ================= Teil 4 ================= -->
+
+  <section class="slide part" data-part="your own base">
+    <aside class="notes">Und jetzt die Pointe, die den ganzen Input im Projekt verankert.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawOwnBase" data-on-step="drawOwnBase">
+    <h2>you built one already</h2>
+    <div class="figure wide" id="fig-own-base"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <div class="punch" data-step="2">k colours are k digits, and position matters.</div>
+    <aside class="notes">Euer Farbalphabet ist ein Stellenwertsystem, und die Zahl eurer Farben ist die Basis. Bei vier Farben trägt jede Stelle zwei Bit, drei Stellen ergeben 64 Kombinationen, genug für ein Alphabet. Die Rechnung geht in beide Richtungen: Wer weiß, wie viele Zeichen er braucht, kann die Zahl der Stellen ausrechnen, und genau das steht in Challenge 1 an.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content tight">
+      <div class="statement">ten was never special.</div>
+      <div class="sidenote" data-step="1">it is the number of fingers on two hands, and nothing else.</div>
+    </div>
+    <aside class="notes">Der Schlusssatz, und er ist der Anfang von der anderen Seite: Wer einmal gesehen hat, dass die Zehn nur Anatomie ist, hält keine Basis mehr für natürlich, und keine für schwierig.</aside>
+  </section>
+
+</div>
+<script src="../stagekit/draw.js?v=20260909c"></script>
+<script src="deck.js?v=20260909c"></script>
+<script src="../stagekit/stagekit.js?v=20260909c"></script>
+</body>
+</html>
