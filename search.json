@@ -322,73 +322,73 @@
   {
     "objectID": "concepts/signal-and-noise.html",
     "href": "concepts/signal-and-noise.html",
-    "title": "Signal und Rauschen",
+    "title": "Signal and Noise",
     "section": "",
-    "text": "Messwerte schwanken auch unter gleichen Bedingungen. Dieses Rauschen begrenzt, wie viele Zustände sicher unterschieden werden können. Längere Messungen glätten die Schwankungen, kosten aber Zeit und senken damit den möglichen Durchsatz. Wie man ehrlich misst (Kontrollmessung, eine Variable auf einmal, Protokoll), steht bei Measuring and Experimenting; hier geht es um das, was diese Messungen über eure Strecke verraten.\n\n\n\nWarum liefert dieselbe Messung nie exakt dasselbe Ergebnis?\nWarum streuen die Werte stärker, wenn ich schneller messe?\nWann sind zwei Zustände sicher unterscheidbar?\nWas begrenzt die Anzahl der Symbole, die ich verwenden kann?\nWie entscheide ich, welches Symbol angekommen ist, wenn ich es nicht ausrechnen kann?\n\nDieses Konzept müsst ihr für Challenge 1 verstanden haben, damit ihr dort erfolgreich seid.",
+    "text": "Measure the same thing twice and you get two different numbers. That scatter is not a fault, it is a property of every measurement, and it decides how many symbols your link can carry. Two teams with identical hardware end up with alphabets of 16 and of 4, and the difference is not in their code: it is the ratio between the distance separating two symbols and the spread of the readings around each one. You can improve that ratio, but almost every way of doing so is paid for in bits per symbol or in symbols per second. Three of them are free, and that is why you are allowed to build optics.\nIn this chapter, we address the following questions:\n\nWhy does the same measurement never give exactly the same result?\nWhen are two states safely distinguishable, and why is “different means” not enough?\nHow many symbols fit into your link, and can you work that out before trying?\nWhy do faster readings scatter more?\nWhat does each countermeasure against noise cost you?\n\nYou need this concept for Challenge 1, where the size of your alphabet is the score. How to measure honestly, with a control measurement and one variable at a time, is the neighbouring concept Measurement and Experiments; here it is about what those measurements tell you about your link.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Signal und Rauschen"
+      "Signal and Noise"
     ]
   },
   {
-    "objectID": "concepts/signal-and-noise.html#zusammenfassung",
-    "href": "concepts/signal-and-noise.html#zusammenfassung",
-    "title": "Signal und Rauschen",
+    "objectID": "concepts/signal-and-noise.html#summary",
+    "href": "concepts/signal-and-noise.html#summary",
+    "title": "Signal and Noise",
     "section": "",
-    "text": "Messwerte schwanken auch unter gleichen Bedingungen. Dieses Rauschen begrenzt, wie viele Zustände sicher unterschieden werden können. Längere Messungen glätten die Schwankungen, kosten aber Zeit und senken damit den möglichen Durchsatz. Wie man ehrlich misst (Kontrollmessung, eine Variable auf einmal, Protokoll), steht bei Measuring and Experimenting; hier geht es um das, was diese Messungen über eure Strecke verraten.\n\n\n\nWarum liefert dieselbe Messung nie exakt dasselbe Ergebnis?\nWarum streuen die Werte stärker, wenn ich schneller messe?\nWann sind zwei Zustände sicher unterscheidbar?\nWas begrenzt die Anzahl der Symbole, die ich verwenden kann?\nWie entscheide ich, welches Symbol angekommen ist, wenn ich es nicht ausrechnen kann?\n\nDieses Konzept müsst ihr für Challenge 1 verstanden haben, damit ihr dort erfolgreich seid.",
+    "text": "Measure the same thing twice and you get two different numbers. That scatter is not a fault, it is a property of every measurement, and it decides how many symbols your link can carry. Two teams with identical hardware end up with alphabets of 16 and of 4, and the difference is not in their code: it is the ratio between the distance separating two symbols and the spread of the readings around each one. You can improve that ratio, but almost every way of doing so is paid for in bits per symbol or in symbols per second. Three of them are free, and that is why you are allowed to build optics.\nIn this chapter, we address the following questions:\n\nWhy does the same measurement never give exactly the same result?\nWhen are two states safely distinguishable, and why is “different means” not enough?\nHow many symbols fit into your link, and can you work that out before trying?\nWhy do faster readings scatter more?\nWhat does each countermeasure against noise cost you?\n\nYou need this concept for Challenge 1, where the size of your alphabet is the score. How to measure honestly, with a control measurement and one variable at a time, is the neighbouring concept Measurement and Experiments; here it is about what those measurements tell you about your link.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Signal und Rauschen"
+      "Signal and Noise"
     ]
   },
   {
-    "objectID": "concepts/signal-and-noise.html#erläuterung-des-konzepts",
-    "href": "concepts/signal-and-noise.html#erläuterung-des-konzepts",
-    "title": "Signal und Rauschen",
-    "section": "Erläuterung des Konzepts",
-    "text": "Erläuterung des Konzepts\nMesst ihr zweimal dasselbe, bekommt ihr nie exakt dieselben Zahlen. Diese Schwankung heißt Rauschen und ist keine Panne, sondern eine Eigenschaft jeder Messung. Sie begrenzt, wie viele Zustände ihr noch sicher auseinanderhalten könnt.\n\n\n\n\n\n\nAbbildung 1: In allen vier Streifen liegt dasselbe Rohsignal. Ganz oben, wie es beim Sensor ankommt: viel zu verrauscht, um daraus in einem einzelnen Augenblick etwas zu entscheiden. Darunter dreimal dasselbe Signal, nur in unterschiedlich lange Messfenster zerlegt. Jeder dicke Strich ist ein Messwert, gemittelt über genau sein Fenster. Je länger ein Fenster ist, desto näher liegt der Wert am wahren Pegel.\n\n\n\nDas ist die eine Hälfte des Problems. Die andere zeigt das Bild bei Analog and Digital: Dort bleibt die Messdauer gleich, dafür wächst die Zahl der Symbole. Beide Wege enden an derselben Wand, und zusammen begrenzen sie euren Durchsatz.\n\nEin Mittelwert genügt nicht\nWer seine Farben nur mit je einem Mittelwert dokumentiert, weiß noch nicht, ob sie unterscheidbar sind. Entscheidend ist die Streuung: Zwei Farben sind erst dann sicher auseinanderzuhalten, wenn sich ihre Wertebereiche samt Schwankung nicht überlappen. Deshalb gehört zu jedem Steckbrief einer Farbe neben dem Mittelwert auch, wie weit die Einzelmessungen streuen. Der Abstand zweier Mittelwerte muss deutlich größer sein als die Summe ihrer Streuungen, sonst landet irgendwann eine Messung im Gebiet des Nachbarn, und ein einziger solcher Fehler in fünfzig Läufen kostet euch die Alphabetgröße.\n\n\nDie Stellschrauben haben Preisschilder\nGegen das Rauschen gibt es Werkzeuge, und keines ist gratis. Länger messen (mehr Integrationszeit) glättet die Schwankung, kostet aber Symbolrate. Mehrfach messen und mitteln, wie es read_stable() vormacht, wirkt genauso und kostet genauso. Die Verstärkung höher drehen hebt das Signal, hebt aber das Rauschen mit. Mehr Licht oder weniger Umgebungslicht verbessert das Verhältnis wirklich, kostet dafür Aufwand am Aufbau. Eure Aufgabe ist nicht, das Rauschen zu besiegen, das geht nicht, sondern es zu messen und dann zu entscheiden, welches Alphabet und welches Tempo eure Strecke ehrlich hergibt. Ein Gefühl für dieses Abwägen gibt das Distinguishability Lab: Alphabetgröße und Messfenster als Regler, ein Störsignal auf Knopfdruck, und die Fehlerquote läuft live mit, simuliert statt gemessen. Genau diese Zahlen sind es, die eure Wettbewerbsplatzierung erklären: Nicht wer den schnellsten Code schreibt, gewinnt, sondern wer seine Strecke am besten kennt.\ndistinguishability labsend symbols over a noisy channel, oscilloscope style: grow the alphabet, tune the window, inject a disturbance, and watch the error rate fight the throughput.LiFi Project · concept demos",
+    "objectID": "concepts/signal-and-noise.html#explanation",
+    "href": "concepts/signal-and-noise.html#explanation",
+    "title": "Signal and Noise",
+    "section": "Explanation",
+    "text": "Explanation\nA lighthouse in fog is a strange sight. The lamp burns exactly as brightly as it did on a clear night, and yet the beam dies after a few metres. Nothing has happened to the signal. Something has happened to everything else.\nThat is the situation you are in after the first competition. Every team had the same LED, the same sensor and the same room, every sender was equally bright, and still one team gets 16 colours through and another gets 4. It is worth saying plainly what does not explain that gap: the quality of the code. What explains it is scatter.\n\nTen readings of one colour\nPoint your sensor at one colour and read it ten times without changing anything at all.\n\n\n\n\n\n\nFigure 1: Ten readings of the same colour, taken one after another with nothing changed in between. The values run from 207 to 220.\n\n\n\nYou get ten different numbers. This surprises people, because a computer is the one machine that reliably gives the same output for the same input. But the sensor never gets the same input twice: the light flickers, the electronics have their own hiss, someone walks past the window. This variation is called noise, and every measuring instrument in the world has it.\nNotice that a single reading tells you almost nothing on its own. The reading 220 could be that colour, or it could be a neighbouring colour having a bad moment. Only the whole set of ten tells you where the colour actually sits and how far it wanders.\n\n\nThe same signal, measured differently\nThere is a way to make the numbers calmer, and you already have it: measure for longer and average what arrives.\n\n\n\n\n\n\nFigure 2: The same raw signal four times over. At the top as it arrives at the sensor. Below it the same signal split into measurement windows of 4, 12 and 32 readings; every thick bar is one averaged value. Longer windows give calmer values, and fewer of them.\n\n\n\nThe top strip is what the sensor actually delivers: far too restless to decide anything from a single instant. Each strip below averages the same signal over a longer window, and the bars settle closer and closer to the true level.\nLook at the right-hand edge, though. The same stretch of time holds 288 raw readings, 72 averaged ones, 24, and finally 9. Calmness is not free: you pay for it in readings per second, and readings per second is exactly what your transmission speed is made of. That is the first price tag of this chapter, and it will not be the last.\n\n\nTwo symbols, two clouds\nNow put two symbols on the same scale. Each one is not a single value but a cloud of values, and the width of that cloud is the noise you just measured.\n\n\n\n\n\n\nFigure 3: Two symbols on a scale of readings, twice. On the left the clouds are narrow and the boundary between them sits in empty space. On the right the distance is the same, but the clouds are wider, and the parts that cross the boundary are exactly the readings the receiver will get wrong.\n\n\n\nThe picture makes a point that is easy to say and easy to forget: neither number decides on its own. The distance between two symbols means nothing without the width of the clouds, and the width means nothing without the distance.\n\n\nThe ratio is what counts\nSo the quantity that governs everything in this chapter is a ratio: the distance \\(d\\) between two symbols, divided by the spread \\(s\\) of the readings around each one.\n\n\n\n\n\n\nFigure 4: The distance d between two symbols and the spread s of the readings. Safely distinguishable means the clouds do not touch, not even at their edges.\n\n\n\nYour alphabet size measures nothing but this ratio, which is why it explains the ranking on the wall.\nAnd this gives a sharper definition of a phrase we have been using loosely. Safely distinguishable does not mean the means are different. It means the clouds do not overlap, not even at their outermost values. A single reading that strays across the boundary is a wrong symbol, and one wrong symbol in fifty runs is enough to cost you an alphabet size. If your notes for a colour contain only its mean, they do not yet tell you whether that colour is usable.\n\n\nHow many symbols fit?\nOnce you think in bands rather than in points, the question “how many colours can we use?” stops being a matter of trying things out and becomes arithmetic.\n\n\n\n\n\n\nFigure 5: The usable range of the link, filled twice: once with four wide bands, once with eight narrow ones. The narrower each band, the more of them fit into the same range.\n\n\n\nMeasure the usable range of your link, from the darkest to the brightest value you can produce reliably. Measure the width of one cloud. Divide, and you have the number of symbols that fit.\nAn example to follow along with. Your range runs from 40 to 840, so 800 units. Every colour scatters around its mean by ±25, so its band is 50 wide, not 25: the cloud reaches out in both directions. And \\(800 / 50 = 16\\). That is where a 16-symbol alphabet comes from, and doing this calculation before you start trying colours saves you half a session.\nYou can get a feel for the whole trade in the simulator, where the alphabet size, the measurement window and the speed are all knobs, and the error rate runs along with them:\ndistinguishability labsend symbols over a noisy channel, oscilloscope style: grow the alphabet, tune the window, inject a disturbance, and watch the error rate fight the throughput.LiFi Project · concept demos\n\n\nThe knobs have price tags\nThere are tools against noise, and hardly any of them are free.\n\n\n\n\n\n\nFigure 6: Six ways to improve the ratio, in two columns: three that make d bigger and four that make s smaller. Each one carries what it costs, and three cost nothing but craft.\n\n\n\nOn the left you enlarge the distance, on the right you shrink the spread. Notice how many of the price tags say the same two things: fewer bits per symbol, or fewer symbols per second. Averaging in software is the same bargain as a longer integration time in the sensor, only made at a different place:\ndef read_stable(n=10):\n    values = [sensor.get_clear() for _ in range(n)]\n    return sum(values) / n\nTen times calmer readings, ten times slower. That is not an argument against averaging, it is an argument for measuring what it costs you instead of assuming it is free.\nThree of the tools are the exception, and they are the reason optical self-build is allowed in this course: aim the light better, block ambient light, nail down the geometry. They improve the ratio without giving anything up, and they cost nothing but an afternoon with cardboard.\n\n\nBoth roads lead to the same wall\nThere are two ways to get more out of your link, and students almost always want both at once.\n\n\n\n\n\n\nFigure 7: More symbols squeezes the bands together; faster symbols makes the clouds wider. Both draw on the same margin.\n\n\n\nMore symbols narrows the bands. Faster symbols widens the clouds. Both spend the same safety margin, and you only have one of it. That is the wall Challenge 2 begins at, and the way through it is not a cleverer program but a number you have measured yourself.\nOne last thing, and it is the reason this module is not a programming course. Everything in this chapter is a property of your link: your room, your distance, your ambient light. Calibrate by the window and the acceptance test in the dark will not match. No amount of reading, and no language model, has access to that. The channel is the only authority in the room.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Signal und Rauschen"
+      "Signal and Noise"
     ]
   },
   {
-    "objectID": "concepts/signal-and-noise.html#folien",
-    "href": "concepts/signal-and-noise.html#folien",
-    "title": "Signal und Rauschen",
-    "section": "Folien",
-    "text": "Folien\nDie Folien aus der Auswertung nach dem Wettbewerb, zum Nachsehen:\n\n\n  Blättern mit den Pfeiltasten oder per Klick auf die Folie ·\n  als PDF herunterladen",
+    "objectID": "concepts/signal-and-noise.html#slides",
+    "href": "concepts/signal-and-noise.html#slides",
+    "title": "Signal and Noise",
+    "section": "Slides",
+    "text": "Slides\nThe slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Signal und Rauschen"
+      "Signal and Noise"
     ]
   },
   {
-    "objectID": "concepts/signal-and-noise.html#fragen-üben",
-    "href": "concepts/signal-and-noise.html#fragen-üben",
-    "title": "Signal und Rauschen",
-    "section": "Fragen üben",
-    "text": "Fragen üben\nHier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.",
+    "objectID": "concepts/signal-and-noise.html#practice-questions",
+    "href": "concepts/signal-and-noise.html#practice-questions",
+    "title": "Signal and Noise",
+    "section": "Practice questions",
+    "text": "Practice questions\nTry questions in the exam format here, with the answer and its reasoning shown right away.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Signal und Rauschen"
+      "Signal and Noise"
     ]
   },
   {
-    "objectID": "concepts/signal-and-noise.html#literatur",
-    "href": "concepts/signal-and-noise.html#literatur",
-    "title": "Signal und Rauschen",
-    "section": "Literatur",
-    "text": "Literatur",
+    "objectID": "concepts/signal-and-noise.html#further-reading",
+    "href": "concepts/signal-and-noise.html#further-reading",
+    "title": "Signal and Noise",
+    "section": "Further reading",
+    "text": "Further reading\n\nCharles Petzold: Code. The Hidden Language of Computer Hardware and Software. Microsoft Press, 2nd edition 2022. Chapter 5 makes this chapter’s argument from the other side: two states are the cheapest thing to build reliably, precisely because the gap between them is so wide that no amount of scatter closes it.\nClaude E. Shannon: Communication in the Presence of Noise. Proceedings of the IRE 37(1), 1949. https://doi.org/10.1109/JRPROC.1949.232969. The paper that made this a subject. Heavy going, but the first two pages are readable and the pictures of signal clouds in it are the ancestors of the ones above.\nPhilip Bevington and Keith Robinson: Data Reduction and Error Analysis for the Physical Sciences. McGraw-Hill, 3rd edition 2002. If you want to know how to state a spread properly rather than by eye, this is the standard reference.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Signal und Rauschen"
+      "Signal and Noise"
     ]
   },
   {

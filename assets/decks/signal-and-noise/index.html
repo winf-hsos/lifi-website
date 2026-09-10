@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>why 16 and not 4?</title>
+  <link rel="stylesheet" href="theme.css?v=20260910d">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260910d">
+  <style>
+    .photo-text.narrow { width: 620px; }
+
+    /* Zwei Folien werden in der Sitzung ausgefuellt. Sie stehen vorbelegt da,
+       damit sie auch beim Nachlesen etwas aussagen, und sind editierbar: Weil
+       das Deck HTML ist, laesst sich wirklich hineintippen. */
+    table.results {
+      position: absolute;
+      left: var(--margin); right: var(--margin);
+      top: 210px;
+      border-collapse: collapse;
+      font-size: var(--small);
+    }
+    table.results th {
+      text-align: left;
+      font-weight: normal;
+      color: var(--gray);
+      font-size: var(--tiny);
+      padding: 0 28px 14px 0;
+      border-bottom: 2px solid var(--gray-dark);
+    }
+    table.results td {
+      padding: 18px 28px 18px 0;
+      color: var(--white);
+      border-bottom: 1px solid var(--gray-dark);
+    }
+    table.results td.num { font-family: var(--mono); color: var(--yellow); }
+    table.results td.what { color: var(--gray-light); }
+    table.results [contenteditable]:focus { outline: 2px solid var(--blue); outline-offset: 4px; }
+
+    .believed { position: absolute; left: var(--margin); right: var(--margin); top: 260px; }
+    .believed .row { display: flex; gap: 40px; align-items: baseline; margin-bottom: 60px; }
+    .believed .tag { color: var(--gray); font-size: var(--small); width: 260px; flex: 0 0 260px; font-family: var(--mono); }
+    .believed .said { color: var(--white); font-size: var(--normal); flex: 1; border-bottom: 2px solid var(--gray-dark); padding-bottom: 14px; }
+    .believed .said.measured { color: var(--yellow); }
+    .believed [contenteditable]:focus { outline: 2px solid var(--blue); outline-offset: 4px; }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="why 16 and not 4?"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["what your data says", "what decides your alphabet", "what it costs"]'>
+
+  <section class="slide title">
+    <aside class="notes">Wie viel eure Strecke trägt, entscheidet nicht euer Code, sondern das Verhältnis von Abstand zwischen den Symbolen zu Streuung der Messwerte. Jede Maßnahme dagegen hat einen Preis, und ihr müsst ihn kennen, bevor ihr ihn zahlt.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Drei Teile: was eure eigenen Zahlen sagen, was über die Alphabetgröße entscheidet, und was jede Gegenmaßnahme kostet.</aside>
+  </section>
+
+  <!-- ================= Teil 1: what your data says ================= -->
+
+  <section class="slide part" data-part="what your data says">
+    <aside class="notes">Wir fangen bei euren eigenen Ergebnissen an.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/lighthouse.png" alt="">
+    <div class="photo-text narrow">same light.<br>how far does it<br>get through?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Kurz halten, dreißig Sekunden. Die Lampe brennt unverändert hell, und trotzdem verschluckt der Nebel den Strahl nach wenigen Metern. Nicht das Signal ist schwächer geworden, die Störung ist stärker. Genau das ist eure Lage: Alle Sender im Saal waren gleich hell, alle Sensoren gleich gut.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>your results</h2>
+    <table class="results">
+      <thead>
+        <tr><th style="width: 18%">team</th><th style="width: 16%">alphabet</th><th style="width: 16%">hit rate</th><th>what they did about noise</th></tr>
+      </thead>
+      <tbody contenteditable="true" spellcheck="false">
+        <tr><td>team 7</td><td class="num">16</td><td class="num">98 %</td><td class="what">cardboard tube, fixed distance, averaged over 8</td></tr>
+        <tr><td>team 2</td><td class="num">8</td><td class="num">96 %</td><td class="what">longer integration time, shielded from the window</td></tr>
+        <tr><td>team 11</td><td class="num">8</td><td class="num">91 %</td><td class="what">picked colours further apart</td></tr>
+        <tr><td>team 5</td><td class="num">4</td><td class="num">100 %</td><td class="what">nothing, played it safe</td></tr>
+        <tr><td>team 14</td><td class="num">4</td><td class="num">82 %</td><td class="what">nothing, and it still failed</td></tr>
+      </tbody>
+    </table>
+    <div class="punch">same hardware. same task. a factor of four between first and last.</div>
+    <aside class="notes">Live füllen, während der Saal zusieht: die Spitzenteams und ein, zwei aus der Mitte. In die Tabelle lässt sich direkt hineintippen. Die letzte Spalte ist die wichtigste, sie wird beim Ausfüllen selbst zur Antwort. Erst sammeln, nicht kommentieren, dann die Frage stellen und stehen lassen: gleiche Hardware, gleiche Aufgabe, Faktor vier zwischen erstem und letztem. Woher kommt der Unterschied?</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawReadings" data-on-step="drawReadings">
+    <h2>ten readings of one colour</h2>
+    <div class="figure" id="fig-readings"></div>
+    <span data-step="1"></span>
+    <span data-step="2"></span>
+    <div class="punch">nothing changed. the numbers did.</div>
+    <aside class="notes">Die Grundtatsache, auf der alles Weitere steht. Ihr messt zehnmal dieselbe Farbe, ohne irgendetwas zu verändern, und bekommt zehn verschiedene Zahlen. Das ist kein defekter Sensor und kein Fehler in eurem Programm. Ein Computer liefert bei gleicher Eingabe dieselbe Ausgabe, aber ein Sensor bekommt nie zweimal dieselbe Eingabe: Das Licht schwankt, die Elektronik rauscht, jemand geht vorbei. Diese Schwankung heißt Rauschen, und im dritten Schritt sieht man, was von ihr bleibt: eine Spannweite von dreizehn Zählern.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">not the code.<br>the scatter.</div>
+      <div class="sidenote">same sensor, same led, same room. the difference is how far your readings move when nothing moves.</div>
+    </div>
+    <aside class="notes">Die Pointe früh setzen, danach wird sie belegt. Dass die Programmierqualität hier fast nichts entscheidet, überrascht die meisten; genau darum geht es. Rauschen ist kein Defekt und kein Codefehler, es ist eine Eigenschaft jeder Messung. Wer es kleiner bekommt, bringt mehr Symbole unter, und das ist die ganze Rangliste.</aside>
+  </section>
+
+  <!-- ================= Teil 2: what decides your alphabet ================= -->
+
+  <section class="slide part" data-part="what decides your alphabet">
+    <aside class="notes">Jetzt der Mechanismus dahinter, in vier Bildern.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawWindows" data-on-step="drawWindows">
+    <h2>the same signal, measured differently</h2>
+    <div class="figure" id="fig-signal-and-noise"></div>
+    <span data-step="1"></span>
+    <span data-step="2"></span>
+    <span data-step="3"></span>
+    <div class="punch">longer windows, calmer values. and fewer of them per second.</div>
+    <aside class="notes">Oben das Rohsignal, wie es beim Sensor ankommt: viel zu unruhig, um in einem einzelnen Augenblick zu entscheiden. Darunter dasselbe Signal, nur über immer längere Fenster gemittelt; jeder dicke Strich ist ein Messwert. Je länger das Fenster, desto näher liegt der Wert am wahren Pegel, und desto weniger Werte passen in dieselbe Zeit. Rechts steht, wie viele es je Streifen sind: 288, 72, 24, 9. Der Preis steht damit schon in der zweiten Hälfte des Merksatzes.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawTwoClouds" data-on-step="drawTwoClouds">
+    <h2>two symbols, two clouds</h2>
+    <div class="figure" id="fig-two-clouds"></div>
+    <span data-step="1"></span>
+    <div class="punch">same distance. wider clouds. some readings land on the wrong side.</div>
+    <aside class="notes">Links passt alles zwischen die Pegel: Jede Messung landet auf ihrer Seite der Grenze. Rechts derselbe Abstand d, aber die Wolken sind breiter, und ein Teil der Messungen kippt hinüber. Wichtig ist, was die Folie nicht sagt: Nicht das Rauschen allein entscheidet, und der Abstand allein auch nicht. Es ist immer das Verhältnis der beiden, und das steht auf der nächsten Folie.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the ratio is what counts</h2>
+    <div class="figure" id="fig-ratio"></div>
+    <div class="punch">your alphabet size measures nothing but this ratio.</div>
+    <aside class="notes">Hier steht die Formel des Nachmittags. Eure Alphabetgröße misst nichts anderes als diesen Quotienten, und deshalb erklärt er die Tabelle von vorhin. Und daraus folgt sofort, was „sicher unterscheidbar" heißt, und das ist strenger, als die meisten es zuerst annehmen: nicht, dass die Mittelwerte verschieden sind, sondern dass sich die Wolken nicht berühren, auch an ihren Rändern nicht. Ein einziger Ausreißer in fünfzig Läufen kostet euch eine Alphabetstufe.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>how many symbols fit?</h2>
+    <div class="figure" id="fig-how-many"></div>
+    <div class="punch">the range divided by the width of one band. that is your alphabet.</div>
+    <aside class="notes">Damit wird die Frage rechenbar, statt geraten zu werden. Ihr messt den nutzbaren Bereich eurer Strecke, vom dunkelsten bis zum hellsten Wert, den ihr sicher erzeugen könnt. Ihr messt die Breite einer Wolke. Der Quotient sagt euch, wie viele Symbole hineinpassen. Ein Beispiel zum Mitrechnen: Bereich von 40 bis 840, das sind 800; eine Farbe streut um plus minus 25, ihr Band ist also 50 breit; 800 geteilt durch 50 sind 16. Wer das ausrechnet, bevor er Farben durchprobiert, spart in Challenge 2 eine halbe Sitzung.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: the distinguishability lab</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/distinguishability-lab/?embed=1&amp;k=8&amp;win=120&amp;speed=35" title="The Distinguishability Lab"></iframe></div>
+    <aside class="notes">Drei Regler: Zahl der Symbole, Länge des Messfensters, Tempo. Zwei Aufträge an den Saal. Erstens: Die Fehlerquote auf null bringen, und dabei auf den Durchsatz unten rechts schauen. Zweitens: den Störknopf drücken und sehen, was dann noch trägt. Die Zahlen sind simuliert, die Struktur ist echt; eure eigenen Zahlen kommen von eurer Strecke und von nirgendwo sonst.</aside>
+  </section>
+
+  <!-- ================= Teil 3: what it costs ================= -->
+
+  <section class="slide part" data-part="what it costs">
+    <aside class="notes">Gegen das Rauschen gibt es Werkzeuge, und keines ist gratis.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the toolbox, with price tags</h2>
+    <div class="figure" id="fig-toolbox"></div>
+    <div class="punch">three of them cost nothing but craft. that is why the optics are allowed.</div>
+    <aside class="notes">Die Werkzeugkiste für Challenge 2. Links vergrößert ihr den Abstand, rechts verkleinert ihr die Streuung. Fast alles kostet entweder Bits je Symbol oder Symbole je Sekunde. Die drei gelb umrandeten kosten nur Bastelzeit: Licht bündeln, Fremdlicht abschirmen, Geometrie festnageln. Genau deshalb ist der optische Selbstbau erlaubt, passiv und höchstens zehn Euro. Wer dort ansetzt, verbessert das Verhältnis, ohne irgendetwas dafür herzugeben.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>averaging is not free</h2>
+    <div class="content" style="top: 150px">
+      <div class="code"><div>def read_stable(n=10):</div><div>    values = [sensor.get_clear() for _ in range(n)]</div><div>    return sum(values) / n</div></div>
+    </div>
+    <div class="punch">ten times calmer readings. ten times slower.</div>
+    <aside class="notes">Der häufigste Reflex nach so einer Auswertung ist mitteln. Das ist richtig und kostet genau das, was euch in Challenge 2 fehlen wird. Wer mittelt, misst den Preis und schreibt ihn auf, statt ihn zu behaupten. Es ist dasselbe Geschäft wie eine längere Integrationszeit, nur an einer anderen Stelle: einmal im Sensor, einmal im Programm.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>both roads lead to the same wall</h2>
+    <div class="figure" id="fig-wall"></div>
+    <div class="punch">both spend the same margin. that wall is where challenge 2 begins.</div>
+    <aside class="notes">Der Bogen zurück zu Analog und Digital: Ein größeres Alphabet drückt die Bänder zusammen, schnelleres Messen macht die Wolken breiter. Beide Wege verbrauchen denselben Sicherheitsabstand, und ihr habt nur einen. In Challenge 2 werdet ihr beides gleichzeitig wollen, mehr Symbole und mehr Tempo, und genau dann brauchen eure Entscheidungen Zahlen statt Meinungen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>and one honest sentence</h2>
+    <div class="believed">
+      <div class="row"><span class="tag">we believed:</span><span class="said" contenteditable="true" spellcheck="false">more gain gives us more colours</span></div>
+      <div class="row"><span class="tag">we measured:</span><span class="said measured" contenteditable="true" spellcheck="false">the scatter grew with it, and we lost two symbols</span></div>
+    </div>
+    <div class="punch">the channel is the only authority in this room.</div>
+    <aside class="notes">Zwei oder drei Teams lesen einen Eintrag aus ihrem Irrtumsprotokoll vor, am besten Fälle, in denen ein plausibler Vorschlag des Assistenten an der Messung gescheitert ist. Die Kurzfassung in die zwei Zeilen eintragen, sie sind editierbar. Das ist der Moment, in dem das Irrtumsprotokoll seinen Sinn zeigt: Es unterscheidet diese Veranstaltung von einem Programmierkurs. Zu keiner Messung an eurer Strecke hat ein Sprachmodell Zugang, und deshalb kann euch dort auch keines helfen.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/measuring-staff.png" alt="">
+    <div class="photo-text narrow">the fog stays.<br>measure how far<br>you see.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Der Bogen zurück zum Leuchtturm. Eure Aufgabe ist nicht, das Rauschen zu besiegen, das geht nicht. Eure Aufgabe ist, es zu messen und dann zu entscheiden, welches Alphabet und welches Tempo eure Strecke ehrlich hergibt. Der Nebel bleibt; was ihr in der Hand habt, ist der Maßstab.</aside>
+  </section>
+
+</div>
+
+<!-- deck.js MUSS vor stagekit.js stehen: stagekit ruft beim ersten Anzeigen die
+     data-on-show-Funktionen auf, und die gibt es sonst noch nicht. Sichtbar wird
+     das erst im Export, wo jeder Frame frisch mit ?slide=N geladen wird. -->
+<script src="../stagekit/draw.js?v=20260910d"></script>
+<script src="deck.js?v=20260910d"></script>
+<script src="../stagekit/stagekit.js?v=20260910d"></script>
+</body>
+</html>

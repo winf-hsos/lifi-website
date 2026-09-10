@@ -725,6 +725,135 @@
      }
     }
    ]
+  },
+  {
+   "id": "sn-013",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr habt eure Strecke vermessen. Der nutzbare Bereich eures Sensors reicht von 40\nbis 840, und jede Farbe streut um ihren Mittelwert herum um ±25. Wie viele Symbole\npassen sicher hinein?",
+    "en": "You have measured your link. The usable range of your sensor runs from 40 to 840,\nand every colour scatters around its mean by ±25. How many symbols fit in safely?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "32, denn der Bereich ist 800 breit und die Streuung beträgt 25.",
+      "en": "32: the range is 800 wide and the scatter is 25."
+     },
+     "begruendung": {
+      "de": "Hier ist die Streuung nur einmal gerechnet. Eine Farbe streut in beide Richtungen, ihr Band ist also 50 breit und nicht 25. Mit 32 Symbolen würden benachbarte Wolken sich überlappen.",
+      "en": "Here the scatter is counted once. A colour scatters in both directions, so its band is 50 wide, not 25. With 32 symbols neighbouring clouds would overlap."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "16, denn jedes Symbol braucht ein Band von 50 (±25), und 800 geteilt durch 50 sind 16.",
+      "en": "16: every symbol needs a band of 50 (±25), and 800 divided by 50 is 16."
+     },
+     "begruendung": {
+      "de": "Genau: nutzbarer Bereich geteilt durch die Breite eines Bandes. Und das ist keine Schätzung, sondern eine Rechnung, die ihr vor dem Ausprobieren machen könnt.",
+      "en": "Exactly: usable range divided by the width of one band. And that is not a guess but a calculation you can do before trying anything out."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "17, denn zwischen 16 Bändern liegen 17 Grenzen.",
+      "en": "17: between 16 bands there are 17 boundaries."
+     },
+     "begruendung": {
+      "de": "Gezählt werden die Bänder, nicht die Grenzen. Zwischen 16 Bändern liegen übrigens 15 Grenzen, nicht 17.",
+      "en": "You count the bands, not the boundaries. Incidentally, between 16 bands there are 15 boundaries, not 17."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das lässt sich nicht ausrechnen, dafür muss man die Farben durchprobieren.",
+      "en": "That cannot be calculated; you have to try the colours out."
+     },
+     "begruendung": {
+      "de": "Ausprobieren müsst ihr am Ende trotzdem, aber die Zahl sagt euch vorher, wo ihr landen könnt. Wer erst rechnet, spart sich das Durchprobieren von Alphabetgrößen, die nie funktionieren konnten.",
+      "en": "You will still test in the end, but the number tells you beforehand where you can land. Calculating first saves you from trying alphabet sizes that could never have worked."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sn-014",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr habt eure Farben am Fenster kalibriert, bei Tageslicht. Die Abnahme findet im\nabgedunkelten Teil des Raums statt, mit demselben Gerät und demselben Aufbau.\nWelche Aussagen treffen zu? (Mehrere richtige Antworten möglich.)",
+    "en": "You calibrated your colours by the window, in daylight. The acceptance test takes\nplace in the darkened part of the room, with the same device and the same setup.\nWhich statements are true? (Several answers may be correct.)"
+   },
+   "typ": "mc",
+   "richtig": [
+    "b",
+    "c",
+    "e"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Die gemessenen Mittelwerte gelten weiter, denn die LED sendet dieselben Farben wie vorher.",
+      "en": "The measured means still hold, because the LED sends the same colours as before."
+     },
+     "begruendung": {
+      "de": "Der Sensor misst nicht die Farbe der LED, sondern alles Licht, das ankommt. Fehlt das Tageslicht, fehlt es in jedem Messwert, und alle Mittelwerte rutschen nach unten.",
+      "en": "The sensor does not measure the LED's colour, it measures all the light that arrives. Without the daylight, that share is missing from every reading, and all the means drop."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Die Grenzen zwischen den Symbolen müssen neu bestimmt werden.",
+      "en": "The boundaries between the symbols have to be determined again."
+     },
+     "begruendung": {
+      "de": "Die Grenzen liegen zwischen den alten Mittelwerten, und die stimmen nicht mehr. Eine Grenze, die am Fenster mittig lag, liegt im Dunkeln womöglich neben allen Wolken.",
+      "en": "The boundaries sit between the old means, and those no longer hold. A boundary that was in the middle by the window may sit beside all the clouds in the dark."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Die Streuung kann sich ändern, denn weniger Fremdlicht heißt in der Regel ruhigere Werte.",
+      "en": "The scatter can change, because less ambient light usually means calmer readings."
+     },
+     "begruendung": {
+      "de": "Und zwar zu euren Gunsten: Tageslicht schwankt, mit Wolken, mit vorbeigehenden Leuten. Im Dunkeln wird die Wolke schmaler, und damit passen mehr Symbole hinein als am Fenster.",
+      "en": "In your favour, as it happens: daylight fluctuates, with clouds, with people walking past. In the dark the cloud gets narrower, so more symbols fit than by the window."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das Verhältnis von Abstand zu Streuung bleibt unverändert, weil beide gleich stark mitwandern.",
+      "en": "The ratio of distance to scatter stays the same, because both shift by the same amount."
+     },
+     "begruendung": {
+      "de": "Das wäre bequem, stimmt aber nicht. Der Abstand zwischen zwei Farben und die Streuung hängen an verschiedenen Dingen und ändern sich unabhängig voneinander.",
+      "en": "That would be convenient, but it is not true. The distance between two colours and the scatter depend on different things and change independently."
+     }
+    },
+    {
+     "kennung": "e",
+     "text": {
+      "de": "Eine neue Kalibrierung am Ort der Abnahme ist nötig; eine einzelne Kontrollmessung genügt nicht.",
+      "en": "A fresh calibration at the place of the acceptance test is needed; a single check measurement is not enough."
+     },
+     "begruendung": {
+      "de": "Eine einzelne Messung sagt nichts über die Streuung, und die Streuung entscheidet. Messt jede Farbe wieder mehrfach, so wie beim ersten Mal.",
+      "en": "A single measurement says nothing about the scatter, and the scatter is what decides. Measure every colour several times again, as you did the first time."
+     }
+    }
+   ]
   }
  ]
 }

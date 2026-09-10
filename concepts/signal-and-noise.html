@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.3">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Signal und Rauschen – LiFi Project</title>
+<title>Signal and Noise – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -62,20 +97,49 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -92,16 +156,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
         <div class="quarto-navbar-tools tools-end">
 </div>
-          <div id="quarto-search" class="" title="Suchen"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Signal und Rauschen</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Signal and Noise</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -122,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">LiFi Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -173,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -210,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -225,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Solving Problems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -266,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -301,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -324,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Transferring Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -332,7 +396,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/signal-and-noise.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Signal und Rauschen</span></a>
+ <span class="menu-text">Signal and Noise</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -371,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Processing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -417,30 +481,32 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  <li><a href="#ten-readings-of-one-colour" id="toc-ten-readings-of-one-colour" class="nav-link" data-scroll-target="#ten-readings-of-one-colour">Ten readings of one colour</a></li>
+  <li><a href="#the-same-signal-measured-differently" id="toc-the-same-signal-measured-differently" class="nav-link" data-scroll-target="#the-same-signal-measured-differently">The same signal, measured differently</a></li>
+  <li><a href="#two-symbols-two-clouds" id="toc-two-symbols-two-clouds" class="nav-link" data-scroll-target="#two-symbols-two-clouds">Two symbols, two clouds</a></li>
+  <li><a href="#the-ratio-is-what-counts" id="toc-the-ratio-is-what-counts" class="nav-link" data-scroll-target="#the-ratio-is-what-counts">The ratio is what counts</a></li>
+  <li><a href="#how-many-symbols-fit" id="toc-how-many-symbols-fit" class="nav-link" data-scroll-target="#how-many-symbols-fit">How many symbols fit?</a></li>
+  <li><a href="#the-knobs-have-price-tags" id="toc-the-knobs-have-price-tags" class="nav-link" data-scroll-target="#the-knobs-have-price-tags">The knobs have price tags</a></li>
+  <li><a href="#both-roads-lead-to-the-same-wall" id="toc-both-roads-lead-to-the-same-wall" class="nav-link" data-scroll-target="#both-roads-lead-to-the-same-wall">Both roads lead to the same wall</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a>
-  <ul class="collapse">
-  <li><a href="#ein-mittelwert-genügt-nicht" id="toc-ein-mittelwert-genügt-nicht" class="nav-link" data-scroll-target="#ein-mittelwert-genügt-nicht">Ein Mittelwert genügt nicht</a></li>
-  <li><a href="#die-stellschrauben-haben-preisschilder" id="toc-die-stellschrauben-haben-preisschilder" class="nav-link" data-scroll-target="#die-stellschrauben-haben-preisschilder">Die Stellschrauben haben Preisschilder</a></li>
-  </ul></li>
-  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
-  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Signal und Rauschen</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Signal and Noise</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Signal und Rauschen</h1>
+<h1 class="title">Signal and Noise</h1>
 </div>
 
 
@@ -457,62 +523,160 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="zusammenfassung" class="level2">
-<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
-<p>Messwerte schwanken auch unter gleichen Bedingungen. Dieses Rauschen begrenzt, wie viele Zustände sicher unterschieden werden können. Längere Messungen glätten die Schwankungen, kosten aber Zeit und senken damit den möglichen Durchsatz. Wie man ehrlich misst (Kontrollmessung, eine Variable auf einmal, Protokoll), steht bei <a href="../concepts/measurement-and-experiments.html">Measuring and Experimenting</a>; hier geht es um das, was diese Messungen über eure Strecke verraten.</p>
-<section id="fragen-um-die-es-geht" class="level3">
-<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Measure the same thing twice and you get two different numbers. That scatter is not a fault, it is a property of every measurement, and it decides how many symbols your link can carry. Two teams with identical hardware end up with alphabets of 16 and of 4, and the difference is not in their code: it is the ratio between the distance separating two symbols and the spread of the readings around each one. You can improve that ratio, but almost every way of doing so is paid for in bits per symbol or in symbols per second. Three of them are free, and that is why you are allowed to build optics.</p>
+<p>In this chapter, we address the following questions:</p>
 <ul>
-<li>Warum liefert dieselbe Messung nie exakt dasselbe Ergebnis?</li>
-<li>Warum streuen die Werte stärker, wenn ich schneller messe?</li>
-<li>Wann sind zwei Zustände sicher unterscheidbar?</li>
-<li>Was begrenzt die Anzahl der Symbole, die ich verwenden kann?</li>
-<li>Wie entscheide ich, welches Symbol angekommen ist, wenn ich es nicht ausrechnen kann?</li>
+<li>Why does the same measurement never give exactly the same result?</li>
+<li>When are two states safely distinguishable, and why is “different means” not enough?</li>
+<li>How many symbols fit into your link, and can you work that out before trying?</li>
+<li>Why do faster readings scatter more?</li>
+<li>What does each countermeasure against noise cost you?</li>
 </ul>
-<p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-1.html">Challenge 1</a> verstanden haben, damit ihr dort erfolgreich seid.</p>
+<p>You need this concept for <a href="../challenges/challenge-1.html">Challenge 1</a>, where the size of your alphabet is the score. How to measure honestly, with a control measurement and one variable at a time, is the neighbouring concept <a href="../concepts/measurement-and-experiments.html">Measurement and Experiments</a>; here it is about what those measurements tell you about your link.</p>
 </section>
-</section>
-<section id="erläuterung-des-konzepts" class="level2">
-<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>Messt ihr zweimal dasselbe, bekommt ihr nie exakt dieselben Zahlen. Diese Schwankung heißt Rauschen und ist keine Panne, sondern eine Eigenschaft jeder Messung. Sie begrenzt, wie viele Zustände ihr noch sicher auseinanderhalten könnt.</p>
-<div id="fig-signal-and-noise" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
+<p>A lighthouse in fog is a strange sight. The lamp burns exactly as brightly as it did on a clear night, and yet the beam dies after a few metres. Nothing has happened to the signal. Something has happened to everything else.</p>
+<p>That is the situation you are in after the first competition. Every team had the same LED, the same sensor and the same room, every sender was equally bright, and still one team gets 16 colours through and another gets 4. It is worth saying plainly what does <em>not</em> explain that gap: the quality of the code. What explains it is scatter.</p>
+<section id="ten-readings-of-one-colour" class="level3">
+<h3 class="anchored" data-anchor-id="ten-readings-of-one-colour">Ten readings of one colour</h3>
+<p>Point your sensor at one colour and read it ten times without changing anything at all.</p>
+<div id="fig-ten-readings" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-signal-and-noise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/signal-and-noise.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;1: In allen vier Streifen liegt dasselbe Rohsignal. Ganz oben, wie es beim Sensor ankommt: viel zu verrauscht, um daraus in einem einzelnen Augenblick etwas zu entscheiden. Darunter dreimal dasselbe Signal, nur in unterschiedlich lange Messfenster zerlegt. Jeder dicke Strich ist ein Messwert, gemittelt über genau sein Fenster. Je länger ein Fenster ist, desto näher liegt der Wert am wahren Pegel."><img src="../assets/diagrams/signal-and-noise.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-ten-readings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/ten-readings.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Ten readings of the same colour, taken one after another with nothing changed in between. The values run from 207 to 220."><img src="../assets/diagrams/ten-readings.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-signal-and-noise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1: In allen vier Streifen liegt dasselbe Rohsignal. Ganz oben, wie es beim Sensor ankommt: viel zu verrauscht, um daraus in einem einzelnen Augenblick etwas zu entscheiden. Darunter dreimal dasselbe Signal, nur in unterschiedlich lange Messfenster zerlegt. Jeder dicke Strich ist ein Messwert, gemittelt über genau sein Fenster. Je länger ein Fenster ist, desto näher liegt der Wert am wahren Pegel.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ten-readings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Ten readings of the same colour, taken one after another with nothing changed in between. The values run from 207 to 220.
 </figcaption>
 </figure>
 </div>
-<p>Das ist die eine Hälfte des Problems. Die andere zeigt das Bild bei <a href="../concepts/analog-and-digital.html">Analog and Digital</a>: Dort bleibt die Messdauer gleich, dafür wächst die Zahl der Symbole. Beide Wege enden an derselben Wand, und zusammen begrenzen sie euren Durchsatz.</p>
-<section id="ein-mittelwert-genügt-nicht" class="level3">
-<h3 class="anchored" data-anchor-id="ein-mittelwert-genügt-nicht">Ein Mittelwert genügt nicht</h3>
-<p>Wer seine Farben nur mit je einem Mittelwert dokumentiert, weiß noch nicht, ob sie unterscheidbar sind. Entscheidend ist die <strong>Streuung</strong>: Zwei Farben sind erst dann sicher auseinanderzuhalten, wenn sich ihre Wertebereiche samt Schwankung nicht überlappen. Deshalb gehört zu jedem Steckbrief einer Farbe neben dem Mittelwert auch, wie weit die Einzelmessungen streuen. Der Abstand zweier Mittelwerte muss deutlich größer sein als die Summe ihrer Streuungen, sonst landet irgendwann eine Messung im Gebiet des Nachbarn, und ein einziger solcher Fehler in fünfzig Läufen kostet euch die Alphabetgröße.</p>
+<p>You get ten different numbers. This surprises people, because a computer is the one machine that reliably gives the same output for the same input. But the sensor never gets the same input twice: the light flickers, the electronics have their own hiss, someone walks past the window. This variation is called <strong>noise</strong>, and every measuring instrument in the world has it.</p>
+<p>Notice that a single reading tells you almost nothing on its own. The reading 220 could be that colour, or it could be a neighbouring colour having a bad moment. Only the whole set of ten tells you where the colour actually sits and how far it wanders.</p>
 </section>
-<section id="die-stellschrauben-haben-preisschilder" class="level3">
-<h3 class="anchored" data-anchor-id="die-stellschrauben-haben-preisschilder">Die Stellschrauben haben Preisschilder</h3>
-<p>Gegen das Rauschen gibt es Werkzeuge, und keines ist gratis. Länger messen (mehr Integrationszeit) glättet die Schwankung, kostet aber Symbolrate. Mehrfach messen und mitteln, wie es <code>read_stable()</code> vormacht, wirkt genauso und kostet genauso. Die Verstärkung höher drehen hebt das Signal, hebt aber das Rauschen mit. Mehr Licht oder weniger Umgebungslicht verbessert das Verhältnis wirklich, kostet dafür Aufwand am Aufbau. Eure Aufgabe ist nicht, das Rauschen zu besiegen, das geht nicht, sondern es zu <strong>messen</strong> und dann zu entscheiden, welches Alphabet und welches Tempo eure Strecke ehrlich hergibt. Ein Gefühl für dieses Abwägen gibt das <a href="https://winf-hsos.github.io/lifi-concept-demos/distinguishability-lab/">Distinguishability Lab</a>: Alphabetgröße und Messfenster als Regler, ein Störsignal auf Knopfdruck, und die Fehlerquote läuft live mit, simuliert statt gemessen. Genau diese Zahlen sind es, die eure Wettbewerbsplatzierung erklären: Nicht wer den schnellsten Code schreibt, gewinnt, sondern wer seine Strecke am besten kennt.</p>
+<section id="the-same-signal-measured-differently" class="level3">
+<h3 class="anchored" data-anchor-id="the-same-signal-measured-differently">The same signal, measured differently</h3>
+<p>There is a way to make the numbers calmer, and you already have it: measure for longer and average what arrives.</p>
+<div id="fig-signal-and-noise" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-signal-and-noise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/signal-and-noise.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The same raw signal four times over. At the top as it arrives at the sensor. Below it the same signal split into measurement windows of 4, 12 and 32 readings; every thick bar is one averaged value. Longer windows give calmer values, and fewer of them."><img src="../assets/diagrams/signal-and-noise.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-signal-and-noise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The same raw signal four times over. At the top as it arrives at the sensor. Below it the same signal split into measurement windows of 4, 12 and 32 readings; every thick bar is one averaged value. Longer windows give calmer values, and fewer of them.
+</figcaption>
+</figure>
+</div>
+<p>The top strip is what the sensor actually delivers: far too restless to decide anything from a single instant. Each strip below averages the same signal over a longer window, and the bars settle closer and closer to the true level.</p>
+<p>Look at the right-hand edge, though. The same stretch of time holds 288 raw readings, 72 averaged ones, 24, and finally 9. Calmness is not free: <strong>you pay for it in readings per second</strong>, and readings per second is exactly what your transmission speed is made of. That is the first price tag of this chapter, and it will not be the last.</p>
+</section>
+<section id="two-symbols-two-clouds" class="level3">
+<h3 class="anchored" data-anchor-id="two-symbols-two-clouds">Two symbols, two clouds</h3>
+<p>Now put two symbols on the same scale. Each one is not a single value but a cloud of values, and the width of that cloud is the noise you just measured.</p>
+<div id="fig-two-clouds" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-two-clouds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/two-clouds.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Two symbols on a scale of readings, twice. On the left the clouds are narrow and the boundary between them sits in empty space. On the right the distance is the same, but the clouds are wider, and the parts that cross the boundary are exactly the readings the receiver will get wrong."><img src="../assets/diagrams/two-clouds.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-two-clouds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Two symbols on a scale of readings, twice. On the left the clouds are narrow and the boundary between them sits in empty space. On the right the distance is the same, but the clouds are wider, and the parts that cross the boundary are exactly the readings the receiver will get wrong.
+</figcaption>
+</figure>
+</div>
+<p>The picture makes a point that is easy to say and easy to forget: neither number decides on its own. The distance between two symbols means nothing without the width of the clouds, and the width means nothing without the distance.</p>
+</section>
+<section id="the-ratio-is-what-counts" class="level3">
+<h3 class="anchored" data-anchor-id="the-ratio-is-what-counts">The ratio is what counts</h3>
+<p>So the quantity that governs everything in this chapter is a ratio: the distance <span class="math inline">\(d\)</span> between two symbols, divided by the spread <span class="math inline">\(s\)</span> of the readings around each one.</p>
+<div id="fig-ratio" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ratio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/distance-over-spread.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The distance d between two symbols and the spread s of the readings. Safely distinguishable means the clouds do not touch, not even at their edges."><img src="../assets/diagrams/distance-over-spread.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ratio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: The distance d between two symbols and the spread s of the readings. Safely distinguishable means the clouds do not touch, not even at their edges.
+</figcaption>
+</figure>
+</div>
+<p>Your alphabet size measures nothing but this ratio, which is why it explains the ranking on the wall.</p>
+<p>And this gives a sharper definition of a phrase we have been using loosely. <strong>Safely distinguishable</strong> does not mean the means are different. It means the clouds do not overlap, not even at their outermost values. A single reading that strays across the boundary is a wrong symbol, and one wrong symbol in fifty runs is enough to cost you an alphabet size. If your notes for a colour contain only its mean, they do not yet tell you whether that colour is usable.</p>
+</section>
+<section id="how-many-symbols-fit" class="level3">
+<h3 class="anchored" data-anchor-id="how-many-symbols-fit">How many symbols fit?</h3>
+<p>Once you think in bands rather than in points, the question “how many colours can we use?” stops being a matter of trying things out and becomes arithmetic.</p>
+<div id="fig-how-many" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-how-many-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/how-many-symbols.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The usable range of the link, filled twice: once with four wide bands, once with eight narrow ones. The narrower each band, the more of them fit into the same range."><img src="../assets/diagrams/how-many-symbols.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-how-many-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: The usable range of the link, filled twice: once with four wide bands, once with eight narrow ones. The narrower each band, the more of them fit into the same range.
+</figcaption>
+</figure>
+</div>
+<p>Measure the usable range of your link, from the darkest to the brightest value you can produce reliably. Measure the width of one cloud. Divide, and you have the number of symbols that fit.</p>
+<p>An example to follow along with. Your range runs from 40 to 840, so 800 units. Every colour scatters around its mean by ±25, so its band is 50 wide, not 25: the cloud reaches out in both directions. And <span class="math inline">\(800 / 50 = 16\)</span>. That is where a 16-symbol alphabet comes from, and doing this calculation before you start trying colours saves you half a session.</p>
+<p>You can get a feel for the whole trade in the simulator, where the alphabet size, the measurement window and the speed are all knobs, and the error rate runs along with them:</p>
 <a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/distinguishability-lab/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">distinguishability lab</span><span class="linkcard-desc">send symbols over a noisy channel, oscilloscope style: grow the alphabet, tune the window, inject a disturbance, and watch the error rate fight the throughput.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/ed296b426a89.png" alt=""></a>
 </section>
+<section id="the-knobs-have-price-tags" class="level3">
+<h3 class="anchored" data-anchor-id="the-knobs-have-price-tags">The knobs have price tags</h3>
+<p>There are tools against noise, and hardly any of them are free.</p>
+<div id="fig-toolbox" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-toolbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/noise-toolbox.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Six ways to improve the ratio, in two columns: three that make d bigger and four that make s smaller. Each one carries what it costs, and three cost nothing but craft."><img src="../assets/diagrams/noise-toolbox.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-toolbox-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Six ways to improve the ratio, in two columns: three that make d bigger and four that make s smaller. Each one carries what it costs, and three cost nothing but craft.
+</figcaption>
+</figure>
+</div>
+<p>On the left you enlarge the distance, on the right you shrink the spread. Notice how many of the price tags say the same two things: fewer bits per symbol, or fewer symbols per second. Averaging in software is the same bargain as a longer integration time in the sensor, only made at a different place:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_stable(n<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    values <span class="op">=</span> [sensor.get_clear() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n)]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(values) <span class="op">/</span> n</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ten times calmer readings, ten times slower. That is not an argument against averaging, it is an argument for measuring what it costs you instead of assuming it is free.</p>
+<p>Three of the tools are the exception, and they are the reason optical self-build is allowed in this course: aim the light better, block ambient light, nail down the geometry. They improve the ratio without giving anything up, and they cost nothing but an afternoon with cardboard.</p>
 </section>
-<section id="folien" class="level2">
-<h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<p>Die Folien aus der Auswertung nach dem Wettbewerb, zum Nachsehen:</p>
-<div class="folien-viewer" data-quelle="../assets/slides/signal-and-noise"></div>
-<p class="folien-links">
-  Blättern mit den Pfeiltasten oder per Klick auf die Folie ·
-  <a href="../assets/slides/signal-and-noise.pdf" download="">als PDF herunterladen</a>
-</p>
+<section id="both-roads-lead-to-the-same-wall" class="level3">
+<h3 class="anchored" data-anchor-id="both-roads-lead-to-the-same-wall">Both roads lead to the same wall</h3>
+<p>There are two ways to get more out of your link, and students almost always want both at once.</p>
+<div id="fig-wall" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/one-margin-two-ways.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: More symbols squeezes the bands together; faster symbols makes the clouds wider. Both draw on the same margin."><img src="../assets/diagrams/one-margin-two-ways.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: More symbols squeezes the bands together; faster symbols makes the clouds wider. Both draw on the same margin.
+</figcaption>
+</figure>
+</div>
+<p>More symbols narrows the bands. Faster symbols widens the clouds. Both spend the same safety margin, and you only have one of it. That is the wall <a href="../challenges/challenge-2.html">Challenge 2</a> begins at, and the way through it is not a cleverer program but a number you have measured yourself.</p>
+<p>One last thing, and it is the reason this module is not a programming course. Everything in this chapter is a property of <em>your</em> link: your room, your distance, your ambient light. Calibrate by the window and the acceptance test in the dark will not match. No amount of reading, and no language model, has access to that. The channel is the only authority in the room.</p>
 </section>
-<section id="fragen-üben" class="level2">
-<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Hier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.</p>
-<div class="fragen-quiz" data-quelle="../assets/questions/signal-and-noise.json"></div>
 </section>
-<section id="literatur" class="level2">
-<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
-<!-- TODO: weiterführende Literatur ergänzen -->
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
+<div class="deck-embed">
+  <iframe src="../assets/decks/signal-and-noise/index.html?bar=1&amp;pdf=../signal-and-noise.pdf" title="why 16 and not 4?" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</section>
+<section id="practice-questions" class="level2">
+<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
+<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/signal-and-noise.json"></div>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li>Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. Microsoft Press, 2nd edition 2022. Chapter 5 makes this chapter’s argument from the other side: two states are the cheapest thing to build reliably, precisely because the gap between them is so wide that no amount of scatter closes it.</li>
+<li>Claude E. Shannon: Communication in the Presence of Noise. Proceedings of the IRE 37(1), 1949. <a href="https://doi.org/10.1109/JRPROC.1949.232969" class="uri">https://doi.org/10.1109/JRPROC.1949.232969</a>. The paper that made this a subject. Heavy going, but the first two pages are readable and the pictures of signal clouds in it are the ancestors of the ones above.</li>
+<li>Philip Bevington and Keith Robinson: Data Reduction and Error Analysis for the Physical Sciences. McGraw-Hill, 3rd edition 2002. If you want to know how to state a spread properly rather than by eye, this is the standard reference.</li>
+</ul>
 
 
 </section>
@@ -863,12 +1027,12 @@ Abbildung&nbsp;1: In allen vier Streifen liegt dasselbe Rohsignal. Ganz oben, wi
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
