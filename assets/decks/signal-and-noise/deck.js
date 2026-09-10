@@ -192,16 +192,17 @@ window.drawRatio = function () {
     wolke(mitteA, sigma, hoehe, basis, c.light),
     wolke(mitteB, sigma, hoehe, basis, c.light),
   ];
-  // Die volle Ausdehnung jeder Wolke als Klammer, dazu die Luecke dazwischen
+  // Die volle Ausdehnung jeder Wolke als Klammer, dazu die Luecke dazwischen.
+  // Klammer und Beschriftung sehen aus wie auf der Folie davor: gelb und `s`.
+  // Streuung ist dieselbe Groesse, also traegt sie auch dasselbe Zeichen.
   [mitteA, mitteB].forEach((m) => {
     parts.push(`<path d="M${m - sigma},${basis + 45} L${m - sigma},${basis + 30} L${m + sigma},${basis + 30} L${m + sigma},${basis + 45}" ` +
-               `fill="none" stroke="${c.green}" stroke-width="3"/>`);
+               `fill="none" stroke="${c.yellow}" stroke-width="3"/>`);
+    parts.push(d.label(m, 0, "s", { size: 32, mono: true, color: c.yellow, anchor: "middle", centerY: basis + 90 }));
   });
   parts.push(d.line(mitteA + sigma, basis + 30, mitteB - sigma, basis + 30, { color: c.dark, width: 2, dashed: true }));
-  parts.push(d.label((mitteA + mitteB) / 2, 0, "a gap, not a touch",
-                     { size: 20, color: c.green, anchor: "middle", centerY: basis + 75 }));
-  parts.push(d.label(840, 0, "safely distinguishable means the clouds do not touch, not even at their edges",
-                     { size: 20, color: c.gray, anchor: "middle", centerY: basis + 130 }));
+  parts.push(d.label(840, 0, "a gap between them, not a touch: that is what safely distinguishable means",
+                     { size: 20, color: c.gray, anchor: "middle", centerY: basis + 145 }));
   return put("fig-ratio", d.svg(1680, 690, ...parts));
 };
 
