@@ -1,143 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lifi-project.de/software/lifi-hardware.html</loc>
+    <loc>https://docs.lifi-project.de/software/lifi-hardware.html</loc>
     <lastmod>2026-09-07T19:06:31.716Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/software/cockpit.html</loc>
+    <loc>https://docs.lifi-project.de/software/cockpit.html</loc>
     <lastmod>2026-09-07T19:45:51.147Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/index.html</loc>
+    <loc>https://docs.lifi-project.de/index.html</loc>
     <lastmod>2026-09-07T12:45:05.560Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/throughput-and-limits.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/throughput-and-limits.html</loc>
     <lastmod>2026-08-24T08:44:19.231Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/signal-and-noise.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/signal-and-noise.html</loc>
     <lastmod>2026-09-09T10:55:14.181Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/protocols.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/protocols.html</loc>
     <lastmod>2026-09-06T20:28:19.650Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/number-systems.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/number-systems.html</loc>
     <lastmod>2026-09-09T13:40:29.084Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/measurement-and-experiments.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/measurement-and-experiments.html</loc>
     <lastmod>2026-09-09T07:55:49.476Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/input-processing-output.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/input-processing-output.html</loc>
     <lastmod>2026-09-08T20:35:31.078Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/index.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/index.html</loc>
     <lastmod>2026-09-09T12:36:06.609Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/errors-and-redundancy.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/errors-and-redundancy.html</loc>
     <lastmod>2026-09-06T20:39:49.024Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/compression.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/compression.html</loc>
     <lastmod>2026-08-24T08:44:19.227Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/analog-and-digital.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/analog-and-digital.html</loc>
     <lastmod>2026-09-09T11:38:58.488Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/abstraction-and-layers.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/abstraction-and-layers.html</loc>
     <lastmod>2026-09-09T09:44:50.474Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/challenges/challenge-4.html</loc>
+    <loc>https://docs.lifi-project.de/challenges/challenge-4.html</loc>
     <lastmod>2026-09-07T10:44:06.350Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/challenges/challenge-2.html</loc>
+    <loc>https://docs.lifi-project.de/challenges/challenge-2.html</loc>
     <lastmod>2026-09-07T10:43:12.952Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/challenges/challenge-0.html</loc>
+    <loc>https://docs.lifi-project.de/challenges/challenge-0.html</loc>
     <lastmod>2026-09-07T12:45:12.512Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/about.html</loc>
-    <lastmod>2026-09-07T12:31:51.992Z</lastmod>
+    <loc>https://docs.lifi-project.de/about.html</loc>
+    <lastmod>2026-09-10T12:07:17.133Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/ai/index.html</loc>
+    <loc>https://docs.lifi-project.de/ai/index.html</loc>
     <lastmod>2026-09-07T12:56:20.501Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/challenges/challenge-1.html</loc>
+    <loc>https://docs.lifi-project.de/challenges/challenge-1.html</loc>
     <lastmod>2026-09-07T12:31:51.997Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/challenges/challenge-3.html</loc>
+    <loc>https://docs.lifi-project.de/challenges/challenge-3.html</loc>
     <lastmod>2026-09-07T10:43:33.321Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/challenges/index.html</loc>
+    <loc>https://docs.lifi-project.de/challenges/index.html</loc>
     <lastmod>2026-09-07T12:45:12.557Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/algorithms-and-programs.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/algorithms-and-programs.html</loc>
     <lastmod>2026-09-08T21:37:56.535Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/code-systems.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/code-systems.html</loc>
     <lastmod>2026-09-10T09:22:04.854Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/encryption.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/encryption.html</loc>
     <lastmod>2026-08-24T08:44:19.227Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/files.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/files.html</loc>
     <lastmod>2026-09-07T19:50:10.728Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/information-and-carrier.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/information-and-carrier.html</loc>
     <lastmod>2026-09-06T20:39:49.024Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/logic-and-arithmetic.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/logic-and-arithmetic.html</loc>
     <lastmod>2026-09-08T20:35:31.079Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/memory.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/memory.html</loc>
     <lastmod>2026-09-07T09:02:32.094Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/problem-decomposition.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/problem-decomposition.html</loc>
     <lastmod>2026-09-08T20:35:31.078Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/sampling-and-synchronization.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/sampling-and-synchronization.html</loc>
     <lastmod>2026-09-07T19:50:10.731Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/concepts/symbols-and-information.html</loc>
+    <loc>https://docs.lifi-project.de/concepts/symbols-and-information.html</loc>
     <lastmod>2026-09-09T12:55:39.529Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/hardware/index.html</loc>
+    <loc>https://docs.lifi-project.de/hardware/index.html</loc>
     <lastmod>2026-09-07T14:45:43.086Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/links.html</loc>
-    <lastmod>2026-09-09T12:36:06.607Z</lastmod>
+    <loc>https://docs.lifi-project.de/links.html</loc>
+    <lastmod>2026-09-10T12:07:17.134Z</lastmod>
   </url>
   <url>
-    <loc>https://lifi-project.de/software/index.html</loc>
+    <loc>https://docs.lifi-project.de/software/index.html</loc>
     <lastmod>2026-09-07T12:56:28.518Z</lastmod>
   </url>
 </urlset>

@@ -1432,7 +1432,7 @@
     "href": "about.html#source-code-and-material",
     "title": "About",
     "section": "Source code and material",
-    "text": "Source code and material\nThe website lives on GitHub: github.com/winf-hsos/lifi-website. The 3D model of the device case, including its OpenSCAD source, is on the Hardware page; it is released under CC0 and may be used and changed without conditions. All other links to code and tools are collected under Links.\nAn older edition of the LiFi project with different hardware is documented at docs.lifi-project.de. It served as the starting point for this one; the content here is its own.",
+    "text": "Source code and material\nThe website lives on GitHub: github.com/winf-hsos/lifi-website. The 3D model of the device case, including its OpenSCAD source, is on the Hardware page; it is released under CC0 and may be used and changed without conditions. All other links to code and tools are collected under Links.",
     "crumbs": [
       "About"
     ]
@@ -2655,7 +2655,7 @@
     "href": "links.html#background",
     "title": "Links",
     "section": "Background",
-    "text": "Background\n\nThe previous LiFi project: the older edition with different hardware, which served as the starting point for this one.\nHochschule Osnabrück: where this module is taught.",
+    "text": "Background\n\nHochschule Osnabrück: where this module is taught.",
     "crumbs": [
       "Links"
     ]
