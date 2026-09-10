@@ -96,5 +96,12 @@
     "description": "Send a symbol over a noisy link and let the same readings decide it three times: alone, averaged over five, averaged over ten. Fewer wrong decisions, less speed.",
     "site": "LiFi Project · concept demos",
     "image": "7896a11a80c6.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/prefix-trap/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/prefix-trap/",
+    "title": "the prefix trap",
+    "description": "write your own code words, send a word, and see every reading the receiver could pick. get the list down to one and you have built a code that works.",
+    "site": "LiFi Project · concept demos",
+    "image": "58e8bf84636f.png"
   }
 }

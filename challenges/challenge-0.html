@@ -289,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/code-systems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Codesysteme</span></a>
+ <span class="menu-text">Code Systems</span></a>
   </div>
 </li>
       </ul>
@@ -657,6 +657,23 @@ ul.task-list li input[type="checkbox"] {
       return (feld && (feld[sprache] || feld.de)) || "";
     }
 
+    // Text in ein Element schreiben und dabei `so markierte` Stellen in
+    // Codeschrift setzen. Sonst stehen die Backticks wörtlich auf der Seite;
+    // aufgefallen am 10.09.2026 an der Bytefolge in cs-007.
+    function schreiben(el, text) {
+      el.textContent = "";
+      String(text).split(/`([^`]+)`/).forEach(function (stueck, i) {
+        if (!stueck) { return; }
+        if (i % 2) {
+          var code = document.createElement("code");
+          code.textContent = stueck;
+          el.appendChild(code);
+        } else {
+          el.appendChild(document.createTextNode(stueck));
+        }
+      });
+    }
+
     function neustart() {
       fragen = mischen(daten.fragen.slice());
       // Optionsreihenfolge einmal je Frage festlegen, damit sie beim
@@ -696,7 +713,7 @@ ul.task-list li input[type="checkbox"] {
         '<div class="fq-fuss"><button class="fq-neustart">' + t.neustart + "</button>" +
         '<span class="fq-stand"></span></div>';
 
-      kasten.querySelector(".fq-frage").textContent = s(frage.frage);
+      schreiben(kasten.querySelector(".fq-frage"), s(frage.frage));
       kasten.querySelector(".fq-stand").textContent =
         t.stand(beantwortet.length, richtig);
 
@@ -726,7 +743,7 @@ ul.task-list li input[type="checkbox"] {
         knopf.appendChild(marker);
         var inhalt = document.createElement("span");
         inhalt.className = "fq-text";
-        inhalt.textContent = s(option.text);
+        schreiben(inhalt, s(option.text));
         knopf.appendChild(inhalt);
         knopf.dataset.kennung = option.kennung;
         knopf.addEventListener("click", function () {
@@ -791,7 +808,7 @@ ul.task-list li input[type="checkbox"] {
         });
         var erklaerung = document.createElement("div");
         erklaerung.className = "fq-begruendung";
-        erklaerung.textContent = s(option.begruendung);
+        schreiben(erklaerung, s(option.begruendung));
         knopf.insertAdjacentElement("afterend", erklaerung);
       });
     }

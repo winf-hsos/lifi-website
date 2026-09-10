@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>what the bits mean</title>
+  <link rel="stylesheet" href="theme.css?v=20260910g">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260910g">
+  <style>
+    .photo-text.narrow { width: 560px; }
+    .cols4 .shot { width: 100%; border-radius: 10px; display: block; }
+    .cols4 .cap { color: var(--gray-light); font-size: var(--small); margin-top: 18px; }
+    .cols4 .sub { color: var(--gray); font-size: var(--tiny); margin-top: 6px; font-family: var(--mono); }
+    .punch code { font-family: var(--mono); font-size: inherit; }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="what the bits mean"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["the agreement is everything", "build your own codebook", "where does a character end?", "the same bits, other meanings", "codes without computers"]'>
+
+  <section class="slide title">
+    <aside class="notes">Ein Code ist eine Tabelle, auf die sich zwei Seiten geeinigt haben. Die Bits tragen keine Bedeutung mit sich, sie bekommen sie erst beim Nachschlagen. Deshalb ist das Aufschreiben der Tabelle kein Papierkram, sondern die halbe Challenge.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Fünf Teile: warum ein Code eine Vereinbarung ist, wie ihr euer eigenes Codebuch baut, woran der Empfänger das Ende eines Zeichens erkennt, warum dieselben Bytes drei Dinge sein können, und dass es Codesysteme lange vor dem Rechner gab.</aside>
+  </section>
+
+  <!-- ================= Teil 1: the agreement is everything ================= -->
+
+  <section class="slide part" data-part="the agreement is everything">
+    <aside class="notes">Wir fangen mit einem Stein an, den 1400 Jahre lang niemand lesen konnte.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/rosetta.png" alt="">
+    <div class="photo-text narrow">who still knows<br>what this means?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Raten lassen. Dann die Geschichte: der Stein von Rosetta, 196 vor Christus, derselbe Text in drei Schriften. Die Hieroglyphen konnte 1400 Jahre lang niemand mehr lesen. Nicht weil die Zeichen verlorengegangen wären, die lagen die ganze Zeit offen da, sondern weil die Vereinbarung verlorengegangen war, welches Zeichen was bedeutet. Erst weil daneben derselbe Text in einer bekannten Schrift stand, kam die Zuordnung zurück. Genau davon handelt dieser Input.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawAscii" data-on-step="drawAscii">
+    <h2>what a code system is</h2>
+    <div class="figure" id="fig-ascii"></div>
+    <span data-step="1"></span>
+    <div class="punch">a letter is a number. the letter comes back only when someone draws it again.</div>
+    <aside class="notes">Die Definition, knapp: eine vereinbarte Zuordnung von Zeichen zu Folgen von Symbolen. Und gleich eine echte Tabelle dazu, ASCII, die älteste noch täglich benutzte. Gespeichert wird nur die Zahl, genauer die Bits darunter. Einen Buchstaben als Form gibt es im Rechner nirgends; er entsteht erst wieder, wenn ein Programm die Zahl nachschlägt und die passende Form malt. Nebenbei: Die 65 ist nicht die Position im Alphabet. Der Anfang der Tabelle gehört den Steuerzeichen, deswegen fängt das große A erst bei 65 an. Und das kleine a ist eine ganz andere Zahl als das große: Für den Rechner sind es zwei Zeichen, nicht zwei Formen desselben.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the same letter, three code systems</h2>
+    <div class="figure" id="fig-mapping"></div>
+    <div class="punch">agreed, not given by nature. that is why there are several.</div>
+    <aside class="notes">Wenn ein Code eine Tabelle ist, dann kann es mehrere geben, und es gibt sie. Dasselbe A ist in ASCII eine Bitfolge, in Morse ein Punkt und ein Strich, in eurem Alphabet eine Farbfolge. Keine dieser Fassungen ist richtiger als die andere; welche gilt, ist verabredet. Dazu drei Abgrenzungen, weil sie im Alltag ständig durcheinandergehen: Ein Code verbirgt nichts (das ist Verschlüsselung), er verkleinert nichts (das ist Kompression), und er ist kein Programmtext. Er ist im Gegenteil öffentlich, gerade damit beide Seiten ihn benutzen können.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawUtf8" data-on-step="drawUtf8">
+    <h2>when the table is too small</h2>
+    <div class="figure" id="fig-utf8"></div>
+    <span data-step="1"></span>
+    <div class="punch">one table was too small. so a bigger one was agreed.</div>
+    <aside class="notes">Erst raten lassen, welche der sieben Zeichen ASCII kennt. Die 128 Plätze reichen für Englisch und für sonst nichts: kein Umlaut, kein Eurozeichen, kein Griechisch, kein Chinesisch, kein Emoji. Genau derselbe Fall wie eben beim Codebuch, nur weltweit: Die Tabelle war zu klein, also hat man eine größere vereinbart. Unicode gibt jedem Zeichen jeder Schrift eine Nummer, weit über 100.000 Stück. Und dann kommt noch ein zweiter Schritt, den man leicht mit dem ersten verwechselt: UTF-8 legt fest, wie diese Nummern als Bytes aufgeschrieben werden. Häufige Zeichen bleiben dabei ein Byte, seltene brauchen bis zu vier.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawTwoTables" data-on-step="drawTwoTables">
+    <h2>two tables, one message</h2>
+    <div class="figure" id="fig-two-tables"></div>
+    <span data-step="1"></span>
+    <span data-step="2"></span>
+    <div class="punch">no error message. just clean nonsense.</div>
+    <aside class="notes">Zwei Teammitglieder tippen die Tabelle unabhängig voneinander ab, und zwei Einträge geraten durcheinander. Was jetzt passiert, ist das Unangenehmste, was ein Code anrichten kann: Der Empfänger merkt nichts. Er schlägt nach, bekommt jedes Mal eine gültige Antwort und gibt ein Wort aus, das aussieht wie ein Wort. Das ist der Stein von Rosetta in klein, und es ist der häufigste Fehler in der Werkstatt gleich nachher. Deshalb Punkt 2 des Auftrags: Tabelle aufschreiben, einmal, gemeinsam.</aside>
+  </section>
+
+  <!-- ================= Teil 2: build your own codebook ================= -->
+
+  <section class="slide part" data-part="build your own codebook">
+    <aside class="notes">Jetzt baut ihr eine solche Tabelle selbst, für vier Farben und 26 Buchstaben.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawPositions" data-on-step="drawPositions">
+    <h2>how many positions per letter?</h2>
+    <div class="figure" id="fig-positions"></div>
+    <span data-step="1"></span>
+    <span data-step="2"></span>
+    <div class="punch">26 letters, 3 colour positions, 38 codes to spare.</div>
+    <aside class="notes">Nichts Neues herleiten, nur anwenden: Die Rechnung stammt aus dem Input davor, dort hieß sie „your own base". Eine Stelle gibt vier Möglichkeiten, zwei Stellen sechzehn, drei Stellen vierundsechzig. Erst die dritte Stelle reicht. Wichtig ist der Rest: 38 Codewörter bleiben übrig, und die sind kein Abfall.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the codebook</h2>
+    <div class="figure" id="fig-codebook"></div>
+    <div class="punch">the spare codes are stock, not waste.</div>
+    <aside class="notes">So sieht ein Codebuch aus: 64 Plätze, jeder mit seiner Nummer aus drei Stellen zur Basis vier. Die 26 Buchstaben belegen 26 davon. Leerzeichen, Punkt und die zehn Ziffern passen ohne jede Änderung dazu, das sind die gelben, und es bleiben immer noch 26 Plätze frei, später für Steuerzeichen. Die Tabelle ist viel leerer, als sie sich anfühlt. Welche drei Farben zu welcher Nummer gehören, entscheidet ihr; die Stellen sind da.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawBothWays" data-on-step="drawBothWays">
+    <h2>the same table, both directions</h2>
+    <div class="figure" id="fig-both-ways"></div>
+    <span data-step="1"></span>
+    <span data-step="2"></span>
+    <div class="punch">decoding is the same table, read the other way.</div>
+    <aside class="notes">Das ist der eigentliche Programmierauftrag. Solange keine zwei Zeichen dasselbe Codewort haben, trägt eine Tabelle beide Richtungen; im Programm dreht ihr sie einmal um. Zwei getrennt gepflegte Tabellen sind kein Fehler, aber ein Risiko: Ändert jemand die eine und vergisst die andere, seid ihr bei der Folie von eben und bekommt sauberen Unsinn.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what is not in the table</h2>
+    <div class="figure" id="fig-not-in-table"></div>
+    <div class="punch">something happens either way. decide which.</div>
+    <aside class="notes">Eure Tabelle kennt 26 Buchstaben. Der Nutzer tippt ein Leerzeichen, einen Umlaut, eine Ziffer. Alle drei Auswege sind vertretbar, keinen zu wählen ist es nicht: Dann entscheidet der Zufall oder der Absturz. Und Vorsicht vor dem bequemen Gedanken, ein Leerzeichen sei ja nichts. Für den Text ist es ein Zeichen wie jedes andere, und der Empfänger kann eine Lücke nicht erfinden, die nie gesendet wurde.</aside>
+  </section>
+
+  <!-- ================= Teil 3: where does a character end? ================= -->
+
+  <section class="slide part" data-part="where does a character end?">
+    <aside class="notes">Die Tabelle steht. Jetzt kommt der Fehler, den fast jedes Team einmal macht.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawAmbiguous" data-on-step="drawAmbiguous">
+    <h2>a code that does not work</h2>
+    <div class="figure" id="fig-ambiguous"></div>
+    <span data-step="1"></span>
+    <div class="punch">same bits, two readings. the receiver cannot see the boundary.</div>
+    <aside class="notes">Erst rechnen lassen: Was steht da? Dann beide Lesarten zeigen. Genau dieser Fehler passiert gleich im Experiment an der Tafel, und er soll passieren. Das Problem ist nicht die variable Länge an sich. Das Problem ist, dass der Code von a am Anfang des Codes von b steht. Der Empfänger weiß nie, ob ein Zeichen schon zu Ende ist, und beide Lesarten sind vollkommen regelkonform.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: the prefix trap</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/prefix-trap/?embed=1" title="The Prefix Trap"></iframe></div>
+    <aside class="notes">Kurz vorführen, dann die Teams selbst probieren lassen. Codewörter ändern, ein Wort tippen, die Liste der gültigen Lesarten beobachten. Zwei Aufträge an den Saal: Erstens die Liste auf eins bringen, ohne allen Codewörtern dieselbe Länge zu geben. Zweitens einen Code bauen, bei dem es besonders viele Lesarten gibt. Wer das erste schafft, hat einen präfixfreien Code gebaut, ohne dass das Wort gefallen ist.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>three ways out</h2>
+    <div class="figure" id="fig-three-ways"></div>
+    <div class="punch">three answers to one question. all of them work.</div>
+    <aside class="notes">Kein Rezept, sondern drei gangbare Wege. Für Challenge 2 empfehle ich den ersten, weil er in fünf Zeilen Code passt: Alle Codewörter gleich lang, der Empfänger zählt ab. Die anderen beiden sind nicht schlechter, sie sind aufwendiger. Der dritte ist der interessanteste, denn er erlaubt variable Länge und bleibt trotzdem eindeutig: Sobald das gelesene Stück in der Tabelle steht, kann es nur dieses Zeichen sein.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what fixed length costs</h2>
+    <div class="figure" id="fig-length-cost"></div>
+    <div class="punch">shorter on average, not in every case.</div>
+    <aside class="notes">Feste Länge verschenkt Platz, denn häufige Zeichen bekommen keinen Rabatt. Variable Länge kann kürzer werden, und wie viel kürzer, hängt vom Text ab: Bei einem Wort aus lauter seltenen Buchstaben verliert sie. Wer diesen Gedanken zu Ende denkt, landet bei Kompression, und darum geht es in Sitzung 13. Heute reicht die Einsicht, dass die Wahl eine Wahl ist und beide Seiten einen Preis haben.</aside>
+  </section>
+
+  <!-- ================= Teil 4: the same bits, other meanings ================= -->
+
+  <section class="slide part" data-part="the same bits, other meanings">
+    <aside class="notes">Zurück zu dem Foto, mit dem der Kurs angefangen hat, diesmal von unten betrachtet.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawThreeReadings" data-on-step="drawThreeReadings">
+    <h2>one byte sequence, three readings</h2>
+    <div class="figure" id="fig-three-readings"></div>
+    <span data-step="1"></span>
+    <div class="punch">the bytes do not say which reading is right.</div>
+    <aside class="notes">Acht echte Bytes aus der Mitte des Fotos. Als Text gelesen ergeben sie ein M, ein E und ein paar Zeichen, die kein Editor darstellen kann; genau das sieht man, wenn man ein Bild versehentlich als Text öffnet. Als Grauwerte gelesen sind es acht Helligkeiten, als Tonabtastwerte acht Messpunkte einer Welle. Alle drei Lesarten sind technisch einwandfrei. Zeichensalat ist keine Fehlfunktion, sondern eine korrekt ausgeführte falsche Vereinbarung.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>one pixel, three numbers</h2>
+    <div class="figure" id="fig-pixel"></div>
+    <div class="punch">the same three numbers your sender writes: <code>led.set_color(236, 171, 3)</code></div>
+    <aside class="notes">Bilder sind derselbe Gedanke wie Text, nur mit anderer Vereinbarung: je Bildpunkt drei Zahlen von 0 bis 255. Viel Rot, etwas weniger Grün, fast kein Blau, zusammen dieses Gold. Multipliziert, nicht addiert, denn jede Rotstufe lässt sich mit jeder Grün- und Blaustufe kombinieren: 256 mal 256 mal 256 sind 16,7 Millionen Farben, 24 Bit je Bildpunkt. Hexadezimal ist nur die kompakte Schreibweise dafür, zwei Stellen je Byte, aus dem Input davor. Und der Punkt für euch: Genau diese drei Zahlen schreibt euer Sender. Eure LED mischt wie ein Bildschirm, euer Sensor misst in denselben drei Kanälen zurück.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: pixel painter</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/pixel-painter/?embed=1" title="Pixel Painter"></iframe></div>
+    <aside class="notes">Die einfachste Fassung derselben Vereinbarung: ein Bit je Pixel, acht Bytes für ein Bild aus 8 mal 8 Punkten. Malen schreibt die Bytes, Hexwerte tippen malt das Bild; beide Richtungen sind dieselbe Tabelle. Und „break a byte" zeigt, dass ein kaputtes Byte genau eine Bildzeile trifft, weil die Vereinbarung zeilenweise liest.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>who says which reading?</h2>
+    <div class="figure" id="fig-who-says"></div>
+    <div class="punch">the type is another agreement.</div>
+    <aside class="notes">Die Bytes sagen es nicht, also muss es jemand anders sagen. Die Dateiendung ist der schwächste der drei Wege, denn sie lässt sich umbenennen, ohne dass sich am Inhalt etwas ändert. Kopfdaten in der Datei sind belastbarer, die schaut ihr euch in Sitzung 12 an. Und den dritten Weg baut ihr selbst: Euer Rahmen in Challenge 3 bekommt ein Typfeld, damit der Empfänger nicht raten muss. Das ist kein Formalismus, das ist genau diese Folie in eurem eigenen Protokoll.</aside>
+  </section>
+
+  <!-- ================= Teil 5: codes without computers ================= -->
+
+  <section class="slide part" data-part="codes without computers">
+    <aside class="notes">Zum Schluss der Blick nach draußen, denn Codesysteme sind viel älter als Rechner.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>four agreements, no computer</h2>
+    <div class="cols4">
+      <div>
+        <img class="shot" src="img/barcode.png" alt="">
+        <div class="cap">barcode</div>
+        <div class="sub">bar widths &rarr; digits</div>
+      </div>
+      <div>
+        <img class="shot" src="img/music.png" alt="">
+        <div class="cap">sheet music</div>
+        <div class="sub">position &rarr; pitch and length</div>
+      </div>
+      <div>
+        <img class="shot" src="img/braille.png" alt="">
+        <div class="cap">braille</div>
+        <div class="sub">six dots &rarr; a character</div>
+      </div>
+      <div>
+        <img class="shot" src="img/dna.png" alt="">
+        <div class="cap">dna</div>
+        <div class="sub">three bases &rarr; an amino acid</div>
+      </div>
+    </div>
+    <div class="footnote">images: ai-generated (gpt-image-2)</div>
+    <div class="punch">none of them needs a computer. all of them need an agreement.</div>
+    <aside class="notes">Der Strichcode macht Strichbreiten zu Ziffern, die Notenschrift macht Position und Form zu Tonhöhe und Dauer, Braille macht sechs Punkte zu einem tastbaren Zeichen, und die DNA macht drei Basen zu einer Aminosäure. Die letzte ist die älteste und zugleich die verbreitetste: Diese Zuordnung ist bei allen Lebewesen dieselbe, vom Bakterium bis zum Menschen. Keines dieser Systeme braucht Strom, alle brauchen eine Vereinbarung.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the same calculation, three times</h2>
+    <div class="figure" id="fig-sixty-four"></div>
+    <div class="punch">braille, dna and your alphabet all landed on 64.</div>
+    <aside class="notes">Der Zufall ist keiner. Wer eine feste Zahl von Stellen mit einer festen Zahl von Zuständen kombiniert, rechnet immer dieselbe Rechnung, ob mit Fingerkuppen, mit Molekülen oder mit Licht. Braille ist ein Sechs-Bit-Code, den man mit dem Finger liest, und Louis Braille hat ihn 1825 als Sechzehnjähriger entworfen, lange vor jedem Rechner. Die DNA hat vier Basen und drei Stellen je Aminosäure, also genau eure Rechnung. Und ihr habt, ohne es zu wissen, dieselbe Größe getroffen.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/codebook.png" alt="">
+    <div class="photo-text narrow">write it down.<br>twice.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Der Werkstattauftrag in einem Bild und der Bogen zurück zum Stein von Rosetta. Vier Schritte: einen Code vereinbaren, der Buchstaben auf Farbsymbole abbildet; ihn aufschreiben, in beiden Richtungen; send_text und receive_text füllen; ein zehnstelliges Wort vollständig richtig übertragen, den Takt gibt vorerst ein Mensch. Der zweite Punkt ist der, an dem die meisten Teams scheitern werden, und es sieht nicht nach Scheitern aus, sondern nach einem falschen Wort.</aside>
+  </section>
+
+</div>
+
+<!-- deck.js MUSS vor stagekit.js stehen: stagekit ruft beim ersten Anzeigen die
+     data-on-show-Funktionen auf, und die gibt es sonst noch nicht. Sichtbar wird
+     das erst im Export, wo jeder Frame frisch mit ?slide=N geladen wird. -->
+<script src="../stagekit/draw.js?v=20260910g"></script>
+<script src="deck.js?v=20260910g"></script>
+<script src="../stagekit/stagekit.js?v=20260910g"></script>
+</body>
+</html>

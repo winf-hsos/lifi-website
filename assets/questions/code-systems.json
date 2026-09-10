@@ -237,56 +237,56 @@
    "id": "cs-005",
    "niveau": "anwenden",
    "frage": {
-    "de": "Euer Alphabet hat vier Farben, ihr wollt die 26 Buchstaben übertragen.\nWie viele Farbsymbole braucht ihr mindestens je Buchstabe, wenn alle\nBuchstaben gleich lang kodiert werden?",
-    "en": "Your alphabet has four colours and you want to transmit the 26 letters.\nAt least how many colour symbols per letter do you need if all letters\nare coded with the same length?"
+    "de": "Euer Code gibt jedem Buchstaben drei Farbstellen aus einem Alphabet von vier Farben.\nJetzt sollen zusätzlich das Leerzeichen, der Punkt und die zehn Ziffern übertragen\nwerden. Was müsst ihr an eurem Code ändern?",
+    "en": "Your code gives every letter three colour positions from an alphabet of four colours.\nNow the space, the full stop and the ten digits are to be transmitted as well. What do\nyou have to change about your code?"
    },
    "typ": "sc",
    "richtig": [
-    "c"
+    "a"
    ],
    "optionen": [
     {
      "kennung": "a",
      "text": {
-      "de": "7, denn 4 mal 7 sind 28, und das ist die kleinste Zahl über 26.",
-      "en": "7, because 4 times 7 is 28, the smallest number above 26."
+      "de": "Nichts an der Länge: Drei Farbstellen ergeben 64 Codewörter, gebraucht werden 38, es bleiben 26 frei.",
+      "en": "Nothing about the length: three colour positions give 64 code words, 38 are needed, 26 stay free."
      },
      "begruendung": {
-      "de": "Multipliziert wird nicht, potenziert: Jedes weitere Symbol vervierfacht die Möglichkeiten. Schon zwei Symbole ergeben 4 mal 4 gleich 16, drei ergeben 64. Sieben wären enorm verschwenderisch.",
-      "en": "You do not multiply, you exponentiate: each extra symbol quadruples the possibilities. Two symbols already give 4 times 4 = 16, three give 64. Seven would be hugely wasteful."
+      "de": "Genau. Die freien Codewörter waren nie Abfall, sondern Vorrat. Genau dafür sind sie da: für Leerzeichen, Ziffern, Satzzeichen und später Steuerzeichen.",
+      "en": "Exactly. The spare code words were never waste, they were stock. That is what they are for: space, digits, punctuation and later control characters."
      }
     },
     {
      "kennung": "b",
      "text": {
-      "de": "5, wie beim Zahlenraten mit Ja/Nein-Fragen: 2 hoch 5 sind 32, und das reicht für 26.",
-      "en": "5, as in the guessing game with yes/no questions: 2 to the power of 5 is 32, which covers 26."
+      "de": "Eine vierte Farbstelle, denn die 64 Codewörter sind mit den 26 Buchstaben bereits vergeben.",
+      "en": "A fourth colour position, because the 64 code words are already taken by the 26 letters."
      },
      "begruendung": {
-      "de": "Das sind 5 Bit, und die Rechnung stimmt für ein Alphabet aus zwei Symbolen. Eine von vier Farben trägt aber 2 Bit, zwei Möglichkeiten je Schritt sind hier also zu wenig gerechnet: 5 Bit passen in drei Farbsymbole.",
-      "en": "That is 5 bits, and the calculation holds for a two-symbol alphabet. One of four colours carries 2 bits, though, so two possibilities per step undercounts: 5 bits fit into three colour symbols."
+      "de": "26 Buchstaben belegen 26 der 64 Codewörter, nicht alle. Die Tabelle ist deutlich leerer, als sie sich anfühlt.",
+      "en": "26 letters occupy 26 of the 64 code words, not all of them. The table is far emptier than it feels."
      }
     },
     {
      "kennung": "c",
      "text": {
-      "de": "3, denn 4 hoch 3 sind 64 Kombinationen, und 4 hoch 2 wären nur 16.",
-      "en": "3, because 4 to the power of 3 is 64 combinations, while 4 squared is only 16."
+      "de": "Eine fünfte Farbe ins Alphabet aufnehmen, damit die zwölf neuen Zeichen Platz finden.",
+      "en": "Add a fifth colour to the alphabet so the twelve new characters fit."
      },
      "begruendung": {
-      "de": "Genau, und allgemein ist das N = k hoch n: vier Symbole im Alphabet, drei je Zeichen, also 64 Möglichkeiten. In Bits gerechnet trägt jede Farbe 2 Bit, drei Farben also 6. Man verschenkt dabei 38 ungenutzte Kombinationen; die kann man für Ziffern, Leerzeichen oder Steuerzeichen gebrauchen.",
-      "en": "Exactly, and the same calculation in bits: each colour carries 2 bits, so three colours carry 6 bits, that is 64 possibilities. This wastes 38 unused combinations, which you can spend on digits, spaces, or control characters."
+      "de": "Das würde die Kapazität erhöhen, ist hier aber nicht nötig, und es ist der teuerste Weg: Eine fünfte Farbe muss der Sensor zuverlässig von den anderen vier unterscheiden können.",
+      "en": "That would raise the capacity, but it is not needed here, and it is the most expensive route: a fifth colour has to be reliably distinguishable from the other four by the sensor."
      }
     },
     {
      "kennung": "d",
      "text": {
-      "de": "1, wenn ihr jede der vier Farben in Helligkeitsstufen unterteilt, bis 26 unterscheidbare Töne erreicht sind.",
-      "en": "1, if you split each of the four colours into brightness levels until 26 distinguishable shades are reached."
+      "de": "Für die zwölf neuen Zeichen ein Trennzeichen einführen, weil sie keine Buchstaben sind.",
+      "en": "Introduce a separator for the twelve new characters, because they are not letters."
      },
      "begruendung": {
-      "de": "Das wäre ein neues Alphabet aus 26 Symbolen, nicht mehr das aus vier Farben, um das die Frage geht. Und ob 26 Töne an eurer Strecke sicher unterscheidbar sind, entscheidet die Streuung; genau daran scheitert es meist, deshalb setzt man Buchstaben aus mehreren Symbolen zusammen.",
-      "en": "That would be a new alphabet of 26 symbols, no longer the four-colour one the question is about. And whether 26 shades are reliably distinguishable on your link is decided by scatter; that is usually where it fails, which is why letters are assembled from several symbols."
+      "de": "Ein Trennzeichen braucht nur, wer verschieden lange Codewörter benutzt. Bei fester Länge zählt der Empfänger ab, und für ihn ist ein Punkt genauso ein Codewort wie ein Buchstabe.",
+      "en": "A separator is only needed with code words of different lengths. With fixed length the receiver simply counts, and to it a full stop is just as much a code word as a letter."
      }
     }
    ]
@@ -525,65 +525,6 @@
    ]
   },
   {
-   "id": "cs-010",
-   "niveau": "verstehen",
-   "frage": {
-    "de": "Dasselbe Logo lässt sich als Bitmap (eine Farbe je Bildpunkt) oder als\nVektorgrafik (Anweisungen wie „Kreis, Mittelpunkt, Radius, Farbe“)\nspeichern. Welche Aussagen treffen zu?",
-    "en": "The same logo can be stored as a bitmap (one colour per pixel) or as\nvector graphics (instructions like \"circle, centre, radius, colour\").\nWhich statements are true?"
-   },
-   "typ": "mc",
-   "richtig": [
-    "a",
-    "c"
-   ],
-   "optionen": [
-    {
-     "kennung": "a",
-     "text": {
-      "de": "Beides sind Codesysteme: Sie beschreiben dasselbe Bild nach verschiedenen Vereinbarungen.",
-      "en": "Both are code systems: they describe the same image under different agreements."
-     },
-     "begruendung": {
-      "de": "Richtig, und das ist der Kern: Es gibt nicht die eine richtige Darstellung, sondern verschiedene Zuordnungen mit verschiedenen Stärken.",
-      "en": "Correct, and that is the core: there is no single right representation, only different mappings with different strengths."
-     }
-    },
-    {
-     "kennung": "b",
-     "text": {
-      "de": "Die Vektorfassung ergibt bei jedem Motiv die kleinere Datei, weil Anweisungen weniger Platz brauchen als Bildpunkte.",
-      "en": "The vector version gives the smaller file for any motif, because instructions take less space than pixels."
-     },
-     "begruendung": {
-      "de": "Bei einfachen Formen meistens, bei einem Foto keineswegs: Ein Foto als Vektorgrafik zu beschreiben, wäre absurd aufwendig. Es hängt am Motiv.",
-      "en": "For simple shapes usually, for a photo certainly not: describing a photo as vectors would be absurdly expensive. It depends on the content."
-     }
-    },
-    {
-     "kennung": "c",
-     "text": {
-      "de": "Nur die Vektorfassung lässt sich beliebig vergrößern, ohne dass Treppenstufen entstehen.",
-      "en": "Only the vector version can be enlarged arbitrarily without producing jagged edges."
-     },
-     "begruendung": {
-      "de": "Richtig: Die Anweisung „Kreis mit Radius r“ lässt sich in jeder Größe neu zeichnen, ein Raster aus Bildpunkten dagegen nicht.",
-      "en": "Correct: the instruction 'circle with radius r' can be redrawn at any size, a grid of pixels cannot."
-     }
-    },
-    {
-     "kennung": "d",
-     "text": {
-      "de": "Die Bitmapfassung braucht keine eigene Vereinbarung, weil eine Farbe je Bildpunkt ohnehin die natürliche Form eines Bildes ist.",
-      "en": "The bitmap version needs no agreement of its own, because one colour per pixel is the natural form of an image anyway."
-     },
-     "begruendung": {
-      "de": "Auch sie braucht Absprachen: Breite, Höhe, Reihenfolge der Bildpunkte, Farbtiefe, Kanalreihenfolge. Ohne die ist eine Bitmap nur eine Bytefolge.",
-      "en": "It needs agreements too: width, height, pixel order, colour depth, channel order. Without those a bitmap is just a byte sequence."
-     }
-    }
-   ]
-  },
-  {
    "id": "cs-011",
    "niveau": "anwenden",
    "frage": {
@@ -718,56 +659,57 @@
    "id": "cs-013",
    "niveau": "anwenden",
    "frage": {
-    "de": "Für die Zahl der codierbaren Zeichen gilt N = k^n, mit k Symbolen im\nAlphabet und n Symbolen je Zeichen. Ein Team hat nur zwei sicher\nunterscheidbare Farben und will 26 Buchstaben übertragen. Wie viele\nSymbole braucht ein Buchstabe?",
-    "en": "The number of codable characters is N = k^n, with k symbols in the\nalphabet and n symbols per character. A team has only two reliably\ndistinguishable colours and wants to transmit 26 letters. How many\nsymbols does one letter need?"
+    "de": "Vier Teams legen ihre Codetabelle vor. Welche davon lassen sich ohne Trennzeichen\neindeutig lesen? (Mehrere richtige Antworten möglich.)",
+    "en": "Four teams present their code table. Which of them can be read unambiguously without\nseparators? (Several answers may be correct.)"
    },
-   "typ": "sc",
+   "typ": "mc",
    "richtig": [
-    "c"
+    "a",
+    "b"
    ],
    "optionen": [
     {
      "kennung": "a",
      "text": {
-      "de": "13, denn 26 Buchstaben verteilt auf 2 Farben ergeben 13 Symbole je Buchstabe.",
-      "en": "13, because 26 letters spread over 2 colours make 13 symbols per letter."
+      "de": "a = 00, b = 01, c = 10, d = 11",
+      "en": "a = 00, b = 01, c = 10, d = 11"
      },
      "begruendung": {
-      "de": "Geteilt wird hier nichts. Mit jedem zusätzlichen Symbol verdoppelt sich die Zahl der Möglichkeiten, sie wächst also viel schneller.",
-      "en": "Nothing is divided here. Each additional symbol doubles the number of possibilities, so it grows far faster."
+      "de": "Feste Länge: Der Empfänger schneidet die Folge in Zweiergruppen und braucht gar nicht zu überlegen, wo ein Zeichen endet.",
+      "en": "Fixed length: the receiver cuts the sequence into pairs and never has to wonder where a character ends."
      }
     },
     {
      "kennung": "b",
      "text": {
-      "de": "4, denn 2 hoch 4 sind 16, und die seltenen Buchstaben lassen sich zusammenlegen.",
-      "en": "4, because 2 to the power of 4 is 16, and the rare letters can share codes."
+      "de": "a = 0, b = 10, c = 110, d = 111",
+      "en": "a = 0, b = 10, c = 110, d = 111"
      },
      "begruendung": {
-      "de": "Die Rechnung stimmt, das Ergebnis reicht aber nicht: 16 Kombinationen für 26 Buchstaben lassen zehn Buchstaben ohne Code. Zusammengelegte Buchstaben kann der Empfänger nicht mehr auseinanderhalten, der Code wäre nicht eindeutig.",
-      "en": "The calculation is right but the result is too small: 16 combinations for 26 letters leave ten letters without a code. Letters that share a code can no longer be told apart by the receiver, so the code would be ambiguous."
+      "de": "Verschieden lang und trotzdem eindeutig: Kein Codewort steht am Anfang eines anderen. Sobald ein gelesenes Stück in der Tabelle steht, kann es nur dieses Zeichen sein.",
+      "en": "Different lengths and still unambiguous: no code word is the beginning of another one. As soon as a piece read matches the table, it can only be that character."
      }
     },
     {
      "kennung": "c",
      "text": {
-      "de": "5, denn 2 hoch 5 sind 32, die erste Zweierpotenz, die 26 erreicht.",
-      "en": "5, because 2 to the power of 5 is 32, the first power of two that reaches 26."
+      "de": "a = 0, b = 01, c = 011, d = 0111",
+      "en": "a = 0, b = 01, c = 011, d = 0111"
      },
      "begruendung": {
-      "de": "Genau: Der Logarithmus zur Basis 2 von 26 ist etwa 4,7, und weil es keine halben Symbole gibt, wird aufgerundet. Mit 32 Kombinationen bleiben sechs für Leerzeichen und Ziffern übrig. Nebenbei: Genau das ist der Preis eines kleinen Alphabets, mit vier Farben wären es nur drei Symbole.",
-      "en": "Exactly: the base-2 logarithm of 26 is about 4.7, and since there are no half symbols you round up. With 32 combinations, six are left for spaces and digits. Note the price of a small alphabet: with four colours it would be three symbols."
+      "de": "Hier ist jedes Codewort der Anfang des nächsten. Bei `0111` weiß der Empfänger nie, ob das Zeichen schon zu Ende ist: „a b b“, „a d“ und „c a“ passen alle.",
+      "en": "Here every code word is the beginning of the next one. With `0111` the receiver never knows whether the character has ended: \"a b b\", \"a d\" and \"c a\" all fit."
      }
     },
     {
      "kennung": "d",
      "text": {
-      "de": "26, denn jeder Buchstabe braucht sein eigenes, von den anderen unterscheidbares Symbol.",
-      "en": "26, because each letter needs its own symbol, distinguishable from all the others."
+      "de": "a = 0, b = 1, c = 01, d = 10",
+      "en": "a = 0, b = 1, c = 01, d = 10"
      },
      "begruendung": {
-      "de": "Das wäre die Zahl der Buchstaben, nicht die Länge eines Codeworts. Mit zwei Farben lassen sich Buchstaben nur aus mehreren Symbolen zusammensetzen.",
-      "en": "That is the number of letters, not the length of a code word. With two colours, letters can only be assembled from several symbols."
+      "de": "`01` ist entweder „c“ oder „a b“, und beides ist erlaubt. Verschiedene Längen sind hier tatsächlich das Problem, aber nur weil die kurzen Codewörter am Anfang der langen stehen.",
+      "en": "`01` is either \"c\" or \"a b\", and both are allowed. Different lengths really are the problem here, but only because the short code words start the long ones."
      }
     }
    ]
@@ -783,7 +725,7 @@
    "richtig": [
     "b"
    ],
-   "code": "led.set_color(172, 137, 9)",
+   "code": "led.set_color(236, 171, 3)",
    "optionen": [
     {
      "kennung": "a",
@@ -827,6 +769,298 @@
      "begruendung": {
       "de": "Eine Wellenlänge wäre eine einzige Zahl und läge bei sichtbarem Licht zwischen etwa 380 und 750. Eure LED erzeugt Farben nicht über die Wellenlänge, sondern durch Mischen dreier fester Grundfarben.",
       "en": "A wavelength would be a single number, roughly 380 to 750 for visible light. Your LED does not produce colours by wavelength but by mixing three fixed primaries."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cs-015",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Zwei Teammitglieder haben ihre Codetabelle unabhängig voneinander abgetippt. In der\nTabelle des Empfängers sind versehentlich die Einträge für „n“ und „m“ vertauscht,\nalles andere stimmt überein. Der Sender schickt das Wort „sonne“. Was passiert?",
+    "en": "Two team members typed up their code table independently. In the receiver's table the\nentries for \"n\" and \"m\" have accidentally been swapped; everything else matches. The\nsender transmits the word \"sonne\". What happens?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Der Empfänger meldet einen Fehler, weil die empfangene Folge nicht zu seiner Tabelle passt.",
+      "en": "The receiver reports an error, because the sequence it received does not match its table."
+     },
+     "begruendung": {
+      "de": "Die Folge passt sehr wohl zu seiner Tabelle, nur eben zu einem anderen Buchstaben. Es gibt nichts, worüber sich das Programm wundern könnte.",
+      "en": "The sequence matches its table perfectly well, just to a different letter. There is nothing for the program to be surprised about."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Der Empfänger gibt „sonne“ aus, denn die Bitfolge trägt ihre Bedeutung mit sich.",
+      "en": "The receiver outputs \"sonne\", because the bit sequence carries its meaning with it."
+     },
+     "begruendung": {
+      "de": "Eine Bitfolge trägt keine Bedeutung mit sich. Sie bekommt sie erst durch die Tabelle, in der jemand nachschlägt, und hier sind es zwei verschiedene Tabellen.",
+      "en": "A bit sequence carries no meaning with it. It only gets meaning from the table someone looks it up in, and here there are two different tables."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Der Empfänger gibt „somme“ aus, und nichts deutet auf einen Fehler hin.",
+      "en": "The receiver outputs \"somme\", and nothing points to an error."
+     },
+     "begruendung": {
+      "de": "Genau das macht falsche Tabellen so tückisch: Es kommt kein Fehler an, sondern sauberer Unsinn. Genau davon handelt der Stein von Rosetta, nur in klein.",
+      "en": "That is what makes wrong tables so treacherous: no error arrives, only clean nonsense. That is the Rosetta Stone story, in miniature."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Übertragung bricht beim ersten falsch zugeordneten Zeichen ab.",
+      "en": "The transmission stops at the first wrongly mapped character."
+     },
+     "begruendung": {
+      "de": "Abbrechen könnte der Empfänger nur, wenn er merkte, dass etwas nicht stimmt. Er schlägt aber nur nach und bekommt jedes Mal eine gültige Antwort.",
+      "en": "The receiver could only stop if it noticed something was wrong. But it just looks things up, and every time it gets a valid answer."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cs-016",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Euer Team hat die Tabelle für das Senden aufgeschrieben. Der Empfänger bekommt die\nBitfolge `11000110`. Welchen Text hat er empfangen?",
+    "en": "Your team has written down the table for sending. The receiver gets the bit sequence\n`11000110`. Which text has it received?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "code": "code = {\"a\": \"00\", \"b\": \"01\", \"c\": \"10\", \"d\": \"11\"}",
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "„dabc“, denn die Folge wird von vorn in Zweiergruppen geschnitten und jede Gruppe rückwärts nachgeschlagen.",
+      "en": "\"dabc\": the sequence is cut into pairs from the front and each pair is looked up backwards."
+     },
+     "begruendung": {
+      "de": "11 00 01 10 ergibt d, a, b, c. Weil alle Codewörter zwei Bit lang sind, genügt Abzählen, und die Tabelle lässt sich in beide Richtungen benutzen.",
+      "en": "11 00 01 10 gives d, a, b, c. Because all code words are two bits long, counting is enough, and the table works in both directions."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "„cbad“, denn beim Dekodieren wird die Folge von hinten in Zweiergruppen geschnitten.",
+      "en": "\"cbad\": when decoding, the sequence is cut into pairs from the back."
+     },
+     "begruendung": {
+      "de": "Von hinten zu schneiden ergibt hier zufällig auch Zweiergruppen, dreht aber die Reihenfolge um. Der Empfänger liest in derselben Reihenfolge, in der gesendet wurde.",
+      "en": "Cutting from the back happens to give pairs here too, but it reverses the order. The receiver reads in the same order in which it was sent."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Ein einziges Zeichen, denn acht Bit sind ein Byte, und ein Byte trägt genau ein Zeichen.",
+      "en": "A single character, because eight bits are one byte, and one byte carries exactly one character."
+     },
+     "begruendung": {
+      "de": "Ein Byte trägt ein Zeichen, wenn die Vereinbarung das sagt, etwa in ASCII. Eure Vereinbarung sagt zwei Bit je Zeichen, also stecken hier vier Zeichen in acht Bit.",
+      "en": "A byte carries one character if the agreement says so, as in ASCII. Your agreement says two bits per character, so eight bits hold four characters here."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Gar nichts, denn zum Dekodieren braucht es eine zweite Tabelle von Bits auf Buchstaben; die vorhandene zeigt in die falsche Richtung.",
+      "en": "Nothing at all: decoding needs a second table from bits to letters, and this one points the wrong way."
+     },
+     "begruendung": {
+      "de": "Solange keine zwei Zeichen dasselbe Codewort haben, trägt eine Tabelle beide Richtungen. Im Programm dreht man sie einmal um, das ist Handwerk, aber keine neue Vereinbarung.",
+      "en": "As long as no two characters share a code word, one table carries both directions. In the program you invert it once; that is craft, not a new agreement."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cs-017",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Eure Codetabelle enthält die 26 Buchstaben, sonst nichts. Jemand tippt „guten morgen“\nund drückt auf Senden. Welche Aussage trifft zu?",
+    "en": "Your code table contains the 26 letters and nothing else. Someone types \"guten morgen\"\nand presses send. Which statement is true?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Das Leerzeichen ist die Abwesenheit eines Zeichens und braucht deshalb keinen Code.",
+      "en": "The space is the absence of a character and therefore needs no code."
+     },
+     "begruendung": {
+      "de": "Für euch sieht ein Leerzeichen nach Nichts aus, für den Text ist es ein Zeichen wie jedes andere. Ohne Code kommt „gutenmorgen“ an, und der Empfänger kann die Lücke nicht erfinden.",
+      "en": "To you a space looks like nothing; to the text it is a character like any other. Without a code \"gutenmorgen\" arrives, and the receiver cannot invent the gap."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Das Leerzeichen hat keinen Code; euer Programm muss festlegen, was damit geschieht, sonst entscheidet der Zufall.",
+      "en": "The space has no code; your program has to decide what happens to it, otherwise chance decides."
+     },
+     "begruendung": {
+      "de": "Genau. Entweder ihr nehmt das Leerzeichen in die Tabelle auf, oder ihr werft es vorher weg, oder ihr brecht mit einer Meldung ab. Alle drei sind vertretbar; keine Entscheidung zu treffen ist es nicht.",
+      "en": "Exactly. Either you add the space to the table, or you drop it beforehand, or you stop with a message. All three are defensible; making no decision is not."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Der Empfänger erkennt die Wortgrenze an der Pause zwischen den Symbolen.",
+      "en": "The receiver recognises the word boundary from the pause between symbols."
+     },
+     "begruendung": {
+      "de": "Das verwechselt zwei Ebenen. Pausen zwischen Symbolen gehören zur Übertragung und stehen zwischen allen Symbolen, auch mitten im Wort. Das Leerzeichen gehört zum Text.",
+      "en": "That confuses two levels. Pauses between symbols belong to the transmission and sit between all symbols, including inside a word. The space belongs to the text."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das Leerzeichen bekommt automatisch das nächste freie Codewort, es stehen ja 64 zur Verfügung.",
+      "en": "The space is automatically given the next free code word; after all, 64 are available."
+     },
+     "begruendung": {
+      "de": "Automatisch geschieht in einem Code gar nichts. Freie Codewörter sind Platz, keine Zuordnung, und was der Sender selbst vergibt, weiß der Empfänger noch lange nicht.",
+      "en": "Nothing happens automatically in a code. Free code words are space, not a mapping, and whatever the sender assigns on its own is still unknown to the receiver."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cs-018",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Die Blindenschrift Braille schreibt jedes Zeichen als sechs Punkte, und jeder Punkt ist\nentweder gesetzt oder nicht. Wie viele verschiedene Zeichen lassen sich damit\nunterscheiden?",
+    "en": "Braille writes every character as six dots, and each dot is either raised or not. How\nmany different characters can be told apart that way?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "12, also 6 Punkte mal 2 Zustände.",
+      "en": "12, that is 6 dots times 2 states."
+     },
+     "begruendung": {
+      "de": "Multipliziert wird nicht über die Punkte hinweg, sondern für jeden Punkt einzeln: Jeder der sechs Punkte verdoppelt die Zahl der Muster.",
+      "en": "You do not multiply across the dots, you multiply per dot: each of the six dots doubles the number of patterns."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "36, also 6 hoch 2.",
+      "en": "36, that is 6 to the power of 2."
+     },
+     "begruendung": {
+      "de": "Hier stehen Grundzahl und Hochzahl vertauscht. Die Grundzahl ist, wie viele Zustände eine Stelle hat (zwei), die Hochzahl, wie viele Stellen es gibt (sechs).",
+      "en": "Base and exponent are the wrong way round. The base is how many states one position has (two), the exponent is how many positions there are (six)."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "64, also 2 hoch 6.",
+      "en": "64, that is 2 to the power of 6."
+     },
+     "begruendung": {
+      "de": "Genau dieselbe Rechnung wie bei eurem Farbalphabet, nur mit zwei Zuständen und sechs Stellen. Braille ist ein Sechs-Bit-Code, den man mit dem Finger liest.",
+      "en": "Exactly the same calculation as for your colour alphabet, just with two states and six positions. Braille is a six-bit code you read with your finger."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "6, denn jeder Punkt steht für ein Zeichen.",
+      "en": "6, because each dot stands for one character."
+     },
+     "begruendung": {
+      "de": "Dann käme man mit sechs Zeichen nicht weit. Der Punkt ist die Stelle, nicht das Zeichen; das Zeichen ist das Muster aus allen sechs.",
+      "en": "That would not get you far with six characters. The dot is the position, not the character; the character is the pattern of all six."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cs-019",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ein Team codiert alle Buchstaben mit drei Farbstellen. Ein anderes Team gibt den zehn\nhäufigsten Buchstaben zwei Farbstellen und allen übrigen vier. Welche Aussagen treffen\nzu? (Mehrere richtige Antworten möglich.)",
+    "en": "One team codes every letter with three colour positions. Another team gives the ten most\nfrequent letters two colour positions and all the others four. Which statements are\ntrue? (Several answers may be correct.)"
+   },
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Für gewöhnlichen deutschen Text braucht das zweite Team im Schnitt weniger Farbstellen je Buchstabe.",
+      "en": "For ordinary German text the second team needs fewer colour positions per letter on average."
+     },
+     "begruendung": {
+      "de": "Die zehn häufigsten Buchstaben machen den größten Teil eines Textes aus. Wer ihnen den Rabatt gibt, zahlt für den seltenen Rest gern zwei Stellen mehr. Genau dieser Gedanke steckt hinter Morse und hinter Kompression.",
+      "en": "The ten most frequent letters make up most of a text. If you give them the discount, you happily pay two extra positions for the rare remainder. This is exactly the idea behind Morse code and behind compression."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Der Code des zweiten Teams ist bei jeder beliebigen Zeichenfolge kürzer.",
+      "en": "The second team's code is shorter for any sequence of characters."
+     },
+     "begruendung": {
+      "de": "Bei „xyzxyz“ verliert es: vier statt drei Stellen je Buchstabe. Der Vorteil gilt im Schnitt über typischen Text, nicht in jedem Einzelfall.",
+      "en": "With \"xyzxyz\" it loses: four positions per letter instead of three. The advantage holds on average over typical text, not in every single case."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Der Code des zweiten Teams ist nur dann ohne Trennzeichen lesbar, wenn kein kurzes Codewort am Anfang eines langen steht.",
+      "en": "The second team's code can only be read without separators if no short code word starts a long one."
+     },
+     "begruendung": {
+      "de": "Das ist der Preis der variablen Länge. Sie ist nicht verboten, sie stellt nur eine Bedingung an die Tabelle, um die sich das erste Team nicht kümmern muss.",
+      "en": "That is the price of variable length. It is not forbidden, it just puts a condition on the table that the first team does not have to worry about."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Der Code des ersten Teams verzichtet auf eine Vereinbarung, weil feste Länge sich von selbst versteht.",
+      "en": "The first team's code does without an agreement, because fixed length is self-evident."
+     },
+     "begruendung": {
+      "de": "Feste Länge macht das Abzählen einfach, aber welche drei Farben welchen Buchstaben bedeuten, muss trotzdem in einer Tabelle stehen. Ohne Vereinbarung geht kein Code.",
+      "en": "Fixed length makes counting easy, but which three colours mean which letter still has to be in a table. No code works without an agreement."
      }
     }
    ]
