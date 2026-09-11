@@ -466,6 +466,180 @@
      }
     }
    ]
+  },
+  {
+   "id": "ca-009",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Eure Uhren laufen so stark auseinander, dass jedes achte Symbol eine\nSynchronisationsmarke sein muss. Ihr sendet 10 Symbole pro Sekunde mit einem\nAlphabet aus 4 Farben. Wie viele Nutzbits kommen pro Sekunde an?",
+    "en": "Your clocks drift so badly that every eighth symbol has to be a synchronisation\nmarker. You send 10 symbols per second with an alphabet of 4 colours. How many\npayload bits arrive per second?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "17,5 bit/s: von acht Symbolen tragen sieben Daten, und 10 mal 2 mal sieben Achtel sind 17,5.",
+      "en": "17.5 bit/s: seven out of every eight symbols carry data, and 10 times 2 times seven eighths is 17.5."
+     },
+     "begruendung": {
+      "de": "Genau. Vier Farben tragen 2 Bit je Symbol, das wären 20 bit/s; ein Achtel davon geht für die Marken drauf. Ob sich das lohnt, hängt davon ab, wie stark eure Uhren wirklich driften, und das ist eine Messfrage.",
+      "en": "Exactly. Four colours carry 2 bits per symbol, which would be 20 bit/s; an eighth of that goes to the markers. Whether that is worth it depends on how badly your clocks really drift, and that is a question of measurement."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "20 bit/s: die Marke wird zusätzlich gesendet und kostet keine Datenzeit.",
+      "en": "20 bit/s: the marker is sent on top and costs no data time."
+     },
+     "begruendung": {
+      "de": "Es gibt kein Nebenher. Eure Strecke kennt nur eine Farbe zur Zeit, und solange die Marke leuchtet, leuchtet kein Datensymbol. Jede Marke belegt einen Zeitschlitz, den sonst Daten hätten.",
+      "en": "There is no alongside. Your link carries one colour at a time, and while the marker shines, no data symbol does. Every marker occupies a slot that data would otherwise have had."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "2,5 bit/s: ein Achtel der Rate geht für die Marken drauf.",
+      "en": "2.5 bit/s: an eighth of the rate goes to the markers."
+     },
+     "begruendung": {
+      "de": "Das ist der Preis, nicht der Rest. Ein Achtel von 20 bit/s sind 2,5 bit/s, und die verliert ihr; übrig bleiben die anderen sieben Achtel.",
+      "en": "That is the price, not the remainder. An eighth of 20 bit/s is 2.5 bit/s, and that is what you lose; what stays is the other seven eighths."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "20 bit/s, wenn ihr als Marke eine eurer vier Farben nehmt; dann verliert ihr nichts.",
+      "en": "20 bit/s, if you use one of your four colours as the marker; then you lose nothing."
+     },
+     "begruendung": {
+      "de": "Dann ist die Marke von einem Datensymbol nicht mehr zu unterscheiden, und der Empfänger verankert sein Raster an der falschen Stelle. Eine Marke muss ein Symbol sein, das im Datenalphabet nicht vorkommt, und sie kostet trotzdem ihren Zeitschlitz.",
+      "en": "Then the marker cannot be told apart from a data symbol, and the receiver anchors its grid in the wrong place. A marker has to be a symbol that does not occur in the data alphabet, and it still costs its slot."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ca-010",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Die Integrationszeit eures Sensors steht auf 50 ms. Ihr wollt eine Symbolrate\nwählen, bei der jede Messung ganz in ein Symbol fällt, auch wenn die Uhren\nleicht auseinanderlaufen. Was wählt ihr?",
+    "en": "Your sensor's integration time is set to 50 ms. You want to pick a symbol rate at\nwhich every measurement falls entirely inside one symbol, even when the clocks\ndrift a little. What do you pick?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "20 Symbole pro Sekunde: dann ist ein Symbol genau 50 ms lang, also genauso lang wie das Messfenster.",
+      "en": "20 symbols per second: then a symbol is exactly 50 ms long, the same length as the measurement window."
+     },
+     "begruendung": {
+      "de": "Bei gleicher Länge müsste die Messung exakt auf dem Symbol liegen, und das tut sie nie: Sobald sie um eine Millisekunde verrutscht, liegt ein Farbwechsel darin. Gleich lang heißt schon zu schnell.",
+      "en": "With equal lengths the measurement would have to sit exactly on the symbol, and it never does: as soon as it slips by a millisecond, a colour change falls inside it. Equally long already means too fast."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "10 Symbole pro Sekunde: dann ist ein Symbol 100 ms lang, doppelt so lang wie das Fenster, und die Messung hat Spielraum.",
+      "en": "10 symbols per second: then a symbol is 100 ms long, twice the window, and the measurement has room to move."
+     },
+     "begruendung": {
+      "de": "Genau: Das Symbol muss deutlich länger sein als das Fenster, nicht nur gleich lang, sonst genügt schon kleine Drift für eine Mischmessung. Der Faktor zwei ist eine gute Faustregel und keine Naturkonstante; messt nach, was eure Strecke wirklich verträgt.",
+      "en": "Exactly: the symbol has to be clearly longer than the window, not merely as long, or a little drift is enough to produce a mixed reading. The factor of two is a good rule of thumb, not a law of nature; measure what your link really tolerates."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "So schnell wie möglich; die Integrationszeit stellt ihr danach passend kürzer.",
+      "en": "As fast as possible; you then set the integration time shorter to match."
+     },
+     "begruendung": {
+      "de": "Ein kürzeres Fenster geht, kostet aber genau das, was in Sitzung 5 stand: Je kürzer das Fenster, desto stärker streuen die Werte. Ihr tauscht ein Problem gegen ein anderes, statt eines zu lösen.",
+      "en": "A shorter window is possible, but it costs exactly what session 5 was about: the shorter the window, the more the readings scatter. You trade one problem for another rather than solving one."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Rate ist gleichgültig, solange Sender und Empfänger dieselbe benutzen.",
+      "en": "The rate does not matter as long as sender and receiver use the same one."
+     },
+     "begruendung": {
+      "de": "Die gleiche Rate hilft gegen das Verrutschen, nicht gegen das Mischen. Der Sensor mittelt über sein Fenster, egal wie gut ihr euch abgesprochen habt; ist das Symbol kürzer, liegt in jeder Messung ein Farbwechsel.",
+      "en": "The same rate helps against slipping, not against mixing. The sensor averages over its window no matter how well you agreed; if the symbol is shorter, every measurement contains a colour change."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ca-011",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Die Uhren eurer beiden Rechner gehen um 0,5 % auseinander. Ihr sendet mit einem\ngemeinsamen Start 10 Symbole pro Sekunde, ein Symbol ist also 100 ms lang. Nach\nwelcher Zeit misst der Empfänger im falschen Symbol?",
+    "en": "The clocks of your two computers differ by 0.5 %. After a shared start you send\n10 symbols per second, so a symbol is 100 ms long. After how long does the\nreceiver measure in the wrong symbol?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Nach 200 Sekunden: 0,5 % sind ein Zweihundertstel, also ist der Fehler nach 200 Symbolen eines groß.",
+      "en": "After 200 seconds: 0.5 % is one two-hundredth, so after 200 symbols the error is one symbol wide."
+     },
+     "begruendung": {
+      "de": "Hier sind Symbole und Sekunden vertauscht. Der Uhrenfehler wächst mit der verstrichenen Zeit, nicht mit der Zahl der Symbole: 0,5 % von 200 Sekunden wären 1 Sekunde, also zehn ganze Symbole.",
+      "en": "Symbols and seconds are swapped here. The clock error grows with elapsed time, not with the number of symbols: 0.5 % of 200 seconds would be 1 second, that is ten whole symbols."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Nach 20 Sekunden: erst dann ist der aufgelaufene Fehler so groß wie ein ganzes Symbol.",
+      "en": "After 20 seconds: only then is the accumulated error as large as a whole symbol."
+     },
+     "begruendung": {
+      "de": "Die Rechnung stimmt, die Schwelle nicht. Der Messpunkt sitzt in der Mitte seines Schlitzes und verlässt ihn schon, wenn der Fehler ein **halbes** Symbol erreicht. Bis zum ganzen Symbol ist längst Unsinn angekommen.",
+      "en": "The arithmetic is right, the threshold is not. The sampling point sits in the middle of its slot and leaves it as soon as the error reaches **half** a symbol. Long before a whole symbol, nonsense has been arriving."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Nach 10 Sekunden: 0,5 % von 10 Sekunden sind 50 ms, und das ist ein halbes Symbol.",
+      "en": "After 10 seconds: 0.5 % of 10 seconds is 50 ms, and that is half a symbol."
+     },
+     "begruendung": {
+      "de": "Genau. Und daran sieht man, warum das Problem an der Geschwindigkeit hängt: Bei einem Symbol pro Sekunde wäre der halbe Schlitz 500 ms breit, und dieselben Uhren hielten hundert Sekunden durch.",
+      "en": "Exactly. And this shows why the problem hangs on speed: at one symbol per second half a slot is 500 ms wide, and the same clocks would last a hundred seconds."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Gar nicht, solange beide Seiten dieselbe Rate vereinbart haben.",
+      "en": "Never, as long as both sides have agreed on the same rate."
+     },
+     "begruendung": {
+      "de": "Vereinbart ist nicht gemessen. Beide Seiten *wollen* 10 Symbole pro Sekunde, aber jede zählt mit ihrer eigenen Uhr, und keine zwei Uhren laufen exakt gleich. Genau davon handelt dieses Konzept.",
+      "en": "Agreed is not achieved. Both sides *intend* 10 symbols per second, but each counts with its own clock, and no two clocks run exactly alike. That is what this concept is about."
+     }
+    }
+   ]
   }
  ]
 }

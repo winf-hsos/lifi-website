@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.3">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Abtastung und Synchronisation – LiFi Project</title>
+<title>Sampling and Synchronization – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -62,17 +62,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -121,16 +121,16 @@ window.Quarto = {
   </div>
         <div class="quarto-navbar-tools tools-end">
 </div>
-          <div id="quarto-search" class="" title="Suchen"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/sampling-and-synchronization.html">Abtastung und Synchronisation</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/sampling-and-synchronization.html">Sampling and Synchronization</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -151,7 +151,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">LiFi Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -202,7 +202,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -239,7 +239,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -254,7 +254,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Solving Problems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -295,7 +295,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -330,7 +330,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -353,7 +353,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Transferring Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -367,7 +367,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/sampling-and-synchronization.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Abtastung und Synchronisation</span></a>
+ <span class="menu-text">Sampling and Synchronization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -400,7 +400,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Processing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -446,33 +446,30 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  <li><a href="#two-clocks-drift-apart" id="toc-two-clocks-drift-apart" class="nav-link" data-scroll-target="#two-clocks-drift-apart">Two clocks drift apart</a></li>
+  <li><a href="#the-sensor-needs-time-to-look" id="toc-the-sensor-needs-time-to-look" class="nav-link" data-scroll-target="#the-sensor-needs-time-to-look">The sensor needs time to look</a></li>
+  <li><a href="#the-clocked-way-time-tells-you" id="toc-the-clocked-way-time-tells-you" class="nav-link" data-scroll-target="#the-clocked-way-time-tells-you">The clocked way: time tells you</a></li>
+  <li><a href="#the-clock-free-way-change-tells-you" id="toc-the-clock-free-way-change-tells-you" class="nav-link" data-scroll-target="#the-clock-free-way-change-tells-you">The clock-free way: change tells you</a></li>
+  <li><a href="#clock-free-is-not-time-free" id="toc-clock-free-is-not-time-free" class="nav-link" data-scroll-target="#clock-free-is-not-time-free">Clock-free is not time-free</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a>
-  <ul class="collapse">
-  <li><a href="#zwei-uhren-laufen-auseinander" id="toc-zwei-uhren-laufen-auseinander" class="nav-link" data-scroll-target="#zwei-uhren-laufen-auseinander">Zwei Uhren laufen auseinander</a></li>
-  <li><a href="#der-sensor-braucht-zeit-zum-schauen" id="toc-der-sensor-braucht-zeit-zum-schauen" class="nav-link" data-scroll-target="#der-sensor-braucht-zeit-zum-schauen">Der Sensor braucht Zeit zum Schauen</a></li>
-  <li><a href="#der-getaktete-weg-die-zeit-sagt-es" id="toc-der-getaktete-weg-die-zeit-sagt-es" class="nav-link" data-scroll-target="#der-getaktete-weg-die-zeit-sagt-es">Der getaktete Weg: die Zeit sagt es</a></li>
-  <li><a href="#der-uhrfreie-weg-die-änderung-sagt-es" id="toc-der-uhrfreie-weg-die-änderung-sagt-es" class="nav-link" data-scroll-target="#der-uhrfreie-weg-die-änderung-sagt-es">Der uhrfreie Weg: die Änderung sagt es</a></li>
-  <li><a href="#uhrfrei-heißt-nicht-zeitfrei" id="toc-uhrfrei-heißt-nicht-zeitfrei" class="nav-link" data-scroll-target="#uhrfrei-heißt-nicht-zeitfrei">Uhrfrei heißt nicht zeitfrei</a></li>
-  </ul></li>
-  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
-  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/sampling-and-synchronization.html">Abtastung und Synchronisation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/sampling-and-synchronization.html">Sampling and Synchronization</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Abtastung und Synchronisation</h1>
+<h1 class="title">Sampling and Synchronization</h1>
 </div>
 
 
@@ -489,97 +486,170 @@ window.Quarto = {
 </header>
 
 
-<section id="zusammenfassung" class="level2">
-<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
-<p>Euer Sender schaltet Farben, euer Empfänger misst Licht. Zwischen beiden liegt eine Frage, die jede Übertragung beantworten muss: Woher weiß der Empfänger, wann ein neues Symbol beginnt? Entweder sagt es ihm die Zeit, dann brauchen beide Seiten einen gemeinsamen Rhythmus, und der läuft auseinander, wenn niemand ihn festhält. Oder es sagt ihm die Änderung, dann trägt der Wechsel selbst die Botschaft, und das kostet einen Teil der Kapazität. Dazu kommt die Messfrage: Der Sensor braucht für jede Messung Zeit, und wer schneller sendet, als der Sensor schaut, bekommt Mischwerte statt Symbole.</p>
-<section id="fragen-um-die-es-geht" class="level3">
-<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Your sender switches colours, your receiver measures light. Between the two sits a question every transmission has to answer: how does the receiver know when a new symbol begins? The sender knows, it does the switching. The receiver only ever sees light. There are exactly two answers. Either time tells it, and then both sides need a shared rhythm that drifts apart the moment nobody holds it together. Or change tells it, and then the transition itself carries the message, which costs you part of your capacity. On top of that comes a second limit that almost everybody overlooks: the sensor needs time for every reading, and whoever sends faster than the sensor can look gets mixtures instead of symbols.</p>
+<p>In this chapter, we address the following questions:</p>
 <ul>
-<li>Woher weiß der Empfänger, wann ein neues Symbol beginnt: sagt es ihm die Zeit oder die Änderung?</li>
-<li>Warum laufen zwei Uhren auseinander, und was hält sie zusammen?</li>
-<li>Was passiert, wenn das Symbol kürzer wird als das Messfenster des Sensors?</li>
-<li>Wann darf der Empfänger einer Messung glauben?</li>
-<li>Was kostet es, ganz ohne gemeinsame Uhr auszukommen?</li>
+<li>How does the receiver know when a new symbol begins: does time tell it, or does change?</li>
+<li>Why do two clocks drift apart, and what holds them together?</li>
+<li>What happens when a symbol gets shorter than the sensor’s measurement window?</li>
+<li>When may the receiver believe a reading?</li>
+<li>What does it cost to do without a shared clock altogether?</li>
 </ul>
-<p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-2.html">Challenge 2</a> verstanden haben, und in <a href="../challenges/challenge-4.html">Challenge 4</a> entscheidet es darüber, ob eure Übertragung über viele Minuten stabil bleibt.</p>
+<p>You need this concept for <a href="../challenges/challenge-2.html">Challenge 2</a>, and in <a href="../challenges/challenge-4.html">Challenge 4</a> it decides whether your transmission stays intact over many minutes.</p>
 </section>
-</section>
-<section id="erläuterung-des-konzepts" class="level2">
-<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>Der Sender wechselt seine Farbe, der Empfänger misst Licht. Damit daraus eine Nachricht wird, müssen beide dieselbe Vorstellung davon haben, welches Stück Licht zu welchem Symbol gehört. Dieses Kapitel handelt davon, warum diese Vorstellung von allein verloren geht und welche zwei Wege es gibt, sie zu behalten.</p>
-<section id="zwei-uhren-laufen-auseinander" class="level3">
-<h3 class="anchored" data-anchor-id="zwei-uhren-laufen-auseinander">Zwei Uhren laufen auseinander</h3>
-<p>Sender und Empfänger verabreden dieselbe Rate, sagen wir fünf Symbole pro Sekunde, und starten gemeinsam. Ab da zählt jeder für sich, mit seiner eigenen Uhr. Und keine zwei Uhren laufen exakt gleich: Die eine tickt ein winziges bisschen schneller als die andere, nicht weil sie kaputt wäre, sondern weil keine zwei Bauteile identisch sind. Je Symbol ist der Unterschied lächerlich klein. Aber er addiert sich mit jedem Symbol, und irgendwann misst der Empfänger nicht mehr in der Mitte des Symbols, sondern am Rand, dann im Wechsel, dann im falschen Symbol.</p>
-<div id="fig-sampling-drift" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
+<p>Eighty people sit on a stage and produce one shared signal. Every one of them can keep time. And yet, without the person holding the stick, the whole thing would fall apart within a minute. Not out of incompetence: small differences in tempo add up, and nobody notices their own error. Two devices on a table have exactly the same problem, only without the person holding the stick.</p>
+<p>Before the pictures start, one piece of reading instruction, because it makes all of them honest.</p>
+<div id="fig-one-dot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sampling-drift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/sampling-drift.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Abbildung&nbsp;1: Zweimal dieselbe Übertragung. Oben, kurz nach dem gemeinsamen Start: Jede Messung landet mitten in ihrem Zeitschlitz. Unten, einige Minuten später mit unveränderten Einstellungen: Die Uhren sind auseinandergelaufen, die Messpunkte sind aus ihren Schlitzen gerutscht, die letzten (rot) messen bereits im falschen Symbol."><img src="../assets/diagrams/sampling-drift.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-one-dot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/sampling-one-dot.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: One symbol, zoomed in. The receiver takes many quick readings inside it and averages them; that average is the single dot drawn in every picture from here on."><img src="../assets/diagrams/sampling-one-dot.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampling-drift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1: Zweimal dieselbe Übertragung. Oben, kurz nach dem gemeinsamen Start: Jede Messung landet mitten in ihrem Zeitschlitz. Unten, einige Minuten später mit unveränderten Einstellungen: Die Uhren sind auseinandergelaufen, die Messpunkte sind aus ihren Schlitzen gerutscht, die letzten (rot) messen bereits im falschen Symbol.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-one-dot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: One symbol, zoomed in. The receiver takes many quick readings inside it and averages them; that average is the single dot drawn in every picture from here on.
 </figcaption>
 </figure>
 </div>
-<p>Deshalb hängt das Problem an der Geschwindigkeit: Bei einem Symbol pro Sekunde ist ein Schlitz so breit, dass der aufgelaufene Fehler minutenlang nicht auffällt. Bei zehn Symbolen pro Sekunde ist derselbe Fehler nach wenigen Sekunden größer als ein halber Schlitz, und ab da kommt Unsinn an.</p>
-</section>
-<section id="der-sensor-braucht-zeit-zum-schauen" class="level3">
-<h3 class="anchored" data-anchor-id="der-sensor-braucht-zeit-zum-schauen">Der Sensor braucht Zeit zum Schauen</h3>
-<p>Die zweite Grenze übersehen fast alle. Euer Farbsensor liefert keinen Momentwert, er sammelt Licht über eine einstellbare Zeitspanne und meldet den Mittelwert; das kennt ihr als Integrationszeit. Solange ein Symbol länger dauert als dieses Messfenster, gibt es Messungen, die ganz in ein Symbol fallen, und der gemeldete Wert passt zu einem eurer Steckbriefe. Wird das Symbol kürzer als das Fenster, liegt in jeder Messung ein Farbwechsel: Der Sensor mittelt über zwei Farben und meldet eine Mischung, die zu nichts passt. Das Tückische daran: Es gibt keine Fehlermeldung. Die Zahl sieht aus wie jede andere, sie bedeutet nur nichts mehr. Das Fenster zu verkürzen hilft gegen das Mischen, erhöht aber die Streuung; das ist derselbe Zielkonflikt wie beim Rauschen.</p>
-<div id="fig-sampling-window" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>A dot in these drawings is shorthand. In reality the receiver measures many times inside one symbol and averages, which is exactly what your <code>read_stable()</code> from session 5 does. The dot sits where the middle of those readings is.</p>
+<section id="two-clocks-drift-apart" class="level3">
+<h3 class="anchored" data-anchor-id="two-clocks-drift-apart">Two clocks drift apart</h3>
+<p>Sender and receiver agree on the same rate, say five symbols per second, and start together. From then on each of them counts for itself, with its own clock. And no two clocks run exactly alike: one ticks a tiny bit faster than the other, not because it is broken, but because no two components are identical. Per symbol the difference is laughable. But it adds up with every symbol, and at some point the receiver no longer measures in the middle of the symbol but at its edge, then in the transition, then in the wrong symbol.</p>
+<div id="fig-drift" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sampling-window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/sampling-window.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Abbildung&nbsp;2: Links dauert ein Symbol länger als das Messfenster: Die Messung fällt ganz in eine Farbe, der gemeldete Wert passt zu einem Steckbrief. Rechts sind die Symbole kürzer als das Fenster: In jeder Messung liegt ein Farbwechsel, der Sensor meldet eine Mischung aus beiden Farben, und die passt zu nichts."><img src="../assets/diagrams/sampling-window.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-drift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/sampling-drift.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The sender’s time slots on top, the receiver’s readings underneath. At first every reading lands in the middle of its slot; further along the same readings have wandered right, and the last ones (red) are already measuring in the neighbouring symbol."><img src="../assets/diagrams/sampling-drift.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampling-window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;2: Links dauert ein Symbol länger als das Messfenster: Die Messung fällt ganz in eine Farbe, der gemeldete Wert passt zu einem Steckbrief. Rechts sind die Symbole kürzer als das Fenster: In jeder Messung liegt ein Farbwechsel, der Sensor meldet eine Mischung aus beiden Farben, und die passt zu nichts.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-drift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The sender’s time slots on top, the receiver’s readings underneath. At first every reading lands in the middle of its slot; further along the same readings have wandered right, and the last ones (red) are already measuring in the neighbouring symbol.
 </figcaption>
 </figure>
 </div>
+<p>This is why the problem hangs on speed. The error grows with elapsed time, but the slot shrinks with the rate. At one symbol per second a slot is so wide that the accumulated error goes unnoticed for minutes. At ten symbols per second the same error is larger than half a slot within seconds, and from then on nonsense arrives.</p>
 </section>
-<section id="der-getaktete-weg-die-zeit-sagt-es" class="level3">
-<h3 class="anchored" data-anchor-id="der-getaktete-weg-die-zeit-sagt-es">Der getaktete Weg: die Zeit sagt es</h3>
-<p>Die erste Antwort auf die Frage, wann ein neues Symbol beginnt, kennt ihr aus Challenge 1: gemeinsamer Start, gleiche Rate, dann zählen beide. Das trägt genau so lange, wie der aufgelaufene Uhrenfehler kleiner bleibt als ein halbes Symbol. Es ist also keine Frage, ob diese Übertragung kippt, nur wann.</p>
-<p>Dagegen hilft, was auch ein Orchester zusammenhält: nicht eine Absprache am Anfang, sondern eine wiederkehrende. Der Sender streut in festen Abständen eine Marke ein, ein Symbol, das nur für diesen Zweck reserviert ist, etwa eine Farbe außerhalb des Datenalphabets oder eine kurze Dunkelpause. Der Empfänger misst schneller, als Symbole kommen, und merkt sich, wann die Marke beginnt; dort verankert er sein Zeitraster neu. Der Fehler kann dann nie größer werden, als sich zwischen zwei Marken ansammelt. Der Preis: Marken sind Symbole, die keine Nutzdaten tragen. Wer alle acht Symbole eine Marke sendet, gibt ein Achtel seiner Rate dafür her. Ob sich das lohnt, hängt davon ab, wie stark eure Uhren wirklich driften, und das ist eine Messfrage, keine Glaubensfrage.</p>
-<p>Beides könnt ihr im <a href="https://winf-hsos.github.io/lifi-concept-demos/drift-simulator/">Drift Simulator</a> selbst erleben: Stellt den Uhrenfehler ein, seht die Abtastpunkte aus den Farbschlitzen wandern, bis die Empfangszeile gegen die Sendezeile kippt, und schaltet dann die Marke dazu. Die Anzeige „currently off by” zeigt, warum ein halber Schlitz die magische Grenze ist. Mehr davon auf der <a href="../links.html#demonstrators">Übersicht aller Demonstratoren</a>.</p>
+<section id="the-sensor-needs-time-to-look" class="level3">
+<h3 class="anchored" data-anchor-id="the-sensor-needs-time-to-look">The sensor needs time to look</h3>
+<p>Almost everybody overlooks the second limit. Your colour sensor does not deliver an instantaneous value, it collects light over an adjustable stretch of time and reports the average; you know this as the integration time. As long as a symbol lasts longer than that measurement window, there are readings that fall entirely inside one symbol, and the reported value matches one of your profiles. Once the symbol gets shorter than the window, every reading contains a colour change: the sensor averages over two colours and reports a mixture that matches nothing.</p>
+<div id="fig-window" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/sampling-window.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: The pale dots are the individual readings taken inside the window. On the left a symbol lasts longer than the window: every reading falls inside the same colour, and the reported value matches a profile. On the right the symbols are shorter than the window: two of the readings land in the neighbouring colour, the sensor reports a mixture of both, and that matches nothing."><img src="../assets/diagrams/sampling-window.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-window-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The pale dots are the individual readings taken inside the window. On the left a symbol lasts longer than the window: every reading falls inside the same colour, and the reported value matches a profile. On the right the symbols are shorter than the window: two of the readings land in the neighbouring colour, the sensor reports a mixture of both, and that matches nothing.
+</figcaption>
+</figure>
+</div>
+<p>The nasty part is that there is no error message. The number looks like any other number, it just does not mean anything any more. Shortening the window helps against the mixing but increases the scatter, which is the same trade-off you met under <a href="../concepts/signal-and-noise.html">Signal and Noise</a>.</p>
+<p>Both causes are versions of one question: when does a new symbol begin? The rest of this chapter is the two answers.</p>
+</section>
+<section id="the-clocked-way-time-tells-you" class="level3">
+<h3 class="anchored" data-anchor-id="the-clocked-way-time-tells-you">The clocked way: time tells you</h3>
+<p>The first answer is the one you have been using since Challenge 1: shared start, same rate, then both sides count. That holds exactly as long as the accumulated clock error stays smaller than half a symbol. So it is not a question of whether this transmission tips over, only when.</p>
+<div id="fig-when-tips" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-when-tips-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/sampling-when-tips.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The accumulated clock error over time for a difference of half a per cent, against the threshold of half a symbol. At ten symbols per second the two meet after ten seconds."><img src="../assets/diagrams/sampling-when-tips.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-when-tips-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: The accumulated clock error over time for a difference of half a per cent, against the threshold of half a symbol. At ten symbols per second the two meet after ten seconds.
+</figcaption>
+</figure>
+</div>
+<p>Work the numbers through once, it is a single line. Half a per cent of ten seconds is 50 ms, and at ten symbols per second that is half a symbol. The threshold matters here. It is not a whole symbol of error that breaks the transmission, it is half of one, because the reading sits in the middle of its slot and has only half the width of room in each direction. The same arithmetic explains why slow is so much more robust: at one symbol per second half a slot is 500 ms wide, and the same two clocks would last a hundred seconds.</p>
+<p>What helps is what holds an orchestra together: not one agreement at the start, but a recurring one.</p>
+<div id="fig-clapping" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clapping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/sampling-clapping.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Two timelines of the same clapping. On top, after a single shared start, each clap is a cloud of people that gets wider and wider. Underneath, a pulse from the front every five seconds, and the cloud starts over from nothing each time."><img src="../assets/diagrams/sampling-clapping.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clapping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Two timelines of the same clapping. On top, after a single shared start, each clap is a cloud of people that gets wider and wider. Underneath, a pulse from the front every five seconds, and the cloud starts over from nothing each time.
+</figcaption>
+</figure>
+</div>
+<p>In a transmission that pulse is called a <strong>marker</strong>. The sender slips one in at fixed intervals, a symbol reserved for exactly this job: a colour outside your data alphabet, for instance, or a short dark pause. All that matters is that the receiver cannot confuse it with a data symbol.</p>
+<div id="fig-markers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-markers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/sampling-markers.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: The accumulated error as a sawtooth: it grows, drops to zero at every marker, and grows again. It can never get larger than what accumulates inside one block."><img src="../assets/diagrams/sampling-markers.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-markers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: The accumulated error as a sawtooth: it grows, drops to zero at every marker, and grows again. It can never get larger than what accumulates inside one block.
+</figcaption>
+</figure>
+</div>
+<p>And how does the receiver reset its clock with it? Not by merely seeing the marker somewhere in its own grid, that would achieve nothing. It samples faster than symbols arrive and remembers <strong>when</strong> the marker begins; there it anchors its grid afresh, next symbol boundary equals marker start plus symbol duration. The remaining error is at most one sampling step. An orchestra does the same thing: it registers not only that a beat came, but when.</p>
+<p>The price is that markers are symbols carrying no payload. Send a marker every eight symbols and you give away an eighth of your rate. Whether that is worth it depends on how badly your clocks really drift, and that is a question for measurement, not for belief. You can get a feel for both in the simulator: set the clock error, watch the sampling points wander out of the colour slots until the received line tips against the sent one, and then switch the marker on.</p>
 <a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/drift-simulator/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">drift simulator</span><span class="linkcard-desc">two clocks, slightly apart: watch the receiver’s sampling points wander out of the time slots until the message turns to garbage, then let a sync marker save it.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/cedc16accee0.png" alt=""></a>
 </section>
-<section id="der-uhrfreie-weg-die-änderung-sagt-es" class="level3">
-<h3 class="anchored" data-anchor-id="der-uhrfreie-weg-die-änderung-sagt-es">Der uhrfreie Weg: die Änderung sagt es</h3>
-<p>Die zweite Antwort kommt ganz ohne gemeinsame Uhr aus. Die naheliegende Fassung wäre: Jede Farbe ist ein Symbol, und ein Farbwechsel heißt „das nächste bitte”. Der Empfänger misst einfach so oft er kann und reagiert nur auf Änderungen. Diese Fassung hat einen Haken: Zwei gleiche Symbole hintereinander erzeugen keinen Wechsel, „rot rot” kommt als ein einziges langes „rot” an.</p>
-<p>Die Reparatur verschiebt die Information von der Farbe in den Übergang. Von jeder Farbe aus sind zwei Nachfolger erlaubt, einer steht für 0, einer für 1, und die eigene Farbe ist als Nachfolger verboten. Damit gibt es immer einen Wechsel, der Problemfall kann nicht mehr auftreten.</p>
+<section id="the-clock-free-way-change-tells-you" class="level3">
+<h3 class="anchored" data-anchor-id="the-clock-free-way-change-tells-you">The clock-free way: change tells you</h3>
+<p>The second answer needs no shared clock at all. The obvious version would be: every colour is a symbol, and a colour change means “next one, please”. The receiver simply measures as often as it can and reacts only to changes. That version has a catch.</p>
+<div id="fig-first-idea" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-first-idea-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/sampling-first-idea.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Sent: red, red, green. Seen: one long red and a green. Two identical symbols in a row produce no change at all."><img src="../assets/diagrams/sampling-first-idea.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-first-idea-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Sent: red, red, green. Seen: one long red and a green. Two identical symbols in a row produce no change at all.
+</figcaption>
+</figure>
+</div>
+<p>The fix moves the information out of the colour and into the transition. From each colour two successors are allowed, one standing for 0 and one for 1, and your own colour is forbidden as a successor. That way there is always a change, and the problem case cannot occur.</p>
 <div id="fig-transition-code" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-transition-code-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/transition-code.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Abbildung&nbsp;3: Drei Farben als Zustände, die Pfeile sind die erlaubten Übergänge: im Uhrzeigersinn eine 1, gegen den Uhrzeigersinn eine 0. Rechts ein Beispiel: Die Folge rot, grün, rot, blau überträgt die Bits 1 0 0."><img src="../assets/diagrams/transition-code.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/transition-code.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Three colours as states, the arrows are the permitted transitions: clockwise a 1, anticlockwise a 0. On the right an example: the sequence red, green, red, blue carries the bits 1 0 0."><img src="../assets/diagrams/transition-code.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transition-code-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;3: Drei Farben als Zustände, die Pfeile sind die erlaubten Übergänge: im Uhrzeigersinn eine 1, gegen den Uhrzeigersinn eine 0. Rechts ein Beispiel: Die Folge rot, grün, rot, blau überträgt die Bits 1 0 0.
+Figure&nbsp;8: Three colours as states, the arrows are the permitted transitions: clockwise a 1, anticlockwise a 0. On the right an example: the sequence red, green, red, blue carries the bits 1 0 0.
 </figcaption>
 </figure>
 </div>
-<p>Bezahlt wird mit Kapazität: Weil die eigene Farbe wegfällt, trägt ein Übergang bei <span class="math inline">\(k\)</span> Farben nur noch <span class="math inline">\(\log_2(k-1)\)</span> Bit statt <span class="math inline">\(\log_2(k)\)</span>. Aus drei Farben wird so 1 Bit je Übergang statt 1,58. Und wer glatte 2 Bit je Übergang will, braucht fünf Farben, nicht vier, denn erst dann bleiben vier erlaubte Nachfolger übrig.</p>
+<p>You pay for this in capacity. Because your own colour drops out, a transition with <span class="math inline">\(k\)</span> colours carries only <span class="math inline">\(\log_2(k-1)\)</span> bits instead of <span class="math inline">\(\log_2(k)\)</span>.</p>
+<div id="fig-capacity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-capacity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/sampling-capacity.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: The bits carried by one symbol, as states and as transitions, for three, four and five colours."><img src="../assets/diagrams/sampling-capacity.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-capacity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: The bits carried by one symbol, as states and as transitions, for three, four and five colours.
+</figcaption>
+</figure>
+</div>
+<p>There is a trap in that table for everybody who thinks in powers of two: for a clean 2 bits per transition you need five colours, not four. Whoever encodes over transitions wants an alphabet of size <span class="math inline">\(2^n + 1\)</span>.</p>
 </section>
-<section id="uhrfrei-heißt-nicht-zeitfrei" class="level3">
-<h3 class="anchored" data-anchor-id="uhrfrei-heißt-nicht-zeitfrei">Uhrfrei heißt nicht zeitfrei</h3>
-<p>Wer den uhrfreien Weg wählt, ist die gemeinsame Uhr los, aber nicht die Zeit. Zwei Entscheidungen bleiben. Erstens sieht der Sensor während eines Farbwechsels Mischwerte; der Empfänger braucht also eine Schwelle, wie lange eine Farbe stabil anliegen muss, bevor sie als neuer Zustand zählt, sonst erfindet er aus den Zwischenwerten Symbole. Zweitens entscheidet weiterhin die Zahl der Übergänge pro Sekunde über den Durchsatz, und dafür gelten Messfenster und Streuung wie eh und je.</p>
-<p>Am Ende zählt für beide Wege dieselbe Rechnung:</p>
-<p><span class="math display">\[t = \frac{n_{\text{Bits}}}{r \cdot b}\]</span></p>
-<p>Dabei ist <span class="math inline">\(n\)</span> die Zahl der zu sendenden Bits, <span class="math inline">\(r\)</span> die Symbolrate und <span class="math inline">\(b\)</span> die Zahl der Bits je Symbol. Nur <span class="math inline">\(b\)</span> unterscheidet die Wege: getaktet <span class="math inline">\(b = \log_2(k)\)</span>, uhrfrei <span class="math inline">\(b = \log_2(k-1)\)</span>. Dieselbe Datei mit vier Farben dauert uhrfrei also spürbar länger, das ist der Preis der Synchronisationsfreiheit in Minuten. Diese Rechnung ist die Währung von Challenge 4, und sie hat genau zwei Stellschrauben: Bits je Symbol und Symbole je Sekunde.</p>
+<section id="clock-free-is-not-time-free" class="level3">
+<h3 class="anchored" data-anchor-id="clock-free-is-not-time-free">Clock-free is not time-free</h3>
+<p>The most common wrong conclusion sounds like this: “we got rid of the clock, so time is not an issue any more.” Two decisions about time remain. First, during a colour change the sensor sees mixtures, so the receiver needs a threshold for how long a colour must hold steady before it counts as a new state; otherwise it invents symbols out of the intermediate values. Second, the number of transitions per second still decides your throughput, and there the measurement window and the scatter apply exactly as before.</p>
+<p>In the end the same arithmetic counts for both ways:</p>
+<p><span class="math display">\[t = \frac{n}{r \cdot b}\]</span></p>
+<p>with <span class="math inline">\(n\)</span> the number of bits to send, <span class="math inline">\(r\)</span> the symbol rate and <span class="math inline">\(b\)</span> the bits per symbol. Only <span class="math inline">\(b\)</span> separates the two ways: clocked <span class="math inline">\(b = \log_2(k)\)</span>, clock-free <span class="math inline">\(b = \log_2(k-1)\)</span>. A worked example: 16,000 bits are 2 KB, the payload of Challenge 4. With four colours, clocked, that is 2 bits per symbol; at five symbols per second you get 10 bit/s, so about 27 minutes. Clock-free, the same four colours carry only 1.58 bits per transition, so about 34 minutes. That is the price of synchronization freedom, measured in minutes.</p>
+<p>This calculation is the currency Challenge 4 is paid in, and it has exactly two levers: bits per symbol, and symbols per second. How far those levers can be pushed at all is the subject of <a href="../concepts/throughput-and-limits.html">Throughput and Limits</a>.</p>
 </section>
 </section>
-<section id="folien" class="level2">
-<h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<p>Der Foliensatz aus der Sitzung, zum Nachschlagen. Das Skript zum Nachlesen gibt es in der Sitzung dazu.</p>
-<div class="folien-viewer" data-quelle="../assets/slides/sampling-and-synchronization"></div>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
+<div class="deck-embed">
+  <iframe src="../assets/decks/sampling-and-synchronization/index.html?bar=1&amp;pdf=../sampling-and-synchronization.pdf" title="when is it your turn?" allowfullscreen="" loading="lazy"></iframe>
+</div>
 </section>
-<section id="fragen-üben" class="level2">
-<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Hier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.</p>
-<div class="fragen-quiz" data-quelle="../assets/questions/sampling-and-synchronization.json"></div>
+<section id="practice-questions" class="level2">
+<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
+<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/sampling-and-synchronization.json"></div>
 </section>
-<section id="literatur" class="level2">
-<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
-<!-- TODO: weiterführende Literatur ergänzen -->
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li>Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. Microsoft Press, 2nd edition 2022. Chapter 19 builds a clock out of an oscillator and then spends the rest of the book living with the consequences; it is the friendliest place to see why everything digital is really a question of timing.</li>
+<li>Christiaan Huygens’ letter to his father, 26 February 1665, on two pendulum clocks hanging from the same beam that pull each other into step. The first written account of synchronization, and still the clearest picture of why a shared start is not enough. Summarized with the original passages in Matthew Bennett et al.: Huygens’s clocks. Proceedings of the Royal Society A 458, 2002. <a href="https://doi.org/10.1098/rspa.2001.0888" class="uri">https://doi.org/10.1098/rspa.2001.0888</a></li>
+<li>The Manchester code, used by the earliest Ethernet networks, puts a transition in the middle of every bit for exactly the reason described above. The Wikipedia article <a href="https://en.wikipedia.org/wiki/Manchester_code" class="uri">https://en.wikipedia.org/wiki/Manchester_code</a> shows the waveform, and it is worth working out for yourself what that costs in bits per second.</li>
+</ul>
 
 
 </section>
@@ -930,12 +1000,12 @@ Abbildung&nbsp;3: Drei Farben als Zustände, die Pfeile sind die erlaubten Über
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",

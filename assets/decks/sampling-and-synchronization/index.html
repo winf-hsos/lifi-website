@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>when is it your turn?</title>
+  <link rel="stylesheet" href="theme.css?v=20260910f">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260910f">
+  <style>
+    .photo-text.narrow { width: 640px; }
+
+    /* Die Kipp-Raten der Hausaufgabe werden in der Sitzung gesammelt. Die
+       Tabelle steht vorbelegt da, damit sie auch beim Nachlesen etwas aussagt,
+       und ist beschreibbar: Weil das Deck HTML ist, laesst sich hineintippen. */
+    table.results {
+      position: absolute;
+      left: var(--margin); right: var(--margin);
+      top: 220px;
+      border-collapse: collapse;
+      font-size: var(--small);
+    }
+    table.results th {
+      text-align: left;
+      font-weight: normal;
+      color: var(--gray);
+      font-size: var(--tiny);
+      padding: 0 28px 14px 0;
+      border-bottom: 2px solid var(--gray-dark);
+    }
+    table.results td {
+      padding: 20px 28px 20px 0;
+      color: var(--white);
+      border-bottom: 1px solid var(--gray-dark);
+    }
+    table.results td.num { font-family: var(--mono); color: var(--yellow); }
+    table.results td.what { color: var(--gray-light); }
+    table.results [contenteditable]:focus { outline: 2px solid var(--blue); outline-offset: 4px; }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="when is it your turn?"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["why it collapses", "the clocked way", "the clock-free way"]'>
+
+  <section class="slide title">
+    <aside class="notes">Der Sender weiß, wann er wechselt. Der Empfänger sieht nur Licht und muss entscheiden, wo ein Symbol aufhört und das nächste anfängt. Darauf gibt es zwei Antworten, die Zeit oder die Änderung, und beide haben ein Preisschild.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Drei Teile: warum eure Übertragung ab einer bestimmten Rate zusammenbricht, der getaktete Weg mit seinen Kosten, und der uhrfreie Weg mit seinen.</aside>
+  </section>
+
+  <!-- ================= Teil 1: why it collapses ================= -->
+
+  <section class="slide part" data-part="why it collapses">
+    <aside class="notes">Heute geht es um die Frage, an der eure Hausaufgabe gescheitert ist: Woher weiß der Empfänger, wann er dran ist?</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/orchestra.png" alt="">
+    <div class="photo-text narrow">how do eighty people<br>stay together?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Achtzig Menschen, ein gemeinsames Signal. Jeder von ihnen kann Takt halten, und trotzdem stünde ohne die Person mit dem Stock nach einer Minute alles schief. Nicht aus Unfähigkeit: Kleine Tempounterschiede summieren sich, und niemand bemerkt den eigenen Fehler. Genau dieses Problem haben eure zwei Geräte, und heute bekommt es einen Namen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>your homework: where did it tip?</h2>
+    <table class="results">
+      <thead>
+        <tr><th style="width: 18%">team</th><th style="width: 24%">symbols per second</th><th>what broke</th></tr>
+      </thead>
+      <tbody contenteditable="true" spellcheck="false">
+        <tr><td>team 7</td><td class="num">14</td><td class="what">letters shifted by one, slowly, after about a minute</td></tr>
+        <tr><td>team 2</td><td class="num">9</td><td class="what">suddenly nothing matched a profile any more</td></tr>
+        <tr><td>team 11</td><td class="num">6</td><td class="what">every second word was garbled from the start</td></tr>
+        <tr><td>team 5</td><td class="num">4</td><td class="what">held, we did not dare go faster</td></tr>
+      </tbody>
+    </table>
+    <div class="punch">same limit for everyone. very different numbers.</div>
+    <aside class="notes">Live sammeln, in die Tabelle lässt sich direkt hineintippen. Zwei, drei Teams erzählen lassen, WIE es gekippt ist: schleichend oder plötzlich? Buchstaben verschoben oder Zeichensalat? Ihr habt alle dieselbe Grenze gefunden, nur nicht denselben Wert, und die Fehlerbilder gehören zu zwei verschiedenen Ursachen. Genau die schauen wir uns jetzt an.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what one dot means on the next slides</h2>
+    <div class="figure" id="fig-one-dot"></div>
+    <div class="punch">one dot in the pictures = many readings, averaged.</div>
+    <aside class="notes">Bevor wir die Bilder lesen: Ein Messpunkt auf den folgenden Folien ist eine Kurzschreibweise. In Wirklichkeit misst der Empfänger innerhalb eines Symbols viele Male und mittelt, genau das tut euer read_stable() aus Sitzung 5. Der Punkt steht für diesen gemittelten Wert und sitzt dort, wo die Mitte der Messungen liegt. Mit dieser Brille sind die folgenden Bilder ehrlich, obwohl sie nur einen Punkt je Symbol zeigen.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawDrift" data-on-step="drawDrift">
+    <h2>cause one: no two clocks run alike</h2>
+    <div class="figure" id="fig-sampling-drift"></div>
+    <span data-step="1"></span>
+    <div class="punch">the tiny error per symbol is not the problem. the sum is.</div>
+    <aside class="notes">Beide Seiten vereinbaren dieselbe Rate, und trotzdem: Keine zwei Uhren laufen exakt gleich. Der Fehler je Symbol ist winzig, aber er summiert sich, wie im Orchester. Am Anfang liegt jeder Messpunkt noch mitten in seinem Schlitz. Jeder folgende liegt ein winziges Stück später, und ab dem sechsten misst der Empfänger im falschen Symbol. Bei einem Symbol pro Sekunde fällt das über zehn Symbole nicht auf, bei zehn pro Sekunde seid ihr nach Sekunden im Nachbarn.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>cause two: the sensor needs time to look</h2>
+    <div class="figure" id="fig-sampling-window"></div>
+    <div class="punch">no error, no warning, just a meaningless number.</div>
+    <aside class="notes">Die zweite Ursache übersehen fast alle: Der Sensor liefert keinen Momentwert, er mittelt über seine Integrationszeit. Links dauert ein Symbol doppelt so lang wie das Fenster, die Messung fällt ganz in eine Farbe. Rechts sind die Symbole kürzer als das Fenster, und in jeder Messung liegt ein Farbwechsel; der Wert passt zu keinem Steckbrief. Das Fenster zu verkürzen hilft, erhöht aber die Streuung, und damit seid ihr wieder im Zielkonflikt aus Sitzung 5.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="header">both causes are one question</div>
+      <div class="statement">when does a new symbol begin?</div>
+      <div class="lines"><div>answer one: time tells you.</div><div>answer two: change tells you.</div></div>
+    </div>
+    <aside class="notes">Beide Ursachen sind Spielarten derselben Frage. Der Sender weiß, wann er wechselt. Der Empfänger sieht nur Licht und muss entscheiden, wo ein Symbol aufhört und das nächste anfängt. Es gibt zwei grundverschiedene Antworten, und beide haben ein Preisschild. Die erste probieren wir gleich am eigenen Leib aus.</aside>
+  </section>
+
+  <!-- ================= Teil 2: the clocked way ================= -->
+
+  <section class="slide part" data-part="the clocked way">
+    <aside class="notes">Der Weg, den ihr seit Challenge 1 geht, jetzt mit offenem Preisschild.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawWhenTips" data-on-step="drawWhenTips">
+    <h2>when does it tip?</h2>
+    <div class="figure" id="fig-when-tips"></div>
+    <span data-step="1"></span>
+    <div class="punch">a shared start is not a question of if it tips, only when.</div>
+    <aside class="notes">So arbeitet ihr seit Challenge 1: gemeinsam Enter drücken, gleiche Rate, los. Rechnen wir nach, wie lange das trägt. Nehmt an, eure Uhren gehen um ein halbes Prozent auseinander, und ihr sendet zehn Symbole pro Sekunde, ein Symbol ist also hundert Millisekunden lang. Der Fehler wächst mit der verstrichenen Zeit: nach zehn Sekunden sind es fünfzig Millisekunden, ein halbes Symbol, und ab da rutscht der Messpunkt aus seinem Schlitz. Und beachtet, was daran hängt: Bei einem Symbol pro Sekunde wäre der halbe Schlitz zehnmal breiter, und dieselben Uhren hielten hundert Sekunden.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>eighty people, one clap</h2>
+    <div class="figure" id="fig-clapping"></div>
+    <div class="punch">agreeing once is not enough. agreeing again and again is.</div>
+    <aside class="notes">Das probieren wir gleich selbst aus, ohne Hardware. Der halbe Saal klatscht im Sekundentakt, ich gebe den Anfang vor und schweige dann; nach dreißig Sekunden klatscht niemand mehr zusammen. Dasselbe noch einmal, aber alle fünf Sekunden kommt ein kurzer Impuls von vorn, und es hält. Danach habt ihr den Unterschied zwischen einer Absprache am Anfang und wiederkehrenden Marken im Ohr, nicht nur auf einer Folie.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>recurring markers reset the drift</h2>
+    <div class="figure" id="fig-markers"></div>
+    <div class="punch">the error can never grow beyond one block.</div>
+    <aside class="notes">Die Lösung des Orchesters: nicht einmal absprechen, sondern immer wieder. Der gelbe Sägezahn ist der aufgelaufene Fehler, der an jeder Marke auf null springt. Umsetzen lässt sich die Marke als reserviertes Symbol: eine Farbe, die im Datenalphabet nicht vorkommt, oder eine kurze Dunkelpause. Entscheidend ist nur, dass sie mit keinem Datensymbol verwechselbar ist; nehmt ihr eine eurer Datenfarben, verankert der Empfänger sein Raster irgendwann an der falschen Stelle.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: the drift simulator</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/drift-simulator/?embed=1&amp;err=2&amp;marker=0&amp;speed=40" title="The Drift Simulator"></iframe></div>
+    <aside class="notes">Zwei Aufträge an den Saal. Erstens einfach laufen lassen und auf die Anzeige „half a slot off after" schauen, bis die ersten roten Ringe kommen; das ist die Rechnung von vorhin, nur sichtbar. Zweitens den Regler „sync marker every" auf acht stellen und beobachten, was mit dem Fehler passiert, und was gleichzeitig der „marker overhead" rechts anzeigt. Genau diesen Preis rechnen wir auf der nächsten Folie aus.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the price of the clocked way</h2>
+    <div class="figure" id="fig-clocked-price"></div>
+    <div class="punch">how bad are your clocks? that is a measurement, not a belief.</div>
+    <aside class="notes">Marken sind Symbole, die keine Nutzdaten tragen. Wer jedes achte Symbol als Marke sendet, gibt ein Achtel seiner Rate dafür her: aus 20 bit/s werden 17,5. Ob sich das lohnt, hängt davon ab, wie schlecht eure Uhren wirklich sind, und das ist eine Messfrage, keine Glaubensfrage. Messt den Drift, bevor ihr dagegen bezahlt.</aside>
+  </section>
+
+  <!-- ================= Teil 3: the clock-free way ================= -->
+
+  <section class="slide part" data-part="the clock-free way">
+    <aside class="notes">Die zweite Antwort: Der Empfänger braucht gar keine Uhr, wenn die Änderung selbst die Botschaft trägt.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>first idea: a change means "next symbol"</h2>
+    <div class="figure" id="fig-first-idea"></div>
+    <div class="punch">no change, no symbol. "red red" arrives as one.</div>
+    <aside class="notes">Der naheliegende Einstieg: Jede Farbe ist ein Symbol, und ein Wechsel heißt „das nächste bitte". Der Empfänger braucht keine Uhr mehr, er wartet einfach auf Änderungen. Aber zwei gleiche Symbole hintereinander erzeugen keine Änderung und kommen als eines an. Die Idee ist gut, sie ist nur noch nicht fertig.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the fix: the transition carries the bit</h2>
+    <div class="figure" id="fig-transition-code"></div>
+    <div class="punch">measure as often as you like. decode only on change.</div>
+    <aside class="notes">Der Trick: Nicht die Farbe trägt die Information, sondern der Übergang. Von jeder Farbe aus sind zwei Nachfolger erlaubt, einer heißt 0, einer heißt 1; die eigene Farbe ist verboten. Im Dreieck: im Uhrzeigersinn eine 1, gegen den Uhrzeigersinn eine 0. Damit kann der Problemfall von eben nicht mehr auftreten, denn es gibt immer einen Wechsel. Der Empfänger misst, so oft er will, und decodiert nur bei Änderung. Rechts das Beispiel: rot, grün, rot, blau ergibt 1 0 0.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>freedom is paid in capacity</h2>
+    <div class="figure" id="fig-capacity"></div>
+    <div class="punch">want a clean 2 bits per transition? you need five colours, not four.</div>
+    <aside class="notes">Die Synchronisationsfreiheit ist nicht geschenkt: Die eigene Farbe fällt als Nachfolger weg, aus k Wahlmöglichkeiten werden k minus eins. Und hier versteckt sich eine Falle für alle, die in Zweierpotenzen denken. Vier Farben tragen als Zustände glatte 2 Bit, als Übergänge nur noch 1,58. Wer über Übergänge codiert, will ein Alphabet der Größe 2 hoch n plus 1.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="header">the most common wrong conclusion</div>
+      <div class="statement">clock-free is not time-free</div>
+      <div class="lines"><div>how long must a colour hold to count?</div><div>how many transitions per second can the sensor follow?</div></div>
+    </div>
+    <aside class="notes">Der häufigste Fehlschluss: „Wir sind die Uhr los, also ist Zeit kein Thema mehr." Zwei Zeitentscheidungen bleiben. Während eines Wechsels misst der Sensor Mischwerte, also braucht ihr eine Schwelle: Wie lange muss eine Farbe stabil anliegen, bevor sie zählt? Sonst erfindet der Empfänger aus den Zwischenwerten Symbole. Und wie viele Übergänge pro Sekunde die Strecke schafft, entscheidet weiter über den Durchsatz, mit genau denselben Grenzen aus Teil 1.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawTime" data-on-step="drawTime">
+    <h2>what your file costs in minutes</h2>
+    <div class="figure" id="fig-time"></div>
+    <span data-step="1"></span>
+    <div class="punch">two levers, nothing else: bits per symbol, symbols per second.</div>
+    <aside class="notes">Egal welche Strategie: Am Ende zählt diese Rechnung. n Bits, r Symbole pro Sekunde, b Bit je Symbol, und nur b unterscheidet die beiden Wege. Das Beispiel: 16.000 Bit sind 2 KB, vier Farben tragen getaktet 2 Bit, mal fünf Symbole pro Sekunde sind 10 bit/s, also gut 26 Minuten. Uhrfrei mit denselben vier Farben sind es nur 1,58 Bit je Übergang, also rund 34 Minuten. Das ist der Preis der Synchronisationsfreiheit, in Minuten. Diese Rechnung ist die Währung von Challenge 4, und sie hat genau zwei Stellschrauben.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="header">today</div>
+      <div class="lines"><div>1  the clapping experiment</div><div>2  workshop: find your maximum rate, with evidence</div><div>3  write down which way you lean, clocked or clock-free, and why</div></div>
+    </div>
+    <aside class="notes">Der Werkstattauftrag: die eigene Grenze systematisch bestimmen, nicht raten, und im Steckbrief festhalten. Dazu eine Vorentscheidung mit Begründung notieren. Sie ist nicht bindend, aber sie zwingt zum Nachdenken über die Preisschilder. Keine Strategie wird vorgegeben, das ist eure Entscheidung in Challenge 3.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/metronomes.png" alt="">
+    <div class="photo-text narrow">no two clocks agree.<br>the only choice is<br>what you do about it.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Der Bogen zurück zum Orchester. Zwei identische Metronome, aufgezogen im selben Moment, und nach einer Weile schlagen sie gegeneinander. Das ist kein Mangel an Sorgfalt, das ist Physik. Ihr könnt euch nicht aussuchen, ob eure Uhren auseinanderlaufen, nur was ihr dagegen tut: immer wieder nachsynchronisieren, oder die Uhr ganz aufgeben und die Änderung sprechen lassen.</aside>
+  </section>
+
+</div>
+
+<!-- deck.js MUSS vor stagekit.js stehen: stagekit ruft beim ersten Anzeigen die
+     data-on-show-Funktionen auf, und die gibt es sonst noch nicht. -->
+<script src="../stagekit/draw.js?v=20260910f"></script>
+<script src="deck.js?v=20260910f"></script>
+<script src="../stagekit/stagekit.js?v=20260910f"></script>
+</body>
+</html>
