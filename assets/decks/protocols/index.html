@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>where does a message start?</title>
+  <link rel="stylesheet" href="theme.css?v=20260911c">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260911c">
+  <style>
+    .photo-text.narrow { width: 700px; }
+
+    /* Die drei Runden des Horcher-Experiments. Was der Saal sagt, wird in der
+       Sitzung hier hineingetippt; vorbelegt, damit die Folie auch beim
+       Nachlesen etwas aussagt. Weil das Deck HTML ist, geht das direkt. */
+    .said {
+      position: absolute;
+      left: var(--margin); right: var(--margin);
+      top: 300px;
+    }
+    .said .row { display: flex; gap: 60px; margin-bottom: 54px; align-items: baseline; }
+    .said .lbl { width: 380px; flex: none; color: var(--gray); font-size: var(--small); }
+    .said .val { flex: 1; color: var(--white); font-size: var(--normal); }
+    .said .val.mono { font-family: var(--mono); color: var(--yellow); }
+    .said [contenteditable]:focus { outline: 2px solid var(--blue); outline-offset: 6px; }
+
+    /* Der Zustandsautomat als Code: siebzehn Zeilen passen nur in der kleinen
+       Stufe auf die Leinwand. */
+    .code.small { font-size: var(--small); line-height: 1.45; }
+    .code .reset { color: var(--yellow); }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="where does a message start?"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["who says now?", "the listener", "the end", "the agreement"]'>
+
+  <section class="slide title">
+    <aside class="notes">Bis jetzt hat immer ein Mensch gesagt, wann es losgeht. Ab heute nicht mehr. Der Empfänger läuft, bevor der Sender anfängt, und sieht nur Licht. Wo eine Nachricht beginnt und wo sie aufhört, muss im Licht selbst stehen, und das ist eure Absprache.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Vier Teile. Erst das Problem, dann erfindet ihr selbst den Anfang, dann das Ende, und am Schluss die Frage, was eine Absprache überhaupt zu einer Absprache macht.</aside>
+  </section>
+
+  <!-- ================= Teil 1: who says now? ================= -->
+
+  <section class="slide part" data-part="who says now?">
+    <aside class="notes">Die erste Frage ist die kleinste und die schwerste: Wer sagt „jetzt"?</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/radio.png" alt="">
+    <div class="photo-text narrow">mayday,<br>mayday,<br>mayday</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Ein Notruf über Seefunk beginnt immer mit dreimal „Mayday". Warum dreimal? Weil der Kanal rauscht und niemand weiß, wann ein Ruf beginnt. Ein einzelnes Wort geht unter oder ist Zufall; drei gleiche Wörter hintereinander sind ein Muster, das das Rauschen nicht erzeugt. Und danach hat der Ruf eine feste Form: wer ruft wen, dann die Nachricht, dann „over" oder „out". Seeleute haben das nicht aus Ordnungsliebe erfunden. Vor genau demselben Problem steht ab heute euer Empfänger.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>so far, a human said "now"</h2>
+    <div class="figure" id="fig-human"></div>
+    <div class="punch">someone pressed enter on both machines. that was the frame.</div>
+    <aside class="notes">In Challenge 1 und 2 hat jemand beide Programme kurz nacheinander gestartet. Damit war der Anfang klar, und die Länge der Nachricht kannte der Empfänger auch. Dieser Mensch war euer Rahmen, und den müsst ihr jetzt ersetzen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the receiver hears the room all the time</h2>
+    <div class="figure" id="fig-stream"></div>
+    <div class="punch">where does it start? where does it end? the numbers do not say.</div>
+    <aside class="notes">Der Empfänger läuft, bevor der Sender anfängt. Er sieht dauernd Messwerte, denn das Zimmer ist nie dunkel: die grauen, unregelmäßigen Blöcke links und rechts. Irgendwo in diesem Strom steckt die Nachricht. Woher soll er wissen, wo sie beginnt? Nichts an den Zahlen selbst sagt ihm das. Die zwei roten Fragezeichen sind das Programm dieser Sitzung.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">a bit stream without a frame means nothing</div>
+      <div class="sidenote">bits become a message when both sides know where it starts, where it ends and what it means.</div>
+    </div>
+    <aside class="notes">Der Satz der Sitzung. Diesen Rahmen liefert kein Sensor und keine Bibliothek; den vereinbart ihr.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>what a running receiver needs</h2>
+    <div class="content">
+      <div class="lines">
+        <div>where it starts</div>
+        <div data-step="1">where it ends</div>
+        <div data-step="2">what to do when something goes wrong</div>
+      </div>
+    </div>
+    <aside class="notes">Drei Fragen, und jede muss eure Absprache beantworten. Die dritte vergisst man am leichtesten, weil sie im Normalfall nie auffällt. Sie kommt in Teil 3 wieder, und bei der Abnahme greife ich absichtlich in den Strahl. Die ersten beiden klären wir jetzt nicht mit Folien, sondern mit euch.</aside>
+  </section>
+
+  <!-- ================= Teil 2: the listener ================= -->
+
+  <section class="slide part" data-part="the listener">
+    <aside class="notes">Jetzt seid ihr der Empfänger. Nichts wird angesagt.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>round one: i send, you write down what you see</h2>
+    <div class="said">
+      <div class="row"><div class="lbl">what the room wrote down</div><div class="val mono" contenteditable="true" spellcheck="false">red green green blue red red green</div></div>
+      <div class="row"><div class="lbl">where the message was</div><div class="val" contenteditable="true" spellcheck="false">somewhere in there. nobody could say where.</div></div>
+    </div>
+    <div class="punch">no agreement, no chance. that is what your receiver sees.</div>
+    <aside class="notes">Vorn am Visualizer: erst ein paar zufällige Farben, dann eine Nachricht aus etwa fünf Farben, dann wieder zufällige. Nichts ansagen. Der Saal schreibt mit und soll hinterher die Nachricht nennen. Er hat keine Chance, und genau das ist der Punkt. In die Zeilen lässt sich direkt hineintippen, nehmt zwei Vorschläge aus dem Saal auf.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>round two: same game, three times</h2>
+    <div class="said">
+      <div class="row"><div class="lbl">what changed</div><div class="val" contenteditable="true" spellcheck="false">every message started the same way</div></div>
+      <div class="row"><div class="lbl">when the room noticed</div><div class="val" contenteditable="true" spellcheck="false">on the second one</div></div>
+    </div>
+    <div class="punch">the third time, the room saw it coming.</div>
+    <aside class="notes">Dreimal dasselbe Spiel, aber jede Nachricht beginnt mit derselben auffälligen Folge, etwa dreimal Rot-Blau im Wechsel. Wieder nichts ansagen. Beim zweiten oder dritten Durchgang erkennt der Saal den Anfang von selbst. Fragt nach: Woran? An der Folge, die vorher nie da war und jetzt jedes Mal kommt. Damit hat der Saal etwas erfunden, ohne dass das Wort gefallen ist.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>you just invented the preamble</h2>
+    <div class="figure" id="fig-preamble"></div>
+    <div class="punch">a preamble carries no information. it only says "from here on".</div>
+    <aside class="notes">Erst jetzt der Name. Eine Präambel ist ein vereinbartes, auffälliges Muster vor der Nachricht. Sie ersetzt den Menschen, der bisher Enter gedrückt hat. Zwei Eigenschaften machen sie brauchbar: Sie ist vereinbart, und sie kommt im Rauschen nicht vor. Deshalb besteht sie aus zwei aktiven Farben und nicht aus Hell und Dunkel: LED aus sieht für den Sensor genauso aus wie das Zimmer, ein Muster mit Aus-Anteil wäre also zur Hälfte Rauschen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>one red is not a start</h2>
+    <div class="figure" id="fig-one-red"></div>
+    <div class="punch">longer and more regular: rarer by chance. price: a few symbols per message.</div>
+    <aside class="notes">Warum muss das Muster länger sein als ein Symbol? Oben ein Empfänger, dessen Anfangsmuster ein einzelnes Rot ist: Im Raumlicht entsteht ein rötlicher Wert ständig von selbst, eine Lampe, ein Schatten, eine Schwankung, und an jeder dieser Stellen meldet er „Nachricht beginnt". Unten dasselbe Rauschen, aber das Muster ist Rot-Blau-Rot-Blau-Rot-Blau: Das entsteht zufällig praktisch nie. Wer mit Fehlstarts kämpft, dreht deshalb an der Absprache, nicht an Verstärkung oder Integrationszeit; die heben das Rauschen genauso an wie das Signal.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawCost" data-on-step="drawCost">
+    <h2>what the frame costs</h2>
+    <div class="figure" id="fig-cost"></div>
+    <span data-step="1"></span>
+    <div class="punch">the frame costs the same per message. short messages pay most.</div>
+    <aside class="notes">Der Vorlauf ist nicht umsonst, und jetzt rechnen wir ihn. Fünf Zeichen sind 40 Bit, bei zwei Farben also 40 Symbole; dazu sechs für die Präambel und drei für die Endmarke, macht 49 gesendete Symbole, von denen neun nichts tragen. Das sind 18 Prozent. Zweiter Schritt, dieselben neun Symbole bei 20 Zeichen: neun von 169, also 5 Prozent. Der Rahmen kostet je Nachricht dasselbe, egal wie lang sie ist, und deshalb bezahlen kurze Nachrichten ihn am teuersten. Für Challenge 4 heißt das: lieber wenige lange als viele kurze.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what if the data looks like the start</h2>
+    <div class="figure" id="fig-lookalike"></div>
+    <div class="punch">your specification must answer this. there is more than one good answer.</div>
+    <aside class="notes">Ein Problem, das eure Spezifikation beantworten muss. Ein Empfänger, der dauernd nach dem Muster sucht, hält das für einen neuen Anfang, verwirft, was er bisher hatte, und beginnt mittendrin neu. Das Problem ist echt und hat in der Praxis einen Namen. Die Lösung sagt euch niemand; es gibt mehr als eine gute Antwort, und die sauberste steht in zwei Folien.</aside>
+  </section>
+
+  <!-- ================= Teil 3: the end ================= -->
+
+  <section class="slide part" data-part="the end">
+    <aside class="notes">Der Anfang steht. Jetzt das andere Ende.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>round three: two messages, back to back</h2>
+    <div class="said">
+      <div class="row"><div class="lbl">what the room proposed</div><div class="val" contenteditable="true" spellcheck="false">say up front how long it is</div></div>
+      <div class="row"><div class="lbl">and</div><div class="val" contenteditable="true" spellcheck="false">send an agreed sign at the end</div></div>
+    </div>
+    <div class="punch">both answers are right. that is why this is a decision.</div>
+    <aside class="notes">Zwei Nachrichten direkt hintereinander, jede mit Präambel, ohne Pause. Wo hört die erste auf? Aus dem Saal kommen genau diese zwei Sorten von Antworten. Beide sind richtig, beide kommen an die Tafel, und diese Tafel ist der Rohstoff der Normungssitzung in zwei Wochen.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawTwoAnswers" data-on-step="drawTwoAnswers">
+    <h2>two answers, two price tags</h2>
+    <div class="figure" id="fig-two-answers"></div>
+    <span data-step="1"></span>
+    <div class="punch">neither is the right one. you pick one and write it down.</div>
+    <aside class="notes">Das Längenfeld steht am Anfang und sagt, wie viele Zeichen folgen; der Empfänger zählt mit. Preis: Es muss fehlerfrei ankommen, sonst verdirbt es die ganze Nachricht, und seine Größe begrenzt die Nachricht, mit 8 Bit auf 255 Zeichen. Die Endmarke ist ein vereinbartes Symbol nach dem letzten Zeichen; die Nachricht darf beliebig lang sein. Preis: dieselbe Frage wie bei der Präambel, sie darf nicht zufällig in den Daten vorkommen. Der saubere Weg dafür ist ein reserviertes Symbol, eine Farbe außerhalb des Datenalphabets.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawStates" data-on-step="drawStates">
+    <h2>the same reading means different things</h2>
+    <div class="figure" id="fig-states"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
+    <div class="punch">the reading does not decide. the state does.</div>
+    <aside class="notes">Euer Empfänger braucht ein Gedächtnis. Wir lesen denselben Strom von Folie 6, jetzt Symbol für Symbol. Solange er wartet, ist alles Rauschen, was nicht das Muster ist, und wird verworfen. Ist das Muster vollständig, springt der Zustand auf „reading"; ab da ist jedes Symbol ein Datensymbol und wird behalten. Die Endmarke bringt ihn zurück nach „waiting". Achtet auf die Farbe: Dasselbe Rot bedeutet oben Rauschen und unten Daten. Die Entscheidung trifft nicht die Messung, sondern der Zustand. Und der Pfeil zurück ist der wichtigste im Bild.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>a state is only a variable</h2>
+    <div class="content" style="top: 150px">
+      <div class="code small">state = "waiting"
+message = ""
+while True:
+    symbol = read_symbol()
+    if state == "waiting":
+        if preamble_complete(symbol):
+            state = "reading"
+<span data-step="1">    elif state == "reading":
+        if symbol == END_MARK:
+            print(message)</span>
+<span data-step="2" class="reset">            state = "waiting"
+            message = ""</span>
+<span data-step="1">        else:
+            message = message + symbol</span></div>
+    </div>
+    <div class="punch">forget the way back, and your receiver can read exactly one message.</div>
+    <aside class="notes">Zwölf Zeilen, und keine davon ist schwer. Eine Variable, eine Endlosschleife, je Zustand ein Zweig. Der letzte Schritt ist der, den bei der Abnahme die meisten vergessen: Nach der Ausgabe muss der Zustand zurück auf „waiting" und die Nachricht geleert werden. Wer das vergisst, hat einen Empfänger, der genau eine Nachricht kann, und die Live-Änderung „zwei Nachrichten hintereinander" findet das sofort. Die Funktion preamble_complete schreibt ihr selbst; sie merkt sich, wie viel vom Muster schon gesehen wurde, ist also wieder ein kleines Gedächtnis.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>when the end never comes</h2>
+    <div class="figure" id="fig-no-end"></div>
+    <div class="punch">it does not lose this message. it loses every message from now on.</div>
+    <aside class="notes">Jetzt die dritte Frage von vorhin. Mitten in der Nachricht schiebt jemand eine Hand in den Strahl, der Rest kommt nie an, die Endmarke bleibt aus. Der naheliegende Gedanke ist: schade, die Nachricht ist verloren. Falsch. Der Empfänger steht auf „reading" und sucht die Präambel gar nicht mehr, denn danach sucht er nur im Zustand „waiting". Er hängt also nicht bei dieser Nachricht, sondern ab jetzt bei allen. Nötig ist eine Abbruchbedingung: Bleibt die Endmarke nach einer festgelegten Zeit oder Symbolzahl aus, verwirft er das Angefangene und geht zurück. Eine Absprache, die nur den Normalfall regelt, ist keine Absprache.</aside>
+  </section>
+
+  <!-- ================= Teil 4: the agreement ================= -->
+
+  <section class="slide part" data-part="the agreement">
+    <aside class="notes">Alles, was jetzt kommt, steht in einem Dokument, nicht im Code.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">a protocol is an agreement<br>someone else can implement</div>
+      <div class="sidenote">symbols, start, end, time, the failure case. all of it before the first bit.</div>
+    </div>
+    <aside class="notes">Nichts daran versteht sich von selbst. Die Probe ist nicht, ob es zwischen euch beiden läuft. Die Probe ist, ob jemand, der euch nicht kennt, danach einen Empfänger bauen kann. Genau das passiert nächste Woche.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the test for your specification</h2>
+    <div class="figure" id="fig-spec-test"></div>
+    <div class="punch">cross out everything you know but did not write down. is the rest enough?</div>
+    <aside class="notes">Diese Spezifikation sieht vollständig aus, und sie ist unbaubar. Zwei Dinge fehlen. Ohne Symboldauer kann ein fremdes Team nicht einmal das Anfangsmuster zuverlässig abtasten. Und ohne eine Regel für den Fehlerfall verhält sich jede Umsetzung anders, sobald etwas schiefgeht. Für euch sind beide selbstverständlich, und genau deshalb schreibt sie niemand auf. Ein vollständiges Beispiel, etwa HI als komplette Symbolfolge mit Anfang und Ende, rettet mehr Spezifikationen als jeder Erklärtext.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>what happens next</h2>
+    <div class="content">
+      <div class="lines">
+        <div>this week: your own frame, written down</div>
+        <div data-step="1">next week: someone else builds your receiver</div>
+        <div data-step="2">then: one frame for the whole class</div>
+      </div>
+    </div>
+    <aside class="notes">Diese Woche baut jedes Team seinen eigenen Rahmen und schreibt ihn auf. Nächste Woche tauscht ihr die Spezifikationen und baut den Empfänger eines anderen Teams; das ist die einzige ehrliche Prüfung eurer Dokumentation, und ein Scheitern dort ist ein Befund über das Dokument, nicht über das Partnerteam. Danach einigt sich die Klasse auf einen gemeinsamen Rahmen, aus euren Vorschlägen.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/containers.png" alt="">
+    <div class="photo-text narrow">a standard is not a<br>technical necessity.<br>it is an agreement.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Der Seecontainer ist das Beispiel. Erst als sich alle auf dieselben Maße einigten, wurde daraus Welthandel. Nicht, weil diese Maße die besten waren, sondern weil es dieselben waren. So entstehen Standards wirklich: nicht am Reißbrett, sondern aus dem Vergleich funktionierender Lösungen. Und was unterhalb des Rahmens liegt, Farben, Tempo, Kalibrierung, bleibt auch danach eures.</aside>
+  </section>
+
+</div>
+
+<!-- deck.js vor stagekit.js: der erste Aufbau ruft die data-on-show-Funktionen
+     auf, und die gibt es sonst noch nicht. -->
+<script src="../stagekit/draw.js?v=20260911c"></script>
+<script src="deck.js?v=20260911c"></script>
+<script src="../stagekit/stagekit.js?v=20260911c"></script>
+</body>
+</html>

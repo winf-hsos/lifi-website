@@ -711,6 +711,193 @@
      }
     }
    ]
+  },
+  {
+   "id": "pr-013",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Eure Präambel ist dreimal Rot-Blau im Wechsel. Beim Testen fällt auf: Wenn\ndiese Folge zufällig auch mitten in den Daten steht, hält der Empfänger sie\nfür einen neuen Anfang, verwirft das bisher Gelesene und fängt mittendrin\nneu an. Welche Maßnahmen beseitigen das Problem zuverlässig?\n(Mehrere richtige Antworten möglich.)",
+    "en": "Your preamble is red-blue alternating three times. During testing you\nnotice: when that sequence happens to appear in the middle of the data, the\nreceiver takes it for a new start, throws away what it has read so far and\nstarts again mid-message. Which measures reliably remove the problem?\n(Several answers may be correct.)"
+   },
+   "typ": "mc",
+   "richtig": [
+    "b",
+    "d",
+    "e"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Die Verstärkung des Sensors erhöhen, damit Rot und Blau eindeutiger erkannt werden.",
+      "en": "Increase the sensor gain so that red and blue are recognised more clearly."
+     },
+     "begruendung": {
+      "de": "Hier wird nichts falsch erkannt. Der Empfänger misst genau das, was gesendet wurde, und die gesendete Folge ist nun einmal dieselbe wie die Präambel. Das ist kein Messproblem, sondern ein Problem der Absprache, und an Sensoreinstellungen zu drehen ändert daran nichts.",
+      "en": "Nothing is being misread here. The receiver measures exactly what was sent, and what was sent happens to be the same sequence as the preamble. This is not a measurement problem but a problem of the agreement, and turning sensor knobs changes nothing about it."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Der Empfänger sucht das Anfangsmuster nur, solange er wartet. Sobald er liest, ignoriert er es bis zum Ende der Nachricht.",
+      "en": "The receiver only looks for the start pattern while it is waiting. Once it is reading, it ignores the pattern until the end of the message."
+     },
+     "begruendung": {
+      "de": "Genau: Das ist der Grund, warum der Empfänger ein Gedächtnis braucht. Dieselbe Farbfolge bedeutet im Zustand 'waiting' etwas anderes als im Zustand 'reading'. Die Entscheidung trifft nicht die Messung, sondern der Zustand, und damit kann die Folge in den Daten stehen, ohne Schaden anzurichten.",
+      "en": "Exactly: this is why the receiver needs a memory. The same sequence of colours means one thing in state 'waiting' and another in state 'reading'. The decision is made by the state, not by the reading, and so the sequence may sit in the data without doing any harm."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Die Präambel verlängern, etwa von drei auf sechs Wechsel.",
+      "en": "Make the preamble longer, say from three alternations to six."
+     },
+     "begruendung": {
+      "de": "Das macht den Zufallstreffer seltener, aber nicht unmöglich, und darum geht es hier: Wenn das Muster in den Daten steht, steht es da. Gegen Rauschen hilft ein längeres Muster (das prüft eine andere Frage), gegen Daten, die zufällig so aussehen, nicht.",
+      "en": "That makes an accidental hit rarer but not impossible, and that is what matters here: if the pattern is in the data, it is in the data. A longer pattern helps against noise (another question covers that), but not against data that happens to look like it."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Direkt nach der Präambel ein Längenfeld senden. Der Empfänger weiß dann, wie viele Symbole folgen, und sucht währenddessen gar nicht nach dem Muster.",
+      "en": "Send a length field right after the preamble. The receiver then knows how many symbols follow and does not look for the pattern during that time."
+     },
+     "begruendung": {
+      "de": "Richtig, und es ist derselbe Gedanke wie bei b, nur anders gebaut: Der Empfänger sucht nicht mehr, sondern zählt. Bezahlt wird es mit den Nachteilen des Längenfelds: Es muss fehlerfrei ankommen, und seine Größe begrenzt die Nachricht.",
+      "en": "Right, and it is the same idea as in b, only built differently: the receiver stops searching and starts counting. You pay for it with the drawbacks of a length field: it has to arrive intact, and its size limits the message."
+     }
+    },
+    {
+     "kennung": "e",
+     "text": {
+      "de": "Eine Farbe für die Präambel reservieren und sie aus dem Datenalphabet streichen, sodass die Folge in den Daten gar nicht entstehen kann.",
+      "en": "Reserve one colour for the preamble and drop it from the data alphabet, so the sequence cannot occur in the data at all."
+     },
+     "begruendung": {
+      "de": "Richtig, und die radikalste der drei Lösungen: Was in den Daten nicht vorkommen kann, kann auch nicht verwechselt werden. Der Preis ist Kapazität, denn euer Datenalphabet wird kleiner, und das kostet Bits je Symbol. Dieselbe Art von Preisschild wie bei den Synchronisationsmarken.",
+      "en": "Right, and the most radical of the three: what cannot occur in the data cannot be confused with anything. The price is capacity, because your data alphabet gets smaller, and that costs bits per symbol. The same kind of price tag as with synchronization markers."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr-014",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Euer Rahmen sieht so aus: Präambel sechs Symbole, dann die Nachricht, dann\neine Endmarke aus drei Symbolen. Ihr sendet mit zwei Farben, ein Symbol\nträgt also 1 Bit, und ein Zeichen sind 8 Bit. Ihr übertragt eine Nachricht\naus 5 Zeichen. Wie viel Prozent der gesendeten Symbole tragen keine\nNutzdaten?",
+    "en": "Your frame looks like this: a preamble of six symbols, then the message,\nthen an end marker of three symbols. You send with two colours, so a symbol\ncarries 1 bit, and a character is 8 bits. You transmit a message of 5\ncharacters. What percentage of the symbols you send carries no payload?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Rund 9 %, denn neun Symbole gehen für den Rahmen drauf.",
+      "en": "About 9 %, because nine symbols are spent on the frame."
+     },
+     "begruendung": {
+      "de": "Neun ist die Anzahl, nicht der Anteil. Ein Prozentwert entsteht erst, wenn man die neun ins Verhältnis zu allem Gesendeten setzt. Die Zahl direkt als Prozent zu lesen, ist ein Reflex, der bei kleinen Zahlen erstaunlich oft durchrutscht.",
+      "en": "Nine is the count, not the share. A percentage only appears once you put the nine in relation to everything you sent. Reading the number straight off as a percentage is a reflex that slips through surprisingly often with small numbers."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Rund 22 %, denn neun Rahmensymbole kommen zu 40 Nutzsymbolen dazu.",
+      "en": "About 22 %, because nine frame symbols come on top of 40 payload symbols."
+     },
+     "begruendung": {
+      "de": "Die 40 stimmen, der Bezug nicht. Gefragt ist der Anteil an den **gesendeten** Symbolen, und gesendet werden 49, nicht 40. Neun von 40 ist der Aufschlag auf die Nutzdaten, neun von 49 der Anteil am Ganzen; das sind zwei verschiedene Fragen, und hier ist die zweite gestellt.",
+      "en": "The 40 is right, the reference is not. The question asks for the share of the symbols you **send**, and you send 49, not 40. Nine out of 40 is the surcharge on the payload, nine out of 49 is the share of the whole; those are two different questions, and this is the second one."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Rund 18 %: 5 Zeichen sind 40 Bit, also 40 Symbole, dazu neun für den Rahmen, macht 49 gesendete Symbole, davon neun ohne Nutzdaten.",
+      "en": "About 18 %: 5 characters are 40 bits, so 40 symbols, plus nine for the frame, giving 49 symbols sent, nine of them without payload."
+     },
+     "begruendung": {
+      "de": "Genau. Und jetzt das Interessante daran: Der Rahmen kostet **je Nachricht** immer dieselben neun Symbole, egal wie lang sie ist. Bei 20 Zeichen wären es neun von 169, also rund 5 %. Kurze Nachrichten bezahlen den Rahmen also am teuersten, und das ist ein Grund, in Challenge 4 lieber wenige lange als viele kurze Nachrichten zu schicken.",
+      "en": "Exactly. And here is the interesting part: the frame costs the same nine symbols **per message**, no matter how long it is. At 20 characters it would be nine out of 169, about 5 %. Short messages pay the most for their frame, and that is one reason to send few long messages rather than many short ones in challenge 4."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das lässt sich nicht sagen, solange die Symbolrate nicht feststeht.",
+      "en": "There is no way to tell as long as the symbol rate is not fixed."
+     },
+     "begruendung": {
+      "de": "Die Symbolrate braucht man für die **Dauer**, nicht für den Anteil. Ob ihr zwei oder zwanzig Symbole pro Sekunde schickt, ändert nichts daran, dass neun von 49 Symbolen keine Nutzdaten tragen. Anteil und Dauer sind zwei verschiedene Größen; das Preisschild des Rahmens steht in Symbolen, das der Geschwindigkeit in Sekunden.",
+      "en": "You need the symbol rate for the **duration**, not for the share. Whether you send two or twenty symbols per second changes nothing about nine out of 49 symbols carrying no payload. Share and duration are two different quantities; the frame's price tag is in symbols, speed's price tag is in seconds."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pr-015",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Euer Empfänger hat die Präambel erkannt und liest. Mitten in der Nachricht\nschiebt jemand eine Hand in den Strahl, und der Rest kommt nie an. Die\nEndmarke bleibt also aus. Eure Spezifikation sagt zum Fehlerfall nichts.\nWas passiert beim nächsten Sendeversuch, und was muss die Spezifikation\nfestlegen?",
+    "en": "Your receiver has recognised the preamble and is reading. Halfway through\nthe message somebody puts a hand into the beam, and the rest never arrives.\nSo the end marker never comes. Your specification says nothing about failure\ncases. What happens at the next attempt, and what does the specification\nhave to lay down?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Nichts Schlimmes: Die angefangene Nachricht ist verloren, und beim nächsten Versuch liest der Empfänger wieder normal mit.",
+      "en": "Nothing serious: the message that was started is lost, and at the next attempt the receiver simply reads along again."
+     },
+     "begruendung": {
+      "de": "Das ist die Falle. Der Empfänger steckt im Zustand 'reading' fest und wartet weiter auf eine Endmarke, die nie kommt. Nach der Präambel der nächsten Nachricht sucht er gar nicht mehr, denn danach sucht er nur im Zustand 'waiting'. Er hängt also nicht bei dieser Nachricht, sondern ab jetzt bei allen.",
+      "en": "That is the trap. The receiver is stuck in state 'reading' and goes on waiting for an end marker that never comes. It is no longer looking for the next message's preamble at all, because it only looks for that in state 'waiting'. So it is not stuck on this message, it is stuck on every message from now on."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Der Empfänger hängt ab jetzt fest. Die Spezifikation braucht eine Abbruchbedingung: Bleibt die Endmarke nach einer festgelegten Zeit oder Symbolzahl aus, verwirft er das Angefangene und geht zurück nach 'waiting'.",
+      "en": "The receiver is stuck from now on. The specification needs an abort rule: if the end marker has not arrived after an agreed time or number of symbols, it discards what it has and returns to 'waiting'."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist die dritte der drei Fragen, die eine Absprache beantworten muss: Wo fängt es an, wo hört es auf, und was tut der Empfänger, wenn etwas schiefgeht. Die dritte wird am häufigsten vergessen, weil sie im Normalfall nie auffällt. Bei der Abnahme fällt sie sofort auf, denn dort greift jemand absichtlich in den Strahl.",
+      "en": "Exactly, and this is the third of the three questions an agreement has to answer: where does it start, where does it end, and what does the receiver do when something goes wrong. The third is the one most often forgotten, because in the normal case it never shows. At the acceptance test it shows immediately, because there somebody reaches into the beam on purpose."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Der Empfänger soll das unvollständig Gelesene ausgeben, damit nichts verloren geht.",
+      "en": "The receiver should output what it has read so far, so that nothing is lost."
+     },
+     "begruendung": {
+      "de": "Das löst zwar das Festhängen, tauscht aber einen sichtbaren Fehler gegen einen unsichtbaren: Ein Bruchstück sieht aus wie eine Nachricht, und niemand sieht ihm an, dass die Hälfte fehlt. Eine halbe Nachricht, die als ganze durchgeht, ist schlimmer als gar keine. Wenn ihr Bruchstücke ausgebt, dann gekennzeichnet.",
+      "en": "That does fix the hang, but it trades a visible failure for an invisible one: a fragment looks like a message, and nobody can tell that half of it is missing. Half a message passing as a whole one is worse than none at all. If you output fragments, label them as such."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Der Sender wiederholt jede Nachricht dreimal, dann kommt sie mit hoher Wahrscheinlichkeit einmal vollständig an.",
+      "en": "The sender repeats every message three times, so with high probability one copy arrives complete."
+     },
+     "begruendung": {
+      "de": "Wiederholen ist ein sinnvolles Mittel gegen Verluste, aber es hilft hier niemandem: Der Empfänger liest immer noch an der ersten, abgebrochenen Nachricht und nimmt die Wiederholungen gar nicht als Nachrichten wahr. Solange der Rückweg nach 'waiting' fehlt, verpufft jede Wiederholung.",
+      "en": "Repetition is a sensible remedy against loss, but here it helps nobody: the receiver is still reading the first, aborted message and does not perceive the repeats as messages at all. As long as the way back to 'waiting' is missing, every repeat is wasted."
+     }
+    }
+   ]
   }
  ]
 }
