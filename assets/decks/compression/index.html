@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>say it shorter</title>
+  <link rel="stylesheet" href="theme.css?v=20260914d">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260914d">
+  <style>
+    .photo-text.narrow { width: 880px; }
+
+    /* Echte Bilddateien nebeneinander: Die Bytes stehen darunter, das Bild
+       sagt, was sie bedeuten. Alle gleich gross dargestellt, damit nur die
+       Qualitaet den Unterschied macht, nicht die Flaeche. */
+    .pics {
+      position: absolute;
+      left: var(--margin); right: var(--margin);
+      top: 250px;
+      display: flex; justify-content: center; gap: 48px;
+    }
+    .pics figure { margin: 0; text-align: center; }
+    .pics img { display: block; width: 340px; height: 340px; }
+    .pics.two img { width: 440px; height: 440px; }
+    .pics figcaption { margin-top: 24px; font-family: var(--mono); font-size: var(--small); color: var(--gray-light); }
+    .pics figcaption .sub { display: block; margin-top: 10px; font-family: var(--text); font-size: var(--tiny); color: var(--gray); }
+    .pics figcaption .hl { color: var(--yellow); }
+
+    /* Die Schlussfolie zeigt die 2-KB-Datei selbst, nicht ein Foto von ihr:
+       128 Punkte auf 1080 Zeilen, ohne Weichzeichnen. So sieht das Budget aus. */
+    .slide img.photo.raw { image-rendering: pixelated; height: 840px; top: 60px; right: var(--margin); }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="say it shorter"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["why anything shrinks", "two tricks, and a zip", "the picture"]'>
+
+  <section class="slide title">
+    <aside class="notes">Das zweite Deck von heute. Im ersten war Kompression der dritte Hebel, der billigste. Jetzt geht es darum, wie er funktioniert, was in jedem ZIP steckt, und wo er aufhört: beim Foto.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Erst, warum sich überhaupt etwas verkürzen lässt. Dann die zwei Tricks, die zusammen ein ZIP ergeben, und die Grenze, an die jeder Packer stößt. Zum Schluss das Foto, bei dem verlustfrei nicht reicht.</aside>
+  </section>
+
+  <!-- ================= Teil 1: why anything shrinks ================= -->
+
+  <section class="slide part" data-part="why anything shrinks">
+    <aside class="notes">Warum lässt sich eine Datei überhaupt kleiner machen, ohne dass etwas fehlt? Die Antwort ist die Ballenpresse.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/bale.png" alt="">
+    <div class="photo-text narrow">nothing is gone.<br>only the air between.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Eine Ballenpresse macht aus losem Karton denselben Karton auf einem Bruchteil des Platzes. Es ist nichts verschwunden, nur die Luft dazwischen. Zwei Fragen für heute: Wo steckt in einer Datei die Luft? Und die unbequemere: Was tut man, wenn keine mehr drin ist?</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>why anything compresses at all</h2>
+    <div class="figure" id="fig-why-compress"></div>
+    <div class="punch">the information stays. the description gets shorter.</div>
+    <aside class="notes">Wenn eine Textdatei nach dem Packen halb so groß ist und beim Entpacken Zeichen für Zeichen dasselbe herauskommt, ist offensichtlich nichts weggelassen worden. Was passiert ist: Die übliche Schreibweise verschenkt Platz. „die sonne" steht dreimal da. Manche Buchstaben kommen ständig vor, andere fast nie. Nach einem q kommt fast immer ein u. Jede dieser Regelmäßigkeiten lässt sich kürzer beschreiben, ohne dass Information verloren geht.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>you have seen this before</h2>
+    <div class="figure" id="fig-seen-before"></div>
+    <div class="punch">the frequent one gets the short code. now with a recipe.</div>
+    <aside class="notes">Zwei Versprechen einlösen. In Sitzung 4 hieß es bei Morse: Das häufige e bekommt den kürzesten Code, einen einzigen Punkt, das seltene q vier Zeichen; darauf kommen wir zurück. In Sitzung 6 hieß es: Feste Länge ist bequem zu lesen, aber sie gibt dem Häufigen keinen Rabatt. Heute kommt beides zusammen, und zwar als Verfahren, das man nachrechnen kann, nicht als Idee.</aside>
+  </section>
+
+  <!-- ================= Teil 2: two tricks, and a zip ================= -->
+
+  <section class="slide part" data-part="two tricks, and a zip">
+    <aside class="notes">Zwei Tricks. Der erste sagt Wiederholtes nur einmal, der zweite gibt dem Häufigen den kurzen Code. Zusammen sind sie das Ding, das ihr seit der Schule anklickt.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>trick one: point back</h2>
+    <div class="figure" id="fig-point-back"></div>
+    <div class="punch">say it once. then say where it was.</div>
+    <aside class="notes">Der Satz von vorhin. Das zweite „die sonne" muss nicht noch einmal geschrieben werden: 22 Zeichen zurück, 9 Zeichen lang, das reicht. Das dritte genauso, 21 zurück. Aus 63 Zeichen werden 45 plus zwei Verweise. Das ist im Kern, was jeder Packer als Erstes tut: Er merkt sich, was er schon gesehen hat, und schreibt beim zweiten Mal nur noch, wo es stand und wie lang es ist. Lempel und Ziv, 1977. In jedem ZIP.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the same trick on a picture: run length</h2>
+    <div class="figure" id="fig-run-good"></div>
+    <div class="punch">the bigger the areas, the more it saves.</div>
+    <aside class="notes">Dasselbe Prinzip, einfachste Form, auf einem Bild: Geht die Zeile entlang und zählt, wie viele gleiche Punkte hintereinander kommen; schreibt je Lauf ein Byte, ein Bit für die Farbe und sieben für die Länge. Bei einem Bild mit Flächen sind das sechs Byte statt acht. Nicht die Welt, aber die Idee trägt: Je größer die Flächen, desto mehr spart es. Ihr könntet das heute Nachmittag selbst programmieren.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>run length: the bad case</h2>
+    <div class="figure" id="fig-run-bad"></div>
+    <div class="punch">every method makes some files bigger. yours too.</div>
+    <aside class="notes">Dasselbe Verfahren auf ein Schachbrett losgelassen. Jeder Punkt ist anders als sein Nachbar, also 64 Läufe der Länge eins, also 64 Byte statt acht: achtmal so groß. Für unser Auge ist ein Schachbrett ein Muster, für dieses Verfahren nicht, denn es kennt nur die eine Frage, wie viele gleiche Punkte jetzt kommen. Ein Verfahren erkennt immer nur die Regelmäßigkeit, nach der es sucht. Deshalb prüfen ernsthafte Packer ihr Ergebnis und schicken im Zweifel die Rohdaten.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>trick two: count first</h2>
+    <div class="figure" id="fig-count-first"></div>
+    <div class="punch">the same code for every letter: the a pays as much as the d.</div>
+    <aside class="notes">Ein Zauberwort, und Kompression fühlt sich an wie Zauberei, bis man den Trick sieht. Elf Buchstaben, fünf verschiedene. Mit festem Code braucht jeder drei Bit, das a genauso wie das d, obwohl das a fünfmal vorkommt und das d einmal. Da ist die Luft: Der häufigste Buchstabe zahlt den vollen Preis.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawTree" data-on-step="drawTree">
+    <h2>build the tree</h2>
+    <div class="figure" id="fig-tree"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
+    <div class="punch">always join the two rarest. that is the whole algorithm.</div>
+    <div class="footnote">huffman, 1952</div>
+    <aside class="notes">David Huffman, 1951, Student am MIT. Sein Professor stellte die Wahl: Klausur oder Hausarbeit, und die Hausarbeit hieß „finde den kürzesten Code". Huffman fand ihn, kurz bevor er aufgeben und doch für die Klausur lernen wollte. Die Regel ist eine einzige: Nimm die zwei seltensten, fasse sie zu einem Knoten zusammen, dessen Zahl die Summe ist, und wiederhole das, bis nur noch einer übrig ist. Schritt für Schritt: c und d, die Einser, werden eine 2. Dann b und r, die Zweier, eine 4. Dann 2 und 4 eine 6. Zum Schluss a und 6 die Wurzel, 11, so viele Buchstaben, wie das Wort hat. Was oft vorkommt, bleibt nah an der Wurzel; was selten vorkommt, wandert nach unten.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>read the codes off the tree</h2>
+    <div class="figure" id="fig-read-codes"></div>
+    <div class="punch">23 bits instead of 33. nothing lost.</div>
+    <aside class="notes">Der Weg von der Wurzel zum Buchstaben ist sein Code: links 0, rechts 1. Das a hängt direkt an der Wurzel und bekommt ein einziges Bit. Die Seltenen bekommen drei. Ausgezahlt: fünfmal ein Bit für das a, je drei für die anderen sechs Buchstaben, 23 statt 33, knapp ein Drittel weniger. Und beim Lesen kommt Buchstabe für Buchstabe dasselbe Wort zurück. Die ganze Ersparnis kommt vom a; die anderen vier kosten weiterhin drei Bit, also nichts verloren.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>why it reads itself</h2>
+    <div class="figure" id="fig-reads-itself"></div>
+    <div class="punch">no code is the start of another. the prefix trap from <a href="https://docs.lifi-project.de/concepts/code-systems.html" target="_blank">code systems</a>, avoided by construction.</div>
+    <aside class="notes">Die Sorge aus Sitzung 6: Codes verschiedener Länge ohne Trennzeichen, woher soll der Empfänger wissen, wo ein Zeichen aufhört? Der Baum beantwortet das nebenbei. Buchstaben hängen nur an Blättern, also kann kein Code der Anfang eines anderen sein. Wer von links liest und bei jedem Blatt neu anfängt, kommt nie in die Falle: 0 ist fertig, a. 100 ist fertig, b. 101, r. Unten in Rot das Gegenbeispiel, das in Sitzung 6 schiefging: a gleich 0 und b gleich 01, und 01 hat zwei Lesarten. Das kann in einem Baum nicht passieren, weil das a dann kein Blatt wäre.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>and that is a zip</h2>
+    <div class="figure" id="fig-zip"></div>
+    <div class="punch">every zip you ever opened did these two tricks. nothing else.</div>
+    <div class="footnote">measured with python's zipfile, level 9, 13 sept 2026</div>
+    <aside class="notes">Das Ding, das ihr seit der Schule anklickt. Ein ZIP macht genau die zwei Tricks von heute, nacheinander: erst zurückzeigen, dann dem Häufigen kurze Codes. Das Paar heißt Deflate, und PNG, das Bildformat, ist innen dasselbe, nur mit einem Bild davor. Rechts fünf echte Messungen. Das Logfile schrumpft auf ein Fünftel, weil jede Zeile fast schon einmal dastand. Text auf knapp die Hälfte. Das Foto roh auf zwei Drittel, mehr Luft hat ein Foto nicht. Das PNG gar nicht, denn es ist schon eins. Und Zufall wird größer. Warum das so sein muss: nächste Folie.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>and that is not bad luck</h2>
+    <div class="figure" id="fig-counting"></div>
+    <div class="punch">no method shrinks everything. counting says so.</div>
+    <aside class="notes">Das grundsätzliche Argument, und es ist eines der schönsten im ganzen Semester, weil es nichts mit Technik zu tun hat. Angenommen, jemand verspricht ein Verfahren, das jede Datei verlustfrei um mindestens ein Bit kleiner macht. Mit drei Bit lassen sich acht Dateien schreiben, mit weniger als drei Bit nur sieben. Wer acht Dinge in sieben Fächer legt, legt zwei in dasselbe Fach, und dann weiß beim Entpacken niemand mehr, welches gemeint war. Kein Rechner der Welt hilft dagegen. Jedes verlustfreie Verfahren macht manche Dateien kleiner und andere zwangsläufig größer. Die 101 Prozent von eben sind kein Pech, sie sind Mathematik.</aside>
+  </section>
+
+  <!-- ================= Teil 3: the picture ================= -->
+
+  <section class="slide part" data-part="the picture">
+    <aside class="notes">Jetzt das Foto. Verlustfrei kommt man bei einem Foto nicht weit, und das Finale verlangt zwei Kilobyte.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the parrot, honestly</h2>
+    <div class="figure" id="fig-parrot-honest"></div>
+    <div class="punch">lossless gets you to half. you need a fiftieth.</div>
+    <aside class="notes">Der Papagei aus Sitzung 10. Roh sind das 256 mal 256 Punkte mal drei Byte, 192 Kilobyte. Als PNG, also verlustfrei gepackt, noch 91. Bei zehn Bit pro Sekunde ist das ein Tag beziehungsweise ein Vormittag. Die Nutzlast im Finale sind zwei Kilobyte, der dünne Strich ganz unten. Der beste verlustfreie Packer der Welt bringt euch nicht in die Nähe, und nach der letzten Folie wisst ihr, dass das kein Mangel des Packers ist: Ein Foto hat wenig Luft. Wer trotzdem auf zwei Kilobyte will, muss etwas weglassen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the same parrot, four times</h2>
+    <div class="pics">
+      <figure><img src="img/parrot.png" alt=""><figcaption>png · 93 107 bytes<span class="sub">lossless</span></figcaption></figure>
+      <figure><img src="img/parrot-q75.jpg" alt=""><figcaption>jpg · 10 587 bytes<span class="sub">quality 75</span></figcaption></figure>
+      <figure><img src="img/parrot-q10.jpg" alt=""><figcaption>jpg · 3 081 bytes<span class="sub">quality 10</span></figcaption></figure>
+      <figure><img src="img/parrot-128-q25.jpg" alt=""><figcaption class="hl">jpg · 2 032 bytes<span class="sub">128 × 128 points, quality 25</span></figcaption></figure>
+    </div>
+    <div class="punch">still a parrot. and now it fits.</div>
+    <div class="footnote">real files, sizes as measured · image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Vier echte Dateien, gleich groß gezeigt. Zwischen dem ersten und dem zweiten Bild liegt Faktor neun, und aus zwei Metern seht ihr keinen Unterschied. Das ist, was JPG tut: Es lässt Einzelheiten weg, die ein Auge kaum vermisst, feine Farbunterschiede vor allem, und behält die Kanten in der Helligkeit. Beim dritten seht ihr es langsam. Das vierte hat halb so viele Punkte je Seite und ist unter zwei Kilobyte. Es ist ein Papagei. Es ist nicht derselbe Papagei.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>two roads to 2 kb</h2>
+    <div class="pics two">
+      <figure><img src="img/parrot-256-q01.jpg" alt=""><figcaption>256 × 256 · quality 1 · 1 925 bytes<span class="sub">all the points, each one coarse</span></figcaption></figure>
+      <figure><img src="img/parrot-128-q25.jpg" alt=""><figcaption>128 × 128 · quality 25 · 2 032 bytes<span class="sub">a quarter of the points, each one clean</span></figcaption></figure>
+    </div>
+    <div class="punch">fewer points, or coarser points. <a href="https://docs.lifi-project.de/concepts/analog-and-digital.html" target="_blank">analog and digital</a>, from the other side.</div>
+    <aside class="notes">Dasselbe Budget, zwei Wege. Links behält das Bild alle Punkte und macht jeden grob; man sieht die Klötzchen. Rechts wirft es drei Viertel der Punkte weg und hält die übrigen sauber. Das sind die zwei Schnitte der Digitalisierung aus Sitzung 3, Auflösung und Farbtiefe, nur diesmal nicht beim Aufnehmen, sondern beim Wegwerfen. Welcher Weg besser ist, hängt am Bild und am Zweck, und das entscheidet ihr, nicht das Format.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">a one-way street</div>
+      <div class="lines">
+        <div>lossless: unpack, and you hold the original</div>
+        <div>lossy: unpack, and you hold something that looks like it</div>
+      </div>
+      <div class="sidenote">from the 2 kb parrot, the 93 kb never come back.</div>
+    </div>
+    <aside class="notes">Der eine Unterschied, der alles entscheidet. Beim ZIP ist Entpacken die Umkehrung, Bit für Bit. Beim JPG gibt es keine Umkehrung: Was weg ist, ist weg. Die zwei Kilobyte enthalten alles, was der Empfänger je über dieses Bild erfahren wird; die anderen 91 sind beim Packen verschwunden, nicht versteckt. Wer ein Foto zehnmal bearbeitet und jedes Mal als JPG speichert, verliert zehnmal.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="header">lossless or lossy</div>
+      <div class="lines">
+        <div>must exactly this file arrive? then lossy is out.</div>
+        <div>must a presentable picture arrive? then it is your strongest lever.</div>
+      </div>
+      <div class="sidenote">the task decides, not the tool. and ask before you spend an hour optimising.</div>
+    </div>
+    <aside class="notes">Verlustbehaftete Verfahren sind nicht unzuverlässig, sie tun zuverlässig etwas anderes. Muss genau diese Datei ankommen, weil im Finale die Prüfsumme vergleicht? Dann ist verlustbehaftet raus. Muss ein ansehnliches Bild ankommen? Dann ist es der stärkste Hebel, den ihr habt, stärker als jedes Alphabet. Die Aufgabe entscheidet, nicht das Werkzeug, und ihr klärt das, bevor ihr eine Stunde optimiert.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <div class="content">
+      <div class="header">the receiver has to know</div>
+      <div class="lines">
+        <div>which method</div>
+        <div>which settings</div>
+        <div>written into the specification, next to preamble and character code</div>
+      </div>
+    </div>
+    <div class="punch">packed data does not explain itself.</div>
+    <aside class="notes">Kein einziges Bit falsch, und trotzdem Zeichensalat: Der Empfänger kannte das Verfahren nicht. Gepackte Daten sind eine Schreibweise, und wer die Schreibweise nicht kennt, liest Unsinn. Verfahren und Einstellungen gehören in die Spezifikation, direkt neben Präambel und Zeichencode. Dieselbe Lektion wie in Sitzung 6: dieselben Bits, zwei Tabellen, zwei Bedeutungen.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>today</h2>
+    <div class="content">
+      <div class="lines">
+        <div>1  zip three files of your own and explain the three ratios</div>
+        <div>2  bring the parrot under 2 kb, and write down what you gave up</div>
+        <div>3  put method and settings into your specification</div>
+      </div>
+    </div>
+    <aside class="notes">Der Werkstattauftrag. Beim ersten Punkt geht es um die Erklärung, nicht um die Zahl: Warum schrumpft die eine Datei und die andere nicht. Der zweite ist eine Entscheidung mit Protokoll: weniger Punkte oder gröbere, und warum. Der dritte ist Pflicht für Challenge 4.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo raw" src="img/parrot-128-q25.jpg" alt="">
+    <div class="photo-text narrow">two kilobytes.<br>still a parrot.</div>
+    <div class="footnote">photo: parrot, 128 × 128 points, 2 032 bytes, shown point for point · image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Zwei Kilobyte, Punkt für Punkt gezeigt, ohne Weichzeichnen: 128 Punkte auf der Höhe der Leinwand. Es ist immer noch ein Papagei. Was fehlt, habt ihr entschieden, und das ist der Unterschied zwischen einem Packer und euch.</aside>
+  </section>
+
+</div>
+
+<!-- deck.js vor stagekit.js: der erste Aufbau ruft die data-on-show-Funktionen
+     auf, und die muessen dann schon definiert sein. -->
+<script src="../stagekit/draw.js?v=20260914d"></script>
+<script src="deck.js?v=20260914d"></script>
+<script src="../stagekit/stagekit.js?v=20260914d"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>why is it still not done?</title>
+  <link rel="stylesheet" href="theme.css?v=20260914b">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260914b">
+  <style>
+    .photo-text.narrow { width: 880px; }
+
+    /* Die gemessenen Nettoraten der Teams. Vorbelegt, damit die Folie auch beim
+       Nachlesen etwas aussagt, und beschreibbar: Weil das Deck HTML ist, laesst
+       sich in der Sitzung direkt hineintippen. */
+    table.results {
+      position: absolute;
+      left: var(--margin); right: var(--margin);
+      top: 230px;
+      border-collapse: collapse;
+      font-size: var(--small);
+    }
+    table.results th {
+      text-align: left;
+      font-weight: normal;
+      color: var(--gray);
+      font-size: var(--tiny);
+      padding: 0 28px 14px 0;
+      border-bottom: 2px solid var(--gray-dark);
+    }
+    table.results td {
+      padding: 20px 28px 20px 0;
+      color: var(--white);
+      border-bottom: 1px solid var(--gray-dark);
+    }
+    table.results td.num { font-family: var(--mono); color: var(--yellow); }
+    table.results td.what { color: var(--gray-light); }
+    table.results [contenteditable]:focus { outline: 2px solid var(--blue); outline-offset: 4px; }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="why is it still not done?"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["where the time goes", "three levers", "what it costs to be sure"]'>
+
+  <section class="slide title">
+    <aside class="notes">Zwei Kilobyte, siebenundzwanzig Minuten. Heute geht es darum, wo diese Zeit hingeht, welche drei Hebel es gibt und was jeder von ihnen kostet.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Erst nachsehen, wo die Zeit bleibt. Dann die drei Hebel, und der dritte ist der, den die wenigsten auf dem Schirm haben. Zum Schluss der Preis der Sicherheit.</aside>
+  </section>
+
+  <!-- ================= Teil 1: where the time goes ================= -->
+
+  <section class="slide part" data-part="where the time goes">
+    <aside class="notes">Bevor wir irgendetwas schneller machen: nachsehen, wo die Zeit überhaupt hingeht.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/hourglass.png" alt="">
+    <div class="photo-text narrow">two kilobytes.<br>twenty-seven minutes.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Das ist keine erfundene Zahl, das ist eure. Zwei Kilobyte sind 16.000 Bit; bei vier Farben und fünf Symbolen pro Sekunde sind das 10 Bit in der Sekunde, also gut 26 Minuten. Die Rechnung stand am Ende von Sitzung 7 schon auf einer Folie. Aber erst wenn man danebensitzt und wartet, versteht man sie. Und jetzt die unangenehme Nachricht: In dieser Rechnung ist noch kein einziges Symbol Rahmen und keine einzige Wiederholung enthalten.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>gross and net</h2>
+    <div class="figure" id="fig-gross-net"></div>
+    <div class="punch">nothing was lost. most of it was administration.</div>
+    <aside class="notes">Oben, was die Strecke trüge, wenn jedes Symbol Nutzdaten wäre. Unten, was nach Synchronisationsmarken, Präambel, Endmarke und Wiederholungen übrig bleibt. Wichtig ist, wie das zustande kommt: Es ist kein einziges Bit verloren gegangen, alles ist korrekt angekommen. Mehr als die Hälfte davon war nur Verwaltung. Wer über Durchsatz redet, muss immer dazusagen, ob er brutto oder netto meint.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawDeductions" data-on-step="drawDeductions">
+    <h2>where the 24 went</h2>
+    <div class="figure" id="fig-deductions"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span>
+    <div class="punch">deductions multiply. they do not add up.</div>
+    <aside class="notes">Rechnen wir es nach. 24 bit/s, wenn alles Nutzdaten wären. Jedes vierte Symbol ist eine Marke, also bleiben drei Viertel: 18. Von den übrigen gehen 40 Prozent für Präambel und Endmarke drauf, weil ihr viele kurze Nachrichten schickt: bleiben 10,8. Der häufigste Fehler steht im letzten Schritt: 25 plus 40 Prozent sind nicht 65 Prozent Verlust. Der zweite Abzug gilt nur für das, was der erste übrig gelassen hat. Anteile, die nacheinander greifen, werden multipliziert, nicht addiert.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>pulling the wrong lever</h2>
+    <div class="figure" id="fig-wrong-lever"></div>
+    <div class="punch">a lever past the bottleneck does not help. it destroys.</div>
+    <aside class="notes">Naheliegender Gedanke: doppelt so schnell senden, doppelt so viel Durchsatz. Links läuft es: Ein Symbol steht 100 ms, das Messfenster ist 50 ms, die Messung fällt sauber hinein. Rechts ist die Rate verdoppelt, und jetzt ist ein Symbol genauso lang wie das Fenster. Auf dem Papier 40 bit/s, in Wirklichkeit kommt nichts Lesbares mehr an. Einen Hebel zu ziehen, der nicht der Engpass ist, bringt nichts; ihn über den Engpass hinaus zu ziehen, macht es schlechter. Erst das Fenster verkürzen, dann die Rate erhöhen, dann prüfen, ob die Streuung das noch mitmacht.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">your limit is a measurement</div>
+      <div class="lines">
+        <div>not the sensor's datasheet: it does not know your room</div>
+        <div>not the best team's number: their setup is not yours</div>
+        <div>not the arithmetic with the values you wish for</div>
+      </div>
+    </div>
+    <aside class="notes">Das Datenblatt beschreibt das Bauteil, nicht eure Strecke; es kennt euren Abstand nicht, euer Umgebungslicht nicht, eure Optik nicht. Die Zahl des besten Teams gilt für dessen Aufbau. Und die Rechnung Rate mal Bits je Symbol sagt, was bei gewählten Werten herauskommt, nicht welche Werte eure Strecke trägt. Die Grenze findet ihr nur so: Rate schrittweise erhöhen, Fehler zählen, die letzte fehlerfreie Einstellung festhalten. Dazu hat weder ein Datenblatt noch ein Sprachmodell Zugang.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what your link really does</h2>
+    <table class="results">
+      <thead>
+        <tr><th style="width: 16%">team</th><th style="width: 22%">net bit/s</th><th>how it was measured</th></tr>
+      </thead>
+      <tbody contenteditable="true" spellcheck="false">
+        <tr><td>team 3</td><td class="num">21</td><td class="what">50 messages, raised the rate until the first error</td></tr>
+        <tr><td>team 9</td><td class="num">14</td><td class="what">same, but by the window in the afternoon</td></tr>
+        <tr><td>team 6</td><td class="num">12</td><td class="what">estimated, not measured</td></tr>
+        <tr><td>team 1</td><td class="num">31</td><td class="what">with a cardboard tube around the sensor</td></tr>
+      </tbody>
+    </table>
+    <div class="punch">same hardware. different rooms. different numbers.</div>
+    <aside class="notes">Live sammeln, in die Tabelle lässt sich hineintippen. Fragt nach der dritten Spalte, nicht nach der zweiten: Wie habt ihr gemessen? Ein geschätzter Wert ist kein Messwert, und wer mit Pappröhre gemessen hat, hat eine andere Strecke vermessen als der Rest. Diese Tabelle ist der Ausgangswert für alles Weitere heute.</aside>
+  </section>
+
+  <!-- ================= Teil 2: three levers ================= -->
+
+  <section class="slide part" data-part="three levers">
+    <aside class="notes">Jetzt die Frage, was man überhaupt drehen kann. Es sind genau drei Dinge.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawLevers" data-on-step="drawLevers">
+    <h2>three levers, and only three</h2>
+    <div class="figure" id="fig-levers"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span>
+    <div class="punch">a faster computer is not one of them.</div>
+    <aside class="notes">Dieselbe Formel wie in Sitzung 7, jetzt von der anderen Seite gelesen. Drei Größen, also drei Hebel. Mehr Bits je Symbol: kostet Sicherheitsabstand, denn die Bänder werden enger. Mehr Symbole je Sekunde: kostet Messfenster, und da liegt eure Grenze. Weniger Bits insgesamt: kostet ein paar Millisekunden Rechenzeit, sonst nichts, und das ist der Hebel, an den die wenigsten denken. Wie man das macht, ist das zweite Deck von heute; hier nur der Preis. Was nicht auf der Liste steht: ein schnellerer Rechner. Der Engpass ist die Strecke; euer Laptop wartet die meiste Zeit.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the same 20 bit/s, twice</h2>
+    <div class="figure" id="fig-same-rate"></div>
+    <div class="punch">the product decides. the two factors decide what breaks first.</div>
+    <aside class="notes">Zwei Teams, dieselbe Zahl, zwei völlig verschiedene Lagen. Für den Durchsatz zählt nur das Produkt aus Rate und Bits je Symbol. Sobald aber etwas kippt, kippt es bei den beiden aus verschiedenen Gründen: Team A rennt gegen das Messfenster, Team B gegen die Streuung. Wenn ihr euch mit einem anderen Team vergleicht, vergleicht deshalb nicht nur die Zahl, sondern auch, woran sie hängt.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">the third lever has its own deck</div>
+      <div class="lines">
+        <div>fewer bits in total: compression</div>
+        <div>costs milliseconds, not safety margin</div>
+        <div>works before the link, so it works on any link</div>
+      </div>
+      <div class="sidenote">next: <a href="https://docs.lifi-project.de/concepts/compression.html" target="_blank">compression</a></div>
+    </div>
+    <aside class="notes">Warum sich Kompression hier viel mehr lohnt als beim Kopieren einer Datei auf einen Stick: Die Strecke ist der Engpass. Rechenzeit habt ihr im Überfluss, Übertragungszeit nicht; ein paar Millisekunden Rechnen sparen Minuten Senden. Und weil das Verfahren vor der Strecke arbeitet, ist es der einzige Hebel, der bei jedem Aufbau gleich wirkt, egal ob euer Engpass das Fenster oder die Streuung ist. Wie man es macht, und wo es aufhört, ist das zweite Deck von heute.</aside>
+  </section>
+
+              <!-- ================= Teil 3: what it costs to be sure ================= -->
+
+  <section class="slide part" data-part="what it costs to be sure">
+    <aside class="notes">Der letzte Teil: was es kostet, sicher zu sein, dass etwas angekommen ist.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawThreeOnOne" data-on-step="drawThreeOnOne">
+    <h2>three levers, one file</h2>
+    <div class="figure" id="fig-three-on-one"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span>
+    <div class="punch">the levers are independent. that is why they multiply.</div>
+    <aside class="notes">16.000 Bit bei fünf Symbolen pro Sekunde und vier Farben: 27 Minuten. Acht Farben statt vier bringen 3 Bit je Symbol statt 2, also Faktor 1,5: 18 Minuten. Auf 60 Prozent komprimiert: 16 Minuten, also knapp besser, und das bei viel geringerem Risiko, denn Kompression kostet nur Rechenzeit, das größere Alphabet kostet Sicherheitsabstand. Beides zusammen: 11 Minuten. Die Hebel wirken unabhängig voneinander, deshalb multiplizieren sich ihre Wirkungen. Die 60 Prozent sind ein typischer Wert für Text; woher er kommt, zeigt das zweite Deck.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>every tenth one again</h2>
+    <div class="figure" id="fig-repeats"></div>
+    <div class="punch">nothing was lost. the link was busy anyway.</div>
+    <aside class="notes">Mit dem Rückkanal quittiert der Empfänger, und was verdorben ankommt, wird wiederholt. Jede zehnte Nachricht trifft es. Verloren geht dabei nichts, alles kommt an. Aber für zehn zugestellte Nachrichten sendet ihr elf, und damit bleiben 91 Prozent, nicht 90. Der Unterschied ist hier klein, weil die Fehlerquote klein ist. Rechnet es einmal mit jeder zweiten Nachricht: drei Sendungen für zwei Zustellungen, also zwei Drittel. Sobald eine Strecke wirklich schlecht wird, wird die Kurve steil.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>acknowledge each, or a block</h2>
+    <div class="figure" id="fig-acks"></div>
+    <div class="punch">how big a block? that depends on a number you have to measure.</div>
+    <aside class="notes">Jede Quittung ist eine eigene kleine Übertragung, und dazwischen steht die Strecke still, weil beide Seiten warten. Bei zehn bis fünfzig Bit pro Sekunde ist das kein kleiner Posten. Blockweise quittieren spart diese Lücken, aber ein einziger Fehler kostet dann den ganzen Block. Welcher Weg gewinnt, hängt an eurer Fehlerquote, und die habt ihr in Teil 1 gemessen. Das ist kein Richtig oder Falsch, sondern eine Entscheidung mit einer Zahl darunter.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">throughput is not delay</div>
+      <div class="sidenote">20 bit/s does not mean a one-byte command is there after 0.4 seconds. around it sit the frame, the recognising and the reaction.</div>
+    </div>
+    <aside class="notes">Der Unterschied, der auch außerhalb dieses Kurses am häufigsten verwechselt wird. Durchsatz sagt, wie viel im laufenden Strom ankommt. Verzögerung sagt, wie lange das erste Zeichen braucht. Eine dicke Leitung kann träge reagieren, eine dünne flink sein. Bei euch kommen zu den acht Nutzsymbolen noch neun Symbole Rahmen, das Erkennen der Präambel und die Reaktionszeit des Empfängers. Ein einzelner kurzer Befehl ist deshalb um ein Vielfaches langsamer, als die Rate vermuten lässt.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>today</h2>
+    <div class="content">
+      <div class="lines">
+        <div>1  measure your own net rate, and write down how</div>
+        <div>2  find the lever that is cheapest on your setup, with the number that says so</div>
+        <div>3  pick a block size for your acknowledgements, with a reason</div>
+      </div>
+    </div>
+    <aside class="notes">Der Werkstattauftrag. Der zweite Punkt ist bei jedem Team anders, und das ist der Punkt: Wer nah am Messfenster ist, hat mit dem Alphabet noch Luft; wer nah an der Streuung ist, umgekehrt. Der dritte zwingt dazu, die gemessene Fehlerquote wirklich zu benutzen, statt eine Zahl zu raten.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/hourglass.png" alt="">
+    <div class="photo-text narrow">the neck decides<br>how much gets through.<br>you decide<br>what you send.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Die Sanduhr vom Anfang, jetzt als Antwort. Die Engstelle bestimmt, wie viel pro Sekunde durchgeht, und daran ändert kein Programm der Welt etwas. Was durchgeht, bestimmt ihr: Marken, Rahmen, Wiederholungen, und im zweiten Deck die Frage, ob es überhaupt so viele Bits sein müssen.</aside>
+  </section>
+
+  </div>
+
+<!-- deck.js vor stagekit.js: der erste Aufbau ruft die data-on-show-Funktionen
+     auf, und die gibt es sonst noch nicht. -->
+<script src="../stagekit/draw.js?v=20260914b"></script>
+<script src="deck.js?v=20260914b"></script>
+<script src="../stagekit/stagekit.js?v=20260914b"></script>
+</body>
+</html>

@@ -250,73 +250,73 @@
   {
     "objectID": "concepts/throughput-and-limits.html",
     "href": "concepts/throughput-and-limits.html",
-    "title": "Durchsatz und Grenzen",
+    "title": "Throughput and Limits",
     "section": "",
-    "text": "Der Durchsatz beschreibt, wie viele nutzbare Bits pro Sekunde ankommen. Er hängt von der Symbolrate, dem Informationsgehalt eines Symbols und dem Aufwand für Zuverlässigkeit ab. Seine Grenze kann für den konkreten Aufbau nur durch Messungen bestimmt werden.\n\n\n\nWovon hängt ab, wie schnell eine Übertragung ist?\nWarum kann man nicht einfach schneller senden?\nWieso kostet Zuverlässigkeit Geschwindigkeit?\nWo liegt die Grenze bei unserem Aufbau, und woher weiß man das?\n\nDieses Konzept müsst ihr für Challenge 4 verstanden haben, damit ihr dort erfolgreich seid.",
+    "text": "Throughput says how many usable bits arrive per second. It comes out of two numbers, the symbol rate and the bits carried by one symbol, and everything you spend on being understood gets subtracted from it: markers, frames, repeats. There are exactly three levers, they act independently of one another, and each has a different price. Where your own limit sits cannot be read off a datasheet and cannot be borrowed from another team. It is a measurement on your own setup, and it is the one number the whole of Challenge 4 is paid in.\nIn this chapter, we address the following questions:\n\nWhat does the speed of a transmission actually depend on?\nWhy can you not simply send faster?\nWhy do the deductions multiply instead of adding up?\nWhy does reliability cost speed?\nWhere is the limit of your setup, and how do you know?\n\nYou need this concept for Challenge 4. The third lever, sending fewer bits in the first place, is the neighbouring concept Compression.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Durchsatz und Grenzen"
+      "Throughput and Limits"
     ]
   },
   {
-    "objectID": "concepts/throughput-and-limits.html#zusammenfassung",
-    "href": "concepts/throughput-and-limits.html#zusammenfassung",
-    "title": "Durchsatz und Grenzen",
+    "objectID": "concepts/throughput-and-limits.html#summary",
+    "href": "concepts/throughput-and-limits.html#summary",
+    "title": "Throughput and Limits",
     "section": "",
-    "text": "Der Durchsatz beschreibt, wie viele nutzbare Bits pro Sekunde ankommen. Er hängt von der Symbolrate, dem Informationsgehalt eines Symbols und dem Aufwand für Zuverlässigkeit ab. Seine Grenze kann für den konkreten Aufbau nur durch Messungen bestimmt werden.\n\n\n\nWovon hängt ab, wie schnell eine Übertragung ist?\nWarum kann man nicht einfach schneller senden?\nWieso kostet Zuverlässigkeit Geschwindigkeit?\nWo liegt die Grenze bei unserem Aufbau, und woher weiß man das?\n\nDieses Konzept müsst ihr für Challenge 4 verstanden haben, damit ihr dort erfolgreich seid.",
+    "text": "Throughput says how many usable bits arrive per second. It comes out of two numbers, the symbol rate and the bits carried by one symbol, and everything you spend on being understood gets subtracted from it: markers, frames, repeats. There are exactly three levers, they act independently of one another, and each has a different price. Where your own limit sits cannot be read off a datasheet and cannot be borrowed from another team. It is a measurement on your own setup, and it is the one number the whole of Challenge 4 is paid in.\nIn this chapter, we address the following questions:\n\nWhat does the speed of a transmission actually depend on?\nWhy can you not simply send faster?\nWhy do the deductions multiply instead of adding up?\nWhy does reliability cost speed?\nWhere is the limit of your setup, and how do you know?\n\nYou need this concept for Challenge 4. The third lever, sending fewer bits in the first place, is the neighbouring concept Compression.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Durchsatz und Grenzen"
+      "Throughput and Limits"
     ]
   },
   {
-    "objectID": "concepts/throughput-and-limits.html#erläuterung-des-konzepts",
-    "href": "concepts/throughput-and-limits.html#erläuterung-des-konzepts",
-    "title": "Durchsatz und Grenzen",
-    "section": "Erläuterung des Konzepts",
-    "text": "Erläuterung des Konzepts\nDurchsatz misst, wie viele Bits pro Sekunde wirklich ankommen. Er ergibt sich aus zwei Größen, und keine davon lässt sich beliebig steigern. Jeder Übertragungsweg hat eine Obergrenze, die sich aus seinen physikalischen Eigenschaften ergibt.",
+    "objectID": "concepts/throughput-and-limits.html#explanation",
+    "href": "concepts/throughput-and-limits.html#explanation",
+    "title": "Throughput and Limits",
+    "section": "Explanation",
+    "text": "Explanation\nTwo kilobytes. Twenty-seven minutes. That is not an invented number, it is yours: 2 KB are 16,000 bits, and with four colours at five symbols per second you get 10 bits in a second. The calculation was already on a slide back in session 7, but you only really understand it once you are sitting next to it, waiting. And that calculation does not yet contain a single symbol of framing or a single repeat.\n\nGross is not net\n\n\n\n\n\n\nFigure 1: Above, what the link would carry if every symbol were payload. Below, what is left after markers, preamble, end marker and repeats.\n\n\n\nNotice how this comes about: not a single bit was lost. Everything arrived correctly. More than half of it was administration. Anyone talking about throughput has to say whether they mean gross or net, and the two can differ by a factor of two without anything being broken.\n\n\nThe deductions multiply\n\n\n\n\n\n\nFigure 2: 24 bit/s, then three quarters after the markers, then 60 per cent of that after the frame. In red the tempting wrong arithmetic.\n\n\n\nWork it through. 24 bit/s if everything were payload. Every fourth symbol is a marker, so three quarters remain: 18. Of those, 40 per cent go to preamble and end marker, because you are sending many short messages: 10.8 remain.\nAnd here is the trap: 25 per cent plus 40 per cent is not 65 per cent lost. The second deduction only applies to what the first one left over. Shares that take effect one after another are multiplied, not added. The difference between 10.8 and 8.4 is not academic; it decides whether your file needs twenty-five minutes or thirty-two.\n\n\nThe bottleneck decides\nThe obvious thought is that sending twice as fast gives twice the throughput. It does, right up to the point where it does not.\n\n\n\n\n\n\nFigure 3: On the left a symbol lasts 100 ms and the 50 ms window fits inside it. On the right the rate is doubled, the symbol is 50 ms, and the window reaches across a boundary.\n\n\n\nOn paper the right-hand side manages 40 bit/s. In reality nothing readable arrives at all, because every reading now contains a colour change. Pulling a lever that is not the bottleneck gains you nothing; pulling it past the bottleneck makes things worse. The order is: shorten the measurement window first, then raise the rate, then check whether your scatter still allows it.\n\n\nYour limit is a measurement\nThere are three things your limit is not. It is not the sensor’s datasheet: that describes the component and knows nothing about your distance, your ambient light or your optics. It is not the best team’s number: that holds for their setup, and the differences between setups are exactly what the ranking is made of. And it is not the arithmetic “rate times bits per symbol”: that says what comes out for values you choose, not which values your link supports.\nThere is only one way to it. Raise the rate step by step, count the errors, record the last error-free setting, and write down how you measured. That last part is the one people skip, and it is what makes the number worth anything the next time you rebuild.\n\n\nThree levers, and only three\n\n\n\n\n\n\nFigure 4: The formula from session 7, read from the other side: three quantities, three levers, three different prices.\n\n\n\nTime is \\(t = n / (r \\cdot b)\\), with \\(n\\) the bits to send, \\(r\\) the symbols per second and \\(b\\) the bits per symbol. Three quantities, so three levers.\nMore bits per symbol costs safety margin, because the bands get narrower. More symbols per second costs measurement window, and that is where most teams find their limit. Fewer bits in total costs a few milliseconds of computing and nothing else, which is why it is often the cheapest, and it is the subject of Compression.\nWhat is not on that list is a faster computer. The bottleneck is the link; at ten symbols per second your laptop spends most of its time waiting.\n\n\n\n\n\n\nFigure 5: Two teams, the same 20 bit/s, two completely different situations.\n\n\n\nFor throughput only the product counts, which is why 10 symbols with 2 bits and 5 symbols with 4 bits come out the same. But when something breaks, the two break for different reasons: one team is running against the measurement window, the other against the scatter. When you compare yourself with another team, compare not only the number but what it hangs on.\n\n\nWhat reliability costs\n\n\n\n\n\n\nFigure 6: Ten delivered messages need eleven transmissions, so 91 per cent is left, not 90.\n\n\n\nWith the back channel the receiver acknowledges, and anything that arrives damaged is repeated. Nothing is lost, everything eventually arrives. But for ten deliveries you send eleven, and that leaves 91 per cent. The difference from the obvious 90 is small here because the error rate is small. Do the same arithmetic with every second message: three transmissions for two deliveries, so two thirds. The curve gets steep quickly once a link is genuinely bad.\n\n\n\n\n\n\nFigure 7: Acknowledging every message leaves many small gaps; acknowledging a block of ten leaves one, but an error costs the whole block.\n\n\n\nEvery acknowledgement is a small transmission of its own, and while both sides wait, the link stands still. Acknowledging per block saves those gaps but makes a single error expensive. Which way wins depends on your error rate, and that is a number you measured. This is a trade-off with a measurement underneath it, not a matter of taste.\n\n\nThroughput is not delay\nOne last distinction, and it is the one most often confused outside this course as well. Throughput says how much arrives in a running stream. Delay says how long the first thing takes. A fat line can react sluggishly and a thin one can be quick.\n“Our link does 20 bit/s, so a one-byte command is there after 0.4 seconds” is wrong twice over. Around those eight payload symbols sit nine symbols of frame; on top of that come recognising the preamble and the receiver’s reaction time. A single short command is slower by a large factor than the rate suggests.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Durchsatz und Grenzen"
+      "Throughput and Limits"
     ]
   },
   {
-    "objectID": "concepts/throughput-and-limits.html#folien",
-    "href": "concepts/throughput-and-limits.html#folien",
-    "title": "Durchsatz und Grenzen",
-    "section": "Folien",
-    "text": "Folien",
+    "objectID": "concepts/throughput-and-limits.html#slides",
+    "href": "concepts/throughput-and-limits.html#slides",
+    "title": "Throughput and Limits",
+    "section": "Slides",
+    "text": "Slides\nThe slides for this concept, right here. They are the first deck of session 13; the second, Compression, takes the third lever apart.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Durchsatz und Grenzen"
+      "Throughput and Limits"
     ]
   },
   {
-    "objectID": "concepts/throughput-and-limits.html#fragen-üben",
-    "href": "concepts/throughput-and-limits.html#fragen-üben",
-    "title": "Durchsatz und Grenzen",
-    "section": "Fragen üben",
-    "text": "Fragen üben\nÜbungsfragen zu diesem Konzept folgen, sobald der zugehörige Input steht.",
+    "objectID": "concepts/throughput-and-limits.html#practice-questions",
+    "href": "concepts/throughput-and-limits.html#practice-questions",
+    "title": "Throughput and Limits",
+    "section": "Practice questions",
+    "text": "Practice questions\nTry questions in the exam format here, with the answer and its reasoning shown right away.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Durchsatz und Grenzen"
+      "Throughput and Limits"
     ]
   },
   {
-    "objectID": "concepts/throughput-and-limits.html#literatur",
-    "href": "concepts/throughput-and-limits.html#literatur",
-    "title": "Durchsatz und Grenzen",
-    "section": "Literatur",
-    "text": "Literatur",
+    "objectID": "concepts/throughput-and-limits.html#further-reading",
+    "href": "concepts/throughput-and-limits.html#further-reading",
+    "title": "Throughput and Limits",
+    "section": "Further reading",
+    "text": "Further reading\n\nClaude E. Shannon: A Mathematical Theory of Communication. Bell System Technical Journal 27, 1948. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x. The paper that put an upper bound on all of this. Section 1 is readable; the rest is there for when you want to know how far the idea goes.\nAndrew S. Tanenbaum, Nick Feamster, David Wetherall: Computer Networks. Pearson, 6th edition 2021. Chapter 3 works through acknowledgements, window sizes and repeats properly, with the arithmetic this page only sketches.\nJeff Dean’s “Latency Numbers Every Programmer Should Know”, widely reproduced online. A list of durations from a cache access to a packet crossing the Atlantic. Worth reading once for the sense of scale: your light link sits at the very slow end, and that is what makes its costs visible.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
-      "Durchsatz und Grenzen"
+      "Throughput and Limits"
     ]
   },
   {
@@ -706,7 +706,7 @@
     "href": "concepts/index.html#all-concepts",
     "title": "Concepts",
     "section": "All concepts",
-    "text": "All concepts\nThe order inside each group is the order in which the concepts appear in the semester; the last column says where in the project you need them.\nSolving problems (how you think and work, needed everywhere)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nCutting Problems\nC0 to C4\n\n\nProblem Solving with Computers\nC0 to C4\n\n\nAlgorithms and Programs\nfrom C0, central in C1 and C2\n\n\nMeasuring and Experimenting\nfrom C1\n\n\nAbstraction and Layers\nfrom C2\n\n\n\nRepresenting information (making bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nAnalog and Digital\nC1\n\n\nSymbols and Information\nC1\n\n\nZahlensysteme\nC2\n\n\nCode Systems\nC2\n\n\n\nStoring information (storing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nMemory\nC4\n\n\nDateien\nC4\n\n\n\nTransferring information (sending bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nSignal and Noise\nC1\n\n\nSampling and Synchronization\nC2\n\n\nProtocols\nC2 and C3\n\n\nFehler und Redundanz\nC4\n\n\nInformation und ihr Träger\nC4\n\n\nDurchsatz und Grenzen\nC4\n\n\n\nProcessing information (processing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nLogic and Arithmetic\nC4, first contact in C2\n\n\nKompression\nC4\n\n\nVerschlüsselung\nC4, optional",
+    "text": "All concepts\nThe order inside each group is the order in which the concepts appear in the semester; the last column says where in the project you need them.\nSolving problems (how you think and work, needed everywhere)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nCutting Problems\nC0 to C4\n\n\nProblem Solving with Computers\nC0 to C4\n\n\nAlgorithms and Programs\nfrom C0, central in C1 and C2\n\n\nMeasuring and Experimenting\nfrom C1\n\n\nAbstraction and Layers\nfrom C2\n\n\n\nRepresenting information (making bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nAnalog and Digital\nC1\n\n\nSymbols and Information\nC1\n\n\nZahlensysteme\nC2\n\n\nCode Systems\nC2\n\n\n\nStoring information (storing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nMemory\nC4\n\n\nDateien\nC4\n\n\n\nTransferring information (sending bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nSignal and Noise\nC1\n\n\nSampling and Synchronization\nC2\n\n\nProtocols\nC2 and C3\n\n\nFehler und Redundanz\nC4\n\n\nInformation und ihr Träger\nC4\n\n\nThroughput and Limits\nC4\n\n\n\nProcessing information (processing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nLogic and Arithmetic\nC4, first contact in C2\n\n\nCompression\nC4\n\n\nVerschlüsselung\nC4, optional",
     "crumbs": [
       "Concepts",
       "The Map"
@@ -717,7 +717,7 @@
     "href": "concepts/index.html#by-challenge",
     "title": "Concepts",
     "section": "By challenge",
-    "text": "By challenge\nIf you are working on a particular challenge right now, these are the pages that go with it.\nChallenge 0. Problem Solving with Computers and Algorithms and Programs as soon as you write your first lines of your own. Cutting Problems starts here as well.\nChallenge 1. Analog and Digital, Symbols and Information and Signal and Noise belong together and answer, between them, why the size of your alphabet is limited. Add Measuring and Experimenting, because this is the first time you need a proper series of measurements, and Algorithms and Programs, because your recognition rule is the first algorithm you invent yourselves.\nChallenge 2. Code Systems for the way from a letter to a symbol, Sampling and Synchronization for the question why it falls apart at higher speed. Add the first part of Protocols, the simple agreement.\nChallenge 3. Protocols in full: framing, synchronisation, and how complete an agreement has to be.\nChallenge 4. Logic and Arithmetic first, because checksums and encryption both build on it. Then Fehler und Redundanz, Memory and Dateien for what travels through the air as a whole for the first time, Kompression and Durchsatz und Grenzen. If you like, add Verschlüsselung.\nLooking back. Abstraction and Layers is worth a second look at the end, once your finished system is in front of you.",
+    "text": "By challenge\nIf you are working on a particular challenge right now, these are the pages that go with it.\nChallenge 0. Problem Solving with Computers and Algorithms and Programs as soon as you write your first lines of your own. Cutting Problems starts here as well.\nChallenge 1. Analog and Digital, Symbols and Information and Signal and Noise belong together and answer, between them, why the size of your alphabet is limited. Add Measuring and Experimenting, because this is the first time you need a proper series of measurements, and Algorithms and Programs, because your recognition rule is the first algorithm you invent yourselves.\nChallenge 2. Code Systems for the way from a letter to a symbol, Sampling and Synchronization for the question why it falls apart at higher speed. Add the first part of Protocols, the simple agreement.\nChallenge 3. Protocols in full: framing, synchronisation, and how complete an agreement has to be.\nChallenge 4. Logic and Arithmetic first, because checksums and encryption both build on it. Then Fehler und Redundanz, Memory and Dateien for what travels through the air as a whole for the first time, Compression and Throughput and Limits. If you like, add Verschlüsselung.\nLooking back. Abstraction and Layers is worth a second look at the end, once your finished system is in front of you.",
     "crumbs": [
       "Concepts",
       "The Map"
@@ -798,73 +798,73 @@
   {
     "objectID": "concepts/compression.html",
     "href": "concepts/compression.html",
-    "title": "Kompression",
+    "title": "Compression",
     "section": "",
-    "text": "Kompression stellt dieselbe Information mit weniger Bits dar, indem sie Wiederholungen und andere Muster ausnutzt. Wie stark Daten schrumpfen können, hängt von ihrem Inhalt und davon ab, ob ein Verlust von Einzelheiten erlaubt ist.\n\n\n\nWarum lassen sich Daten kleiner machen, ohne dass etwas fehlt?\nWas macht eine Datei überhaupt komprimierbar?\nWarum lassen sich manche Dateien kaum verkleinern?\nWas ist der Unterschied zwischen verlustfreier und verlustbehafteter Kompression?\n\nDieses Konzept müsst ihr für Challenge 4 verstanden haben, denn dort entscheidet es mit über euren Durchsatz.",
+    "text": "Compression represents the same information with fewer bits. The usual way of writing data gives space away: things repeat, and some symbols turn up far more often than others. Every packer you have ever used, ZIP included, does exactly two things about that: it says a repeated stretch once and then only points back to it, and it gives the frequent symbols the short codes. Unpack, and the same bits come back, one for one. That kind of compression has a hard limit, though, and a photo sits close to it. To get a photo into the 2 KB payload of the final you have to drop detail, and what you drop does not come back. Which of the two you may use is a question about the task, not about the tool.\nIn this chapter, we address the following questions:\n\nWhy can data be made smaller without anything going missing?\nWhat are the two tricks inside a ZIP file, and how does each of them work?\nWhy do some files barely shrink, and why does no method shrink everything?\nHow does a photo get from 192 KB to 2 KB, and what is the price?\nWhat does the receiver have to know in order to unpack what you sent?\n\nYou need this concept for Challenge 4. It is the third of the three levers on throughput, and the one that costs the least.",
     "crumbs": [
       "Concepts",
       "Processing Information",
-      "Kompression"
+      "Compression"
     ]
   },
   {
-    "objectID": "concepts/compression.html#zusammenfassung",
-    "href": "concepts/compression.html#zusammenfassung",
-    "title": "Kompression",
+    "objectID": "concepts/compression.html#summary",
+    "href": "concepts/compression.html#summary",
+    "title": "Compression",
     "section": "",
-    "text": "Kompression stellt dieselbe Information mit weniger Bits dar, indem sie Wiederholungen und andere Muster ausnutzt. Wie stark Daten schrumpfen können, hängt von ihrem Inhalt und davon ab, ob ein Verlust von Einzelheiten erlaubt ist.\n\n\n\nWarum lassen sich Daten kleiner machen, ohne dass etwas fehlt?\nWas macht eine Datei überhaupt komprimierbar?\nWarum lassen sich manche Dateien kaum verkleinern?\nWas ist der Unterschied zwischen verlustfreier und verlustbehafteter Kompression?\n\nDieses Konzept müsst ihr für Challenge 4 verstanden haben, denn dort entscheidet es mit über euren Durchsatz.",
+    "text": "Compression represents the same information with fewer bits. The usual way of writing data gives space away: things repeat, and some symbols turn up far more often than others. Every packer you have ever used, ZIP included, does exactly two things about that: it says a repeated stretch once and then only points back to it, and it gives the frequent symbols the short codes. Unpack, and the same bits come back, one for one. That kind of compression has a hard limit, though, and a photo sits close to it. To get a photo into the 2 KB payload of the final you have to drop detail, and what you drop does not come back. Which of the two you may use is a question about the task, not about the tool.\nIn this chapter, we address the following questions:\n\nWhy can data be made smaller without anything going missing?\nWhat are the two tricks inside a ZIP file, and how does each of them work?\nWhy do some files barely shrink, and why does no method shrink everything?\nHow does a photo get from 192 KB to 2 KB, and what is the price?\nWhat does the receiver have to know in order to unpack what you sent?\n\nYou need this concept for Challenge 4. It is the third of the three levers on throughput, and the one that costs the least.",
     "crumbs": [
       "Concepts",
       "Processing Information",
-      "Kompression"
+      "Compression"
     ]
   },
   {
-    "objectID": "concepts/compression.html#erläuterung-des-konzepts",
-    "href": "concepts/compression.html#erläuterung-des-konzepts",
-    "title": "Kompression",
-    "section": "Erläuterung des Konzepts",
-    "text": "Erläuterung des Konzepts\nDie schnellste Übertragung ist die, bei der man weniger senden muss. Viele Daten enthalten Wiederholungen und Muster, und wer die erkennt, kann dieselbe Bedeutung mit weniger Bits ausdrücken.",
+    "objectID": "concepts/compression.html#explanation",
+    "href": "concepts/compression.html#explanation",
+    "title": "Compression",
+    "section": "Explanation",
+    "text": "Explanation\nThe fastest transmission is the one where you have less to send. That sounds like a trick, and the first time you pack a text file and it comes back at half the size with every character intact, it feels like one. A baling press is the honest picture: loose cardboard goes in, the same cardboard comes out on a fraction of the space, and nothing is gone but the air in between. The question is where the air sits in a file. And the second, less comfortable question is what you do once there is none left.\n\nWhy anything compresses at all\n\n\n\n\n\n\nFigure 1: The same nine characters three times in one sentence, and German text that uses some letters constantly and others almost never.\n\n\n\nNothing was left out when your text file shrank. What happened is that the usual notation gives space away. “die sonne” stands there three times. Some letters turn up constantly and others almost never. After a q there is almost always a u. Every one of those regularities can be described more briefly, and the information survives it untouched. The information stays; the description gets shorter.\nYou have met this idea twice already, without the name.\n\n\n\n\n\n\nFigure 2: Morse gives the frequent e a single dot; fixed-length codes give every letter three bits, so the e pays as much as the q.\n\n\n\nIn Symbols and Information you saw that Morse gives the most frequent letter the shortest code, a single dot for the e, while a rare q gets four signs. In Code Systems you saw the price of fixed length: it is easy to read, but the e pays as much as the q. What was left open there was a rule for handing out the short codes. That rule is the second trick below.\n\n\nTrick one: point back\n\n\n\n\n\n\nFigure 3: The second and third “die sonne” replaced by a pointer: 22 characters back, 9 characters long.\n\n\n\nThe second “die sonne” does not need writing out again. “22 characters back, 9 long” is enough of an instruction, and the third one is “21 back, 9 long”. Out of 63 characters come 45 plus two pointers, and a pointer costs about as much as two characters. That, in essence, is the first thing every packer does: it keeps the last few thousand characters in mind, and when something comes round again it writes only where it was and how long it is. Lempel and Ziv described it in 1977, and it sits inside every ZIP.\nThe simplest form of the same idea works on pictures. Walk along a row, count how many equal points come in a row, and write one byte per run: one bit for the colour, seven for the length.\n\n\n\n\n\n\nFigure 4: An 8 by 8 picture with areas of one colour: six runs, six bytes instead of eight.\n\n\n\nNot the world, but the idea carries: the larger the areas, the more it saves, and you could program this in an afternoon. Now the same method on a different picture.\n\n\n\n\n\n\nFigure 5: A chessboard: every point differs from its neighbour, so 64 runs of length one, 64 bytes instead of eight.\n\n\n\nEight times bigger. To your eye a chessboard is obviously a pattern; to this method it is not, because it only ever asks one question, how many equal points come next. A method only ever finds the regularity it is looking for. That is why serious packers check their own output and fall back to the raw data when they have made things worse.\n\n\nTrick two: count first\nTake a magic word, because compression feels like magic until you see the trick.\n\n\n\n\n\n\nFigure 6: abracadabra: eleven letters, five different ones, and with a fixed code of three bits each the word costs 33 bits.\n\n\n\nabracadabra has eleven letters and five different ones: a five times, b and r twice each, c and d once. With a fixed code, as in Code Systems, every letter needs three bits, so the word needs 33. The a pays as much as the d, although it appears five times and the d once. That is where the air is.\nDavid Huffman found the rule in 1951, as a student at MIT. His professor offered a choice between a final exam and a term paper; the paper was “find the shortest code”, and Huffman found it shortly before he was going to give up and study for the exam instead. The rule is a single sentence: take the two rarest symbols, join them into a node whose number is their sum, and repeat until one node is left.\n\n\n\n\n\n\nFigure 7: The tree for abracadabra: c and d become a 2, b and r a 4, 2 and 4 a 6, and a and 6 the root, 11.\n\n\n\nStep by step: c and d, the ones, become a 2. Then b and r, the twos, become a 4. Then 2 and 4 become a 6. Finally a and 6 become the root, 11, as many letters as the word has. What occurs often stays close to the root; what occurs rarely drifts to the bottom.\n\n\n\n\n\n\nFigure 8: Left 0, right 1: a = 0, b = 100, r = 101, c = 110, d = 111, and the word costs 23 bits instead of 33.\n\n\n\nThe path from the root to a letter is its code: 0 at every left branch, 1 at every right one. The a hangs directly on the root and gets a single bit. The others get three. Paid out: five times one bit for the a, three each for the other six letters, 5 + 18 = 23 bits instead of 33, nearly a third less. Reading it back gives the same word letter for letter. All the saving comes from the a; the other four still cost three bits, so nothing is lost.\n\n\n\n\n\n\nFigure 9: Reading 0100101 from the left: 0 is a complete code, then 100, then 101. Letters sit on leaves only, so no code is the beginning of another.\n\n\n\nHere is the worry from Code Systems: codes of different lengths, no separators, how does the receiver know where one letter ends? The tree answers that as a side effect. Letters sit only on leaves, so no code can be the beginning of another. Read from the left and start over at every leaf, and you never fall into the trap: 0 is complete, an a; 100 is complete, a b; 101, an r. The counterexample that went wrong in Code Systems was a = 0, b = 01, where 01 has two readings because the a would not be a leaf but a stop on the way to the b. In a Huffman tree that cannot happen.\n\n\nAnd that is a ZIP\n\n\n\n\n\n\nFigure 10: A ZIP is the two tricks in a row, and five measured results: a log file to 19 per cent, text to 45, the raw photo to 68, the PNG to 100, random bytes to 101.\n\n\n\nThe thing you have clicked on since school does exactly the two tricks above, one after the other: point back first, then short codes for the frequent. The pair is called Deflate, and PNG, the picture format, is the same pair with a picture in front. The five bars are real measurements, made with Python’s zipfile at level 9 on 13 September 2026. A log file of 1,200 near-identical lines shrinks to 19 per cent, because every line has almost been there before. A text to 45 per cent. The photo as raw pixels to 68 per cent, and that is about all the air a photo has. The photo as a PNG stays at 100 per cent, because it already is one. And random bytes grow, to 101 per cent.\nThat last number is not bad luck, and the reason is one of the nicest arguments of the whole semester because it has nothing to do with technology.\n\n\n\n\n\n\nFigure 11: Eight files of three bits, seven files shorter than three bits. Two of the eight have to share.\n\n\n\nSuppose somebody promises a method that makes every file at least one bit smaller, losslessly. With three bits you can write eight different files. With fewer than three bits you can write seven. Put eight things into seven drawers and two of them end up in the same drawer, and then nobody can tell on unpacking which of the two was meant. No amount of computing power helps against that, because it is an argument from counting. Every lossless method makes some files smaller and others necessarily bigger. When you see a claim to the contrary, you are looking at either a misunderstanding or a sales pitch.\n\n\nThe picture, honestly\n\n\n\n\n\n\nFigure 12: The parrot: 196,608 bytes raw, 93,107 as a PNG, and a payload of 2,048. At 10 bit/s that is 44 hours, 21 hours, and 27 minutes.\n\n\n\nTake the parrot you know from Processing. Raw, that is 256 by 256 points times three bytes, 196,608 bytes. As a PNG, so packed losslessly, still 93,107. At ten bits per second that is a day, or a morning. The payload in the final is 2,048 bytes, the sliver at the bottom. The best lossless packer in the world does not get you anywhere near, and after the counting argument you know that this is no shortcoming of the packer: a photo has little air. If you want two kilobytes anyway, you have to drop something.\n\n  png · 93,107 bytes · lossless\n  jpg · 10,587 bytes · quality 75\n  jpg · 3,081 bytes · quality 10\n  jpg · 2,032 bytes · 128 × 128 points, quality 25\n\nFour real files, shown at the same size. Between the first and the second lies a factor of nine, and from two metres away you see no difference. That is what JPG does: it drops detail an eye hardly misses, fine colour differences above all, and keeps the edges in brightness. On the third you begin to see it. The fourth has half as many points per side and is under two kilobytes. It is a parrot. It is not the same parrot.\nThere are two roads to two kilobytes, and they are the two cuts of digitising seen from the other side. You can keep all 256 by 256 points and make each of them coarse: quality 1, 1,925 bytes, and you can see the blocks. Or you can throw away three quarters of the points and keep the rest clean: 128 by 128 at quality 25, 2,032 bytes. Fewer points, or coarser points. Which road is better depends on the picture and on the purpose, and that is your decision, not the format’s.\n\n\nA one-way street\nThat is the one difference which decides everything. With a ZIP, unpacking is the reverse of packing, bit for bit: afterwards you hold the original. With a JPG there is no reverse. What is gone is gone, and you hold something that looks like the original. The two kilobytes contain everything the receiver will ever learn about this picture; the other 91 vanished when packing, they are not hidden anywhere. Edit a photo ten times and save it as a JPG each time, and you lose ten times.\nLossy methods are not unreliable. They reliably do something else. So the question is not which method is better but what is owed. Must exactly this file arrive, as in the final, where the checksum decides? Then lossy is out. Must a presentable picture arrive? Then it is your strongest lever by a distance, stronger than any alphabet. The task decides, not the tool, and you settle that before you spend an hour optimising.\n\n\nThe receiver has to know the method\nOne last thing, and it belongs to Protocols as much as here. Packed data does not explain itself. It is a notation, and whoever does not know the notation reads nonsense, even when every single bit arrived correctly.\nIf your partner team’s receiver produces garbage although the transmission was clean, this is the first thing to check. Which method did you use, with which settings? That belongs in your specification, right next to the preamble and the character code. It is the same lesson as with Code Systems: the same bits, two tables, two meanings.",
     "crumbs": [
       "Concepts",
       "Processing Information",
-      "Kompression"
+      "Compression"
     ]
   },
   {
-    "objectID": "concepts/compression.html#folien",
-    "href": "concepts/compression.html#folien",
-    "title": "Kompression",
-    "section": "Folien",
-    "text": "Folien",
+    "objectID": "concepts/compression.html#slides",
+    "href": "concepts/compression.html#slides",
+    "title": "Compression",
+    "section": "Slides",
+    "text": "Slides\nThe slides for this concept, right here. They are the second deck of session 13; the first, on Throughput and Limits, places compression as the third of three levers.",
     "crumbs": [
       "Concepts",
       "Processing Information",
-      "Kompression"
+      "Compression"
     ]
   },
   {
-    "objectID": "concepts/compression.html#fragen-üben",
-    "href": "concepts/compression.html#fragen-üben",
-    "title": "Kompression",
-    "section": "Fragen üben",
-    "text": "Fragen üben\nÜbungsfragen zu diesem Konzept folgen, sobald der zugehörige Input steht.",
+    "objectID": "concepts/compression.html#practice-questions",
+    "href": "concepts/compression.html#practice-questions",
+    "title": "Compression",
+    "section": "Practice questions",
+    "text": "Practice questions\nTry questions in the exam format here, with the answer and its reasoning shown right away.",
     "crumbs": [
       "Concepts",
       "Processing Information",
-      "Kompression"
+      "Compression"
     ]
   },
   {
-    "objectID": "concepts/compression.html#literatur",
-    "href": "concepts/compression.html#literatur",
-    "title": "Kompression",
-    "section": "Literatur",
-    "text": "Literatur",
+    "objectID": "concepts/compression.html#further-reading",
+    "href": "concepts/compression.html#further-reading",
+    "title": "Compression",
+    "section": "Further reading",
+    "text": "Further reading\n\nDavid A. Huffman: A Method for the Construction of Minimum-Redundancy Codes. Proceedings of the IRE 40 (9), 1952. https://doi.org/10.1109/JRPROC.1952.273898. Four pages, and the tree on this page is in them. Readable once you have built one yourself.\nP. Deutsch: DEFLATE Compressed Data Format Specification version 1.3. RFC 1951, 1996. https://www.rfc-editor.org/rfc/rfc1951. The exact format inside every ZIP and PNG: pointers back, then Huffman codes. Section 1.1 says in one paragraph what this page says in two.\nCharles Petzold: Code. The Hidden Language of Computer Hardware and Software. Microsoft Press, 2nd edition 2022. Chapter 8 builds Morse code from letter frequencies, which is the same idea as a packer’s: what occurs often gets a short code.\nDavid Salomon: Data Compression. The Complete Reference. Springer, 4th edition 2007. Far more than you need, but chapter 1 states the counting argument properly and chapter 2 walks through run-length encoding and its relatives.\nThe zlib FAQ, https://www.zlib.net/zlib_faq.html, question 15: “Can zlib compress already compressed data?” A short, dry answer from the people who wrote the thing, and it says the same as this page.",
     "crumbs": [
       "Concepts",
       "Processing Information",
-      "Kompression"
+      "Compression"
     ]
   },
   {

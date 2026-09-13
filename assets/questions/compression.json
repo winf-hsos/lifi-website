@@ -1,0 +1,759 @@
+{
+ "konzept": "compression",
+ "fragen": [
+  {
+   "id": "cp-001",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr packt eine Textdatei und sie wird halb so groß. Beim Entpacken kommt\nZeichen für Zeichen derselbe Text heraus. Wie kann das sein?",
+    "en": "You pack a text file and it becomes half the size. When you unpack it, the\nsame text comes out, character for character. How is that possible?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Unwichtige Einzelheiten werden weggelassen; bei Text fällt das nur niemandem auf.",
+      "en": "Unimportant details are dropped; with text nobody notices."
+     },
+     "begruendung": {
+      "de": "Das beschreibt verlustbehaftete Kompression, und die gibt es, etwa bei Fotos und Musik. Hier aber kommt Zeichen für Zeichen dasselbe heraus, also ist nichts weggelassen worden. Beides sind verschiedene Verfahren mit verschiedenen Einsatzgebieten.",
+      "en": "That describes lossy compression, and it exists, for photos and music for instance. Here, though, the same thing comes out character for character, so nothing was dropped. These are two different methods for different jobs."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Die Datei wird auf der Festplatte dichter abgelegt, die Bits rücken enger zusammen.",
+      "en": "The file is stored more densely on the disk, the bits move closer together."
+     },
+     "begruendung": {
+      "de": "Ein Bit ist ein Bit, egal wo es liegt; enger zusammenrücken können sie nicht. Kompression ändert nicht die Ablage, sondern die **Beschreibung**: Es sind hinterher tatsächlich weniger Bits, nicht dieselben Bits auf weniger Platz.",
+      "en": "A bit is a bit, wherever it sits; they cannot move closer together. Compression does not change the storage but the **description**: afterwards there really are fewer bits, not the same bits in less space."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Die übliche Schreibweise enthält Wiederholungen und Regelmäßigkeiten. Wer die ausnutzt, beschreibt denselben Inhalt kürzer.",
+      "en": "The usual way of writing it contains repetition and regularity. Exploiting that describes the same content more briefly."
+     },
+     "begruendung": {
+      "de": "Genau. Deutscher Text benutzt manche Buchstaben ständig und andere fast nie, Wörter wiederholen sich, und nach einem `q` kommt fast immer ein `u`. Jede dieser Regelmäßigkeiten ist Platz, den die übliche Schreibweise verschenkt. Die Information bleibt dieselbe, nur ihre Beschreibung wird kürzer.",
+      "en": "Exactly. German text uses some letters constantly and others almost never, words repeat, and after a `q` there is almost always a `u`. Every one of those regularities is space that the usual notation wastes. The information stays the same, only its description gets shorter."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Der Packer benutzt ein kleineres Alphabet und braucht deshalb weniger Bit je Zeichen.",
+      "en": "The packer uses a smaller alphabet and therefore needs fewer bits per character."
+     },
+     "begruendung": {
+      "de": "Das Alphabet kann er nicht verkleinern, ohne Zeichen zu verlieren, und verloren geht hier nichts. Ein Packer arbeitet andersherum: Er lässt das Alphabet in Ruhe und gibt einzelnen Zeichen **unterschiedlich lange** Codes, oder er beschreibt ganze Wiederholungen in einem Stück.",
+      "en": "It cannot shrink the alphabet without losing characters, and nothing is lost here. A packer works the other way round: it leaves the alphabet alone and gives individual characters codes of **different lengths**, or describes whole repetitions in one go."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-002",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr codiert ein Schwarzweißbild von 8 mal 8 Bildpunkten, ein Bit je Punkt,\nalso 8 Byte. Euer Verfahren fasst gleiche Punkte in der Reihe zusammen und\nschreibt je Lauf ein Byte: ein Bit für die Farbe, sieben für die Länge. Das\nBild ist ein Schachbrettmuster, bei dem jeder Punkt anders ist als sein\nNachbar. Wie groß wird es?",
+    "en": "You code a black and white picture of 8 by 8 points, one bit per point, so\n8 bytes. Your method groups equal points in the row and writes one byte per\nrun: one bit for the colour, seven for the length. The picture is a\nchessboard pattern in which every point differs from its neighbour. How big\ndoes it get?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "4 Byte, also halb so groß wie vorher.",
+      "en": "4 bytes, so half the size."
+     },
+     "begruendung": {
+      "de": "Halbieren würde das Verfahren bei einem Bild mit großen einfarbigen Flächen, nicht bei diesem. Kompression rechnet nicht mit der Größe des Bildes, sondern mit seinem Inhalt.",
+      "en": "The method would halve a picture with large areas of one colour, not this one. Compression does not work from the size of the picture but from its content."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "8 Byte, es bleibt gleich groß.",
+      "en": "8 bytes, it stays the same size."
+     },
+     "begruendung": {
+      "de": "Gleich groß bliebe es, wenn das Verfahren merken würde, dass es nichts bringt, und die Rohdaten durchreichte. Das ist eine kluge Ergänzung, die echte Packer auch einbauen, aber das hier beschriebene Verfahren tut es nicht: Es schreibt stur je Lauf ein Byte.",
+      "en": "It would stay the same size if the method noticed that it gains nothing and passed the raw data through. That is a clever addition, and real packers do build it in, but the method described here does not: it stubbornly writes one byte per run."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "1 Byte, denn ein Schachbrett ist ein einziges regelmäßiges Muster.",
+      "en": "1 byte, because a chessboard is one single regular pattern."
+     },
+     "begruendung": {
+      "de": "Für ein Auge ist das Schachbrett ein Muster, für dieses Verfahren nicht: Es kennt nur die Frage, wie viele gleiche Punkte jetzt hintereinander kommen, und sieht deshalb 64 Läufe der Länge eins. Ein Verfahren erkennt immer nur die Regelmäßigkeit, nach der es sucht.",
+      "en": "To an eye the chessboard is a pattern; to this method it is not. It only knows \"how many equal points come next in a row\" and therefore sees 64 runs of length one. A method only ever finds the regularity it is looking for."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "64 Byte, also achtmal so groß wie vorher: 64 Läufe der Länge eins, je ein Byte.",
+      "en": "64 bytes, eight times as big: 64 runs of length one, one byte each."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist die unangenehme Wahrheit über jedes Kompressionsverfahren: Es macht die Daten kleiner, für die es gebaut wurde, und größer, wenn sie nicht passen. Ein Byte, das vorher acht Punkte beschrieb, beschreibt jetzt einen. Deshalb prüfen ernsthafte Packer das Ergebnis und schicken notfalls die Rohdaten.",
+      "en": "Exactly, and this is the uncomfortable truth about every compression method: it makes the data smaller that it was built for and bigger when the data does not fit. A byte that used to describe eight points now describes one. That is why serious packers check the result and fall back to the raw data."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-003",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Jemand verspricht ein Verfahren, das **jede** Datei um mindestens ein Bit\nkleiner macht, verlustfrei. Warum kann es das nicht geben?",
+    "en": "Somebody promises a method that makes **every** file at least one bit\nsmaller, losslessly. Why can that not exist?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Weil die Rechner dafür zu langsam sind; mit genug Rechenzeit ginge es.",
+      "en": "Because computers are too slow for it; with enough computing time it would work."
+     },
+     "begruendung": {
+      "de": "Rechenzeit ist nicht das Problem. Der Grund liegt im Zählen und gälte auch für einen unendlich schnellen Rechner: Es gibt schlicht nicht genug kurze Dateien.",
+      "en": "Computing time is not the problem. The reason is one of counting and would hold for an infinitely fast computer as well: there simply are not enough short files."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Weil es mehr Dateien mit n Bit gibt als mit weniger als n Bit. Zwei verschiedene Dateien müssten auf dieselbe kürzere abgebildet werden, und dann ist das Entpacken nicht mehr eindeutig.",
+      "en": "Because there are more files with n bits than with fewer than n bits. Two different files would have to map onto the same shorter one, and then unpacking is no longer unambiguous."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist ein Abzählargument, kein technisches. Mit drei Bit lassen sich acht Dateien schreiben, mit weniger als drei Bit nur sieben. Wer acht Dinge auf sieben Fächer verteilt, legt zwei in dasselbe Fach, und dann weiß beim Entpacken niemand mehr, welches der beiden gemeint war. **Jedes** verlustfreie Verfahren macht deshalb manche Dateien kleiner und andere zwangsläufig größer.",
+      "en": "Exactly, and this is an argument from counting, not a technical one. With three bits you can write eight files, with fewer than three bits only seven. Put eight things into seven drawers and two share a drawer, and then nobody can tell on unpacking which of the two was meant. **Every** lossless method therefore makes some files smaller and others necessarily bigger."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Doch, das gibt es; genau das tun ZIP und ähnliche Programme.",
+      "en": "It does exist; that is exactly what ZIP and similar programs do."
+     },
+     "begruendung": {
+      "de": "ZIP macht viele Dateien kleiner, nicht jede. Packt eine bereits gepackte Datei noch einmal, und sie wird minimal größer, weil nur noch Verwaltung dazukommt. Das ist kein Mangel des Programms, sondern die Regel aus Antwort b in Aktion.",
+      "en": "ZIP makes many files smaller, not every file. Pack an already packed file again and it gets marginally bigger, because only administration is added. That is not a flaw in the program, it is the rule from answer b in action."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Weil es nur für Text funktioniert, nicht für Bilder und Musik.",
+      "en": "Because it only works for text, not for pictures and music."
+     },
+     "begruendung": {
+      "de": "Für Bilder und Musik gibt es eigene, sehr wirksame Verfahren. Die Grenze verläuft nicht zwischen Textsorten, sondern zwischen Daten mit Regelmäßigkeiten und Daten ohne; und weil jedes Verfahren nur bestimmte Regelmäßigkeiten kennt, gibt es für jedes auch Dateien, an denen es scheitert.",
+      "en": "There are dedicated and very effective methods for pictures and music. The line does not run between kinds of text but between data with regularities and data without; and because each method only knows certain regularities, every method has files it fails on."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-004",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr wollt das Foto aus dem Finale über die Strecke schicken und packt es\nvorher. Die Datei ist ein JPG von 380 KB. Womit rechnet ihr?",
+    "en": "You want to send the final's photo over the link and pack it first. The\nfile is a JPG of 380 KB. What do you expect?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Fast keine Ersparnis; die Datei bleibt bei rund 380 KB oder wird sogar minimal größer.",
+      "en": "Almost no saving; the file stays at about 380 KB or even gets marginally bigger."
+     },
+     "begruendung": {
+      "de": "Genau. JPG **ist** schon ein Kompressionsverfahren, und es hat die Regelmäßigkeiten des Bildes bereits aufgebraucht. Was übrig bleibt, sieht für den Packer aus wie Zufall, und Zufall lässt sich nicht kürzer beschreiben. Wenn ihr Bits sparen wollt, müsst ihr an der JPG-Qualität drehen oder das Bild kleiner machen, nicht noch einen Packer darüberlegen.",
+      "en": "Exactly. JPG **is** already a compression method, and it has used up the picture's regularities. What is left looks like randomness to the packer, and randomness cannot be described more briefly. If you want to save bits, change the JPG quality or make the picture smaller; do not stack another packer on top."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Etwa die Hälfte, so wie bei einer Textdatei auch.",
+      "en": "About half, the same as with a text file."
+     },
+     "begruendung": {
+      "de": "Text schrumpft so stark, weil er voller Wiederholungen steckt. In einer JPG-Datei sind die längst weg. Der Packer sieht keine Bilddaten, sondern das Ergebnis eines anderen Packers.",
+      "en": "Text shrinks that much because it is full of repetition. In a JPG file that is long gone. The packer does not see image data, it sees the output of another packer."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Deutlich mehr als bei Text, denn Bilder enthalten große gleichfarbige Flächen.",
+      "en": "Considerably more than with text, because pictures contain large areas of one colour."
+     },
+     "begruendung": {
+      "de": "Das gälte für ein unkomprimiertes Bild, etwa eine BMP-Datei; die schrumpft tatsächlich stark. Hier steht aber JPG auf der Datei, und damit ist diese Arbeit schon getan.",
+      "en": "That would hold for an uncompressed picture, a BMP file say; that really does shrink a lot. But this file says JPG, and that work has already been done."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Ersparnis hängt davon ab, wie viel Rechenzeit ihr dem Packer gebt.",
+      "en": "The saving depends on how much computing time you give the packer."
+     },
+     "begruendung": {
+      "de": "Mehr Rechenzeit bringt bei den meisten Packern ein paar Prozent, aber sie kann keine Regelmäßigkeiten finden, die nicht da sind. Die Grenze setzt der Inhalt der Datei, nicht die Geduld des Rechners.",
+      "en": "More computing time gains a few per cent with most packers, but it cannot find regularities that are not there. The limit is set by the content of the file, not by the computer's patience."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-005",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Im Finale wird die Übertragung damit geprüft, dass die Prüfsumme der\nempfangenen Datei mit der der gesendeten übereinstimmt. Ein Team schlägt\nvor, das Foto vorher stärker als JPG zu komprimieren, um Zeit zu sparen.\nWas ist davon zu halten?",
+    "en": "In the final the transmission is checked by comparing the checksum of the\nreceived file with that of the sent one. A team proposes compressing the\nphoto more heavily as JPG beforehand, to save time. What should you make\nof that?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Gute Idee, denn die Prüfsumme prüft nur, ob die Übertragung fehlerfrei war.",
+      "en": "Good idea, because the checksum only checks whether the transmission was error-free."
+     },
+     "begruendung": {
+      "de": "Die Prüfsumme prüft genau das, und deshalb funktioniert der Vorschlag auch: Verglichen wird die Datei, die ihr abgeschickt habt, mit der, die angekommen ist. Der Haken liegt woanders, nämlich bei der Frage, welche Datei eigentlich geschuldet ist.",
+      "en": "The checksum checks exactly that, and that is why the proposal works at all: what is compared is the file you sent against the file that arrived. The catch lies elsewhere, in the question of which file is actually owed."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Schlechte Idee, denn verlustbehaftete Verfahren sind grundsätzlich unzuverlässig.",
+      "en": "Bad idea, because lossy methods are unreliable in principle."
+     },
+     "begruendung": {
+      "de": "Unzuverlässig sind sie nicht, sie tun zuverlässig etwas anderes: Sie werfen Einzelheiten weg, die ein Auge kaum vermisst. Jedes Foto auf jedem Handy lebt davon. Die Frage ist nicht, ob das Verfahren taugt, sondern ob die Aufgabe es erlaubt.",
+      "en": "They are not unreliable, they reliably do something else: they throw away details an eye hardly misses. Every photo on every phone lives off that. The question is not whether the method is any good, but whether the task allows it."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Es kommt darauf an, was geschuldet ist: Soll genau diese Datei ankommen, ist verlustbehaftetes Komprimieren nicht erlaubt; soll ein ansehnliches Bild ankommen, ist es ein sinnvoller Hebel.",
+      "en": "It depends on what is owed: if exactly this file has to arrive, lossy compression is not allowed; if a presentable picture has to arrive, it is a sensible lever."
+     },
+     "begruendung": {
+      "de": "Genau, und diese Frage muss **vor** dem Komprimieren geklärt sein, nicht danach. Verlustbehaftet heißt: Ihr schickt ein anderes Bild als das, das ihr bekommen habt, nur eines, das ähnlich aussieht. Ob das zählt, entscheidet die Aufgabenstellung, nicht die Technik. Fragt nach, bevor ihr eine Stunde optimiert.",
+      "en": "Exactly, and this question has to be settled **before** compressing, not after. Lossy means you send a different picture from the one you were given, only one that looks similar. Whether that counts is decided by the task, not by the technology. Ask before you spend an hour optimising."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Egal, denn nach dem Entpacken ist die Datei wieder genau wie vorher.",
+      "en": "Does not matter, because after unpacking the file is exactly as before."
+     },
+     "begruendung": {
+      "de": "Das gilt für verlustfreie Verfahren wie ZIP, nicht für verlustbehaftete. Aus einem stärker komprimierten JPG lässt sich das Original nicht zurückholen; die weggeworfenen Einzelheiten sind weg. Genau diese Einbahnstraße unterscheidet die beiden Sorten.",
+      "en": "That holds for lossless methods like ZIP, not for lossy ones. You cannot get the original back out of a more heavily compressed JPG; the discarded details are gone. That one-way street is exactly what separates the two kinds."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-006",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr sendet 16.000 Bit mit 4 Farben bei 5 Symbolen pro Sekunde, also mit\n10 bit/s; das dauert rund 27 Minuten. Zwei Vorschläge liegen auf dem Tisch:\ndie Datei auf 60 Prozent komprimieren, oder das Alphabet von 4 auf 8 Farben\nvergrößern. Was bringt mehr?",
+    "en": "You send 16,000 bits with 4 colours at 5 symbols per second, so 10 bit/s;\nthat takes about 27 minutes. Two proposals are on the table: compress the\nfile to 60 per cent, or grow the alphabet from 4 to 8 colours. Which gains\nmore?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Das größere Alphabet: Acht Farben sind doppelt so viele wie vier, das halbiert die Zeit.",
+      "en": "The bigger alphabet: eight colours are twice as many as four, which halves the time."
+     },
+     "begruendung": {
+      "de": "Doppelt so viele Farben sind nicht doppelt so viele Bit. Vier Farben tragen 2 Bit, acht tragen 3; das ist der Faktor 1,5 und nicht 2. Aus 27 Minuten werden damit rund 18.",
+      "en": "Twice as many colours are not twice as many bits. Four colours carry 2 bits, eight carry 3; that is a factor of 1.5, not 2. It turns 27 minutes into about 18."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Die Kompression, knapp: 60 Prozent der Bits sind rund 16 Minuten, das größere Alphabet käme auf rund 18.",
+      "en": "Compression, narrowly: 60 per cent of the bits is about 16 minutes, the bigger alphabet would give about 18."
+     },
+     "begruendung": {
+      "de": "Genau, und der Abstand ist kleiner als der Unterschied im Aufwand. Die Kompression kostet euch Sekunden Rechenzeit. Das größere Alphabet kostet Sicherheitsabstand: Acht Farben bedeuten engere Bänder, und ob eure Streuung das noch trägt, ist eine Messfrage. Beides zusammen wären übrigens rund 11 Minuten, denn die Hebel wirken unabhängig voneinander.",
+      "en": "Exactly, and the gap is smaller than the difference in effort. Compression costs you seconds of computing time. The bigger alphabet costs safety margin: eight colours mean narrower bands, and whether your scatter still carries that is a question for measurement. Both together, by the way, would be about 11 minutes, because the levers act independently."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Beide gleich viel, denn 60 Prozent weniger Daten und 50 Prozent mehr Bits je Symbol heben sich auf.",
+      "en": "Both the same, because 60 per cent less data and 50 per cent more bits per symbol cancel out."
+     },
+     "begruendung": {
+      "de": "Aufheben würden sie sich nur, wenn die Datei auf zwei Drittel schrumpfte, denn das ist der Kehrwert von 1,5. Sie schrumpft aber auf 60 Prozent, und das ist etwas weniger als zwei Drittel. Deshalb der knappe Vorsprung für die Kompression.",
+      "en": "They would cancel out only if the file shrank to two thirds, that being the reciprocal of 1.5. But it shrinks to 60 per cent, which is slightly less than two thirds. Hence the narrow lead for compression."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Kompression, deutlich, denn danach ist die Datei nur noch halb so groß.",
+      "en": "Compression, by a lot, because afterwards the file is only half the size."
+     },
+     "begruendung": {
+      "de": "Auf 60 Prozent ist nicht die Hälfte. Der Vorsprung ist da, aber knapp, und wer ihn sich schönrechnet, trifft die falsche Entscheidung darüber, wo die Werkstattzeit hingeht.",
+      "en": "To 60 per cent is not half. The lead is real but narrow, and talking it up leads to the wrong decision about where the workshop time goes."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-007",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Vier Dateien sind alle genau 100 KB groß. Welche davon lässt sich verlustfrei\nam stärksten verkleinern?",
+    "en": "Four files are all exactly 100 KB in size. Which of them can be shrunk the\nmost, losslessly?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Eine Datei aus 100 KB Zufallszahlen.",
+      "en": "A file of 100 KB of random numbers."
+     },
+     "begruendung": {
+      "de": "Zufall ist der schlimmste Fall für jeden Packer, und zwar grundsätzlich: Wo es keine Regelmäßigkeit gibt, gibt es nichts zu kürzen. Eine gute Zufallsfolge lässt sich gar nicht kürzer beschreiben als durch sie selbst.",
+      "en": "Randomness is the worst case for any packer, and fundamentally so: where there is no regularity, there is nothing to shorten. A good random sequence cannot be described more briefly than by itself."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Ein bereits gepacktes ZIP-Archiv.",
+      "en": "An already packed ZIP archive."
+     },
+     "begruendung": {
+      "de": "Die Regelmäßigkeiten sind schon aufgebraucht, und das Ergebnis sieht für den nächsten Packer aus wie Zufall. Ein zweiter Durchgang bringt fast nichts und macht die Datei durch die zusätzliche Verwaltung eher etwas größer.",
+      "en": "The regularities are already used up, and the result looks like randomness to the next packer. A second pass gains almost nothing and, because of the extra administration, tends to make the file slightly bigger."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Ein Logfile, in dem 100.000 Zeilen fast gleich aussehen und sich nur in Zeitstempel und Zahl unterscheiden.",
+      "en": "A log file in which 100,000 lines look almost alike and differ only in timestamp and number."
+     },
+     "begruendung": {
+      "de": "Genau. Was zählt, ist nicht die Größe einer Datei, sondern wie vorhersagbar ihr Inhalt ist, und ein Logfile ist der Musterfall: Fast jede Zeile steht schon einmal fast genauso weiter oben. Solche Dateien schrumpfen oft auf wenige Prozent.",
+      "en": "Exactly. What counts is not the size of a file but how predictable its content is, and a log file is the model case: almost every line already stands there, almost identically, further up. Such files often shrink to a few per cent."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Ein Foto im JPG-Format, weil Bilder die größten Dateien sind.",
+      "en": "A photo in JPG format, because pictures are the biggest files."
+     },
+     "begruendung": {
+      "de": "Alle vier Dateien sind hier gleich groß, die Größe unterscheidet sie also gar nicht. Und JPG ist selbst schon ein Kompressionsverfahren; da ist nicht mehr viel zu holen. Groß und komprimierbar sind zwei unabhängige Eigenschaften.",
+      "en": "All four files are the same size here, so size does not distinguish them at all. And JPG is itself already a compression method; there is not much left to get. Big and compressible are two independent properties."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-008",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr komprimiert eure Nachricht vor dem Senden. Das Partnerteam baut nach\neurer Spezifikation einen Empfänger, und der liefert Zeichensalat, obwohl\nkein einziges Bit falsch angekommen ist. Was fehlt am wahrscheinlichsten?",
+    "en": "You compress your message before sending. The partner team builds a\nreceiver from your specification, and it produces garbage although not a\nsingle bit arrived wrong. What is most likely missing?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Eine Prüfsumme, damit der Empfänger merkt, dass etwas nicht stimmt.",
+      "en": "A checksum, so the receiver notices that something is wrong."
+     },
+     "begruendung": {
+      "de": "Eine Prüfsumme würde hier nichts finden, denn die Bits sind ja korrekt angekommen. Sie prüft die Übertragung, nicht die Deutung. Das Problem sitzt eine Schicht höher.",
+      "en": "A checksum would find nothing here, because the bits did arrive correctly. It checks the transmission, not the interpretation. The problem sits one layer up."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Die Angabe, mit welchem Verfahren komprimiert wurde. Der Empfänger muss es wissen, um die Bytes wieder auseinanderzufalten.",
+      "en": "The statement of which method was used to compress. The receiver has to know it in order to unfold the bytes again."
+     },
+     "begruendung": {
+      "de": "Genau. Gepackte Daten erklären sich nicht von selbst; sie sind eine Schreibweise, und wer die Schreibweise nicht kennt, liest Unsinn. Kompression ist damit Teil eurer Absprache, genau wie Präambel, Zeichencode und Endmarke, und gehört in die Spezifikation. Das ist dieselbe Lektion wie bei den Codesystemen: dieselben Bits, zwei Tabellen, zwei Bedeutungen.",
+      "en": "Exactly. Packed data does not explain itself; it is a notation, and whoever does not know the notation reads nonsense. Compression is therefore part of your agreement, just like the preamble, the character code and the end marker, and it belongs in the specification. It is the same lesson as with code systems: the same bits, two tables, two meanings."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Eine höhere Symbolrate; der Empfänger kommt schlicht nicht hinterher.",
+      "en": "A higher symbol rate; the receiver simply cannot keep up."
+     },
+     "begruendung": {
+      "de": "Käme er nicht hinterher, wären Bits falsch angekommen, und das ist laut Aufgabe nicht der Fall. Wenn jedes Bit stimmt und das Ergebnis trotzdem Unsinn ist, liegt es nie an der Übertragung, sondern immer an der Deutung.",
+      "en": "If it could not keep up, bits would have arrived wrong, and the question says they did not. When every bit is right and the result is still nonsense, the cause is never the transmission but always the interpretation."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Nichts; gepackte Daten kann jedes Programm entpacken, das erkennt man am Dateianfang.",
+      "en": "Nothing; any program can unpack packed data, you can tell from the start of the file."
+     },
+     "begruendung": {
+      "de": "Bei einer Datei auf der Festplatte stimmt das oft: ZIP und andere Formate schreiben eine Kennung an den Anfang. Aber diese Kennung ist auch nur eine **Vereinbarung**, und sie kommt nur an, wenn ihr sie mitsendet. Wer sie wegspart, um Bits zu sparen, muss das Verfahren im Dokument nennen.",
+      "en": "For a file on disk that is often true: ZIP and other formats write an identifier at the start. But that identifier is also only an **agreement**, and it only arrives if you send it. Anyone who drops it to save bits has to name the method in the document."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-009",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "In deutschem Text ist etwa jedes sechste Zeichen ein e, ein q kommt seltener\nals jedes tausendste vor. Ein Packer gibt jedem Buchstaben einen Code mit\neigener Länge. Warum bekommt ausgerechnet das e den kürzesten?",
+    "en": "In German text about every sixth character is an e, a q appears less than\nonce in a thousand. A packer gives every letter a code of its own length.\nWhy does the e of all letters get the shortest one?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Weil das e im Alphabet weit vorn steht und die Codes in alphabetischer Reihenfolge vergeben werden, die kurzen zuerst.",
+      "en": "Because the e comes early in the alphabet and codes are handed out in alphabetical order, short ones first."
+     },
+     "begruendung": {
+      "de": "Die Stellung im Alphabet spielt keine Rolle. Dann bekäme das a den kürzesten Code, und das a ist im Deutschen deutlich seltener als das e. Der Baum fragt nur nach der Häufigkeit.",
+      "en": "Position in the alphabet plays no part. The a would get the shortest code then, and in German the a is clearly rarer than the e. The tree asks only about frequency."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Weil die Länge der Nachricht aus Häufigkeit mal Codelänge je Buchstabe besteht. Ein kurzer Code zahlt sich dort am meisten aus, wo er am öftesten benutzt wird.",
+      "en": "Because the length of the message is frequency times code length per letter. A short code pays off most where it is used most often."
+     },
+     "begruendung": {
+      "de": "Genau. Jedes e trägt seine Codelänge zur Gesamtlänge bei, und davon gibt es in einem Text Tausende. Ein Bit weniger beim e spart tausendmal ein Bit; ein Bit weniger beim q spart fast nichts. Deshalb fasst das Verfahren immer die zwei seltensten Zeichen zusammen und schiebt sie nach unten, und das Häufige bleibt oben, nah an der Wurzel, mit kurzem Weg.",
+      "en": "Exactly. Every e contributes its code length to the total, and a text has thousands of them. One bit less on the e saves a bit a thousand times; one bit less on the q saves almost nothing. That is why the method always joins the two rarest characters and pushes them down, while the frequent ones stay near the root with a short path."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Weil ein kurzer Code weniger anfällig für Übertragungsfehler ist und das häufige e deshalb besser geschützt sein muss.",
+      "en": "Because a short code is less prone to transmission errors and the frequent e therefore needs better protection."
+     },
+     "begruendung": {
+      "de": "Kompression schützt nichts; sie macht die Nachricht kürzer, sonst nichts. Ein kürzerer Code ist sogar empfindlicher: Kippt ein Bit, gerät der Leser bei variabler Länge leicht aus dem Takt. Schutz vor Fehlern ist eine andere Aufgabe mit anderen Mitteln, etwa der Prüfsumme.",
+      "en": "Compression protects nothing; it makes the message shorter, nothing else. A shorter code is in fact more fragile: flip one bit and a variable-length reader easily loses its place. Protecting against errors is a different job with different tools, such as the checksum."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Weil seltene Buchstaben mit einem langen Code besser voneinander zu unterscheiden sind und ein Packer vor allem Verwechslungen vermeiden muss.",
+      "en": "Because rare letters are easier to tell apart with a long code, and a packer must above all avoid confusion."
+     },
+     "begruendung": {
+      "de": "Unterscheidbar sind alle Codes im Baum, kurze wie lange, weil keiner der Anfang eines anderen ist. Die Länge entscheidet nicht über Verwechslung, sondern über die Bits, die die Nachricht kostet. Das q bekommt seinen langen Code nicht zum Schutz, sondern weil es an der Länge fast nichts ändert.",
+      "en": "All codes in the tree are distinguishable, short and long alike, because none is the beginning of another. Length does not decide about confusion but about the bits the message costs. The q gets its long code not for protection but because it barely changes the total."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-010",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ein Packer hat für ein Wort diese Codes vergeben: `a = 0`, `b = 100`,\n`r = 101`, `c = 110`, `d = 111`. Ihr empfangt die Bitfolge `0100 1010 110`,\nohne Trennzeichen. Was steht da?",
+    "en": "A packer assigned these codes for a word: `a = 0`, `b = 100`, `r = 101`,\n`c = 110`, `d = 111`. You receive the bit string `0100 1010 110`, with no\nseparators. What does it say?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "`abrac`: von links lesen, und sobald ein Code vollständig ist, beginnt der nächste: 0, 100, 101, 0, 110.",
+      "en": "`abrac`: read from the left, and as soon as a code is complete the next one begins: 0, 100, 101, 0, 110."
+     },
+     "begruendung": {
+      "de": "Genau so liest man einen Präfixcode. Die erste 0 ist ein fertiges a, denn kein anderer Code beginnt mit 0. Dann 100, das b; 101, das r; wieder eine 0, das a; und 110, das c. Es gibt nie einen Zweifel, wo ein Code aufhört, weil kein Code der Anfang eines anderen ist.",
+      "en": "That is exactly how a prefix code is read. The first 0 is a finished a, because no other code starts with 0. Then 100, the b; 101, the r; another 0, the a; and 110, the c. There is never any doubt where a code ends, because no code is the beginning of another."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "`abrad`: 0, 100, 101, 0 und zum Schluss 111.",
+      "en": "`abrad`: 0, 100, 101, 0 and finally 111."
+     },
+     "begruendung": {
+      "de": "Die letzten drei Bits sind 110, nicht 111, also c und nicht d. Die Lesart ist im Vorgehen richtig, nur am Ende verlesen. Bei Codes verschiedener Länge zählt jedes Bit, es gibt kein Auffüllen und kein Ungefähr.",
+      "en": "The last three bits are 110, not 111, so c and not d. The reading is right in method, only misread at the end. With codes of different lengths every bit counts, there is no padding and no roughly."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Das ist nicht eindeutig lesbar. Codes verschiedener Länge brauchen Trennzeichen, sonst gibt es mehrere Lesarten.",
+      "en": "It cannot be read unambiguously. Codes of different lengths need separators, otherwise there are several readings."
+     },
+     "begruendung": {
+      "de": "Das war die Falle aus Sitzung 6, und sie schnappt bei Codes wie `a = 0, b = 01` zu. Hier nicht: Keiner dieser fünf Codes ist der Anfang eines anderen, weil alle Buchstaben an den Blättern des Baums hängen. Deshalb hat die Folge genau eine Lesart, ohne jedes Trennzeichen.",
+      "en": "That was the trap from session 6, and it snaps shut on codes like `a = 0, b = 01`. Not here: none of these five codes is the beginning of another, because all letters hang on the leaves of the tree. That is why the string has exactly one reading, without any separator."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Folge ist beschädigt. In Dreiergruppen gelesen (010, 010, 101, 10) ergibt sie keine gültigen Codes.",
+      "en": "The string is damaged. Read in groups of three (010, 010, 101, 10) it yields no valid codes."
+     },
+     "begruendung": {
+      "de": "In Dreiergruppen liest man einen Code fester Länge. Dieser hier hat Codes von einem und von drei Bit, und genau das ist der Punkt: Das a kostet ein Bit, nicht drei. Wer trotzdem in festen Gruppen liest, sieht Müll und hält die Nachricht für kaputt. Die Nachricht ist in Ordnung, die Lesart nicht.",
+      "en": "Groups of three is how you read a fixed-length code. This one has codes of one and of three bits, and that is the whole point: the a costs one bit, not three. Anyone reading fixed groups anyway sees garbage and takes the message for broken. The message is fine, the reading is not."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-011",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Das Wort `abracadabra` hat 11 Buchstaben, 5 verschiedene. Mit festem Code\nkostet jeder Buchstabe 3 Bit, das Wort also 33. Der Packer vergibt\nstattdessen `a = 0`, `b = 100`, `r = 101`, `c = 110`, `d = 111`. Wie\nviele Bit kostet das Wort jetzt?",
+    "en": "The word `abracadabra` has 11 letters, 5 different ones. With a fixed code\nevery letter costs 3 bits, so the word costs 33. The packer instead assigns\n`a = 0`, `b = 100`, `r = 101`, `c = 110`, `d = 111`. How many bits does\nthe word cost now?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "13 Bit: die fünf Codes addiert, 1 + 3 + 3 + 3 + 3.",
+      "en": "13 bits: the five codes added up, 1 + 3 + 3 + 3 + 3."
+     },
+     "begruendung": {
+      "de": "Das ist die Länge der Tabelle, nicht die der Nachricht. Gesendet wird nicht jeder Buchstabe einmal, sondern das Wort, und darin steht das a fünfmal. Jeder Code zählt so oft, wie sein Buchstabe vorkommt.",
+      "en": "That is the length of the table, not of the message. What is sent is not each letter once but the word, and in it the a appears five times. Every code counts as often as its letter occurs."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Rund 16 oder 17 Bit: Kompression halbiert die Größe ungefähr.",
+      "en": "About 16 or 17 bits: compression roughly halves the size."
+     },
+     "begruendung": {
+      "de": "Es gibt keinen festen Faktor. Wie viel ein Packer spart, hängt davon ab, wie ungleich die Häufigkeiten sind: Bei einem Text, in dem jeder Buchstabe gleich oft vorkommt, spart Huffman gar nichts. Hier lässt es sich ausrechnen, und die Rechnung ergibt 23, nicht 16.",
+      "en": "There is no fixed factor. How much a packer saves depends on how uneven the frequencies are: in a text where every letter occurs equally often, Huffman saves nothing at all. Here it can be calculated, and the calculation gives 23, not 16."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "23 Bit: 5 mal 1 für das a, dann je 3 für zwei b, zwei r, ein c und ein d.",
+      "en": "23 bits: 5 times 1 for the a, then 3 each for two b, two r, one c and one d."
+     },
+     "begruendung": {
+      "de": "Genau: 5·1 + 2·3 + 2·3 + 1·3 + 1·3 = 5 + 6 + 6 + 3 + 3 = 23. Zehn Bit weniger als mit festem Code, knapp ein Drittel, und beim Lesen kommt Buchstabe für Buchstabe dasselbe Wort zurück. Die ganze Ersparnis kommt vom a: Fünfmal zwei Bit gespart, dafür nichts verloren, weil die anderen vier weiterhin drei Bit kosten.",
+      "en": "Exactly: 5·1 + 2·3 + 2·3 + 1·3 + 1·3 = 5 + 6 + 6 + 3 + 3 = 23. Ten bits fewer than with the fixed code, nearly a third, and reading it gives back the same word letter for letter. All the saving comes from the a: five times two bits saved, and nothing lost, because the other four still cost three bits."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "33 Bit: Bei einem so kurzen Wort gleicht sich das aus, variable Länge spart erst bei langen Texten.",
+      "en": "33 bits: with such a short word it evens out, variable length only saves on long texts."
+     },
+     "begruendung": {
+      "de": "Die Ersparnis hängt nicht an der Länge des Textes, sondern daran, wie ungleich die Buchstaben verteilt sind, und die elf Buchstaben hier sind sehr ungleich verteilt. Was bei langen Texten dazukommt, ist etwas anderes: Dort fällt die Tabelle, die man mitschicken muss, nicht mehr ins Gewicht.",
+      "en": "The saving does not depend on the length of the text but on how unevenly the letters are distributed, and these eleven letters are distributed very unevenly. What long texts add is something else: there the table you have to send along stops mattering."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-012",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ein Foto von 256 mal 256 Punkten hat roh 192 KB; als PNG, also verlustfrei\ngepackt, noch 91 KB. Die Nutzlast im Finale sind 2 KB. Welcher Weg bringt\ndas Foto dahin?",
+    "en": "A photo of 256 by 256 points takes 192 KB raw; as a PNG, packed losslessly,\nstill 91 KB. The payload in the final is 2 KB. Which way gets the photo\nthere?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Ein besserer verlustfreier Packer, etwa ZIP auf der höchsten Stufe. PNG ist ein altes Format und lässt viel liegen.",
+      "en": "A better lossless packer, say ZIP at its highest level. PNG is an old format and leaves a lot on the table."
+     },
+     "begruendung": {
+      "de": "PNG ist innen dasselbe Verfahren wie ZIP; ein PNG im ZIP wird nicht kleiner. Und selbst ein noch besserer verlustfreier Packer holt aus einem Foto nur wenig, weil ein Foto wenig Regelmäßigkeit hat. Faktor zwei ist realistisch, Faktor 45 nicht, und das liegt nicht am Packer.",
+      "en": "Inside, PNG is the same method as ZIP; a PNG inside a ZIP does not get smaller. And even a better lossless packer gets little out of a photo, because a photo has little regularity. A factor of two is realistic, a factor of 45 is not, and that is not the packer's fault."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Nur verlustbehaftet: weniger Bildpunkte, gröbere Einzelheiten, oder beides. Ein Teil der Bildinformation fällt dabei weg und kommt nicht zurück.",
+      "en": "Only lossy: fewer points, coarser detail, or both. Part of the picture information is dropped and does not come back."
+     },
+     "begruendung": {
+      "de": "Genau. Das PNG hat die Luft schon herausgelassen; was übrig ist, ist Bildinformation, und die lässt sich nur noch kürzer machen, indem man einen Teil davon weglässt. Als JPG mit 128 mal 128 Punkten passt derselbe Papagei in 2 032 Byte, und man erkennt ihn. Es ist aber nicht mehr dasselbe Bild, und das ist eine Entscheidung, die man vorher trifft.",
+      "en": "Exactly. The PNG has already let the air out; what is left is picture information, and the only way to make that shorter is to drop part of it. As a JPG with 128 by 128 points the same parrot fits in 2,032 bytes, and you can recognise it. It is no longer the same picture, though, and that is a decision you take beforehand."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Das PNG noch einmal als ZIP packen. Zwei Packer nacheinander wirken doppelt.",
+      "en": "Pack the PNG again as a ZIP. Two packers in a row work twice."
+     },
+     "begruendung": {
+      "de": "Was gepackt ist, hat seine Regelmäßigkeiten aufgebraucht; für den zweiten Packer sieht es aus wie Zufall, und Zufall wird beim Packen nicht kleiner, sondern minimal größer. Gemessen: 93 107 Byte PNG werden im ZIP 93 237.",
+      "en": "What is packed has used up its regularities; to the second packer it looks like random data, and random data does not shrink when packed, it grows a little. Measured: 93,107 bytes of PNG become 93,237 in the ZIP."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Gar nicht. 2 KB reichen für kein Bild; die Nutzlast im Finale muss deshalb Text sein.",
+      "en": "Not at all. 2 KB is not enough for any picture; the payload in the final therefore has to be text."
+     },
+     "begruendung": {
+      "de": "2 KB sind 16 000 Bit, und das reicht für ein Bild, wenn man bereit ist, Einzelheiten aufzugeben: Mit 128 mal 128 Punkten und grober JPG-Stufe passt der Papagei hinein. Es ist kein Foto für den Druck, aber ein Bild, das man erkennt, und genau dieser Kompromiss ist der Stoff dieser Sitzung.",
+      "en": "2 KB is 16,000 bits, and that is enough for a picture if you are willing to give up detail: with 128 by 128 points and a coarse JPG setting the parrot fits. It is no photo for print, but a picture you recognise, and exactly that trade-off is what this session is about."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-013",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr habt das Foto auf 2 KB gebracht, als grobes JPG, und geschickt. Das\nPartnerteam hätte gern das Original in voller Qualität. Lässt sich das aus\nden empfangenen 2 KB wiederherstellen?",
+    "en": "You brought the photo down to 2 KB as a coarse JPG and sent it. The partner\nteam would like the original in full quality. Can it be restored from the\n2 KB received?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Ja. Entpacken ist die Umkehrung des Packens; beim ZIP kommt schließlich auch alles zurück.",
+      "en": "Yes. Unpacking is the reverse of packing; with a ZIP everything comes back too, after all."
+     },
+     "begruendung": {
+      "de": "Beim ZIP stimmt das, weil ZIP verlustfrei ist: Es hat nur kürzer beschrieben, nichts weggelassen. JPG hat weggelassen. Eine Beschreibung lässt sich wieder ausführlich machen; weggelassene Einzelheiten lassen sich nicht erfinden. Das ist der eine Unterschied zwischen den beiden Sorten Kompression.",
+      "en": "For a ZIP that is true, because ZIP is lossless: it only described things more briefly, it dropped nothing. JPG dropped things. A description can be made verbose again; dropped detail cannot be invented. That is the one difference between the two kinds of compression."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Nein. Was beim verlustbehafteten Packen weggelassen wurde, steht in den 2 KB nicht mehr. Der Empfänger bekommt ein Bild, das dem Original ähnlich sieht, nie das Original.",
+      "en": "No. What lossy packing dropped is no longer in the 2 KB. The receiver gets a picture that looks like the original, never the original."
+     },
+     "begruendung": {
+      "de": "Genau. Verlustbehaftet ist eine Einbahnstraße. Die 2 KB enthalten alles, was der Empfänger je über dieses Bild erfahren wird; die anderen 89 KB des PNG sind beim Packen verschwunden, nicht versteckt. Wer das Original braucht, muss das Original schicken, und dann eben länger warten.",
+      "en": "Exactly. Lossy is a one-way street. The 2 KB hold everything the receiver will ever learn about this picture; the other 89 KB of the PNG vanished when packing, they are not hidden. Whoever needs the original has to send the original, and wait longer."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Ja, wenn der Empfänger dasselbe Programm mit denselben Einstellungen benutzt wie ihr beim Packen.",
+      "en": "Yes, if the receiver uses the same program with the same settings as you did when packing."
+     },
+     "begruendung": {
+      "de": "Programm und Einstellungen muss der Empfänger kennen, um das JPG überhaupt zu einem Bild zu entfalten; das ist die Lektion aus `cp-008`. Aber sie liefern ihm nur das, was drinsteht, und die feinen Einzelheiten stehen nicht drin. Die Einstellungen sagen, wie weggelassen wurde, nicht, was.",
+      "en": "The receiver has to know program and settings in order to unfold the JPG into a picture at all; that is the lesson of `cp-008`. But they only give back what is in there, and the fine detail is not. The settings say how things were dropped, not what."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Ja, durch Hochrechnen. Fehlende Bildpunkte lassen sich aus den Nachbarpunkten berechnen, das machen Bildprogramme ständig.",
+      "en": "Yes, by upscaling. Missing points can be calculated from their neighbours, picture programs do that all the time."
+     },
+     "begruendung": {
+      "de": "Hochrechnen erfindet Punkte, die zu den Nachbarn passen; es stellt keine her, die das Original hatte. Das Ergebnis ist größer, nicht genauer: ein weich gezeichneter Papagei, dem die Feder fehlt, die im Original an dieser Stelle war. Information, die nicht mitgeschickt wurde, kann kein Rechner der Welt aus dem Rest zurückgewinnen.",
+      "en": "Upscaling invents points that fit their neighbours; it does not recreate the ones the original had. The result is bigger, not more accurate: a soft-drawn parrot missing the feather that was there in the original. Information that was not sent along cannot be recovered from the rest by any computer in the world."
+     }
+    }
+   ]
+  }
+ ]
+}

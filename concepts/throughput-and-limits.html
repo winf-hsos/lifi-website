@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.3">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Durchsatz und Grenzen – LiFi Project</title>
+<title>Throughput and Limits – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -44,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6afc368e6f6fa7c79ac664f908235de2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a84aad28d7e5b5456db9ac6a39cf199b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,20 +62,49 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -89,16 +121,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
         <div class="quarto-navbar-tools tools-end">
 </div>
-          <div id="quarto-search" class="" title="Suchen"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/throughput-and-limits.html">Durchsatz und Grenzen</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/throughput-and-limits.html">Throughput and Limits</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -119,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">LiFi Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -170,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -222,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Solving Problems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -263,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -298,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -321,7 +353,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Transferring Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -359,7 +391,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Durchsatz und Grenzen</span></a>
+ <span class="menu-text">Throughput and Limits</span></a>
   </div>
 </li>
       </ul>
@@ -368,7 +400,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Processing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -382,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kompression</span></a>
+ <span class="menu-text">Compression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -414,26 +446,32 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  <li><a href="#gross-is-not-net" id="toc-gross-is-not-net" class="nav-link" data-scroll-target="#gross-is-not-net">Gross is not net</a></li>
+  <li><a href="#the-deductions-multiply" id="toc-the-deductions-multiply" class="nav-link" data-scroll-target="#the-deductions-multiply">The deductions multiply</a></li>
+  <li><a href="#the-bottleneck-decides" id="toc-the-bottleneck-decides" class="nav-link" data-scroll-target="#the-bottleneck-decides">The bottleneck decides</a></li>
+  <li><a href="#your-limit-is-a-measurement" id="toc-your-limit-is-a-measurement" class="nav-link" data-scroll-target="#your-limit-is-a-measurement">Your limit is a measurement</a></li>
+  <li><a href="#three-levers-and-only-three" id="toc-three-levers-and-only-three" class="nav-link" data-scroll-target="#three-levers-and-only-three">Three levers, and only three</a></li>
+  <li><a href="#what-reliability-costs" id="toc-what-reliability-costs" class="nav-link" data-scroll-target="#what-reliability-costs">What reliability costs</a></li>
+  <li><a href="#throughput-is-not-delay" id="toc-throughput-is-not-delay" class="nav-link" data-scroll-target="#throughput-is-not-delay">Throughput is not delay</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a></li>
-  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
-  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/throughput-and-limits.html">Durchsatz und Grenzen</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/throughput-and-limits.html">Throughput and Limits</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Durchsatz und Grenzen</h1>
+<h1 class="title">Throughput and Limits</h1>
 </div>
 
 
@@ -450,35 +488,148 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="zusammenfassung" class="level2">
-<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
-<p>Der Durchsatz beschreibt, wie viele nutzbare Bits pro Sekunde ankommen. Er hängt von der Symbolrate, dem Informationsgehalt eines Symbols und dem Aufwand für Zuverlässigkeit ab. Seine Grenze kann für den konkreten Aufbau nur durch Messungen bestimmt werden.</p>
-<section id="fragen-um-die-es-geht" class="level3">
-<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Throughput says how many usable bits arrive per second. It comes out of two numbers, the symbol rate and the bits carried by one symbol, and everything you spend on being understood gets subtracted from it: markers, frames, repeats. There are exactly three levers, they act independently of one another, and each has a different price. Where your own limit sits cannot be read off a datasheet and cannot be borrowed from another team. It is a measurement on your own setup, and it is the one number the whole of Challenge 4 is paid in.</p>
+<p>In this chapter, we address the following questions:</p>
 <ul>
-<li>Wovon hängt ab, wie schnell eine Übertragung ist?</li>
-<li>Warum kann man nicht einfach schneller senden?</li>
-<li>Wieso kostet Zuverlässigkeit Geschwindigkeit?</li>
-<li>Wo liegt die Grenze bei unserem Aufbau, und woher weiß man das?</li>
+<li>What does the speed of a transmission actually depend on?</li>
+<li>Why can you not simply send faster?</li>
+<li>Why do the deductions multiply instead of adding up?</li>
+<li>Why does reliability cost speed?</li>
+<li>Where is the limit of your setup, and how do you know?</li>
 </ul>
-<p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-4.html">Challenge 4</a> verstanden haben, damit ihr dort erfolgreich seid.</p>
+<p>You need this concept for <a href="../challenges/challenge-4.html">Challenge 4</a>. The third lever, sending fewer bits in the first place, is the neighbouring concept <a href="../concepts/compression.html">Compression</a>.</p>
+</section>
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
+<p>Two kilobytes. Twenty-seven minutes. That is not an invented number, it is yours: 2 KB are 16,000 bits, and with four colours at five symbols per second you get 10 bits in a second. The calculation was already on a slide back in session 7, but you only really understand it once you are sitting next to it, waiting. And that calculation does not yet contain a single symbol of framing or a single repeat.</p>
+<section id="gross-is-not-net" class="level3">
+<h3 class="anchored" data-anchor-id="gross-is-not-net">Gross is not net</h3>
+<div id="fig-gross-net" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gross-net-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/throughput-gross-net.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Above, what the link would carry if every symbol were payload. Below, what is left after markers, preamble, end marker and repeats."><img src="../assets/diagrams/throughput-gross-net.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gross-net-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Above, what the link would carry if every symbol were payload. Below, what is left after markers, preamble, end marker and repeats.
+</figcaption>
+</figure>
+</div>
+<p>Notice how this comes about: not a single bit was lost. Everything arrived correctly. More than half of it was administration. Anyone talking about throughput has to say whether they mean gross or net, and the two can differ by a factor of two without anything being broken.</p>
+</section>
+<section id="the-deductions-multiply" class="level3">
+<h3 class="anchored" data-anchor-id="the-deductions-multiply">The deductions multiply</h3>
+<div id="fig-deductions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-deductions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/throughput-deductions.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: 24 bit/s, then three quarters after the markers, then 60 per cent of that after the frame. In red the tempting wrong arithmetic."><img src="../assets/diagrams/throughput-deductions.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-deductions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: 24 bit/s, then three quarters after the markers, then 60 per cent of that after the frame. In red the tempting wrong arithmetic.
+</figcaption>
+</figure>
+</div>
+<p>Work it through. 24 bit/s if everything were payload. Every fourth symbol is a marker, so three quarters remain: 18. Of those, 40 per cent go to preamble and end marker, because you are sending many short messages: 10.8 remain.</p>
+<p>And here is the trap: 25 per cent plus 40 per cent is <strong>not</strong> 65 per cent lost. The second deduction only applies to what the first one left over. Shares that take effect one after another are multiplied, not added. The difference between 10.8 and 8.4 is not academic; it decides whether your file needs twenty-five minutes or thirty-two.</p>
+</section>
+<section id="the-bottleneck-decides" class="level3">
+<h3 class="anchored" data-anchor-id="the-bottleneck-decides">The bottleneck decides</h3>
+<p>The obvious thought is that sending twice as fast gives twice the throughput. It does, right up to the point where it does not.</p>
+<div id="fig-bottleneck" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bottleneck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/throughput-bottleneck.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: On the left a symbol lasts 100 ms and the 50 ms window fits inside it. On the right the rate is doubled, the symbol is 50 ms, and the window reaches across a boundary."><img src="../assets/diagrams/throughput-bottleneck.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bottleneck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: On the left a symbol lasts 100 ms and the 50 ms window fits inside it. On the right the rate is doubled, the symbol is 50 ms, and the window reaches across a boundary.
+</figcaption>
+</figure>
+</div>
+<p>On paper the right-hand side manages 40 bit/s. In reality nothing readable arrives at all, because every reading now contains a colour change. Pulling a lever that is not the bottleneck gains you nothing; pulling it past the bottleneck makes things worse. The order is: shorten the measurement window first, then raise the rate, then check whether your scatter still allows it.</p>
+</section>
+<section id="your-limit-is-a-measurement" class="level3">
+<h3 class="anchored" data-anchor-id="your-limit-is-a-measurement">Your limit is a measurement</h3>
+<p>There are three things your limit is not. It is not the sensor’s datasheet: that describes the component and knows nothing about your distance, your ambient light or your optics. It is not the best team’s number: that holds for their setup, and the differences between setups are exactly what the ranking is made of. And it is not the arithmetic “rate times bits per symbol”: that says what comes out for values you choose, not which values your link supports.</p>
+<p>There is only one way to it. Raise the rate step by step, count the errors, record the last error-free setting, and write down how you measured. That last part is the one people skip, and it is what makes the number worth anything the next time you rebuild.</p>
+</section>
+<section id="three-levers-and-only-three" class="level3">
+<h3 class="anchored" data-anchor-id="three-levers-and-only-three">Three levers, and only three</h3>
+<div id="fig-levers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-levers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/throughput-levers.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The formula from session 7, read from the other side: three quantities, three levers, three different prices."><img src="../assets/diagrams/throughput-levers.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-levers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: The formula from session 7, read from the other side: three quantities, three levers, three different prices.
+</figcaption>
+</figure>
+</div>
+<p>Time is <span class="math inline">\(t = n / (r \cdot b)\)</span>, with <span class="math inline">\(n\)</span> the bits to send, <span class="math inline">\(r\)</span> the symbols per second and <span class="math inline">\(b\)</span> the bits per symbol. Three quantities, so three levers.</p>
+<p>More bits per symbol costs safety margin, because the bands get narrower. More symbols per second costs measurement window, and that is where most teams find their limit. Fewer bits in total costs a few milliseconds of computing and nothing else, which is why it is often the cheapest, and it is the subject of <a href="../concepts/compression.html">Compression</a>.</p>
+<p>What is not on that list is a faster computer. The bottleneck is the link; at ten symbols per second your laptop spends most of its time waiting.</p>
+<div id="fig-same-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-same-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/throughput-same-rate.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Two teams, the same 20 bit/s, two completely different situations."><img src="../assets/diagrams/throughput-same-rate.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-same-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Two teams, the same 20 bit/s, two completely different situations.
+</figcaption>
+</figure>
+</div>
+<p>For throughput only the product counts, which is why 10 symbols with 2 bits and 5 symbols with 4 bits come out the same. But when something breaks, the two break for different reasons: one team is running against the measurement window, the other against the scatter. When you compare yourself with another team, compare not only the number but what it hangs on.</p>
+</section>
+<section id="what-reliability-costs" class="level3">
+<h3 class="anchored" data-anchor-id="what-reliability-costs">What reliability costs</h3>
+<div id="fig-repeats" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-repeats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/throughput-repeats.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Ten delivered messages need eleven transmissions, so 91 per cent is left, not 90."><img src="../assets/diagrams/throughput-repeats.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-repeats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Ten delivered messages need eleven transmissions, so 91 per cent is left, not 90.
+</figcaption>
+</figure>
+</div>
+<p>With the back channel the receiver acknowledges, and anything that arrives damaged is repeated. Nothing is lost, everything eventually arrives. But for ten deliveries you send eleven, and that leaves 91 per cent. The difference from the obvious 90 is small here because the error rate is small. Do the same arithmetic with every second message: three transmissions for two deliveries, so two thirds. The curve gets steep quickly once a link is genuinely bad.</p>
+<div id="fig-acks" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-acks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/throughput-acks.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Acknowledging every message leaves many small gaps; acknowledging a block of ten leaves one, but an error costs the whole block."><img src="../assets/diagrams/throughput-acks.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-acks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Acknowledging every message leaves many small gaps; acknowledging a block of ten leaves one, but an error costs the whole block.
+</figcaption>
+</figure>
+</div>
+<p>Every acknowledgement is a small transmission of its own, and while both sides wait, the link stands still. Acknowledging per block saves those gaps but makes a single error expensive. Which way wins depends on your error rate, and that is a number you measured. This is a trade-off with a measurement underneath it, not a matter of taste.</p>
+</section>
+<section id="throughput-is-not-delay" class="level3">
+<h3 class="anchored" data-anchor-id="throughput-is-not-delay">Throughput is not delay</h3>
+<p>One last distinction, and it is the one most often confused outside this course as well. Throughput says how much arrives in a running stream. Delay says how long the first thing takes. A fat line can react sluggishly and a thin one can be quick.</p>
+<p>“Our link does 20 bit/s, so a one-byte command is there after 0.4 seconds” is wrong twice over. Around those eight payload symbols sit nine symbols of frame; on top of that come recognising the preamble and the receiver’s reaction time. A single short command is slower by a large factor than the rate suggests.</p>
 </section>
 </section>
-<section id="erläuterung-des-konzepts" class="level2">
-<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>Durchsatz misst, wie viele Bits pro Sekunde wirklich ankommen. Er ergibt sich aus zwei Größen, und keine davon lässt sich beliebig steigern. Jeder Übertragungsweg hat eine Obergrenze, die sich aus seinen physikalischen Eigenschaften ergibt.</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The slides for this concept, right here. They are the first deck of session 13; the second, <a href="../concepts/compression.html">Compression</a>, takes the third lever apart.</p>
+<div class="deck-embed">
+  <iframe src="../assets/decks/throughput-and-limits/index.html?bar=1&amp;pdf=../throughput-and-limits.pdf" title="why is it still not done?" allowfullscreen="" loading="lazy"></iframe>
+</div>
 </section>
-<section id="folien" class="level2">
-<h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<!-- TODO: Folien ergänzen -->
+<section id="practice-questions" class="level2">
+<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
+<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/throughput-and-limits.json"></div>
 </section>
-<section id="fragen-üben" class="level2">
-<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Übungsfragen zu diesem Konzept folgen, sobald der zugehörige Input steht.</p>
-</section>
-<section id="literatur" class="level2">
-<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
-<!-- TODO: weiterführende Literatur ergänzen -->
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li>Claude E. Shannon: A Mathematical Theory of Communication. Bell System Technical Journal 27, 1948. <a href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x" class="uri">https://doi.org/10.1002/j.1538-7305.1948.tb01338.x</a>. The paper that put an upper bound on all of this. Section 1 is readable; the rest is there for when you want to know how far the idea goes.</li>
+<li>Andrew S. Tanenbaum, Nick Feamster, David Wetherall: Computer Networks. Pearson, 6th edition 2021. Chapter 3 works through acknowledgements, window sizes and repeats properly, with the arithmetic this page only sketches.</li>
+<li>Jeff Dean’s “Latency Numbers Every Programmer Should Know”, widely reproduced online. A list of durations from a cache access to a packet crossing the Atlantic. Worth reading once for the sense of scale: your light link sits at the very slow end, and that is what makes its costs visible.</li>
+</ul>
 
 
 </section>
@@ -829,12 +980,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1235,6 +1386,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

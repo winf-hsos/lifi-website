@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.3">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kompression – LiFi Project</title>
+<title>Compression – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -44,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6afc368e6f6fa7c79ac664f908235de2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a84aad28d7e5b5456db9ac6a39cf199b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,17 +62,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -89,16 +92,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
         <div class="quarto-navbar-tools tools-end">
 </div>
-          <div id="quarto-search" class="" title="Suchen"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/logic-and-arithmetic.html">Processing Information</a></li><li class="breadcrumb-item"><a href="../concepts/compression.html">Kompression</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/logic-and-arithmetic.html">Processing Information</a></li><li class="breadcrumb-item"><a href="../concepts/compression.html">Compression</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -119,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">LiFi Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -170,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -222,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Solving Problems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -263,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -298,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -321,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Transferring Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -359,7 +362,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Durchsatz und Grenzen</span></a>
+ <span class="menu-text">Throughput and Limits</span></a>
   </div>
 </li>
       </ul>
@@ -368,7 +371,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Processing Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -382,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/compression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Kompression</span></a>
+ <span class="menu-text">Compression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -414,26 +417,32 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  <li><a href="#why-anything-compresses-at-all" id="toc-why-anything-compresses-at-all" class="nav-link" data-scroll-target="#why-anything-compresses-at-all">Why anything compresses at all</a></li>
+  <li><a href="#trick-one-point-back" id="toc-trick-one-point-back" class="nav-link" data-scroll-target="#trick-one-point-back">Trick one: point back</a></li>
+  <li><a href="#trick-two-count-first" id="toc-trick-two-count-first" class="nav-link" data-scroll-target="#trick-two-count-first">Trick two: count first</a></li>
+  <li><a href="#and-that-is-a-zip" id="toc-and-that-is-a-zip" class="nav-link" data-scroll-target="#and-that-is-a-zip">And that is a ZIP</a></li>
+  <li><a href="#the-picture-honestly" id="toc-the-picture-honestly" class="nav-link" data-scroll-target="#the-picture-honestly">The picture, honestly</a></li>
+  <li><a href="#a-one-way-street" id="toc-a-one-way-street" class="nav-link" data-scroll-target="#a-one-way-street">A one-way street</a></li>
+  <li><a href="#the-receiver-has-to-know-the-method" id="toc-the-receiver-has-to-know-the-method" class="nav-link" data-scroll-target="#the-receiver-has-to-know-the-method">The receiver has to know the method</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a></li>
-  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
-  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/logic-and-arithmetic.html">Processing Information</a></li><li class="breadcrumb-item"><a href="../concepts/compression.html">Kompression</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/logic-and-arithmetic.html">Processing Information</a></li><li class="breadcrumb-item"><a href="../concepts/compression.html">Compression</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Kompression</h1>
+<h1 class="title">Compression</h1>
 </div>
 
 
@@ -450,35 +459,214 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="zusammenfassung" class="level2">
-<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
-<p>Kompression stellt dieselbe Information mit weniger Bits dar, indem sie Wiederholungen und andere Muster ausnutzt. Wie stark Daten schrumpfen können, hängt von ihrem Inhalt und davon ab, ob ein Verlust von Einzelheiten erlaubt ist.</p>
-<section id="fragen-um-die-es-geht" class="level3">
-<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Compression represents the same information with fewer bits. The usual way of writing data gives space away: things repeat, and some symbols turn up far more often than others. Every packer you have ever used, ZIP included, does exactly two things about that: it says a repeated stretch once and then only points back to it, and it gives the frequent symbols the short codes. Unpack, and the same bits come back, one for one. That kind of compression has a hard limit, though, and a photo sits close to it. To get a photo into the 2 KB payload of the final you have to drop detail, and what you drop does not come back. Which of the two you may use is a question about the task, not about the tool.</p>
+<p>In this chapter, we address the following questions:</p>
 <ul>
-<li>Warum lassen sich Daten kleiner machen, ohne dass etwas fehlt?</li>
-<li>Was macht eine Datei überhaupt komprimierbar?</li>
-<li>Warum lassen sich manche Dateien kaum verkleinern?</li>
-<li>Was ist der Unterschied zwischen verlustfreier und verlustbehafteter Kompression?</li>
+<li>Why can data be made smaller without anything going missing?</li>
+<li>What are the two tricks inside a ZIP file, and how does each of them work?</li>
+<li>Why do some files barely shrink, and why does no method shrink everything?</li>
+<li>How does a photo get from 192 KB to 2 KB, and what is the price?</li>
+<li>What does the receiver have to know in order to unpack what you sent?</li>
 </ul>
-<p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-4.html">Challenge 4</a> verstanden haben, denn dort entscheidet es mit über euren Durchsatz.</p>
+<p>You need this concept for <a href="../challenges/challenge-4.html">Challenge 4</a>. It is the third of the three levers on <a href="../concepts/throughput-and-limits.html">throughput</a>, and the one that costs the least.</p>
+</section>
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
+<p>The fastest transmission is the one where you have less to send. That sounds like a trick, and the first time you pack a text file and it comes back at half the size with every character intact, it feels like one. A baling press is the honest picture: loose cardboard goes in, the same cardboard comes out on a fraction of the space, and nothing is gone but the air in between. The question is where the air sits in a file. And the second, less comfortable question is what you do once there is none left.</p>
+<section id="why-anything-compresses-at-all" class="level3">
+<h3 class="anchored" data-anchor-id="why-anything-compresses-at-all">Why anything compresses at all</h3>
+<div id="fig-why" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-why.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: The same nine characters three times in one sentence, and German text that uses some letters constantly and others almost never."><img src="../assets/diagrams/compression-why.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The same nine characters three times in one sentence, and German text that uses some letters constantly and others almost never.
+</figcaption>
+</figure>
+</div>
+<p>Nothing was left out when your text file shrank. What happened is that the usual notation gives space away. “die sonne” stands there three times. Some letters turn up constantly and others almost never. After a <code>q</code> there is almost always a <code>u</code>. Every one of those regularities can be described more briefly, and the information survives it untouched. The information stays; the description gets shorter.</p>
+<p>You have met this idea twice already, without the name.</p>
+<div id="fig-seen-before" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-seen-before-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-seen-before.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Morse gives the frequent e a single dot; fixed-length codes give every letter three bits, so the e pays as much as the q."><img src="../assets/diagrams/compression-seen-before.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seen-before-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Morse gives the frequent e a single dot; fixed-length codes give every letter three bits, so the e pays as much as the q.
+</figcaption>
+</figure>
+</div>
+<p>In <a href="../concepts/symbols-and-information.html">Symbols and Information</a> you saw that Morse gives the most frequent letter the shortest code, a single dot for the e, while a rare q gets four signs. In <a href="../concepts/code-systems.html">Code Systems</a> you saw the price of fixed length: it is easy to read, but the e pays as much as the q. What was left open there was a rule for handing out the short codes. That rule is the second trick below.</p>
+</section>
+<section id="trick-one-point-back" class="level3">
+<h3 class="anchored" data-anchor-id="trick-one-point-back">Trick one: point back</h3>
+<div id="fig-point-back" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-point-back-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-point-back.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: The second and third “die sonne” replaced by a pointer: 22 characters back, 9 characters long."><img src="../assets/diagrams/compression-point-back.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-point-back-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The second and third “die sonne” replaced by a pointer: 22 characters back, 9 characters long.
+</figcaption>
+</figure>
+</div>
+<p>The second “die sonne” does not need writing out again. “22 characters back, 9 long” is enough of an instruction, and the third one is “21 back, 9 long”. Out of 63 characters come 45 plus two pointers, and a pointer costs about as much as two characters. That, in essence, is the first thing every packer does: it keeps the last few thousand characters in mind, and when something comes round again it writes only where it was and how long it is. Lempel and Ziv described it in 1977, and it sits inside every ZIP.</p>
+<p>The simplest form of the same idea works on pictures. Walk along a row, count how many equal points come in a row, and write one byte per run: one bit for the colour, seven for the length.</p>
+<div id="fig-run-good" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-run-good-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-run-good.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: An 8 by 8 picture with areas of one colour: six runs, six bytes instead of eight."><img src="../assets/diagrams/compression-run-good.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-good-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: An 8 by 8 picture with areas of one colour: six runs, six bytes instead of eight.
+</figcaption>
+</figure>
+</div>
+<p>Not the world, but the idea carries: the larger the areas, the more it saves, and you could program this in an afternoon. Now the same method on a different picture.</p>
+<div id="fig-run-bad" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-run-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-run-bad.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: A chessboard: every point differs from its neighbour, so 64 runs of length one, 64 bytes instead of eight."><img src="../assets/diagrams/compression-run-bad.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: A chessboard: every point differs from its neighbour, so 64 runs of length one, 64 bytes instead of eight.
+</figcaption>
+</figure>
+</div>
+<p>Eight times bigger. To your eye a chessboard is obviously a pattern; to this method it is not, because it only ever asks one question, how many equal points come next. A method only ever finds the regularity it is looking for. That is why serious packers check their own output and fall back to the raw data when they have made things worse.</p>
+</section>
+<section id="trick-two-count-first" class="level3">
+<h3 class="anchored" data-anchor-id="trick-two-count-first">Trick two: count first</h3>
+<p>Take a magic word, because compression feels like magic until you see the trick.</p>
+<div id="fig-count-first" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-count-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-count-first.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: abracadabra: eleven letters, five different ones, and with a fixed code of three bits each the word costs 33 bits."><img src="../assets/diagrams/compression-count-first.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-count-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: abracadabra: eleven letters, five different ones, and with a fixed code of three bits each the word costs 33 bits.
+</figcaption>
+</figure>
+</div>
+<p><code>abracadabra</code> has eleven letters and five different ones: a five times, b and r twice each, c and d once. With a fixed code, as in Code Systems, every letter needs three bits, so the word needs 33. The a pays as much as the d, although it appears five times and the d once. That is where the air is.</p>
+<p>David Huffman found the rule in 1951, as a student at MIT. His professor offered a choice between a final exam and a term paper; the paper was “find the shortest code”, and Huffman found it shortly before he was going to give up and study for the exam instead. The rule is a single sentence: take the two rarest symbols, join them into a node whose number is their sum, and repeat until one node is left.</p>
+<div id="fig-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-tree.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: The tree for abracadabra: c and d become a 2, b and r a 4, 2 and 4 a 6, and a and 6 the root, 11."><img src="../assets/diagrams/compression-tree.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: The tree for abracadabra: c and d become a 2, b and r a 4, 2 and 4 a 6, and a and 6 the root, 11.
+</figcaption>
+</figure>
+</div>
+<p>Step by step: c and d, the ones, become a 2. Then b and r, the twos, become a 4. Then 2 and 4 become a 6. Finally a and 6 become the root, 11, as many letters as the word has. What occurs often stays close to the root; what occurs rarely drifts to the bottom.</p>
+<div id="fig-read-codes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-read-codes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-read-codes.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Left 0, right 1: a = 0, b = 100, r = 101, c = 110, d = 111, and the word costs 23 bits instead of 33."><img src="../assets/diagrams/compression-read-codes.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-read-codes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Left 0, right 1: a = 0, b = 100, r = 101, c = 110, d = 111, and the word costs 23 bits instead of 33.
+</figcaption>
+</figure>
+</div>
+<p>The path from the root to a letter is its code: 0 at every left branch, 1 at every right one. The a hangs directly on the root and gets a single bit. The others get three. Paid out: five times one bit for the a, three each for the other six letters, 5 + 18 = 23 bits instead of 33, nearly a third less. Reading it back gives the same word letter for letter. All the saving comes from the a; the other four still cost three bits, so nothing is lost.</p>
+<div id="fig-reads-itself" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reads-itself-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-reads-itself.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: Reading 0100101 from the left: 0 is a complete code, then 100, then 101. Letters sit on leaves only, so no code is the beginning of another."><img src="../assets/diagrams/compression-reads-itself.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reads-itself-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Reading 0100101 from the left: 0 is a complete code, then 100, then 101. Letters sit on leaves only, so no code is the beginning of another.
+</figcaption>
+</figure>
+</div>
+<p>Here is the worry from Code Systems: codes of different lengths, no separators, how does the receiver know where one letter ends? The tree answers that as a side effect. Letters sit only on leaves, so no code can be the beginning of another. Read from the left and start over at every leaf, and you never fall into the trap: 0 is complete, an a; 100 is complete, a b; 101, an r. The counterexample that went wrong in Code Systems was <code>a = 0, b = 01</code>, where <code>01</code> has two readings because the a would not be a leaf but a stop on the way to the b. In a Huffman tree that cannot happen.</p>
+</section>
+<section id="and-that-is-a-zip" class="level3">
+<h3 class="anchored" data-anchor-id="and-that-is-a-zip">And that is a ZIP</h3>
+<div id="fig-zip" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-zip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-zip.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;10: A ZIP is the two tricks in a row, and five measured results: a log file to 19 per cent, text to 45, the raw photo to 68, the PNG to 100, random bytes to 101."><img src="../assets/diagrams/compression-zip.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: A ZIP is the two tricks in a row, and five measured results: a log file to 19 per cent, text to 45, the raw photo to 68, the PNG to 100, random bytes to 101.
+</figcaption>
+</figure>
+</div>
+<p>The thing you have clicked on since school does exactly the two tricks above, one after the other: point back first, then short codes for the frequent. The pair is called Deflate, and PNG, the picture format, is the same pair with a picture in front. The five bars are real measurements, made with Python’s <code>zipfile</code> at level 9 on 13 September 2026. A log file of 1,200 near-identical lines shrinks to 19 per cent, because every line has almost been there before. A text to 45 per cent. The photo as raw pixels to 68 per cent, and that is about all the air a photo has. The photo as a PNG stays at 100 per cent, because it already is one. And random bytes grow, to 101 per cent.</p>
+<p>That last number is not bad luck, and the reason is one of the nicest arguments of the whole semester because it has nothing to do with technology.</p>
+<div id="fig-counting" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-counting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-counting.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: Eight files of three bits, seven files shorter than three bits. Two of the eight have to share."><img src="../assets/diagrams/compression-counting.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-counting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Eight files of three bits, seven files shorter than three bits. Two of the eight have to share.
+</figcaption>
+</figure>
+</div>
+<p>Suppose somebody promises a method that makes <strong>every</strong> file at least one bit smaller, losslessly. With three bits you can write eight different files. With fewer than three bits you can write seven. Put eight things into seven drawers and two of them end up in the same drawer, and then nobody can tell on unpacking which of the two was meant. No amount of computing power helps against that, because it is an argument from counting. Every lossless method makes some files smaller and others necessarily bigger. When you see a claim to the contrary, you are looking at either a misunderstanding or a sales pitch.</p>
+</section>
+<section id="the-picture-honestly" class="level3">
+<h3 class="anchored" data-anchor-id="the-picture-honestly">The picture, honestly</h3>
+<div id="fig-parrot-honest" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-parrot-honest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-parrot-honest.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figure&nbsp;12: The parrot: 196,608 bytes raw, 93,107 as a PNG, and a payload of 2,048. At 10 bit/s that is 44 hours, 21 hours, and 27 minutes."><img src="../assets/diagrams/compression-parrot-honest.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parrot-honest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: The parrot: 196,608 bytes raw, 93,107 as a PNG, and a payload of 2,048. At 10 bit/s that is 44 hours, 21 hours, and 27 minutes.
+</figcaption>
+</figure>
+</div>
+<p>Take the parrot you know from <a href="../concepts/logic-and-arithmetic.html">Processing</a>. Raw, that is 256 by 256 points times three bytes, 196,608 bytes. As a PNG, so packed losslessly, still 93,107. At ten bits per second that is a day, or a morning. The payload in the final is 2,048 bytes, the sliver at the bottom. The best lossless packer in the world does not get you anywhere near, and after the counting argument you know that this is no shortcoming of the packer: a photo has little air. If you want two kilobytes anyway, you have to drop something.</p>
+<div class="parrots">
+  <figure class="figure"><img src="../assets/decks/compression/img/parrot.png" alt="the parrot as a PNG" class="figure-img"><figcaption>png · 93,107 bytes · lossless</figcaption></figure>
+  <figure class="figure"><img src="../assets/decks/compression/img/parrot-q75.jpg" alt="the parrot as a JPG at quality 75" class="figure-img"><figcaption>jpg · 10,587 bytes · quality 75</figcaption></figure>
+  <figure class="figure"><img src="../assets/decks/compression/img/parrot-q10.jpg" alt="the parrot as a JPG at quality 10" class="figure-img"><figcaption>jpg · 3,081 bytes · quality 10</figcaption></figure>
+  <figure class="figure"><img src="../assets/decks/compression/img/parrot-128-q25.jpg" alt="the parrot as a JPG with 128 by 128 points" class="figure-img"><figcaption>jpg · 2,032 bytes · 128 × 128 points, quality 25</figcaption></figure>
+</div>
+<p>Four real files, shown at the same size. Between the first and the second lies a factor of nine, and from two metres away you see no difference. That is what JPG does: it drops detail an eye hardly misses, fine colour differences above all, and keeps the edges in brightness. On the third you begin to see it. The fourth has half as many points per side and is under two kilobytes. It is a parrot. It is not the same parrot.</p>
+<p>There are two roads to two kilobytes, and they are the two cuts of <a href="../concepts/analog-and-digital.html">digitising</a> seen from the other side. You can keep all 256 by 256 points and make each of them coarse: quality 1, 1,925 bytes, and you can see the blocks. Or you can throw away three quarters of the points and keep the rest clean: 128 by 128 at quality 25, 2,032 bytes. Fewer points, or coarser points. Which road is better depends on the picture and on the purpose, and that is your decision, not the format’s.</p>
+</section>
+<section id="a-one-way-street" class="level3">
+<h3 class="anchored" data-anchor-id="a-one-way-street">A one-way street</h3>
+<p>That is the one difference which decides everything. With a ZIP, unpacking is the reverse of packing, bit for bit: afterwards you hold the original. With a JPG there is no reverse. What is gone is gone, and you hold something that looks like the original. The two kilobytes contain everything the receiver will ever learn about this picture; the other 91 vanished when packing, they are not hidden anywhere. Edit a photo ten times and save it as a JPG each time, and you lose ten times.</p>
+<p>Lossy methods are not unreliable. They reliably do something else. So the question is not which method is better but what is owed. Must exactly this file arrive, as in the final, where the checksum decides? Then lossy is out. Must a presentable picture arrive? Then it is your strongest lever by a distance, stronger than any alphabet. The task decides, not the tool, and you settle that <strong>before</strong> you spend an hour optimising.</p>
+</section>
+<section id="the-receiver-has-to-know-the-method" class="level3">
+<h3 class="anchored" data-anchor-id="the-receiver-has-to-know-the-method">The receiver has to know the method</h3>
+<p>One last thing, and it belongs to <a href="../concepts/protocols.html">Protocols</a> as much as here. Packed data does not explain itself. It is a notation, and whoever does not know the notation reads nonsense, even when every single bit arrived correctly.</p>
+<p>If your partner team’s receiver produces garbage although the transmission was clean, this is the first thing to check. Which method did you use, with which settings? That belongs in your specification, right next to the preamble and the character code. It is the same lesson as with <a href="../concepts/code-systems.html">Code Systems</a>: the same bits, two tables, two meanings.</p>
 </section>
 </section>
-<section id="erläuterung-des-konzepts" class="level2">
-<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>Die schnellste Übertragung ist die, bei der man weniger senden muss. Viele Daten enthalten Wiederholungen und Muster, und wer die erkennt, kann dieselbe Bedeutung mit weniger Bits ausdrücken.</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The slides for this concept, right here. They are the second deck of session 13; the first, on <a href="../concepts/throughput-and-limits.html">Throughput and Limits</a>, places compression as the third of three levers.</p>
+<div class="deck-embed">
+  <iframe src="../assets/decks/compression/index.html?bar=1&amp;pdf=../compression.pdf" title="say it shorter" allowfullscreen="" loading="lazy"></iframe>
+</div>
 </section>
-<section id="folien" class="level2">
-<h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<!-- TODO: Folien ergänzen -->
+<section id="practice-questions" class="level2">
+<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
+<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/compression.json"></div>
 </section>
-<section id="fragen-üben" class="level2">
-<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Übungsfragen zu diesem Konzept folgen, sobald der zugehörige Input steht.</p>
-</section>
-<section id="literatur" class="level2">
-<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
-<!-- TODO: weiterführende Literatur ergänzen -->
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li>David A. Huffman: A Method for the Construction of Minimum-Redundancy Codes. Proceedings of the IRE 40 (9), 1952. <a href="https://doi.org/10.1109/JRPROC.1952.273898" class="uri">https://doi.org/10.1109/JRPROC.1952.273898</a>. Four pages, and the tree on this page is in them. Readable once you have built one yourself.</li>
+<li>P. Deutsch: DEFLATE Compressed Data Format Specification version 1.3. RFC 1951, 1996. <a href="https://www.rfc-editor.org/rfc/rfc1951" class="uri">https://www.rfc-editor.org/rfc/rfc1951</a>. The exact format inside every ZIP and PNG: pointers back, then Huffman codes. Section 1.1 says in one paragraph what this page says in two.</li>
+<li>Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. Microsoft Press, 2nd edition 2022. Chapter 8 builds Morse code from letter frequencies, which is the same idea as a packer’s: what occurs often gets a short code.</li>
+<li>David Salomon: Data Compression. The Complete Reference. Springer, 4th edition 2007. Far more than you need, but chapter 1 states the counting argument properly and chapter 2 walks through run-length encoding and its relatives.</li>
+<li>The <code>zlib</code> FAQ, <a href="https://www.zlib.net/zlib_faq.html" class="uri">https://www.zlib.net/zlib_faq.html</a>, question 15: “Can zlib compress already compressed data?” A short, dry answer from the people who wrote the thing, and it says the same as this page.</li>
+</ul>
 
 
 </section>
@@ -829,12 +1017,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1235,6 +1423,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

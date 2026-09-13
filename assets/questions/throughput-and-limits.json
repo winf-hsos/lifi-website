@@ -1,0 +1,599 @@
+{
+ "konzept": "throughput-and-limits",
+ "fragen": [
+  {
+   "id": "tl-001",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr wollt eine Datei in weniger Zeit hinüberbringen. Welche Maßnahmen\nerhöhen tatsächlich die Zahl der Nutzbits, die pro Sekunde ankommen?\n(Mehrere richtige Antworten möglich.)",
+    "en": "You want to get a file across in less time. Which measures actually\nincrease the number of payload bits arriving per second?\n(Several answers may be correct.)"
+   },
+   "typ": "mc",
+   "richtig": [
+    "b",
+    "c",
+    "e"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Einen schnelleren Rechner benutzen, damit das Programm die Symbole zügiger erzeugt.",
+      "en": "Use a faster computer, so the program produces the symbols more quickly."
+     },
+     "begruendung": {
+      "de": "Der Engpass ist nicht euer Rechner, sondern die Strecke. Bei zehn Symbolen pro Sekunde langweilt sich jeder Laptop; er wartet die meiste Zeit. Ein schnellerer Rechner macht die Wartezeit nicht kürzer.",
+      "en": "The bottleneck is not your computer, it is the link. At ten symbols per second any laptop is bored; it spends most of its time waiting. A faster computer does not shorten the waiting."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Mehr Farben ins Alphabet aufnehmen, sodass ein Symbol mehr Bit trägt.",
+      "en": "Put more colours into the alphabet, so that one symbol carries more bits."
+     },
+     "begruendung": {
+      "de": "Richtig, das ist der erste der drei Hebel. Er ist nicht umsonst: Mehr Farben heißt engere Bänder, und ob die noch sicher unterscheidbar sind, entscheidet eure Streuung.",
+      "en": "Right, that is the first of the three levers. It is not free: more colours means narrower bands, and whether those are still safely distinguishable is decided by your scatter."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Mehr Symbole pro Sekunde senden.",
+      "en": "Send more symbols per second."
+     },
+     "begruendung": {
+      "de": "Richtig, der zweite Hebel, und auch er hat eine Grenze: Sobald ein Symbol kürzer wird als das Messfenster des Sensors, kommen Mischwerte an statt Symbole.",
+      "en": "Right, the second lever, and it too has a limit: as soon as a symbol gets shorter than the sensor's measurement window, mixtures arrive instead of symbols."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Präambel verlängern, damit der Empfänger den Anfang sicherer findet.",
+      "en": "Make the preamble longer, so the receiver finds the start more reliably."
+     },
+     "begruendung": {
+      "de": "Das senkt den Durchsatz, statt ihn zu heben: Jedes Symbol Präambel trägt keine Nutzdaten. Es kann trotzdem die richtige Entscheidung sein, wenn ihr sonst Fehlstarts habt, aber bezahlt wird sie in Bits.",
+      "en": "That lowers throughput rather than raising it: every preamble symbol carries no payload. It can still be the right decision if you have false starts otherwise, but you pay for it in bits."
+     }
+    },
+    {
+     "kennung": "e",
+     "text": {
+      "de": "Die Datei komprimieren, bevor sie gesendet wird.",
+      "en": "Compress the file before sending it."
+     },
+     "begruendung": {
+      "de": "Richtig, und das ist der dritte Hebel, den man am leichtesten vergisst: weniger Bits insgesamt. Die anderen beiden machen die Leitung schneller, dieser macht die Fracht kleiner. Auf einer langsamen Strecke ist er oft der billigste.",
+      "en": "Right, and this is the third lever, the one most easily forgotten: fewer bits in total. The other two make the line faster, this one makes the load smaller. On a slow link it is often the cheapest."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-002",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Eure Strecke schafft brutto 24 bit/s, also wenn jedes Symbol Nutzdaten\ntrüge. Zwei Dinge kommen dazwischen: Jedes vierte Symbol ist eine\nSynchronisationsmarke, und von den übrigen Symbolen gehen 40 Prozent für\nPräambel und Endmarke drauf, weil ihr viele kurze Nachrichten schickt. Wie\nviele Nutzbits kommen pro Sekunde an?",
+    "en": "Your link manages 24 bit/s gross, that is if every symbol carried payload.\nTwo things get in the way: every fourth symbol is a synchronisation marker,\nand of the remaining symbols 40 per cent go to preamble and end marker,\nbecause you send many short messages. How many payload bits arrive per\nsecond?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "8,4 bit/s: 25 Prozent für die Marken plus 40 Prozent für den Rahmen sind 65 Prozent Verlust.",
+      "en": "8.4 bit/s: 25 per cent for the markers plus 40 per cent for the frame is 65 per cent lost."
+     },
+     "begruendung": {
+      "de": "Die zwei Abzüge lassen sich nicht addieren, denn der zweite gilt nur noch für das, was der erste übrig gelassen hat. Die 40 Prozent Rahmen beziehen sich auf die Datensymbole, nicht auf alle Symbole. Anteile, die nacheinander greifen, werden multipliziert.",
+      "en": "The two deductions cannot be added, because the second only applies to what the first left over. The 40 per cent frame refers to the data symbols, not to all symbols. Shares that apply one after the other are multiplied."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "18 bit/s: drei von vier Symbolen tragen Daten.",
+      "en": "18 bit/s: three out of four symbols carry data."
+     },
+     "begruendung": {
+      "de": "Das ist der Zwischenstand nach dem ersten Abzug. Der Rahmen fehlt noch, und der ist hier der teurere von beiden.",
+      "en": "That is the intermediate result after the first deduction. The frame is still missing, and here it is the more expensive of the two."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "10,8 bit/s: 24 mal drei Viertel sind 18, und davon bleiben 60 Prozent.",
+      "en": "10.8 bit/s: 24 times three quarters is 18, and 60 per cent of that remains."
+     },
+     "begruendung": {
+      "de": "Genau. Und daran sieht man, warum der Bruttowert so wenig über eine Strecke sagt: Aus 24 werden 10,8, ohne dass ein einziges Bit verloren gegangen wäre. Alles ist korrekt angekommen, nur mehr als die Hälfte davon war Verwaltung.",
+      "en": "Exactly. And this shows why the gross figure says so little about a link: 24 becomes 10.8 without a single bit being lost. Everything arrived correctly, more than half of it was just administration."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "14,4 bit/s: 60 Prozent von 24, denn der Rahmen ist der größere Posten.",
+      "en": "14.4 bit/s: 60 per cent of 24, because the frame is the larger item."
+     },
+     "begruendung": {
+      "de": "Hier ist der größere von zwei Abzügen genommen und der kleinere weggelassen worden. Beide gelten aber, und zwar nacheinander; keiner von beiden ersetzt den anderen.",
+      "en": "Here the larger of two deductions has been taken and the smaller dropped. But both apply, one after the other; neither replaces the other."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-003",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Mit dem Rückkanal quittiert der Empfänger jede Nachricht. Jede zehnte\nNachricht kommt verdorben an und wird einmal wiederholt; die Wiederholung\nklappt immer. Wie viel eures Durchsatzes bleibt gegenüber einer fehlerfreien\nStrecke übrig?",
+    "en": "With the back channel the receiver acknowledges every message. Every tenth\nmessage arrives damaged and is repeated once; the repeat always works. How\nmuch of your throughput is left compared with an error-free link?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Genau 90 Prozent, denn jede zehnte Nachricht geht verloren.",
+      "en": "Exactly 90 per cent, because every tenth message is lost."
+     },
+     "begruendung": {
+      "de": "Verloren geht keine einzige, sie kommen alle an. Was sich ändert, ist die Zahl der Sendungen: Für zehn zugestellte Nachrichten sendet ihr elf. Der Anteil bezieht sich auf das Gesendete, nicht auf das Zugestellte.",
+      "en": "Not a single one is lost, they all arrive. What changes is the number of transmissions: to deliver ten messages you send eleven. The share refers to what you send, not to what you deliver."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Rund 91 Prozent: Für zehn zugestellte Nachrichten sendet ihr elf, also 10 von 11.",
+      "en": "About 91 per cent: to deliver ten messages you send eleven, so 10 out of 11."
+     },
+     "begruendung": {
+      "de": "Genau, und der Unterschied zu den naheliegenden 90 Prozent ist klein, weil die Fehlerquote klein ist. Rechnet dasselbe einmal mit jeder zweiten Nachricht: Dann sendet ihr drei für zwei, also bleiben zwei Drittel. Die Kurve wird schnell steil, sobald die Strecke wirklich schlecht ist.",
+      "en": "Exactly, and the difference from the obvious 90 per cent is small because the error rate is small. Do the same with every second message: then you send three for two, so two thirds remain. The curve gets steep quickly once the link is really bad."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "100 Prozent, denn am Ende kommt jede Nachricht an; die Wiederholung kostet nichts.",
+      "en": "100 per cent, because in the end every message arrives; the repeat costs nothing."
+     },
+     "begruendung": {
+      "de": "Sie kostet Zeit, und Zeit ist bei 10 bis 50 bit/s die knappste Größe des Projekts. Die Strecke hat während der Wiederholung gearbeitet, aber nichts Neues zugestellt. Genau diese Unterscheidung ist der Kern von Durchsatz.",
+      "en": "It costs time, and at 10 to 50 bit/s time is the scarcest thing in this project. The link was working during the repeat, but delivered nothing new. That distinction is the core of throughput."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das lässt sich nicht sagen, ohne die Symbolrate zu kennen.",
+      "en": "There is no way to tell without knowing the symbol rate."
+     },
+     "begruendung": {
+      "de": "Gefragt ist ein Anteil, kein absoluter Wert. Ob ihr 10 oder 50 bit/s schafft, ändert nichts daran, dass ihr für zehn Zustellungen elf Sendungen braucht. Die Symbolrate bräuchtet ihr erst, um die Dauer in Sekunden auszurechnen.",
+      "en": "The question asks for a share, not an absolute value. Whether you manage 10 or 50 bit/s changes nothing about needing eleven transmissions for ten deliveries. You would only need the symbol rate to work out the duration in seconds."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-004",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr sendet 10 Symbole pro Sekunde mit 4 Farben, also 20 bit/s brutto. Das\nMessfenster eures Sensors steht auf 50 ms. Ihr verdoppelt die Symbolrate auf\n20 Symbole pro Sekunde und lasst alles andere, wie es ist. Was passiert?",
+    "en": "You send 10 symbols per second with 4 colours, so 20 bit/s gross. Your\nsensor's measurement window is set to 50 ms. You double the symbol rate to\n20 symbols per second and leave everything else as it is. What happens?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Der Durchsatz verdoppelt sich auf 40 bit/s.",
+      "en": "Throughput doubles to 40 bit/s."
+     },
+     "begruendung": {
+      "de": "Das wäre so, wenn die Symbolrate der Engpass wäre. Sie ist es nicht: Bei 20 Symbolen pro Sekunde ist ein Symbol 50 ms lang, genau so lang wie das Messfenster. Damit liegt in jeder Messung ein Farbwechsel.",
+      "en": "That would hold if the symbol rate were the bottleneck. It is not: at 20 symbols per second a symbol is 50 ms long, exactly as long as the measurement window. So every reading contains a colour change."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Er steigt, aber weniger als auf das Doppelte, weil der Rahmen mitwächst.",
+      "en": "It rises, but less than double, because the frame grows with it."
+     },
+     "begruendung": {
+      "de": "Die Antwort klingt vernünftig und ist an anderer Stelle richtig; der Rahmen wächst hier aber gar nicht mit, er bleibt in Symbolen gerechnet derselbe. Das Problem liegt eine Ebene tiefer: Die Symbole kommen nicht mehr lesbar an.",
+      "en": "The answer sounds sensible and is right elsewhere; but the frame does not grow here, counted in symbols it stays the same. The problem is one level down: the symbols no longer arrive readable."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Es kommt nichts Brauchbares mehr an, denn ein Symbol ist jetzt genauso lang wie das Messfenster.",
+      "en": "Nothing usable arrives any more, because a symbol is now exactly as long as the measurement window."
+     },
+     "begruendung": {
+      "de": "Genau. Einen Hebel zu ziehen, der nicht der Engpass ist, bringt nichts; einen Hebel über den Engpass hinaus zu ziehen, macht es schlechter. Erst das Fenster verkürzen, dann die Rate erhöhen, und dann prüfen, ob die Streuung das noch mitmacht.",
+      "en": "Exactly. Pulling a lever that is not the bottleneck gains nothing; pulling it past the bottleneck makes things worse. Shorten the window first, then raise the rate, and then check whether the scatter still allows it."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Er bleibt gleich, weil sich das Alphabet nicht geändert hat.",
+      "en": "It stays the same, because the alphabet has not changed."
+     },
+     "begruendung": {
+      "de": "Das Alphabet bestimmt die Bits je Symbol, nicht die Symbole je Sekunde. Beide Größen zusammen ergeben den Durchsatz, und die Rate hat sich sehr wohl geändert; sie wirkt nur nicht so, wie erhofft.",
+      "en": "The alphabet determines the bits per symbol, not the symbols per second. The two together make up throughput, and the rate certainly did change; it just does not act the way you hoped."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-005",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Auf eurer Lichtstrecke lohnt sich Kompression viel mehr als beim Kopieren\neiner Datei auf einen USB-Stick. Warum?",
+    "en": "On your light link compression pays off far more than when copying a file\nto a USB stick. Why?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Weil die Strecke der Engpass ist: Rechenzeit fürs Komprimieren gibt es im Überfluss, Übertragungszeit nicht.",
+      "en": "Because the link is the bottleneck: computing time for compressing is plentiful, transmission time is not."
+     },
+     "begruendung": {
+      "de": "Genau. Bei 10 bis 50 bit/s spart jedes eingesparte Bit spürbar Zeit, und das Komprimieren selbst dauert Millisekunden. Beim USB-Stick ist es umgekehrt: Dort kann das Komprimieren länger dauern als das Kopieren, und dann verliert man durch Kompression Zeit.",
+      "en": "Exactly. At 10 to 50 bit/s every bit saved is noticeable time, and the compressing itself takes milliseconds. With a USB stick it is the other way round: there the compressing can take longer than the copying, and then compression loses you time."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Weil komprimierte Daten robuster gegen Übertragungsfehler sind.",
+      "en": "Because compressed data is more robust against transmission errors."
+     },
+     "begruendung": {
+      "de": "Es ist genau umgekehrt, und das ist wichtig für Challenge 4: In komprimierten Daten steckt kaum Redundanz, also richtet ein gekipptes Bit mehr Schaden an. In einem unkomprimierten Text ist ein falscher Buchstabe ein falscher Buchstabe; in einer komprimierten Datei kann er den Rest unlesbar machen.",
+      "en": "It is exactly the other way round, and that matters for challenge 4: compressed data holds almost no redundancy, so a flipped bit does more damage. In plain text a wrong letter is a wrong letter; in a compressed file it can make the rest unreadable."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Weil sich die Symbole nach dem Komprimieren besser voneinander unterscheiden lassen.",
+      "en": "Because after compressing, the symbols are easier to tell apart."
+     },
+     "begruendung": {
+      "de": "Kompression ändert nichts an euren Farben, an eurem Sensor oder am Umgebungslicht. Wie gut sich zwei Symbole unterscheiden lassen, entscheidet das Verhältnis von Abstand zu Streuung, und das steht eine Ebene tiefer als die Frage, welche Bits ihr schickt.",
+      "en": "Compression changes nothing about your colours, your sensor or the ambient light. How well two symbols can be told apart is decided by the ratio of distance to scatter, and that sits one level below the question of which bits you send."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Weil man eine Datei zweimal komprimieren kann und sie dann noch einmal halb so groß wird.",
+      "en": "Because you can compress a file twice and it gets half as small again."
+     },
+     "begruendung": {
+      "de": "Probiert es aus: Ein zweiter Durchgang bringt fast nichts und macht die Datei manchmal sogar größer. Kompression entfernt Wiederholungen, und nach dem ersten Durchgang sind kaum noch welche da. Wäre es anders, ließe sich jede Datei auf ein Bit schrumpfen.",
+      "en": "Try it: a second pass gains almost nothing and sometimes even makes the file bigger. Compression removes repetition, and after the first pass there is hardly any left. If it were otherwise, every file could be shrunk to one bit."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-006",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Zwei Teams vergleichen sich. Team A schickt 10 Symbole pro Sekunde mit\neinem Alphabet aus 4 Farben. Team B schickt 5 Symbole pro Sekunde, hat aber\n16 Farben sicher getrennt. Wer bringt mehr Bits pro Sekunde hinüber?",
+    "en": "Two teams compare themselves. Team A sends 10 symbols per second with an\nalphabet of 4 colours. Team B sends 5 symbols per second but has 16 colours\nsafely separated. Who gets more bits per second across?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Team A, denn es sendet doppelt so schnell.",
+      "en": "Team A, because it sends twice as fast."
+     },
+     "begruendung": {
+      "de": "Doppelt so viele Symbole, aber nur halb so viel Inhalt je Symbol. Die Symbolrate allein sagt nichts über den Durchsatz; sie ist einer von zwei Faktoren.",
+      "en": "Twice as many symbols, but only half as much content per symbol. The symbol rate alone says nothing about throughput; it is one of two factors."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Team B, denn 16 Farben tragen viermal so viel wie 4 Farben.",
+      "en": "Team B, because 16 colours carry four times as much as 4 colours."
+     },
+     "begruendung": {
+      "de": "Hier ist die Zahl der Farben mit der Zahl der Bits verwechselt worden. 16 Farben tragen 4 Bit, 4 Farben tragen 2 Bit: doppelt so viel, nicht viermal. Die Bits wachsen mit dem Logarithmus der Alphabetgröße, und genau deshalb wird das Vergrößern des Alphabets so schnell mühsam.",
+      "en": "Here the number of colours has been confused with the number of bits. 16 colours carry 4 bits, 4 colours carry 2 bits: twice as much, not four times. Bits grow with the logarithm of the alphabet size, and that is exactly why enlarging the alphabet gets tiring so quickly."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Beide gleich schnell: 10 mal 2 und 5 mal 4 sind beide 20 bit/s.",
+      "en": "Both equally fast: 10 times 2 and 5 times 4 are both 20 bit/s."
+     },
+     "begruendung": {
+      "de": "Genau. Für den Durchsatz zählt das Produkt aus Rate und Bits je Symbol, nicht einer der beiden Werte für sich. Interessant wird der Vergleich trotzdem: Team B ist mit 16 Farben viel dichter an der Streuungsgrenze, Team A viel dichter am Messfenster. Bei derselben Zahl haben die beiden ganz verschiedene Probleme.",
+      "en": "Exactly. What counts for throughput is the product of rate and bits per symbol, not either value on its own. The comparison stays interesting though: with 16 colours team B is much closer to the scatter limit, team A much closer to the measurement window. At the same number, the two have completely different problems."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das hängt davon ab, wie lang die Nachricht ist.",
+      "en": "That depends on how long the message is."
+     },
+     "begruendung": {
+      "de": "Die Länge entscheidet über die Dauer, nicht über die Rate. Bits pro Sekunde sind bei beiden Teams unabhängig davon, ob sie zwei Zeichen oder zwei Kilobyte schicken; nur der Anteil des Rahmens hinge an der Länge, und davon steht hier nichts.",
+      "en": "The length decides the duration, not the rate. Bits per second are the same for both teams whether they send two characters or two kilobytes; only the share taken by the frame would depend on the length, and nothing is said about that here."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-007",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ein Team sagt: „Unsere Strecke schafft 20 bit/s. Ein Befehl von einem Byte\nist also nach 0,4 Sekunden drüben.\" Welche Einwände treffen zu?\n(Mehrere richtige Antworten möglich.)",
+    "en": "A team says: \"Our link manages 20 bit/s. So a one-byte command is over\nthere after 0.4 seconds.\" Which objections are valid?\n(Several answers may be correct.)"
+   },
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Um das eine Byte herum steht ein Rahmen. Präambel und Endmarke werden mitgesendet und kosten mehr Zeit als die Nutzdaten selbst.",
+      "en": "There is a frame around that one byte. Preamble and end marker get sent too and cost more time than the payload itself."
+     },
+     "begruendung": {
+      "de": "Richtig, und bei einer so kurzen Nachricht ist es krass: acht Nutzsymbole gegen neun Symbole Rahmen. Der Rahmen kostet je Nachricht dasselbe, egal wie kurz sie ist, und kurze Nachrichten bezahlen ihn am teuersten.",
+      "en": "Right, and with such a short message it is drastic: eight payload symbols against nine symbols of frame. The frame costs the same per message no matter how short it is, and short messages pay for it most dearly."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "20 bit/s gilt nur für Text, nicht für Befehle.",
+      "en": "20 bit/s only applies to text, not to commands."
+     },
+     "begruendung": {
+      "de": "Die Strecke kennt weder Text noch Befehle, sie überträgt Bits. Was die Bits bedeuten, entscheiden erst die beiden Enden; die Übertragungszeit merkt das nicht.",
+      "en": "The link knows neither text nor commands, it transports bits. What the bits mean is decided only at the two ends; the transmission time does not notice."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Durchsatz und Verzögerung sind zwei verschiedene Größen. 20 bit/s sagt, wie viel im laufenden Strom ankommt, nicht wie lange die erste Antwort braucht.",
+      "en": "Throughput and delay are two different quantities. 20 bit/s says how much arrives in a running stream, not how long the first reply takes."
+     },
+     "begruendung": {
+      "de": "Richtig, und das ist der Unterschied, der auch außerhalb dieses Kurses am häufigsten verwechselt wird. Eine dicke Leitung kann trotzdem träge reagieren, und eine dünne kann flink sein. Bei euch kommen zur reinen Sendezeit noch das Erkennen der Präambel und die Reaktionszeit des Empfängers dazu.",
+      "en": "Right, and this is the distinction most often confused outside this course as well. A fat line can still react sluggishly, and a thin one can be quick. In your case, recognising the preamble and the receiver's reaction time come on top of the pure sending time."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Ein Byte sind zehn Bit, nicht acht, weil Start- und Stoppbit dazukommen.",
+      "en": "A byte is ten bits, not eight, because a start and a stop bit come with it."
+     },
+     "begruendung": {
+      "de": "Start- und Stoppbits gibt es in manchen seriellen Verfahren, aber nicht in eurem: Euer Rahmen liegt um die ganze Nachricht, nicht um jedes Byte. Ein Byte bleibt acht Bit, und die Zusatzkosten stehen woanders.",
+      "en": "Start and stop bits exist in some serial schemes, but not in yours: your frame goes around the whole message, not around each byte. A byte stays eight bits, and the extra cost sits elsewhere."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-008",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr wollt wissen, wie viele Bits pro Sekunde eure Strecke wirklich schafft.\nWoher bekommt ihr diese Zahl?",
+    "en": "You want to know how many bits per second your link really manages. Where\ndo you get that number from?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Aus dem Datenblatt des Farbsensors; dort steht, wie schnell er messen kann.",
+      "en": "From the colour sensor's datasheet; it says how fast it can measure."
+     },
+     "begruendung": {
+      "de": "Das Datenblatt beschreibt das Bauteil, nicht eure Strecke. Es weiß nichts von eurem Abstand, eurem Umgebungslicht, eurer Optik und eurem Alphabet. Es liefert eine Obergrenze, die ihr nie erreicht, und keine Zahl, mit der sich rechnen lässt.",
+      "en": "The datasheet describes the component, not your link. It knows nothing about your distance, your ambient light, your optics and your alphabet. It gives an upper bound you will never reach, not a number you can compute with."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Vom Team mit dem besten Ergebnis; dessen Wert gilt für alle, denn die Hardware ist dieselbe.",
+      "en": "From the team with the best result; their figure holds for everybody, because the hardware is the same."
+     },
+     "begruendung": {
+      "de": "Dieselbe Hardware, aber nicht derselbe Aufbau. Abstand, Ausrichtung, Blenden und der Platz im Raum unterscheiden sich, und genau das erklärt, warum die Rangliste überhaupt eine Rangliste ist. Fremde Zahlen taugen als Anhaltspunkt, nicht als Wert.",
+      "en": "The same hardware, but not the same setup. Distance, alignment, shielding and the spot in the room all differ, and that is exactly why the ranking is a ranking at all. Other people's numbers are a hint, not a value."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Aus der Rechnung: Symbolrate mal Bits je Symbol, das ergibt den Durchsatz.",
+      "en": "From the calculation: symbol rate times bits per symbol gives the throughput."
+     },
+     "begruendung": {
+      "de": "Die Rechnung stimmt, aber sie beantwortet eine andere Frage. Sie sagt, was **bei gewählten Werten** herauskommt; die Frage war, welche Werte eure Strecke überhaupt trägt. Rate und Alphabetgröße sind das Ergebnis der Messung, nicht ihre Eingabe.",
+      "en": "The arithmetic is right, but it answers a different question. It says what comes out **for chosen values**; the question was which values your link supports at all. The rate and the alphabet size are the result of the measurement, not its input."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Aus einer eigenen Messreihe am eigenen Aufbau: Rate schrittweise erhöhen, Fehler zählen, die letzte fehlerfreie Einstellung festhalten.",
+      "en": "From your own series of measurements on your own setup: raise the rate step by step, count the errors, record the last error-free setting."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist der Grund, warum dieses Modul überhaupt Geräte auf den Tisch stellt. Die Grenze eurer Strecke ist eine Eigenschaft eures Aufbaus, und zu der hat weder ein Datenblatt noch ein Sprachmodell Zugang. Haltet die Messung so fest, dass ihr sie nach einem Umbau wiederholen könnt.",
+      "en": "Exactly, and this is why this module puts devices on the table at all. The limit of your link is a property of your setup, and neither a datasheet nor a language model has access to it. Record the measurement so you can repeat it after rebuilding."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-009",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "In Challenge 4 ist der Rückkanal erlaubt. Ein Team quittiert jede einzelne\nNachricht, ein anderes immer erst einen Block aus zehn. Was unterscheidet\ndie beiden Wege?",
+    "en": "In challenge 4 the back channel is allowed. One team acknowledges every\nsingle message, another acknowledges only after a block of ten. What is the\ndifference between the two approaches?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Einzeln quittieren ist immer besser, weil jeder Fehler sofort auffällt.",
+      "en": "Acknowledging one by one is always better, because every error shows up immediately."
+     },
+     "begruendung": {
+      "de": "Es fällt sofort auf, und das ist der Vorteil. Nur steht dem ein Preis gegenüber: Jede Quittung ist eine eigene kleine Übertragung mit eigenem Rahmen, und dazwischen steht die Strecke still, weil beide Seiten warten. Bei zehn bis fünfzig Bit pro Sekunde ist das kein kleiner Posten.",
+      "en": "It does show up immediately, and that is the advantage. But there is a price against it: every acknowledgement is a small transmission of its own with its own frame, and in between the link stands still because both sides are waiting. At ten to fifty bits per second that is not a small item."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Einzeln kostet mehr Verwaltung und Wartezeit, findet Fehler aber früh. Blockweise kostet weniger, dafür muss bei einem Fehler der ganze Block noch einmal.",
+      "en": "One by one costs more administration and waiting, but finds errors early. Per block costs less, but on an error the whole block has to go again."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist ein Abwägen, kein Richtig oder Falsch. Welcher Weg gewinnt, hängt an eurer Fehlerquote: Bei einer sauberen Strecke lohnen große Blöcke, bei einer wackeligen frisst das Wiederholen den Vorteil wieder auf. Messt eure Fehlerquote, bevor ihr die Blockgröße festlegt.",
+      "en": "Exactly, and this is a trade-off, not a right or wrong. Which one wins depends on your error rate: on a clean link big blocks pay off, on a shaky one the repeats eat the advantage again. Measure your error rate before fixing the block size."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Blockweise quittieren ist immer besser, weil weniger Quittungen weniger Zeit kosten.",
+      "en": "Acknowledging per block is always better, because fewer acknowledgements cost less time."
+     },
+     "begruendung": {
+      "de": "Die Rechnung stimmt nur, solange nichts schiefgeht. Geht etwas schief, wiederholt ihr zehn Nachrichten statt einer, und ab einer gewissen Fehlerquote kippt der Vorteil ins Gegenteil.",
+      "en": "The arithmetic only holds as long as nothing goes wrong. When something does, you repeat ten messages instead of one, and beyond a certain error rate the advantage turns into its opposite."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Kein Unterschied für den Durchsatz; Quittungen laufen über den Rückkanal und belegen die Senderichtung nicht.",
+      "en": "No difference for throughput; acknowledgements use the back channel and do not occupy the forward direction."
+     },
+     "begruendung": {
+      "de": "Eure zwei Geräte stehen sich gegenüber und können beide Richtungen bedienen, aber nicht sinnvoll gleichzeitig: Solange der Sender auf eine Quittung wartet, schickt er keine Daten. Die Zeit für die Quittung fehlt der Nutzlast, auch wenn sie in die andere Richtung läuft.",
+      "en": "Your two devices face each other and can serve both directions, but not usefully at the same time: while the sender waits for an acknowledgement, it sends no data. The time for the acknowledgement is missing from the payload, even though it travels the other way."
+     }
+    }
+   ]
+  },
+  {
+   "id": "tl-010",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Im Finale überträgt ihr eine Nutzlast von 2 KB, also 2000 Byte. Ihr habt an\neurem Aufbau gemessen: netto 12 bit/s, Rahmen und Wiederholungen schon\nabgezogen. Wie lange dauert die Übertragung ungefähr?",
+    "en": "In the final you transmit a payload of 2 KB, that is 2000 bytes. You have\nmeasured on your own setup: 12 bit/s net, frame and repeats already\ndeducted. Roughly how long does the transmission take?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Knapp 3 Minuten: 2000 geteilt durch 12 sind rund 167 Sekunden.",
+      "en": "Just under 3 minutes: 2000 divided by 12 is about 167 seconds."
+     },
+     "begruendung": {
+      "de": "Hier sind Byte und Bit verwechselt worden, der häufigste Rechenfehler des ganzen Projekts. 2000 Byte sind 16.000 Bit, und der Unterschied ist nicht klein: Faktor acht, also aus drei Minuten werden zweiundzwanzig.",
+      "en": "Bytes and bits have been mixed up here, the most common arithmetic slip in the whole project. 2000 bytes are 16,000 bits, and the difference is not small: a factor of eight, so three minutes become twenty-two."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Rund 22 Minuten: 2000 Byte sind 16.000 Bit, geteilt durch 12 sind rund 1330 Sekunden.",
+      "en": "About 22 minutes: 2000 bytes are 16,000 bits, divided by 12 is about 1330 seconds."
+     },
+     "begruendung": {
+      "de": "Genau. Und jetzt der Grund, warum in dieser Sitzung Kompression vorkommt: Schrumpft ihr die Datei auf 60 Prozent, sind es noch gut 13 Minuten, ohne dass ihr an Rate oder Alphabet auch nur gedreht habt. Der dritte Hebel ist auf einer so langsamen Strecke oft der billigste.",
+      "en": "Exactly. And now the reason compression appears in this session: shrink the file to 60 per cent and it is a good 13 minutes, without touching the rate or the alphabet at all. On a link this slow, the third lever is often the cheapest."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Rund 11 Minuten, denn beim Rechnen mit Byte und Bit halbiert sich die Zeit.",
+      "en": "About 11 minutes, because converting between bytes and bits halves the time."
+     },
+     "begruendung": {
+      "de": "Zwischen Byte und Bit liegt der Faktor acht, nicht zwei. Es hilft, die Umrechnung einmal laut zu machen, bevor man dividiert: erst alles in Bit, dann durch bit/s, dann in Minuten.",
+      "en": "Between bytes and bits lies a factor of eight, not two. It helps to do the conversion out loud before dividing: first everything into bits, then divide by bit/s, then convert to minutes."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das lässt sich nicht sagen, solange die Alphabetgröße nicht feststeht.",
+      "en": "There is no way to tell as long as the alphabet size is not fixed."
+     },
+     "begruendung": {
+      "de": "Die Alphabetgröße steckt bereits in den 12 bit/s drin, genau wie die Symbolrate und der Rahmen. Das ist der Sinn eines gemessenen Nettowerts: Er fasst alles zusammen, was vorher einzeln abgezogen werden musste.",
+      "en": "The alphabet size is already inside the 12 bit/s, just like the symbol rate and the frame. That is the point of a measured net figure: it sums up everything that had to be deducted separately before."
+     }
+    }
+   ]
+  }
+ ]
+}
