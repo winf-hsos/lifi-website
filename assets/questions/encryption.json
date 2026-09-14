@@ -1,0 +1,844 @@
+{
+ "konzept": "encryption",
+ "fragen": [
+  {
+   "id": "en-001",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Das Nachbarteam stellt seinen Sensor neben euren Empfänger und liest\neure Übertragung mit, Symbol für Symbol. Ihr wollt, dass es mit dem\nMitgelesenen nichts anfangen kann. Was schützt den Inhalt?",
+    "en": "The neighbouring team puts its sensor next to your receiver and reads\nyour transmission along, symbol by symbol. You want the readings to be\nuseless to them. What protects the content?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Ein Rohr um die LED, damit das Licht nur euren Sensor erreicht; was niemand empfängt, kann niemand lesen.",
+      "en": "A tube around the LED so the light only reaches your sensor; what nobody receives, nobody can read."
+     },
+     "begruendung": {
+      "de": "Das Rohr hilft gegen Störlicht, nicht gegen Mithören: Ein Sensor an der Rohröffnung oder ein Stück Streulicht genügt, und ihr merkt nicht einmal, dass jemand mitliest. Ein Schutz, der davon abhängt, dass niemand nah genug herankommt, ist keiner.",
+      "en": "The tube helps against stray light, not against eavesdropping: a sensor at the mouth of the tube or a bit of scattered light is enough, and you would not even notice that someone is reading along. A protection that depends on nobody getting close enough is none."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Ein eigenes Farbalphabet, das nur ihr kennt; ohne die Zuordnung von Farben zu Bits sieht das Nachbarteam nur Farbwechsel.",
+      "en": "A colour alphabet of your own that only you know; without the mapping from colours to bits the neighbours see nothing but colour changes."
+     },
+     "begruendung": {
+      "de": "Das Alphabet ist Teil des Verfahrens, und Verfahren lassen sich beobachten: Wer eine Weile mitmisst, sieht, wie viele Farben ihr benutzt, und probiert die wenigen möglichen Zuordnungen durch. Was den Inhalt schützt, muss etwas sein, das sich nicht aus dem Beobachteten ableiten lässt.",
+      "en": "The alphabet is part of the method, and methods can be observed: whoever measures along for a while sees how many colours you use and tries the few possible mappings. What protects the content must be something that cannot be derived from what is observed."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Ein geheimer Schlüssel, mit dem ihr die Bits vor dem Senden verrechnet; das Nachbarteam empfängt alles und kann trotzdem nichts lesen.",
+      "en": "A secret key that you combine with the bits before sending; the neighbours receive everything and still cannot read any of it."
+     },
+     "begruendung": {
+      "de": "Genau. Licht ist öffentlich, und ihr könnt das nicht ändern. Was ihr ändern könnt, ist, was das Licht trägt: Die Bits werden vor dem Senden mit einem Schlüssel verrechnet, den nur ihr und euer Partner kennen. Wer mitliest, sieht alles und versteht nichts, und das ist der ganze Sinn von Verschlüsselung.",
+      "en": "Exactly. Light is public, and you cannot change that. What you can change is what the light carries: the bits are combined with a key before sending, known only to you and your partner. Whoever reads along sees everything and understands nothing, and that is the whole point of encryption."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Eine höhere Symbolrate, damit das Nachbarteam mit dem Mitlesen nicht hinterherkommt.",
+      "en": "A higher symbol rate so that the neighbours cannot keep up with reading along."
+     },
+     "begruendung": {
+      "de": "Was euer Sensor bei dieser Rate lesen kann, kann der gleiche Sensor nebenan auch lesen; das Nachbarteam hat dasselbe Gerät. Und aufgezeichnet wird ohnehin, ausgewertet wird später in Ruhe. Tempo ist kein Schutz.",
+      "en": "Whatever your sensor can read at that rate, the same sensor next door can read too; the neighbours have the same device. And they record anyway and analyse at leisure later. Speed is no protection."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-002",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr verschlüsselt jedes Byte, indem ihr es Bit für Bit mit dem\nSchlüsselbyte `1010 1010` per XOR verrechnet. Das Byte `0110 1100`\nist dran. Was geht über die Strecke?",
+    "en": "You encrypt every byte by combining it bit by bit with the key byte\n`1010 1010` using XOR. The byte `0110 1100` is next. What goes over\nthe link?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "`1110 1110`",
+      "en": "`1110 1110`"
+     },
+     "begruendung": {
+      "de": "Das ist Oder: eine 1, sobald eines der beiden Bits 1 ist. XOR ist strenger, es liefert 1 nur, wenn genau eines der beiden Bits 1 ist; stehen zwei Einsen übereinander, kommt 0 heraus. An der zweiten Stelle von links steht bei beiden eine 1, das Ergebnis dort ist 0.",
+      "en": "That is OR: a 1 as soon as either bit is 1. XOR is stricter, it gives 1 only when exactly one of the two bits is 1; two ones on top of each other give 0. In the second position from the left both have a 1, so the result there is 0."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "`1100 0110`",
+      "en": "`1100 0110`"
+     },
+     "begruendung": {
+      "de": "Genau. Stelle für Stelle: Wo der Schlüssel eine 1 hat, kippt das Bit, wo er eine 0 hat, bleibt es. Der Schlüssel `1010 1010` kippt die erste, dritte, fünfte und siebte Stelle: aus `0110 1100` wird `1100 0110`. Das Ergebnis sieht aus wie irgendein Byte, und das ist Absicht.",
+      "en": "Exactly. Position by position: where the key has a 1 the bit flips, where it has a 0 the bit stays. The key `1010 1010` flips the first, third, fifth and seventh positions: `0110 1100` becomes `1100 0110`. The result looks like any old byte, and that is the intention."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "`0010 1000`",
+      "en": "`0010 1000`"
+     },
+     "begruendung": {
+      "de": "Das ist Und: eine 1 nur, wenn beide Bits 1 sind. Damit würden alle Bits verschwinden, an denen der Schlüssel eine 0 hat, und der Empfänger könnte sie nie zurückholen. Verschlüsseln darf nichts wegwerfen; XOR wirft nichts weg, es kippt nur.",
+      "en": "That is AND: a 1 only when both bits are 1. That would erase every bit where the key has a 0, and the receiver could never get them back. Encryption must not throw anything away; XOR throws nothing away, it only flips."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "`0011 1001`",
+      "en": "`0011 1001`"
+     },
+     "begruendung": {
+      "de": "Das ist XOR mit einem Nicht dahinter: jede Stelle des richtigen Ergebnisses gekippt. Prüft die erste Stelle: 0 XOR 1 ist 1, nicht 0. XOR liefert 1, wenn die Bits verschieden sind, und genau das sind sie hier.",
+      "en": "That is XOR with a NOT behind it: every position of the correct result flipped. Check the first position: 0 XOR 1 is 1, not 0. XOR gives 1 when the bits differ, and here they do."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-003",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr habt eure Bytes per XOR mit einem Schlüssel verschlüsselt und\ngesendet. Was muss euer Partnerteam mit den empfangenen Bytes tun,\num die Nachricht zurückzubekommen?",
+    "en": "You have encrypted your bytes with XOR and a key and sent them. What\ndoes your partner team have to do with the received bytes to get the\nmessage back?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Dasselbe noch einmal: jedes Byte per XOR mit demselben Schlüssel verrechnen.",
+      "en": "The same thing again: combine every byte with the same key using XOR."
+     },
+     "begruendung": {
+      "de": "Genau. XOR mit dem Schlüssel kippt die Bits, an denen der Schlüssel eine 1 hat. Ein zweites XOR mit demselben Schlüssel kippt genau dieselben Bits zurück, und die Nachricht steht wieder da. Ver- und Entschlüsseln sind bei XOR dieselbe Operation mit demselben Schlüssel; der Empfänger braucht nichts anderes als den Schlüssel.",
+      "en": "Exactly. XOR with the key flips the bits where the key has a 1. A second XOR with the same key flips exactly those bits back, and the message is there again. With XOR, encrypting and decrypting are the same operation with the same key; the receiver needs nothing but the key."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "XOR mit dem umgekehrten Schlüssel: alle Schlüsselbits gekippt, damit die Verschlüsselung rückgängig wird.",
+      "en": "XOR with the inverted key: all key bits flipped, so that the encryption is undone."
+     },
+     "begruendung": {
+      "de": "Der umgekehrte Schlüssel kippt genau die anderen Bits: die, die beim Verschlüsseln stehen geblieben sind. Heraus kommt die Nachricht mit allen Bits gekippt, nicht die Nachricht. Bei Rechenarten wie Addition braucht man zum Rückgängigmachen die Gegenoperation; XOR ist seine eigene Gegenoperation.",
+      "en": "The inverted key flips exactly the other bits: the ones that stayed put during encryption. Out comes the message with every bit flipped, not the message. With operations like addition you need the reverse operation to undo; XOR is its own reverse."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Den Schlüssel von jedem Byte abziehen, denn beim Verschlüsseln wurde er dazugezählt.",
+      "en": "Subtract the key from every byte, because it was added during encryption."
+     },
+     "begruendung": {
+      "de": "XOR ist keine Addition, es gibt keinen Übertrag und nichts wird größer; nur einzelne Bits kippen. Abziehen ergibt irgendein Byte. Wer die Tafel von XOR aus der Werkzeugkiste vor Augen hat, sieht es: 1 XOR 1 ist 0, nicht 2.",
+      "en": "XOR is not addition, there is no carry and nothing gets bigger; only single bits flip. Subtracting gives some arbitrary byte. Whoever has the XOR table from the toolbox in mind sees it: 1 XOR 1 is 0, not 2."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-004",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "In eurer Protokollspezifikation steht, dass ihr die Nutzlast per XOR\nmit einem Schlüssel verschlüsselt. Die Spezifikation lesen alle Teams.\nIst eure Verschlüsselung damit hinfällig?",
+    "en": "Your protocol specification says that you encrypt the payload with XOR\nand a key. Every team reads the specification. Does that make your\nencryption pointless?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Ja. Wer das Verfahren kennt, kann die Verschlüsselung rückgängig machen; das Verfahren gehört deshalb nicht in die Spezifikation.",
+      "en": "Yes. Whoever knows the method can undo the encryption; the method therefore does not belong in the specification."
+     },
+     "begruendung": {
+      "de": "Das Verfahren zu kennen heißt nicht, den Schlüssel zu kennen. Entschlüsseln geht nur mit dem Schlüssel, und der steht nicht in der Spezifikation. Ein Verfahren, das nur sicher ist, solange es niemand kennt, ist ohnehin verloren: Verfahren lassen sich beobachten, weitererzählen und nachbauen. Alle ernsthafte Verschlüsselung ist öffentlich beschrieben, und genau deshalb kann jeder prüfen, ob sie hält.",
+      "en": "Knowing the method is not knowing the key. Decrypting only works with the key, and the key is not in the specification. A method that is only secure as long as nobody knows it is lost anyway: methods can be observed, passed on and rebuilt. All serious encryption is described publicly, and that is exactly why anyone can check whether it holds."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Nein. Das Verfahren darf jeder kennen; geheim bleiben muss allein der Schlüssel, und der steht nicht in der Spezifikation.",
+      "en": "No. Anyone may know the method; only the key has to stay secret, and the key is not in the specification."
+     },
+     "begruendung": {
+      "de": "Genau. Das ist die wichtigste Regel des Fachs, über hundert Jahre alt: Die Sicherheit darf nur vom Schlüssel abhängen, nie davon, dass das Verfahren geheim bleibt. Euer Browser verschlüsselt nach Verfahren, die in jedem Lehrbuch stehen, und ist trotzdem sicher, weil der Schlüssel jedes Mal ein anderer ist und niemand ihn kennt.",
+      "en": "Exactly. That is the most important rule of the field, more than a hundred years old: security may depend on the key alone, never on the method staying secret. Your browser encrypts with methods printed in every textbook and is secure all the same, because the key is different every time and nobody knows it."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Ja, aber nur bei XOR: Wer weiß, dass XOR benutzt wurde, rechnet den Schlüssel direkt aus den gesendeten Bytes aus.",
+      "en": "Yes, but only for XOR: whoever knows XOR was used computes the key directly from the sent bytes."
+     },
+     "begruendung": {
+      "de": "Aus den verschlüsselten Bytes allein kommt niemand auf den Schlüssel: Jedes mögliche Schlüsselbyte ergibt ein anderes, gleich plausibles Klartextbyte. Angreifbar wird XOR erst durch die Wahl des Schlüssels, etwa wenn er kurz ist und sich wiederholt; das ist ein Fehler im Gebrauch, nicht im Bekanntsein des Verfahrens.",
+      "en": "From the encrypted bytes alone nobody gets to the key: every possible key byte yields a different, equally plausible plaintext byte. XOR only becomes attackable through the choice of key, for instance when it is short and repeats; that is a mistake in use, not in the method being known."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Nein, denn XOR lässt sich ohnehin nicht umkehren, auch nicht mit Schlüssel; die Spezifikation verrät also nichts Brauchbares.",
+      "en": "No, because XOR cannot be reversed anyway, not even with the key; so the specification gives away nothing useful."
+     },
+     "begruendung": {
+      "de": "XOR lässt sich sehr wohl umkehren, sogar besonders einfach: noch einmal XOR mit demselben Schlüssel. Sonst könnte euer Partner die Nachricht nicht lesen. Die Antwort auf die Frage ist trotzdem nein, aber aus dem anderen Grund: Der Schlüssel ist geheim, nicht das Verfahren.",
+      "en": "XOR can very well be reversed, and particularly easily: XOR again with the same key. Otherwise your partner could not read the message. The answer to the question is still no, but for the other reason: the key is secret, not the method."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-005",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr verschlüsselt das Foto mit einem Schlüssel von einem Byte, per XOR\nauf jedes der 196.608 Bytes. Die gesendeten Bytes sehen aus wie\nRauschen. Das Nachbarteam hat sie mitgelesen. Was kann es damit tun?",
+    "en": "You encrypt the photo with a one-byte key, XOR on each of the 196,608\nbytes. The sent bytes look like noise. The neighbouring team has read\nthem along. What can they do with them?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Nichts. Die Bytes sehen aus wie Rauschen, und aus Rauschen lässt sich kein Bild zurückgewinnen.",
+      "en": "Nothing. The bytes look like noise, and no picture can be recovered from noise."
+     },
+     "begruendung": {
+      "de": "Aussehen wie Rauschen ist nicht dasselbe wie Rauschen sein. Hinter den Bytes steckt ein Schlüssel, und der hat nur ein Byte. Was mit einem Byte verschlüsselt wurde, entschlüsselt sich mit einem Byte, und Bytes gibt es nur 256.",
+      "en": "Looking like noise is not the same as being noise. Behind the bytes sits a key, and the key has only one byte. What was encrypted with one byte decrypts with one byte, and there are only 256 bytes."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Alle 256 möglichen Schlüssel durchprobieren und nachsehen, bei welchem ein gültiges Bild herauskommt; das dauert einen Augenblick.",
+      "en": "Try all 256 possible keys and check which one yields a valid picture; that takes a moment."
+     },
+     "begruendung": {
+      "de": "Genau. Ein Schlüssel von einem Byte hat 256 mögliche Werte, und ein Programm probiert die in Sekundenbruchteilen alle durch. Bei 255 Versuchen kommt Unsinn heraus, bei einem ein Bild mit gültigem Dateikopf. Ein Schlüssel muss so viele mögliche Werte haben, dass Durchprobieren aussichtslos ist; heutige Schlüssel haben 128 Bit und mehr, also mehr Werte, als es Atome in Reichweite gibt.",
+      "en": "Exactly. A one-byte key has 256 possible values, and a program tries them all in a fraction of a second. 255 attempts give nonsense, one gives a picture with a valid file header. A key must have so many possible values that trying them all is hopeless; today's keys have 128 bits and more, so more values than there are atoms within reach."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Nur mit eurem Gerät weiterkommen: Der Schlüssel steckt in der LED, deshalb liefert nur dieselbe LED beim Zurückrechnen das Bild.",
+      "en": "Get further only with your device: the key sits in the LED, so only the same LED yields the picture when computing back."
+     },
+     "begruendung": {
+      "de": "Der Schlüssel ist eine Zahl in eurem Programm, kein Bauteil. Die Bits, die die LED sendet, sind das Ergebnis der Rechnung, und dieselbe Rechnung läuft auf jedem Rechner, auch dem des Nachbarteams. Hardware schützt hier nichts.",
+      "en": "The key is a number in your program, not a component. The bits the LED sends are the result of the computation, and the same computation runs on any computer, including the neighbours'. Hardware protects nothing here."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das Bild nur dann lesen, wenn es auch die Prüfsumme des Rahmens kennt, denn ohne sie lässt sich kein Schlüssel prüfen.",
+      "en": "Read the picture only if they also know the frame's checksum, because without it no key can be verified."
+     },
+     "begruendung": {
+      "de": "Die Prüfsumme steht offen im Rahmen, das Nachbarteam hat sie also mitgelesen. Aber es braucht sie gar nicht: Ob ein Schlüssel stimmt, sieht man am Ergebnis selbst, ein Bild mit gültigem Kopf und sinnvollen Farben gegen 255-mal Unsinn. Das Problem ist der kurze Schlüssel, nicht die Prüfung.",
+      "en": "The checksum sits openly in the frame, so the neighbours have read it along. But they do not even need it: whether a key is right shows in the result itself, a picture with a valid header and sensible colours against nonsense 255 times. The problem is the short key, not the check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-006",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr verschlüsselt das rohe Foto mit einem Schlüssel von drei Bytes,\nder sich über die ganze Datei wiederholt. Das Nachbarteam zeigt das\nMitgelesene als Bild an: Farben stimmen nicht, aber der Umriss des\nPapageis vor dem schwarzen Hintergrund ist klar zu erkennen. Warum?",
+    "en": "You encrypt the raw photo with a three-byte key that repeats across\nthe whole file. The neighbouring team displays what they read along as\na picture: the colours are wrong, but the outline of the parrot against\nthe black background is clearly visible. Why?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Weil XOR die Nullen des schwarzen Hintergrunds unverändert lässt; verschlüsselt werden nur die Bytes, in denen Einsen stehen.",
+      "en": "Because XOR leaves the zeros of the black background unchanged; only bytes containing ones get encrypted."
+     },
+     "begruendung": {
+      "de": "XOR lässt keine Bytes aus. Ein Nullbyte wird per XOR mit dem Schlüsselbyte zu genau diesem Schlüsselbyte, also zu etwas anderem als Null. Der Hintergrund ist nach dem Verschlüsseln nicht mehr schwarz; er ist nur überall gleich, und das ist der Punkt.",
+      "en": "XOR skips no bytes. A zero byte XORed with the key byte becomes exactly that key byte, so something other than zero. The background is no longer black after encryption; it is merely the same everywhere, and that is the point."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Weil drei Bytes zu wenig sind, um ein Foto zu verschlüsseln; ab einem Schlüssel von acht Bytes wäre das Bild unkenntlich.",
+      "en": "Because three bytes are too few to encrypt a photo; from an eight-byte key on the picture would be unrecognisable."
+     },
+     "begruendung": {
+      "de": "Die Länge allein ist es nicht. Auch ein Schlüssel von acht oder hundert Bytes wiederholt sich über 196.608 Bytes tausendfach, und gleiche Bildstellen, die im selben Takt zum Schlüssel liegen, ergeben wieder gleiche Bytes. Der Umriss bliebe sichtbar. Das Muster verschwindet erst, wenn sich der Schlüssel nicht wiederholt oder wenn jedes Byte anders behandelt wird als das vorige.",
+      "en": "Length alone is not it. A key of eight or a hundred bytes also repeats thousands of times over 196,608 bytes, and equal picture areas that fall into the same beat of the key give equal bytes again. The outline would remain visible. The pattern only disappears when the key does not repeat or when every byte is treated differently from the one before."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Weil gleiche Bytes an gleicher Schlüsselstelle immer gleiche verschlüsselte Bytes ergeben: Der gleichmäßige Hintergrund bleibt gleichmäßig, das bunte Gefieder bleibt bunt, und das Muster des Bildes überlebt.",
+      "en": "Because equal bytes at the same key position always give equal encrypted bytes: the uniform background stays uniform, the colourful plumage stays varied, and the pattern of the picture survives."
+     },
+     "begruendung": {
+      "de": "Genau. Verschlüsseln ersetzt jedes Byte durch ein anderes, aber mit einem kurzen, wiederholten Schlüssel immer auf dieselbe Weise: Schwarz wird überall zur selben Farbe, und wo das Bild Struktur hat, hat das Ergebnis Struktur. Verschlüsselt heißt nicht automatisch unkenntlich. Deshalb sorgt jedes ernsthafte Verfahren dafür, dass gleiche Eingaben verschiedene Ausgaben ergeben, etwa indem jedes Byte auch vom vorigen abhängt.",
+      "en": "Exactly. Encryption replaces every byte with another one, but with a short repeated key always in the same way: black becomes the same colour everywhere, and where the picture has structure the result has structure. Encrypted does not automatically mean unrecognisable. That is why every serious method makes sure that equal inputs give different outputs, for instance by making every byte depend on the previous one as well."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Weil der Dateikopf des Fotos unverschlüsselt bleiben muss und der Betrachter daraus die Form des Bildes rekonstruiert.",
+      "en": "Because the photo's file header has to stay unencrypted and the viewer reconstructs the shape of the picture from it."
+     },
+     "begruendung": {
+      "de": "Im Dateikopf stehen Breite, Höhe und Farbtiefe, nicht der Inhalt. Er sagt dem Betrachter, wie er die Bytes anordnen soll, aber welche Bytes hell und welche dunkel sind, kommt aus den Bilddaten. Dass dort der Umriss steht, liegt am wiederholten Schlüssel.",
+      "en": "The file header holds width, height and colour depth, not the content. It tells the viewer how to arrange the bytes, but which bytes are bright and which are dark comes from the picture data. That the outline is there is down to the repeated key."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-007",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ein Team nimmt einen zufälligen Schlüssel, genauso lang wie das Foto,\nund benutzt ihn nur dieses eine Mal. Das gilt als unknackbar, selbst\nmit allem Rechnen der Welt. Wo liegt der Haken?",
+    "en": "A team takes a random key exactly as long as the photo and uses it\nonly this once. That counts as unbreakable, even with all the\ncomputing in the world. Where is the catch?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Es gibt keinen; das Verfahren ist perfekt, und alle anderen sind nur Kompromisse für Leute, die keinen langen Schlüssel erzeugen wollen.",
+      "en": "There is none; the method is perfect, and all others are merely compromises for people who do not want to generate a long key."
+     },
+     "begruendung": {
+      "de": "Die Verschlüsselung selbst ist perfekt, das stimmt. Aber sie verschiebt das Problem nur: Der Schlüssel muss zum Partner, geheim, und er ist so lang wie die Nachricht. Wer einen geheimen Weg für 196.608 Byte Schlüssel hat, könnte darüber gleich das Foto schicken.",
+      "en": "The encryption itself is perfect, true. But it only moves the problem: the key has to reach the partner, secretly, and it is as long as the message. Whoever has a secret path for 196,608 bytes of key could send the photo that way instead."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Der Schlüssel muss geheim zum Partner, und er ist so groß wie die Nachricht selbst; das Problem ist nur verschoben, nicht gelöst.",
+      "en": "The key has to reach the partner secretly, and it is as big as the message itself; the problem has only been moved, not solved."
+     },
+     "begruendung": {
+      "de": "Genau. Das ist der berühmte Einmalschlüssel: sicher, bewiesen, und im Alltag fast unbrauchbar, weil für jede Nachricht ein neuer, gleich langer, wirklich zufälliger Schlüssel vorher auf einem geheimen Weg übergeben werden muss. Im Kurs geht das, ihr sitzt nebeneinander. Zwischen eurem Browser und einem Server auf einem anderen Kontinent geht es nicht, und daraus ist der ganze Rest des Fachs entstanden.",
+      "en": "Exactly. That is the famous one-time pad: secure, proven, and almost useless in everyday life, because every message needs a new, equally long, truly random key handed over beforehand by a secret path. In the course that works, you sit next to each other. Between your browser and a server on another continent it does not, and the whole rest of the field grew out of that."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Ein zufälliger Schlüssel lässt sich mit Statistik knacken, denn Zufall hat immer Häufungen, die ein Angreifer ausnutzt.",
+      "en": "A random key can be broken with statistics, because randomness always has clusters an attacker exploits."
+     },
+     "begruendung": {
+      "de": "Umgekehrt: Genau weil der Schlüssel zufällig und so lang wie die Nachricht ist, gibt es nichts zu häufen. Jede mögliche Nachricht gleicher Länge passt gleich gut zu den gesendeten Bytes, und keine Statistik unterscheidet sie. Angreifbar wird es erst, wenn der Schlüssel kürzer ist und sich wiederholt.",
+      "en": "The other way round: precisely because the key is random and as long as the message, there is nothing to cluster. Every possible message of the same length fits the sent bytes equally well, and no statistics can tell them apart. It only becomes attackable when the key is shorter and repeats."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Der Schlüssel ist so lang, dass das Verrechnen länger dauert als das Senden; das Verfahren ist deshalb nur für kurze Nachrichten praktikabel.",
+      "en": "The key is so long that the computing takes longer than the sending; the method is therefore only practical for short messages."
+     },
+     "begruendung": {
+      "de": "XOR über 196.608 Bytes ist eine Sache von Millisekunden, das Senden bei zehn Bit pro Sekunde eine Sache von Tagen. Rechenzeit ist hier nie das Problem; der Weg für den Schlüssel ist es.",
+      "en": "XOR over 196,608 bytes is a matter of milliseconds, sending at ten bits per second a matter of days. Computing time is never the problem here; the path for the key is."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-008",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Euer Partnerteam sitzt am anderen Ende der Strecke und braucht den\nSchlüssel. Das Nachbarteam liest die Strecke mit. Wie kommt der\nSchlüssel zum Partner?",
+    "en": "Your partner team sits at the other end of the link and needs the\nkey. The neighbouring team reads the link along. How does the key get\nto your partner?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Als erste Nachricht über die Strecke, unverschlüsselt; danach ist alles Weitere geschützt.",
+      "en": "As the first message over the link, unencrypted; everything after that is protected."
+     },
+     "begruendung": {
+      "de": "Dann liest das Nachbarteam den Schlüssel genauso mit wie alles andere und entschlüsselt ab der zweiten Nachricht bequem mit. Alles, was über die Strecke geht, ist öffentlich, der Schlüssel darf es nicht sein; also darf er nicht über die Strecke.",
+      "en": "Then the neighbours read the key along just like everything else and comfortably decrypt from the second message on. Everything that goes over the link is public, the key must not be; so it must not go over the link."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Verschlüsselt über die Strecke: Der Schlüssel wird mit sich selbst per XOR verrechnet und so gesendet.",
+      "en": "Encrypted over the link: the key is XORed with itself and sent that way."
+     },
+     "begruendung": {
+      "de": "Ein Byte per XOR mit sich selbst ergibt immer Null; gesendet würden lauter Nullen, und der Partner erführe nichts. Und mit einem anderen Schlüssel verschlüsseln geht auch nicht, denn den müsste der Partner vorher kennen: dieselbe Frage, eine Stufe tiefer. Über den offenen Kanal allein kommt man aus diesem Kreis nicht heraus.",
+      "en": "A byte XORed with itself always gives zero; nothing but zeros would be sent, and the partner would learn nothing. Encrypting with another key does not work either, because the partner would have to know that one beforehand: the same question, one level down. Over the open channel alone there is no way out of this circle."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Auf einem Weg, den das Nachbarteam nicht beobachtet: vorher abgesprochen, im Gespräch oder auf einem Zettel, nicht über die Strecke.",
+      "en": "By a path the neighbours do not observe: agreed beforehand, in conversation or on a slip of paper, not over the link."
+     },
+     "begruendung": {
+      "de": "Genau. Ein gemeinsamer Schlüssel braucht einen zweiten Weg, den der Mithörer nicht hat, und im Kurs ist der einfach: Ihr sitzt am selben Tisch. Das ist kein Trick am Rande, sondern die eigentliche Schwierigkeit des Fachs. Zwischen zwei Rechnern, die sich nie getroffen haben, gibt es diesen Weg nicht, und wie sie trotzdem zu einem gemeinsamen Geheimnis kommen, ist eine der schönsten Ideen der Informatik.",
+      "en": "Exactly. A shared key needs a second path the eavesdropper does not have, and in the course that is easy: you sit at the same table. That is not a trick on the side but the real difficulty of the field. Between two computers that have never met, this path does not exist, and how they arrive at a shared secret anyway is one of the most beautiful ideas in computing."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Gar nicht: Der Partner leitet den Schlüssel aus den gemessenen Farbwerten ab, denn die kennt nur sein Sensor.",
+      "en": "Not at all: the partner derives the key from the measured colour values, because only their sensor knows those."
+     },
+     "begruendung": {
+      "de": "Der Sensor des Nachbarteams steht daneben und misst dieselben Farben, mit denselben Schwankungen; alles, was aus dem Licht kommt, hat der Mithörer auch. Ein Schlüssel muss aus etwas kommen, das der Mithörer nicht sieht.",
+      "en": "The neighbours' sensor sits right there and measures the same colours, with the same fluctuations; everything that comes out of the light, the eavesdropper has too. A key must come from something the eavesdropper does not see."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-009",
+   "niveau": "erinnern",
+   "frage": {
+    "de": "Euer Browser schickt einem Onlineshop eure Bestelldaten verschlüsselt,\nobwohl sich Browser und Shop nie zuvor begegnet sind und nie einen\nSchlüssel abgesprochen haben. Wie ist das möglich?",
+    "en": "Your browser sends your order details to an online shop encrypted,\nalthough browser and shop have never met before and never agreed on a\nkey. How is that possible?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Der Internetanbieter kennt beide und übergibt ihnen beim Verbindungsaufbau einen gemeinsamen Schlüssel.",
+      "en": "The internet provider knows both and hands them a shared key when the connection is set up."
+     },
+     "begruendung": {
+      "de": "Dann kennte der Anbieter jeden Schlüssel und läse alles mit, und jeder, der die Leitung des Anbieters mitliest, ebenso. Genau das soll Verschlüsselung verhindern: Niemand außer den beiden Enden darf den Schlüssel haben, auch nicht der, dem die Leitung gehört.",
+      "en": "Then the provider would know every key and read everything along, and so would anyone tapping the provider's line. That is exactly what encryption is meant to prevent: nobody but the two ends may have the key, not even the owner of the line."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Der Shop veröffentlicht ein offenes Vorhängeschloss: Jeder kann damit abschließen, aber nur der Shop hat den Schlüssel zum Aufschließen. Der Browser schließt damit ein frisches Geheimnis ein und schickt es hin.",
+      "en": "The shop publishes an open padlock: anyone can lock with it, but only the shop has the key to unlock. The browser locks a fresh secret with it and sends it over."
+     },
+     "begruendung": {
+      "de": "Genau. Das Schloss ist öffentlich, der Schlüssel dazu bleibt beim Shop. Der Browser würfelt ein Geheimnis, schließt es mit dem öffentlichen Schloss ein und schickt es; unterwegs kann es niemand öffnen, der Shop schon. Von da an haben beide dasselbe Geheimnis und verschlüsseln damit wie ihr mit eurem abgesprochenen Schlüssel. Wie ein solches Schloss aus Mathematik gebaut wird, ist Stoff späterer Semester; die Idee reicht hier.",
+      "en": "Exactly. The lock is public, its key stays with the shop. The browser rolls a secret, locks it with the public lock and sends it; nobody can open it on the way, the shop can. From then on both hold the same secret and encrypt with it just as you do with your agreed key. How such a lock is built out of mathematics is material for later semesters; the idea is enough here."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Die Verbindung läuft über eine Leitung, die niemand sonst beobachten kann; deshalb ist gar keine Absprache nötig.",
+      "en": "The connection runs over a line nobody else can observe; so no agreement is needed at all."
+     },
+     "begruendung": {
+      "de": "Das Gegenteil ist der Fall: Eure Daten laufen über ein Dutzend fremder Rechner und Leitungen, WLAN im Café eingeschlossen. Das Internet ist so öffentlich wie euer Licht. Verschlüsselt wird, weil die Leitung beobachtbar ist, nicht obwohl.",
+      "en": "The opposite is true: your data passes through a dozen other people's computers and lines, café wifi included. The internet is as public as your light. Encryption happens because the line is observable, not although."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Der Browser komprimiert die Daten vor dem Senden; komprimierte Daten sehen aus wie Zufall und sind darum nicht lesbar.",
+      "en": "The browser compresses the data before sending; compressed data looks like randomness and is therefore not readable."
+     },
+     "begruendung": {
+      "de": "Komprimiert wird auch, aber das schützt nichts: Das Packverfahren ist öffentlich, und jeder Mithörer entpackt mit demselben Programm wie der Empfänger. Kompression braucht keinen Schlüssel, und ohne Geheimnis gibt es keine Vertraulichkeit.",
+      "en": "Compression happens too, but it protects nothing: the packing method is public, and any eavesdropper unpacks with the same program as the receiver. Compression needs no key, and without a secret there is no confidentiality."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-010",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr sendet die Nutzlast verschlüsselt und ohne Prüfsumme. Unterwegs\nkippt eine Störung ein paar Bits. Was passiert beim Empfänger?",
+    "en": "You send the payload encrypted and without a checksum. On the way, a\ndisturbance flips a few bits. What happens at the receiver?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Er entschlüsselt, bekommt an den gekippten Stellen falsche Bits und merkt es nicht; Verschlüsselung schützt vor Mitlesen, nicht vor Veränderung.",
+      "en": "It decrypts, gets wrong bits at the flipped positions and does not notice; encryption protects against reading along, not against alteration."
+     },
+     "begruendung": {
+      "de": "Genau. XOR mit dem Schlüssel entschlüsselt jedes empfangene Bit, auch ein gekipptes, zu irgendeinem Bit; nichts daran sagt „hier stimmt etwas nicht“. Vertraulichkeit und Unversehrtheit sind zwei verschiedene Aufgaben: Die eine löst der Schlüssel, die andere die Prüfsumme, und ihr braucht beides. Das gilt genauso für Störungen wie für ein Nachbarteam, das absichtlich Bits kippt.",
+      "en": "Exactly. XOR with the key decrypts every received bit, a flipped one included, to some bit; nothing about it says \"something is wrong here\". Confidentiality and integrity are two different jobs: the key solves one, the checksum the other, and you need both. That holds for disturbances just as for a neighbouring team flipping bits on purpose."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Die Entschlüsselung schlägt fehl, weil gekippte Bits nicht mehr zum Schlüssel passen; der Empfänger merkt den Fehler daran.",
+      "en": "Decryption fails because flipped bits no longer match the key; the receiver notices the error that way."
+     },
+     "begruendung": {
+      "de": "Es gibt kein „passt nicht zum Schlüssel“. XOR verrechnet jedes Bit mit jedem Schlüsselbit, ohne Vorbedingung; jede Eingabe ergibt eine Ausgabe. Dass die Ausgabe falsch ist, sieht man erst am Inhalt, und bei Bilddaten nicht einmal daran.",
+      "en": "There is no \"does not match the key\". XOR combines every bit with every key bit, without precondition; every input yields an output. That the output is wrong only shows in the content, and with picture data not even there."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Ab der ersten gekippten Stelle wird alles Folgende zu Unsinn, weil jedes Byte vom vorigen abhängt; der Empfänger sieht den Fehler also sofort.",
+      "en": "From the first flipped position on, everything that follows becomes nonsense, because every byte depends on the previous one; so the receiver sees the error at once."
+     },
+     "begruendung": {
+      "de": "Bei XOR mit einem Schlüssel steht jedes Bit für sich: Ein gekipptes Bit ergibt genau ein falsches Bit, der Rest bleibt richtig. Und selbst bei Verfahren, in denen Bytes voneinander abhängen, wäre Unsinn kein Fehlersignal, sondern nur Unsinn. Was Fehler meldet, ist die Prüfsumme.",
+      "en": "With XOR and a key every bit stands on its own: one flipped bit gives exactly one wrong bit, the rest stays right. And even with methods in which bytes depend on each other, nonsense would be no error signal, just nonsense. What reports errors is the checksum."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-011",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr baut Verschlüsselung in eure Übertragung nach dem Klassenstandard\nein: Präambel, Typfeld, Längenfeld, Nutzlast, Prüfsumme, Endmarke.\nWelche Teile des Rahmens gehen weiterhin unverschlüsselt über die\nStrecke? (Mehrere richtige Antworten möglich.)",
+    "en": "You add encryption to your transmission under the class standard:\npreamble, type field, length field, payload, checksum, end marker.\nWhich parts of the frame still go over the link unencrypted?\n(Several answers may be correct.)"
+   },
+   "typ": "mc",
+   "richtig": [
+    "a",
+    "b",
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Die Präambel, denn der Empfänger muss den Anfang des Rahmens finden, bevor er irgendetwas entschlüsseln kann.",
+      "en": "The preamble, because the receiver has to find the start of the frame before it can decrypt anything."
+     },
+     "begruendung": {
+      "de": "Richtig. Die Präambel ist ein bekanntes Bitmuster, an dem der Empfänger den Anfang erkennt. Wäre sie verschlüsselt, wäre sie ein anderes Muster, und der Empfänger fände nichts; und ein Mithörer erfährt aus ihr ohnehin nur, dass ein Rahmen beginnt.",
+      "en": "Right. The preamble is a known bit pattern by which the receiver recognises the start. Encrypted, it would be a different pattern, and the receiver would find nothing; and an eavesdropper learns from it only that a frame begins anyway."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Das Längenfeld, denn der Empfänger muss wissen, wie viele Bytes Nutzlast folgen, bevor er sie gelesen und entschlüsselt hat.",
+      "en": "The length field, because the receiver has to know how many bytes of payload follow before it has read and decrypted them."
+     },
+     "begruendung": {
+      "de": "Richtig. Die Länge steuert das Einlesen; sie wird gebraucht, bevor die Nutzlast überhaupt vollständig da ist. Dass ein Mithörer die Länge sieht, ist der Preis, und er ist klein: Wie lang eine Nachricht ist, sähe er auch an der Sendedauer.",
+      "en": "Right. The length controls reading in; it is needed before the payload is even complete. That an eavesdropper sees the length is the price, and it is small: how long a message is, they would see from the sending time anyway."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Die Nutzlast, denn sie ist der größte Teil des Rahmens und würde verschlüsselt die Übertragung verlängern.",
+      "en": "The payload, because it is the largest part of the frame and would lengthen the transmission if encrypted."
+     },
+     "begruendung": {
+      "de": "Die Nutzlast ist gerade das, was verschlüsselt wird; sie ist der Inhalt, den niemand mitlesen soll. Und XOR mit einem Schlüssel macht sie kein Bit länger: Jedes Byte wird durch ein Byte ersetzt. Die Übertragung dauert genauso lang wie unverschlüsselt.",
+      "en": "The payload is exactly what gets encrypted; it is the content nobody is supposed to read along. And XOR with a key makes it not one bit longer: every byte is replaced by a byte. The transmission takes as long as unencrypted."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Prüfsumme, denn der Empfänger prüft damit zuerst, ob der Rahmen heil angekommen ist, und entschlüsselt erst danach.",
+      "en": "The checksum, because the receiver first checks with it whether the frame arrived intact and only then decrypts."
+     },
+     "begruendung": {
+      "de": "Richtig. Die Prüfsumme gehört zur Schicht des Rahmens, nicht zum Inhalt: Sie wird über die Bytes gerechnet, die tatsächlich übertragen werden, also über die verschlüsselte Nutzlast, und offen mitgeschickt. Ein Mithörer kann sie sehen; sie verrät nichts über den Inhalt, nur ob die Bytes unverändert angekommen sind.",
+      "en": "Right. The checksum belongs to the frame's layer, not to the content: it is computed over the bytes actually transmitted, so over the encrypted payload, and sent openly. An eavesdropper can see it; it reveals nothing about the content, only whether the bytes arrived unchanged."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-012",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr wollt das Foto sowohl komprimieren als auch verschlüsseln, bevor\nes über die Strecke geht. In welcher Reihenfolge, und warum?",
+    "en": "You want to both compress and encrypt the photo before it goes over\nthe link. In which order, and why?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Erst komprimieren, dann verschlüsseln: Verschlüsselte Bytes sehen aus wie Zufall, und Zufall lässt sich nicht mehr packen.",
+      "en": "Compress first, then encrypt: encrypted bytes look like randomness, and randomness cannot be packed any more."
+     },
+     "begruendung": {
+      "de": "Genau. Ein Packer lebt von Redundanz, von Wiederholungen und ungleichen Häufigkeiten. Gute Verschlüsselung beseitigt genau die: Danach ist jedes Byte so wahrscheinlich wie jedes andere, und der Packer findet nichts mehr, die Datei wird eher größer. Also erst die Luft herauslassen, dann abschließen. Der Empfänger macht es rückwärts: erst entschlüsseln, dann entpacken.",
+      "en": "Exactly. A packer lives on redundancy, on repetitions and uneven frequencies. Good encryption removes exactly those: afterwards every byte is as likely as every other, and the packer finds nothing, the file rather grows. So let the air out first, then lock up. The receiver does it backwards: decrypt first, then unpack."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Erst verschlüsseln, dann komprimieren: So ist auch die gepackte Datei geschützt, und der Packer arbeitet auf dem, was wirklich gesendet wird.",
+      "en": "Encrypt first, then compress: that way the packed file is protected too, and the packer works on what is actually sent."
+     },
+     "begruendung": {
+      "de": "Geschützt ist die Nachricht in beiden Reihenfolgen. Aber der Packer bekommt hier verschlüsselte Bytes, und die haben keine Redundanz mehr: Er spart nichts und hängt noch seine Tabelle an. Ihr würdet die ganze Dateigröße des rohen Fotos senden, bei zehn Bit pro Sekunde zwei Tage.",
+      "en": "The message is protected in both orders. But here the packer gets encrypted bytes, and those have no redundancy left: it saves nothing and adds its table on top. You would send the full file size of the raw photo, two days at ten bits per second."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Die Reihenfolge ist gleichgültig, denn beide Schritte ersetzen nur Bytes durch andere Bytes und heben sich beim Empfänger wieder auf.",
+      "en": "The order does not matter, because both steps only replace bytes with other bytes and are undone at the receiver."
+     },
+     "begruendung": {
+      "de": "Rückgängig geht es in beiden Reihenfolgen, das stimmt; nur die Dateigröße ist nicht dieselbe. Packen wirkt nur auf Daten mit Redundanz, und ob die noch da ist, hängt davon ab, was vorher passiert ist. Die Reihenfolge entscheidet über Faktor zwei bei der Sendezeit.",
+      "en": "It can be undone in both orders, true; only the file size is not the same. Packing only works on data with redundancy, and whether that is still there depends on what happened before. The order decides a factor of two in sending time."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Nur eines von beiden: Komprimieren macht die Daten ohnehin unlesbar, deshalb ist Verschlüsseln danach überflüssig.",
+      "en": "Only one of the two: compressing makes the data unreadable anyway, so encrypting afterwards is superfluous."
+     },
+     "begruendung": {
+      "de": "Unlesbar für das Auge, nicht für ein Programm: Das Packverfahren ist öffentlich, und jeder entpackt mit demselben Werkzeug wie der Empfänger. Kompression hat keinen Schlüssel, also kein Geheimnis. Verschlüsseln bleibt nötig, nur eben danach.",
+      "en": "Unreadable to the eye, not to a program: the packing method is public, and anyone unpacks with the same tool as the receiver. Compression has no key, so no secret. Encrypting remains necessary, just afterwards."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-013",
+   "niveau": "erinnern",
+   "frage": {
+    "de": "Ein Team schreibt eine Textnachricht in das niedrigste Bit jedes\nFarbwerts des Papageienfotos und sendet das Foto. Das Bild sieht\nunverändert aus; wer nichts ahnt, sieht nur einen Papagei. Was hat das\nTeam gemacht?",
+    "en": "A team writes a text message into the lowest bit of every colour value\nof the parrot photo and sends the photo. The picture looks unchanged;\nwhoever suspects nothing sees only a parrot. What has the team done?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Verschlüsselt, denn die Nachricht ist im Bild nicht zu sehen; das Foto ist der Schlüssel.",
+      "en": "Encrypted, because the message cannot be seen in the picture; the photo is the key."
+     },
+     "begruendung": {
+      "de": "Es gibt hier kein Geheimnis, nur ein Versteck. Wer den Trick kennt, liest die niedrigsten Bits aus, ohne irgendetwas zu wissen, was das Team weiß; ein Schlüssel wäre etwas, das man auch mit Kenntnis des Verfahrens nicht hat. Das Foto ist der Umschlag, nicht der Schlüssel.",
+      "en": "There is no secret here, only a hiding place. Whoever knows the trick reads out the lowest bits without knowing anything the team knows; a key would be something you do not have even when you know the method. The photo is the envelope, not the key."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Komprimiert, denn die Nachricht kostet keinen zusätzlichen Platz; sie ist in den Bytes des Fotos aufgegangen.",
+      "en": "Compressed, because the message costs no extra room; it has been absorbed into the photo's bytes."
+     },
+     "begruendung": {
+      "de": "Platz gespart wird nicht: Das Foto ist genauso groß wie vorher, und die Nachricht hat darin Bits ersetzt, die vorher Bildinformation waren, so wenig sichtbar sie auch war. Kompression schreibt dasselbe kürzer; hier wird etwas anderes in dieselbe Länge hineingelegt.",
+      "en": "No room is saved: the photo is exactly as big as before, and the message has replaced bits in it that were picture information before, however little visible. Compression writes the same thing shorter; here something else is placed into the same length."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Versteckt, nicht verschlüsselt: Die Nachricht ist im Klartext im Bild, nur an einer Stelle, an der niemand hinsieht. Wer den Trick kennt, liest sie.",
+      "en": "Hidden, not encrypted: the message is in the picture in plain text, only in a place where nobody looks. Whoever knows the trick reads it."
+     },
+     "begruendung": {
+      "de": "Genau. Das heißt Steganographie: nicht den Inhalt unlesbar machen, sondern verbergen, dass es ihn gibt. Das niedrigste Bit eines Farbwerts ändert die Farbe um ein 256stel, das sieht kein Auge; aber ein Programm liest es in einem Augenblick aus. Verstecken und Verschlüsseln lassen sich verbinden: erst verschlüsseln, dann verstecken. Dann liest der Finder nur Rauschen.",
+      "en": "Exactly. That is called steganography: not making the content unreadable, but concealing that it exists. The lowest bit of a colour value changes the colour by one part in 256, no eye sees that; but a program reads it out in a moment. Hiding and encrypting can be combined: encrypt first, then hide. Then the finder reads only noise."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-014",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Das rohe Foto hat 256 mal 256 Punkte mit je drei Farbwerten von einem\nByte. Ihr versteckt eine Nachricht im niedrigsten Bit jedes Farbwerts.\nWie viele Zeichen zu einem Byte passen so hinein?",
+    "en": "The raw photo has 256 by 256 points with three one-byte colour values\neach. You hide a message in the lowest bit of every colour value. How\nmany one-byte characters fit in that way?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "196.608 Zeichen, eines je Farbwert.",
+      "en": "196,608 characters, one per colour value."
+     },
+     "begruendung": {
+      "de": "Je Farbwert ist ein Bit frei, nicht ein Byte. 196.608 Farbwerte tragen 196.608 Bits, und ein Zeichen braucht acht davon. Bit und Byte sind hier um den Faktor acht auseinander.",
+      "en": "One bit is free per colour value, not one byte. 196,608 colour values carry 196,608 bits, and a character needs eight of them. Bit and byte are a factor of eight apart here."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "24.576 Zeichen: 196.608 Farbwerte tragen 196.608 Bits, durch acht.",
+      "en": "24,576 characters: 196,608 colour values carry 196,608 bits, divided by eight."
+     },
+     "begruendung": {
+      "de": "Genau. 256 mal 256 sind 65.536 Punkte, mal drei Farbwerte sind 196.608 Bytes, und in jedem ist das niedrigste Bit frei: 196.608 Bits. Durch acht Bits je Zeichen sind das 24.576 Zeichen, gut zwölf Seiten Text, in einem Bild, das genauso groß bleibt und genauso aussieht.",
+      "en": "Exactly. 256 by 256 is 65,536 points, times three colour values is 196,608 bytes, and in each the lowest bit is free: 196,608 bits. Divided by eight bits per character that is 24,576 characters, a good twelve pages of text, in a picture that stays exactly as big and looks exactly the same."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "8.192 Zeichen: ein Bit je Punkt, 65.536 Bits, durch acht.",
+      "en": "8,192 characters: one bit per point, 65,536 bits, divided by eight."
+     },
+     "begruendung": {
+      "de": "Jeder Punkt hat drei Farbwerte, und jeder davon hat ein niedrigstes Bit; das sind drei Bits je Punkt, nicht eines. Die Rechnung mit 65.536 Bits übersieht den Faktor drei.",
+      "en": "Every point has three colour values, and each of them has a lowest bit; that is three bits per point, not one. The calculation with 65,536 bits overlooks the factor of three."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "256 Zeichen, denn ein Farbwert hat 256 Stufen und mehr Zustände lassen sich in ihm nicht unterbringen.",
+      "en": "256 characters, because a colour value has 256 levels and no more states can be accommodated in it."
+     },
+     "begruendung": {
+      "de": "Die 256 Stufen sind die Werte, die ein einzelner Farbwert annehmen kann; mit der Anzahl der Farbwerte im Bild haben sie nichts zu tun. Versteckt wird je Farbwert ein Bit, und Farbwerte gibt es 196.608.",
+      "en": "The 256 levels are the values a single colour value can take; they have nothing to do with the number of colour values in the picture. One bit is hidden per colour value, and there are 196,608 colour values."
+     }
+    }
+   ]
+  },
+  {
+   "id": "en-015",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ein Angreifer probiert eine Milliarde Passwörter je Sekunde. Welches\nPasswort hält am längsten, wenn er alle Möglichkeiten durchgehen muss?",
+    "en": "An attacker tries a billion passwords a second. Which password holds\nout longest if they have to go through every possibility?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "`Sommer2026!`, elf Zeichen mit Großbuchstabe, Ziffern und Sonderzeichen.",
+      "en": "`Summer2026!`, eleven characters with an upper-case letter, digits and a symbol."
+     },
+     "begruendung": {
+      "de": "Rechnerisch elf Zeichen aus 95 möglichen, aber gerechnet wird hier gar nicht: Ein Wort aus dem Wörterbuch mit Jahreszahl und Ausrufezeichen steht in jeder Passwortliste, und Listen werden zuerst probiert. Dieses Passwort fällt in unter einer Sekunde, so lang es auch ist.",
+      "en": "On paper eleven characters out of 95, but nobody computes here: a dictionary word with a year and an exclamation mark sits in every password list, and lists are tried first. This password falls in under a second, however long it is."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "`k7$Qz!2p`, acht Zeichen aus dem vollen Vorrat von 95 Zeichen, zufällig gewählt.",
+      "en": "`k7$Qz!2p`, eight characters from the full set of 95, chosen at random."
+     },
+     "begruendung": {
+      "de": "95 hoch 8 sind etwa 7 Billiarden Möglichkeiten, bei einer Milliarde je Sekunde 77 Tage. Ordentlich, aber vier Buchstaben mehr würden mehr bringen als der ganze Zeichenvorrat: Die Länge steht im Exponenten, der Zeichenvorrat nur in der Basis.",
+      "en": "95 to the power of 8 is about 7 quadrillion possibilities, 77 days at a billion a second. Decent, but four more letters would gain more than the whole character set: length sits in the exponent, the character set only in the base."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "`nebelkranichfahrradsonne`, 24 Kleinbuchstaben, vier Wörter ohne Zusammenhang.",
+      "en": "`fogcranebicyclesun`, eighteen lowercase letters, four unrelated words."
+     },
+     "begruendung": {
+      "de": "Genau. 26 hoch 24 sind rund 10 hoch 34 Möglichkeiten, bei einer Milliarde je Sekunde länger, als das Universum existiert; selbst wer nur ganze Wörter aus einem Wörterbuch mit 100 000 Einträgen kombiniert, hat 10 hoch 20 Möglichkeiten, Tausende von Jahren. Vier zufällige Wörter sind lang, merkbar und in keiner Liste. Die Länge ist der Hebel, nicht das Sonderzeichen.",
+      "en": "Exactly. 26 to the power of 18 is about 10 to the 25 possibilities, hundreds of millions of years at a billion a second; even someone who only combines whole words from a 100,000-word dictionary faces 10 to the 20 possibilities, thousands of years. Four random words are long, memorable and in no list. Length is the lever, not the symbol."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "`P@ssw0rd`, acht Zeichen, in denen Buchstaben durch ähnliche Sonderzeichen und Ziffern ersetzt sind.",
+      "en": "`P@ssw0rd`, eight characters with letters replaced by look-alike symbols and digits."
+     },
+     "begruendung": {
+      "de": "Diese Ersetzungen kennt jede Passwortliste: a zu @, o zu 0, s zu $. Für den Angreifer ist das kein neues Passwort, sondern das alte mit einer bekannten Regel, und es steht ganz oben in den Listen aus früheren Einbrüchen.",
+      "en": "Every password list knows these substitutions: a to @, o to 0, s to $. To the attacker this is not a new password but the old one with a known rule, and it sits at the top of the lists from earlier breaches."
+     }
+    }
+   ]
+  }
+ ]
+}

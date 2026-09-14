@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>who else is listening?</title>
+  <link rel="stylesheet" href="theme.css?v=20260914a">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260914h">
+  <style>
+    .photo-text.narrow { width: 880px; }
+
+    /* Echte Bilddateien nebeneinander, wie in Deck 15: gleich gross, die
+       Unterschrift sagt, was mit den Bytes passiert ist. */
+    .pics {
+      position: absolute;
+      left: var(--margin); right: var(--margin);
+      top: 230px;
+      display: flex; justify-content: center; gap: 40px;
+    }
+    /* Feste Breite je Figur: So stehen die Bilder auf jeder Folie an derselben
+       Stelle, egal wie lang die Unterschrift ist; lange Unterschriften brechen um. */
+    .pics figure { margin: 0; text-align: center; width: 640px; flex: 0 0 640px; }
+    .pics img { display: block; width: 440px; height: 440px; margin: 0 auto; image-rendering: pixelated; }
+    .pics figcaption { margin-top: 24px; font-family: var(--mono); font-size: var(--small); color: var(--gray-light); }
+    .pics figcaption .sub { display: block; margin-top: 10px; font-family: var(--text); font-size: var(--tiny); color: var(--gray); }
+    .pics figcaption .hl { color: var(--yellow); }
+
+    /* Die Rechnung unter den Bitebenen, in Codeschrift, klein */
+    .calc {
+      position: absolute; left: var(--margin); right: var(--margin); top: 820px;
+      text-align: center; font-family: var(--mono); font-size: var(--small); color: var(--gray-light);
+    }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="who else is listening?"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["light is public", "one gate, one key", "how long is long enough", "what a key does not do"]'>
+
+  <section class="slide title">
+    <aside class="notes">Das Zusatzdeck für Challenge 4: Wer im Finale früh fertig ist, verschlüsselt seine Nutzlast. Es setzt auf drei Dingen auf, die alle schon da sind: XOR aus der Werkzeugkiste, der Rahmen mit Prüfsumme, und die Erkenntnis aus Compression, dass Zufall keine Redundanz hat.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Erst, warum es das Problem überhaupt gibt: Licht ist öffentlich. Dann das Verfahren, ein Gatter und ein Schlüssel. Dann die eigentliche Frage, wie lang ein Schlüssel sein muss und woher beide Seiten ihn kennen. Zum Schluss, was ein Schlüssel nicht kann.</aside>
+  </section>
+
+  <!-- ================= Teil 1: light is public ================= -->
+
+  <section class="slide part" data-part="light is public">
+    <aside class="notes">Das Problem, bevor die Lösung kommt.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/postcard.png" alt="">
+    <div class="photo-text narrow">everyone on the way<br>reads a postcard.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Eine Postkarte: Was drauf steht, liest der Briefträger, die Sortiererin, der Nachbar, der sie aus dem Kasten nimmt. Niemand muss dafür etwas aufbrechen. Euer Licht ist eine Postkarte. Es gibt keinen Umschlag für Licht; wer seinen Sensor danebenstellt, hat dieselben Messwerte wie euer Partner. Heute die Frage: Wie schreibt man eine Postkarte, die jeder lesen und niemand verstehen kann?</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the third sensor</h2>
+    <div class="figure" id="fig-third-sensor"></div>
+    <div class="punch">whatever your sensor sees, the sensor next to it sees too.</div>
+    <aside class="notes">Kein Trick der Nachbarn, keine Lücke im Aufbau: Licht breitet sich aus, das ist seine Natur. Ein Rohr um die LED hilft gegen Störlicht, nicht gegen einen Sensor an der Rohröffnung. Ein eigenes Farbalphabet hilft nicht, denn wer eine Weile mitmisst, zählt eure Farben und probiert die wenigen Zuordnungen durch. Und schneller senden hilft nicht, denn der Sensor nebenan ist derselbe wie eurer, und aufgezeichnet wird ohnehin, ausgewertet später in Ruhe. Alles, was aus dem Licht kommt, hat der Mithörer auch.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>encryption as a box, twice</h2>
+    <div class="figure" id="fig-ipo-key"></div>
+    <div class="punch">everyone may see the message. nobody but you may understand it.</div>
+    <aside class="notes">Dieselbe Denkform wie bei der Kompression: ein Kasten, der Daten verarbeitet, und ein zweiter, der es rückgängig macht. Der Unterschied ist der zweite Eingang. pack() braucht nichts außer der Datei; encrypt() braucht die Datei und ein Geheimnis, und decrypt() dasselbe Geheimnis. Was herauskommt, darf jeder sehen. Was hineinging, bekommt nur zurück, wer den Schlüssel hat. Alles Weitere heute ist die Frage, wie dieser zweite Eingang aussieht: wie man damit rechnet, wie lang er sein muss, woher beide Seiten ihn kennen, und was er nicht kann.</aside>
+  </section>
+
+  <!-- ================= Teil 2: one gate, one key ================= -->
+
+  <section class="slide part" data-part="one gate, one key">
+    <aside class="notes">Das Verfahren. Es passt in einen Satz, und ihr kennt das Gatter schon.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>you have seen this gate</h2>
+    <div class="figure" id="fig-xor-gate"></div>
+    <div class="punch">xor: 1 when the two differ. that is all we need.</div>
+    <aside class="notes">Sitzung 12, die Werkzeugkiste: XOR liefert 1, wenn genau eine Eingabe 1 ist. Dort haben wir daraus ein Prüfbit gebaut und am Ende in zwei Folien angedeutet, dass dasselbe Gatter auch verschlüsselt. Heute wird aus der Andeutung das Verfahren. Merkt euch nur eines: Ein Schlüsselbit 1 kippt das Bit, ein Schlüsselbit 0 lässt es stehen.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawXorByte" data-on-step="drawXorByte">
+    <h2>xor with a key byte</h2>
+    <div class="figure" id="fig-xor-byte"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <div class="punch">where the key has a 1, the bit flips. the result looks like any old byte.</div>
+    <aside class="notes">Rechnet mit: erste Stelle 0 gegen 1, verschieden, also 1. Zweite Stelle 1 gegen 0, also 1. Dritte 1 gegen 1, gleich, also 0. Und so weiter. Der Schlüssel 1010 1010 kippt jede zweite Stelle. Aus dem m, 6d, wird c7, ein Byte, das keinem Buchstaben entspricht und wie irgendein Byte aussieht. Das ist Absicht: Der Mithörer soll nichts sehen, was ihm bekannt vorkommt. Frage in den Saal: Was wäre bei Oder herausgekommen? 1110 1111, und bei Und 0010 1000, und damit wären Bits weg, die niemand zurückholen kann. XOR wirft nichts weg, es kippt nur.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawXorBack" data-on-step="drawXorBack">
+    <h2>do it again, get it back</h2>
+    <div class="figure" id="fig-xor-back"></div>
+    <span data-step="1"></span>
+    <div class="punch">encrypt and decrypt are the same operation with the same key.</div>
+    <aside class="notes">Der Empfänger macht exakt dasselbe: XOR mit demselben Schlüssel. Die Stellen, die der Schlüssel gekippt hat, kippt er zurück; die anderen hat er nie angerührt. Kein umgekehrter Schlüssel, kein Abziehen, keine Gegenoperation, denn XOR ist seine eigene Gegenoperation. Das macht XOR zum einfachsten Verschlüsselungsverfahren, das es gibt, und, richtig benutzt, zu einem der stärksten.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">the key of all zeros</div>
+      <div class="lines mono">
+        <div>key 0000 0000: nothing flips.</div>
+      </div>
+      <div class="sidenote">the program runs, the transmission works, and you are sending plaintext without noticing. look at the bytes that actually go out.</div>
+    </div>
+    <aside class="notes">Aus Sitzung 12, und es lohnt die Wiederholung, weil es in der Werkstatt passieren wird: Ein Schlüssel aus lauter Nullen kippt nichts. Das Programm läuft, die Übertragung funktioniert, das Nachbarteam liest mit. Verschlüsselung, die nichts tut, sieht von innen genauso aus wie Verschlüsselung, die alles tut. Prüft es, wie ihr alles prüft: Schaut euch die Bytes an, die tatsächlich über die Strecke gehen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what it looks like in the file</h2>
+    <div class="figure" id="fig-in-file"></div>
+    <div class="punch">same length, same number of bytes, not one of them readable.</div>
+    <aside class="notes">Verschlüsseln macht die Datei kein Bit länger: Jedes Byte wird durch ein Byte ersetzt. Die Sendezeit bleibt dieselbe wie unverschlüsselt. Und der Schlüssel darf ein Wort sein, das ihr euch merken könnt; er wird so oft wiederholt, wie die Nachricht lang ist. Ob das klug ist, ist die Frage des nächsten Teils.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: scramble your own text</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/scrambler/?embed=1" title="The Scrambler"></iframe></div>
+    <aside class="notes">Tippt einen Satz, tippt einen Schlüssel, seht die drei Zeilen. Drückt „decrypt", der Satz ist zurück. Dann der Trick, der zum nächsten Teil führt: Nehmt das zweite Beispiel, einen Schlüssel von einem einzigen Zeichen, und drückt „try all 256 keys". Und schaltet auf den Papagei um: Mit drei Byte Schlüssel ist er noch da.</aside>
+  </section>
+
+  <!-- ================= Teil 3: how long is long enough ================= -->
+
+  <section class="slide part" data-part="how long is long enough">
+    <aside class="notes">Das Verfahren steht. Jetzt hängt alles am Schlüssel: wie lang, und woher.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">your spec may say xor. it must not say the key.</div>
+      <div class="lines">
+        <div>the method: public. every team reads it, and that is fine.</div>
+        <div>the key: secret. it is the only thing that must be.</div>
+      </div>
+      <div class="sidenote">kerckhoffs, 1883. your browser encrypts with methods from the textbook.</div>
+    </div>
+    <aside class="notes">In eurer Protokollspezifikation steht, dass ihr per XOR verschlüsselt, und alle Teams lesen sie. Ist die Verschlüsselung damit hinfällig? Nein. Das Verfahren zu kennen heißt nicht, den Schlüssel zu kennen. Das ist die wichtigste Regel des Fachs, 1883 von Auguste Kerckhoffs aufgeschrieben: Die Sicherheit darf nur vom Schlüssel abhängen, nie davon, dass das Verfahren geheim bleibt. Verfahren werden beobachtet, weitererzählt, nachgebaut. Euer Browser verschlüsselt nach Verfahren aus dem Lehrbuch und ist trotzdem sicher, weil der Schlüssel jedes Mal ein anderer ist und niemand ihn kennt.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>one byte of key: 256 tries</h2>
+    <div class="figure" id="fig-tries"></div>
+    <div class="punch">looking like noise is not the same as being noise.</div>
+    <aside class="notes">Ein Team verschlüsselt das Foto mit einem Schlüssel von einem Byte. Die Bytes sehen aus wie Rauschen. Das Nachbarteam liest sie mit und probiert alle 256 Schlüssel durch, Sekundenbruchteile. 255-mal kommt Unsinn heraus, einmal eine Datei, die mit BM beginnt, dem Kopf einer Bitmap, und dahinter der Papagei. Ich habe es nachgerechnet: Bei unserem Bild gibt es genau einen Schlüssel, der einen gültigen Kopf ergibt. Ein Schlüssel muss so viele Möglichkeiten haben, dass Durchprobieren aussichtslos ist; heutige Schlüssel haben 128 Bit und mehr, mehr Werte als Atome in Reichweite.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>why longer is better</h2>
+    <div class="figure" id="fig-key-length"></div>
+    <div class="punch">every byte of key multiplies the work by 256. that is why keys are long.</div>
+    <div class="footnote">a billion tries a second: the order of one graphics card</div>
+    <aside class="notes">Das „so what" der 256 Versuche. Jedes Byte Schlüssel multipliziert die Möglichkeiten mit 256: zwei Byte sind 65 536, noch sofort; vier Byte sind vier Milliarden, bei einer Milliarde Versuchen je Sekunde vier Sekunden; acht Byte sind 18 Trillionen, 585 Jahre; sechzehn Byte, 128 Bit, sind mehr, als das Universum an Sekunden alt ist, und zwar um viele Größenordnungen. Deshalb sind Schlüssel heute 128 oder 256 Bit lang: nicht sechzehnmal schwerer als ein Byte, sondern außer Reichweite. Die eine Milliarde je Sekunde ist eine Größenordnung, keine Messung; eine Grafikkarte schafft bei einfachen Verfahren mehr, bei guten weniger. An der Schlussfolgerung ändert das nichts.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>your password is a key</h2>
+    <div class="figure" id="fig-password"></div>
+    <div class="punch">length beats symbols. and a word from a list is no key at all.</div>
+    <div class="footnote">same billion tries a second · check your own on haveibeenpwned.com</div>
+    <aside class="notes">Dieselbe Rechnung für etwas, das ihr täglich benutzt. Ein Passwort ist ein Schlüssel, und die Frage ist dieselbe: Wie viele Möglichkeiten gibt es? Acht Kleinbuchstaben sind 26 hoch 8, 200 Milliarden, bei einer Milliarde je Sekunde dreieinhalb Minuten. Acht Zeichen aus dem vollen Vorrat, Groß, Klein, Ziffern, Sonderzeichen, 95 Zeichen: 95 hoch 8, 77 Tage. Zwölf Kleinbuchstaben: 26 hoch 12, drei Jahre. Zwölf gemischte: 17 Millionen Jahre. Deshalb verlangen Systeme Sonderzeichen, und deshalb ist Länge trotzdem der stärkere Hebel: Vier Zeichen mehr bringen mehr als der ganze Zeichenvorrat. Und die rote Zeile: Angreifer fangen nicht bei aaaaaaaa an. Sie nehmen Listen, geleakte Passwörter aus früheren Einbrüchen, Wörterbücher, Namen, Jahreszahlen, und probieren die zuerst. Ein Wort aus einer Liste fällt in unter einer Sekunde, egal wie lang es ist. Passwort123, Sommer2026, der Name der Katze. Auf haveibeenpwned.com könnt ihr nachsehen, ob eure eigenen schon in solchen Listen stehen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>three bytes of key, and the parrot is still there</h2>
+    <div class="pics">
+      <figure><img src="img/parrot.png" alt=""><figcaption>raw<span class="sub">196 608 bytes, what you want to send</span></figcaption></figure>
+      <figure><img src="img/parrot-key3.png" alt=""><figcaption class="hl">xor with 5a c3 96, repeated<span class="sub">what the neighbours display</span></figcaption></figure>
+    </div>
+    <div class="punch">encrypted is not the same as unrecognisable.</div>
+    <div class="footnote">real files, 256 × 256 points · parrot: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Drei Byte Schlüssel, 16 Millionen Möglichkeiten; auch die probiert ein Programm in Sekundenbruchteilen durch. Aber man muss nicht einmal probieren. Seht hin: Das Nachbarteam zeigt das Mitgelesene einfach als Bild an. Die Farben stimmen nicht, der Papagei ist trotzdem da, Umriss, Schnabel, Gefieder. Warum? Nächste Folie.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>why the pattern survives</h2>
+    <div class="figure" id="fig-why-pattern"></div>
+    <div class="punch">a short key treats equal bytes equally. the picture keeps its shape.</div>
+    <aside class="notes">Der Hintergrund ist schwarz, lauter Nullbytes, und Null XOR Schlüssel ergibt den Schlüssel: überall dieselbe Farbe. Wo das Bild Struktur hat, hat das Ergebnis Struktur. Ein wiederholter Schlüssel ersetzt jedes Byte durch ein anderes, aber immer auf dieselbe Weise, und ein längerer Schlüssel ändert daran nichts, solange er sich wiederholt. Deshalb sorgt jedes ernsthafte Verfahren dafür, dass gleiche Eingaben verschiedene Ausgaben ergeben, etwa indem jedes Byte auch vom vorigen abhängt. Das ist Stoff für später; die Lehre für heute: Auch verschlüsselt kann ein Bild noch etwas verraten.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>a key as long as the picture, used once</h2>
+    <div class="pics">
+      <figure><img src="img/parrot-key3.png" alt=""><figcaption>three bytes, repeated<span class="sub">65 536 times</span></figcaption></figure>
+      <figure><img src="img/parrot-otp.png" alt=""><figcaption class="hl">196 608 random bytes, used once<span class="sub">nothing repeats, nothing shows</span></figcaption></figure>
+    </div>
+    <div class="punch">now it is noise. provably. and it has a price.</div>
+    <div class="footnote">real files, 256 × 256 points · parrot: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Nehmt einen zufälligen Schlüssel, so lang wie das Bild, und benutzt ihn nur dieses eine Mal. Dann ist jedes Ergebnisbyte für sich zufällig, und jede mögliche Nachricht gleicher Länge passt gleich gut zu dem, was gesendet wurde. Das ist der Einmalschlüssel, und Claude Shannon hat 1949 bewiesen, dass er unknackbar ist, mit allem Rechnen der Welt. Wo ist der Haken? Der Schlüssel muss zum Partner, geheim, und er ist so groß wie die Nachricht selbst.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>how the key gets to your partner</h2>
+    <div class="figure" id="fig-key-path"></div>
+    <div class="punch">the key must travel. and it must not travel on the link.</div>
+    <aside class="notes">Über die Strecke geht der Schlüssel nicht: offen liest ihn das Nachbarteam mit und entschlüsselt ab der zweiten Nachricht bequem mit. Verschlüsselt bräuchte er einen Schlüssel, den der Partner vorher kennt, dieselbe Frage eine Stufe tiefer; und ein Byte XOR mit sich selbst ist null, gesendet würden lauter Nullen. Er braucht einen zweiten Weg, den der Mithörer nicht hat. Im Kurs ist der einfach: Ihr sitzt am selben Tisch, ein Zettel genügt. Das ist kein Trick am Rande, das ist die eigentliche Schwierigkeit des Fachs.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawPadlock" data-on-step="drawPadlock">
+    <h2>strangers: a padlock instead of a slip of paper</h2>
+    <div class="figure" id="fig-padlock"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <div class="punch">a lock anyone can shut and only one can open: the secret travels locked, the key never travels.</div>
+    <div class="footnote">diffie and hellman, 1976</div>
+    <aside class="notes">Die Folie davor endete mit dem Zettel. Euer Browser hat den Shop nie getroffen und kann ihm keinen Zettel geben; trotzdem müssen beide am Ende dasselbe Geheimnis haben, um damit zu verschlüsseln. Die Idee, die das löst, ist eine der schönsten der Informatik, und sie braucht nur ein Bild: ein Vorhängeschloss, das jeder zudrücken kann, das aber nur ein Schlüssel öffnet, und dieser Schlüssel bleibt beim Shop, immer. Erster Schritt: Der Shop schickt das offene Schloss über die Leitung. Die Nachbarn sehen ein offenes Schloss, damit können sie nichts anfangen. Zweiter Schritt: Der Browser würfelt ein frisches Geheimnis, legt es hinein, drückt das Schloss zu und schickt es zurück. Unterwegs kann es niemand öffnen, nicht einmal der Browser selbst könnte es wieder aufmachen. Dritter Schritt: Der Shop öffnet es mit seinem Schlüssel und liest das Geheimnis. Jetzt kennen es beide, und ab hier verschlüsseln sie damit per XOR wie ihr mit eurem Zettel. Die Leitung hat ein offenes Schloss und ein geschlossenes gesehen, aber nie den Schlüssel und nie das Geheimnis. Wie man ein solches Schloss aus Mathematik baut, ist Stoff späterer Semester; die Idee reicht, und die Idee ist von 1976.</aside>
+  </section>
+
+  <!-- ================= Teil 4: what a key does not do ================= -->
+
+  <section class="slide part" data-part="what a key does not do">
+    <aside class="notes">Ein Schlüssel schützt vor Mitlesen. Vor nichts sonst, und drei Dinge gehören daneben.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>flipped bits go straight through</h2>
+    <div class="figure" id="fig-flipped"></div>
+    <div class="punch">a key keeps others from reading. it does not keep bits from changing.</div>
+    <aside class="notes">Unterwegs kippt eine Störung ein paar Bits, oder das Nachbarteam kippt sie absichtlich. Der Empfänger entschlüsselt, bekommt an diesen Stellen falsche Bits und merkt nichts, denn XOR verrechnet jedes empfangene Bit zu irgendeinem Bit; nichts daran sagt „hier stimmt etwas nicht". Hier kippt ein Bit im letzten o, aus 6f wird 67, aus dem o ein g. Vertraulichkeit und Unversehrtheit sind zwei Aufgaben: die eine löst der Schlüssel, die andere die Prüfsumme aus Sitzung 6. Ihr braucht beides.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what stays in the clear</h2>
+    <div class="figure" id="fig-frame"></div>
+    <div class="punch">encrypt the content. the frame around it has a job to do.</div>
+    <aside class="notes">Was wird verschlüsselt? Die Nutzlast, und nur sie. Die Präambel muss der Empfänger erkennen, bevor er irgendetwas entschlüsseln kann; verschlüsselt wäre sie ein anderes Muster. Die Länge steuert das Einlesen, bevor die Nutzlast vollständig da ist. Die Prüfsumme gehört zur Schicht des Rahmens, sie wird über die gesendeten Bytes gerechnet, also über die verschlüsselte Nutzlast. Ein Mithörer sieht, dass ein Rahmen kommt und wie lang er ist; das sähe er an der Sendedauer ohnehin. Schichten, wie in Sitzung 7: Jede tut ihre Arbeit, und Verschlüsselung ist eine Schicht über dem Rahmen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>pack first, then lock</h2>
+    <div class="figure" id="fig-order"></div>
+    <div class="punch">encrypted bytes have no redundancy left. pack before you lock.</div>
+    <div class="footnote">measured 14 sept 2026, python zipfile level 9, one-time key on the raw parrot</div>
+    <aside class="notes">Erst komprimieren, dann verschlüsseln. Ein Packer lebt von Redundanz, von Wiederholungen und ungleichen Häufigkeiten, und gute Verschlüsselung beseitigt genau die: Danach ist jedes Byte so wahrscheinlich wie jedes andere, der Packer findet nichts und hängt noch seine Tabelle an. Gemessen: umgekehrt wird die Datei um 168 Byte größer statt um 64 Kilobyte kleiner. Der Empfänger macht es rückwärts: erst entschlüsseln, dann entpacken.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>hide it in the parrot</h2>
+    <div class="pics">
+      <figure><img src="img/parrot.png" alt=""><figcaption>the parrot<span class="sub">196 608 bytes</span></figcaption></figure>
+      <figure><img src="img/parrot-stego.png" alt=""><figcaption class="hl">the parrot + 24 576 characters of hidden text<span class="sub">196 608 bytes, 98 556 of them changed by exactly 1</span></figcaption></figure>
+    </div>
+    <div class="punch">not scrambled. hidden, in the bit nobody looks at.</div>
+    <div class="footnote">real files, 256 × 256 points · parrot: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Noch eine Idee, die oft mit Verschlüsselung verwechselt wird. Rechts steckt ein Text von zwölf Seiten im Bild, und ihr seht keinen Unterschied. Der Trick: In jedem Farbwert ist das niedrigste Bit fast wertlos, es ändert die Farbe um ein 256stel. Dort steht der Text, Bit für Bit. 98 556 Farbwerte sind um genau 1 verändert.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the lowest bit, made visible</h2>
+    <div class="pics">
+      <figure><img src="img/lsb-plane-original.png" alt=""><figcaption>lowest bit of red, original<span class="sub">noise with traces of the picture</span></figcaption></figure>
+      <figure><img src="img/lsb-plane-stego.png" alt=""><figcaption class="hl">the same bit with the text inside<span class="sub">the stripes of ascii, to the naked eye</span></figcaption></figure>
+    </div>
+    <div class="calc">256 × 256 × 3 = 196 608 values · 1 bit each · ÷ 8 = 24 576 characters</div>
+    <div class="punch">whoever knows where to look reads it in a blink. hidden is not secret.</div>
+    <aside class="notes">Zeigt man nur das niedrigste Bit, weiß gleich 1, sieht das Original aus wie Rauschen mit Bildresten. Mit dem Text darin erscheinen Streifen: ASCII-Buchstaben fangen alle mit 0 an und ähneln sich, das Muster verrät sich sofort. Wer den Trick kennt, liest die Nachricht ohne jedes Geheimnis aus. Das heißt Steganographie: nicht den Inhalt unlesbar machen, sondern verbergen, dass es ihn gibt. Und die Kapazität ist die Rechnung aus Sitzung 8: 196 608 Farbwerte, ein Bit je Wert, durch acht.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">hidden is not secret. secret is not hidden.</div>
+      <div class="lines">
+        <div>encryption: everyone sees a message, nobody can read it.</div>
+        <div>steganography: nobody sees a message, anyone who looks can read it.</div>
+      </div>
+      <div class="sidenote">want both? encrypt first, then hide. the finder reads noise, and noise was there before.</div>
+    </div>
+    <aside class="notes">Die zwei Ideen sind Gegenstücke. Verschlüsselung versteckt nichts: Jeder sieht, dass da eine Nachricht geht, und die sieht sogar verdächtig aus wie Rauschen. Steganographie verschlüsselt nichts: Der Text steht im Klartext im Bild, nur da, wo niemand hinsieht. Beides zusammen geht, in dieser Reihenfolge: erst verschlüsseln, dann verstecken. Dann findet, wer sucht, nur Rauschen im niedrigsten Bit, und Rauschen war da vorher auch.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>today</h2>
+    <div class="content">
+      <div class="lines">
+        <div>1  light is public. the key is what protects the content.</div>
+        <div>2  xor with the key, twice, and the message is back.</div>
+        <div>3  the method may be known. the key must not, and it must be long.</div>
+        <div>4  the key needs a second path: a table, or a padlock.</div>
+        <div>5  a key stops reading, not changing: keep the checksum. pack first, then lock.</div>
+      </div>
+    </div>
+    <aside class="notes">Fünf Sätze zum Mitnehmen, und der Auftrag für Challenge 4: Wer früh fertig ist, verschlüsselt die Nutzlast, schreibt Verfahren und Schlüssellänge in die Spezifikation, nicht den Schlüssel, und lässt ein anderes Team mitlesen.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/postcard.png" alt="">
+    <div class="photo-text narrow">readable by everyone.<br>understood by one.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Die Postkarte vom Anfang. Ihr habt keinen Umschlag, und ihr braucht keinen. Für Challenge 4: Wer früh fertig ist, verschlüsselt seine Nutzlast, und ob es hält, prüft ihr ehrlich: Bittet ein anderes Team, mitzulesen.</aside>
+  </section>
+
+</div>
+
+<!-- deck.js vor stagekit.js: der erste Aufbau ruft die data-on-show-Funktionen
+     auf, und die muessen dann schon definiert sein. -->
+<script src="../stagekit/draw.js?v=20260914a"></script>
+<script src="deck.js?v=20260914h"></script>
+<script src="../stagekit/stagekit.js?v=20260914a"></script>
+</body>
+</html>
