@@ -427,7 +427,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#trick-one-point-back" id="toc-trick-one-point-back" class="nav-link" data-scroll-target="#trick-one-point-back">Trick one: point back</a></li>
   <li><a href="#trick-two-count-first" id="toc-trick-two-count-first" class="nav-link" data-scroll-target="#trick-two-count-first">Trick two: count first</a></li>
   <li><a href="#and-that-is-a-zip" id="toc-and-that-is-a-zip" class="nav-link" data-scroll-target="#and-that-is-a-zip">And that is a ZIP</a></li>
+  <li><a href="#when-redundancy-runs-out" id="toc-when-redundancy-runs-out" class="nav-link" data-scroll-target="#when-redundancy-runs-out">When redundancy runs out</a></li>
   <li><a href="#the-picture-honestly" id="toc-the-picture-honestly" class="nav-link" data-scroll-target="#the-picture-honestly">The picture, honestly</a></li>
+  <li><a href="#what-the-eye-and-the-ear-do-not-notice" id="toc-what-the-eye-and-the-ear-do-not-notice" class="nav-link" data-scroll-target="#what-the-eye-and-the-ear-do-not-notice">What the eye and the ear do not notice</a></li>
   <li><a href="#a-one-way-street" id="toc-a-one-way-street" class="nav-link" data-scroll-target="#a-one-way-street">A one-way street</a></li>
   <li><a href="#the-receiver-has-to-know-the-method" id="toc-the-receiver-has-to-know-the-method" class="nav-link" data-scroll-target="#the-receiver-has-to-know-the-method">The receiver has to know the method</a></li>
   </ul></li>
@@ -461,7 +463,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>Compression represents the same information with fewer bits. The usual way of writing data gives space away: things repeat, and some symbols turn up far more often than others. Every packer you have ever used, ZIP included, does exactly two things about that: it says a repeated stretch once and then only points back to it, and it gives the frequent symbols the short codes. Unpack, and the same bits come back, one for one. That kind of compression has a hard limit, though, and a photo sits close to it. To get a photo into the 2 KB payload of the final you have to drop detail, and what you drop does not come back. Which of the two you may use is a question about the task, not about the tool.</p>
+<p>Compression represents the same information with fewer bits. The usual way of writing data gives space away: things repeat, and some symbols turn up far more often than others. The word for both is redundancy, and it is the flip side of <a href="../concepts/symbols-and-information.html">information</a>: information measures surprise, and the less a character surprises you, the fewer bits it deserves. A fixed code pays every character as if it were a full surprise; the difference is what a packer removes. Every packer you have ever used, ZIP included, does exactly two things about that: it says a repeated stretch once and then only points back to it, and it gives the frequent symbols the short codes. Unpack, and the same bits come back, one for one. That kind of compression has a hard limit, though, and a photo sits close to it. To get a photo into the 2 KB payload of the final you have to drop detail, and what you drop does not come back. Which of the two you may use is a question about the task, not about the tool.</p>
 <p>In this chapter, we address the following questions:</p>
 <ul>
 <li>Why can data be made smaller without anything going missing?</li>
@@ -475,53 +477,78 @@ ul.task-list li input[type="checkbox"] {
 <section id="explanation" class="level2">
 <h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
 <p>The fastest transmission is the one where you have less to send. That sounds like a trick, and the first time you pack a text file and it comes back at half the size with every character intact, it feels like one. A baling press is the honest picture: loose cardboard goes in, the same cardboard comes out on a fraction of the space, and nothing is gone but the air in between. The question is where the air sits in a file. And the second, less comfortable question is what you do once there is none left.</p>
+<div id="fig-ipo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ipo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-ipo.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Compression as two boxes: a file goes into pack() and a smaller file comes out; the smaller file goes into unpack() and the same file must come out, bit for bit."><img src="../assets/diagrams/compression-ipo.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ipo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Compression as two boxes: a file goes into pack() and a smaller file comes out; the smaller file goes into unpack() and the same file must come out, bit for bit.
+</figcaption>
+</figure>
+</div>
+<p>Start with the model from <a href="../concepts/input-processing-output.html">Input, Processing, Output</a>. Compression is two such boxes. A file goes into the first, <code>pack()</code>, and a smaller file comes out. The smaller file goes into the second, <code>unpack()</code>, and what comes out must be the same file, bit for bit; otherwise it was not compression but loss. Everything on this page is the question of what may happen inside the first box so that the second can still do its job. Near the end we meet boxes where only something that looks like the original comes out.</p>
 <section id="why-anything-compresses-at-all" class="level3">
 <h3 class="anchored" data-anchor-id="why-anything-compresses-at-all">Why anything compresses at all</h3>
 <div id="fig-why" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-why.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: The same nine characters three times in one sentence, and German text that uses some letters constantly and others almost never."><img src="../assets/diagrams/compression-why.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-why.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The same seven characters three times in one sentence: a file written the usual way spells them out three times."><img src="../assets/diagrams/compression-why.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-why-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The same nine characters three times in one sentence, and German text that uses some letters constantly and others almost never.
+Figure&nbsp;2: The same seven characters three times in one sentence: a file written the usual way spells them out three times.
 </figcaption>
 </figure>
 </div>
-<p>Nothing was left out when your text file shrank. What happened is that the usual notation gives space away. “die sonne” stands there three times. Some letters turn up constantly and others almost never. After a <code>q</code> there is almost always a <code>u</code>. Every one of those regularities can be described more briefly, and the information survives it untouched. The information stays; the description gets shorter.</p>
-<p>You have met this idea twice already, without the name.</p>
-<div id="fig-seen-before" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Nothing was left out when your text file shrank. What happened is that the usual notation gives space away. “the sun” stands there three times, and a file that stores the sentence the usual way spells those seven characters out three times. That is the first kind of air, contextual redundancy: a stretch that follows from its surroundings.</p>
+<p>The second kind has nothing to do with repetition.</p>
+<div id="fig-frequency" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-seen-before-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-seen-before.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Morse gives the frequent e a single dot; fixed-length codes give every letter three bits, so the e pays as much as the q."><img src="../assets/diagrams/compression-seen-before.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-frequency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-frequency.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: How often each letter appears in English text: the e comes round 180 times as often as the z."><img src="../assets/diagrams/compression-frequency.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seen-before-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Morse gives the frequent e a single dot; fixed-length codes give every letter three bits, so the e pays as much as the q.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-frequency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: How often each letter appears in English text: the e comes round 180 times as often as the z.
 </figcaption>
 </figure>
 </div>
-<p>In <a href="../concepts/symbols-and-information.html">Symbols and Information</a> you saw that Morse gives the most frequent letter the shortest code, a single dot for the e, while a rare q gets four signs. In <a href="../concepts/code-systems.html">Code Systems</a> you saw the price of fixed length: it is easy to read, but the e pays as much as the q. What was left open there was a rule for handing out the short codes. That rule is the second trick below.</p>
+<p>In English text almost every eighth letter is an e, and the z appears 180 times less often (the figures are from Lewand, Cryptological Mathematics, 2000). A fixed code, the kind you know from <a href="../concepts/code-systems.html">Code Systems</a>, pays the same for both: eight bits for the e, eight for the z. That is wasted room too, and it is there even in a text in which not a single word repeats: alphabetic redundancy, the symbols are unevenly frequent.</p>
+<p>Both kinds of air have one name, redundancy, and each its own: contextual and alphabetic. And redundancy is the flip side of the idea of information from <a href="../concepts/symbols-and-information.html">Symbols and Information</a>. Information measures surprise, and surprise is not a yes or no but a degree. A stretch you have seen before can be named instead of spelled again, and naming is cheaper: not because it was predictable, but because the name is shorter than the stretch. A frequent letter surprises you less than a rare one, so its code may be shorter and the rare one’s longer; that is probability, not certainty. A random character is a full surprise every time, so there is nothing to save, and that is the reason no packer makes everything smaller. A fixed code pays every character as if it were a full surprise; the difference is the redundancy. Compression spends bits on surprise and nothing on the rest. That is why nothing goes missing.</p>
 </section>
 <section id="trick-one-point-back" class="level3">
 <h3 class="anchored" data-anchor-id="trick-one-point-back">Trick one: point back</h3>
 <div id="fig-point-back" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-point-back-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-point-back.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: The second and third “die sonne” replaced by a pointer: 22 characters back, 9 characters long."><img src="../assets/diagrams/compression-point-back.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-point-back.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The second and third “the sun” replaced by a pointer: 19 characters back, 7 characters long."><img src="../assets/diagrams/compression-point-back.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-point-back-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: The second and third “die sonne” replaced by a pointer: 22 characters back, 9 characters long.
+Figure&nbsp;4: The second and third “the sun” replaced by a pointer: 19 characters back, 7 characters long.
 </figcaption>
 </figure>
 </div>
-<p>The second “die sonne” does not need writing out again. “22 characters back, 9 long” is enough of an instruction, and the third one is “21 back, 9 long”. Out of 63 characters come 45 plus two pointers, and a pointer costs about as much as two characters. That, in essence, is the first thing every packer does: it keeps the last few thousand characters in mind, and when something comes round again it writes only where it was and how long it is. Lempel and Ziv described it in 1977, and it sits inside every ZIP.</p>
+<p>The second “the sun” does not need writing out again. “19 characters back, 7 long” is enough of an instruction, and the third one is “18 back, 7 long”. Out of 49 characters come 35 plus two pointers, and a pointer costs about as much as two characters. That, in essence, is the first thing every packer does: it keeps the last few thousand characters in mind, and when something comes round again it writes only where it was and how long it is. Lempel and Ziv described it in 1977, and it sits inside every ZIP.</p>
+<div id="fig-in-file" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-in-file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-in-file.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Raw, one byte per character, 49 bytes; packed, with the two pointers in yellow: a marker ff, how far back, how long. 41 bytes."><img src="../assets/diagrams/compression-in-file.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-in-file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Raw, one byte per character, 49 bytes; packed, with the two pointers in yellow: a marker <code>ff</code>, how far back, how long. 41 bytes.
+</figcaption>
+</figure>
+</div>
+<p>This is what it looks like in the file, the way a hex editor shows it. Every character is one byte, 49 in all. In the packed version a pointer takes three bytes in this small format: a marker <code>ff</code>, so the reader knows a character is not coming next, then the number of characters back, then the length. <code>ff 13 07</code> reads as 19 back, 7 long. Thirty-five characters plus two times three bytes: 41 instead of 49. On a sentence this short that is little; on a book with long repetitions it is a lot. And you can see why a pointer for two characters never pays: it costs three. A real packer spends bits instead of bytes on this and hides the marker in a flag bit, but the idea is the same.</p>
+<p>You can try both tricks on your own text. Paste anything and watch it get packed as you type; then try one letter four hundred times, and then random letters.</p>
+<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/text-squeezer/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the text squeezer</span><span class="linkcard-desc">paste any text and watch it get packed as you type: point back to repeats, give the frequent letters short codes, and see what is left. one letter over and over squeezes to almost nothing; random letters do not squeeze at all.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/ddd875045c67.png" alt=""></a>
 <p>The simplest form of the same idea works on pictures. Walk along a row, count how many equal points come in a row, and write one byte per run: one bit for the colour, seven for the length.</p>
 <div id="fig-run-good" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-run-good-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-run-good.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: An 8 by 8 picture with areas of one colour: six runs, six bytes instead of eight."><img src="../assets/diagrams/compression-run-good.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-run-good.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: An 8 by 8 picture with areas of one colour: six runs, six bytes instead of eight."><img src="../assets/diagrams/compression-run-good.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-good-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: An 8 by 8 picture with areas of one colour: six runs, six bytes instead of eight.
+Figure&nbsp;6: An 8 by 8 picture with areas of one colour: six runs, six bytes instead of eight.
 </figcaption>
 </figure>
 </div>
@@ -529,10 +556,10 @@ Figure&nbsp;4: An 8 by 8 picture with areas of one colour: six runs, six bytes i
 <div id="fig-run-bad" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-run-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-run-bad.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: A chessboard: every point differs from its neighbour, so 64 runs of length one, 64 bytes instead of eight."><img src="../assets/diagrams/compression-run-bad.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-run-bad.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: A chessboard: every point differs from its neighbour, so 64 runs of length one, 64 bytes instead of eight."><img src="../assets/diagrams/compression-run-bad.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: A chessboard: every point differs from its neighbour, so 64 runs of length one, 64 bytes instead of eight.
+Figure&nbsp;7: A chessboard: every point differs from its neighbour, so 64 runs of length one, 64 bytes instead of eight.
 </figcaption>
 </figure>
 </div>
@@ -540,14 +567,26 @@ Figure&nbsp;5: A chessboard: every point differs from its neighbour, so 64 runs 
 </section>
 <section id="trick-two-count-first" class="level3">
 <h3 class="anchored" data-anchor-id="trick-two-count-first">Trick two: count first</h3>
+<p>Now for the second kind of air, the uneven frequencies, and two promises to keep.</p>
+<div id="fig-seen-before" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-seen-before-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-seen-before.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Morse gives the frequent e a single dot; Code Systems allowed codes of different length, readable without separators as long as no code starts another."><img src="../assets/diagrams/compression-seen-before.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seen-before-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Morse gives the frequent e a single dot; Code Systems allowed codes of different length, readable without separators as long as no code starts another.
+</figcaption>
+</figure>
+</div>
+<p>In <a href="../concepts/symbols-and-information.html">Symbols and Information</a> you saw that Morse gives the most frequent letter the shortest code, a single dot for the e, while a rare q gets four signs. It pays for that with a pause as a third symbol, because a single dot is e and two dots are i, and without the pause nobody could tell i from e e. In <a href="../concepts/code-systems.html">Code Systems</a> you saw that codes may differ in length and can still be read without separators, as long as no code is the beginning of another. What was left open there was who gets the short codes, and why. Morse answers the who: the frequent one. The recipe that turns a count into codes is what follows, and it does without the pause.</p>
 <p>Take a magic word, because compression feels like magic until you see the trick.</p>
 <div id="fig-count-first" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-count-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-count-first.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: abracadabra: eleven letters, five different ones, and with a fixed code of three bits each the word costs 33 bits."><img src="../assets/diagrams/compression-count-first.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-count-first.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: abracadabra: eleven letters, five different ones, and with a fixed code of three bits each the word costs 33 bits."><img src="../assets/diagrams/compression-count-first.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-count-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: abracadabra: eleven letters, five different ones, and with a fixed code of three bits each the word costs 33 bits.
+Figure&nbsp;9: abracadabra: eleven letters, five different ones, and with a fixed code of three bits each the word costs 33 bits.
 </figcaption>
 </figure>
 </div>
@@ -556,10 +595,10 @@ Figure&nbsp;6: abracadabra: eleven letters, five different ones, and with a fixe
 <div id="fig-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-tree.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: The tree for abracadabra: c and d become a 2, b and r a 4, 2 and 4 a 6, and a and 6 the root, 11."><img src="../assets/diagrams/compression-tree.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-tree.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;10: The tree for abracadabra: c and d become a 2, b and r a 4, 2 and 4 a 6, and a and 6 the root, 11."><img src="../assets/diagrams/compression-tree.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: The tree for abracadabra: c and d become a 2, b and r a 4, 2 and 4 a 6, and a and 6 the root, 11.
+Figure&nbsp;10: The tree for abracadabra: c and d become a 2, b and r a 4, 2 and 4 a 6, and a and 6 the root, 11.
 </figcaption>
 </figure>
 </div>
@@ -567,10 +606,10 @@ Figure&nbsp;7: The tree for abracadabra: c and d become a 2, b and r a 4, 2 and 
 <div id="fig-read-codes" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-read-codes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-read-codes.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Left 0, right 1: a = 0, b = 100, r = 101, c = 110, d = 111, and the word costs 23 bits instead of 33."><img src="../assets/diagrams/compression-read-codes.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-read-codes.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: Left 0, right 1: a = 0, b = 100, r = 101, c = 110, d = 111, and the word costs 23 bits instead of 33."><img src="../assets/diagrams/compression-read-codes.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-read-codes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Left 0, right 1: a = 0, b = 100, r = 101, c = 110, d = 111, and the word costs 23 bits instead of 33.
+Figure&nbsp;11: Left 0, right 1: a = 0, b = 100, r = 101, c = 110, d = 111, and the word costs 23 bits instead of 33.
 </figcaption>
 </figure>
 </div>
@@ -578,10 +617,10 @@ Figure&nbsp;8: Left 0, right 1: a = 0, b = 100, r = 101, c = 110, d = 111, and t
 <div id="fig-reads-itself" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-reads-itself-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-reads-itself.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: Reading 0100101 from the left: 0 is a complete code, then 100, then 101. Letters sit on leaves only, so no code is the beginning of another."><img src="../assets/diagrams/compression-reads-itself.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-reads-itself.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figure&nbsp;12: Reading 0100101 from the left: 0 is a complete code, then 100, then 101. Letters sit on leaves only, so no code is the beginning of another."><img src="../assets/diagrams/compression-reads-itself.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reads-itself-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Reading 0100101 from the left: 0 is a complete code, then 100, then 101. Letters sit on leaves only, so no code is the beginning of another.
+Figure&nbsp;12: Reading 0100101 from the left: 0 is a complete code, then 100, then 101. Letters sit on leaves only, so no code is the beginning of another.
 </figcaption>
 </figure>
 </div>
@@ -592,40 +631,62 @@ Figure&nbsp;9: Reading 0100101 from the left: 0 is a complete code, then 100, th
 <div id="fig-zip" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-zip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-zip.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;10: A ZIP is the two tricks in a row, and five measured results: a log file to 19 per cent, text to 45, the raw photo to 68, the PNG to 100, random bytes to 101."><img src="../assets/diagrams/compression-zip.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-zip.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figure&nbsp;13: A ZIP is the two tricks in a row, and five measured results: a log file to 19 per cent, text to 45, the raw photo to 68, the PNG to 100, random bytes to 101."><img src="../assets/diagrams/compression-zip.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: A ZIP is the two tricks in a row, and five measured results: a log file to 19 per cent, text to 45, the raw photo to 68, the PNG to 100, random bytes to 101.
+Figure&nbsp;13: A ZIP is the two tricks in a row, and five measured results: a log file to 19 per cent, text to 45, the raw photo to 68, the PNG to 100, random bytes to 101.
 </figcaption>
 </figure>
 </div>
-<p>The thing you have clicked on since school does exactly the two tricks above, one after the other: point back first, then short codes for the frequent. The pair is called Deflate, and PNG, the picture format, is the same pair with a picture in front. The five bars are real measurements, made with Python’s <code>zipfile</code> at level 9 on 13 September 2026. A log file of 1,200 near-identical lines shrinks to 19 per cent, because every line has almost been there before. A text to 45 per cent. The photo as raw pixels to 68 per cent, and that is about all the air a photo has. The photo as a PNG stays at 100 per cent, because it already is one. And random bytes grow, to 101 per cent.</p>
-<p>That last number is not bad luck, and the reason is one of the nicest arguments of the whole semester because it has nothing to do with technology.</p>
+<p>The thing you have clicked on since school does exactly the two tricks above, one after the other: point back first, then short codes for the frequent. The pair is called Deflate, and PNG, the picture format, is the same pair with a picture in front. The five bars are real measurements, made with Python’s <code>zipfile</code> at level 9 on 13 September 2026. A log file of 1,200 near-identical lines shrinks to 19 per cent, because every line has almost been there before. A text to 45 per cent. The photo as raw pixels to 68 per cent, and that is about all the air a photo has. The photo as a PNG stays at 100 per cent, because it already is one. And random bytes grow, to 101 per cent. It is not the size of a file that decides how far it shrinks but its predictability.</p>
+<p>Why could the random bytes not shrink? The reason is one of the nicest arguments of the whole semester, because it has nothing to do with technology.</p>
 <div id="fig-counting" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-counting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-counting.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: Eight files of three bits, seven files shorter than three bits. Two of the eight have to share."><img src="../assets/diagrams/compression-counting.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-counting.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figure&nbsp;14: Eight files of three bits, seven files shorter than three bits. Two of the eight have to share."><img src="../assets/diagrams/compression-counting.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-counting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Eight files of three bits, seven files shorter than three bits. Two of the eight have to share.
+Figure&nbsp;14: Eight files of three bits, seven files shorter than three bits. Two of the eight have to share.
 </figcaption>
 </figure>
 </div>
 <p>Suppose somebody promises a method that makes <strong>every</strong> file at least one bit smaller, losslessly. With three bits you can write eight different files. With fewer than three bits you can write seven. Put eight things into seven drawers and two of them end up in the same drawer, and then nobody can tell on unpacking which of the two was meant. No amount of computing power helps against that, because it is an argument from counting. Every lossless method makes some files smaller and others necessarily bigger. When you see a claim to the contrary, you are looking at either a misunderstanding or a sales pitch.</p>
+</section>
+<section id="when-redundancy-runs-out" class="level3">
+<h3 class="anchored" data-anchor-id="when-redundancy-runs-out">When redundancy runs out</h3>
+<p>Take the two extremes first, and the parrot between them. All three pictures have 256 by 256 points, 196,608 bytes raw.</p>
+<div class="parrots">
+  <figure class="figure"><img src="../assets/decks/compression/img/flat.png" alt="a picture of one colour" class="figure-img"><figcaption>one colour · png 569 bytes</figcaption></figure>
+  <figure class="figure"><img src="../assets/decks/compression/img/parrot.png" alt="the parrot" class="figure-img"><figcaption>the parrot · png 93,107 bytes</figcaption></figure>
+  <figure class="figure"><img src="../assets/decks/compression/img/noise.png" alt="random noise" class="figure-img"><figcaption>random noise · png 197,172 bytes</figcaption></figure>
+</div>
+<p>On the left a picture of a single colour: total redundancy, every point follows from the first, and as a PNG it takes 569 bytes, most of them file header. On the right random noise, every point a full surprise: as a PNG it takes 197,172 bytes, more than raw, because the bookkeeping comes on top. The parrot sits between the two, but closer to the noise than to the flat colour: 93,107 bytes, a factor of two. A photo does have redundancy, neighbouring points resemble each other and PNG uses that, but far less than you would think, and that factor of two is all that lossless packing can get.</p>
+<p>Where does the parrot’s factor of two come from? PNG does one thing before it packs, and it takes the idea from the first section literally: it predicts every point from its neighbour and keeps only the difference.</p>
+<div id="fig-png-filter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-png-filter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-png-filter.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figure&nbsp;15: Twelve real red values from one row of the parrot and of the noise, and the same values as differences from the left neighbour."><img src="../assets/diagrams/compression-png-filter.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-png-filter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: Twelve real red values from one row of the parrot and of the noise, and the same values as differences from the left neighbour.
+</figcaption>
+</figure>
+</div>
+<p>In the parrot’s row the values sit close together, 251, 250, 249, 249. As differences from the left neighbour they become small numbers around zero, −1, −1, 0, +2, and the same few keep coming round: contextual redundancy between neighbouring points, and that is food for both tricks, pointing back and short codes. In the noise the differences are as large and as random as the values themselves, so the step gains nothing. PNG has several such prediction rules, some using the point above, and picks the best one for every row. The difference from JPG in one sentence: PNG stores the difference exactly, JPG rounds it away.</p>
 </section>
 <section id="the-picture-honestly" class="level3">
 <h3 class="anchored" data-anchor-id="the-picture-honestly">The picture, honestly</h3>
 <div id="fig-parrot-honest" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-parrot-honest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/compression-parrot-honest.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figure&nbsp;12: The parrot: 196,608 bytes raw, 93,107 as a PNG, and a payload of 2,048. At 10 bit/s that is 44 hours, 21 hours, and 27 minutes."><img src="../assets/diagrams/compression-parrot-honest.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/compression-parrot-honest.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figure&nbsp;16: The same parrot three ways: 196,608 bytes raw, 93,107 as a PNG, 10,587 as a JPG at quality 75. At 10 bit/s that is 44 hours, 21 hours, and 2.4 hours."><img src="../assets/diagrams/compression-parrot-honest.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parrot-honest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: The parrot: 196,608 bytes raw, 93,107 as a PNG, and a payload of 2,048. At 10 bit/s that is 44 hours, 21 hours, and 27 minutes.
+Figure&nbsp;16: The same parrot three ways: 196,608 bytes raw, 93,107 as a PNG, 10,587 as a JPG at quality 75. At 10 bit/s that is 44 hours, 21 hours, and 2.4 hours.
 </figcaption>
 </figure>
 </div>
-<p>Take the parrot you know from <a href="../concepts/logic-and-arithmetic.html">Processing</a>. Raw, that is 256 by 256 points times three bytes, 196,608 bytes. As a PNG, so packed losslessly, still 93,107. At ten bits per second that is a day, or a morning. The payload in the final is 2,048 bytes, the sliver at the bottom. The best lossless packer in the world does not get you anywhere near, and after the counting argument you know that this is no shortcoming of the packer: a photo has little air. If you want two kilobytes anyway, you have to drop something.</p>
+<p>The same parrot, written down three ways. Raw, that is 256 by 256 points times three bytes, 196,608 bytes, almost two days at ten bits per second. As a PNG, so packed losslessly, still 93,107 bytes, nearly a day: that is the factor of two from above, and a photo’s redundancy gives no more than that. As a JPG at quality 75 it is 10,587 bytes, a little over two hours, and from two metres away you see no difference. The jump from 93 to 10 kilobytes does not come from a better packer but from a different kind of method: JPG drops detail, which is to say information, not redundancy. How far you can push that is the next question.</p>
 <div class="parrots">
   <figure class="figure"><img src="../assets/decks/compression/img/parrot.png" alt="the parrot as a PNG" class="figure-img"><figcaption>png · 93,107 bytes · lossless</figcaption></figure>
   <figure class="figure"><img src="../assets/decks/compression/img/parrot-q75.jpg" alt="the parrot as a JPG at quality 75" class="figure-img"><figcaption>jpg · 10,587 bytes · quality 75</figcaption></figure>
@@ -633,7 +694,23 @@ Figure&nbsp;12: The parrot: 196,608 bytes raw, 93,107 as a PNG, and a payload of
   <figure class="figure"><img src="../assets/decks/compression/img/parrot-128-q25.jpg" alt="the parrot as a JPG with 128 by 128 points" class="figure-img"><figcaption>jpg · 2,032 bytes · 128 × 128 points, quality 25</figcaption></figure>
 </div>
 <p>Four real files, shown at the same size. Between the first and the second lies a factor of nine, and from two metres away you see no difference. That is what JPG does: it drops detail an eye hardly misses, fine colour differences above all, and keeps the edges in brightness. On the third you begin to see it. The fourth has half as many points per side and is under two kilobytes. It is a parrot. It is not the same parrot.</p>
-<p>There are two roads to two kilobytes, and they are the two cuts of <a href="../concepts/analog-and-digital.html">digitising</a> seen from the other side. You can keep all 256 by 256 points and make each of them coarse: quality 1, 1,925 bytes, and you can see the blocks. Or you can throw away three quarters of the points and keep the rest clean: 128 by 128 at quality 25, 2,032 bytes. Fewer points, or coarser points. Which road is better depends on the picture and on the purpose, and that is your decision, not the format’s.</p>
+<p>There are two roads to a smaller file, and they are the two cuts of <a href="../concepts/analog-and-digital.html">digitising</a> seen from the other side: fewer points, or coarser points. The fourth parrot above took both. Which mix is better depends on the picture and on the purpose, and that is your decision, not the format’s.</p>
+</section>
+<section id="what-the-eye-and-the-ear-do-not-notice" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-eye-and-the-ear-do-not-notice">What the eye and the ear do not notice</h3>
+<div id="fig-senses" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-senses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/compression-senses.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figure&nbsp;17: What a lossy format may drop: for the eye, fine colour differences, small detail in busy areas, tiny steps in brightness; for the ear, quiet tones while a loud one plays, very high frequencies, the moment just after a loud sound."><img src="../assets/diagrams/compression-senses.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-senses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: What a lossy format may drop: for the eye, fine colour differences, small detail in busy areas, tiny steps in brightness; for the ear, quiet tones while a loud one plays, very high frequencies, the moment just after a loud sound.
+</figcaption>
+</figure>
+</div>
+<p>How does JPG get from 93 to 10 kilobytes when the redundancy is already used up? Not with a better packer, but with a model of the eye. The eye sees edges in brightness sharply but edges in colour blurred; in a feather or in gravel it sees the texture, not the single point; and it cannot tell 250 from 251. Everything that falls into those gaps JPG may round coarsely or drop, and nobody notices until you push it too far, which is when the blocks appear. MP3 does the same with a model of the ear: a loud tone masks quiet ones that play at the same time and close to it in pitch, nobody hears very high frequencies, and just after a loud sound the ear is deaf for a moment, in any pitch. Both formats keep what you would perceive and round the rest away; that is called perceptual coding. It is why they get so much further than lossless, and why there is no way back: what was rounded is not hidden, it is gone.</p>
+<p>How JPG does that in detail, blocks of 8 by 8 points written as mixtures of cosine patterns and the fine amounts rounded to zero, is beyond this course. If you want to see it anyway, this half-hour video does it beautifully:</p>
+<a class="linkcard" href="https://www.youtube.com/watch?v=Kv1Hiv3ox8I" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">How are Images Compressed?  [46MB ↘↘ 4.07MB] JPEG In Depth</span><span class="linkcard-desc">Go to http://brilliant.org/BranchEducation/ to sign up for free, and expand your knowledge.  The first 200 people will get 20% off their annual premium membe...</span><span class="linkcard-url">YouTube</span></span><img class="linkcard-image" src="../assets/linkcards/67539fadce32.jpg" alt=""></a>
 </section>
 <section id="a-one-way-street" class="level3">
 <h3 class="anchored" data-anchor-id="a-one-way-street">A one-way street</h3>
@@ -664,7 +741,7 @@ Figure&nbsp;12: The parrot: 196,608 bytes raw, 93,107 as a PNG, and a payload of
 <li>David A. Huffman: A Method for the Construction of Minimum-Redundancy Codes. Proceedings of the IRE 40 (9), 1952. <a href="https://doi.org/10.1109/JRPROC.1952.273898" class="uri">https://doi.org/10.1109/JRPROC.1952.273898</a>. Four pages, and the tree on this page is in them. Readable once you have built one yourself.</li>
 <li>P. Deutsch: DEFLATE Compressed Data Format Specification version 1.3. RFC 1951, 1996. <a href="https://www.rfc-editor.org/rfc/rfc1951" class="uri">https://www.rfc-editor.org/rfc/rfc1951</a>. The exact format inside every ZIP and PNG: pointers back, then Huffman codes. Section 1.1 says in one paragraph what this page says in two.</li>
 <li>Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. Microsoft Press, 2nd edition 2022. Chapter 8 builds Morse code from letter frequencies, which is the same idea as a packer’s: what occurs often gets a short code.</li>
-<li>David Salomon: Data Compression. The Complete Reference. Springer, 4th edition 2007. Far more than you need, but chapter 1 states the counting argument properly and chapter 2 walks through run-length encoding and its relatives.</li>
+<li>David Salomon: Data Compression. The Complete Reference. Springer, 4th edition 2007. <a href="https://link.springer.com/book/10.1007/978-3-642-86092-8" class="uri">https://link.springer.com/book/10.1007/978-3-642-86092-8</a>. Far more than you need, but chapter 1 states the counting argument properly and chapter 2 walks through run-length encoding and its relatives.</li>
 <li>The <code>zlib</code> FAQ, <a href="https://www.zlib.net/zlib_faq.html" class="uri">https://www.zlib.net/zlib_faq.html</a>, question 15: “Can zlib compress already compressed data?” A short, dry answer from the people who wrote the thing, and it says the same as this page.</li>
 </ul>
 

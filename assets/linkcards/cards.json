@@ -103,5 +103,19 @@
     "description": "write your own code words, send a word, and see every reading the receiver could pick. get the list down to one and you have built a code that works.",
     "site": "LiFi Project · concept demos",
     "image": "58e8bf84636f.png"
+  },
+  "https://winf-hsos.github.io/lifi-concept-demos/text-squeezer/": {
+    "url": "https://winf-hsos.github.io/lifi-concept-demos/text-squeezer/",
+    "title": "the text squeezer",
+    "description": "paste any text and watch it get packed as you type: point back to repeats, give the frequent letters short codes, and see what is left. one letter over and over squeezes to almost nothing; random letters do not squeeze at all.",
+    "site": "LiFi Project · concept demos",
+    "image": "ddd875045c67.png"
+  },
+  "https://www.youtube.com/watch?v=Kv1Hiv3ox8I": {
+    "url": "https://www.youtube.com/watch?v=Kv1Hiv3ox8I",
+    "title": "How are Images Compressed?  [46MB ↘↘ 4.07MB] JPEG In Depth",
+    "description": "Go to http://brilliant.org/BranchEducation/ to sign up for free, and expand your knowledge.  The first 200 people will get 20% off their annual premium membe...",
+    "site": "YouTube",
+    "image": "67539fadce32.jpg"
   }
 }

@@ -504,15 +504,26 @@ window.Quarto = {
 <section id="explanation" class="level2">
 <h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
 <p>Two kilobytes. Twenty-seven minutes. That is not an invented number, it is yours: 2 KB are 16,000 bits, and with four colours at five symbols per second you get 10 bits in a second. The calculation was already on a slide back in session 7, but you only really understand it once you are sitting next to it, waiting. And that calculation does not yet contain a single symbol of framing or a single repeat.</p>
+<div id="fig-download" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-download-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/throughput-download.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: The download screen everyone knows: the rate is measured, the minutes left are a guess made from it, and they jump when the rate does."><img src="../assets/diagrams/throughput-download.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-download-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The download screen everyone knows: the rate is measured, the minutes left are a guess made from it, and they jump when the rate does.
+</figcaption>
+</figure>
+</div>
+<p>You know this screen from every game download and every update. Two different things stand on it. The rate is a measurement: that many bytes arrived in the last second. The minutes left are a calculation made from it: what is still missing, divided by that rate. When the rate drops from 12.4 to 4.1 MB/s, the estimate jumps from three minutes to nine although almost nothing has happened. Those two numbers are what this chapter is about, only for your light link, and in bits rather than megabytes.</p>
 <section id="gross-is-not-net" class="level3">
 <h3 class="anchored" data-anchor-id="gross-is-not-net">Gross is not net</h3>
 <div id="fig-gross-net" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gross-net-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/throughput-gross-net.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Above, what the link would carry if every symbol were payload. Below, what is left after markers, preamble, end marker and repeats."><img src="../assets/diagrams/throughput-gross-net.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/throughput-gross-net.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Above, what the link would carry if every symbol were payload. Below, what is left after markers, preamble, end marker and repeats."><img src="../assets/diagrams/throughput-gross-net.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gross-net-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Above, what the link would carry if every symbol were payload. Below, what is left after markers, preamble, end marker and repeats.
+Figure&nbsp;2: Above, what the link would carry if every symbol were payload. Below, what is left after markers, preamble, end marker and repeats.
 </figcaption>
 </figure>
 </div>
@@ -523,10 +534,10 @@ Figure&nbsp;1: Above, what the link would carry if every symbol were payload. Be
 <div id="fig-deductions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-deductions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/throughput-deductions.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: 24 bit/s, then three quarters after the markers, then 60 per cent of that after the frame. In red the tempting wrong arithmetic."><img src="../assets/diagrams/throughput-deductions.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/throughput-deductions.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: 24 bit/s, then three quarters after the markers, then 60 per cent of that after the frame. In red the tempting wrong arithmetic."><img src="../assets/diagrams/throughput-deductions.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-deductions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: 24 bit/s, then three quarters after the markers, then 60 per cent of that after the frame. In red the tempting wrong arithmetic.
+Figure&nbsp;3: 24 bit/s, then three quarters after the markers, then 60 per cent of that after the frame. In red the tempting wrong arithmetic.
 </figcaption>
 </figure>
 </div>
@@ -539,10 +550,10 @@ Figure&nbsp;2: 24 bit/s, then three quarters after the markers, then 60 per cent
 <div id="fig-bottleneck" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bottleneck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/throughput-bottleneck.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: On the left a symbol lasts 100 ms and the 50 ms window fits inside it. On the right the rate is doubled, the symbol is 50 ms, and the window reaches across a boundary."><img src="../assets/diagrams/throughput-bottleneck.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/throughput-bottleneck.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: On the left a symbol lasts 100 ms and the 50 ms window fits inside it. On the right the rate is doubled, the symbol is 50 ms, and the window reaches across a boundary."><img src="../assets/diagrams/throughput-bottleneck.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bottleneck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: On the left a symbol lasts 100 ms and the 50 ms window fits inside it. On the right the rate is doubled, the symbol is 50 ms, and the window reaches across a boundary.
+Figure&nbsp;4: On the left a symbol lasts 100 ms and the 50 ms window fits inside it. On the right the rate is doubled, the symbol is 50 ms, and the window reaches across a boundary.
 </figcaption>
 </figure>
 </div>
@@ -558,10 +569,10 @@ Figure&nbsp;3: On the left a symbol lasts 100 ms and the 50 ms window fits insid
 <div id="fig-levers" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-levers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/throughput-levers.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The formula from session 7, read from the other side: three quantities, three levers, three different prices."><img src="../assets/diagrams/throughput-levers.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/throughput-levers.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The formula from session 7, read from the other side: three quantities, three levers, three different prices."><img src="../assets/diagrams/throughput-levers.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-levers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: The formula from session 7, read from the other side: three quantities, three levers, three different prices.
+Figure&nbsp;5: The formula from session 7, read from the other side: three quantities, three levers, three different prices.
 </figcaption>
 </figure>
 </div>
@@ -571,10 +582,10 @@ Figure&nbsp;4: The formula from session 7, read from the other side: three quant
 <div id="fig-same-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-same-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/throughput-same-rate.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Two teams, the same 20 bit/s, two completely different situations."><img src="../assets/diagrams/throughput-same-rate.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/throughput-same-rate.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Two teams, the same 20 bit/s, two completely different situations."><img src="../assets/diagrams/throughput-same-rate.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-same-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Two teams, the same 20 bit/s, two completely different situations.
+Figure&nbsp;6: Two teams, the same 20 bit/s, two completely different situations.
 </figcaption>
 </figure>
 </div>
@@ -585,10 +596,10 @@ Figure&nbsp;5: Two teams, the same 20 bit/s, two completely different situations
 <div id="fig-repeats" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-repeats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/throughput-repeats.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Ten delivered messages need eleven transmissions, so 91 per cent is left, not 90."><img src="../assets/diagrams/throughput-repeats.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/throughput-repeats.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Ten delivered messages need eleven transmissions, so 91 per cent is left, not 90."><img src="../assets/diagrams/throughput-repeats.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-repeats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Ten delivered messages need eleven transmissions, so 91 per cent is left, not 90.
+Figure&nbsp;7: Ten delivered messages need eleven transmissions, so 91 per cent is left, not 90.
 </figcaption>
 </figure>
 </div>
@@ -596,10 +607,10 @@ Figure&nbsp;6: Ten delivered messages need eleven transmissions, so 91 per cent 
 <div id="fig-acks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-acks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/throughput-acks.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Acknowledging every message leaves many small gaps; acknowledging a block of ten leaves one, but an error costs the whole block."><img src="../assets/diagrams/throughput-acks.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/throughput-acks.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Acknowledging every message leaves many small gaps; acknowledging a block of ten leaves one, but an error costs the whole block."><img src="../assets/diagrams/throughput-acks.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-acks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Acknowledging every message leaves many small gaps; acknowledging a block of ten leaves one, but an error costs the whole block.
+Figure&nbsp;8: Acknowledging every message leaves many small gaps; acknowledging a block of ten leaves one, but an error costs the whole block.
 </figcaption>
 </figure>
 </div>

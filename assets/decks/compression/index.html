@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>say it shorter</title>
-  <link rel="stylesheet" href="theme.css?v=20260914d">
-  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260914d">
+  <link rel="stylesheet" href="theme.css?v=20260914zx">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260914h">
   <style>
     .photo-text.narrow { width: 880px; }
 
@@ -33,7 +33,7 @@
 <div class="deck"
      data-title="say it shorter"
      data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
-     data-parts='["why anything shrinks", "two tricks, and a zip", "the picture"]'>
+     data-parts='["why anything shrinks", "two tricks, and a zip", "when redundancy runs out"]'>
 
   <section class="slide title">
     <aside class="notes">Das zweite Deck von heute. Im ersten war Kompression der dritte Hebel, der billigste. Jetzt geht es darum, wie er funktioniert, was in jedem ZIP steckt, und wo er aufhört: beim Foto.</aside>
@@ -57,17 +57,40 @@
   </section>
 
   <section class="slide has-punch">
-    <h2>why anything compresses at all</h2>
-    <div class="figure" id="fig-why-compress"></div>
-    <div class="punch">the information stays. the description gets shorter.</div>
-    <aside class="notes">Wenn eine Textdatei nach dem Packen halb so groß ist und beim Entpacken Zeichen für Zeichen dasselbe herauskommt, ist offensichtlich nichts weggelassen worden. Was passiert ist: Die übliche Schreibweise verschenkt Platz. „die sonne" steht dreimal da. Manche Buchstaben kommen ständig vor, andere fast nie. Nach einem q kommt fast immer ein u. Jede dieser Regelmäßigkeiten lässt sich kürzer beschreiben, ohne dass Information verloren geht.</aside>
+    <h2>compression as a box, twice</h2>
+    <div class="figure" id="fig-ipo"></div>
+    <div class="punch">two boxes, input, processing, output. what goes into the first must come out of the second.</div>
+    <aside class="notes">Bevor es losgeht, das Modell aus Sitzung 2: Eingabe, Verarbeitung, Ausgabe. Kompression sind zwei solche Kästen. In den ersten geht eine Datei hinein, heraus kommt eine kleinere. In den zweiten geht die kleinere hinein, und heraus kommen muss dieselbe Datei, Bit für Bit; sonst war es keine Kompression, sondern ein Verlust. Alles, was heute kommt, ist die Frage, was im ersten Kasten passieren darf, damit der zweite das noch schafft. Und in Teil 3 sehen wir Kästen, bei denen hinten nur noch etwas herauskommt, das dem Original ähnlich sieht.</aside>
   </section>
 
   <section class="slide has-punch">
-    <h2>you have seen this before</h2>
-    <div class="figure" id="fig-seen-before"></div>
-    <div class="punch">the frequent one gets the short code. now with a recipe.</div>
-    <aside class="notes">Zwei Versprechen einlösen. In Sitzung 4 hieß es bei Morse: Das häufige e bekommt den kürzesten Code, einen einzigen Punkt, das seltene q vier Zeichen; darauf kommen wir zurück. In Sitzung 6 hieß es: Feste Länge ist bequem zu lesen, aber sie gibt dem Häufigen keinen Rabatt. Heute kommt beides zusammen, und zwar als Verfahren, das man nachrechnen kann, nicht als Idee.</aside>
+    <h2>why anything compresses at all</h2>
+    <div class="figure" id="fig-why-compress"></div>
+    <div class="punch">the usual way of writing things down wastes room. that room is the first kind of air.</div>
+    <aside class="notes">Wenn eine Textdatei nach dem Packen halb so groß ist und beim Entpacken Zeichen für Zeichen dasselbe herauskommt, ist offensichtlich nichts weggelassen worden. Was passiert ist: Die übliche Schreibweise verschenkt Platz. „the sun" steht dreimal da. Manche Buchstaben kommen ständig vor, andere fast nie. Nach einem q kommt fast immer ein u. Jede dieser Regelmäßigkeiten ist Platz, den die übliche Schreibweise verschenkt: Luft. Heute erst nachsehen, wo die Luft sitzt; wie man sie herauslässt, ist Teil 2.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>a second kind of air: some letters come far more often</h2>
+    <div class="figure" id="fig-frequency"></div>
+    <div class="punch">a fixed code pays the same bits for the e and for the z. that difference is air too.</div>
+    <div class="footnote">letter frequencies: lewand, cryptological mathematics, 2000</div>
+    <aside class="notes">Die zweite Sorte Luft, und sie hat mit Wiederholung nichts zu tun: Buchstaben sind ungleich häufig. Im Englischen ist fast jeder achte Buchstabe ein e, das z kommt 180-mal seltener vor. Ein fester Code, wie ihr ihn aus Code Systems kennt, zahlt für beide dasselbe: acht Bit für das e, acht für das z. Das ist verschenkter Platz, und zwar auch in einem Text, in dem sich kein einziges Wort wiederholt. Wie man ihn hereinholt, zeigt Teil 2.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <div class="content">
+      <div class="header">the word for both: redundancy</div>
+      <div class="statement">fewer bits for what surprises less</div>
+      <div class="lines">
+        <div>a stretch seen before: cheaper to name than to spell again (contextual)</div>
+        <div>a frequent letter: less surprise, so a shorter code (alphabetic)</div>
+        <div>random characters: full surprise every time, nothing to save</div>
+      </div>
+      <div class="sidenote">information, as in <a href="https://docs.lifi-project.de/concepts/symbols-and-information.html" target="_blank">symbols and information</a>: a measure of surprise</div>
+    </div>
+    <div class="punch">bits go to surprise. the rest is redundancy, and it can go.</div>
+    <aside class="notes">Beide Sorten Luft haben einen Namen: Redundanz, und jede Sorte einen eigenen: contextual redundancy, wenn ein Stück aus seiner Umgebung folgt, alphabetic redundancy, wenn die Zeichen ungleich häufig sind. Erinnert euch an Symbols and Information: Information misst Überraschung, und Überraschung ist kein Ja oder Nein, sondern ein Grad. Ein Stück, das schon einmal da war, lässt sich benennen statt noch einmal buchstabieren, und benennen ist billiger; nicht, weil es vorhersagbar wäre, sondern weil der Name kürzer ist als das Stück. Ein häufiger Buchstabe überrascht weniger als ein seltener, deshalb darf sein Code kürzer sein und der des seltenen länger; das ist Wahrscheinlichkeit, keine Gewissheit. Ein zufälliges Zeichen ist jedes Mal eine volle Überraschung, da gibt es nichts zu sparen, und das ist der Grund, warum kein Packer alles kleiner macht. Ein fester Code bezahlt jedes Zeichen, als wäre es eine volle Überraschung; die Differenz ist die Redundanz. Kompression gibt Bits für Überraschung aus und für den Rest keine. Deshalb fehlt hinterher nichts.</aside>
   </section>
 
   <!-- ================= Teil 2: two tricks, and a zip ================= -->
@@ -76,25 +99,40 @@
     <aside class="notes">Zwei Tricks. Der erste sagt Wiederholtes nur einmal, der zweite gibt dem Häufigen den kurzen Code. Zusammen sind sie das Ding, das ihr seit der Schule anklickt.</aside>
   </section>
 
-  <section class="slide has-punch">
+  <section class="slide has-punch" data-on-show="drawPointBack" data-on-step="drawPointBack">
     <h2>trick one: point back</h2>
     <div class="figure" id="fig-point-back"></div>
+    <span data-step="1"></span><span data-step="2"></span>
     <div class="punch">say it once. then say where it was.</div>
-    <aside class="notes">Der Satz von vorhin. Das zweite „die sonne" muss nicht noch einmal geschrieben werden: 22 Zeichen zurück, 9 Zeichen lang, das reicht. Das dritte genauso, 21 zurück. Aus 63 Zeichen werden 45 plus zwei Verweise. Das ist im Kern, was jeder Packer als Erstes tut: Er merkt sich, was er schon gesehen hat, und schreibt beim zweiten Mal nur noch, wo es stand und wie lang es ist. Lempel und Ziv, 1977. In jedem ZIP.</aside>
+    <aside class="notes">Der Satz aus Teil 1. Erster Schritt: Das zweite und dritte „the sun" werden zu einem Platzhalter, von dem ein Pfeil zurück auf das erste zeigt, und die Zeile wird sichtbar kürzer. Zweiter Schritt: Der Platzhalter bekommt seine zwei Zahlen. Das zweite „the sun" muss nicht noch einmal geschrieben werden: 19 Zeichen zurück, 7 Zeichen lang, das reicht. Das dritte genauso, 18 zurück. Aus 49 Zeichen werden 35 plus zwei Verweise. Das ist im Kern, was jeder Packer als Erstes tut: Er merkt sich, was er schon gesehen hat, und schreibt beim zweiten Mal nur noch, wo es stand und wie lang es ist. Lempel und Ziv, 1977. In jedem ZIP.</aside>
   </section>
 
   <section class="slide has-punch">
-    <h2>the same trick on a picture: run length</h2>
+    <h2>trick one: what it looks like in the file</h2>
+    <div class="figure" id="fig-in-file"></div>
+    <div class="punch">a pointer is three bytes here: a marker, how far back, how long. 49 bytes become 41.</div>
+    <aside class="notes">So sieht es wirklich in der Datei aus, oben wie in einem Hex-Editor: jedes Zeichen ein Byte, 49 Byte. Darunter die gepackte Fassung. Ein Verweis braucht in unserem kleinen Format drei Byte: eine Marke, damit der Leser weiß, dass jetzt kein Zeichen kommt, dann die Zahl der Zeichen zurück, dann die Länge. 35 Zeichen plus zweimal drei Byte, 41 statt 49. Bei einem so kurzen Satz ist das wenig, bei einem Buch mit langen Wiederholungen sehr viel. Und man sieht, warum sich ein Verweis für zwei Zeichen nie lohnt: Er kostet drei. Ein echter Packer gibt dafür Bits aus statt Bytes und versteckt die Marke in einem Kennbit; die Idee ist dieselbe.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>trick one on a picture: run length</h2>
     <div class="figure" id="fig-run-good"></div>
     <div class="punch">the bigger the areas, the more it saves.</div>
     <aside class="notes">Dasselbe Prinzip, einfachste Form, auf einem Bild: Geht die Zeile entlang und zählt, wie viele gleiche Punkte hintereinander kommen; schreibt je Lauf ein Byte, ein Bit für die Farbe und sieben für die Länge. Bei einem Bild mit Flächen sind das sechs Byte statt acht. Nicht die Welt, aber die Idee trägt: Je größer die Flächen, desto mehr spart es. Ihr könntet das heute Nachmittag selbst programmieren.</aside>
   </section>
 
   <section class="slide has-punch">
-    <h2>run length: the bad case</h2>
+    <h2>trick one: run length, the bad case</h2>
     <div class="figure" id="fig-run-bad"></div>
     <div class="punch">every method makes some files bigger. yours too.</div>
     <aside class="notes">Dasselbe Verfahren auf ein Schachbrett losgelassen. Jeder Punkt ist anders als sein Nachbar, also 64 Läufe der Länge eins, also 64 Byte statt acht: achtmal so groß. Für unser Auge ist ein Schachbrett ein Muster, für dieses Verfahren nicht, denn es kennt nur die eine Frage, wie viele gleiche Punkte jetzt kommen. Ein Verfahren erkennt immer nur die Regelmäßigkeit, nach der es sucht. Deshalb prüfen ernsthafte Packer ihr Ergebnis und schicken im Zweifel die Rohdaten.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>trick two: the frequent letter gets the short code</h2>
+    <div class="figure" id="fig-seen-before"></div>
+    <div class="punch">both halves are known: codes of different length, the frequent one short. now the recipe.</div>
+    <aside class="notes">Jetzt die zweite Sorte Luft hereinholen, die ungleiche Häufigkeit. Zwei Versprechen einlösen. In Sitzung 4 hieß es bei Morse: Das häufige e bekommt den kürzesten Code, einen einzigen Punkt, das seltene q vier Zeichen; darauf kommen wir zurück. In Sitzung 6 hieß es: Codes dürfen verschieden lang sein, und der Empfänger liest sie trotzdem ohne Trennzeichen, solange keiner der Anfang eines anderen ist; offen blieb, wer die kurzen bekommt. Morse sagt: das Häufige, braucht dafür aber die Pause als drittes Zeichen, denn ein Punkt ist e und zwei Punkte sind i; ohne Pause wüsste niemand, ob i oder e e gemeint ist. Genau diese Pause erspart sich Huffman, weil kein Code der Anfang eines anderen ist. Was fehlt, ist das Rezept, das aus einer Zählung die Codes macht, und das kommt jetzt.</aside>
   </section>
 
   <section class="slide has-punch">
@@ -105,7 +143,7 @@
   </section>
 
   <section class="slide has-punch" data-on-show="drawTree" data-on-step="drawTree">
-    <h2>build the tree</h2>
+    <h2>trick two: build the tree</h2>
     <div class="figure" id="fig-tree"></div>
     <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
     <div class="punch">always join the two rarest. that is the whole algorithm.</div>
@@ -114,17 +152,23 @@
   </section>
 
   <section class="slide has-punch">
-    <h2>read the codes off the tree</h2>
+    <h2>trick two: read the codes off the tree</h2>
     <div class="figure" id="fig-read-codes"></div>
     <div class="punch">23 bits instead of 33. nothing lost.</div>
     <aside class="notes">Der Weg von der Wurzel zum Buchstaben ist sein Code: links 0, rechts 1. Das a hängt direkt an der Wurzel und bekommt ein einziges Bit. Die Seltenen bekommen drei. Ausgezahlt: fünfmal ein Bit für das a, je drei für die anderen sechs Buchstaben, 23 statt 33, knapp ein Drittel weniger. Und beim Lesen kommt Buchstabe für Buchstabe dasselbe Wort zurück. Die ganze Ersparnis kommt vom a; die anderen vier kosten weiterhin drei Bit, also nichts verloren.</aside>
   </section>
 
   <section class="slide has-punch">
-    <h2>why it reads itself</h2>
+    <h2>trick two: why it reads itself</h2>
     <div class="figure" id="fig-reads-itself"></div>
     <div class="punch">no code is the start of another. the prefix trap from <a href="https://docs.lifi-project.de/concepts/code-systems.html" target="_blank">code systems</a>, avoided by construction.</div>
     <aside class="notes">Die Sorge aus Sitzung 6: Codes verschiedener Länge ohne Trennzeichen, woher soll der Empfänger wissen, wo ein Zeichen aufhört? Der Baum beantwortet das nebenbei. Buchstaben hängen nur an Blättern, also kann kein Code der Anfang eines anderen sein. Wer von links liest und bei jedem Blatt neu anfängt, kommt nie in die Falle: 0 ist fertig, a. 100 ist fertig, b. 101, r. Unten in Rot das Gegenbeispiel, das in Sitzung 6 schiefging: a gleich 0 und b gleich 01, und 01 hat zwei Lesarten. Das kann in einem Baum nicht passieren, weil das a dann kein Blatt wäre.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: squeeze your own text</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/text-squeezer/?embed=1&preset=english" title="The Text Squeezer"></iframe></div>
+    <aside class="notes">Kurz vorführen, dann die Teams selbst probieren lassen. Die Beispiele durchklicken: Ein Buchstabe vierhundertmal schrumpft auf wenige Verweise, das ist die Untergrenze. Zufällige Buchstaben schrumpfen nicht, sie wachsen, weil Kennbits und Tabelle mehr kosten, als sie sparen. Dazwischen der Absatz: knapp die Hälfte gespart. Zwei Aufträge an den Saal: Erstens einen eigenen Text einfügen und die Zahl erklären. Zweitens versuchen, einen Text zu bauen, der kleiner wird als der Absatz, ohne nur ein Zeichen zu wiederholen.</aside>
   </section>
 
   <section class="slide has-punch">
@@ -136,23 +180,42 @@
   </section>
 
   <section class="slide has-punch">
-    <h2>and that is not bad luck</h2>
+    <h2>why the random bytes could not shrink</h2>
     <div class="figure" id="fig-counting"></div>
     <div class="punch">no method shrinks everything. counting says so.</div>
     <aside class="notes">Das grundsätzliche Argument, und es ist eines der schönsten im ganzen Semester, weil es nichts mit Technik zu tun hat. Angenommen, jemand verspricht ein Verfahren, das jede Datei verlustfrei um mindestens ein Bit kleiner macht. Mit drei Bit lassen sich acht Dateien schreiben, mit weniger als drei Bit nur sieben. Wer acht Dinge in sieben Fächer legt, legt zwei in dasselbe Fach, und dann weiß beim Entpacken niemand mehr, welches gemeint war. Kein Rechner der Welt hilft dagegen. Jedes verlustfreie Verfahren macht manche Dateien kleiner und andere zwangsläufig größer. Die 101 Prozent von eben sind kein Pech, sie sind Mathematik.</aside>
   </section>
 
-  <!-- ================= Teil 3: the picture ================= -->
+  <!-- ================= Teil 3: when redundancy runs out ================= -->
 
-  <section class="slide part" data-part="the picture">
+  <section class="slide part" data-part="when redundancy runs out">
     <aside class="notes">Jetzt das Foto. Verlustfrei kommt man bei einem Foto nicht weit, und das Finale verlangt zwei Kilobyte.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>how much redundancy a picture has</h2>
+    <div class="pics">
+      <figure><img src="img/flat.png" alt=""><figcaption>one colour<span class="sub">png · 569 bytes</span></figcaption></figure>
+      <figure><img src="img/parrot.png" alt=""><figcaption>the parrot<span class="sub">png · 93 107 bytes</span></figcaption></figure>
+      <figure><img src="img/noise.png" alt=""><figcaption>random noise<span class="sub">png · 197 172 bytes</span></figcaption></figure>
+    </div>
+    <div class="punch">all three are 196 608 bytes raw. lossless packing takes the parrot to half; the noise it cannot touch.</div>
+    <div class="footnote">real files, 256 × 256 points, sizes as measured · parrot: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Die zwei Extreme und der Papagei dazwischen, alle drei 256 mal 256 Punkte, roh 196 608 Byte. Links ein Bild aus einer einzigen Farbe: totale Redundanz, jeder Punkt ist aus dem ersten vorhersagbar, als PNG 569 Byte, und das meiste davon ist der Dateikopf. Rechts Rauschen, jeder Punkt eine volle Überraschung: als PNG 197 172 Byte, mehr als roh, weil die Buchführung dazukommt. Der Papagei liegt dazwischen, aber näher am Rauschen als am Einfarbigen: 93 107 Byte, ein Faktor zwei. Ein Foto hat Redundanz, benachbarte Punkte ähneln sich, und PNG nutzt das. Aber es hat viel weniger, als man denkt, und dieser Faktor zwei ist alles, was verlustfrei zu holen ist. Das Finale verlangt zwei Kilobyte.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what png does before it packs</h2>
+    <div class="figure" id="fig-png-filter"></div>
+    <div class="punch">predict each point from its neighbour, keep only the surprise. then deflate.</div>
+    <aside class="notes">Woher kommt der Faktor zwei beim Papagei? PNG macht vor dem Packen einen Schritt, der die Idee aus Teil 1 wörtlich nimmt: Es sagt jeden Punkt aus seinem Nachbarn voraus und speichert nur die Abweichung. Oben zwölf echte Rotwerte aus einer Zeile des Papageis: 251, 250, 249, alle nah beieinander. Als Abweichung vom linken Nachbarn sind das lauter kleine Zahlen um null, und dieselben wenigen kommen immer wieder; genau das ist Futter für Zurückzeigen und für kurze Codes. Unten dieselbe Zeile aus dem Rauschen: Die Abweichungen sind so groß und so zufällig wie die Werte selbst, der Schritt bringt nichts. PNG hat mehrere solcher Vorhersageregeln, auch mit dem Punkt darüber, und wählt je Zeile die beste. Und der Unterschied zu JPG in einem Satz: PNG speichert die Abweichung exakt, JPG rundet sie weg.</aside>
   </section>
 
   <section class="slide has-punch">
     <h2>the parrot, honestly</h2>
     <div class="figure" id="fig-parrot-honest"></div>
-    <div class="punch">lossless gets you to half. you need a fiftieth.</div>
-    <aside class="notes">Der Papagei aus Sitzung 10. Roh sind das 256 mal 256 Punkte mal drei Byte, 192 Kilobyte. Als PNG, also verlustfrei gepackt, noch 91. Bei zehn Bit pro Sekunde ist das ein Tag beziehungsweise ein Vormittag. Die Nutzlast im Finale sind zwei Kilobyte, der dünne Strich ganz unten. Der beste verlustfreie Packer der Welt bringt euch nicht in die Nähe, und nach der letzten Folie wisst ihr, dass das kein Mangel des Packers ist: Ein Foto hat wenig Luft. Wer trotzdem auf zwei Kilobyte will, muss etwas weglassen.</aside>
+    <div class="punch">lossless gets you to half. lossy gets you to a twentieth, and it is not the same picture.</div>
+    <aside class="notes">Derselbe Papagei, dreimal aufgeschrieben. Roh sind das 256 mal 256 Punkte mal drei Byte, 192 Kilobyte, bei zehn Bit pro Sekunde fast zwei Tage. Als PNG, also verlustfrei gepackt, noch 91 Kilobyte, ein knapper Tag; das ist der Faktor zwei von eben, und mehr gibt die Redundanz eines Fotos nicht her. Als JPG mit Qualität 75 sind es 10 Kilobyte, gut zwei Stunden, und aus zwei Metern seht ihr keinen Unterschied. Der Sprung von 91 auf 10 kommt nicht von einem besseren Packer, sondern von einer anderen Sorte Verfahren: JPG lässt Einzelheiten weg. Was das heißt und wie weit man es treiben kann, zeigen die nächsten Folien.</aside>
   </section>
 
   <section class="slide has-punch">
@@ -169,13 +232,11 @@
   </section>
 
   <section class="slide has-punch">
-    <h2>two roads to 2 kb</h2>
-    <div class="pics two">
-      <figure><img src="img/parrot-256-q01.jpg" alt=""><figcaption>256 × 256 · quality 1 · 1 925 bytes<span class="sub">all the points, each one coarse</span></figcaption></figure>
-      <figure><img src="img/parrot-128-q25.jpg" alt=""><figcaption>128 × 128 · quality 25 · 2 032 bytes<span class="sub">a quarter of the points, each one clean</span></figcaption></figure>
-    </div>
-    <div class="punch">fewer points, or coarser points. <a href="https://docs.lifi-project.de/concepts/analog-and-digital.html" target="_blank">analog and digital</a>, from the other side.</div>
-    <aside class="notes">Dasselbe Budget, zwei Wege. Links behält das Bild alle Punkte und macht jeden grob; man sieht die Klötzchen. Rechts wirft es drei Viertel der Punkte weg und hält die übrigen sauber. Das sind die zwei Schnitte der Digitalisierung aus Sitzung 3, Auflösung und Farbtiefe, nur diesmal nicht beim Aufnehmen, sondern beim Wegwerfen. Welcher Weg besser ist, hängt am Bild und am Zweck, und das entscheidet ihr, nicht das Format.</aside>
+    <h2>what the eye and the ear do not notice</h2>
+    <div class="figure" id="fig-senses"></div>
+    <div class="punch">lossy means: a model of the senses decides what may go. not a worse packer, a different bargain.</div>
+    <div class="footnote">images: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Wie kommt JPG von 93 auf 10 Kilobyte, wenn die Redundanz schon aufgebraucht ist? Nicht mit einem besseren Packer, sondern mit einem Modell des Auges. Das Auge sieht Helligkeitskanten scharf, Farbkanten aber unscharf; es sieht in einer Feder oder im Kies die Textur, nicht den einzelnen Punkt; und es unterscheidet 250 nicht von 251. Alles, was in diese Lücken fällt, darf JPG grob runden oder weglassen, und niemand merkt es, bis man es übertreibt, dann kommen die Klötzchen. MP3 macht dasselbe mit einem Modell des Ohrs: Ein lauter Ton verdeckt leise Töne, die zur selben Zeit erklingen und in der Tonhöhe nahe bei ihm liegen; sehr hohe Frequenzen hört niemand; und kurz nach einem lauten Schlag ist das Ohr für jede Tonhöhe einen Moment taub. Beide Verfahren behalten, was ihr wahrnehmen würdet, und runden den Rest weg. Deshalb kommen sie so viel weiter als verlustfrei, und deshalb gibt es keinen Weg zurück: Was gerundet ist, ist nicht versteckt, es ist weg. Wie JPG das im Einzelnen rechnet, lassen wir weg; wer es wissen will, findet auf der Konzeptseite ein sehr gutes Video.</aside>
   </section>
 
   <section class="slide">
@@ -238,8 +299,8 @@
 
 <!-- deck.js vor stagekit.js: der erste Aufbau ruft die data-on-show-Funktionen
      auf, und die muessen dann schon definiert sein. -->
-<script src="../stagekit/draw.js?v=20260914d"></script>
-<script src="deck.js?v=20260914d"></script>
-<script src="../stagekit/stagekit.js?v=20260914d"></script>
+<script src="../stagekit/draw.js?v=20260914h"></script>
+<script src="deck.js?v=20260914h"></script>
+<script src="../stagekit/stagekit.js?v=20260914h"></script>
 </body>
 </html>

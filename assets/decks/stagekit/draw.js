@@ -84,6 +84,39 @@
     return s;
   }
 
+  /* Hervorhebung einer Textstelle: ein durchscheinender Kasten in einer
+   * Bedeutungsfarbe ueber die ganze Stelle, nicht je Zeichen. Die Hoehe kommt
+   * aus der Schriftgroesse, der Rand ist oben und unten gleich (0.2 em); die
+   * Stelle bleibt lesbar, weil der Kasten nur gefuellt ist, ohne Rand. x und w
+   * sind die Ausdehnung des Textes, centerY seine Mitte wie bei label(). */
+  function highlight(x, w, centerY, size, o = {}) {
+    const c = C();
+    const col = o.color || c.yellow;
+    const h = size * 1.4, pad = o.pad === undefined ? size * 0.15 : o.pad;
+    return `<rect x="${x - pad}" y="${centerY - h / 2}" width="${w + 2 * pad}" height="${h}" rx="${o.rx === undefined ? 4 : o.rx}" ` +
+      `fill="${col}" fill-opacity="${o.opacity === undefined ? 0.2 : o.opacity}"/>`;
+  }
+
+  /* Das IPO-Modell als Zeile: Eingabe, Pfeil, Kasten mit der Verarbeitung,
+   * Pfeil, Ausgabe. Dieselbe Geometrie wie in Deck 03 (Input, Processing,
+   * Output), damit das Modell auf jeder Folie gleich aussieht, wo ein Konzept
+   * Daten verarbeitet: Kompression, Verschluesselung, Filter, Pruefsumme.
+   * y ist die Oberkante der 130 px hohen Zeile; `level` steht klein links davor;
+   * `active: false` zeichnet die Zeile zurueckgenommen. */
+  function ipo(y, input, processing, output, o = {}) {
+    const c = C();
+    const col = o.active === false ? c.dark : (o.color || c.light);
+    const x = o.x || 0;
+    const parts = [];
+    if (o.level) parts.push(label(x + 60, y + 76, o.level, { size: 32, color: o.active === false ? c.dark : c.gray }));
+    parts.push(label(x + 300, y + 76, input, { size: 32, color: col, anchor: "middle", mono: !!o.monoIn }));
+    parts.push(arrow(x + 440, y + 65, x + 565, y + 65, { color: col, width: 3, head: 16 }));
+    parts.push(box(x + 580, y, 500, 130, processing, { border: col, color: col, size: 32, mono: !!o.monoBox, keepCase: !!o.keepCase, width: 3, rx: 10 }));
+    parts.push(arrow(x + 1095, y + 65, x + 1220, y + 65, { color: col, width: 3, head: 16 }));
+    parts.push(label(x + 1380, y + 76, output, { size: 32, color: col, anchor: "middle", mono: !!o.monoOut }));
+    return parts.join("");
+  }
+
   /* Bewertungszeichen: Der Kasten, der die bessere Loesung zeigt, bekommt einen
    * gruenen Rahmen und mittig an seinem unteren Rand einen kleinen gruenen
    * Haken; das Gegenstueck bekommt Rahmen und Kreuz in Rot, in derselben
@@ -257,5 +290,5 @@
   }
   table.width = (n, cw = 90) => n * cw;
 
-  window.draw = { svg, layers, label, box, verdict, mark, formula, line, arrow, wire, dot, gate, lamp, toggle, truthTable, table, colors: C };
+  window.draw = { svg, layers, label, box, verdict, mark, highlight, ipo, formula, line, arrow, wire, dot, gate, lamp, toggle, truthTable, table, colors: C };
 })();

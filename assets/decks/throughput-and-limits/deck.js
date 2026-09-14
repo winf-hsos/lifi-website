@@ -27,6 +27,30 @@ function balken(x, y, breite, hoehe, teile) {
 
 /* --- Teil 1: where the time goes ------------------------------------------ */
 
+/* Die Download-Anzeige, die jeder kennt: Fortschritt, Rate, Restzeit. Gezeichnet,
+ * nicht abfotografiert. Schritt 0: 12,4 MB/s, noch 3 Minuten. Schritt 1: die
+ * Rate ist eingebrochen, und die Restzeit springt mit, weil sie aus der Rate
+ * gerechnet wird. */
+window.drawDownload = function (_slide, step = 0) {
+  const c = d.colors();
+  const parts = [];
+  const x = 240, y = 60, w = 1200, h = 400;
+  const lage = step >= 1 ? { anteil: 0.64, rate: "4.1 MB/s", rest: "9 min left" } : { anteil: 0.62, rate: "12.4 MB/s", rest: "3 min left" };
+  parts.push(d.box(x, y, w, h, "", { border: c.light }));
+  parts.push(d.label(x + 50, 0, "downloading update", { size: 32, color: c.white, centerY: y + 70 }));
+  parts.push(d.label(x + w - 50, 0, "47.3 GB", { size: 32, mono: true, color: c.light, anchor: "end", centerY: y + 70, keepCase: true }));
+  // der Balken
+  const bx = x + 50, by = y + 150, bw = w - 100, bh = 40;
+  parts.push(`<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="6" fill="${c.dark}" fill-opacity="0.9"/>`);
+  parts.push(`<rect x="${bx}" y="${by}" width="${(bw * lage.anteil).toFixed(1)}" height="${bh}" rx="6" fill="${c.yellow}" fill-opacity="0.85"/>`);
+  parts.push(d.label(bx, 0, `${Math.round(lage.anteil * 100)} %`, { size: 32, mono: true, color: c.yellow, centerY: by + 90 }));
+  parts.push(d.label(bx + bw / 2, 0, lage.rate, { size: 48, mono: true, color: step >= 1 ? c.red : c.yellow, anchor: "middle", centerY: by + 90, keepCase: true }));
+  parts.push(d.label(bx + bw, 0, lage.rest, { size: 32, mono: true, color: step >= 1 ? c.red : c.light, anchor: "end", centerY: by + 90 }));
+  parts.push(d.label(bx, 0, "this is a rate: bytes that arrived in the last second, measured", { size: 20, color: c.gray, centerY: by + 170 }));
+  parts.push(d.label(bx, 0, "and this is a guess: what is left, divided by that rate", { size: 20, color: c.gray, centerY: by + 205 }));
+  return put("fig-download", d.svg(1680, 480, ...parts));
+};
+
 /* Brutto gegen netto: derselbe Balken, einmal ganz Nutzdaten, einmal nicht. */
 window.drawGrossNet = function () {
   const c = d.colors();
@@ -207,6 +231,7 @@ window.drawAcks = function () {
 /* --- Start ---------------------------------------------------------------- */
 
 if ($("fig-gross-net")) {
+  window.drawDownload();
   window.drawGrossNet();
   window.drawDeductions();
   window.drawWrongLever();
@@ -218,6 +243,7 @@ if ($("fig-gross-net")) {
 }
 
 window.deck14 = {
+  download: window.drawDownload,
   grossNet: window.drawGrossNet,
   deductions: window.drawDeductions,
   wrongLever: window.drawWrongLever,

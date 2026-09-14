@@ -754,6 +754,238 @@
      }
     }
    ]
+  },
+  {
+   "id": "cp-014",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "In eurem Packformat kostet ein Verweis drei Byte: eine Marke, die Zahl\nder Zeichen zurück, die Länge. Im Text steht das Wort `an` zum zweiten\nMal. Lohnt es sich, dieses zweite `an` durch einen Verweis zu ersetzen?",
+    "en": "In your packing format a pointer costs three bytes: a marker, the number\nof characters back, the length. The word `an` appears in the text for the\nsecond time. Is it worth replacing this second `an` with a pointer?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Ja. Jede Wiederholung, die der Packer findet, macht die Datei kleiner; deshalb sucht er ja danach.",
+      "en": "Yes. Every repetition the packer finds makes the file smaller; that is why it looks for them."
+     },
+     "begruendung": {
+      "de": "Ein Verweis ist selbst Inhalt und kostet Platz. Zwei Zeichen kosten zwei Byte, der Verweis drei: Die Datei würde um ein Byte größer. Packer ersetzen deshalb nur Wiederholungen, die länger sind als der Verweis, den sie dafür schreiben müssen.",
+      "en": "A pointer is content itself and costs space. Two characters cost two bytes, the pointer three: the file would grow by one byte. Packers therefore only replace repetitions that are longer than the pointer they have to write for them."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Nein. Zwei Zeichen kosten zwei Byte, der Verweis drei; die Datei würde um ein Byte größer. Erst ab vier Zeichen lohnt ein Verweis.",
+      "en": "No. Two characters cost two bytes, the pointer three; the file would grow by one byte. A pointer only pays off from four characters on."
+     },
+     "begruendung": {
+      "de": "Genau. Ein Verweis lohnt sich nur, wenn er kürzer ist als das, was er ersetzt. Bei drei Byte je Verweis heißt das: mindestens vier Zeichen. Deshalb ist das Packen eines kurzen Satzes fast wirkungslos und das eines Buchs mit langen Wiederholungen sehr wirksam. Und deshalb kann eine Datei aus lauter kurzen, nie wiederkehrenden Stücken beim Packen sogar wachsen.",
+      "en": "Exactly. A pointer only pays off when it is shorter than what it replaces. At three bytes per pointer that means at least four characters. That is why packing a short sentence is almost pointless and packing a book with long repetitions is very effective. And that is why a file of nothing but short, never-recurring pieces can even grow when packed."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Ja, wenn das `an` weit hinten im Text steht, weil der Verweis dann viele Zeichen überspringt.",
+      "en": "Yes, if the `an` is far back in the text, because the pointer then skips many characters."
+     },
+     "begruendung": {
+      "de": "Der Abstand steht als Zahl im Verweis und kostet immer dasselbe, egal ob er 5 oder 500 beträgt. Was der Verweis spart, hängt nur von der Länge des ersetzten Stücks ab, nicht davon, wie weit es zurückliegt.",
+      "en": "The distance is stored as a number in the pointer and always costs the same, whether it is 5 or 500. What the pointer saves depends only on the length of the replaced piece, not on how far back it lies."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Nein, aber aus einem anderen Grund: Verweise dürfen nur auf ganze Wörter zeigen, und `an` kommt auch in `and` vor.",
+      "en": "No, but for a different reason: pointers may only point at whole words, and `an` also occurs inside `and`."
+     },
+     "begruendung": {
+      "de": "Ein Packer kennt keine Wörter, nur Bytes. Er darf auf jede Stelle zeigen, auch mitten in ein Wort; genau deshalb findet er Wiederholungen, die kein Mensch sieht. Dass sich der Verweis hier nicht lohnt, liegt allein an seiner Länge.",
+      "en": "A packer knows no words, only bytes. It may point at any position, even into the middle of a word; that is exactly why it finds repetitions no human sees. That the pointer does not pay off here is down to its length alone."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-015",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "JPG speichert die Farben eines Bildes gröber als seine Helligkeit. MP3 lässt leise Töne weg, die direkt neben einem lauten liegen.\nWas haben die beiden Entscheidungen gemeinsam?",
+    "en": "JPG stores a picture's colours more coarsely than its brightness. MP3 drops quiet tones that sit right next to a loud one. What do the\ntwo decisions have in common?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Beide sparen dort, wo die Daten die meiste Redundanz haben; Farbe und leise Töne wiederholen sich am häufigsten.",
+      "en": "Both save where the data has the most redundancy; colour and quiet tones repeat most often."
+     },
+     "begruendung": {
+      "de": "Redundanz ist das Geschäft der verlustfreien Verfahren, und die brauchen kein Wissen über Augen oder Ohren. Hier wird nichts Vorhersagbares entfernt, sondern echte Information, die dem Sinnesorgan entgeht. Deshalb kommt sie beim Entpacken auch nicht zurück.",
+      "en": "Redundancy is the business of lossless methods, and those need no knowledge of eyes or ears. Here nothing predictable is removed but real information that the sense organ misses. That is why it does not come back on unpacking."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Beide sind Notlösungen aus der Zeit langsamer Rechner; mit heutiger Rechenleistung ließen sich Farbe und leise Töne verlustfrei mitspeichern.",
+      "en": "Both are stopgaps from the days of slow computers; with today's processing power colour and quiet tones could be stored losslessly."
+     },
+     "begruendung": {
+      "de": "Rechenleistung ändert am Abzählargument nichts: Verlustfrei holt aus einem Foto den Faktor zwei, nicht zwanzig. Der große Sprung kommt ausschließlich daher, dass Information weggelassen wird, und dafür braucht es ein Modell dessen, was Auge oder Ohr nicht bemerken. Das gilt heute wie 1992.",
+      "en": "Processing power changes nothing about the counting argument: lossless gets a factor of two out of a photo, not twenty. The big jump comes solely from dropping information, and that needs a model of what the eye or ear does not notice. That holds today as in 1992."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Beide nutzen ein Modell der Wahrnehmung: Sie lassen weg, was Auge oder Ohr nicht bemerken, und behalten, was auffiele.",
+      "en": "Both use a model of perception: they drop what the eye or ear does not notice and keep what would be missed."
+     },
+     "begruendung": {
+      "de": "Genau. Das Auge sieht Helligkeitskanten scharf und Farbkanten unscharf, deshalb darf die Farbe gröber sein. Das Ohr hört einen leisen Ton nicht, wenn direkt daneben ein lauter klingt, deshalb darf er fehlen. Beide Verfahren runden genau das weg, was das Sinnesorgan verdeckt; das heißt Wahrnehmungskodierung, und es ist der Grund, warum verlustbehaftet so viel weiter kommt als verlustfrei.",
+      "en": "Exactly. The eye sees brightness edges sharply and colour edges blurred, so colour may be coarser. The ear does not hear a quiet tone when a loud one sounds right next to it, so it may be missing. Both methods round away exactly what the sense organ masks; that is called perceptual coding, and it is why lossy gets so much further than lossless."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Beide sind Zufall der Geschichte: Andere Formate treffen andere Entscheidungen, mit gleich gutem Ergebnis.",
+      "en": "Both are accidents of history: other formats make other decisions with equally good results."
+     },
+     "begruendung": {
+      "de": "Die Entscheidungen folgen aus Messungen an Augen und Ohren, nicht aus Gewohnheit. Neuere Formate wie HEIC oder AAC treffen im Kern dieselben: Farbe gröber als Helligkeit, verdeckte Töne weg. Sie rechnen die Muster feiner aus, aber sie nutzen dieselben Lücken der Wahrnehmung.",
+      "en": "The decisions follow from measurements on eyes and ears, not from habit. Newer formats such as HEIC or AAC make essentially the same ones: colour coarser than brightness, masked tones gone. They work out the patterns more finely, but they use the same gaps in perception."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-016",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "In einer Logdatei beginnt jede Zeile mit demselben Datum, und über die\nganze Datei kommt die Ziffer 0 etwa zehnmal so oft vor wie die 7. Beides\nist Luft, die ein Packer nutzen kann. Wie heißen die beiden Sorten, und\nwelcher Trick gehört zu welcher?",
+    "en": "In a log file every line starts with the same date, and across the whole\nfile the digit 0 appears about ten times as often as the 7. Both are air\na packer can use. What are the two kinds called, and which trick goes with\nwhich?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Beides ist contextual redundancy, und Zurückzeigen erledigt beides, denn auch die häufige 0 wiederholt sich ja.",
+      "en": "Both are contextual redundancy, and pointing back handles both, since the frequent 0 repeats as well."
+     },
+     "begruendung": {
+      "de": "Die 0 kommt oft vor, aber nicht als Strecke an einer vorhersagbaren Stelle; ein einzelnes Zeichen lohnt keinen Verweis. Dass ein Zeichen häufiger ist als ein anderes, ist die zweite Sorte, alphabetic redundancy, und die nutzt man mit kurzen Codes, nicht mit Verweisen.",
+      "en": "The 0 appears often, but not as a stretch in a predictable place; a single character is not worth a pointer. That one symbol is more frequent than another is the second kind, alphabetic redundancy, and it is used with short codes, not with pointers."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Das Datum ist contextual redundancy, es folgt aus seiner Umgebung: Trick eins, zurückzeigen. Die häufige 0 ist alphabetic redundancy, die Zeichen sind ungleich häufig: Trick zwei, kurzer Code.",
+      "en": "The date is contextual redundancy, it follows from its surroundings: trick one, point back. The frequent 0 is alphabetic redundancy, the symbols are unevenly frequent: trick two, short code."
+     },
+     "begruendung": {
+      "de": "Genau. Das Datum in Zeile 2 überrascht nicht, weil es in Zeile 1 schon stand; ein Verweis zurück ersetzt es. Die 0 überrascht weniger als die 7, weil sie so viel häufiger ist; ein kürzerer Code für die 0 spart bei jedem Vorkommen. Beide Sorten haben denselben Kern: weniger Bits für das, was weniger überrascht.",
+      "en": "Exactly. The date in line 2 is no surprise because it already stood in line 1; a pointer back replaces it. The 0 surprises less than the 7 because it is so much more frequent; a shorter code for the 0 saves at every occurrence. Both kinds share one core: fewer bits for what surprises less."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Das Datum ist alphabetic redundancy, weil es aus Ziffern und Zeichen des Alphabets besteht; die häufige 0 ist contextual redundancy, weil sie im Kontext dieser Datei häufig ist.",
+      "en": "The date is alphabetic redundancy because it consists of digits and characters of the alphabet; the frequent 0 is contextual redundancy because it is frequent in the context of this file."
+     },
+     "begruendung": {
+      "de": "Die Namen meinen etwas anderes. Contextual heißt: Ein Stück folgt aus dem, was davor steht, wie das Datum aus der Zeile darüber. Alphabetic heißt: Die Zeichen des Alphabets sind ungleich häufig, wie die 0 gegen die 7. Hier sind die beiden vertauscht.",
+      "en": "The names mean something else. Contextual means a piece follows from what comes before it, like the date from the line above. Alphabetic means the symbols of the alphabet are unevenly frequent, like the 0 against the 7. Here the two are swapped."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Nur das Datum ist Redundanz. Dass eine Ziffer häufiger vorkommt als eine andere, ist keine, denn jede Ziffer trägt gleich viel Information.",
+      "en": "Only the date is redundancy. That one digit appears more often than another is none, because every digit carries the same amount of information."
+     },
+     "begruendung": {
+      "de": "Information hängt an der Überraschung, nicht am Zeichen: Eine 0, die zehnmal so oft kommt wie eine 7, überrascht weniger und trägt weniger Information. Der Unterschied zu einem Byte je Zeichen ist Luft, und genau die holt der zweite Trick heraus. Deshalb schrumpft selbst ein Text, in dem sich kein Wort wiederholt.",
+      "en": "Information hangs on surprise, not on the symbol: a 0 that appears ten times as often as a 7 surprises less and carries less information. The difference to one byte per character is air, and exactly that is what the second trick takes out. That is why even a text in which no word repeats shrinks."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp-017",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "PNG rechnet vor dem Packen jeden Bildpunkt in die Abweichung von seinem\nlinken Nachbarn um: Aus den Rotwerten 251, 250, 249, 249 wird 251, −1,\n−1, 0. Die Zeile ist danach genauso lang wie vorher, ein Byte je Punkt.\nWarum hilft das dem Packer trotzdem?",
+    "en": "Before packing, PNG rewrites every point as its difference from the left\nneighbour: the red values 251, 250, 249, 249 become 251, −1, −1, 0. The\nrow is exactly as long as before, one byte per point. Why does that help\nthe packer anyway?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Weil kleine Zahlen weniger Bits brauchen als große; die Zeile ist dadurch schon vor dem Packen kürzer.",
+      "en": "Because small numbers need fewer bits than large ones; the row is already shorter before packing."
+     },
+     "begruendung": {
+      "de": "PNG schreibt weiter ein Byte je Punkt, −1 kostet so viel wie 251. Die Umrechnung allein spart kein Bit; sie ändert nur, was in den Bytes steht. Der Gewinn entsteht erst danach, beim Packen.",
+      "en": "PNG still writes one byte per point, −1 costs as much as 251. The rewrite alone saves no bit; it only changes what the bytes hold. The gain comes afterwards, in packing."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Weil die Abweichungen fast alle klein sind und dieselben wenigen Werte immer wieder kommen: Futter für beide Tricks, Zurückzeigen und kurze Codes. Die Rohwerte dagegen sind fast alle verschieden.",
+      "en": "Because the differences are almost all small and the same few values keep coming round: food for both tricks, pointing back and short codes. The raw values, by contrast, are almost all different."
+     },
+     "begruendung": {
+      "de": "Genau. In einem Foto ähneln sich Nachbarpunkte, aber selten sind sie gleich: 251, 250, 249 sind drei verschiedene Bytes, kein Packer findet daran etwas. Als Abweichungen sind es −1, −1, 0, und solche Werte füllen die ganze Zeile: Strecken, auf die man zurückzeigen kann, und wenige Werte, die sehr häufig sind und darum kurze Codes verdienen. Die Umrechnung macht die Redundanz zwischen Nachbarn für den Packer sichtbar.",
+      "en": "Exactly. In a photo neighbouring points resemble each other but are rarely equal: 251, 250, 249 are three different bytes, no packer finds anything in them. As differences they are −1, −1, 0, and such values fill the whole row: stretches to point back to, and a few values so frequent they deserve short codes. The rewrite makes the redundancy between neighbours visible to the packer."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Weil die Abweichungen die Kanten im Bild hervorheben und der Packer dann alles zwischen den Kanten weglassen kann.",
+      "en": "Because the differences bring out the edges in the picture and the packer can then drop everything between the edges."
+     },
+     "begruendung": {
+      "de": "PNG lässt nichts weg, es ist verlustfrei: Aus den Abweichungen entsteht beim Entpacken jeder Punkt wieder genau. Weglassen ist das Geschäft von JPG, und das geht anders.",
+      "en": "PNG drops nothing, it is lossless: from the differences every point is rebuilt exactly when unpacking. Dropping is the business of JPG, and that works differently."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Bei Fotos hilft es nicht, nur bei Zeichnungen mit einfarbigen Flächen; bei Fotos schaltet PNG die Umrechnung ab.",
+      "en": "It does not help with photos, only with drawings of flat colour; for photos PNG switches the rewrite off."
+     },
+     "begruendung": {
+      "de": "Gerade bei Fotos hilft es, weil Nachbarpunkte dort ähnlich, aber nicht gleich sind; einfarbige Flächen packen auch roh schon gut. Wo es nicht hilft, ist Rauschen: Dort sind die Abweichungen so wild wie die Werte selbst, und die Datei bleibt so groß wie sie war.",
+      "en": "It helps with photos in particular, because there neighbouring points are similar but not equal; flat colour packs well even raw. Where it does not help is noise: there the differences are as wild as the values themselves, and the file stays as big as it was."
+     }
+    }
+   ]
   }
  ]
 }

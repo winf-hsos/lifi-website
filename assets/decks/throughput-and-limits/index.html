@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>why is it still not done?</title>
-  <link rel="stylesheet" href="theme.css?v=20260914b">
-  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260914b">
+  <link rel="stylesheet" href="theme.css?v=20260914d">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260914d">
   <style>
     .photo-text.narrow { width: 880px; }
 
@@ -61,6 +61,14 @@
     <div class="photo-text narrow">two kilobytes.<br>twenty-seven minutes.</div>
     <div class="footnote">image: ai-generated (gpt-image-2)</div>
     <aside class="notes">Das ist keine erfundene Zahl, das ist eure. Zwei Kilobyte sind 16.000 Bit; bei vier Farben und fünf Symbolen pro Sekunde sind das 10 Bit in der Sekunde, also gut 26 Minuten. Die Rechnung stand am Ende von Sitzung 7 schon auf einer Folie. Aber erst wenn man danebensitzt und wartet, versteht man sie. Und jetzt die unangenehme Nachricht: In dieser Rechnung ist noch kein einziges Symbol Rahmen und keine einzige Wiederholung enthalten.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawDownload" data-on-step="drawDownload">
+    <h2>you know this screen</h2>
+    <div class="figure" id="fig-download"></div>
+    <span data-step="1"></span>
+    <div class="punch">the rate is measured. the minutes are a guess made from it, and they jump when it does.</div>
+    <aside class="notes">Diese Anzeige kennt jeder: Spiel oder Update, Fortschrittsbalken, eine Rate, eine Restzeit. Zwei verschiedene Dinge stehen da. Die Rate ist eine Messung: so viele Bytes sind in der letzten Sekunde angekommen. Die Restzeit ist eine Rechnung daraus: was noch fehlt, geteilt durch diese Rate. Zweiter Schritt: Die Rate bricht ein, und die Restzeit springt von drei auf neun Minuten, obwohl fast nichts passiert ist. Genau diese zwei Zahlen sind heute unser Thema, nur für eure Lichtstrecke: Was ist die Rate, wovon hängt sie ab, und was sagt sie über die Zeit, die eine Datei braucht. Mit dem Unterschied, dass bei euch nicht Megabyte pro Sekunde stehen, sondern Bit.</aside>
   </section>
 
   <section class="slide has-punch">
@@ -207,8 +215,8 @@
 
 <!-- deck.js vor stagekit.js: der erste Aufbau ruft die data-on-show-Funktionen
      auf, und die gibt es sonst noch nicht. -->
-<script src="../stagekit/draw.js?v=20260914b"></script>
-<script src="deck.js?v=20260914b"></script>
-<script src="../stagekit/stagekit.js?v=20260914b"></script>
+<script src="../stagekit/draw.js?v=20260914d"></script>
+<script src="deck.js?v=20260914d"></script>
+<script src="../stagekit/stagekit.js?v=20260914d"></script>
 </body>
 </html>
