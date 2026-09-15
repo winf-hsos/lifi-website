@@ -640,6 +640,180 @@
      }
     }
    ]
+  },
+  {
+   "id": "ic-003",
+   "niveau": "erinnern",
+   "frage": {
+    "de": "Wie hängen Information und ihr physikalischer Träger zusammen?",
+    "en": "How are information and its physical carrier related?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Information ist der Träger: Ein Bit ist die Spannung auf der Leitung oder das Licht in der Luft, nichts darüber hinaus.",
+      "en": "Information is the carrier: a bit is the voltage on the wire or the light in the air, nothing beyond that."
+     },
+     "begruendung": {
+      "de": "Dann könnte dasselbe Bit nicht gleichzeitig als Spannung, als Lichtimpuls und als Magnetisierung existieren, und dieselbe Datei nicht über Kabel und Funk ankommen. Das Bit ist das, was allen diesen Trägern gemeinsam ist.",
+      "en": "Then the same bit could not exist simultaneously as voltage, as a light pulse and as magnetisation, and the same file could not arrive over cable and radio. The bit is what all these carriers have in common."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Information braucht keinen Träger; sie existiert unabhängig davon, ob sie irgendwo gespeichert oder gesendet wird.",
+      "en": "Information needs no carrier; it exists independently of whether it is stored or sent anywhere."
+     },
+     "begruendung": {
+      "de": "Ohne Träger ist Information nirgends. Jedes Bit, das ihr sendet, ist in diesem Moment Licht, und jedes gespeicherte ist Ladung oder Magnetisierung. Unabhängig ist sie nur davon, welcher Träger es ist.",
+      "en": "Without a carrier, information is nowhere. Every bit you send is light at that moment, and every stored one is charge or magnetisation. It is independent only of which carrier it is."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Information braucht immer einen Träger, ist aber nicht mit ihm identisch; derselbe Bitstrom kann über Licht, Kabel oder Ton laufen.",
+      "en": "Information always needs a carrier but is not identical with it; the same bit stream can travel by light, cable or sound."
+     },
+     "begruendung": {
+      "de": "Genau. Etwas Physikalisches muss die Bits tragen, aber welches, ist austauschbar, solange die Schichten darüber nur Bits sehen. Deshalb kommt dieselbe Webseite über WLAN, Glasfaser und Mobilfunk an.",
+      "en": "Exactly. Something physical has to carry the bits, but which one is interchangeable as long as the layers above see only bits. That is why the same web page arrives over wifi, fibre and mobile networks."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Information ist an ihren ersten Träger gebunden; wird sie umkopiert, entsteht eine Kopie, die etwas weniger enthält als das Original.",
+      "en": "Information is bound to its first carrier; when copied over, a copy arises that contains a little less than the original."
+     },
+     "begruendung": {
+      "de": "Das gilt für analoge Kopien, nicht für Bits. Eine digitale Kopie ist bitgenau dasselbe, und genau das macht ihr im Finale mit dem Hash sichtbar: Dieselben Bytes auf einem anderen Rechner sind nicht weniger, sie sind identisch.",
+      "en": "That holds for analogue copies, not for bits. A digital copy is bit for bit the same, and that is exactly what you make visible in the final with the hash: the same bytes on another computer are not less, they are identical."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ic-004",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ein Team ersetzt die LED durch den Lautsprecher und den Farbsensor\ndurch das Mikrofon. Der Rahmencode bleibt unverändert, und die\nDatei kommt mit demselben Hash an. Was hat das Team damit gezeigt?",
+    "en": "A team replaces the LED with the loudspeaker and the colour sensor with\nthe microphone. The frame code stays unchanged, and the file\narrives with the same hash. What has the team shown?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Dass Ton der bessere Träger ist, denn er hat dieselbe Datei ohne Änderung am restlichen Code übertragen.",
+      "en": "That sound is the better carrier, since it transmitted the same file without changes to the rest of the code."
+     },
+     "begruendung": {
+      "de": "Über besser oder schlechter sagt der Versuch nichts; das würde erst ein Vergleich von Tempo und Fehlerrate zeigen. Gezeigt ist etwas anderes: dass es auf den Träger gar nicht ankam.",
+      "en": "The experiment says nothing about better or worse; only a comparison of speed and error rate would. What is shown is something else: that the carrier did not matter at all."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Dass die Information nicht am Licht hängt, sondern an den Bits und ihrer Deutung; der Träger war nur ihr Fahrzeug.",
+      "en": "That the information does not depend on the light but on the bits and their interpretation; the carrier was only its vehicle."
+     },
+     "begruendung": {
+      "de": "Genau. Derselbe Rahmen, dieselben Bytes, derselbe Hash, nur der Träger ist ein anderer. Was gleich blieb, ist die Information; was wechselte, war nur ihr Fahrzeug. Und die Probe prüft sich selbst: Wer Licht und Rahmen im Code vermischt hätte, hätte den Tausch nicht geschafft.",
+      "en": "Exactly. The same frame, the same bytes, the same hash, only the carrier is different. What stayed the same is the information; what changed was merely its vehicle. And the test checks itself: whoever had mixed light and frame in the code would not have managed the swap."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Dass der Hash unabhängig vom Übertragungsweg berechnet wird und deshalb auch bei einem anderen Träger gleich bleibt.",
+      "en": "That the hash is computed independently of the transmission path and therefore stays the same with a different carrier."
+     },
+     "begruendung": {
+      "de": "Das stimmt, beantwortet aber nicht die Frage. Der Hash ist nur das Messinstrument, das zeigt, dass dieselben Bytes angekommen sind. Die Erkenntnis ist, was das über die Information sagt: Sie hing nie am Licht.",
+      "en": "True, but it does not answer the question. The hash is only the measuring instrument showing that the same bytes arrived. The insight is what that says about the information: it never depended on the light."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Dass Licht als Träger überflüssig war und die Klasse den Rahmen von Anfang an für Ton hätte auslegen können.",
+      "en": "That light as a carrier was superfluous and the class could have designed the frame for sound from the start."
+     },
+     "begruendung": {
+      "de": "Der Rahmen ist für keinen Träger ausgelegt, und genau das ist der Punkt: Er ist in Bits definiert und weiß nichts von Licht oder Ton. Deshalb konnte er beides. Ein Rahmen 'für Ton' wäre derselbe Fehler in die andere Richtung.",
+      "en": "The frame is designed for no carrier, and that is exactly the point: it is defined in bits and knows nothing of light or sound. That is why it could do both. A frame 'for sound' would be the same mistake in the other direction."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ic-005",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Wenn Licht, Kabel und Ton austauschbar sind: Was genau ist dann die\nInformation, die von einem Rechner zum anderen gelangt?",
+    "en": "If light, cable and sound are interchangeable: what exactly is the\ninformation that gets from one computer to the other?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Das physikalische Signal, das gerade unterwegs ist; ohne Licht oder Ton ist nichts da, was ankommen könnte.",
+      "en": "The physical signal currently on its way; without light or sound there is nothing that could arrive."
+     },
+     "begruendung": {
+      "de": "Das Signal ist der Träger, und der ist austauschbar; die Frage fragt nach dem, was beim Tausch gleich bleibt. Das Licht kommt nicht auf dem anderen Rechner an, die Bits schon.",
+      "en": "The signal is the carrier, and that is interchangeable; the question asks about what stays the same in the swap. The light does not arrive on the other computer, the bits do."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Der Dateiname mit seiner Endung, denn er sagt dem Empfänger, was er bekommen hat und wie er es öffnen soll.",
+      "en": "The file name with its extension, since it tells the receiver what it got and how to open it."
+     },
+     "begruendung": {
+      "de": "Der Name ist ein Etikett neben der Information, nicht die Information; die Bytes bleiben dieselben, wenn man ihn ändert. Ohne die Bytes wäre der Name ein Etikett an nichts.",
+      "en": "The name is a label beside the information, not the information; the bytes stay the same if you change it. Without the bytes the name would be a label on nothing."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Das Muster, also die Bitfolge, zusammen mit der Vereinbarung, wie sie zu lesen ist; beides bleibt gleich, egal was es trägt.",
+      "en": "The pattern, that is the bit sequence, together with the agreement on how to read it; both stay the same no matter what carries them."
+     },
+     "begruendung": {
+      "de": "Genau. Was über den Tausch hinweg erhalten bleibt, ist die Anordnung der Zustände und die Absprache über ihre Bedeutung: Codierung, Rahmen, Typfeld. Nehmt eines davon weg, und aus den Bytes wird Krach; nehmt den Träger weg und setzt einen anderen ein, und nichts fehlt.",
+      "en": "Exactly. What survives the swap is the arrangement of the states and the agreement about their meaning: encoding, frame, type field. Take one of those away and the bytes turn into noise; take the carrier away and put in another, and nothing is missing."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das Programm, das die Datei erzeugt hat, denn nur damit lässt sich der Inhalt auf dem anderen Rechner wiederherstellen.",
+      "en": "The program that produced the file, since only with it can the content be restored on the other computer."
+     },
+     "begruendung": {
+      "de": "Das erzeugende Programm reist nicht mit, und der Empfänger braucht es auch nicht; ein beliebiger Bildbetrachter genügt, wenn er die Lesevorschrift kennt. Die Information hängt an der Vereinbarung, nicht an einem bestimmten Programm.",
+      "en": "The producing program does not travel along, and the receiver does not need it either; any image viewer will do if it knows the reading rule. The information depends on the agreement, not on a particular program."
+     }
+    }
+   ]
   }
  ]
 }

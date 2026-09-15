@@ -108,7 +108,22 @@
     <div class="figure wide" id="fig-swap"></div>
     <span data-step="1"></span>
     <div class="punch" data-step="1">five layers unchanged. one exchanged.</div>
-    <aside class="notes">Ein Lautsprecher statt der LED, ein Mikrofon statt des Farbsensors. Oberhalb der Symbolschicht ändert sich keine Zeile. Genau das ist die Zusatzaufgabe in Challenge 4, und sie ist deshalb machbar, nicht weil sie klein wäre. Ehrlich dazusagen: Die erreichbare Symbolrate ändert sich sehr wohl. Alles läuft weiter, aber anders schnell.</aside>
+    <aside class="notes">Ein Lautsprecher statt der LED, ein Mikrofon statt des Farbsensors. Oberhalb der Symbolschicht ändert sich keine Zeile. Wir bauen das im Kurs nicht um; als Gedankenexperiment reicht es, und wer die Schichten sauber getrennt hat, könnte es an einem Nachmittag. Ehrlich dazusagen: Die erreichbare Symbolrate ändert sich sehr wohl. Alles läuft weiter, aber anders schnell.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <div class="content">
+      <div class="header">the same bits, three carriers</div>
+      <div class="statement">information needs a carrier.<br>it is not the carrier.</div>
+      <div class="lines">
+        <div>light: a colour on the led, read by a colour sensor</div>
+        <div>a cable: a voltage, high or low</div>
+        <div>sound: a tone from the speaker, heard by a microphone</div>
+      </div>
+      <div class="sidenote">the bit stream is the same in all three. only the bottom layer knows which one it rides on.</div>
+    </div>
+    <div class="punch">what you send is the bits. light is just what carries them today.</div>
+    <aside class="notes">Der Gedanke hinter dem Tausch, und er ist größer als die Folie. Information braucht immer etwas Physikalisches, das sie trägt: eine Farbe auf der LED, eine Spannung auf einer Leitung, einen Ton aus dem Lautsprecher, die Magnetisierung auf einer Festplatte. Aber sie ist nicht dieses Physikalische, und sie hängt nicht daran. Derselbe Bitstrom, den ihr durch Licht schickt, könnte durch ein Kabel laufen oder über einen Lautsprecher, und alles, was ihr über der untersten Schicht gebaut habt, würde davon nichts merken. Genau deshalb gibt es überhaupt eine eigene Disziplin für Information und nicht nur Elektrotechnik. Außerhalb der Informatik heißt dieselbe Idee Substratunabhängigkeit, in der Philosophie des Geistes und in Debatten über künstliche Intelligenz. Wir bauen den Träger im Kurs nicht wirklich um; die Idee reicht, und sie ist der Grund, warum dieser Kurs nicht Lichtkommunikation heißt.</aside>
   </section>
 
   <section class="slide" data-on-show="drawAlphabet" data-on-step="drawAlphabet">
@@ -181,7 +196,7 @@
 
 </div>
 <script src="../stagekit/draw.js?v=20260909e"></script>
-<script src="deck.js?v=20260909e"></script>
+<script src="deck.js?v=20260915a"></script>
 <script src="../stagekit/stagekit.js?v=20260909e"></script>
 </body>
 </html>

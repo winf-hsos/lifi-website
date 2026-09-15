@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>one bit went wrong</title>
+  <link rel="stylesheet" href="theme.css?v=20260915a">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260914h">
+  <style>
+    .photo-text.narrow { width: 820px; }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="one bit went wrong"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["it will go wrong", "how you notice", "what it costs", "notice or repair"]'>
+
+  <section class="slide title">
+    <aside class="notes">Das Deck, an dem im Finale alles hängt: Dort entscheidet der Hash, ob ein Lauf zählt. Es setzt auf drei Dingen auf, die schon da sind: das Prüfbit aus Gattern, der Rahmen mit seinem Prüfsummenfeld, und aus der Kompression die Einsicht, dass gepackte Daten keine Luft mehr haben.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Erst, warum Fehler zwangsläufig sind. Dann, wie man sie bemerkt, von einem Bit über die Prüfsumme bis zum Hash. Dann, was das an Sendezeit kostet. Und zum Schluss die Entscheidung: selbst reparieren oder noch einmal fragen.</aside>
+  </section>
+
+  <!-- ================= Teil 1: it will go wrong ================= -->
+
+  <section class="slide part" data-part="it will go wrong">
+    <aside class="notes">Fehler sind keine Panne. Sie sind Statistik, und Statistik verhandelt nicht.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/qr-sticker.png" alt="">
+    <div class="photo-text">torn and scratched.<br>readable anyway.<br>why?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Diese Dinger scannt ihr jeden Tag: Paketstation, E-Scooter, Speisekarte, WLAN-Zettel. Der Aufkleber hier hängt seit zwei Jahren draußen. Ein Eck ist abgerissen, ein Kratzer geht quer darüber, Dreck und Regen haben den Rest erledigt. Trotzdem: Kamera drauf, und es klappt beim ersten Mal. Niemand hat den Aufkleber repariert, niemand hat nachgefragt. Warum funktioniert das? Die Antwort ist das Thema heute, und sie ist unbequem: Wer diesen Code entworfen hat, ist davon ausgegangen, dass er kaputtgeht, und hat vorher dafür bezahlt. Eure Strecke tut das noch nicht.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>try it: a piece of this code is missing</h2>
+    <div class="figure" id="fig-qr"></div>
+    <div class="punch">whoever designed this assumed it would be damaged, and paid for it in advance.</div>
+    <div class="footnote">qr version 4, level h. checked with a decoder: blurred, rotated, shrunk to 260 px, saved as jpeg quality 45</div>
+    <aside class="notes">Handys raus, scannt ihn. Mitten im Code fehlt ein Stück, 172 von 1089 Kästchen sind weg, ein knappes Sechstel der Fläche, und trotzdem landet ihr auf der Kursseite. Kein Trick: Ich habe das Loch selbst hineingeschlagen und danach mit einem Decoder nachgewiesen, dass er lesbar bleibt, auch unscharf, gedreht und klein gerechnet. Der Code besteht aus 100 Bytes. 36 davon tragen die Daten, und darin stecken die 29 Zeichen der Adresse plus Füllung. Die anderen 64 tragen nichts, was nicht schon dasteht: Sie sind nur für den Schadensfall da. Fast zwei Drittel des Codes sind also Ballast, solange nichts passiert. Das ist Redundanz, und damit steht die Frage des Tages im Raum: Wie viel Ballast lohnt sich?</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>errors are not bad luck, they are arithmetic</h2>
+    <div class="figure" id="fig-inevitable"></div>
+    <div class="punch">the question is not how to avoid errors. it is how to notice them.</div>
+    <div class="footnote">at an error rate of 0.1 % per bit</div>
+    <aside class="notes">Nehmt eine gute Strecke: Von tausend Bits geht eines daneben, 99,9 Prozent kommen richtig an. Zehn Zeichen kommen mit 92 Prozent Wahrscheinlichkeit sauber durch, das fühlt sich gut an. Macht dasselbe hundertmal, und die Wahrscheinlichkeit, dass alle hundert Läufe sauber waren, liegt bei drei Hundertstel Prozent. Bei zwei Kilobyte am Stück, der Nutzlast des Finales, ist sie so klein, dass man sie nicht mehr aufschreiben mag. Das ist keine schlechte Hardware, das ist Multiplikation: Jedes einzelne Bit muss durchkommen, und die Wahrscheinlichkeiten multiplizieren sich.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the check as a box, twice</h2>
+    <div class="figure" id="fig-ipo-check"></div>
+    <div class="punch">redundancy is bits that carry nothing new, and earn their place by what they rule out.</div>
+    <aside class="notes">Dasselbe Modell wie bei Kompression und Verschlüsselung: ein Kasten, der Daten verarbeitet. Aus vielen Bytes werden nach einer festen Regel wenige Bits. Beim Empfänger kommen Bytes und Bits zusammen in einen zweiten Kasten, und heraus kommt nicht die Nachricht, sondern eine Antwort: passt oder passt nicht. Diese zusätzlichen Bits tragen nichts, was nicht schon in den Daten steht; sie sind reine Redundanz, und genau deshalb fallen Fehler damit auf. Beachtet den Gegensatz zur Kompression: Dort haben wir Redundanz herausgeworfen, hier fügen wir sie absichtlich wieder ein. Das ist kein Widerspruch, sondern eine Entscheidung darüber, wofür man seine Bits ausgibt.</aside>
+  </section>
+
+  <!-- ================= Teil 2: how you notice ================= -->
+
+  <section class="slide part" data-part="how you notice">
+    <aside class="notes">Drei Stufen: ein Bit, eine Prüfsumme, ein Hash. Sie kosten verschieden viel und sagen verschieden viel.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawParity" data-on-step="drawParity">
+    <h2>one bit that only says: even or odd</h2>
+    <div class="figure" id="fig-parity"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <div class="punch">one extra bit per byte, and every single flipped bit shows.</div>
+    <aside class="notes">Das Prüfbit kennt ihr als Gatterkette aus der Werkzeugkiste; jetzt bekommt es einen Zweck. Sender und Empfänger vereinbaren gerade Parität: Das neunte Bit wird so gewählt, dass die Zahl der Einsen gerade ist. Hier sind es vier Einsen, also ist das Prüfbit null. Kippt unterwegs ein Bit, sind es drei, und der Empfänger weiß: Dieses Byte ist kaputt. Er weiß nicht, welches Bit es war, nur dass etwas nicht stimmt. Das reicht, wenn man nachfragen kann.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>where one bit is not enough</h2>
+    <div class="figure" id="fig-parity-gap"></div>
+    <div class="punch">a check that misses half the cases is not a guarantee. it is a filter.</div>
+    <aside class="notes">Kippen zwei Bits im selben Byte, ist die Zahl der Einsen wieder gerade, und die Parität meldet nichts. Sie fängt jede ungerade Zahl von Fehlern und übersieht jede gerade. Das ist kein Baufehler, sondern der ehrliche Preis für ein einziges Zusatzbit. Wer mehr will, muss mehr Bits ausgeben. Und das ist die allgemeine Regel jeder Prüfung: Sie ist nie ein Beweis, sie ist ein Filter mit einer bekannten Maschenweite.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>from one bit to a checksum</h2>
+    <div class="figure" id="fig-checksum"></div>
+    <div class="punch">more check bits do not catch more errors. they let fewer slip past.</div>
+    <aside class="notes">Statt eines Bits je Byte eine Zahl über den ganzen Rahmen, nach einer festen Regel aus allen Bytes gerechnet; das Feld dafür steht im Klassenstandard schon. Ein beschädigter Rahmen hat dann nur noch eine Chance von eins zu 256, zufällig genau die erwartete Prüfsumme zu ergeben. Bei 32 Bit ist es eine von gut vier Milliarden, und genau das führen PNG und ZIP mit. Zwei Dinge zum Merken: Die Prüfsumme sagt nie, wo der Fehler war, und sie repariert nichts. Sie beantwortet eine Ja-Nein-Frage, und sie beantwortet sie fast immer richtig.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>a fingerprint for a whole file</h2>
+    <div class="figure" id="fig-hash-what"></div>
+    <div class="punch">any amount of data in. always the same short number out.</div>
+    <div class="footnote">sha-256, the hash your computer uses for downloads · computed 15 sept 2026</div>
+    <aside class="notes">Jetzt die dritte Stufe, und die kennt ihr noch nicht. Ein Hash ist ein Fingerabdruck einer Datei. Eine feste Rechenregel nimmt alle Bytes und presst sie zu einer einzigen Zahl zusammen, hier in Sechzehnerschreibweise, wie wir sie bei den Zahlensystemen hatten. Und jetzt seht auf die Längen: Ein einziger Buchstabe, ein kurzer Satz und das ganze Papageienfoto mit 196 662 Byte ergeben alle drei genau 64 Zeichen. Das ist kein Zufall, das ist der Sinn der Sache. Ein Hash ist immer gleich lang, egal wie groß die Datei ist. Deshalb könnt ihr zwei Dateien vergleichen, ohne sie beide zu haben: Es genügt, die Fingerabdrücke zu vergleichen, und die sind 32 Byte lang statt zwei Kilobyte. Ein Wort zum Namen: „Hash" heißt wörtlich Hackfleisch, und das trifft es. Die Bytes werden durchgehackt und vermengt, bis nichts mehr zu erkennen ist. Zurückrechnen kann man deshalb auch nicht.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>and one bit changes everything</h2>
+    <div class="figure" id="fig-hash-flip"></div>
+    <div class="punch">no similarity survives. that is exactly what makes it a test.</div>
+    <div class="footnote">grey: characters that happen to match · yellow: characters that differ</div>
+    <aside class="notes">Das ist die Eigenschaft, auf die es ankommt. Oben der Fingerabdruck des Papageis, unten der Fingerabdruck desselben Papageis, bei dem ein einziges Bit gekippt ist. Von 1,5 Millionen Bits genau eines. Und der Fingerabdruck hat mit dem oberen nichts mehr zu tun: Sieben von 64 Zeichen stimmen zufällig überein, und das ist ungefähr so viel, wie bei zwei völlig fremden Dateien übereinstimmen würde, denn bei sechzehn möglichen Zeichen je Stelle trifft man im Mittel vier. Es gibt keine Ähnlichkeit, keine Teilübereinstimmung, kein Bisschen-kaputt. Deshalb ist der Hash ein Test und kein Maß: Er sagt gleich oder nicht gleich, und mehr sagt er nicht. Wer wissen will, wo der Fehler saß, muss die Prüfsummen der einzelnen Rahmen anschauen.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>three checks, three jobs</h2>
+    <div class="figure" id="fig-levels"></div>
+    <div class="punch">the hash decides. the frame checksums are how you get there.</div>
+    <aside class="notes">Die drei Stufen nebeneinander, damit niemand sie verwechselt. Das Paritätsbit sichert ein Byte und fängt ungerade Fehler. Die Prüfsumme sichert einen Rahmen, und wenn sie nicht passt, weiß der Empfänger, welchen Rahmen er noch einmal braucht; das ist die Grundlage für das gezielte Wiederholen. Der Hash sichert die ganze Datei und ist das, was im Finale verglichen wird. Wichtig: Ein Lauf, bei dem jeder Rahmen seine Prüfsumme bestanden hat, kann am Hash trotzdem scheitern, etwa wenn ein Rahmen ganz gefehlt hat oder zweimal ankam. Deshalb braucht ihr beides.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>one flipped bit in the raw picture</h2>
+    <div class="figure" id="fig-one-bit-raw"></div>
+    <div class="punch">a picture that displays proves nothing.</div>
+    <div class="footnote">real file, 256 × 256 points · parrot: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Jetzt machen wir es an der Datei selbst. Ein Bit im rohen Bild gekippt, mitten in den Bilddaten. Die Datei öffnet sich, der Papagei ist da, und niemand im Saal sieht etwas. Erst der Zoom auf sechzehn mal sechzehn Punkte zeigt es: Ein Punkt hat statt des Farbwerts 38 den Wert 166 im Blaukanal, aus Rot wird ein etwas anderes Rot. Einer von 196 608 Farbwerten. Genau deshalb zählt im Finale der Hash und nicht, ob das Bild hübsch aussieht. „Es wird angezeigt" ist kein Beweis für gar nichts.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the same bit, in the packed file</h2>
+    <div class="figure" id="fig-one-bit-packed"></div>
+    <div class="punch">packed data has no air left. one wrong bit, and the rest is gone.</div>
+    <div class="footnote">measured 15 sept 2026 · same picture, same kind of error, different format</div>
+    <aside class="notes">Dasselbe Bild, dieselbe Art Fehler, anderes Format. Im PNG steht kein Punkt mehr für sich: Gepackt wird, indem auf früher Geschriebenes zurückgezeigt wird, das war der ganze Trick aus dem Kompressions-Deck. Ein falsches Bit, und der Entpacker verliert den Faden; die Datei lässt sich gar nicht mehr öffnen. PNG merkt es selbst, denn es führt zu jedem Block eine CRC-32 mit, und die stimmt nicht mehr. Die Lehre ist unbequem und wichtig für euer Finale: Je besser ihr packt, desto empfindlicher wird die Übertragung. Kompression und Prüfung gehören zusammen.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: break a byte yourself</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/inside-a-file/?embed=1" title="Inside a File"></iframe></div>
+    <aside class="notes">Kurz vorführen, dann selbst probieren lassen. Ein Byte in den Bilddaten ändern: Das Bild gehorcht, ein Punkt wird falsch. Dann ein Byte im Kopf ändern, etwa die Breite: Der Betrachter weigert sich oder zeigt Unsinn. Die Frage an den Saal: Welcher der beiden Fehler ist schlimmer, und welcher fällt eher auf?</aside>
+  </section>
+
+  <!-- ================= Teil 3: what it costs ================= -->
+
+  <section class="slide part" data-part="what it costs">
+    <aside class="notes">Jede Prüfung kostet Sendezeit. Die Frage ist nur, wie viel.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>redundancy is paid in time</h2>
+    <div class="figure" id="fig-cost"></div>
+    <div class="punch">noticing is nearly free. repairing by repetition is not.</div>
+    <aside class="notes">Die zwei Kilobyte des Finales bei zehn Bit pro Sekunde: 27 Minuten, wenn nichts dazukommt. Eine Prüfsumme je Rahmen kostet anderthalb Prozent, keine halbe Minute, und dafür wisst ihr von jedem Rahmen, ob er heil ist. Ein Paritätsbit je Byte kostet ein Achtel eurer Sendezeit und fängt trotzdem nicht alles. Und wer jedes Bit dreimal sendet, um ohne Rückfrage reparieren zu können, sendet dreimal so lange: aus 27 Minuten werden 82. Diese Tabelle ist die ganze Entscheidung, die in Teil 4 ansteht, in Zahlen.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: where did the bits go?</h2>
+    <div class="embed z125"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/where-did-the-bits-go/?embed=1" title="Where Did the Bits Go?"></iframe></div>
+    <aside class="notes">Der Demonstrator aus dem Durchsatz-Deck, jetzt mit anderem Blick. Schiebt die Fehlerrate hoch und seht zu, wie die Wiederholungen die Zeit auffressen, während das Bild nicht größer wird. Zwei Fragen an den Saal: Ab welcher Fehlerrate lohnen sich kürzere Rahmen? Und warum ist ein längerer Rahmen auf einer sauberen Strecke besser?</aside>
+  </section>
+
+  <!-- ================= Teil 4: notice or repair ================= -->
+
+  <section class="slide part" data-part="notice or repair">
+    <aside class="notes">Bemerken können wir jetzt. Was tun wir, wenn etwas kaputt ist?</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>repair without asking: say it three times</h2>
+    <div class="figure" id="fig-triple"></div>
+    <div class="punch">you can repair without a return channel. you pay for it on every bit, forever.</div>
+    <aside class="notes">Es geht ohne Rückfrage: Jedes Bit dreimal senden, und der Empfänger nimmt den Wert, der mindestens zweimal vorkommt. Das repariert einen Fehler je Dreiergruppe, ohne dass jemand nachfragen muss. Deshalb macht man es dort, wo Nachfragen nicht geht: Eine Raumsonde kann man nicht bitten, den Rahmen zu wiederholen, das dauert Stunden. Der Preis ist brutal: dreifache Sendezeit, immer, auch wenn gar nichts kaputtgeht. Und kippen zwei Bits derselben Gruppe, repariert der Empfänger fröhlich in die falsche Richtung. Der Aufkleber vom Anfang gehört in dieselbe Familie: Ein QR-Code an einer Laterne kann niemanden um Wiederholung bitten, also bezahlt er vorher, 64 Schutzbytes auf 36 Datenbytes.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>repair by asking: send that one again</h2>
+    <div class="figure" id="fig-ask-again"></div>
+    <div class="punch">on a slow link, asking again beats paying in advance.</div>
+    <aside class="notes">Der Rückkanal ist im Finale erlaubt, und das ist der Grund. Prüfsumme je Rahmen, und wenn einer nicht passt, wird genau dieser eine noch einmal geschickt. Solange nichts kaputtgeht, kostet das anderthalb Prozent; geht etwas kaputt, kostet es einen Rahmen. Zwei Dinge müsst ihr dafür festlegen, und beide gehören in eure Spezifikation: Woran erkennt der Sender, welcher Rahmen gemeint ist, also eine Rahmennummer. Und was tut er, wenn die Antwort selbst verloren geht, also nach einer Wartezeit noch einmal senden.</aside>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="statement">which one do you build?</div>
+      <div class="lines">
+        <div>a return channel: check, and ask again when it fails</div>
+        <div>no way to ask back: send everything more than once, and pay every time</div>
+      </div>
+      <div class="sidenote">you have a return channel. use it, keep the check small, and put the time you save into speed.</div>
+    </div>
+    <aside class="notes">Die Entscheidung in einem Satz: Wer zurückfragen kann, prüft und fragt nach; wer nicht zurückfragen kann, muss vorher bezahlen. Ihr könnt zurückfragen. Baut also die Prüfsumme ein, nicht den Wiederholungscode, und steckt die gesparte Zeit in Tempo. Und noch ein Hinweis für die Werkstatt: Prüft eure Prüfung. Kippt absichtlich ein Byte und schaut, ob euer Empfänger es wirklich meldet. Eine Prüfsumme, die nie anschlägt, sieht von außen genauso aus wie eine, die funktioniert.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>today</h2>
+    <div class="content">
+      <div class="lines">
+        <div>1  errors are arithmetic, not bad luck: enough bits, and one goes wrong</div>
+        <div>2  redundancy is bits that carry nothing new and rule things out</div>
+        <div>3  parity catches odd flips, a checksum catches almost everything, the hash decides</div>
+        <div>4  a picture that displays proves nothing</div>
+        <div>5  noticing costs 1.6 %. repeating everything costs 200 %. asking again costs only when it breaks.</div>
+      </div>
+    </div>
+    <aside class="notes">Fünf Sätze zum Mitnehmen. Der Werkstattauftrag: Prüfsumme in den Rahmen, Rahmennummer dazu, den Rückkanal für gezielte Wiederholung, und einmal absichtlich ein Byte kippen, um zu sehen, ob die eigene Prüfung es meldet.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/glitch.png" alt="">
+    <div class="photo-text">this one you can see.<br>the dangerous one<br>you cannot.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Dieses Bild sieht man an und weiß sofort, dass etwas schiefgegangen ist. Das gefährlichere Bild ist das andere: das, bei dem man nichts sieht und trotzdem ein Byte falsch ist. Deshalb vergleicht im Finale der Rechner zwei Fingerabdrücke, und die kennen die Wahrheit.</aside>
+  </section>
+
+</div>
+
+<!-- deck.js vor stagekit.js: der erste Aufbau ruft die data-on-show-Funktionen
+     auf, und die muessen dann schon definiert sein. -->
+<script src="../stagekit/draw.js?v=20260914h"></script>
+<script src="deck.js?v=20260915g"></script>
+<script src="../stagekit/stagekit.js?v=20260914h"></script>
+</body>
+</html>

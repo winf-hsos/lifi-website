@@ -535,6 +535,180 @@
      }
     }
    ]
+  },
+  {
+   "id": "er-010",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr schickt dasselbe Foto zweimal: einmal roh, einmal als PNG gepackt.\nBeide Male kippt unterwegs genau ein Bit mitten in den Bilddaten. Was\nsieht der Empfänger?",
+    "en": "You send the same photo twice: once raw, once packed as a PNG. Both\ntimes exactly one bit flips on the way, in the middle of the picture\ndata. What does the receiver see?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Beide Male dasselbe: einen falschen Bildpunkt, den man suchen muss, um ihn zu finden.",
+      "en": "The same thing both times: one wrong point that you have to search for to find."
+     },
+     "begruendung": {
+      "de": "Beim rohen Bild stimmt das: Jeder Punkt steht für sich, ein falsches Bit ändert einen Farbwert. Im PNG steht kein Punkt für sich, denn gepackt wird, indem auf früher Geschriebenes zurückgezeigt wird. Ein falsches Bit reißt dort den Faden ab.",
+      "en": "For the raw picture that is right: every point stands on its own, one wrong bit changes one colour value. In a PNG no point stands on its own, because packing works by pointing back at what was written earlier. One wrong bit tears that thread."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Beide Male ein zerstörtes Bild, denn ein Bit an der falschen Stelle verschiebt alle folgenden Bytes.",
+      "en": "A destroyed picture both times, because one bit in the wrong place shifts all the following bytes."
+     },
+     "begruendung": {
+      "de": "Ein gekipptes Bit verschiebt nichts, es ändert einen Wert; die Datei bleibt genauso lang. Im rohen Bild bleibt der Schaden deshalb an dieser einen Stelle. Verschoben würde nur, wenn Bits verloren gingen oder dazukämen, und das ist ein anderer Fehler.",
+      "en": "A flipped bit shifts nothing, it changes a value; the file stays exactly as long. In the raw picture the damage therefore stays in that one place. Things would only shift if bits were lost or added, and that is a different error."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Roh: ein einziger Farbwert ist falsch, das Bild öffnet sich, und mit bloßem Auge fällt nichts auf. Gepackt: die Datei lässt sich oft gar nicht mehr öffnen.",
+      "en": "Raw: one single colour value is wrong, the picture opens, and nothing is noticeable to the naked eye. Packed: the file often cannot be opened at all."
+     },
+     "begruendung": {
+      "de": "Genau, und wir haben es nachgemessen: Im rohen Bild wurde aus dem Farbwert 38 der Wert 166, einer von 196 608, unsichtbar. Im PNG meldete der Betrachter nur noch, dass er den Datenstrom nicht lesen kann. Das ist der Preis der Kompression: Gepackte Daten haben keine Luft mehr, jedes Byte hängt an den vorigen, und deshalb wiegt dort ein einzelner Fehler schwer. Genau deshalb führt PNG selbst eine Prüfsumme mit.",
+      "en": "Exactly, and we measured it: in the raw picture the colour value 38 became 166, one of 196,608, invisible. For the PNG the viewer only reported that it could not read the data stream. That is the price of compression: packed data has no air left, every byte hangs on the ones before it, and so a single error weighs heavily. That is exactly why PNG carries a checksum of its own."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Roh ist die Datei unlesbar, gepackt nicht, denn das Packformat korrigiert einzelne Fehler selbst.",
+      "en": "The raw file becomes unreadable and the packed one does not, because the packing format repairs single errors itself."
+     },
+     "begruendung": {
+      "de": "Es ist genau umgekehrt, und Packformate reparieren nichts. PNG und ZIP führen eine Prüfsumme mit, die den Fehler bemerkt; bemerken und reparieren sind zwei verschiedene Dinge, und Reparieren kostet sehr viel mehr Bits.",
+      "en": "It is exactly the other way round, and packing formats repair nothing. PNG and ZIP carry a checksum that notices the error; noticing and repairing are two different things, and repairing costs far more bits."
+     }
+    }
+   ]
+  },
+  {
+   "id": "er-011",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Eure Prüfsumme ist ein Byte lang. Von hundert gesendeten Rahmen kommen\nfünf beschädigt an. Wie viele davon bemerkt der Empfänger nicht, und was\nändert sich, wenn ihr auf vier Byte Prüfsumme geht?",
+    "en": "Your checksum is one byte long. Of a hundred frames sent, five arrive\ndamaged. How many of those does the receiver fail to notice, and what\nchanges if you move to a four-byte checksum?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Keinen. Eine Prüfsumme erkennt jeden Fehler, und vier Byte wären nur Verschwendung.",
+      "en": "None. A checksum detects every error, and four bytes would just be a waste."
+     },
+     "begruendung": {
+      "de": "Eine Prüfsumme presst viele Bytes in wenige Bits. Damit gibt es zwangsläufig verschiedene Rahmen mit derselben Prüfsumme, und ein beschädigter Rahmen kann zufällig auf die erwartete Summe fallen. Sie ist kein Beweis, sondern ein sehr guter Filter.",
+      "en": "A checksum squeezes many bytes into a few bits. So there are inevitably different frames with the same checksum, and a damaged frame can land on the expected sum by chance. It is not a proof but a very good filter."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Im Mittel deutlich weniger als einen: Jeder beschädigte Rahmen hat eine Chance von eins zu 256, durchzurutschen. Mit vier Byte wird daraus eins zu gut vier Milliarden.",
+      "en": "On average far less than one: each damaged frame has a one in 256 chance of slipping through. With four bytes that becomes one in more than four billion."
+     },
+     "begruendung": {
+      "de": "Genau. Ein Byte hat 256 mögliche Werte, also trifft ein beschädigter Rahmen die erwartete Summe im Mittel in einem von 256 Fällen; bei fünf beschädigten Rahmen rutscht also rund alle zwanzig Läufe einer durch. Vier Byte sind 32 Bit und damit gut vier Milliarden Werte, und deshalb benutzen PNG und ZIP genau das. Mehr Prüfbits fangen nicht mehr Fehler, sie lassen weniger durchrutschen.",
+      "en": "Exactly. One byte has 256 possible values, so a damaged frame hits the expected sum in about one of 256 cases; with five damaged frames one slips through about every twenty runs. Four bytes are 32 bits and thus more than four billion values, which is exactly what PNG and ZIP use. More check bits do not catch more errors, they let fewer slip past."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Alle fünf, denn eine Prüfsumme sagt nur, ob die Länge stimmt.",
+      "en": "All five, because a checksum only says whether the length is right."
+     },
+     "begruendung": {
+      "de": "Die Länge steht im Längenfeld des Rahmens. Die Prüfsumme wird nach einer festen Regel aus allen Bytes gerechnet, und deshalb ändert sie sich, sobald sich ein Byte ändert, ganz gleich welches.",
+      "en": "The length sits in the frame's length field. The checksum is computed from all bytes by a fixed rule, and so it changes as soon as any byte changes, no matter which one."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Fünf mal ein 256stel, also rund ein Fünftel Rahmen; mit vier Byte halbiert sich das, weil die Prüfsumme viermal so lang ist.",
+      "en": "Five times one 256th, so about a fifth of a frame; with four bytes that halves, because the checksum is four times as long."
+     },
+     "begruendung": {
+      "de": "Der erste Teil stimmt, der zweite nicht. Jedes zusätzliche Bit halbiert die Durchrutschquote, also verbessert sich das nicht um den Faktor vier, sondern um 2 hoch 24, rund sechzehn Millionen. Wie bei der Schlüssellänge steht die Zahl der Bits im Exponenten.",
+      "en": "The first part is right, the second is not. Every additional bit halves the slip-through rate, so it does not improve by a factor of four but by 2 to the power of 24, about sixteen million. As with key length, the number of bits sits in the exponent."
+     }
+    }
+   ]
+  },
+  {
+   "id": "er-012",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Nach der Übertragung rechnen beide Seiten den Hash ihrer 2-KB-Datei aus.\nBeide Hashes sind 64 Zeichen lang und stimmen im ersten Zeichen überein,\ndanach in keinem mehr. Was wisst ihr jetzt?",
+    "en": "After the transmission both sides compute the hash of their 2 KB file.\nBoth hashes are 64 characters long and agree in the first character,\nafter that in none. What do you know now?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Dass fast alles heil angekommen ist: Ein Zeichen stimmt ja, und das entspricht dem Anteil der heilen Daten.",
+      "en": "That almost everything arrived intact: one character does match, and that reflects the share of undamaged data."
+     },
+     "begruendung": {
+      "de": "Die Zeichen eines Hashes sind kein Maß für den Schaden. Ein Hash ist so gebaut, dass ein einziges gekipptes Bit ihn vollständig umwirft; wir haben es am Papagei gemessen, und von 64 Zeichen stimmten danach noch sieben überein, rein zufällig. Bei sechzehn möglichen Zeichen je Stelle ist Übereinstimmung an vier Stellen der Normalfall, auch bei völlig verschiedenen Dateien.",
+      "en": "The characters of a hash are no measure of the damage. A hash is built so that a single flipped bit overturns it completely; we measured it on the parrot, and afterwards seven of 64 characters still matched, purely by chance. With sixteen possible characters per position, agreement in four positions is the normal case, even for completely different files."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Dass genau ein Bit gekippt ist, denn sonst wäre auch das erste Zeichen anders.",
+      "en": "That exactly one bit flipped, because otherwise the first character would differ too."
+     },
+     "begruendung": {
+      "de": "Aus dem Hash lässt sich weder ablesen, wie viel kaputt ist, noch wo. Ein gekipptes Bit und tausend gekippte Bits ergeben beide einen Hash, der mit dem erwarteten nichts zu tun hat. Dass ausgerechnet das erste Zeichen passt, ist Zufall mit einer Chance von eins zu sechzehn.",
+      "en": "The hash tells you neither how much is damaged nor where. One flipped bit and a thousand flipped bits both give a hash that has nothing to do with the expected one. That the first character happens to match is chance, with a one in sixteen probability."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Nichts Sicheres, denn zwei verschiedene Dateien können denselben Hash haben.",
+      "en": "Nothing for certain, because two different files can have the same hash."
+     },
+     "begruendung": {
+      "de": "Zwei verschiedene Dateien mit demselben Hash gibt es zwangsläufig, das stimmt, und deshalb ist ein gleicher Hash kein Beweis, sondern nur eine sehr gute Wette. Hier sind die Hashes aber verschieden, und das ist eindeutig: Verschiedene Hashes bedeuten mit Sicherheit verschiedene Dateien, denn dieselbe Datei ergäbe zwingend denselben Hash.",
+      "en": "Two different files with the same hash inevitably exist, that is true, and that is why an equal hash is no proof but a very good bet. Here, though, the hashes differ, and that is unambiguous: different hashes mean the files are certainly different, because the same file would necessarily give the same hash."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Dass die Datei nicht heil angekommen ist. Mehr nicht: weder wie viel kaputt ist noch wo.",
+      "en": "That the file did not arrive intact. No more than that: neither how much is damaged nor where."
+     },
+     "begruendung": {
+      "de": "Genau. Ein Hash beantwortet eine einzige Frage, und die beantwortet er zuverlässig: Sind das dieselben Bytes, ja oder nein. Er sagt nicht, wo der Fehler sitzt, nicht wie groß er ist, und rückwärts rechnen lässt er sich auch nicht. Deshalb braucht ihr für das gezielte Wiederholen die Prüfsummen der einzelnen Rahmen; der Hash ist der Schlussrichter über die ganze Datei.",
+      "en": "Exactly. A hash answers a single question, and answers it reliably: are these the same bytes, yes or no. It does not say where the error sits, nor how big it is, and it cannot be computed backwards either. That is why you need the per-frame checksums for targeted retransmission; the hash is the final judge over the whole file."
+     }
+    }
+   ]
   }
  ]
 }

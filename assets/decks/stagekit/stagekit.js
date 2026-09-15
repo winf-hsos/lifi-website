@@ -11,13 +11,13 @@
  *   - a location bar on every content slide (part name, progress)
  *   - steps: any element with data-step="n" appears on step n of its slide
  *     (space/arrow advance steps before slides; the layout never jumps
- *     because hidden steps keep their space, like slidekit's buildup)
+ *     because hidden steps keep their space)
  *   - keyboard: → ↓ space PgDn next, ← ↑ PgUp back, Home/End, F fullscreen,
  *     N notes window (speaker notes of the current and next slide, kept in
  *     sync over a BroadcastChannel), P print view, Esc leaves fullscreen
  *   - every build-up step is a frame with its own number: the counter, the
  *     hash (#12 is frame 12), ?slide=12 and the export count frames, so a
- *     slide with two steps takes three numbers, as it did in slidekit
+ *     slide with two steps takes three numbers
  *   - ?print shows all frames stacked (steps as clones) for a quick print
  *   - hooks: a slide may carry data-on-show="fn" / data-on-step="fn"; the
  *     named global functions are called with (slide, step)
@@ -92,8 +92,8 @@
   fit();
 
   // --- frames: every build-up step is a slide of its own ------------------------
-  // The numbering, the counter, the hash and the export all count frames, as a
-  // .pptx deck built with slidekit counted its build-up copies.
+  // The numbering, the counter, the hash and the export all count frames, not
+  // slides: a slide with two steps occupies three of them.
   const frames = [];
   slides.forEach((s, i) => { [0, ...s._steps].forEach((st) => frames.push({ slide: i, step: st })); });
 
@@ -166,20 +166,38 @@
 
   // --- print view --------------------------------------------------------------
   if (params.has("print")) {
-    // every frame becomes a page; slides with steps are cloned once per step
-    // (hooks that draw by element id run on the original only, so decks with
-    // hooks are exported frame by frame through tools/export.py instead)
+    // Jeder Frame wird eine Seite; eine Folie mit Aufbau wird je Schritt geklont.
+    // Die Reihenfolge ist das Entscheidende: erst den Schritt setzen und zeichnen
+    // lassen, DANN klonen. Die Zeichenfunktionen schreiben ueber getElementById in
+    // ihr Element, und ein Klon traegt dieselbe id; getElementById liefert immer
+    // den ersten Treffer. Wer zuerst klont und danach zeichnet, bekommt deshalb
+    // leere Zeichnungen in allen Klonen. So geklont, traegt jede Seite das SVG
+    // ihres eigenen Schritts, und ?print gibt den Vortrag wieder -- auch als PDF
+    // aus Chrome (tools/export.py), das dadurch Vektor statt Pixel liefert.
+    // print-clone-ids: Marker fuer tools/export.py -- nur mit dieser Fassung
+    // stimmt der Vektor-Export; aeltere Kopien bekommen den Bildweg.
     document.body.classList.add("print");
     slides.forEach((s) => {
       const steps = [0, ...s._steps];
       steps.forEach((st, k) => {
+        s._step = st;
+        applySteps(s);
+        // dieselbe Hook-Wahl wie beim Vortrag: onShow beim Betreten, onStep beim Schritt
+        const hook = k === 0 ? s.dataset.onShow : (s.dataset.onStep || s.dataset.onShow);
+        if (hook && typeof window[hook] === "function") window[hook](s, st);
         const el = k === steps.length - 1 ? s : s.cloneNode(true);
-        if (el !== s) s.parentNode.insertBefore(el, s);
+        if (el !== s) {
+          // Der Klon wird VOR dem Original eingehaengt und traegt sonst dessen
+          // ids. getElementById liefert den ersten Treffer im Dokument, und das
+          // waere ab dann der Klon: Die Zeichnung des naechsten Schritts landete
+          // in der Seite davor. Ein Klon wird nie wieder nachgeschlagen, also
+          // verliert er seine ids.
+          el.removeAttribute("id");
+          el.querySelectorAll("[id]").forEach((e) => e.removeAttribute("id"));
+          s.parentNode.insertBefore(el, s);
+        }
         el.classList.add("current");
-        $$("[data-step]", el).forEach((e) => e.classList.toggle("shown", Number(e.dataset.step) <= st));
       });
-      s._step = steps[steps.length - 1];
-      if (s.dataset.onShow && window[s.dataset.onShow]) window[s.dataset.onShow](s, s._step);
     });
     counter.classList.add("hidden");
     return;

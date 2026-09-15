@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.3">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fehler und Redundanz – LiFi Project</title>
+<title>Errors and Redundancy – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../concepts/information-and-carrier.html" rel="next">
+<link href="../concepts/throughput-and-limits.html" rel="next">
 <link href="../concepts/protocols.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -45,6 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-a84aad28d7e5b5456db9ac6a39cf199b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,17 +62,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -89,16 +92,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
         <div class="quarto-navbar-tools tools-end">
 </div>
-          <div id="quarto-search" class="" title="Suchen"></div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/errors-and-redundancy.html">Fehler und Redundanz</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/errors-and-redundancy.html">Errors and Redundancy</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -119,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">LiFi Project</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -170,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Software</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -222,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Solving Problems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -263,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -298,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -321,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Transferring Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -347,13 +350,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/errors-and-redundancy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Fehler und Redundanz</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Information und ihr Träger</span></a>
+ <span class="menu-text">Errors and Redundancy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -368,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Processing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -414,26 +411,34 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zusammenfassung" id="toc-zusammenfassung" class="nav-link active" data-scroll-target="#zusammenfassung">Zusammenfassung</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#fragen-um-die-es-geht" id="toc-fragen-um-die-es-geht" class="nav-link" data-scroll-target="#fragen-um-die-es-geht">Fragen, um die es geht</a></li>
+  <li><a href="#a-code-that-expects-to-be-damaged" id="toc-a-code-that-expects-to-be-damaged" class="nav-link" data-scroll-target="#a-code-that-expects-to-be-damaged">A code that expects to be damaged</a></li>
+  <li><a href="#errors-are-arithmetic-not-bad-luck" id="toc-errors-are-arithmetic-not-bad-luck" class="nav-link" data-scroll-target="#errors-are-arithmetic-not-bad-luck">Errors are arithmetic, not bad luck</a></li>
+  <li><a href="#the-check-as-a-box-twice" id="toc-the-check-as-a-box-twice" class="nav-link" data-scroll-target="#the-check-as-a-box-twice">The check as a box, twice</a></li>
+  <li><a href="#one-bit-that-only-says-even-or-odd" id="toc-one-bit-that-only-says-even-or-odd" class="nav-link" data-scroll-target="#one-bit-that-only-says-even-or-odd">One bit that only says: even or odd</a></li>
+  <li><a href="#from-one-bit-to-a-checksum" id="toc-from-one-bit-to-a-checksum" class="nav-link" data-scroll-target="#from-one-bit-to-a-checksum">From one bit to a checksum</a></li>
+  <li><a href="#a-fingerprint-for-a-whole-file" id="toc-a-fingerprint-for-a-whole-file" class="nav-link" data-scroll-target="#a-fingerprint-for-a-whole-file">A fingerprint for a whole file</a></li>
+  <li><a href="#one-flipped-bit-twice" id="toc-one-flipped-bit-twice" class="nav-link" data-scroll-target="#one-flipped-bit-twice">One flipped bit, twice</a></li>
+  <li><a href="#what-redundancy-costs" id="toc-what-redundancy-costs" class="nav-link" data-scroll-target="#what-redundancy-costs">What redundancy costs</a></li>
+  <li><a href="#notice-or-repair" id="toc-notice-or-repair" class="nav-link" data-scroll-target="#notice-or-repair">Notice, or repair</a></li>
   </ul></li>
-  <li><a href="#erläuterung-des-konzepts" id="toc-erläuterung-des-konzepts" class="nav-link" data-scroll-target="#erläuterung-des-konzepts">Erläuterung des Konzepts</a></li>
-  <li><a href="#folien" id="toc-folien" class="nav-link" data-scroll-target="#folien">Folien</a></li>
-  <li><a href="#fragen-üben" id="toc-fragen-üben" class="nav-link" data-scroll-target="#fragen-üben">Fragen üben</a></li>
-  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/errors-and-redundancy.html">Fehler und Redundanz</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/signal-and-noise.html">Transferring Information</a></li><li class="breadcrumb-item"><a href="../concepts/errors-and-redundancy.html">Errors and Redundancy</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Fehler und Redundanz</h1>
+<h1 class="title">Errors and Redundancy</h1>
 </div>
 
 
@@ -450,36 +455,235 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="zusammenfassung" class="level2">
-<h2 class="anchored" data-anchor-id="zusammenfassung">Zusammenfassung</h2>
-<p>Übertragungsfehler lassen sich nicht vollständig vermeiden. Zusätzliche, gezielt eingefügte Information kann Fehler erkennbar oder sogar korrigierbar machen. Diese Redundanz erhöht die Zuverlässigkeit, kostet aber Übertragungszeit.</p>
-<section id="fragen-um-die-es-geht" class="level3">
-<h3 class="anchored" data-anchor-id="fragen-um-die-es-geht">Fragen, um die es geht</h3>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Send enough symbols and one of them will go wrong. That is not bad luck and not bad hardware, it is arithmetic: every single bit has to make it, and the probabilities multiply. So the question is never how to avoid errors but how to notice them, and the tool for that is redundancy, extra bits that carry nothing new and earn their place by what they rule out. A parity bit covers one byte, a checksum covers one frame, a hash covers the whole file, and each of them answers one yes-or-no question and repairs nothing. Noticing is nearly free. Repairing on your own is expensive. Asking for one frame again is almost always the better bargain, and it is why the return channel exists.</p>
+<p>In this chapter, we address the following questions:</p>
 <ul>
-<li>Warum lassen sich Übertragungsfehler nicht verhindern?</li>
-<li>Wie merkt man, dass unterwegs etwas kaputtgegangen ist?</li>
-<li>Was kostet es, Fehler erkennen zu können?</li>
-<li>Kann man Fehler nicht nur erkennen, sondern auch reparieren?</li>
+<li>Why can transmission errors not be avoided?</li>
+<li>How do you notice that something broke on the way?</li>
+<li>What is a hash, and why does the final compare hashes instead of pictures?</li>
+<li>What does being able to detect errors cost you in sending time?</li>
+<li>Can you repair errors, not just detect them, and what is the price?</li>
 </ul>
-<p>Dieses Konzept müsst ihr für <a href="../challenges/challenge-4.html">Challenge 4</a> verstanden haben, damit ihr dort erfolgreich seid.</p>
+<p>You need this concept for <a href="../challenges/challenge-4.html">Challenge 4</a>, where the hash decides whether a run counts at all.</p>
+</section>
+<section id="explanation" class="level2">
+<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
+<p>You scan these every day: at the parcel locker, on an e-scooter, on the menu, on the slip with the wifi password. Some of those stickers have been hanging outside for two years. A corner is peeled off, a scratch runs across, dirt and rain did the rest, and the scan still works on the first try. Nobody repaired the sticker, and nobody was asked to hold it up again. Why does that work?</p>
+<section id="a-code-that-expects-to-be-damaged" class="level3">
+<h3 class="anchored" data-anchor-id="a-code-that-expects-to-be-damaged">A code that expects to be damaged</h3>
+<div id="fig-qr" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/decks/errors-and-redundancy/img/qr-torn.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: A real QR code pointing at docs.lifi-project.de, with 172 of its 1,089 squares cut out of the middle. It still reads."><img src="../assets/decks/errors-and-redundancy/img/qr-torn.png" class="img-fluid figure-img" width="360"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A real QR code pointing at docs.lifi-project.de, with 172 of its 1,089 squares cut out of the middle. It still reads.
+</figcaption>
+</figure>
+</div>
+<p>The code above points at <code>docs.lifi-project.de</code>, and we cut a piece out of its middle: 172 of its 1,089 squares are gone, close to a sixth of the surface. It still reads, and that is measured rather than claimed. A decoder gets the address out of it in the original, blurred, rotated by seven and by twelve degrees, shrunk to 260 pixels, saved as a bad JPEG, and even out of the exported slide image scaled down to 640 pixels wide. Point your phone at it.</p>
+<p>The reason is in the way the code is built. It carries 100 bytes. 36 of them carry the data, and that is the 29 characters of the address plus padding. The other 64 carry nothing that is not already there. They exist for the damage. So almost two thirds of this code is dead weight as long as nothing happens, and whoever designed it paid that price in advance, without knowing whether this one sticker would ever be scratched.</p>
+<p>That is redundancy, and it is what this chapter is about. A photo that loads halfway and then falls apart into stripes is the other end of the same story: there nobody paid in advance, and at least you can see the damage. The dangerous case is the third one, where you see nothing and a byte is wrong anyway.</p>
+</section>
+<section id="errors-are-arithmetic-not-bad-luck" class="level3">
+<h3 class="anchored" data-anchor-id="errors-are-arithmetic-not-bad-luck">Errors are arithmetic, not bad luck</h3>
+<p>Take a good link: of a thousand bits one goes wrong, so 99.9 percent arrive correctly. That sounds excellent until you send more than a thousand bits.</p>
+<div id="fig-inevitable" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inevitable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-inevitable.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The chance that everything arrives untouched, at an error rate of 0.1 percent per bit: 92.3 percent for ten characters, 0.03 percent for the same ten characters a hundred times, 0.0000076 percent for the 2 KB payload of the final."><img src="../assets/diagrams/errors-inevitable.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inevitable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The chance that everything arrives untouched, at an error rate of 0.1 percent per bit: 92.3 percent for ten characters, 0.03 percent for the same ten characters a hundred times, 0.0000076 percent for the 2 KB payload of the final.
+</figcaption>
+</figure>
+</div>
+<p>Ten characters are 80 bits and arrive completely clean with a probability of 92.3 percent. Do the same a hundred times and the probability that all hundred runs were clean is 0.03 percent. Send the 16,384 bits of the final’s payload in one go and it drops to 0.0000076 percent. Nothing is broken here. Every single bit has to make it, and the probabilities multiply, so the chance falls off a cliff as the message grows. That is why the question is not how to avoid errors. It is how to notice them.</p>
+</section>
+<section id="the-check-as-a-box-twice" class="level3">
+<h3 class="anchored" data-anchor-id="the-check-as-a-box-twice">The check as a box, twice</h3>
+<div id="fig-ipo-check" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ipo-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-ipo-check.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: The check as two boxes: the bytes go into checksum() and a few bits come out; the bytes together with those bits go into check() and the answer is yes or no."><img src="../assets/diagrams/errors-ipo-check.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ipo-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The check as two boxes: the bytes go into checksum() and a few bits come out; the bytes together with those bits go into check() and the answer is yes or no.
+</figcaption>
+</figure>
+</div>
+<p>The model from <a href="../concepts/input-processing-output.html">Input, Processing, Output</a> again, as with <a href="../concepts/compression.html">compression</a> and <a href="../concepts/encryption.html">encryption</a>. A fixed rule turns many bytes into a few bits. At the other end the bytes and those bits go into a second box, and what comes out is not the message but an answer: it fits, or it does not. Those extra bits carry nothing that is not already in the data. They are pure redundancy, and that is exactly why errors show up in them.</p>
+<p>Note the contrast with compression. There we threw redundancy out to make the file smaller; here we put it back in on purpose. That is not a contradiction. It is a decision about what you spend your bits on.</p>
+</section>
+<section id="one-bit-that-only-says-even-or-odd" class="level3">
+<h3 class="anchored" data-anchor-id="one-bit-that-only-says-even-or-odd">One bit that only says: even or odd</h3>
+<p>You have met the mechanism already: the chain of XOR gates from <a href="../concepts/logic-and-arithmetic.html">Logic and Arithmetic</a> that ends in a single check bit. Now it gets a purpose. Sender and receiver agree on even parity, which means the ninth bit is chosen so that the number of ones is even.</p>
+<div id="fig-parity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-parity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-parity.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The byte 1011 0010 has four ones, so the parity bit is 0. After one bit flips there are three ones, an odd number, and the check fails."><img src="../assets/diagrams/errors-parity.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: The byte 1011 0010 has four ones, so the parity bit is 0. After one bit flips there are three ones, an odd number, and the check fails.
+</figcaption>
+</figure>
+</div>
+<p>The byte <code>1011 0010</code> has four ones, so the parity bit is 0. If one bit flips on the way there are three ones, the count is odd, and the receiver knows this byte is broken. It does not know which bit, only that something is wrong, and that is enough when you can ask again.</p>
+<p>But one bit can only say so much:</p>
+<div id="fig-parity-gap" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-parity-gap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-parity-gap.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The same byte with two flipped bits: four ones again, the count is even, and the check says nothing."><img src="../assets/diagrams/errors-parity-gap.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parity-gap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: The same byte with two flipped bits: four ones again, the count is even, and the check says nothing.
+</figcaption>
+</figure>
+</div>
+<p>With two flipped bits in the same byte the count is even again and parity reports nothing. It catches every odd number of flips and misses every even one. That is not a design flaw, it is the honest price of one extra bit, and it is the general rule for every check there is: a check is never a proof, it is a filter with a known mesh size.</p>
+</section>
+<section id="from-one-bit-to-a-checksum" class="level3">
+<h3 class="anchored" data-anchor-id="from-one-bit-to-a-checksum">From one bit to a checksum</h3>
+<p>Instead of one bit per byte, take one number over the whole frame, computed from every byte by a rule both sides agreed on. The class standard from <a href="../concepts/protocols.html">Protocols</a> has the field for it already.</p>
+<div id="fig-checksum" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-checksum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-checksum.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: The frame with its checksum field, and what more check bits buy: 8 bits let one damaged frame in 256 slip through, 16 bits one in 65,536, 32 bits one in 4,294,967,296."><img src="../assets/diagrams/errors-checksum.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-checksum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: The frame with its checksum field, and what more check bits buy: 8 bits let one damaged frame in 256 slip through, 16 bits one in 65,536, 32 bits one in 4,294,967,296.
+</figcaption>
+</figure>
+</div>
+<p>A damaged frame now has to hit the expected checksum by chance to get through, and with eight bits that happens about once in 256. With 32 bits it is about once in four billion, which is what PNG and ZIP carry as CRC-32. Two things are worth memorising. A checksum never says where the error was, and it repairs nothing. And more check bits do not catch more errors; they let fewer slip past.</p>
+</section>
+<section id="a-fingerprint-for-a-whole-file" class="level3">
+<h3 class="anchored" data-anchor-id="a-fingerprint-for-a-whole-file">A fingerprint for a whole file</h3>
+<p>The third level is one you have probably never looked at, although your computer uses it every time you download something. It is called a hash, and the everyday word for it is a fingerprint.</p>
+<p>A fixed rule takes all the bytes of a file and squeezes them into one single number, written here in the hexadecimal notation from <a href="../concepts/number-systems.html">Number Systems</a>. The interesting part is the length:</p>
+<div id="fig-hash-what" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hash-what-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-hash-what.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: The letter a, the message meet at noon and the whole raw parrot photo, all three hashed: one byte, twelve bytes and 196,662 bytes, and every result is exactly 64 characters long."><img src="../assets/diagrams/errors-hash-what.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hash-what-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: The letter a, the message meet at noon and the whole raw parrot photo, all three hashed: one byte, twelve bytes and 196,662 bytes, and every result is exactly 64 characters long.
+</figcaption>
+</figure>
+</div>
+<p>One letter, a short sentence and a 196,662-byte photo: all three come out as exactly 64 characters. A hash is always the same length, no matter how big the file is. That is the whole point, and it is what makes it useful here: to check whether two files are identical you do not need both files, you only need to compare their fingerprints, and those are 32 bytes instead of two kilobytes. The method in the picture is SHA-256. The name is worth a second: to hash means to chop and mix, as in hashed meat, and that is what happens to the bytes. It is also why you cannot compute backwards from a hash to the file.</p>
+<p>Now the property everything depends on:</p>
+<div id="fig-hash-flip" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hash-flip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-hash-flip.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: The hash of the raw parrot and the hash of the same parrot with a single flipped bit. Seven of 64 characters still match, which is roughly what two unrelated files would share."><img src="../assets/diagrams/errors-hash-flip.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hash-flip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: The hash of the raw parrot and the hash of the same parrot with a single flipped bit. Seven of 64 characters still match, which is roughly what two unrelated files would share.
+</figcaption>
+</figure>
+</div>
+<p>Above, the fingerprint of the raw parrot photo. Below, the fingerprint of the same photo with a single bit flipped, one bit out of 1,573,296. The two have nothing to do with each other. Seven of the 64 characters happen to match, and that is about what you would expect between any two unrelated files, because with sixteen possible characters per position four matches come for free. There is no similarity, no partial agreement, no slightly-broken. A hash is a test, not a measure: it answers same or not same, and nothing else. If you want to know where the damage sits, you need the per-frame checksums.</p>
+<div id="fig-levels" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-levels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-levels.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: Three checks and what each one covers: the parity bit one byte, the checksum one frame, the hash the whole file."><img src="../assets/diagrams/errors-levels.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-levels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Three checks and what each one covers: the parity bit one byte, the checksum one frame, the hash the whole file.
+</figcaption>
+</figure>
+</div>
+<p>Keep the three apart. The parity bit covers a byte and reports an odd number of flips. The checksum covers a frame and tells you which frame to ask for again, which is what makes targeted retransmission possible. The hash covers the whole file and is what the final compares. And note that a run in which every frame passed its checksum can still fail at the hash, for instance if a frame went missing entirely or arrived twice. That is why you want both.</p>
+</section>
+<section id="one-flipped-bit-twice" class="level3">
+<h3 class="anchored" data-anchor-id="one-flipped-bit-twice">One flipped bit, twice</h3>
+<p>Enough theory. Here is one bit flipped in the middle of the picture data of the raw parrot:</p>
+<div class="parrots">
+  <figure class="figure"><img src="../assets/decks/errors-and-redundancy/img/parrot-flip.png" alt="the parrot after one flipped bit" class="figure-img"><figcaption>the file after one flipped bit</figcaption></figure>
+  <figure class="figure"><img src="../assets/decks/errors-and-redundancy/img/zoom-raw.png" alt="16 by 16 points as sent" class="figure-img"><figcaption>16 × 16 points, as sent</figcaption></figure>
+  <figure class="figure"><img src="../assets/decks/errors-and-redundancy/img/zoom-flip.png" alt="the same 16 by 16 points as received" class="figure-img"><figcaption>the same points, as received</figcaption></figure>
+</div>
+<p>The file opens, the parrot is there, and nobody sees anything. Only the zoom to sixteen by sixteen points shows it: one colour value went from <code>(240, 45, 38)</code> to <code>(240, 45, 166)</code>, a slightly different red, one value out of 196,608. This is exactly why the final compares a hash and not whether the picture looks good. “It displays” proves nothing at all.</p>
+<p>Now the same bit in the same picture, packed as a PNG:</p>
+<div id="fig-one-bit-packed" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-one-bit-packed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-one-bit-packed.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;10: The raw file opens with one wrong point; the packed file does not open at all, and its own CRC-32 no longer matches."><img src="../assets/diagrams/errors-one-bit-packed.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-one-bit-packed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: The raw file opens with one wrong point; the packed file does not open at all, and its own CRC-32 no longer matches.
+</figcaption>
+</figure>
+</div>
+<p>The packed file does not open at all. In a PNG no point stands on its own, because packing works by pointing back at what was written before, which was the whole trick in <a href="../concepts/compression.html">compression</a>. One wrong bit and the unpacker loses the thread; the viewer only reports that it cannot read the data stream. PNG also notices by itself, because it carries a CRC-32 for every block: stored <code>a831c3c1</code>, computed after the flip <code>cb5ebce6</code>. The lesson is uncomfortable and matters for the final: the better you pack, the more fragile the transmission becomes. Compression and checking belong together.</p>
+</section>
+<section id="what-redundancy-costs" class="level3">
+<h3 class="anchored" data-anchor-id="what-redundancy-costs">What redundancy costs</h3>
+<p>Every check is paid for in sending time, so the only real question is how much.</p>
+<div id="fig-cost" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-cost.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: Four ways to send 2 KB at 10 bit/s: nothing added takes 27.3 minutes, a checksum per frame 27.7, a parity bit per byte 30.7, every bit three times 81.9."><img src="../assets/diagrams/errors-cost.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Four ways to send 2 KB at 10 bit/s: nothing added takes 27.3 minutes, a checksum per frame 27.7, a parity bit per byte 30.7, every bit three times 81.9.
+</figcaption>
+</figure>
+</div>
+<p>The two kilobytes of the final at ten bits per second take 27.3 minutes with nothing added. A 32-bit checksum on every 256-byte frame costs 1.6 percent, half a minute, and in exchange you know of every frame whether it arrived intact. A parity bit per byte costs an eighth of your sending time and still does not catch everything. And sending every bit three times, so that errors can be repaired without asking, costs three times the link: 81.9 minutes instead of 27.3.</p>
+</section>
+<section id="notice-or-repair" class="level3">
+<h3 class="anchored" data-anchor-id="notice-or-repair">Notice, or repair</h3>
+<p>Those numbers are the whole decision. You can repair without asking anyone:</p>
+<div id="fig-triple" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-triple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-triple.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figure&nbsp;12: Every bit sent three times; one of the three flips on the way, and the majority decides. Three times the bits, 82 minutes instead of 27."><img src="../assets/diagrams/errors-triple.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-triple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Every bit sent three times; one of the three flips on the way, and the majority decides. Three times the bits, 82 minutes instead of 27.
+</figcaption>
+</figure>
+</div>
+<p>Send every bit three times and let the receiver take the value that occurs at least twice. One flip per triple gets repaired on the spot, without a word back. That is how a space probe does it, because nobody can ask Mars to repeat, and it is the family the torn sticker belongs to as well: a code on a lamppost cannot ask anyone for a second look, so it pays up front, 64 protection bytes against 36 bytes of data. The price is brutal: three times the sending time, always, whether anything breaks or not. And if two bits of the same triple flip, the receiver cheerfully repairs in the wrong direction.</p>
+<p>Or you ask:</p>
+<div id="fig-ask-again" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ask-again-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/errors-ask-again.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figure&nbsp;13: Four frames, the third one fails its checksum, the return channel asks for frame 3 again, and it arrives intact."><img src="../assets/diagrams/errors-ask-again.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ask-again-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Four frames, the third one fails its checksum, the return channel asks for frame 3 again, and it arrives intact.
+</figcaption>
+</figure>
+</div>
+<p>A checksum on every frame, and when one does not fit, that one frame is sent again. While nothing breaks this costs 1.6 percent; when something breaks it costs one frame. Two things belong in your specification for this to work: a frame number, so the sender knows which frame is meant, and a waiting time after which the sender repeats on its own in case the reply itself got lost.</p>
+<p>So: whoever can ask back, checks and asks. Whoever cannot ask back has to pay in advance. You can ask back, so build the checksum, not the repetition code, and put the time you save into speed. One more thing for the workshop: check your check. Flip a byte on purpose and see whether your receiver really reports it. A checksum that never fires looks exactly like one that works.</p>
 </section>
 </section>
-<section id="erläuterung-des-konzepts" class="level2">
-<h2 class="anchored" data-anchor-id="erläuterung-des-konzepts">Erläuterung des Konzepts</h2>
-<p>Bei genügend vielen Symbolen geht irgendwann eines daneben. Das ist unvermeidlich. Die Frage ist deshalb nicht, wie man Fehler verhindert, sondern wie man sie überhaupt bemerkt und was das kostet.</p>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys.</p>
+<div class="deck-embed">
+  <iframe src="../assets/decks/errors-and-redundancy/index.html?bar=1&amp;pdf=../errors-and-redundancy.pdf" title="one bit went wrong" allowfullscreen="" loading="lazy"></iframe>
+</div>
 </section>
-<section id="folien" class="level2">
-<h2 class="anchored" data-anchor-id="folien">Folien</h2>
-<!-- TODO: Folien ergänzen -->
+<section id="practice-questions" class="level2">
+<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
+<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/errors-and-redundancy.json"></div>
 </section>
-<section id="fragen-üben" class="level2">
-<h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Hier könnt ihr euch an Fragen im Klausurformat versuchen, mit sofortiger Auflösung und Begründung.</p>
-<div class="fragen-quiz" data-quelle="../assets/questions/errors-and-redundancy.json"></div>
-</section>
-<section id="literatur" class="level2">
-<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
-<!-- TODO: weiterführende Literatur ergänzen -->
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li>Richard W. Hamming: Error Detecting and Error Correcting Codes. Bell System Technical Journal 29 (2), 1950. <a href="https://doi.org/10.1002/j.1538-7305.1950.tb00463.x" class="uri">https://doi.org/10.1002/j.1538-7305.1950.tb00463.x</a>. The paper that started error correction, written because Hamming’s weekend computer runs kept dying on a single bad bit and nobody was there on Monday to restart them. The first two pages are readable without any mathematics.</li>
+<li>Claude E. Shannon: A Mathematical Theory of Communication. Bell System Technical Journal 27 (3), 1948. <a href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x" class="uri">https://doi.org/10.1002/j.1538-7305.1948.tb01338.x</a>. The same paper that gave us the measure of information also proves the surprising part: on a noisy channel you can get the error rate as close to zero as you like, as long as you send slower than the channel’s capacity.</li>
+<li>Ross N. Williams: A Painless Guide to CRC Error Detection Algorithms, 1993. <a href="https://www.zlib.net/crc_v3.txt" class="uri">https://www.zlib.net/crc_v3.txt</a>. How a real checksum works, written for people who kept finding CRC code they could not understand. Long, informal, and the only text on the subject that reads like a conversation.</li>
+<li>Andrew S. Tanenbaum and David J. Wetherall: Computer Networks. Pearson, 5th edition 2011, chapter 3. The textbook treatment of detection against correction and of the retransmission protocols this page sketches, including what happens when the acknowledgement itself gets lost.</li>
+</ul>
 
 
 </section>
@@ -830,12 +1034,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1217,8 +1421,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../concepts/information-and-carrier.html" class="pagination-link" aria-label="Information und ihr Träger">
-        <span class="nav-page-text">Information und ihr Träger</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../concepts/throughput-and-limits.html" class="pagination-link" aria-label="Throughput and Limits">
+        <span class="nav-page-text">Throughput and Limits</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1236,6 +1440,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

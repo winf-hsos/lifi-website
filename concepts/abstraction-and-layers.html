@@ -355,12 +355,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Information und ihr Träger</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Throughput and Limits</span></a>
   </div>
@@ -391,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verschlüsselung</span></a>
+ <span class="menu-text">Encryption</span></a>
   </div>
 </li>
       </ul>
@@ -427,6 +421,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-stack-in-your-project" id="toc-the-stack-in-your-project" class="nav-link" data-scroll-target="#the-stack-in-your-project">The stack in your project</a></li>
   <li><a href="#who-is-allowed-to-talk-to-the-hardware" id="toc-who-is-allowed-to-talk-to-the-hardware" class="nav-link" data-scroll-target="#who-is-allowed-to-talk-to-the-hardware">Who is allowed to talk to the hardware</a></li>
   <li><a href="#swapping-the-bottom-layer" id="toc-swapping-the-bottom-layer" class="nav-link" data-scroll-target="#swapping-the-bottom-layer">Swapping the bottom layer</a></li>
+  <li><a href="#information-and-its-carrier" id="toc-information-and-its-carrier" class="nav-link" data-scroll-target="#information-and-its-carrier">Information and its carrier</a></li>
   <li><a href="#what-layers-cost" id="toc-what-layers-cost" class="nav-link" data-scroll-target="#what-layers-cost">What layers cost</a></li>
   <li><a href="#where-to-look-when-it-breaks" id="toc-where-to-look-when-it-breaks" class="nav-link" data-scroll-target="#where-to-look-when-it-breaks">Where to look when it breaks</a></li>
   <li><a href="#what-makes-an-interface-good" id="toc-what-makes-an-interface-good" class="nav-link" data-scroll-target="#what-makes-an-interface-good">What makes an interface good</a></li>
@@ -467,6 +462,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Why can you use something without knowing how it works?</li>
 <li>What lies under the interface you are working with?</li>
 <li>Why can one layer change without the layer above noticing?</li>
+<li>Why does your information not depend on light, or on any other carrier?</li>
 <li>How do you build a system that is larger than your own head?</li>
 <li>What do layers cost, and when is it worth reaching one level deeper?</li>
 <li>Where do you look first when the wrong letters arrive?</li>
@@ -546,7 +542,7 @@ Figure&nbsp;5: Five layers unchanged, one exchanged. Above the symbol layer not 
 </figcaption>
 </figure>
 </div>
-<p>Nothing above the symbol layer. That is why sending over sound is a realistic bonus task in <a href="../challenges/challenge-4.html">Challenge 4</a>, and not because it is a small job. Honesty demands the other half: the achievable symbol rate does change. Everything keeps working, at a different speed. An abstraction makes the swap possible; it does not make it free of consequences.</p>
+<p>Nothing above the symbol layer. We do not rebuild the device in the course, and we do not need to: whoever has separated the layers cleanly could do it in an afternoon. Honesty demands the other half: the achievable symbol rate does change. Everything keeps working, at a different speed. An abstraction makes the swap possible; it does not make it free of consequences.</p>
 <p>A smaller change works the same way. Say you extend your alphabet from four colours to eight:</p>
 <div id="fig-layer-alphabet" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -560,6 +556,10 @@ Figure&nbsp;6: Only the symbol layer changes: the colour table, the calibration 
 </div>
 <p>The tempting wrong answer is “every layer, because each symbol now carries more bits”. But the bit stream is the same bit stream; it is only spread over colours differently. Frame and text encoding stay exactly as they were.</p>
 <p>This is also why the class standard for <a href="../challenges/challenge-4.html">Challenge 4</a> defines the frame <strong>in bits</strong> and not in colours, and why it says nothing about time. Timing is a property of the path, not of the message. If the frame carried a field “symbols per second”, the swap to sound would no longer be clean, because sound tolerates a different rate than light.</p>
+</section>
+<section id="information-and-its-carrier" class="level3">
+<h3 class="anchored" data-anchor-id="information-and-its-carrier">Information and its carrier</h3>
+<p>The thought behind the swap is bigger than the swap. Information always needs something physical to carry it: a colour on the LED, a voltage on a wire, a tone from a loudspeaker, the magnetisation on a hard disk. But it is not that physical thing, and it does not depend on it. The same bit stream you send through light could run through a cable or over a loudspeaker, and everything you built above the lowest layer would not notice. That is the whole reason there is a discipline of its own for information and not just electrical engineering. In computing the idea shows up mainly in the layer model of networks: the lowest layer wraps the transmission medium, and nothing above it knows which one it is. Outside computing the same idea goes by the name substrate independence, in the philosophy of mind and in debates about artificial intelligence. What you send is the bits. Light is just what carries them today, and that is the reason this course is not called light communication.</p>
 </section>
 <section id="what-layers-cost" class="level3">
 <h3 class="anchored" data-anchor-id="what-layers-cost">What layers cost</h3>

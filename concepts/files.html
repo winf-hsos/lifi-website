@@ -355,12 +355,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/information-and-carrier.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Information und ihr Träger</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../concepts/throughput-and-limits.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Throughput and Limits</span></a>
   </div>
@@ -391,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../concepts/encryption.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verschlüsselung</span></a>
+ <span class="menu-text">Encryption</span></a>
   </div>
 </li>
       </ul>
@@ -480,7 +474,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Öffnet man eine Bilddatei im Texteditor, erscheint Unsinn: Der Editor liest jedes Byte als Zeichen. Öffnet man dieselbe Datei in einem Hex-Editor, erscheint etwas Nüchternes und sehr Lesbares: die Bytes selbst, eines nach dem anderen, als zweistellige Hexzahlen. Ein Hex-Editor zeigt keine Deutung, nur den Inhalt. Und in diesem Inhalt lässt sich, wenn man den Aufbau kennt, alles wiederfinden: wie groß das Bild ist, wo die Pixel anfangen, welche Farbe das erste hat.</p>
 <section id="eine-datei-ist-eine-folge-von-bytes" class="level3">
 <h3 class="anchored" data-anchor-id="eine-datei-ist-eine-folge-von-bytes">Eine Datei ist eine Folge von Bytes</h3>
-<p>Das ist die ganze Definition, und sie gilt für jede Datei: Text, Bild, Ton, Programm. Ein Byte hat einen Wert von 0 bis 255, eine Datei hat eine Länge, und die Bytes stehen in einer festen Reihenfolge. Es gibt keine Bilder auf der Festplatte und keine Texte, es gibt nur Bytes, und die Bedeutung entsteht erst beim Lesen. Das habt ihr in <a href="../concepts/code-systems.html">Codesysteme</a> und <a href="../concepts/information-and-carrier.html">Information und ihr Träger</a> schon gesehen; hier geht es darum, wie eine Datei ihre eigene Lesevorschrift mitliefert.</p>
+<p>Das ist die ganze Definition, und sie gilt für jede Datei: Text, Bild, Ton, Programm. Ein Byte hat einen Wert von 0 bis 255, eine Datei hat eine Länge, und die Bytes stehen in einer festen Reihenfolge. Es gibt keine Bilder auf der Festplatte und keine Texte, es gibt nur Bytes, und die Bedeutung entsteht erst beim Lesen. Das habt ihr in <a href="../concepts/code-systems.html">Codesysteme</a> und <a href="information-and-carrier.qmd">Information und ihr Träger</a> schon gesehen; hier geht es darum, wie eine Datei ihre eigene Lesevorschrift mitliefert.</p>
 <p>Das kleinstmögliche brauchbare Beispiel ist eine Bitmap mit vier mal zwei Pixeln, 78 Bytes lang. So sieht sie im Hex-Editor aus; links die Position des ersten Bytes der Zeile, ebenfalls hexadezimal:</p>
 <pre><code>0000  42 4d 4e 00 00 00 00 00 00 00 36 00 00 00 28 00
 0010  00 00 04 00 00 00 02 00 00 00 01 00 18 00 00 00
@@ -525,7 +519,9 @@ Abbildung&nbsp;1: Der Aufbau derselben 78 Bytes: ein Dateikopf von 14 Bytes, ein
 </section>
 <section id="fragen-üben" class="level2">
 <h2 class="anchored" data-anchor-id="fragen-üben">Fragen üben</h2>
-<p>Übungsfragen zu diesem Konzept folgen, sobald der zugehörige Input steht.</p>
+<div class="fragen-quiz" data-quelle="../assets/questions/files.json">
+
+</div>
 </section>
 <section id="literatur" class="level2">
 <h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
