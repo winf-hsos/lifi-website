@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>overview</title>
+  <link rel="stylesheet" href="theme.css?v=20260915a">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260915a">
+</head>
+<body>
+<div class="deck"
+     data-title="overview"
+     data-subtitle="the module, the project, and where everything belongs · prof. dr. nicolas meseth"
+     data-parts='["the goal", "one question, four questions", "five challenges", "how we work"]'>
+
+  <section class="slide title">
+    <aside class="notes">Das Deck für den ersten Tag, und das Deck, auf das ich das ganze Semester zurückkomme: Was wir bauen, welche Frage dahintersteht, wie die Konzepte geordnet sind, wie die Challenges aufeinander aufbauen, und wie wir arbeiten. Keine Definitionen heute, nur die Karte.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Vier Teile. Erst das Ziel und wofür der Trick mit der Lampe gut ist. Dann die Karte: eine Frage, vier Fragen, neunzehn Konzepte. Dann die fünf Challenges und wo sie auf der Karte sitzen. Zum Schluss, wie wir arbeiten: zu zweit, mit Gerät, mit KI, und was zählt.</aside>
+  </section>
+
+  <!-- ================= Teil 1: the goal ================= -->
+
+  <section class="slide part" data-part="the goal">
+    <aside class="notes">Ein Foto, zwei Laptops, und dazwischen nichts als Licht.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/goal.jpg" alt="">
+    <div class="photo-text">there is a photo<br>on this laptop.<br>how does it get<br>to the other one?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Kein Kabel, kein WLAN, kein Stick. Nur eine Lampe und ein Auge. Das ist das Semester in einem Satz: Am Ende geht dieses Foto über diesen Spalt, eine Handbreit, von einem Rechner zum anderen. Und gleich der zweite Satz, weil er der wichtigere ist: Dieses Modul handelt nicht davon, Fotos mit Licht zu verschicken. Das braucht niemand. Die Lampe ist ein Trick, und die nächsten Minuten erklären, wofür.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the device</h2>
+    <div class="figure" id="fig-device"></div>
+    <div class="punch">a lamp, an eye, and a wall between them. two of them face each other, so each can send and receive.</div>
+    <aside class="notes">Die Lampe ist eine RGB-LED, drei Lämpchen in einem, jedem sagt ihr, wie hell es leuchten soll. Das Auge ist ein Farbsensor, der vier Zahlen meldet: Rot, Grün, Blau und Licht insgesamt. Der Steg dazwischen verhindert, dass das Gerät seine eigene Lampe sieht. Weil das Gegenüber umgedreht steht, schaut sein Auge auf meine Lampe und meine auf seine. Den Rückweg gibt es also von Anfang an, wir benutzen ihn aber erst in der letzten Challenge. Alles andere am Gerät, Gehäuse, Platine, USB, steht auf der Hardware-Seite.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>why a lamp</h2>
+    <div class="content" style="top: 150px">
+      <div class="statement">everything interesting in a computer is invisible.</div>
+      <div class="lines">
+        <div>it happens inside chips, in millionths of a second, behind software somebody else wrote.</div>
+        <div>this device does the same thing a few times a second, on your desk.</div>
+        <div>you can put your hand in the way and watch what goes wrong.</div>
+      </div>
+    </div>
+    <div class="punch">everything this module wants to teach you can be seen on that table.</div>
+    <aside class="notes">Man kann einen Computer ein Leben lang benutzen, ohne je zu sehen, was er mit einem Foto wirklich macht. Das Gerät holt ein kleines Stück davon ins Sichtbare: Es steht vor euch und blinkt. Was im Rechner millionenfach pro Sekunde passiert, passiert hier ein paarmal pro Sekunde, und ihr habt es selbst gebaut. Wie ein Foto zu Zahlen wird, wie Zahlen zu Licht werden, was unterwegs schiefgeht und wie man es merkt: alles auf diesem Tisch.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>what this module is about</h2>
+    <div class="content">
+      <div class="statement">how can we solve<br>complex problems with computers?</div>
+      <div class="sidenote">one question. every week is a piece of the answer.</div>
+    </div>
+    <aside class="notes">Das ist die Frage, die über allem steht, und ihr findet sie auf jeder Konzeptseite wieder. Der Rest dieses Decks ist eine Karte: wie sich diese Frage in Teilfragen zerlegt, und wo das Projekt darin sitzt.</aside>
+  </section>
+
+  <!-- ================= Teil 2: one question, four questions ================= -->
+
+  <section class="slide part" data-part="one question, four questions">
+    <aside class="notes">Die Karte. Sie kommt heute einmal Stück für Stück, und danach im Semester immer wieder.</aside>
+  </section>
+
+  <section class="slide" data-on-show="mapSteps" data-on-step="mapSteps">
+    <h2>the map</h2>
+    <div class="figure" id="fig-map-steps"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
+    <aside class="notes">Schritt für Schritt. Ein Computer macht vier Dinge mit Information: Er stellt sie dar, er speichert sie, er überträgt sie, er verarbeitet sie. Das sind die vier Fragen. Unter jeder steht, was der Computer dabei mit Bits tut: Bits machen, Bits ablegen, Bits schicken, Bits verrechnen. Und darunter die Konzepte, neunzehn Stück, jedes gehört zu genau einer Frage. Die Farbe bleibt das ganze Semester dieselbe: Wo eine Folie orange ist, geht es ums Darstellen, wo sie magenta ist, ums Übertragen. Ganz oben, in Grau, fünf Arbeitsweisen, die ihr überall braucht: Probleme zerlegen, das Modell Eingabe, Verarbeitung, Ausgabe, Algorithmen, Messen, Schichten. Keine Sorge: Heute müsst ihr keines dieser Konzepte verstehen. Ihr sollt nur sehen, dass es sie gibt und wo sie hingehören.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the project on the map</h2>
+    <div class="figure" id="fig-map"></div>
+    <div class="punch">your device touches all four questions. that is why it is the project.</div>
+    <aside class="notes">Warum ausgerechnet dieses Projekt? Das Foto liegt als Datei auf der Platte: speichern. Seine Bytes stellen ein Bild dar: darstellen. Eine Prüfsumme rechnet über sie, damit der Empfänger weiß, ob alles angekommen ist: verarbeiten. Und das Licht trägt sie hinüber: übertragen. Ein einziges Gerät, und alle vier Fragen stecken darin. Deshalb ist das Gerät das Mittel und nicht der Zweck.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>the four questions, in one line each</h2>
+    <div class="figure" id="fig-four"></div>
+    <aside class="notes">Je Frage ein Satz, den ihr heute schon versteht. Darstellen: Für den Rechner ist das Foto eine Liste von Zahlen, und die Zahlen sind Zustände von etwas Physischem, eine Spannung, ein Lichtblitz. Speichern: Das Foto muss irgendwo liegen, vorher und nachher. Übertragen: Der Empfänger weiß nicht, wann ein Buchstabe anfängt, und das Licht, das er sieht, ist nie genau das, was gesendet wurde. Verarbeiten: Jemand muss aus den Zahlen wieder ein Bild machen und prüfen, ob sie heil sind. Der Rest ist das Semester.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>what the exam is about</h2>
+    <div class="content" style="top: 150px">
+      <div class="statement">the concepts.</div>
+      <div class="lines">
+        <div>the project is the material on which you explain them.</div>
+        <div>whoever passes every challenge and cannot say why digital transmission tolerates noise does not pass the exam.</div>
+      </div>
+    </div>
+    <aside class="notes">Das gehört in die erste Stunde, nicht in die letzte. Die Platzierung im Wettbewerb zählt nicht zur Note. Alle Challenges zu bestehen ist die Zulassung. Geprüft werden die Konzepte, einzeln, im Gespräch, und ihr werdet jedes davon am eigenen Gerät erlebt haben, bevor es geprüft wird. Vorbereiten müsst ihr euch trotzdem; ihr fangt nur nicht bei null an.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>the map lives on the website</h2>
+    <div class="embed"><iframe src="https://docs.lifi-project.de/concepts/index.html" title="the overview page"></iframe></div>
+    <aside class="notes">Jedes Konzept hat eine Seite: Zusammenfassung mit Leitfragen, die Erklärung, die Folien aus der Sitzung, Übungsfragen im Klausurformat, Literatur. Diese Übersichtsseite ist der Einstieg. Sie trägt dieselbe Karte, und sie sagt bei jedem Konzept, in welcher Challenge ihr es braucht.</aside>
+  </section>
+
+  <!-- ================= Teil 3: five challenges ================= -->
+
+  <section class="slide part" data-part="five challenges">
+    <aside class="notes">Fünf Challenges, und jede hebt genau eine Schwierigkeit an.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>one new difficulty at a time</h2>
+    <div class="figure" id="fig-challenges"></div>
+    <div class="punch">each challenge adds exactly one new difficulty. everything else stays as you know it.</div>
+    <aside class="notes">Challenge 0 ist kein Wettbewerb; sie endet, wenn die LED leuchtet, weil ihr es gesagt habt, und der Sensor gegenüber es merkt. Ab Challenge 1 treten alle Teams unter denselben Bedingungen an, und jede Challenge baut auf dem Ergebnis der vorigen auf: Das Alphabet, das ihr in 1 ausmesst, schickt die Wörter in 2. Der Takt, der in 2 funktioniert, ist das, was der Horcher in 3 ohne Hilfe wiederfinden muss. Und 4 setzt alles zusammen und gibt den Rückweg frei, damit der Empfänger endlich mit dem Sender reden kann. Weil immer nur eines neu ist, wisst ihr, wenn etwas bricht, meistens, wo ihr suchen müsst.</aside>
+  </section>
+
+  <section class="slide" data-on-show="mapChallenges" data-on-step="mapChallenges">
+    <h2>where each challenge sits on the map</h2>
+    <div class="figure" id="fig-map-challenges"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
+    <aside class="notes">Dieselbe Karte, jetzt mit der Reihenfolge darin. Challenge 0: die Arbeitsweisen, erste eigene Zeilen. Challenge 1: analog und digital, Symbole, Signal und Rauschen, und zum ersten Mal richtig messen. Challenge 2: Codes, Zahlensysteme, Takt, die erste Vereinbarung. Challenge 3: Protokolle, ganz. Challenge 4: alles, was Speichern und Verarbeiten heißt, geballt am Ende, wenn zum ersten Mal eine ganze Datei durch die Luft geht. Man sieht: Erst orange und magenta, dann grün und blau. Genau dieses Bild zeige ich im Semester wieder, jedes Mal mit dem, was gerade dran ist.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>what every challenge produces</h2>
+    <div class="figure" id="fig-produces"></div>
+    <aside class="notes">Drei Dinge kommen aus jeder Challenge, und sie sind es wert, vom ersten Tag an aufgehoben zu werden. Messprotokolle, die euer Partner eine Woche später noch versteht. Eine Beschreibung eurer Lösung, ab Challenge 3 eine vollständige Spezifikation eures Protokolls. Und das Irrtumsprotokoll: zwei, drei Stellen, an denen der Assistent etwas vorgeschlagen hat und eine Messung es widerlegt hat. Das ist kein Geständnis. Es ist das nützlichste Dokument, das ihr schreibt, weil es zeigt, wo das Wissen des Assistenten aufhört und eures anfängt.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>what counts</h2>
+    <div class="content">
+      <div class="lines">
+        <div>the ranking in the competition does not count towards your grade.</div>
+        <div>passing every challenge is what admits you to the exam.</div>
+        <div>the exam is about the concepts, one person at a time.</div>
+      </div>
+    </div>
+    <aside class="notes">Die Wiederholung ist Absicht. Das ist der Satz, den man am Ende des Semesters noch wissen soll: Der Wettbewerb ist der Weg, die Konzepte sind das Ziel, und geprüft wird, ob ihr sie erklären könnt.</aside>
+  </section>
+
+  <!-- ================= Teil 4: how we work ================= -->
+
+  <section class="slide part" data-part="how we work">
+    <aside class="notes">Zu zweit, mit je einem Gerät, mit KI, und mit der Lampe als Schiedsrichter.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>two people, two devices, one link</h2>
+    <div class="content">
+      <div class="lines">
+        <div>one device each, so between the two of you, you own both ends.</div>
+        <div>whoever builds only the sender has to guess what the receiver sees. you can look.</div>
+        <div>python, vs code, and an ai assistant at your side from day one.</div>
+      </div>
+    </div>
+    <aside class="notes">Das Projekt ist für zwei Leute gebaut. Die beiden Enden haben verschiedene Aufgaben; teilt euch die Arbeit und tauscht ab und zu, damit beide beide Seiten gesehen haben. Wenn eine Seite nicht geht, liegt die Antwort meist auf der anderen, und genau dieses Gespräch ist das, worum das Projekt gebaut ist. Programmiert wird in Python, in VS Code, mit einem kleinen Modul, das mit dem Gerät redet, und mit einem KI-Assistenten von der ersten Zeile an. Was zu installieren ist, steht auf der Website.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the lamp has the last word</h2>
+    <div class="content" style="top: 150px">
+      <div class="statement">your assistant knows nothing<br>about your device.</div>
+      <div class="lines">
+        <div>it will tell you that eight colours are a good alphabet. is that right?</div>
+        <div>there is one honest way to find out.</div>
+      </div>
+    </div>
+    <div class="punch">measure before, measure after, and write down what the assistant got wrong.</div>
+    <aside class="notes">KI ist erlaubt und erwünscht: zum Programmieren, zum Erklären dessen, was ihr im Saal nicht verstanden habt, zum Nachschlagen eurer Bauteile. Das Interessante ist, wo sie aufhört. Wie weit eure Strecke reicht und wie schnell sie geht, kann sie nur raten. Ihr könnt messen. Einen Vorschlag, der wirklich hilft, von einem zu unterscheiden, der nur plausibel klingt, ist eine Fähigkeit, die ihr ab jetzt in jedem Fach braucht, und hier übt ihr sie, weil die Lampe immer das letzte Wort hat.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try things: the demonstrators</h2>
+    <div class="embed"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/" title="the demonstrators"></iframe></div>
+    <aside class="notes">Zu fast jedem Konzept gibt es ein kleines Spielzeug im Browser: ein Byte schalten, eine Datei kaputtmachen, eine Übertragung mit Rauschen ansehen, einen Text verschlüsseln. Sie sind auf den Konzeptseiten eingebettet und stehen hier alle nebeneinander, mit dem Konzept als Etikett. Probiert sie aus, sie sind dafür da.</aside>
+  </section>
+
+  <!-- ================= Schluss ================= -->
+
+  <section class="slide">
+    <h2>today</h2>
+    <div class="content">
+      <div class="lines">
+        <div>1  one question, four questions: represent, store, transfer, process.</div>
+        <div>2  nineteen concepts, five colours, one map. you will see it again.</div>
+        <div>3  five challenges, one new difficulty each.</div>
+        <div>4  the exam is about the concepts. the project is where you meet them.</div>
+        <div>5  the lamp has the last word.</div>
+      </div>
+      <div class="sidenote">next: install the software, read the hardware page, start challenge 0.</div>
+    </div>
+    <aside class="notes">Fünf Sätze zum Mitnehmen, und der nächste Schritt: Software installieren, die Hardware-Seite einmal lesen, damit die Teile Namen haben, wenn ihr sie einsteckt, und Challenge 0 anfangen.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/arrived.jpg" alt="">
+    <div class="photo-text">by the end of term,<br>a picture crosses<br>that gap.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2)</div>
+    <aside class="notes">Wenn ihr am Ende des Semesters sagt, das war ein Modul über Licht, dann habe ich etwas falsch gemacht.</aside>
+  </section>
+
+</div>
+<!-- Reihenfolge ist Pflicht: deck.js VOR stagekit.js, sonst fehlen die
+     data-on-show-Funktionen beim ersten Anzeigen. -->
+<script src="../stagekit/draw.js?v=20260915a"></script>
+<script src="deck.js?v=20260915d"></script>
+<script src="../stagekit/stagekit.js?v=20260915a"></script>
+</body>
+</html>

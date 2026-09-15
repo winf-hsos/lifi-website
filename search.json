@@ -192,7 +192,7 @@
     "href": "index.html#the-question-behind-everything",
     "title": "The Goal",
     "section": "The question behind everything",
-    "text": "The question behind everything\nThis module has one big question, and every week is a piece of the answer: how can we solve complex problems with computers?\nTo answer it you need to understand what a computer does with information, and there are four things it does. It represents information, it stores it, it transfers it, and it processes it. Those four verbs are the four parts of the concept map, and your device touches all of them.\nRepresenting. To a computer your photo is not a picture. It is a list of numbers. And the numbers are not numbers either, they are states of something physical: a voltage, a magnetised spot, a flash of light. When your file crosses the gap, you will have built that whole chain yourself, from meaning down to the lamp and back up to meaning. On the way you will meet the border where an endlessly smooth world is cut into a handful of separate states. That same chain is in every computer, every hard disk and every cable. Once you have built it once, you will recognise it everywhere.\nStoring. The photo has to sit somewhere before it is sent and somewhere after it arrives. You will open a file and look at its bytes one by one, change one, and watch the picture obey. After that a file is no longer a mysterious icon.\nTransferring. This is where the lamp does most of its work. The receiver does not know when a letter begins and when it ends. It does not even know whether anyone is sending. The light it sees is never quite the light that was sent. Every trick that makes the link faster makes it less reliable. All of this is true for Wi-Fi and for undersea cables too, but there it happens too fast to watch. Here you can watch.\nProcessing. Somewhere a computer has to turn the numbers that arrive back into a picture, check whether they arrived correctly, and decide what to do if they did not. That is done with a surprisingly small toolbox of logic, and you will see how far that toolbox reaches.",
+    "text": "The question behind everything\nThis module has one big question, and every week is a piece of the answer: how can we solve complex problems with computers?\nTo answer it you need to understand what a computer does with information, and there are four things it does. It represents information, it stores it, it transfers it, and it processes it. Those four verbs are the four parts of the map of the module, and your device touches all of them.\nRepresenting. To a computer your photo is not a picture. It is a list of numbers. And the numbers are not numbers either, they are states of something physical: a voltage, a magnetised spot, a flash of light. When your file crosses the gap, you will have built that whole chain yourself, from meaning down to the lamp and back up to meaning. On the way you will meet the border where an endlessly smooth world is cut into a handful of separate states. That same chain is in every computer, every hard disk and every cable. Once you have built it once, you will recognise it everywhere.\nStoring. The photo has to sit somewhere before it is sent and somewhere after it arrives. You will open a file and look at its bytes one by one, change one, and watch the picture obey. After that a file is no longer a mysterious icon.\nTransferring. This is where the lamp does most of its work. The receiver does not know when a letter begins and when it ends. It does not even know whether anyone is sending. The light it sees is never quite the light that was sent. Every trick that makes the link faster makes it less reliable. All of this is true for Wi-Fi and for undersea cables too, but there it happens too fast to watch. Here you can watch.\nProcessing. Somewhere a computer has to turn the numbers that arrive back into a picture, check whether they arrived correctly, and decide what to do if they did not. That is done with a surprisingly small toolbox of logic, and you will see how far that toolbox reaches.",
     "crumbs": [
       "The Goal"
     ]
@@ -242,7 +242,7 @@
     "href": "index.html#what-stays-with-you",
     "title": "The Goal",
     "section": "What stays with you",
-    "text": "What stays with you\nYou will probably never touch the device again after the semester. The questions behind it, though, will keep coming back: how is something represented digitally? Why does information get lost on the way? How do I cut a problem so that I can solve it? And when can I trust an answer I did not check myself?\nIf at the end of the semester you say this was a module about sending light, then I have done something wrong.\nReady? Here is where to go next:\n\nOverview: the device, your partner, the five challenges\nRequired Software: what to install, step by step\nHardware: the parts and the case\nWorking with your AI assistant",
+    "text": "What stays with you\nYou will probably never touch the device again after the semester. The questions behind it, though, will keep coming back: how is something represented digitally? Why does information get lost on the way? How do I cut a problem so that I can solve it? And when can I trust an answer I did not check myself?\nIf at the end of the semester you say this was a module about sending light, then I have done something wrong.\nReady? Here is where to go next:\n\nOverview: the map of the module, the concepts, the challenges and what they need\nThe Project: the device, your partner, the tools, what every challenge produces\nRequired Software: what to install, step by step\nHardware: the parts and the case\nWorking with your AI assistant",
     "crumbs": [
       "The Goal"
     ]
@@ -970,78 +970,78 @@
   {
     "objectID": "challenges/index.html",
     "href": "challenges/index.html",
-    "title": "Overview",
+    "title": "The Project",
     "section": "",
     "text": "Here is the whole project on one page. If you read only one page before you start, make it this one.",
     "crumbs": [
       "LiFi Project",
-      "Overview"
+      "The Project"
     ]
   },
   {
     "objectID": "challenges/index.html#the-device",
     "href": "challenges/index.html#the-device",
-    "title": "Overview",
+    "title": "The Project",
     "section": "The device",
     "text": "The device\nEach device is a small box with two things on its front: a lamp and an eye. The lamp is an RGB LED, which means three tiny lights in one, red, green and blue, and you tell each one how bright to shine. The eye is a colour sensor that reports how much red, green, blue and light in general reaches it. A thin wall between the two makes sure the box does not see its own lamp. Inside sits a small controller board that talks to your laptop over USB. That is all. The Hardware page shows every part and the 3D-printed case.\nTwo of these boxes stand on the table facing each other. Because the second box is turned around, its eye looks at the first box’s lamp and its lamp at the first box’s eye. So each box can send and receive, and a pair of boxes is a complete link in both directions. For most of the project you will only use one direction. The way back is waiting for you in the last challenge.\nThe distance between the two boxes is fixed and the same for everyone. You are welcome to improve the optics with whatever you can build yourself: a tube, a shade, a mirror. What you may not add is another light source or another sensor. The rules are on the Hardware page under optical setup.",
     "crumbs": [
       "LiFi Project",
-      "Overview"
+      "The Project"
     ]
   },
   {
     "objectID": "challenges/index.html#you-and-your-partner",
     "href": "challenges/index.html#you-and-your-partner",
-    "title": "Overview",
+    "title": "The Project",
     "section": "You and your partner",
     "text": "You and your partner\nThe project is designed for two people. You get one device each, so between the two of you, you own both ends of the link. That matters more than it sounds. Whoever builds only the sender has to guess what the receiver sees. You do not have to guess. You can look.\nEach of you works on your own laptop with your own box, and you keep the boxes for the whole project. The two ends of a link have different jobs, so split the work, and swap roles now and then so that both of you have seen both sides. When one side does not work, the other side is usually where the answer is, and that is exactly the kind of conversation the project is built around.\nIf you are doing this on your own, you can still get very far: connect both boxes to one laptop and run the sender and the receiver as two programs. You lose the partner, not the project.",
     "crumbs": [
       "LiFi Project",
-      "Overview"
+      "The Project"
     ]
   },
   {
     "objectID": "challenges/index.html#the-tools",
     "href": "challenges/index.html#the-tools",
-    "title": "Overview",
+    "title": "The Project",
     "section": "The tools",
     "text": "The tools\nYou program in Python, in Visual Studio Code, with an AI assistant at your side. A small module called lifi_hardware talks to the box for you, so your first program is a few lines long. Everything you need to install, and in what order, is under Required Software. How to work with the assistant so that it helps you rather than misleads you has its own page.",
     "crumbs": [
       "LiFi Project",
-      "Overview"
+      "The Project"
     ]
   },
   {
     "objectID": "challenges/index.html#the-five-challenges",
     "href": "challenges/index.html#the-five-challenges",
-    "title": "Overview",
+    "title": "The Project",
     "section": "The five challenges",
     "text": "The five challenges\nThe project is cut into five challenges. Each one adds exactly one new difficulty, and everything else stays as you already know it. That is deliberate: when something breaks, you will usually know where to look.\n\n\n\n\nChallenge\nThe question it asks\n\n\n\n\n0\nThe Spark\nCan you bring your device to life?\n\n\n1\nThe Alphabet\nHow many different signals can your receiver tell apart reliably?\n\n\n2\nThe Word\nCan you send a whole word, and how fast?\n\n\n3\nThe Listener\nCan the receiver find the start of a message on its own?\n\n\n4\nThe Packet\nCan you send a real file, and get it there correct and fast?\n\n\n\nChallenge 0 is not a competition. It ends when your LED lights up because you told it to and the sensor across the table notices. From Challenge 1 on, every team competes under the same conditions, and each challenge builds on the result of the one before. The alphabet you measure in Challenge 1 is what you send words with in Challenge 2. The timing that works in Challenge 2 is what the listener in Challenge 3 has to recover without help. Challenge 4 puts all of it together and adds the way back, so the receiver can finally talk to the sender.\nEvery challenge page has the same shape: the task, what is new about it, what is measured, what you hand in, the concepts you need for it, the traps we know about, and something extra for teams that finish early.",
     "crumbs": [
       "LiFi Project",
-      "Overview"
+      "The Project"
     ]
   },
   {
     "objectID": "challenges/index.html#what-every-challenge-produces",
     "href": "challenges/index.html#what-every-challenge-produces",
-    "title": "Overview",
+    "title": "The Project",
     "section": "What every challenge produces",
     "text": "What every challenge produces\nThree kinds of things come out of every challenge, and they are worth keeping from the first day.\nMeasurement logs. What did you change, what did you keep the same, and what came out? A good log is one your partner can read a week later and still understand.\nA description of your solution. How does your link work, in enough detail that another team could rebuild it? From Challenge 3 on this grows into a full specification of your protocol.\nA log of mistakes. Two or three places where the AI assistant suggested something and a measurement proved it wrong. This is not a confession. It is the most useful document you will write, because it shows exactly where the assistant’s knowledge ends and yours begins. More about it under Working with your AI assistant.\nTaken together, these documents are the story of how you solved the problem. They are also the best preparation for anyone who wants to explain, later, why their device works the way it does.",
     "crumbs": [
       "LiFi Project",
-      "Overview"
+      "The Project"
     ]
   },
   {
     "objectID": "challenges/index.html#where-to-start",
     "href": "challenges/index.html#where-to-start",
-    "title": "Overview",
+    "title": "The Project",
     "section": "Where to start",
     "text": "Where to start\nWith Challenge 0. Before that, install the required software and read the page on the hardware once, so that the parts have names when you plug them in.",
     "crumbs": [
       "LiFi Project",
-      "Overview"
+      "The Project"
     ]
   },
   {
@@ -1314,7 +1314,7 @@
     "href": "ai/index.html#what-you-can-use-it-for",
     "title": "Working with your AI assistant",
     "section": "What you can use it for",
-    "text": "What you can use it for\nWriting code is the obvious use, and it is far from the only one. Some concrete suggestions, roughly in the order you will need them.\nInstalling the software. The Required Software page has eight steps, and something usually goes wrong in one of them. As soon as OpenCode itself is running, it can take over: paste the error message, or take a screenshot of the window you are stuck at and give it that. The assistant can read screenshots. It will tell you what the message means and what to do next, on your operating system, in your language.\nUnderstanding what was said in class. If something stayed unclear, have it explained again, in other words, with an example, until it sits. An assistant is patient and thinks no question is too simple. For many students this is the most valuable use of all.\nReading an error message. Python’s error messages are honest but unfriendly. Paste the whole message, including the lines above it, and ask what it is complaining about. Then fix it yourself. You will start recognising the common ones within a week.\nFinding ideas when you are stuck. Describe your problem and ask for several ways to solve it. You do not have to take any of them. Often it is enough to see three options to notice which one fits your setup.\nGetting feedback before you build. Describe what you plan to do and ask what could go wrong. Show your code and ask what you have overlooked. This is different from having a solution handed to you, and it is where the assistant is at its best.\nMaking sense of your measurements. Your module writes a log of everything the device did. Give the assistant that file, or a table you copied from it, and ask what it sees: which two colours are closest together, how much the readings wobble, whether something drifted over time. It is good at spotting patterns in numbers. It is not good at knowing whether the numbers are right, so keep that part.\nLooking things up. Datasheets, libraries, technical terms you meet and do not know. Check what can be checked, especially numbers.\nWriting your documentation. Dictate what you did and let it draft the text, then correct it. A measurement log that the assistant has tidied up is easier for your partner to read. What you must not let it do is invent the measurements.\nTesting your protocol specification. In Challenge 3 another team has to build a receiver from your specification. Before you hand it over, give it to the assistant in a fresh session and ask it to describe the receiver it would build. Where it guesses, your specification has a hole.\nPractising for the exam. Ask it to quiz you on a concept from the concept map, then explain your answers back to it. It will tell you where your explanation is thin.",
+    "text": "What you can use it for\nWriting code is the obvious use, and it is far from the only one. Some concrete suggestions, roughly in the order you will need them.\nInstalling the software. The Required Software page has eight steps, and something usually goes wrong in one of them. As soon as OpenCode itself is running, it can take over: paste the error message, or take a screenshot of the window you are stuck at and give it that. The assistant can read screenshots. It will tell you what the message means and what to do next, on your operating system, in your language.\nUnderstanding what was said in class. If something stayed unclear, have it explained again, in other words, with an example, until it sits. An assistant is patient and thinks no question is too simple. For many students this is the most valuable use of all.\nReading an error message. Python’s error messages are honest but unfriendly. Paste the whole message, including the lines above it, and ask what it is complaining about. Then fix it yourself. You will start recognising the common ones within a week.\nFinding ideas when you are stuck. Describe your problem and ask for several ways to solve it. You do not have to take any of them. Often it is enough to see three options to notice which one fits your setup.\nGetting feedback before you build. Describe what you plan to do and ask what could go wrong. Show your code and ask what you have overlooked. This is different from having a solution handed to you, and it is where the assistant is at its best.\nMaking sense of your measurements. Your module writes a log of everything the device did. Give the assistant that file, or a table you copied from it, and ask what it sees: which two colours are closest together, how much the readings wobble, whether something drifted over time. It is good at spotting patterns in numbers. It is not good at knowing whether the numbers are right, so keep that part.\nLooking things up. Datasheets, libraries, technical terms you meet and do not know. Check what can be checked, especially numbers.\nWriting your documentation. Dictate what you did and let it draft the text, then correct it. A measurement log that the assistant has tidied up is easier for your partner to read. What you must not let it do is invent the measurements.\nTesting your protocol specification. In Challenge 3 another team has to build a receiver from your specification. Before you hand it over, give it to the assistant in a fresh session and ask it to describe the receiver it would build. Where it guesses, your specification has a hole.\nPractising for the exam. Ask it to quiz you on a concept from the overview, then explain your answers back to it. It will tell you where your explanation is thin.",
     "crumbs": [
       "LiFi Project",
       "Software",
@@ -2072,45 +2072,67 @@
   {
     "objectID": "concepts/index.html",
     "href": "concepts/index.html",
-    "title": "Concepts",
+    "title": "Overview",
     "section": "",
-    "text": "The device you build is not the goal. It is the object on which a set of concepts becomes visible that would otherwise stay invisible. These pages collect them.\nEvery concept meets you at a particular point in the project, usually as a problem before it appears as a term. That is deliberate: you are meant to notice first that something does not work, and to learn afterwards what it is called and why it behaves that way.\nEvery page starts with a summary and the questions it is about. Then the concept is explained in full, with its diagrams. For looking things up again, the slides from the session follow, and later some further reading.\nTake this part seriously: the concepts are what the exam is about. Your project is the material on which you explain them, but it does not replace understanding them. Whoever has passed every challenge and still cannot say why digital transmission tolerates noise does not pass the exam.",
+    "text": "This page is the map. It shows how the module is put together: the one question behind it, the four questions underneath, the nineteen concepts and their five colours, and the five challenges of the project with the concepts each of them needs. You will see this map again and again during the semester, on the slides and on this page, each time with the part lit up that we are working on. If you ever lose track of where you are, come back here.",
     "crumbs": [
       "Concepts",
-      "The Map"
+      "Overview"
     ]
   },
   {
     "objectID": "concepts/index.html#one-question-four-questions",
     "href": "concepts/index.html#one-question-four-questions",
-    "title": "Concepts",
+    "title": "Overview",
     "section": "One question, four questions",
-    "text": "One question, four questions\nThe module has one big question: how can we solve complex problems with computers? Four questions about information sit underneath it, and every concept on these pages belongs to one of them. Above all four lie the ways of working that you need everywhere: cutting problems, the input-processing-output model, measuring, and thinking in layers. The colours on this map are the same on the slides: whenever a session works on one of the four questions, its colour tells you which.\n\n\n\n\n\n\nAbbildung 1: The map of the module. One big question, four questions about information, and the project at the bottom: the file is stored, its bytes represent a picture, a checksum processes them, and the light transfers them.",
+    "text": "One question, four questions\nThe module has one big question: how can we solve complex problems with computers? To answer it you need to understand what a computer does with information, and there are four things it does. It represents information, it stores it, it transfers it, and it processes it.\n\n\n\n\n\n\nFigure 1: The map of the module. One big question, four questions about information, five ways of working above them, and the project at the bottom: the file is stored, its bytes represent a picture, a checksum processes them, and the light transfers them.\n\n\n\nEach of the four questions has a colour, and the colour stays the same everywhere: on this page, on every slide, on every concept page. Whenever a session is orange, it is about representing information; whenever it is magenta, it is about transferring it. In one line each:\n\nRepresenting (orange, making bits). To a computer your photo is a list of numbers, and the numbers are states of something physical: a voltage, a magnetised spot, a flash of light.\nStoring (green, storing bits). The photo has to sit somewhere before it is sent and somewhere after it arrives.\nTransferring (magenta, sending bits). The receiver does not know when a letter begins. The light it sees is never quite the light that was sent.\nProcessing (blue, processing bits). Somebody has to turn the numbers back into a picture and check whether they arrived correctly.\n\nAbove the four questions sit five ways of working, in grey, because you need them everywhere and not just for one of the questions: cutting problems into pieces you can test, the model of input, processing and output, algorithms and programs, measuring and experimenting, and thinking in layers.\nAt the bottom of the map is the project, and this is why it is the project: your device touches all four questions. The photo is stored as a file. Its bytes represent a picture. A checksum processes them so the receiver can tell whether they arrived intact. And the light transfers them across the gap.\n\n\n\n\n\n\nFigure 2: Two devices facing each other. Each has a lamp and an eye on its front with a wall between them; because the second device is turned around, its eye looks at the first device’s lamp. The way back is there from the start but is used only in the last challenge.",
     "crumbs": [
       "Concepts",
-      "The Map"
+      "Overview"
     ]
   },
   {
-    "objectID": "concepts/index.html#all-concepts",
-    "href": "concepts/index.html#all-concepts",
-    "title": "Concepts",
-    "section": "All concepts",
-    "text": "All concepts\nThe order inside each group is the order in which the concepts appear in the semester; the last column says where in the project you need them.\nSolving problems (how you think and work, needed everywhere)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nCutting Problems\nC0 to C4\n\n\nProblem Solving with Computers\nC0 to C4\n\n\nAlgorithms and Programs\nfrom C0, central in C1 and C2\n\n\nMeasuring and Experimenting\nfrom C1\n\n\nAbstraction and Layers\nfrom C2\n\n\n\nRepresenting information (making bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nAnalog and Digital\nC1\n\n\nSymbols and Information\nC1\n\n\nZahlensysteme\nC2\n\n\nCode Systems\nC2\n\n\n\nStoring information (storing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nMemory\nC4\n\n\nDateien\nC4\n\n\n\nTransferring information (sending bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nSignal and Noise\nC1\n\n\nSampling and Synchronization\nC2\n\n\nProtocols\nC2 and C3\n\n\nErrors and Redundancy\nC4\n\n\nThroughput and Limits\nC4\n\n\n\nProcessing information (processing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nLogic and Arithmetic\nC4, first contact in C2\n\n\nCompression\nC4\n\n\nEncryption\nC4, optional",
+    "objectID": "concepts/index.html#the-concepts",
+    "href": "concepts/index.html#the-concepts",
+    "title": "Overview",
+    "section": "The concepts",
+    "text": "The concepts\nNineteen concepts, in five families. The order inside each family is the order in which you meet them during the semester; the last column says where in the project you need them. Every concept has its own page with a summary, the explanation, the slides, practice questions in the exam format, and further reading.\nSolving problems (grey: how you think and work, needed everywhere)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nCutting Problems\nC0 to C4\n\n\nInput, Processing, Output\nC0 to C4\n\n\nAlgorithms and Programs\nfrom C0, central in C1 and C2\n\n\nMeasuring and Experimenting\nfrom C1\n\n\nAbstraction and Layers\nfrom C2\n\n\n\nRepresenting information (orange: making bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nAnalog and Digital\nC1\n\n\nSymbols and Information\nC1\n\n\nNumber Systems\nC2\n\n\nCode Systems\nC2\n\n\n\nStoring information (green: storing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nMemory\nC4\n\n\nFiles\nC4\n\n\n\nTransferring information (magenta: sending bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nSignal and Noise\nC1\n\n\nSampling and Synchronization\nC2\n\n\nProtocols\nC2 and C3\n\n\nErrors and Redundancy\nC4\n\n\nThroughput and Limits\nC4\n\n\n\nProcessing information (blue: processing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nLogic and Arithmetic\nC4, first contact in C2\n\n\nCompression\nC4\n\n\nEncryption\nC4, optional",
     "crumbs": [
       "Concepts",
-      "The Map"
+      "Overview"
     ]
   },
   {
-    "objectID": "concepts/index.html#by-challenge",
-    "href": "concepts/index.html#by-challenge",
-    "title": "Concepts",
-    "section": "By challenge",
-    "text": "By challenge\nIf you are working on a particular challenge right now, these are the pages that go with it.\nChallenge 0. Problem Solving with Computers and Algorithms and Programs as soon as you write your first lines of your own. Cutting Problems starts here as well.\nChallenge 1. Analog and Digital, Symbols and Information and Signal and Noise belong together and answer, between them, why the size of your alphabet is limited. Add Measuring and Experimenting, because this is the first time you need a proper series of measurements, and Algorithms and Programs, because your recognition rule is the first algorithm you invent yourselves.\nChallenge 2. Code Systems for the way from a letter to a symbol, Sampling and Synchronization for the question why it falls apart at higher speed. Add the first part of Protocols, the simple agreement.\nChallenge 3. Protocols in full: framing, synchronisation, and how complete an agreement has to be.\nChallenge 4. Logic and Arithmetic first, because checksums and encryption both build on it. Then Fehler und Redundanz, Memory and Dateien for what travels through the air as a whole for the first time, Compression and Throughput and Limits. If you like, add Verschlüsselung.\nLooking back. Abstraction and Layers is worth a second look at the end, once your finished system is in front of you.",
+    "objectID": "concepts/index.html#the-five-challenges-and-what-they-need",
+    "href": "concepts/index.html#the-five-challenges-and-what-they-need",
+    "title": "Overview",
+    "section": "The five challenges and what they need",
+    "text": "The five challenges and what they need\nThe project is cut into five challenges. Each one adds exactly one new difficulty, and everything else stays as you already know it, so when something breaks you usually know where to look. Challenge 0 is not a competition; it ends when your LED lights up because you told it to and the sensor across the table notices. From Challenge 1 on, every team competes under the same conditions, and each challenge builds on the result of the one before.\n\n\n\n\nChallenge\nThe question it asks\n\n\n\n\n0\nThe Spark\nCan you bring your device to life?\n\n\n1\nThe Alphabet\nHow many different signals can your receiver tell apart reliably?\n\n\n2\nThe Word\nCan you send a whole word, and how fast?\n\n\n3\nThe Listener\nCan the receiver find the start of a message on its own?\n\n\n4\nThe Packet\nCan you send a real file, and get it there correct and fast?\n\n\n\nOn the map, the early challenges are orange and magenta, representing and transferring. Storing and processing come together at the end, when a whole file travels through the air for the first time. If you are working on a particular challenge right now, these are the pages that go with it.\nChallenge 0. Input, Processing, Output and Algorithms and Programs as soon as you write your first lines of your own. Cutting Problems starts here as well.\nChallenge 1. Analog and Digital, Symbols and Information and Signal and Noise belong together and answer, between them, why the size of your alphabet is limited. Add Measuring and Experimenting, because this is the first time you need a proper series of measurements, and Algorithms and Programs, because your recognition rule is the first algorithm you invent yourselves.\nChallenge 2. Code Systems and Number Systems for the way from a letter to a symbol, Sampling and Synchronization for the question why it falls apart at higher speed, and the first part of Protocols, the simple agreement. Abstraction and Layers starts here, because your link now has a bottom and a top.\nChallenge 3. Protocols in full: framing, synchronisation, and how complete an agreement has to be.\nChallenge 4. Logic and Arithmetic first, because checksums build on it. Then Errors and Redundancy, Memory and Files for what travels through the air as a whole for the first time, Compression and Throughput and Limits. If you like, add Encryption.\nLooking back. Abstraction and Layers is worth a second look at the end, once your finished system is in front of you.\nThe practical side of the project, the device, your partner, the tools and the documents every challenge produces, has its own page.",
     "crumbs": [
       "Concepts",
-      "The Map"
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "concepts/index.html#what-the-exam-is-about",
+    "href": "concepts/index.html#what-the-exam-is-about",
+    "title": "Overview",
+    "section": "What the exam is about",
+    "text": "What the exam is about\nThe concepts. Your project is the material on which you explain them, but it does not replace understanding them. Whoever has passed every challenge and still cannot say why digital transmission tolerates noise does not pass the exam. The ranking in the competition does not count towards your grade; passing every challenge is what admits you to the exam, and the exam is about the concepts, one person at a time. You will have to prepare for it, but you will not start from zero: by then you will have met every one of these concepts at your own device.",
+    "crumbs": [
+      "Concepts",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "concepts/index.html#slides",
+    "href": "concepts/index.html#slides",
+    "title": "Overview",
+    "section": "Slides",
+    "text": "Slides\nThe slides from the first session, with the map built up step by step and once more with each challenge lit up. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys.",
+    "crumbs": [
+      "Concepts",
+      "Overview"
     ]
   },
   {
