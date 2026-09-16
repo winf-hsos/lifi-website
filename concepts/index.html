@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a84aad28d7e5b5456db9ac6a39cf199b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f42557f4192fd6eab42f1e5ae5413828.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -677,77 +677,6 @@ Figure&nbsp;2: Two devices facing each other. Each has a lamp and an eye on its 
 </section>
 
 </main> <!-- /main -->
-<!-- Der Folienbetrachter der Website: nur die Folie plus Navigation, ohne
-     die Werkzeugleisten des Browser-PDF-Viewers. Eingebunden auf jeder Seite
-     über include-after-body in _quarto.yml; aktiv wird er nur, wo ein
-     <div class="folien-viewer" data-quelle="..."> steht. Die Seitenbilder
-     und das Manifest erzeugt tools/sync_slides.py. -->
-<script>
-(function () {
-  function bauen(kasten, seiten) {
-    var quelle = kasten.dataset.quelle;
-    var seite = 1;
-
-    kasten.innerHTML =
-      '<div class="fv-bild"><img alt="folie"></div>' +
-      '<div class="fv-leiste">' +
-      '<button class="fv-zurueck" title="vorherige folie">&#8249;</button>' +
-      '<span class="fv-zaehler"></span>' +
-      '<button class="fv-weiter" title="nächste folie">&#8250;</button>' +
-      '<span class="fv-platz"></span>' +
-      '<button class="fv-vollbild" title="vollbild">&#x26F6;</button>' +
-      '</div>';
-    kasten.setAttribute("tabindex", "0");
-
-    var bild = kasten.querySelector("img");
-    var zaehler = kasten.querySelector(".fv-zaehler");
-
-    function pfad(nr) {
-      return quelle + "/seite-" + String(nr).padStart(3, "0") + ".png";
-    }
-    function zeigen() {
-      bild.src = pfad(seite);
-      zaehler.textContent = seite + " / " + seiten;
-      if (seite < seiten) { (new Image()).src = pfad(seite + 1); }
-    }
-    function schritt(richtung) {
-      seite = Math.min(seiten, Math.max(1, seite + richtung));
-      zeigen();
-    }
-
-    kasten.querySelector(".fv-zurueck").addEventListener("click", function () { schritt(-1); });
-    kasten.querySelector(".fv-weiter").addEventListener("click", function () { schritt(1); });
-    kasten.querySelector(".fv-vollbild").addEventListener("click", function () {
-      if (document.fullscreenElement === kasten) { document.exitFullscreen(); }
-      else { kasten.requestFullscreen(); kasten.focus(); }
-    });
-    bild.addEventListener("click", function (ereignis) {
-      var kante = bild.getBoundingClientRect();
-      var links = (ereignis.clientX - kante.left) < kante.width / 3;
-      schritt(links ? -1 : 1);
-      kasten.focus();
-    });
-    kasten.addEventListener("keydown", function (ereignis) {
-      if (ereignis.key === "ArrowRight" || ereignis.key === " " ||
-          ereignis.key === "PageDown") { schritt(1); ereignis.preventDefault(); }
-      if (ereignis.key === "ArrowLeft" || ereignis.key === "PageUp") {
-        schritt(-1); ereignis.preventDefault();
-      }
-    });
-
-    zeigen();
-  }
-
-  document.querySelectorAll(".folien-viewer[data-quelle]").forEach(function (kasten) {
-    fetch(kasten.dataset.quelle + ".json")
-      .then(function (antwort) { return antwort.json(); })
-      .then(function (manifest) { bauen(kasten, manifest.seiten); })
-      .catch(function () {
-        kasten.textContent = "folien konnten nicht geladen werden.";
-      });
-  });
-})();
-</script>
 <!-- Das Übungsquiz der Website: Single- und Multiple-Choice-Fragen aus dem
      Fragenpool, mit sofortigem Feedback samt Begründung je Option, freiem
      Vor- und Zurückblättern und Vollbild für die Nutzung im Plenum. Fragen
