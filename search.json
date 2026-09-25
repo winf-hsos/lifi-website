@@ -144,6 +144,18 @@
     ]
   },
   {
+    "objectID": "software/cockpit.html#finding-your-errors-quickly",
+    "href": "software/cockpit.html#finding-your-errors-quickly",
+    "title": "The Team Cockpit",
+    "section": "Finding your errors quickly",
+    "text": "Finding your errors quickly\nNext to the zoom buttons you find errors: show · hide · only.\n\nshow is the normal view: errors appear as red marks among everything else.\nhide removes the error marks, for when you want to look at the signal alone.\nonly dims everything else. Zoomed out, every period with an error becomes a tall red bar, so even a single crash in a whole afternoon stands out at once.\n\nThe two arrow buttons ‹ and › jump to the previous and the next error, across your whole timeline. The error lands in the middle of a 40-second window, so you see what your LED sent and what your sensor measured just before your program failed. Hover over an arrow to see which error comes next. Your choice of show, hide or only is remembered in your browser.",
+    "crumbs": [
+      "LiFi Project",
+      "Software",
+      "The Team Cockpit"
+    ]
+  },
+  {
     "objectID": "software/cockpit.html#when-nothing-arrives",
     "href": "software/cockpit.html#when-nothing-arrives",
     "title": "The Team Cockpit",
