@@ -684,11 +684,11 @@
      "kennung": "d",
      "text": {
       "de": "Den Fall ins Irrtumsprotokoll aufnehmen: Vorschlag, Messung, Ergebnis.",
-      "en": "Add the case to the error log: suggestion, measurement, outcome."
+      "en": "Add the case to the log of mistakes: suggestion, measurement, outcome."
      },
      "begruendung": {
       "de": "Richtig: Genau dafür ist das Irrtumsprotokoll da. Dokumentierte Fälle, in denen eine Messung einen KI-Vorschlag widerlegt hat, sind Prüfungsstoff und Lernertrag zugleich.",
-      "en": "Correct: that is exactly what the error log is for. Documented cases where a measurement refuted an AI suggestion are exam material and learning yield at once."
+      "en": "Correct: that is exactly what the log of mistakes is for. Documented cases where a measurement refuted an AI suggestion are exam material and learning yield at once."
      }
     },
     {

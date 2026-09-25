@@ -341,7 +341,8 @@ window.drawAssistant = function (_slide, step = 0) {
     parts.push(d.arrow(500, y, 625, y, { color: c.gray, width: 3 }));
     parts.push(d.arrow(935, y, 1060, y, { color: c.gray, width: 3 }));
     names.forEach((name, i) => parts.push(d.box(xs[i], y - 55, 200, 110, name, { size: 20, border: c.dark, mono: true })));
-    parts.push(d.label(190, y + 7, "error log", { size: 32, color: c.yellow, anchor: "end", mono: true }));
+    parts.push(d.label(190, y - 12, "log of", { size: 32, color: c.yellow, anchor: "end", mono: true }));
+    parts.push(d.label(190, y + 26, "mistakes", { size: 32, color: c.yellow, anchor: "end", mono: true }));
   }
   return put("fig-assistant", d.svg(1680, 670, ...parts));
 };
