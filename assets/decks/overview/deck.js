@@ -33,8 +33,7 @@ const LABELS = {
   "symbols-and-information": "symbols and information",
   "number-systems": "number systems",
   "code-systems": "code systems",
-  "memory": "memory",
-  "files": "files",
+  "memory-and-storage": "memory and storage",
   "signal-and-noise": "signal and noise",
   "sampling-and-synchronization": "sampling and sync",
   "protocols": "protocols",
@@ -52,7 +51,7 @@ const FAMILIES = [
   { key: "represent", verb: "making bits", question: "how do computers\nrepresent information?",
     concepts: ["analog-and-digital", "symbols-and-information", "number-systems", "code-systems"] },
   { key: "store", verb: "storing bits", question: "how do computers\nstore information?",
-    concepts: ["memory", "files"] },
+    concepts: ["memory-and-storage"] },
   { key: "transfer", verb: "sending bits", question: "how do computers\ntransfer information?",
     concepts: ["signal-and-noise", "sampling-and-synchronization", "protocols", "errors-and-redundancy", "throughput-and-limits"] },
   { key: "process", verb: "processing bits", question: "how do computers\nprocess information?",
@@ -71,7 +70,7 @@ const CHALLENGES = [
   { name: "the listener", question: "can the receiver find the start on its own?",
     concepts: ["protocols"] },
   { name: "the packet", question: "can you send a real file, correct and fast?",
-    concepts: ["logic-and-arithmetic", "errors-and-redundancy", "memory", "files", "compression", "throughput-and-limits", "encryption"] },
+    concepts: ["logic-and-arithmetic", "errors-and-redundancy", "memory-and-storage", "compression", "throughput-and-limits", "encryption"] },
 ];
 
 const fam = (key) => d.color(`families-${key}`);

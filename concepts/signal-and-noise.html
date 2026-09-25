@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../concepts/sampling-and-synchronization.html" rel="next">
-<link href="../concepts/files.html" rel="prev">
+<link href="../concepts/memory-and-storage.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -263,7 +263,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../software/cockpit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Das Team-Cockpit</span></a>
+ <span class="menu-text">The Team Cockpit</span></a>
   </div>
 </li>
       </ul>
@@ -372,14 +372,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Memory</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dateien</span></a>
+  <a href="../concepts/memory-and-storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memory and Storage</span></a>
   </div>
 </li>
       </ul>
@@ -684,7 +678,7 @@ Figure&nbsp;7: More symbols squeezes the bands together; faster symbols makes th
      aktiv nur, wo ein <div class="fragen-quiz" data-quelle="..."> steht.
 
      Sprache: Die JSON-Dateien enthalten beide Sprachen. Welche angezeigt
-     wird, sagt data-sprache am Kasten ("de" oder "en", Standard "de"); die
+     wird, sagt data-sprache am Kasten ("de" oder "en", Standard seit 25.09.2026 "en"); die
      Seite entscheidet also, passend zu ihrem eigenen Text. Fehlt eine
      Übersetzung, wird die deutsche Fassung gezeigt.
 
@@ -915,7 +909,7 @@ Figure&nbsp;7: More symbols squeezes the bands together; faster symbols makes th
   }
 
   document.querySelectorAll(".fragen-quiz[data-quelle]").forEach(function (kasten) {
-    var sprache = kasten.dataset.sprache === "en" ? "en" : "de";
+    var sprache = kasten.dataset.sprache === "de" ? "de" : "en";
     fetch(kasten.dataset.quelle)
       .then(function (antwort) { return antwort.json(); })
       .then(function (daten) { bauen(kasten, daten, sprache); })
@@ -1332,8 +1326,8 @@ Figure&nbsp;7: More symbols squeezes the bands together; faster symbols makes th
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../concepts/files.html" class="pagination-link" aria-label="Dateien">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dateien</span>
+      <a href="../concepts/memory-and-storage.html" class="pagination-link" aria-label="Memory and Storage">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Memory and Storage</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1346,13 +1340,13 @@ Figure&nbsp;7: More symbols squeezes the bands together; faster symbols makes th
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Hochschule Osnabrück — Digitalisierung und Programmierung</p>
+<p>Hochschule Osnabrück · Digitization and Programming</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Inhalte CC BY-SA 4.0</p>
+<p>Content CC BY-SA 4.0</p>
 </div>
   </div>
 </footer>

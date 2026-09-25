@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analog and Digital – LiFi Project</title>
+<title>Memory and Storage – LiFi Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -68,8 +33,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../concepts/symbols-and-information.html" rel="next">
-<link href="../concepts/abstraction-and-layers.html" rel="prev">
+<link href="../concepts/signal-and-noise.html" rel="next">
+<link href="../concepts/code-systems.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -135,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/analog-and-digital.html">Representing Information</a></li><li class="breadcrumb-item"><a href="../concepts/analog-and-digital.html">Analog and Digital</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/memory-and-storage.html">Storing Information</a></li><li class="breadcrumb-item"><a href="../concepts/memory-and-storage.html">Memory and Storage</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -299,16 +264,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Representing Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link active">
+  <a href="../concepts/analog-and-digital.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analog and Digital</span></a>
   </div>
 </li>
@@ -334,16 +299,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Storing Information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/memory-and-storage.html" class="sidebar-item-text sidebar-link">
+  <a href="../concepts/memory-and-storage.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Memory and Storage</span></a>
   </div>
 </li>
@@ -446,12 +411,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
   <ul class="collapse">
-  <li><a href="#the-part-no-program-controls" id="toc-the-part-no-program-controls" class="nav-link" data-scroll-target="#the-part-no-program-controls">The part no program controls</a></li>
-  <li><a href="#the-margin-not-the-noise" id="toc-the-margin-not-the-noise" class="nav-link" data-scroll-target="#the-margin-not-the-noise">The margin, not the noise</a></li>
-  <li><a href="#what-the-thrown-away-precision-buys" id="toc-what-the-thrown-away-precision-buys" class="nav-link" data-scroll-target="#what-the-thrown-away-precision-buys">What the thrown-away precision buys</a></li>
-  <li><a href="#two-cuts" id="toc-two-cuts" class="nav-link" data-scroll-target="#two-cuts">Two cuts</a></li>
-  <li><a href="#what-a-picture-costs" id="toc-what-a-picture-costs" class="nav-link" data-scroll-target="#what-a-picture-costs">What a picture costs</a></li>
-  <li><a href="#where-your-own-alphabet-is-born" id="toc-where-your-own-alphabet-is-born" class="nav-link" data-scroll-target="#where-your-own-alphabet-is-born">Where your own alphabet is born</a></li>
+  <li><a href="#a-file-is-a-sequence-of-bytes" id="toc-a-file-is-a-sequence-of-bytes" class="nav-link" data-scroll-target="#a-file-is-a-sequence-of-bytes">A file is a sequence of bytes</a></li>
+  <li><a href="#the-header-says-how-to-read-the-rest" id="toc-the-header-says-how-to-read-the-rest" class="nav-link" data-scroll-target="#the-header-says-how-to-read-the-rest">The header says how to read the rest</a></li>
+  <li><a href="#the-payload-pixel-by-pixel" id="toc-the-payload-pixel-by-pixel" class="nav-link" data-scroll-target="#the-payload-pixel-by-pixel">The payload: pixel by pixel</a></li>
+  <li><a href="#extension-magic-bytes-type-field" id="toc-extension-magic-bytes-type-field" class="nav-link" data-scroll-target="#extension-magic-bytes-type-field">Extension, magic bytes, type field</a></li>
+  <li><a href="#where-the-bytes-live-while-the-computer-runs" id="toc-where-the-bytes-live-while-the-computer-runs" class="nav-link" data-scroll-target="#where-the-bytes-live-while-the-computer-runs">Where the bytes live while the computer runs</a></li>
+  <li><a href="#what-a-bit-is-made-of" id="toc-what-a-bit-is-made-of" class="nav-link" data-scroll-target="#what-a-bit-is-made-of">What a bit is made of</a></li>
+  <li><a href="#a-cd-reads-bits-with-light" id="toc-a-cd-reads-bits-with-light" class="nav-link" data-scroll-target="#a-cd-reads-bits-with-light">A CD reads bits with light</a></li>
+  <li><a href="#what-saving-means" id="toc-what-saving-means" class="nav-link" data-scroll-target="#what-saving-means">What saving means</a></li>
+  <li><a href="#on-your-link" id="toc-on-your-link" class="nav-link" data-scroll-target="#on-your-link">On your link</a></li>
   </ul></li>
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
   <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
@@ -462,9 +430,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/analog-and-digital.html">Representing Information</a></li><li class="breadcrumb-item"><a href="../concepts/analog-and-digital.html">Analog and Digital</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concepts/index.html">Concepts</a></li><li class="breadcrumb-item"><a href="../concepts/memory-and-storage.html">Storing Information</a></li><li class="breadcrumb-item"><a href="../concepts/memory-and-storage.html">Memory and Storage</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Analog and Digital</h1>
+<h1 class="title">Memory and Storage</h1>
 </div>
 
 
@@ -483,162 +451,198 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>Analog quantities take on any value at all: between any two of them lies another. Digital systems assign those values to finitely many, clearly separated states. That throws precision away on purpose, and what you get in return is a decision that survives small disturbances. Turning something analog into something digital takes two cuts, and both of them have a price you can measure in bytes and, on your own link, in minutes.</p>
+<p>A file is nothing but a sequence of bytes. What it means is not written in the bytes, it is written in an agreement about how they are arranged: a header at the front says how to read the rest, and then the actual data follows, byte after byte. Whoever knows that arrangement can read any file with their own eyes, and whoever does not sees nonsense. Those bytes have to live somewhere. While the computer runs they live in main memory, millions of tiny circuits that each hold one bit for as long as the power is on. When it is switched off they live on a disk, in flash memory, on a disc or on tape, as a physical state that stays put by itself. Storing always means setting such a state, reading means asking for it, and between all of them the file travels as what it is: the same sequence of bytes.</p>
 <p>In this chapter, we address the following questions:</p>
 <ul>
-<li>What does “digital” actually mean, and what does it have to do with electricity?</li>
-<li>Why does a world without steps have to be cut into steps at all?</li>
-<li>What is lost in the process, and what does that loss buy you?</li>
-<li>What are sampling and quantization, and what does each kept detail cost?</li>
-<li>Where on your own link does analog end and digital begin?</li>
+<li>What is in a file if you do not open it with the program it was made for?</li>
+<li>What is a header for, and what does it contain?</li>
+<li>How does a program find the top left pixel in an image file?</li>
+<li>How does a program tell what kind of file it is looking at?</li>
+<li>Where do the bytes live while the computer runs, and where when it is off?</li>
+<li>What is a bit actually made of in a memory chip, on a disk, on a CD, on tape?</li>
 </ul>
-<p>You need this concept for <a href="../challenges/challenge-1.html">Challenge 1</a>, and it comes back in <a href="../challenges/challenge-4.html">Challenge 4</a>, when a file has to fit into 2 KB.</p>
+<p>You need this concept for <a href="../challenges/challenge-4.html">Challenge 4</a>, where a whole file travels through the air for the first time and the receiver has to open it at the other end.</p>
 </section>
 <section id="explanation" class="level2">
 <h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
-<p>A railway station before the age of chips. The split-flap board clatters, letter by letter falling into place. There is no computer anywhere near it, and the thing is nonetheless perfectly digital: every flap knows exactly two positions, and while it turns there is no valid state in between. That is also why you can read it from twenty metres away.</p>
-<div id="fig-digital-or-analog" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Open an image file in a text editor and you get nonsense: the editor reads every byte as a character and shows a dot wherever the byte is not a printable one. Open the same file in a hex editor and you get something sober and very readable: the bytes themselves, one after another, as two-digit hex numbers.</p>
+<div id="fig-two-programs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-digital-or-analog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/digital-or-analog.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Not one of them contains a chip. Electronics is only today’s usual carrier, not the defining feature, and the reverse holds as well: an amplifier is electronic and still stepless."><img src="../assets/diagrams/digital-or-analog.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-two-programs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-two-programs.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: The same file in two programs. A hex editor shows no interpretation, only the content; a text editor reads every byte as a character."><img src="../assets/diagrams/storage-two-programs.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-digital-or-analog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Not one of them contains a chip. Electronics is only today’s usual carrier, not the defining feature, and the reverse holds as well: an amplifier is electronic and still stepless.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-two-programs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The same file in two programs. A hex editor shows no interpretation, only the content; a text editor reads every byte as a character.
 </figcaption>
 </figure>
 </div>
-<p>So here is the definition, and it mentions no electricity at all: <strong>digital means finitely many states, and nothing in between counts.</strong> Both halves carry weight. The first is the harmless one. The second is where all the engineering hangs, because if nothing between the states counts, then nothing between the states can go wrong either.</p>
-<section id="the-part-no-program-controls" class="level3">
-<h3 class="anchored" data-anchor-id="the-part-no-program-controls">The part no program controls</h3>
-<p>Your own link runs through all three zones. The sender turns numbers into light, the sensor turns light back into numbers: digital, analog, digital.</p>
-<div id="fig-the-analog-middle" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-the-analog-middle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/the-analog-middle.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The middle is physics. It is stepless and disturbed by ambient light, distance and noise, and no program in the world controls it."><img src="../assets/diagrams/the-analog-middle.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-the-analog-middle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The middle is physics. It is stepless and disturbed by ambient light, distance and noise, and no program in the world controls it.
-</figcaption>
-</figure>
-</div>
-<p>Light is analog: between any two brightnesses lies another, there is no smallest step. Your program needs the opposite, finitely many states that are clearly apart. Digitising a signal means nothing more than representing it by a finite sequence of numbers.</p>
+<p>The file is fine in both cases. The bytes have not changed, only the reading rule has. And in that content, once you know the arrangement, everything can be found again: how large the image is, where the pixels start, what colour the first one has.</p>
+<section id="a-file-is-a-sequence-of-bytes" class="level3">
+<h3 class="anchored" data-anchor-id="a-file-is-a-sequence-of-bytes">A file is a sequence of bytes</h3>
+<p>That is the whole definition, and it holds for every file: text, image, sound, program. A byte has a value from 0 to 255, a file has a length, and the bytes are in a fixed order. There are no pictures on a hard disk and no texts, there are only bytes, and the meaning appears when something reads them. You have seen that in <a href="../concepts/code-systems.html">Code Systems</a> and in <a href="../concepts/abstraction-and-layers.html">Abstraction and Layers</a>; here it is about how a file carries its own reading instructions.</p>
+<p>The smallest useful example is a bitmap of four by two pixels, 78 bytes long. This is what it looks like in a hex editor; on the left the position of the first byte of each line, also in hex:</p>
+<pre><code>0000  42 4d 4e 00 00 00 00 00 00 00 36 00 00 00 28 00
+0010  00 00 04 00 00 00 02 00 00 00 01 00 18 00 00 00
+0020  00 00 18 00 00 00 c4 0e 00 00 c4 0e 00 00 00 00
+0030  00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 ff
+0040  00 ff 00 00 ff 00 ff 00 ff 00 00 ff ff ff</code></pre>
+<p>Three parts: a file header of 14 bytes, an info header of 40 bytes, and 24 bytes of pixel data.</p>
 </section>
-<section id="the-margin-not-the-noise" class="level3">
-<h3 class="anchored" data-anchor-id="the-margin-not-the-noise">The margin, not the noise</h3>
-<p>How many states can you afford? That question has a picture, and it is the one to remember from this page.</p>
-<div id="fig-decision-levels" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="the-header-says-how-to-read-the-rest" class="level3">
+<h3 class="anchored" data-anchor-id="the-header-says-how-to-read-the-rest">The header says how to read the rest</h3>
+<div id="fig-header" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-decision-levels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/decision-levels.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Three times the same measurement with the same wobble, and only the number of regions grows. With two regions the band sits comfortably inside its own region, with four it gets tight, with eight the same band crosses the boundary."><img src="../assets/diagrams/decision-levels.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-header-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-header.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Four fields out of the header, and what each of them tells the program. Together they say how long the file is, where the pixels begin, how wide the image is and how many bytes one pixel takes."><img src="../assets/diagrams/storage-header.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decision-levels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Three times the same measurement with the same wobble, and only the number of regions grows. With two regions the band sits comfortably inside its own region, with four it gets tight, with eight the same band crosses the boundary.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-header-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Four fields out of the header, and what each of them tells the program. Together they say how long the file is, where the pixels begin, how wide the image is and how many bytes one pixel takes.
 </figcaption>
 </figure>
 </div>
-<p>The noise did not grow. The margin shrank. The distance between regions is your safety reserve, and more regions spread the same reserve over more boundaries. The other half of that problem is on <a href="../concepts/signal-and-noise.html">Signal und Rauschen</a>: there the number of symbols stays put and the measuring gets faster instead. Both roads end at the same wall.</p>
+<p>The first two bytes are <code>42 4d</code>, read as ASCII “BM”. That is the signature of the bitmap format: a program opening a file looks here first. Then four bytes give the size of the whole file, <code>4e 00 00 00</code>, which is 78. That the 78 comes first and the zeros after it is another agreement of this format: for multi-byte numbers the lowest byte comes first here. At position 10, four bytes say where the pixels begin: <code>36 00 00 00</code>, so at byte 54. Everything before that is header.</p>
+<p>The second part, the info header, starts at byte 14 with its own length (<code>28 00 00 00</code>, 40 bytes) and holds what the program needs in order to draw: the width <code>04 00 00 00</code>, the height <code>02 00 00 00</code>, and at byte 28 the colour depth <code>18 00</code>, so 24 bits per pixel, three bytes. With that the program knows, without having seen a single pixel, that from byte 54 exactly 4 times 2 times 3 equals 24 bytes of image data follow, and that is exactly how long the rest of the file is. The header fields are to the program what the type field and the length field in the frame of Challenge 4 are to your receiver: the announcement of what is coming and how to read it.</p>
 </section>
-<section id="what-the-thrown-away-precision-buys" class="level3">
-<h3 class="anchored" data-anchor-id="what-the-thrown-away-precision-buys">What the thrown-away precision buys</h3>
-<p>Digitising is a one-way street. Which of the infinitely many values inside a region it really was cannot be recovered afterwards. That is not an accident, it is the purchase price, and here is what you buy:</p>
-<div id="fig-copy-chain" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="the-payload-pixel-by-pixel" class="level3">
+<h3 class="anchored" data-anchor-id="the-payload-pixel-by-pixel">The payload: pixel by pixel</h3>
+<p>From byte 54 come the pixels, three bytes each. The first pixel is <code>00 00 00</code>, black; the second is <code>00 ff ff</code>.</p>
+<div id="fig-pixel" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-copy-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/copy-chain.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The tape copies its stepless wave along with all the noise and adds its own with every generation. The file is born again from clean states at every copy: read, set afresh, done."><img src="../assets/diagrams/copy-chain.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-pixel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-pixel.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: The second stored pixel, 00 ff ff. The three bytes are blue, green and red in that order, so the pixel is yellow; and because bitmaps are stored from the bottom row up, it sits in the lower row of the image."><img src="../assets/diagrams/storage-pixel.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-copy-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: The tape copies its stepless wave along with all the noise and adds its own with every generation. The file is born again from clean states at every copy: read, set afresh, done.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pixel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The second stored pixel, <code>00 ff ff</code>. The three bytes are blue, green and red in that order, so the pixel is yellow; and because bitmaps are stored from the bottom row up, it sits in the lower row of the image.
 </figcaption>
 </figure>
 </div>
-<p>Every disturbance smaller than the distance between states disappears completely in the process. That is why digital technology is reliable, not although it throws information away but <strong>because</strong> it does, and why the thousandth copy of a file is still the original. You can run that experiment yourself in <a href="https://winf-hsos.github.io/lifi-concept-demos/copier/">The Copier</a>: each press of “copy” hangs the next analog generation on the wall until the original has disappeared, and one button hangs the identical file copy next to it.</p>
-<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/copier/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the copier</span><span class="linkcard-desc">press copy and hang each generation on the wall: watch the analog picture fade copy by copy, then ask what a file would have done.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/03e5b965b44e.png" alt=""></a>
+<p>Anyone who now says “cyan”, because red is off and green and blue are on, is wrong, because this format stores the three parts in the order blue, green, red. <code>00 ff ff</code> is blue off, green on, red on: yellow. And the first stored row is not the top one but the bottom one; bitmaps stand upside down in the file. The top row of the image only begins at byte 66 with <code>00 00 ff</code>, a pure red.</p>
+<p>Both are arbitrary decisions by people who fixed this format forty years ago. They are binding anyway, because every program that reads bitmaps knows them and follows them. That is exactly what a file format is: not a law of nature but a written agreement that nobody gets to choose any more. You wrote an agreement like that yourselves in Challenge 3.</p>
+<p>In the demonstrator <a href="https://winf-hsos.github.io/lifi-concept-demos/inside-a-file/">Inside a File</a> you can do all of this yourself: one of the three familiar photos as a small bitmap in a hex editor, a click on a pixel shows its three bytes, and every byte can be changed. Change a single byte in the pixel part and one colour component of one pixel changes; the picture is still displayed, only wrong in one spot. Change a byte in the header, the width for instance, and the viewer shows stripes or refuses the file altogether. That is the difference between payload and header: a broken byte in the data is a small injury, a broken byte in the header is a large one. It is also why the hash over everything decides in the final, see <a href="../concepts/errors-and-redundancy.html">Errors and Redundancy</a>.</p>
+<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/inside-a-file/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">inside a file</span><span class="linkcard-desc">a real bitmap in a hex editor: header fields underlined, click a pixel to find its three bytes, then change a byte — and watch the picture obey, or the viewer refuse.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/d5eb19b4ff45.png" alt=""></a>
 </section>
-<section id="two-cuts" class="level3">
-<h3 class="anchored" data-anchor-id="two-cuts">Two cuts</h3>
-<p>Digitising always takes two cuts, and a photo shows both of them.</p>
-<div id="fig-two-cuts" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="extension-magic-bytes-type-field" class="level3">
+<h3 class="anchored" data-anchor-id="extension-magic-bytes-type-field">Extension, magic bytes, type field</h3>
+<p>How does a program tell what kind of file it is looking at? Three answers, and all three are labels next to or in front of the data. The extension <code>.bmp</code> is in the name, not in the file; rename it and the bytes do not change. The magic bytes at the start, here “BM”, are in the file; PNG begins with a fixed sequence of eight bytes, PDF with <code>%PDF</code>. A text file has no magic bytes, it begins with its first letter, and that is why no program can reliably guess its type. The type field in your frame is the third answer: the class decides which number stands for which file type, and the sender sends it along. All three solve the same problem in the same way, because data on its own means nothing.</p>
+</section>
+<section id="where-the-bytes-live-while-the-computer-runs" class="level3">
+<h3 class="anchored" data-anchor-id="where-the-bytes-live-while-the-computer-runs">Where the bytes live while the computer runs</h3>
+<p>In <a href="../concepts/logic-and-arithmetic.html">Logic and Arithmetic</a> you saw that two NOR gates wired into each other make a flip-flop.</p>
+<div id="fig-flip-flop" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-two-cuts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/two-cuts.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The first cut goes through the area, the second through the value."><img src="../assets/diagrams/two-cuts.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-flip-flop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-flip-flop.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Two NOR gates wired into each other. A short pulse on set makes the output 1, and when set goes off again the output stays 1, because the two gates keep feeding each other."><img src="../assets/diagrams/storage-flip-flop.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-two-cuts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: The first cut goes through the area, the second through the value.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flip-flop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Two NOR gates wired into each other. A short pulse on set makes the output 1, and when set goes off again the output stays 1, because the two gates keep feeding each other.
 </figcaption>
 </figure>
 </div>
-<p>The <strong>first cut</strong> turns the stepless picture into measuring points, sixteen by sixteen in the figure. That is <strong>sampling</strong>, and how fine it is is the <strong>resolution</strong>. The <strong>second cut</strong> rounds the brightness of every point to one of the agreed steps, four grey levels in the figure. That is <strong>quantization</strong>, and the number of steps is the <strong>colour depth</strong>. Those steps are exactly the regions from the section above, now applied to a picture.</p>
-<p>Both cuts leave different traces, and that is how you tell which knob to turn:</p>
-<div id="fig-cut-artefacts" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>A short pulse on set makes the output 1, and the cross-wiring keeps it there until reset. That is one bit of memory, built from the same switches that add and compare. Eight flip-flops side by side hold a byte, and that is a register, the small fast memory inside the processor. Nothing about the circuit knows whether the byte is a number, a letter or a pixel, it just holds eight states.</p>
+<div id="fig-addresses" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-cut-artefacts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/cut-artefacts.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Blocks mean too few points. Hard patches in what should be soft shading mean too few levels."><img src="../assets/diagrams/cut-artefacts.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-addresses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-addresses.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Main memory: rows of cells, each with a number. The address lines select a row, the data lines carry its content."><img src="../assets/diagrams/storage-addresses.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cut-artefacts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Blocks mean too few points. Hard patches in what should be soft shading mean too few levels.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-addresses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Main memory: rows of cells, each with a number. The address lines select a row, the data lines carry its content.
+</figcaption>
+</figure>
+</div>
+<p>Main memory, the RAM of your laptop, is billions of such cells arranged in rows. Every row has a number, its address. To read a byte, the processor puts the address on one set of wires, the address lines, and the row answers on another set, the data lines; to write, it does the same the other way round. That is why a program never says “the number over there”, it says “the byte at address 4711”. The address is the only handle the machine has.</p>
+<p>All of this holds only while the power is on. The flip-flop keeps its bit because its two gates keep feeding each other; cut the power and the loop collapses. That is not a defect but the price of speed: RAM answers in nanoseconds because nothing has to move. It is also why an unsaved document is gone after a crash, and why saving means copying the bytes somewhere that does not need power.</p>
+</section>
+<section id="what-a-bit-is-made-of" class="level3">
+<h3 class="anchored" data-anchor-id="what-a-bit-is-made-of">What a bit is made of</h3>
+<p>Every other kind of storage sets a physical state that stays put by itself, and each one uses a different material.</p>
+<div id="fig-materials" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-materials-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-materials.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Five ways to hold a bit: a feedback loop in RAM, a magnetised spot on a hard disk, a trapped charge in flash, a pressed pit on a CD, a magnetised section on tape. Only the first one needs power."><img src="../assets/diagrams/storage-materials.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-materials-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Five ways to hold a bit: a feedback loop in RAM, a magnetised spot on a hard disk, a trapped charge in flash, a pressed pit on a CD, a magnetised section on tape. Only the first one needs power.
+</figcaption>
+</figure>
+</div>
+<p>A <strong>hard disk</strong> stores a bit as the direction in which a tiny spot on a spinning platter is magnetised; a head flying just above the surface flips it to write and senses it to read. <strong>Flash memory</strong>, in SSDs and USB sticks, traps a small electric charge inside a transistor that is insulated on all sides; the charge stays for years, and reading means testing whether it is there. <strong>Magnetic tape</strong> does the same as a disk, only in one long line instead of on a circle, which is why it is slow to search and cheap to keep; it is still how archives store petabytes for decades. A <strong>floppy disk</strong> was the same idea in a small square envelope. And a <strong>CD</strong> works differently enough to be worth its own look.</p>
+</section>
+<section id="a-cd-reads-bits-with-light" class="level3">
+<h3 class="anchored" data-anchor-id="a-cd-reads-bits-with-light">A CD reads bits with light</h3>
+<div id="fig-cd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-cd.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: A laser from below. Where it meets a flat land, the light reflects back into the sensor and the reader sees a one. Where it meets a pit, the light scatters away and the sensor sees nothing."><img src="../assets/diagrams/storage-cd.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: A laser from below. Where it meets a flat land, the light reflects back into the sensor and the reader sees a one. Where it meets a pit, the light scatters away and the sensor sees nothing.
+</figcaption>
+</figure>
+</div>
+<p>The surface of a CD carries one single spiral track that runs from the inside outwards, and along it are flat stretches, called lands, and tiny pressed depressions, called pits. A laser shines from below. On a land the light reflects straight back into the sensor; on a pit it scatters away and almost nothing comes back. There is your bit, and there is your link: a lamp, a sensor, and a reflection that either arrives or does not. Your device does exactly the same thing, except that its sender is an LED you control and the CD’s sender is a pit that was pressed years ago.</p>
+<p>A CD also shares something else with your project. Scratch one and it usually still plays. That is not luck, it is a lot of redundancy built in on purpose: whoever designed the format assumed that discs get scratched and paid for it in advance, exactly like the torn sticker in <a href="../concepts/errors-and-redundancy.html">Errors and Redundancy</a>.</p>
+<p>There is one more thing these older media teach, and it has nothing to do with physics. A floppy disk from 1995 still holds its magnetisation perfectly well; what is missing is a drive to read it, and often the program that knows the format. The physical state on its own is not information yet. The agreement that reads it has to survive too, and that brings us back to the beginning of this page.</p>
+</section>
+<section id="what-saving-means" class="level3">
+<h3 class="anchored" data-anchor-id="what-saving-means">What saving means</h3>
+<div id="fig-saving" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-saving-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-saving.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Saving copies the bytes from main memory into a store that holds without power. They are copied, not moved, and they stay the same sequence of bytes."><img src="../assets/diagrams/storage-saving.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-saving-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Saving copies the bytes from main memory into a store that holds without power. They are copied, not moved, and they stay the same sequence of bytes.
+</figcaption>
+</figure>
+</div>
+<p>When you click “Save”, the bytes are copied from main memory into a place that keeps its state without power. They are copied, not moved: afterwards they are in both places. And main memory does not write itself away at intervals; some programs make their own backup copies, but that is a decision of the program, not a property of the memory.</p>
+<div id="fig-places" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-places-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-places.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: Four places for the same sequence of bytes, from the register to tape. The faster a place answers, the more it depends on the power staying on."><img src="../assets/diagrams/storage-places.svg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-places-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Four places for the same sequence of bytes, from the register to tape. The faster a place answers, the more it depends on the power staying on.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="what-a-picture-costs" class="level3">
-<h3 class="anchored" data-anchor-id="what-a-picture-costs">What a picture costs</h3>
-<p>One piece of arithmetic carries every file size: <strong>points × bits per point</strong>.</p>
-<div id="fig-picture-cost" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="on-your-link" class="level3">
+<h3 class="anchored" data-anchor-id="on-your-link">On your link</h3>
+<div id="fig-whole-way" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-picture-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/picture-cost.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: The same picture, one decision, fifty-three minutes of difference."><img src="../assets/diagrams/picture-cost.svg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-whole-way-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../assets/diagrams/storage-whole-way.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;10: The whole way: from the disk into main memory, into bytes, into symbols, into light, and back again on the other side. At no point is it a picture."><img src="../assets/diagrams/storage-whole-way.svg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-picture-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: The same picture, one decision, fifty-three minutes of difference.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-whole-way-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: The whole way: from the disk into main memory, into bytes, into symbols, into light, and back again on the other side. At no point is it a picture.
 </figcaption>
 </figure>
 </div>
-<p>On your light link, size turns into time straight away. Which is why digitising is not a diligence exercise with “as fine as possible”, but a trade-off about which detail is worth the transmission time.</p>
-<div id="fig-how-far-can-you-go" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-how-far-can-you-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/how-far-can-you-go.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: The same photo, ever coarser. Somewhere between the third and the fourth picture it stops being a parrot, and where exactly, people will disagree."><img src="../assets/diagrams/how-far-can-you-go.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-how-far-can-you-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: The same photo, ever coarser. Somewhere between the third and the fourth picture it stops being a parrot, and where exactly, people will disagree.
-</figcaption>
-</figure>
-</div>
-<p>That disagreement is the point. There is no correct amount, there is only a trade-off, and in <a href="../challenges/challenge-4.html">Challenge 4</a> you have 2 KB to make it in. You can play the whole thing through in <a href="https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/">The Photo Digitiser</a>, from 256 by 256 points down to a single pixel, with colour depths from today’s standard through the sixteen colours of an early pc down to the four greys of the first Game Boy, and with the file size and the transmission time running along underneath.</p>
-<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the photo digitiser</span><span class="linkcard-desc">turn an analog photo into numbers: pick resolution and colour depth (down to the game boy's four greys), see the picture change, and watch the byte count grow.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/693dfa3d8140.png" alt=""></a>
-<p>The same two cuts apply to sound. There, sampling slices time instead of area and the bit depth slices loudness instead of brightness; 44,100 samples per second at 16 bit is a CD. In <a href="https://winf-hsos.github.io/lifi-concept-demos/audio-digitiser/">The Audio Digitiser</a> you can hear what each cut throws away.</p>
-<a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/audio-digitiser/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the audio digitiser</span><span class="linkcard-desc">the same two cuts for sound: choose sampling rate and bit depth, see the staircase on the wave — and hear what gets thrown away.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/344709270e70.png" alt=""></a>
-</section>
-<section id="where-your-own-alphabet-is-born" class="level3">
-<h3 class="anchored" data-anchor-id="where-your-own-alphabet-is-born">Where your own alphabet is born</h3>
-<p>At the end of all of this sits one line of your own code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> sensor.get_clear()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> value <span class="op">&gt;</span> <span class="dv">250</span>:</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    symbol <span class="op">=</span> <span class="st">"bright"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    symbol <span class="op">=</span> <span class="st">"dark"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>That threshold is the place where hundreds of possible readings turn into two symbols. It is not a constant of nature, it is your decision, and from there on it is your decision that holds, not the physics. Where it belongs does not come from your gut but from your measurement series: calibrate first, then compare (see <a href="../concepts/measurement-and-experiments.html">Measuring and Experimenting</a>).</p>
-<p>Two colours are safe, eight are fast, and somewhere in between sits your alphabet. Only your own measurements know where, because the width of a region has to match the wobble of your readings.</p>
+<p>When you send the photo over your light link, the bytes leave RAM one by one, become symbols, become light, and end up in the other computer’s RAM, from where they are written to its disk. At no point does the picture exist as anything but bytes, and at no point do the bytes care where they are. That chain is also the map of this module, read from below: storing, representing, transferring and processing, all in one single operation.</p>
+<p>Three things follow for Challenge 4. Read the file as bytes and not as text, or the character encoding will change them under your hands. Send the header too, because without it the other side cannot read anything. And check the hash at the end, not the appearance: “it displays” proves nothing.</p>
 </section>
 </section>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
+<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys.</p>
 <div class="deck-embed">
-  <iframe src="../assets/decks/analog-and-digital/index.html?bar=1&amp;pdf=../analog-and-digital.pdf" title="drawing the line" allowfullscreen="" loading="lazy"></iframe>
+  <iframe src="../assets/decks/memory-and-storage/index.html?bar=1&amp;pdf=../memory-and-storage.pdf" title="where the bytes live" allowfullscreen="" loading="lazy"></iframe>
 </div>
 </section>
 <section id="practice-questions" class="level2">
 <h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
 <p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
-<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/analog-and-digital.json"></div>
+<div class="fragen-quiz" data-quelle="../assets/questions/memory-and-storage.json" data-sprache="en">
+
+</div>
 </section>
 <section id="further-reading" class="level2">
 <h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
 <ul>
-<li>Claude Shannon: Communication in the Presence of Noise. Proceedings of the IRE, 1949. The paper that put the sampling cut on a firm footing: how often you have to measure a signal to be able to reconstruct it. The first two pages are readable without the mathematics behind them.</li>
-<li>Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. 2nd edition, Microsoft Press, 2022. Chapters 1 to 10 build the same idea from the other end, from a torch signalling through a window to states and codes, and without a single formula.</li>
+<li>David Macaulay: The Way Things Work Now. Houghton Mifflin Harcourt 2016, part 5 “The Digital Domain”, chapter “Storing Bits”. Memory chips, flash, hard disks, CDs and barcodes, all in drawings.</li>
+<li>Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. 2nd edition, Microsoft Press 2022. Builds a flip-flop from gates and a memory from flip-flops, one step at a time.</li>
+<li>Kryder, Mark H.; Kim, Chang Soo: After Hard Drives, What Comes Next? IEEE Transactions on Magnetics 45(10), 2009. Why the physical limits of each medium decide what replaces it.</li>
 </ul>
 
 
@@ -1301,13 +1305,13 @@ Figure&nbsp;8: The same photo, ever coarser. Somewhere between the third and the
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../concepts/abstraction-and-layers.html" class="pagination-link" aria-label="Abstraction and Layers">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Abstraction and Layers</span>
+      <a href="../concepts/code-systems.html" class="pagination-link" aria-label="Code Systems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Code Systems</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../concepts/symbols-and-information.html" class="pagination-link" aria-label="Symbols and Information">
-        <span class="nav-page-text">Symbols and Information</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../concepts/signal-and-noise.html" class="pagination-link" aria-label="Signal and Noise">
+        <span class="nav-page-text">Signal and Noise</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

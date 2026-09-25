@@ -1,0 +1,527 @@
+{
+ "konzept": "memory-and-storage",
+ "fragen": [
+  {
+   "id": "ic-001",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr öffnet eine kleine Bilddatei in einem Texteditor. Statt eines Bildes\nerscheint eine Seite voller Unsinnszeichen. Was zeigt das?",
+    "en": "You open a small image file in a text editor. Instead of an image, a page\nfull of nonsense characters appears. What does that show?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Dass die Datei beschädigt ist, denn eine intakte Bilddatei würde auch im Texteditor als Bild erscheinen.",
+      "en": "That the file is damaged, since an intact image file would appear as an image in the text editor too."
+     },
+     "begruendung": {
+      "de": "Die Datei ist in Ordnung; der Bildbetrachter zeigt sie danach unverändert an. Der Texteditor liest dieselben Bytes nur als Zeichen, und als Zeichen ergeben sie keinen Sinn.",
+      "en": "The file is fine; the image viewer displays it unchanged afterwards. The text editor merely reads the same bytes as characters, and as characters they make no sense."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Dass die Bytes selbst nicht sagen, was sie bedeuten; der Editor liest sie als Zeichen, der Bildbetrachter als Bildpunkte.",
+      "en": "That the bytes themselves do not say what they mean; the editor reads them as characters, the image viewer as pixels."
+     },
+     "begruendung": {
+      "de": "Genau. Dieselben zweitausend Bytes sind ein Bild, ein Text oder Krach, je nachdem, wie man sie liest. Die Bedeutung steckt nicht in den Bytes, sondern in der Lesevorschrift, und die muss jemand dazusagen.",
+      "en": "Exactly. The same two thousand bytes are an image, a text or noise, depending on how you read them. The meaning is not in the bytes but in the reading rule, and someone has to say which one."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Dass Bilder und Texte auf der Festplatte in verschiedenen Bereichen liegen und der Editor im falschen Bereich sucht.",
+      "en": "That images and texts sit in different areas of the hard disk and the editor is looking in the wrong area."
+     },
+     "begruendung": {
+      "de": "Es gibt keine getrennten Bereiche; jede Datei ist eine Folge von Bytes, und der Editor hat genau diese Folge gefunden und gezeigt. Er hat sie nur anders gelesen als der Bildbetrachter.",
+      "en": "There are no separate areas; every file is a sequence of bytes, and the editor found and showed exactly that sequence. It just read it differently from the image viewer."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Dass der Texteditor die Bildbytes zuerst in Zeichen umrechnet und dabei die Bildinformation verloren geht.",
+      "en": "That the text editor first converts the image bytes into characters and the image information is lost in the process."
+     },
+     "begruendung": {
+      "de": "Umgerechnet und verloren wird nichts; die Datei bleibt, wie sie ist. Der Editor zeigt jedes Byte als das Zeichen mit dieser Nummer. Die Bildinformation ist noch da, nur nicht als Bild lesbar.",
+      "en": "Nothing is converted or lost; the file stays as it is. The editor shows every byte as the character with that number. The image information is still there, just not readable as an image."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ic-002",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr benennt die Datei bild.png in bild.txt um. Was ändert sich an den\nBytes der Datei, und was ändert sich sonst?",
+    "en": "You rename the file image.png to image.txt. What changes in the bytes of\nthe file, and what else changes?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "An den Bytes nichts; nur das System schlägt jetzt ein anderes Programm zum Öffnen vor, weil die Endung eine Lesevorschrift neben der Datei ist.",
+      "en": "Nothing in the bytes; only the system now suggests a different program to open it, because the extension is a reading rule beside the file."
+     },
+     "begruendung": {
+      "de": "Genau. Die Endung steht nicht in der Datei, sondern in ihrem Namen. Sie sagt dem System, wie die Bytes zu lesen sind, so wie das Typfeld im Rahmen es dem Empfänger sagt. Ändert man sie, ändert sich die Deutung, nicht der Inhalt.",
+      "en": "Exactly. The extension is not in the file but in its name. It tells the system how to read the bytes, just as the type field in the frame tells the receiver. Change it and the interpretation changes, not the content."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Die Bytes werden beim Umbenennen in Textzeichen umgewandelt, deshalb lässt sich die Datei danach als Text lesen.",
+      "en": "The bytes are converted into text characters when renaming, which is why the file can be read as text afterwards."
+     },
+     "begruendung": {
+      "de": "Umbenennen fasst den Inhalt nicht an; die Datei ist danach byteweise dieselbe. Dass ein Editor sie öffnet, heißt nicht, dass sie Text geworden ist, es erscheint derselbe Unsinn wie zuvor.",
+      "en": "Renaming does not touch the content; the file is byte for byte the same afterwards. That an editor opens it does not mean it has become text; the same nonsense appears as before."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Die Bytes bleiben gleich, aber das Bild ist verloren, denn ohne die Endung .png weiß kein Programm mehr, dass es ein Bild war.",
+      "en": "The bytes stay the same, but the image is lost, since without the .png extension no program knows any more that it was an image."
+     },
+     "begruendung": {
+      "de": "Verloren ist nichts: Wer die Datei wieder umbenennt oder sie gezielt mit dem Bildbetrachter öffnet, sieht das Bild. Die Endung ist eine Empfehlung, keine Eigenschaft der Bytes.",
+      "en": "Nothing is lost: whoever renames the file back or deliberately opens it with the image viewer sees the image. The extension is a recommendation, not a property of the bytes."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Das System schreibt beim Umbenennen die ersten Bytes neu, damit sie zum neuen Typ passen, der Rest bleibt gleich.",
+      "en": "The system rewrites the first bytes when renaming so that they match the new type; the rest stays the same."
+     },
+     "begruendung": {
+      "de": "Das System kennt den Inhalt nicht und rührt ihn nicht an. Die Kennbytes am Anfang einer PNG-Datei bleiben stehen; sie widersprechen dann der Endung, und genau daran könnte ein Programm den Widerspruch bemerken.",
+      "en": "The system does not know the content and does not touch it. The identifying bytes at the start of a PNG file remain; they then contradict the extension, and that is exactly how a program could notice the mismatch."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ic-006",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Der Klassenstandard hat ein Typfeld im Kopf des Rahmens. Ein Team fragt:\n'Kann der Empfänger den Dateityp nicht einfach an den Bytes selbst\nerkennen?' Was ist die beste Antwort?",
+    "en": "The class standard has a type field in the frame header. A team asks:\n'Can the receiver not simply recognise the file type from the bytes\nthemselves?' What is the best answer?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Doch, jede Datei beginnt mit Bytes, die ihren Typ nennen; das Typfeld ist nur eine Abkürzung, damit der Empfänger nicht nachsehen muss.",
+      "en": "Yes, every file begins with bytes naming its type; the type field is merely a shortcut so the receiver does not have to look."
+     },
+     "begruendung": {
+      "de": "Manche Formate haben solche Kennbytes, PNG etwa. Eine Textdatei hat keine: Sie beginnt mit ihrem ersten Buchstaben, und Binärdaten mit irgendetwas. Am Inhalt lässt sich der Typ nicht zuverlässig ablesen.",
+      "en": "Some formats have such identifying bytes, PNG for instance. A text file has none: it begins with its first letter, and binary data with anything at all. The type cannot be read reliably from the content."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Nein, denn die Bytes werden beim Senden verschlüsselt und komprimiert, und danach ist der Typ nicht mehr erkennbar.",
+      "en": "No, because the bytes are encrypted and compressed when sending, and afterwards the type is no longer recognisable."
+     },
+     "begruendung": {
+      "de": "Verschlüsseln und Komprimieren sind Zusatzaufgaben, nicht der Grund. Auch eine unveränderte Textdatei verrät ihren Typ nicht; die Bytes 72, 73 sind 'HI' oder zwei Helligkeitswerte, je nach Lesart.",
+      "en": "Encrypting and compressing are optional extras, not the reason. Even an unchanged text file does not reveal its type; the bytes 72, 73 are 'HI' or two brightness values, depending on the reading."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Nein, denn dieselben Bytes können Bild, Text oder Krach sein; der Typ steht nicht in den Daten, sondern muss dazugesagt werden.",
+      "en": "No, because the same bytes can be an image, text or noise; the type is not in the data but has to be stated alongside."
+     },
+     "begruendung": {
+      "de": "Genau. Daten allein bedeuten nichts; die Bedeutung ist eine Vereinbarung, und das Typfeld überträgt sie mit. Dateiendungen und die Typangaben im Internet lösen dasselbe Problem auf dieselbe Weise: ein Etikett neben den Daten.",
+      "en": "Exactly. Data alone means nothing; meaning is an agreement, and the type field carries it along. File extensions and the type labels on the internet solve the same problem in the same way: a label beside the data."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Doch, aber nur bei Bildern; deshalb steht das Typfeld nur für Textdateien im Rahmen und bleibt bei Bildern leer.",
+      "en": "Yes, but only for images; that is why the type field is in the frame only for text files and stays empty for images."
+     },
+     "begruendung": {
+      "de": "Das Typfeld ist für jede Datei gefüllt, das ist der Sinn eines Standards. Und selbst bei Bildern wäre Raten riskant: Ein zufälliger Bytestrom kann mit denselben Kennbytes beginnen wie eine PNG-Datei.",
+      "en": "The type field is filled for every file, that is the point of a standard. And even for images, guessing would be risky: a random byte stream can begin with the same identifying bytes as a PNG file."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ms-001",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ein Bildbetrachter öffnet eine Bitmap von 78 Byte. Noch bevor er ein\neinziges Pixel gelesen hat, weiß er: Ab Byte 54 folgen genau 24 Byte\nBilddaten. Woher weiß er das?",
+    "en": "An image viewer opens a bitmap of 78 bytes. Before it has read a single\npixel, it already knows that exactly 24 bytes of image data follow from\nbyte 54 on. How does it know?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Er zählt die Bytes bis zum Dateiende und teilt den Rest durch drei, weil ein Pixel drei Byte braucht.",
+      "en": "It counts the bytes to the end of the file and divides the rest by three, because a pixel takes three bytes."
+     },
+     "begruendung": {
+      "de": "Das käme hier zufällig hin, weil die Datei genau mit dem letzten Pixel endet. Verlässlich ist es nicht: Manche Formate hängen hinter den Bilddaten noch Zusatzangaben an, und der Betrachter wüsste immer noch nicht, wie breit das Bild ist.",
+      "en": "That would happen to work here, because the file ends exactly with the last pixel. It is not reliable: some formats append extra information after the image data, and the viewer still would not know how wide the image is."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Aus der Dateiendung `.bmp`, die Breite, Höhe und Farbtiefe für alle Bitmaps festlegt.",
+      "en": "From the file extension `.bmp`, which fixes width, height and colour depth for all bitmaps."
+     },
+     "begruendung": {
+      "de": "Die Endung steht im Namen, nicht in der Datei, und sie sagt nur, welches Format vermutlich vorliegt. Bitmaps gibt es in jeder Größe; die Maße stehen in der Datei selbst.",
+      "en": "The extension is in the name, not in the file, and it only says which format to expect. Bitmaps come in every size; the dimensions are in the file itself."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Aus den Feldern im Kopf: Dort stehen der Beginn der Pixel (54), die Breite (4), die Höhe (2) und die Farbtiefe (24 Bit).",
+      "en": "From the fields in the header: they give the start of the pixels (54), the width (4), the height (2) and the colour depth (24 bits)."
+     },
+     "begruendung": {
+      "de": "Genau. 4 mal 2 Pixel mal 3 Byte sind 24 Byte, und der Kopf sagt auch, wo sie anfangen. Dafür ist ein Kopf da: Er ist die Lesevorschrift für den Rest, so wie das Typfeld und das Längenfeld in eurem Rahmen die Ansage für den Empfänger sind.",
+      "en": "Exactly. 4 times 2 pixels times 3 bytes is 24 bytes, and the header also says where they start. That is what a header is for: it is the reading instruction for the rest, just as the type field and the length field in your frame are the announcement for the receiver."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Vom Betriebssystem, das sich Breite und Höhe beim Speichern gemerkt hat und sie dem Betrachter mitgibt.",
+      "en": "From the operating system, which remembered width and height when saving and passes them to the viewer."
+     },
+     "begruendung": {
+      "de": "Das Betriebssystem verwaltet Namen, Länge und Datum, nicht den Inhalt. Kopiert ihr die Datei auf einen Stick und öffnet sie auf einem fremden Rechner, klappt es trotzdem, denn alles Nötige steht in der Datei.",
+      "en": "The operating system manages name, length and date, not the content. Copy the file to a stick and open it on a different computer and it still works, because everything needed is inside the file."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ms-002",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "In der 4-mal-2-Bitmap stehen ab Byte 54 die Pixel, drei Byte je Pixel. Das\nzweite gespeicherte Pixel lautet `00 ff ff`. Welche Farbe hat es, und wo\nliegt es im angezeigten Bild?",
+    "en": "In the 4-by-2 bitmap the pixels start at byte 54, three bytes each. The\nsecond stored pixel reads `00 ff ff`. What colour is it, and where does it\nsit in the displayed image?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "d"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Cyan, in der oberen Bildzeile: Rot aus, Grün an, Blau an, und die erste gespeicherte Zeile ist die obere.",
+      "en": "Cyan, in the top row: red off, green on, blue on, and the first stored row is the top one."
+     },
+     "begruendung": {
+      "de": "So läge es, wenn die drei Byte Rot, Grün, Blau wären und die Datei oben anfinge. Beides ist bei Bitmaps anders herum.",
+      "en": "That would hold if the three bytes were red, green, blue and the file started at the top. In bitmaps both are the other way round."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Gelb, in der oberen Bildzeile: Die Reihenfolge ist Blau, Grün, Rot, und gespeichert wird von oben nach unten.",
+      "en": "Yellow, in the top row: the order is blue, green, red, and rows are stored from top to bottom."
+     },
+     "begruendung": {
+      "de": "Die Farbe stimmt, der Ort nicht. Bitmaps stehen kopfüber in der Datei: Die erste gespeicherte Zeile ist die untere des Bildes.",
+      "en": "The colour is right, the place is not. Bitmaps stand upside down in the file: the first stored row is the bottom row of the image."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Cyan, in der unteren Bildzeile: Rot aus, Grün an, Blau an, und gespeichert wird von unten nach oben.",
+      "en": "Cyan, in the bottom row: red off, green on, blue on, and rows are stored from bottom to top."
+     },
+     "begruendung": {
+      "de": "Der Ort stimmt, die Farbe nicht. Das erste der drei Byte ist der Blauanteil, hier `00`, also Blau aus. An sind Grün und Rot, und das ergibt Gelb.",
+      "en": "The place is right, the colour is not. The first of the three bytes is the blue component, here `00`, so blue is off. Green and red are on, and that makes yellow."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Gelb, in der unteren Bildzeile: Die Reihenfolge ist Blau, Grün, Rot, und die erste gespeicherte Zeile ist die untere.",
+      "en": "Yellow, in the bottom row: the order is blue, green, red, and the first stored row is the bottom one."
+     },
+     "begruendung": {
+      "de": "Richtig, und beides ist reine Vereinbarung. Wer vor vierzig Jahren dieses Format festgelegt hat, hätte es auch anders herum machen können. Verbindlich ist es trotzdem, weil jedes Programm, das Bitmaps liest, sich daran hält. Genau das ist ein Dateiformat, und genau so eine Vereinbarung habt ihr in Challenge 3 selbst geschrieben.",
+      "en": "Right, and both are pure convention. Whoever fixed this format forty years ago could have decided the other way. It is binding anyway, because every program that reads bitmaps follows it. That is exactly what a file format is, and you wrote an agreement like it yourselves in Challenge 3."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ms-003",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Der Rechner stürzt ab. Der Text, an dem ihr gerade geschrieben und den ihr\nnicht gespeichert habt, ist weg. Die Datei von gestern auf der Platte ist\nnoch da. Woran liegt der Unterschied?",
+    "en": "The computer crashes. The text you were writing and had not saved is gone.\nYesterday's file on the disk is still there. What makes the difference?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Das Betriebssystem löscht den Arbeitsspeicher beim Absturz, damit keine Reste zurückbleiben.",
+      "en": "The operating system wipes main memory during a crash so that no remnants are left behind."
+     },
+     "begruendung": {
+      "de": "Beim Absturz löscht niemand mehr etwas, dafür müsste das System ja noch laufen. Der Inhalt verschwindet von selbst, sobald der Strom weg ist.",
+      "en": "During a crash nobody deletes anything; the system would have to be running for that. The content disappears by itself as soon as the power is gone."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Ein Bit im Arbeitsspeicher ist eine Rückkopplung aus Gattern, die dauernd Strom braucht; die Platte hält einen physikalischen Zustand, der von allein bleibt.",
+      "en": "A bit in main memory is a feedback loop of gates that needs power all the time; the disk holds a physical state that stays put by itself."
+     },
+     "begruendung": {
+      "de": "Genau. Das Flip-Flop hält seine Eins, weil sich zwei Gatter gegenseitig füttern; ist der Strom weg, bricht die Schleife zusammen. Auf der Platte ist ein Bit eine magnetisierte Stelle, im Flash eine eingeschlossene Ladung, und beide brauchen niemanden, der zusieht. Speichern heißt deshalb: die Bytes dorthin kopieren, wo es ohne Strom geht.",
+      "en": "Exactly. The flip-flop keeps its one because two gates keep feeding each other; cut the power and the loop collapses. On a disk a bit is a magnetised spot, in flash a trapped charge, and neither needs anyone watching. That is why saving means copying the bytes to a place that works without power."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Der Text bestand noch nicht aus Bytes, sondern nur aus dem, was auf dem Bildschirm zu sehen war.",
+      "en": "The text was not made of bytes yet, it existed only as what was visible on the screen."
+     },
+     "begruendung": {
+      "de": "Auch was auf dem Bildschirm steht, liegt als Bytes im Arbeitsspeicher; etwas anderes kann ein Rechner gar nicht halten. Verloren ging nicht die Byte-Form, sondern der Ort, an dem die Bytes lagen.",
+      "en": "What is on the screen is bytes in main memory as well; a computer cannot hold anything else. What was lost is not the byte form but the place where the bytes were."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Der Arbeitsspeicher war voll und hat das Älteste überschrieben, und das war der neue Text.",
+      "en": "Main memory was full and overwrote the oldest content, which was the new text."
+     },
+     "begruendung": {
+      "de": "Dann wäre der Text schon vor dem Absturz verschwunden, und ein voller Arbeitsspeicher überschreibt auch nicht einfach das Älteste. Der Inhalt war bis zur letzten Sekunde da; er brauchte nur Strom.",
+      "en": "Then the text would have vanished before the crash, and a full memory does not simply overwrite the oldest content either. It was there until the last second; it just needed power."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ms-004",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ein Programm sagt nie „die Zahl da drüben\", sondern immer „das Byte an\nAdresse 4711\". Warum braucht der Arbeitsspeicher Adressen?",
+    "en": "A program never says \"the number over there\", it always says \"the byte at\naddress 4711\". Why does main memory need addresses?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "a"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Weil die Adresse der einzige Griff ist, den die Maschine hat: Über die Adressleitungen wird eine Zeile ausgewählt, über die Datenleitungen kommt ihr Inhalt zurück.",
+      "en": "Because the address is the only handle the machine has: the address lines select a row, and the data lines carry its content back."
+     },
+     "begruendung": {
+      "de": "Genau. Der Speicher ist eine sehr lange Reihe gleicher Zellen, und keine davon weiß, was sie enthält. Die Nummer der Zeile ist das Einzige, worüber man sie erreichen kann, beim Lesen wie beim Schreiben.",
+      "en": "Exactly. Memory is a very long row of identical cells, and none of them knows what it contains. The row number is the only thing you can reach it by, for reading as well as for writing."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Weil Adressen kürzer sind als Namen und der Rechner dadurch Platz spart.",
+      "en": "Because addresses are shorter than names and the computer saves space that way."
+     },
+     "begruendung": {
+      "de": "Platz sparen ist nicht der Punkt: Es gibt gar keine Namen, die man kürzen könnte. Namen für Speicherstellen erfindet erst die Programmiersprache, und sie rechnet sie in Adressen um.",
+      "en": "Saving space is not the point: there are no names to shorten. Names for memory locations are invented by the programming language, which translates them into addresses."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Weil jede Datei beim Speichern eine feste Adresse bekommt, unter der sie wiedergefunden wird.",
+      "en": "Because every file gets a fixed address when saved, under which it is found again."
+     },
+     "begruendung": {
+      "de": "Hier geht es um den Arbeitsspeicher, nicht um die Platte, und eine Datei liegt dort nicht an einem festen Platz: Bei jedem Öffnen kann sie woanders landen. Adressiert werden einzelne Bytes, nicht Dateien.",
+      "en": "This is about main memory, not the disk, and a file does not sit in a fixed place there: every time it is opened it can land somewhere else. What is addressed are single bytes, not files."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Weil Menschen beim Programmieren wissen müssen, wo ihre Daten liegen; der Rechner selbst käme ohne Adressen aus.",
+      "en": "Because people need to know where their data is when programming; the computer itself would manage without addresses."
+     },
+     "begruendung": {
+      "de": "Umgekehrt: Die meisten Programmierenden sehen nie eine Adresse, sie schreiben Namen hin. Die Maschine dagegen kann ohne Adressen überhaupt nichts holen.",
+      "en": "The other way round: most programmers never see an address, they write names. The machine, on the other hand, cannot fetch anything at all without addresses."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ms-005",
+   "niveau": "anwenden",
+   "frage": {
+    "de": "Ihr ändert im Hex-Editor genau ein Byte einer Bitmap. Einmal mitten in den\nPixeldaten, einmal im Feld „Breite\" im Kopf. Was seht ihr danach im\nBildbetrachter?",
+    "en": "In a hex editor you change exactly one byte of a bitmap. Once in the middle\nof the pixel data, once in the \"width\" field in the header. What do you see\nafterwards in the image viewer?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "b"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Beide Male dasselbe: Ein Byte ist ein Byte, das Bild hat an einer Stelle einen falschen Farbwert.",
+      "en": "The same both times: a byte is a byte, so the image has one wrong colour value somewhere."
+     },
+     "begruendung": {
+      "de": "Für die Pixeldaten stimmt das, für den Kopf nicht. Die Bytes im Kopf werden nicht angezeigt, sie steuern, wie alle anderen gelesen werden.",
+      "en": "True for the pixel data, not for the header. The bytes in the header are not displayed; they control how all the others are read."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "In den Daten: ein Farbanteil eines Pixels stimmt nicht, das Bild wird trotzdem angezeigt. Im Kopf: Der Betrachter zeigt Streifen oder verweigert die Datei ganz.",
+      "en": "In the data: one colour component of one pixel is wrong, the image is displayed anyway. In the header: the viewer shows stripes or refuses the file altogether."
+     },
+     "begruendung": {
+      "de": "Genau, und das ist der Unterschied zwischen Nutzdaten und Kopf. Ein kaputtes Byte in den Daten ist ein kleiner Schaden, den man suchen muss; ein kaputtes Byte im Kopf verschiebt die Lesevorschrift für alles Folgende. Für euer Finale heißt das: Dass ein Bild angezeigt wird, beweist nichts über seine Richtigkeit, deshalb entscheidet der Hash über alles.",
+      "en": "Exactly, and that is the difference between payload and header. A broken byte in the data is a small injury you have to hunt for; a broken byte in the header shifts the reading instruction for everything that follows. For your final that means: the fact that an image is displayed proves nothing about its correctness, which is why the hash over everything decides."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "In den Daten passiert nichts Sichtbares, weil ein Pixel zu klein ist; im Kopf wird das Bild nur etwas schmaler angezeigt.",
+      "en": "In the data nothing visible happens, because one pixel is too small; in the header the image is just displayed a little narrower."
+     },
+     "begruendung": {
+      "de": "Bei einem winzigen Bild sieht man das geänderte Pixel sehr wohl. Und eine falsche Breite macht das Bild nicht harmlos schmaler: Der Betrachter zerlegt dieselben Bytes in andere Zeilen, und das Bild zerfällt.",
+      "en": "In a tiny image the changed pixel is clearly visible. And a wrong width does not just make the image harmlessly narrower: the viewer cuts the same bytes into different rows, and the picture falls apart."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Beide Male verweigert der Betrachter die Datei, weil ihre Prüfsumme nicht mehr stimmt.",
+      "en": "The viewer refuses the file both times, because its checksum no longer matches."
+     },
+     "begruendung": {
+      "de": "Eine Bitmap führt keine Prüfsumme mit; sie merkt gar nichts. Formate, die eine mitführen, etwa PNG mit seiner CRC-32, tun das erst, und genau darum geht es im Konzept Fehler und Redundanz.",
+      "en": "A bitmap carries no checksum; it notices nothing at all. Formats that do carry one, such as PNG with its CRC-32, are the exception, and that is exactly the subject of Errors and Redundancy."
+     }
+    }
+   ]
+  },
+  {
+   "id": "ms-006",
+   "niveau": "verstehen",
+   "frage": {
+    "de": "Ihr klickt in einem Programm auf „Speichern\". Was passiert dabei technisch\nmit den Bytes eurer Datei?",
+    "en": "You click \"Save\" in a program. What technically happens to the bytes of\nyour file?"
+   },
+   "typ": "sc",
+   "richtig": [
+    "c"
+   ],
+   "optionen": [
+    {
+     "kennung": "a",
+     "text": {
+      "de": "Sie werden aus dem Arbeitsspeicher auf die Platte verschoben und stehen danach nicht mehr im Arbeitsspeicher.",
+      "en": "They are moved from main memory to the disk and are no longer in main memory afterwards."
+     },
+     "begruendung": {
+      "de": "Dann müsste das Programm die Datei nach jedem Speichern neu laden, um weiterzuarbeiten. Kopiert wird, nicht verschoben: Die Bytes bleiben im Arbeitsspeicher stehen.",
+      "en": "Then the program would have to reload the file after every save to keep working. They are copied, not moved: the bytes stay in main memory."
+     }
+    },
+    {
+     "kennung": "b",
+     "text": {
+      "de": "Das Programm merkt sich die Änderungen in einer Liste, die erst beim Schließen der Datei ausgeführt wird.",
+      "en": "The program notes the changes in a list that is only carried out when the file is closed."
+     },
+     "begruendung": {
+      "de": "Dann wäre Speichern nutzlos, denn ein Absturz vor dem Schließen würde alles mitnehmen. Genau davor schützt Speichern ja.",
+      "en": "Then saving would be pointless, because a crash before closing would take everything with it. Protecting against that is the whole purpose of saving."
+     }
+    },
+    {
+     "kennung": "c",
+     "text": {
+      "de": "Sie werden aus dem Arbeitsspeicher in einen Speicher kopiert, der ohne Strom hält, und bleiben dabei dieselbe Folge von Bytes.",
+      "en": "They are copied from main memory into a store that holds without power, and they stay the same sequence of bytes while doing so."
+     },
+     "begruendung": {
+      "de": "Genau. Speichern heißt, einen physikalischen Zustand zu setzen, der von allein bleibt, eine Magnetisierung oder eine eingeschlossene Ladung. Die Bytes ändern sich dabei nicht, sie liegen nur woanders. Dasselbe gilt auf eurer Strecke: Dieselbe Folge verlässt den einen Arbeitsspeicher, wird zu Licht und landet im anderen.",
+      "en": "Exactly. Saving means setting a physical state that stays put by itself, a magnetisation or a trapped charge. The bytes do not change, they are just somewhere else. The same holds on your link: the same sequence leaves one main memory, becomes light, and ends up in the other."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Gar nichts Besonderes: Der Arbeitsspeicher schreibt sich ohnehin alle paar Minuten selbst auf die Platte, der Klick beschleunigt das nur.",
+      "en": "Nothing special: main memory writes itself to the disk every few minutes anyway, and the click only speeds that up."
+     },
+     "begruendung": {
+      "de": "Der Arbeitsspeicher schreibt nichts von selbst weg; er hält nur, solange Strom fließt. Manche Programme legen in Abständen eine eigene Sicherungskopie an, aber das ist eine Entscheidung des Programms, keine Eigenschaft des Speichers.",
+      "en": "Main memory writes nothing by itself; it only holds while the power flows. Some programs make their own backup copy at intervals, but that is a decision of the program, not a property of the memory."
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../concepts/memory.html" rel="next">
+<link href="../concepts/memory-and-storage.html" rel="next">
 <link href="../concepts/number-systems.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -228,7 +228,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../software/cockpit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Das Team-Cockpit</span></a>
+ <span class="menu-text">The Team Cockpit</span></a>
   </div>
 </li>
       </ul>
@@ -337,14 +337,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../concepts/memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Memory</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../concepts/files.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dateien</span></a>
+  <a href="../concepts/memory-and-storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memory and Storage</span></a>
   </div>
 </li>
       </ul>
@@ -688,7 +682,7 @@ Figure&nbsp;13: One pixel out of the photo, marked in red, its three shares as b
 <p>For you this is closer than it looks. Those are the same three numbers your sender writes: <code>led.set_color(236, 171, 3)</code> mixes the colour on your LED the way a screen mixes it out of the same shares, and your sensor measures it back in the same three channels.</p>
 <p>The bidirectional nature of that table is easiest to feel in its simplest form, one bit per pixel:</p>
 <a class="linkcard" href="https://winf-hsos.github.io/lifi-concept-demos/pixel-painter/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">pixel painter</span><span class="linkcard-desc">an 8×8 picture, one bit per pixel: paint and watch the bytes write themselves, edit the hex and paint with numbers, then break a byte and see the damage.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/11ada88949e1.png" alt=""></a>
-<p>If the bytes do not say which reading is right, something else has to. Three things do, in practice: the file extension, which is the weakest because renaming a file changes nothing inside it; a header at the start of the file, which is what you will take apart in <a href="../concepts/files.html">Files</a>; and a type field in a message, which is what you will build yourselves into your frame in <a href="../challenges/challenge-3.html">Challenge 3</a>. That field is not bureaucracy. It is this section, in your own protocol.</p>
+<p>If the bytes do not say which reading is right, something else has to. Three things do, in practice: the file extension, which is the weakest because renaming a file changes nothing inside it; a header at the start of the file, which is what you will take apart in <a href="../concepts/memory-and-storage.html">Memory and Storage</a>; and a type field in a message, which is what you will build yourselves into your frame in <a href="../challenges/challenge-3.html">Challenge 3</a>. That field is not bureaucracy. It is this section, in your own protocol.</p>
 </section>
 <section id="codes-older-than-computers" class="level3">
 <h3 class="anchored" data-anchor-id="codes-older-than-computers">Codes older than computers</h3>
@@ -740,7 +734,7 @@ Figure&nbsp;14: Two states in six positions, four bases in three positions, four
      aktiv nur, wo ein <div class="fragen-quiz" data-quelle="..."> steht.
 
      Sprache: Die JSON-Dateien enthalten beide Sprachen. Welche angezeigt
-     wird, sagt data-sprache am Kasten ("de" oder "en", Standard "de"); die
+     wird, sagt data-sprache am Kasten ("de" oder "en", Standard seit 25.09.2026 "en"); die
      Seite entscheidet also, passend zu ihrem eigenen Text. Fehlt eine
      Übersetzung, wird die deutsche Fassung gezeigt.
 
@@ -971,7 +965,7 @@ Figure&nbsp;14: Two states in six positions, four bases in three positions, four
   }
 
   document.querySelectorAll(".fragen-quiz[data-quelle]").forEach(function (kasten) {
-    var sprache = kasten.dataset.sprache === "en" ? "en" : "de";
+    var sprache = kasten.dataset.sprache === "de" ? "de" : "en";
     fetch(kasten.dataset.quelle)
       .then(function (antwort) { return antwort.json(); })
       .then(function (daten) { bauen(kasten, daten, sprache); })
@@ -1393,8 +1387,8 @@ Figure&nbsp;14: Two states in six positions, four bases in three positions, four
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../concepts/memory.html" class="pagination-link" aria-label="Memory">
-        <span class="nav-page-text">Memory</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../concepts/memory-and-storage.html" class="pagination-link" aria-label="Memory and Storage">
+        <span class="nav-page-text">Memory and Storage</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1402,13 +1396,13 @@ Figure&nbsp;14: Two states in six positions, four bases in three positions, four
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Hochschule Osnabrück — Digitalisierung und Programmierung</p>
+<p>Hochschule Osnabrück · Digitization and Programming</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Inhalte CC BY-SA 4.0</p>
+<p>Content CC BY-SA 4.0</p>
 </div>
   </div>
 </footer>

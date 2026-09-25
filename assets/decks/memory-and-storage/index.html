@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>where the bytes live</title>
+  <link rel="stylesheet" href="theme.css?v=20260916a">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260915a">
+</head>
+<body>
+<div class="deck"
+     data-title="where the bytes live"
+     data-subtitle="digitalisierung und programmierung · prof. dr. nicolas meseth"
+     data-parts='["a file is a sequence of bytes", "where the bytes live", "on your link"]'>
+
+  <section class="slide title">
+    <aside class="notes">Das Konzept Speicher und Dateien, entstanden aus zwei Seiten, die sich ohnehin überlappt haben. Es beantwortet zwei Fragen in einem Zug: Was steht in einer Datei, und wo liegen diese Bytes eigentlich. Beides braucht das Finale.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Erst die Datei am echten Hex-Dump: Bytes, Kopf, Nutzdaten, und wie ein Programm den Typ erkennt. Dann die Orte: Flip-Flop, Arbeitsspeicher mit Adressen, und die Materialien, die ohne Strom halten. Zum Schluss der ganze Weg über eure Strecke.</aside>
+  </section>
+
+  <!-- ================= Teil 1: a file is a sequence of bytes ================= -->
+
+  <section class="slide part" data-part="a file is a sequence of bytes">
+    <aside class="notes">Eine Datei ist nichts als eine Folge von Bytes. Alles andere ist Vereinbarung.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/where.jpg" alt="">
+    <div class="photo-text">this photo is<br>196 662 bytes.<br>where are they<br>right now?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Zwei Antworten, und beide stimmen: im Arbeitsspeicher, solange das Bild offen ist, und auf der Platte, seit ihr es gespeichert habt. Auf dem Tisch liegen beide Orte offen daneben, die Scheibe und der Riegel. Heute geht es um beide, und dazwischen um die Frage, was überhaupt in so einer Datei steht.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the same file, two programs</h2>
+    <div class="figure" id="fig-two-programs"></div>
+    <div class="punch">the bytes do not say what they mean. the program decides how to read them.</div>
+    <aside class="notes">Wer eine Bilddatei im Texteditor öffnet, sieht Unsinn, und die Datei ist trotzdem in Ordnung: Der Bildbetrachter zeigt sie danach unverändert. Der Editor liest jedes Byte als Zeichen, und was nicht druckbar ist, zeigt er als Punkt. Der Betrachter liest dieselben Bytes als Bildpunkte. Das ist derselbe Gedanke wie beim Träger: Daten allein bedeuten nichts, es braucht immer eine Lesevorschrift, und die muss jemand dazusagen.</aside>
+  </section>
+
+  <section class="slide" data-on-show="drawDump" data-on-step="drawDump">
+    <h2>78 bytes, all of them</h2>
+    <div class="figure" id="fig-dump"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span>
+    <aside class="notes">Das kleinste brauchbare Beispiel: eine Bitmap mit vier mal zwei Pixeln, 78 Byte lang. Alles, was eine große Datei hat, hat diese auch, nur in einer Menge, die man vorlesen kann. Drei Teile. Die ersten 14 Byte sind der Dateikopf: „BM", die Größe der Datei, und wo die Pixel anfangen. Die nächsten 40 sind der Infokopf: Breite, Höhe, Farbtiefe. Und die letzten 24 sind die Bilddaten, vier mal zwei Pixel mal drei Byte. Genau diese Bytes liegen auch im Demonstrator.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the header says how to read the rest</h2>
+    <div class="figure" id="fig-header"></div>
+    <div class="punch">4 × 2 × 3 = 24 bytes. the program knows that before it has seen a single pixel.</div>
+    <aside class="notes">Vier Felder reichen. Die Dateigröße steht als `4e 00 00 00` da, also 78, niedrigstes Byte zuerst, auch das eine Vereinbarung dieses Formats. Der Beginn der Pixel steht bei Byte 10, die Breite im Infokopf, die Farbtiefe bei Byte 28. Damit weiß der Betrachter, ohne ein Pixel gesehen zu haben, wie viele Daten kommen. Der Anschluss an euren Rahmen: Typfeld und Längenfeld tun für den Empfänger genau das, was diese Felder für den Bildbetrachter tun.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>two decisions somebody made in 1990</h2>
+    <div class="figure" id="fig-pixel"></div>
+    <div class="punch">not cyan, and not the top row. yellow, at the bottom.</div>
+    <aside class="notes">Das zweite gespeicherte Pixel ist `00 ff ff`. Wer jetzt Cyan sagt, weil Rot aus und Grün und Blau an sind, liegt daneben: Dieses Format speichert Blau, Grün, Rot. Und die erste gespeicherte Zeile ist die untere, Bitmaps stehen kopfüber in der Datei. Der Punkt ist nicht die Farbe, sondern die Willkür. Beides hätten die Leute damals anders festlegen können; es gilt trotzdem, weil sich jedes Programm daran hält. Genau so eine Vereinbarung habt ihr in Challenge 3 selbst geschrieben.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>how does a program know what it is looking at?</h2>
+    <div class="cols3 center">
+      <div>
+        <div class="header">the extension</div>
+        <div class="lines"><div>.bmp, in the name, not in the file.</div><div>rename it and the bytes do not change.</div></div>
+      </div>
+      <div>
+        <div class="header">magic bytes</div>
+        <div class="lines"><div><span class="keep-case">BM</span> at the front, in the file.</div><div>png has eight, pdf has <span class="keep-case">%PDF</span>. a text file has none.</div></div>
+      </div>
+      <div>
+        <div class="header">a type field</div>
+        <div class="lines"><div>your frame, in front of the data.</div><div>the class decides which number means which type.</div></div>
+      </div>
+    </div>
+    <aside class="notes">Drei Etiketten für ein Problem. Die Endung steht im Namen, nicht in der Datei: Umbenennen ändert kein einziges Byte, und deshalb kann man damit auch lügen. Die Kennbytes stehen in der Datei selbst, sind aber nicht Pflicht; eine Textdatei fängt einfach mit ihrem ersten Buchstaben an, und deshalb kann kein Programm den Typ zuverlässig raten. Euer Typfeld ist die dritte Antwort und die sauberste, weil die Klasse sie festlegt.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>try it: inside a file</h2>
+    <div class="embed"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/inside-a-file/?embed=1" title="Inside a File"></iframe></div>
+    <aside class="notes">Ein Byte in den Pixeldaten ändern: Das Bild kommt, ein Punkt ist falsch, und man muss ihn suchen. Ein Byte im Kopf ändern, etwa die Breite: Der Betrachter zeigt Streifen oder verweigert die Datei ganz. Das ist der Unterschied zwischen Nutzdaten und Kopf, und er führt direkt zum Hash im Finale: Dass ein Bild angezeigt wird, beweist nichts.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what a file is</h2>
+    <div class="content" style="top: 150px">
+      <div class="statement">a sequence of bytes, plus an agreement about how to read it.</div>
+      <div class="lines">
+        <div>the agreement is written down, not natural.</div>
+        <div>a broken byte in the data is a small injury. in the header it is a large one.</div>
+      </div>
+    </div>
+    <div class="punch">every file on your laptop works this way. yours will too.</div>
+    <aside class="notes">Der Merksatz von Teil 1. Und die Überleitung: Diese Folge von Bytes muss irgendwo liegen, und zwar physisch.</aside>
+  </section>
+
+  <!-- ================= Teil 2: where the bytes live ================= -->
+
+  <section class="slide part" data-part="where the bytes live">
+    <aside class="notes">Jetzt das Material. Ein Bit ist immer ein Zustand von etwas Physischem.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawFlipFlop" data-on-step="drawFlipFlop">
+    <h2>a bit that remembers</h2>
+    <div class="figure" id="fig-flip-flop"></div>
+    <span data-step="1"></span><span data-step="2"></span>
+    <div class="punch">the same gates that add and compare. wired in a circle, they remember.</div>
+    <aside class="notes">Aus der Werkzeugkiste kennt ihr die Gatter, hier bekommen sie einen neuen Zweck. Zwei NOR-Gatter über Kreuz: Ein kurzer Impuls auf set macht den Ausgang 1, und wenn set wieder aus ist, bleibt er 1, weil sich die beiden Gatter gegenseitig füttern. Das ist ein Bit Speicher. Acht davon nebeneinander halten ein Byte, und das ist ein Register, der schnellste Speicher im Rechner. Das Gatter weiß nicht, ob sein Bit zu einer Zahl, einem Buchstaben oder einem Pixel gehört.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>millions of them, each with a number</h2>
+    <div class="figure" id="fig-addresses"></div>
+    <div class="punch">a program never says "the number over there". it says "the byte at 4711".</div>
+    <aside class="notes">Der Arbeitsspeicher ist eine sehr lange Reihe solcher Zellen, und keine weiß, was sie enthält. Der Prozessor legt eine Adresse auf die Adressleitungen, und die Zeile antwortet auf den Datenleitungen; beim Schreiben umgekehrt. Die Nummer ist der einzige Griff, den die Maschine hat. Namen für Speicherstellen erfindet erst die Programmiersprache, und sie rechnet sie in Adressen um.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="drawPullPlug" data-on-step="drawPullPlug">
+    <h2>pull the plug</h2>
+    <div class="figure" id="fig-pull-plug"></div>
+    <span data-step="1"></span>
+    <div class="punch">ram answers in nanoseconds because nothing has to move. that is what it costs.</div>
+    <aside class="notes">Das Flip-Flop hält seine Eins, solange die beiden Gatter sich füttern können. Ist der Strom weg, bricht die Schleife zusammen, und zwar sofort. Niemand löscht da etwas, und das Betriebssystem kommt gar nicht mehr dazu. Deshalb ist der ungespeicherte Text nach einem Absturz weg, und deshalb heißt Speichern: die Bytes dorthin kopieren, wo es ohne Strom geht.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what is a bit made of here?</h2>
+    <div class="figure" id="fig-materials"></div>
+    <div class="punch">five materials, one job: hold a state that stays put, and answer when asked.</div>
+    <aside class="notes">Fünf Bauweisen nebeneinander. Im Arbeitsspeicher eine Schleife, die gefüttert werden muss. Auf der Festplatte eine winzige Stelle, die in die eine oder andere Richtung magnetisiert ist; ein Kopf schwebt darüber, kippt sie zum Schreiben und fühlt sie zum Lesen. Im Flash eine Ladung, die in einem ringsum isolierten Transistor eingeschlossen ist und dort jahrelang bleibt. Auf der CD eine gepresste Vertiefung oder eine ebene Stelle. Auf dem Band dasselbe wie auf der Platte, nur in einer langen Reihe. Nur das erste braucht Strom. Und keines der fünf weiß, ob sein Bit zu einem Papagei gehört.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>a cd reads bits with light</h2>
+    <div class="figure" id="fig-cd"></div>
+    <div class="punch">a lamp, a sensor, and a reflection that is there or is not. that is your device, on a spiral.</div>
+    <aside class="notes">Der Anschluss, der mir am besten gefällt. Ein Laser leuchtet von unten auf die Spur. Trifft er eine ebene Stelle, kommt das Licht zurück auf den Sensor; trifft er eine Vertiefung, streut es weg. Eins und null. Das ist genau eure Strecke, nur dass der Sender hier eine Vertiefung ist, die vor Jahren gepresst wurde, und dass die Spur eine einzige Spirale von innen nach außen ist. Und noch etwas kennt ihr: Eine zerkratzte CD spielt trotzdem, weil massiv Redundanz eingebaut ist. Wer sie entworfen hat, ist davon ausgegangen, dass sie Kratzer bekommt, und hat im Voraus dafür bezahlt, genau wie der QR-Aufkleber.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>the medium outlives its reader</h2>
+    <div class="content" style="top: 150px">
+      <div class="lines">
+        <div>a floppy disk holds its bits fine. finding a drive is the problem.</div>
+        <div>tape is still how archives keep petabytes, for decades.</div>
+        <div>a state without the agreement that reads it is not information yet.</div>
+      </div>
+    </div>
+    <aside class="notes">Damit sind wir zurück bei Teil 1. Zum physikalischen Zustand gehört immer die Vereinbarung, ihn zu deuten, und die muss genauso überleben wie das Material. Eine Diskette von 1995 hält ihre Magnetisierung bis heute; es fehlt das Laufwerk und oft auch das Programm, das das Format kennt. Beim Band ist es umgekehrt: Es wird bis heute benutzt, weil es billig ist und lange hält, und weil jemand dafür sorgt, dass es auch in zehn Jahren noch gelesen werden kann.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what saving means</h2>
+    <div class="figure" id="fig-saving"></div>
+    <div class="punch">copied, not moved. the same sequence of bytes, in a place that needs no power.</div>
+    <aside class="notes">Beim Klick auf Speichern wandert nichts, es wird kopiert: Danach stehen die Bytes an beiden Orten. Die Bytes selbst ändern sich dabei nicht, sie liegen nur woanders. Und der Arbeitsspeicher schreibt sich nicht von selbst weg; manche Programme legen in Abständen eine eigene Sicherungskopie an, aber das ist eine Entscheidung des Programms, keine Eigenschaft des Speichers.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>four places, one sequence</h2>
+    <div class="figure" id="fig-places"></div>
+    <aside class="notes">Die Übersicht. Von oben nach unten wird es langsamer und haltbarer, und das ist kein Zufall: Das Schnellste ist das, wo nichts bewegt werden muss, und genau das braucht dauernd Strom. Für euch heißt das: Die Datei liegt vor dem Senden auf der Platte, während des Sendens im Arbeitsspeicher, und beim Empfänger wieder auf der Platte.</aside>
+  </section>
+
+  <!-- ================= Teil 3: on your link ================= -->
+
+  <section class="slide part" data-part="on your link">
+    <aside class="notes">Und jetzt der ganze Weg, von der Platte bis zur Platte.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>the whole way</h2>
+    <div class="figure" id="fig-whole-way"></div>
+    <aside class="notes">Von der Platte in den Arbeitsspeicher, von dort Byte für Byte in Symbole, die Symbole werden Licht, drüben wieder Symbole, wieder Bytes, wieder Arbeitsspeicher, wieder Platte. An keiner Stelle ist das ein Bild. Es ist immer dieselbe Folge von Bytes, nur an verschiedenen Orten und in verschiedenen Materialien. Das ist zugleich die Karte des Moduls von unten gesehen: Speichern, Darstellen, Übertragen, Verarbeiten, alles an einem einzigen Vorgang.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>what this means for challenge 4</h2>
+    <div class="content" style="top: 150px">
+      <div class="lines">
+        <div>read the file as bytes, not as a picture.</div>
+        <div>send the header too. without it the other side cannot read anything.</div>
+        <div>"it displays" proves nothing. the hash decides.</div>
+      </div>
+      <div class="sidenote">and one more: a byte you change in the header costs you the whole file.</div>
+    </div>
+    <aside class="notes">Drei Sätze für den Werkstattauftrag. Lest die Datei binär ein, nicht als Text, sonst verändert euch die Zeichenkodierung die Bytes. Schickt den Kopf mit, sonst kann der Empfänger nichts damit anfangen. Und prüft am Ende den Hash, nicht das Aussehen.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/spot.jpg" alt="">
+    <div class="photo-text">a magnetised spot.<br>that is your photo.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Darauf läuft alles hinaus. Ein Foto ist eine Folge von Bytes, ein Byte sind acht Bits, und ein Bit ist hier eine Stelle, die in die eine oder andere Richtung magnetisiert ist. Mehr ist es nicht, und genau deshalb kann man es über eine Lampe schicken.</aside>
+  </section>
+
+</div>
+<!-- Reihenfolge ist Pflicht: deck.js VOR stagekit.js, sonst fehlen die
+     data-on-show-Funktionen beim ersten Anzeigen. -->
+<script src="../stagekit/draw.js?v=20260915a"></script>
+<script src="deck.js?v=20260916g"></script>
+<script src="../stagekit/stagekit.js?v=20260915a"></script>
+</body>
+</html>
