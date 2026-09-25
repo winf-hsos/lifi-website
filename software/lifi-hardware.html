@@ -515,34 +515,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="installing-and-updating" class="level2">
 <h2 class="anchored" data-anchor-id="installing-and-updating">Installing and updating</h2>
-<p>The module lives in a GitHub repository and is installed from there:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install git+https://github.com/winf-hsos/lifi-hardware.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The Tinkerforge library comes along automatically as a dependency.</p>
-<p>During the course there may be new versions, for instance when a function is added or a bug is fixed. You get the new version like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--upgrade</span> <span class="at">--force-reinstall</span> git+https://github.com/winf-hsos/lifi-hardware.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You do not have to do anything yourself: <code>/onboarding</code> installs the module in your first session, and <code>/update-semester</code> installs a new version whenever the course needs one, for instance when a function is added or a bug is fixed.</p>
+<p>By hand, it is one command in a terminal (on a Mac <code>pip3</code> if <code>pip</code> is not found):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install https://github.com/winf-hsos/lifi-hardware/archive/refs/heads/main.zip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The Tinkerforge library comes along automatically as a dependency. The code itself lives in a public GitHub repository: <a href="https://github.com/winf-hsos/lifi-hardware">github.com/winf-hsos/lifi-hardware</a>.</p>
 </section>
 <section id="the-interface" class="level2">
 <h2 class="anchored" data-anchor-id="the-interface">The interface</h2>
 <p>To begin with, one line that brings in two objects is enough:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> led, sensor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> led, sensor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Both connect to your device by themselves the first time you use them. You need no addresses, no identifiers, no configuration. When your program ends, the LED goes off automatically and the connection is closed cleanly.</p>
 <section id="the-led-the-sender" class="level3">
 <h3 class="anchored" data-anchor-id="the-led-the-sender">The LED (the sender)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>led.set_color(r, g, b)   <span class="co"># each value 0 to 255</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>led.off()                <span class="co"># the same as led.set_color(0, 0, 0)</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>led.color                <span class="co"># the current colour as (r, g, b), read from the hardware</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>led.set_color(r, g, b)   <span class="co"># each value 0 to 255</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>led.off()                <span class="co"># the same as led.set_color(0, 0, 0)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>led.color                <span class="co"># the current colour as (r, g, b), read from the hardware</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The hardware keeps a colour you have set until another command arrives. It knows nothing about your program. If you use <code>led</code> and <code>sensor</code> as shown above, the module switches the LED off for you when your program ends, and that includes an end by Ctrl+C or by an error. If you take the <code>LifiDevice</code> route described further down, the LED stays on unless you close the device yourself. <code>led.color</code> asks the hardware itself, not a remembered value. That helps when you are hunting a fault and want to know what is really shining right now.</p>
 </section>
 <section id="the-sensor-the-receiver" class="level3">
 <h3 class="anchored" data-anchor-id="the-sensor-the-receiver">The sensor (the receiver)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>reading <span class="op">=</span> sensor.read()          <span class="co"># Reading(r, g, b, c), each value 0 to 65535</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>r, g, b, c <span class="op">=</span> sensor.read()       <span class="co"># unpacks straight into four variables</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sensor.set_integration_time(ms)  <span class="co"># allowed: 2.4, 24, 101, 154 or 700</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>sensor.set_gain(factor)          <span class="co"># allowed: 1, 4, 16 or 60</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>sensor.integration_time          <span class="co"># look up the current setting</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>sensor.gain                      <span class="co"># look up the current setting</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>sensor.set_light(<span class="va">True</span>)           <span class="co"># the sensor's white illumination LED</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>reading <span class="op">=</span> sensor.read()          <span class="co"># Reading(r, g, b, c), each value 0 to 65535</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>r, g, b, c <span class="op">=</span> sensor.read()       <span class="co"># unpacks straight into four variables</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sensor.set_integration_time(ms)  <span class="co"># allowed: 2.4, 24, 101, 154 or 700</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>sensor.set_gain(factor)          <span class="co"># allowed: 1, 4, 16 or 60</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>sensor.integration_time          <span class="co"># look up the current setting</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>sensor.gain                      <span class="co"># look up the current setting</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>sensor.set_light(<span class="va">True</span>)           <span class="co"># the sensor's white illumination LED</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Four things you have to know about the sensor.</p>
 <p>First, it measures four channels, not three. Red, green and blue are filtered; the fourth channel <code>c</code>, the clear channel, measures unfiltered and is therefore the most sensitive.</p>
 <p>Second, the readings do not correspond to the RGB values you sent. In between lie overlapping filters, the distance and the ambient light, and that is exactly why you calibrate.</p>
@@ -553,16 +552,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="more-control-when-you-need-it" class="level3">
 <h3 class="anchored" data-anchor-id="more-control-when-you-need-it">More control when you need it</h3>
 <p>If you want to decide yourself when to connect and disconnect, take the class behind the two convenient objects:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> LifiDevice</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lifi <span class="op">=</span> LifiDevice.<span class="ex">connect</span>()      <span class="co"># finds LED and sensor by itself</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>lifi.led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lifi.sensor.read())</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>lifi.close()                     <span class="co"># LED off, connection closed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> LifiDevice</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>lifi <span class="op">=</span> LifiDevice.<span class="ex">connect</span>()      <span class="co"># finds LED and sensor by itself</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>lifi.led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lifi.sensor.read())</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>lifi.close()                     <span class="co"># LED off, connection closed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The same with the clean-up built in: the <code>with</code> form closes the device for you at the end of the block, even if your code inside it fails.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> LifiDevice.<span class="ex">connect</span>() <span class="im">as</span> lifi:</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    lifi.led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(lifi.sensor.read())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> LifiDevice.<span class="ex">connect</span>() <span class="im">as</span> lifi:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    lifi.led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(lifi.sensor.read())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>connect()</code> also knows a few options, for example <code>log_file=None</code> (no measurement log) and <code>server=None</code> (no upload, more on that in a moment).</p>
 </section>
 </section>
@@ -574,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="look-inside" class="level2">
 <h2 class="anchored" data-anchor-id="look-inside">Look inside</h2>
-<p>The module is not a magic trick. It is a manageable amount of Python code that you can open and read, and from Challenge 2 at the latest you should do that once. The source lies open in the same GitHub repository you installed the package from. In it you will find exactly the lines that stand in the first example above.</p>
+<p>The module is not a magic trick. It is a manageable amount of Python code that you can open and read, and from Challenge 2 at the latest you should do that once. The source lies open in its <a href="https://github.com/winf-hsos/lifi-hardware">GitHub repository</a>, and your assistant has a copy of it too. In it you will find the same Tinkerforge calls as in the first example above, plus a few lines that look up your device’s identifiers by themselves, so that you never have to type a UID.</p>
 <p>This is a pattern you will meet constantly in your studies: under every convenient interface lies a less convenient one, and under that another. The Tinkerforge interface in turn hides how the data actually travels over the USB cable. And below that it goes on, down to single voltage levels on a wire.</p>
 <p>If you ever need something the module cannot do, you may reach one level down at any time and use the Tinkerforge interface directly. The module leaves the door open on purpose: <code>led.raw</code> and <code>sensor.raw</code> are the Tinkerforge objects underneath, with everything they can do. It is not forbidden. You just do not have to do it on the first day.</p>
 

@@ -405,7 +405,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-you-can-use-it-for" id="toc-what-you-can-use-it-for" class="nav-link active" data-scroll-target="#what-you-can-use-it-for">What you can use it for</a></li>
+  <li><a href="#your-course-assistant" id="toc-your-course-assistant" class="nav-link active" data-scroll-target="#your-course-assistant">Your course assistant</a></li>
+  <li><a href="#what-you-can-use-it-for" id="toc-what-you-can-use-it-for" class="nav-link" data-scroll-target="#what-you-can-use-it-for">What you can use it for</a></li>
   <li><a href="#two-conditions" id="toc-two-conditions" class="nav-link" data-scroll-target="#two-conditions">Two conditions</a>
   <ul class="collapse">
   <li><a href="#you-must-be-able-to-explain-your-code" id="toc-you-must-be-able-to-explain-your-code" class="nav-link" data-scroll-target="#you-must-be-able-to-explain-your-code">You must be able to explain your code</a></li>
@@ -440,10 +441,16 @@ ul.task-list li input[type="checkbox"] {
 
 <p>You may use the AI assistant in this project without any restriction. I want you to. It is part of the task, not a way around it.</p>
 <p>Here is the picture to keep in mind. The assistant has read more about programming, sensors and protocols than any of us ever will. It has never seen your device. It does not know how bright your room is, how far apart your boxes stand, or what your sensor reports when the LED is red. Everything it says about those things is a guess, sometimes a good one. Everything you measure about them is a fact. Working well with the assistant means knowing, at every moment, which of the two you are holding.</p>
+<section id="your-course-assistant" class="level2">
+<h2 class="anchored" data-anchor-id="your-course-assistant">Your course assistant</h2>
+<p>The assistant you start in your course folder is not a general chatbot. It has read this website, the notes to every slide deck and the code of <code>lifi_hardware</code>, and it knows where the semester stands. It talks to you in the language you write in, and it knows two commands: <code>/onboarding</code> for your first session and <code>/update-semester</code> to fetch new material when Nicolas says so.</p>
+<p>A few things it will not do, on purpose. It writes code with you in small steps and explains each one, but it will not hand you a whole challenge in one go: at every acceptance test you have to change your own program on the spot. It will not give you a number that depends on your setup, such as how many colours you can tell apart; it suggests the experiment instead. And before the class has agreed on its standard, it will not hand you a ready-made design for how a message starts or how sender and receiver stay in step. Finding that out is part of Challenge 3.</p>
+<p>Your key has a limited budget. Short questions cost a fraction of a cent, long sessions more, so do not waste it on chatting. If it runs out, you can switch to one of the free models in the model selection below the input field. They are free for a limited time only, and some of them use conversations to improve the model: do not paste anything personal there.</p>
+</section>
 <section id="what-you-can-use-it-for" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-can-use-it-for">What you can use it for</h2>
 <p>Writing code is the obvious use, and it is far from the only one. Some concrete suggestions, roughly in the order you will need them.</p>
-<p><strong>Installing the software.</strong> The <a href="../software/index.html">Required Software</a> page has eight steps, and something usually goes wrong in one of them. As soon as OpenCode itself is running, it can take over: paste the error message, or take a screenshot of the window you are stuck at and give it that. The assistant can read screenshots. It will tell you what the message means and what to do next, on your operating system, in your language.</p>
+<p><strong>Installing the software.</strong> You install OpenCode by hand; after that, the command <code>/onboarding</code> has the assistant install everything else with you, as described on the <a href="../software/index.html">Required Software</a> page. When something goes wrong, paste the error message, or take a screenshot of the window you are stuck at and give it that (drag the picture into the input field). The assistant can read screenshots. It will tell you what the message means and what to do next, on your operating system, in your language.</p>
 <p><strong>Understanding what was said in class.</strong> If something stayed unclear, have it explained again, in other words, with an example, until it sits. An assistant is patient and thinks no question is too simple. For many students this is the most valuable use of all.</p>
 <p><strong>Reading an error message.</strong> Python’s error messages are honest but unfriendly. Paste the whole message, including the lines above it, and ask what it is complaining about. Then fix it yourself. You will start recognising the common ones within a week.</p>
 <p><strong>Finding ideas when you are stuck.</strong> Describe your problem and ask for several ways to solve it. You do not have to take any of them. Often it is enough to see three options to notice which one fits your setup.</p>
