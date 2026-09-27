@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>first light</title>
+  <link rel="stylesheet" href="theme.css?v=20260927a">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260927a">
+  <style>
+    /* Symbole neben der kleinen Ueberschrift: so gross wie ihre Schrift, in ihrem Grau. */
+    .slide h2 .icon { width: 1em; height: 1em; vertical-align: -0.12em; margin-right: 16px; color: var(--gray); }
+
+    /* Fototext in der normalen Stufe, wenn mehrere Zeilen links neben einem Foto stehen */
+    .photo-text.lines-normal { font-size: var(--normal); line-height: 1.35; }
+    /* neben der Illustration von /onboarding: sie beginnt bei etwa 43 Prozent der Breite */
+    .photo-text.narrow { width: 640px; font-size: var(--small); line-height: 1.4; }
+    .photo-text.narrow > div > div + div { margin-top: 0.5em; }
+
+    /* „your device": das echte Foto rechts, die Teile links */
+    img.device { position: absolute; right: var(--margin); top: 150px; height: 780px; border-radius: 12px; }
+    .device-lines { position: absolute; left: var(--margin); top: 150px; height: 780px; width: 900px;
+                    display: flex; flex-direction: column; justify-content: center; gap: 0.9em; font-size: var(--normal); }
+    .device-lines .sub { display: block; font-size: var(--small); color: var(--gray); }
+
+    /* „part 1, by hand" und „where are you?": nummerierte Zeilen mit fester Hoehe */
+    .steps { font-size: var(--normal); }
+    .steps > div { height: 96px; display: flex; align-items: center; gap: 40px; }
+    .steps .n { width: 60px; font-family: var(--mono); color: var(--gray); }
+    .checks > div { height: 100px; display: flex; align-items: center; gap: 40px; font-size: var(--normal); }
+    .checks .box { width: 48px; height: 48px; border: 3px solid var(--gray); border-radius: 6px; flex: none; }
+
+    /* „/onboarding" gross, darunter die Zeilen */
+    .command { font-family: var(--mono); font-size: var(--large); color: var(--yellow); text-transform: none; margin-bottom: 0.4em; }
+
+    /* Markierung im Geraetefoto: je Aufbauschritt ein Rahmen um das Teil, das gerade dran ist
+       (gelb heisst „aktuell"). Lage aus dem Foto umgerechnet: Bild 1200 x 1328, gezeigt in
+       780 px Hoehe ab x = 1095, y = 150. deviceMarks() schaltet den Rahmen des Schritts ein. */
+    .spot { position: absolute; border: 4px solid var(--yellow); border-radius: 14px; display: none; }
+    .spot.on { display: block; }
+    .spot.arrow { border: none; border-radius: 0; color: var(--yellow); overflow: visible; }
+
+    /* Karten: Symbol oben, Titel, leiser Text */
+    .card { border: 1px solid var(--gray-dark); border-radius: 16px; padding: 44px 40px; height: 560px; }
+    /* Symbol und Titel mittig; Titel (auch die grosse Zahl) in fester Hoehe, unten ausgerichtet,
+       damit die Texte darunter auf gleicher Hoehe beginnen. */
+    .card { text-align: center; }
+    .card .icon { width: 64px; height: 64px; color: var(--gray-light); display: block; margin: 0 auto 28px; }
+    .card .ct, .card .big { color: var(--white); line-height: 1.2; min-height: 116px; display: flex; align-items: flex-end; justify-content: center; }
+    .card .ct { font-size: var(--normal); }
+    .card .big { font-size: var(--large); line-height: 1.1; }
+    .card .cx { font-size: var(--small); color: var(--gray-light); margin-top: 28px; line-height: 1.35; }
+    .card.warn { border-color: var(--red); }
+    .card.warn .icon { color: var(--red); }
+    .cols3.cards { top: 200px; bottom: auto; }
+
+    /* „your assistant": links das Logo, rechts vier Kacheln */
+    .brand { position: absolute; left: var(--margin); top: 150px; bottom: 150px; width: 560px;
+             display: flex; flex-direction: column; justify-content: center; gap: 36px; }
+    .brand img { width: 100%; }
+    .brand .sub { font-size: var(--small); color: var(--gray); }
+    .grid2 { position: absolute; left: 780px; right: var(--margin); top: 180px; display: grid;
+             grid-template-columns: 1fr 1fr; gap: 36px; }
+    .tile { border: 1px solid var(--gray-dark); border-radius: 16px; padding: 32px 36px; height: 344px; }
+    .tile .icon { width: 48px; height: 48px; color: var(--gray-light); display: block; margin-bottom: 20px; }
+    .tile .ct { font-size: var(--normal); color: var(--white); }
+    .tile .cx { font-size: var(--small); color: var(--gray-light); margin-top: 14px; line-height: 1.35; }
+    .tile.note { border-color: var(--yellow); }
+    .tile.note .icon, .tile.note .ct { color: var(--yellow); }
+  </style>
+</head>
+<body>
+<div class="deck"
+     data-title="first light"
+     data-subtitle="digitization and programming · setup and first steps · prof. dr. nicolas meseth"
+     data-parts='["your device", "your tools", "getting ready", "how the workshop works"]'>
+
+  <section class="slide title">
+    <aside class="notes">Der zweite Teil des ersten Tages, und der Titel ist ein Wort aus der Astronomie: First Light heißt das erste Bild, das ein neues Teleskop aufnimmt. Hier ist es der Moment, in dem eure LED zum ersten Mal leuchtet. Kurz, fünfzehn Minuten, danach arbeitet ihr.</aside>
+  </section>
+
+  <section class="slide agenda">
+    <aside class="notes">Vier Teile: euer Gerät, welche Werkzeuge ihr braucht und wie sie zusammenhängen, wie ihr sie einrichtet, und wie die Werkstatt läuft, wenn ich allein für 24 Teams da bin.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/device-waiting.jpg" alt="">
+    <div class="photo-text">meet<br>your device.</div>
+    <div class="footnote">image: ai-generated from photos of the real device (gpt-image-2.5-sunburst)</div>
+    <aside class="notes">Gleich bekommt jede und jeder von euch so ein Gerät, fertig gebaut, und in anderthalb Stunden soll daraus Licht kommen, weil ihr es ihm gesagt habt. Der Weg dahin geht über ein paar Werkzeuge, die zusammen eine Kette bilden. Die zeige ich euch jetzt, dann richtet ihr sie ein.</aside>
+  </section>
+
+  <!-- ================= Teil 1: your device ================= -->
+
+  <section class="slide part" data-part="your device">
+    <aside class="notes">Was ihr gleich in der Hand habt.</aside>
+  </section>
+
+  <section class="slide" data-on-show="deviceMarks" data-on-step="deviceMarks">
+    <h2>your device</h2>
+    <img class="device" src="img/device.jpg" alt="the lifi device from the front">
+    <div class="spot" style="left: 1175px; top: 493px; width: 247px; height: 194px;"></div>
+    <div class="spot" style="left: 1465px; top: 520px; width: 235px; height: 176px;"></div>
+    <div class="spot" style="left: 1420px; top: 476px; width: 50px; height: 374px;"></div>
+    <!-- Schritt 3 „inside": kein Rahmen, sondern ein Pfeil von oben auf die Mitte des Deckels -->
+    <svg class="spot arrow" style="left: 1430px; top: 108px; width: 60px; height: 230px;" viewBox="0 0 60 230" aria-hidden="true"><line x1="30" y1="0" x2="30" y2="196" stroke="currentColor" stroke-width="6"/><path d="M8 188 L30 228 L52 188 Z" fill="currentColor"/></svg>
+    <div class="device-lines">
+      <div>the eye<span class="sub">a colour sensor, on the left</span></div>
+      <div data-step="1">the lamp<span class="sub">an <span class="keep-case">RGB LED</span>, on the right</span></div>
+      <div data-step="2">the wall<span class="sub">so the device does not see its own lamp</span></div>
+      <div data-step="3">inside<span class="sub">a <span class="keep-case">Master Brick</span>, connected to your laptop by <span class="keep-case">USB</span></span></div>
+    </div>
+    <aside class="notes">Das ist das echte Gerät, von vorn. Links das Auge, der Farbsensor; er meldet vier Zahlen. Rechts die Lampe, eine RGB-LED, drei Lämpchen in einem. Dazwischen die Wand, damit das Gerät seine eigene Lampe nicht sieht. Und innen eine dritte Platine, der Master Brick, der beide mit eurem Laptop verbindet, über USB auf der Rückseite. Mehr braucht es nicht, und mehr kommt auch nicht dazu. Die Namen der Teile stehen auf der Hardware-Seite.</aside>
+  </section>
+
+  <section class="slide">
+    <h2><!-- Bootstrap Icons "box-seam" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/></svg>it's yours until january</h2>
+    <div class="content">
+      <div class="lines">
+        <div>two devices per team, one for each of you.</div>
+        <div>sign for it when you pick it up.</div>
+        <div>bring it every monday. keep it in one piece.</div>
+      </div>
+    </div>
+    <aside class="notes">Ihr habt beide Enden der Strecke, also könnt ihr alles selbst ausprobieren. Das Gerät bleibt bis zum Finale bei euch; wenn etwas kaputtgeht, sagt es sofort, dafür gibt es Ersatzteile. Nicht an den Platinen ziehen; das USB-Kabel ist die empfindlichste Stelle. Die Ausgabe läuft gleich zu Beginn der Werkstatt, gegen Unterschrift.</aside>
+  </section>
+
+  <!-- ================= Teil 2: your tools ================= -->
+
+  <section class="slide part" data-part="your tools">
+    <aside class="notes">Sechs Glieder einer Kette, von eurer Idee bis zum Licht.</aside>
+  </section>
+
+  <section class="slide" data-on-show="chainSteps" data-on-step="chainSteps">
+    <h2>from your idea to the light</h2>
+    <div class="figure" id="fig-chain"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span><span data-step="5"></span>
+    <aside class="notes">Von oben nach unten. Ihr entscheidet, was passieren soll. Ihr sagt es eurem Assistenten in OpenCode, und er schreibt ein Python-Programm, das ihr lesen und verstehen sollt; es liegt in eurem Ordner my-code. Das Programm benutzt ein kleines Modul, lifi_hardware, das die Sprache des Geräts spricht. Darunter läuft ein Dienst, der Brick Daemon, der die USB-Verbindung hält. Und ganz unten das Gerät. Jedes Glied weiß nur von seinen Nachbarn; das wird im Semester noch wichtig, unter dem Namen Schichten. Heute installiert ihr alles davon.</aside>
+  </section>
+
+  <section class="slide">
+    <!-- Logo: offizieller Schriftzug von OpenCode (github.com/sst/opencode, packages/console/app/src/asset/brand), Fassung fuer dunklen Grund -->
+    <div class="brand">
+      <img src="img/brand/opencode-wordmark-dark.svg" alt="OpenCode">
+      <div class="sub">your assistant, with a model already set up for this course.</div>
+    </div>
+    <div class="grid2">
+      <div class="tile"><!-- Bootstrap Icons "book" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/></svg><div class="ct"><span class="t">knows the course</span></div><div class="cx">the website, the lecture notes, the module <span class="mono keep-case">lifi_hardware</span>.</div></div>
+      <div class="tile"><!-- Bootstrap Icons "chat-dots" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/><path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"/></svg><div class="ct"><span class="t">ask anything</span></div><div class="cx">as often as you like. it explains, installs and writes code.</div></div>
+      <div class="tile"><!-- Bootstrap Icons "gear-wide-connected" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z"/></svg><div class="ct"><span class="t">ready to go</span></div><div class="cx">the model is set up, the course is loaded. you only enter your key.</div></div>
+      <div class="tile note"><!-- Bootstrap Icons "eye-slash" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/><path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/><path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/></svg><div class="ct"><span class="t">it cannot see your device</span></div><div class="cx">the lamp has the last word.</div></div>
+    </div>
+    <aside class="notes">Das ist OpenCode, euer Assistent. Das Modell ist für diesen Kurs schon eingestellt, ihr gebt nur euren Schlüssel ein. Er kennt den Kursstoff, weil er im Kursordner nachliest: die Seiten der Website, die Skripte zu den Folien, den Quelltext des Moduls. Fragt ihn alles, so oft ihr wollt; er erklärt, installiert und schreibt Code, und er nennt mich übrigens beim Namen. In der Werkstatt ist er die erste Anlaufstelle. Was er nicht kann: sehen, was euer Gerät tut. Das müsst ihr messen.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>your key</h2>
+    <div class="cols3 cards">
+      <div class="card"><!-- Bootstrap Icons "envelope-at" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/><path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/></svg><div class="ct"><span class="t">check your e-mail</span></div><div class="cx">your personal key is in it. it is for you alone.</div></div>
+      <div class="card"><!-- Bootstrap Icons "wallet2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/></svg><div class="big"><span class="t">5 €</span></div><div class="cx">the budget on your key. use it for this course. when it runs out, the free models still work.</div></div>
+      <div class="card warn"><!-- Bootstrap Icons "exclamation-triangle" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/><path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg><div class="ct"><span class="t">only into <span class="keep-case">OpenCode</span></span></div><div class="cx">never into a chat, a file or a screenshot. whoever has your key works at your expense.</div></div>
+    </div>
+    <aside class="notes">Schaut in euer Postfach: Dort ist euer persönlicher Schlüssel, und er gehört nur euch. Auf ihm liegen fünf Euro, genug für diesen Kurs, wenn ihr ihn dafür benutzt. Ist das Guthaben aufgebraucht, ist das kein Weltuntergang; OpenCode bringt kostenlose Modelle mit. Und das Wichtigste, deshalb in Rot: Der Schlüssel gehört in das Einstellungsfenster von OpenCode und nirgendwohin sonst, auch nicht in den Chat mit dem Assistenten. Wer ihn hat, arbeitet auf eure Kosten.</aside>
+  </section>
+
+  <!-- ================= Teil 3: getting ready ================= -->
+
+  <section class="slide part" data-part="getting ready">
+    <aside class="notes">Zwei Teile: vier Schritte von Hand, dann übernimmt der Assistent.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>part 1, by hand</h2>
+    <div class="content">
+      <div class="steps">
+        <div><span class="n">1</span><span>install <span class="keep-case">OpenCode Desktop</span>.</span></div>
+        <div data-step="1"><span class="n">2</span><span>download the course folder as a zip and unpack it.</span></div>
+        <div data-step="2"><span class="n">3</span><span>open the folder in <span class="keep-case">OpenCode</span>.</span></div>
+        <div data-step="3"><span class="n">4</span><span>enter your key.</span></div>
+      </div>
+    </div>
+    <div class="punch keep-case" style="color: var(--blue);">step by step: docs.lifi-project.de/software</div>
+    <aside class="notes">Diese vier Schritte macht ihr selbst, weil es vorher noch keinen Assistenten gibt, der helfen könnte. Die Website zeigt jeden Schritt für Windows und Mac. Den Ordner nach dem Entpacken nicht in einen Cloud-Ordner legen, sondern zum Beispiel unter Dokumente. Der Schlüssel kommt in OpenCode unter Einstellungen, Anbieter, OpenAI.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/onboarding.jpg" alt="">
+    <h2>part 2, your assistant takes over</h2>
+    <div class="photo-text narrow">
+      <div>
+        <div class="command">/onboarding</div>
+        <div data-step="1">it asks you three questions.</div>
+        <div data-step="2">it installs <span class="keep-case">Python</span>, <span class="mono keep-case">lifi_hardware</span>, <span class="keep-case">VS Code</span>, <span class="keep-case">Brick Daemon</span> and <span class="keep-case">Brick Viewer</span>.</div>
+        <div data-step="3">it checks every step before the next one.</div>
+        <div data-step="4">when it asks, plug in your device.</div>
+      </div>
+    </div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Im Kursordner tippt ihr /onboarding. Ab hier arbeitet der Assistent, und ihr lest mit und bestätigt. Er fragt euch drei Dinge, dann installiert er, was fehlt, Paket für Paket wie im Bild, und prüft jeden Schritt, bevor er den nächsten macht. Fragt nach, wenn ihr etwas nicht versteht; dafür ist er da. Wenn er fragt, ob er etwas ausführen darf: lesen, dann erlauben. Und wenn er darum bittet, steckt ihr das Gerät ein.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/led-green.jpg" alt="">
+    <h2><!-- Bootstrap Icons "flag" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21 21 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21 21 0 0 0 14 7.655V1.222z"/></svg>the finish line</h2>
+    <div class="photo-text lines-normal">
+      <div>
+        <div class="statement">your <span class="keep-case">LED</span> lights up green.</div>
+        <div class="sidenote" data-step="1" style="margin-top: 0.6em;">and your device appears in the cockpit.</div>
+      </div>
+    </div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Das ist das Ziel für heute. Am Ende von /onboarding leuchtet eure LED grün, weil euer Programm es ihr gesagt hat, und der Sensor liefert drei Messwerte. Im selben Moment meldet sich euer Gerät beim Kursserver. Live-Moment: Das Cockpit läuft vorn am Beamer; im Lauf der Werkstatt tauchen die Geräte dort auf, und ich ordne sie euren Teams zu. Ab dann zeigt das Cockpit, was eure Lampe sendet und euer Sensor misst.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>where are you?</h2>
+    <div class="content">
+      <div class="checks">
+        <div><span class="box"></span><span><span class="keep-case">OpenCode</span> installed</span></div>
+        <div><span class="box"></span><span>course folder open</span></div>
+        <div><span class="box"></span><span>key entered</span></div>
+        <div><span class="box"></span><span><span class="mono">/onboarding</span> started</span></div>
+        <div><span class="box"></span><span><span class="keep-case">LED</span> green</span></div>
+        <div><span class="box"></span><span>device in the cockpit</span></div>
+      </div>
+    </div>
+    <aside class="notes">Diese Folie bleibt während der Werkstatt an der Wand. Wenn ich frage, wo ihr seid, antwortet mit der Zeile. Wer die letzte Zeile hat, ist fertig und hilft dem Nachbartisch.</aside>
+  </section>
+
+  <!-- ================= Teil 4: how the workshop works ================= -->
+
+  <section class="slide part" data-part="how the workshop works">
+    <aside class="notes">Einer für 24 Teams: Das geht nur mit einer Regel.</aside>
+  </section>
+
+  <section class="slide">
+    <h2><!-- Bootstrap Icons "life-preserver" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m6.43-5.228a7.03 7.03 0 0 1-3.658 3.658l-1.115-2.788a4 4 0 0 0 1.985-1.985zM5.228 14.43a7.03 7.03 0 0 1-3.658-3.658l2.788-1.115a4 4 0 0 0 1.985 1.985zm9.202-9.202-2.788 1.115a4 4 0 0 0-1.985-1.985l1.115-2.788a7.03 7.03 0 0 1 3.658 3.658m-8.087-.87a4 4 0 0 0-1.985 1.985L1.57 5.228A7.03 7.03 0 0 1 5.228 1.57zM8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></svg>stuck? ask in this order</h2>
+    <div class="content">
+      <div class="steps">
+        <div><span class="n">1</span><span>your assistant</span></div>
+        <div data-step="1"><span class="n">2</span><span>your partner</span></div>
+        <div data-step="2"><span class="n">3</span><span>the team next to you</span></div>
+        <div data-step="3"><span class="n">4</span><span>nicolas</span></div>
+      </div>
+    </div>
+    <aside class="notes">Ich bin einer, ihr seid 24 Teams. Wenn alle auf mich warten, kommt niemand voran. Also: erst der Assistent, mit der vollständigen Fehlermeldung. Dann euer Partner. Dann das Nachbarteam, das vielleicht gerade dasselbe gelöst hat. Erst dann ich. Das ist keine Abwehr, sondern die Art, wie man auch später im Beruf arbeitet.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>how to ask your assistant</h2>
+    <div class="content">
+      <div class="lines">
+        <div>say what you wanted to happen.</div>
+        <div>paste what happened instead: the whole error, even screenshots.</div>
+        <div>ask why, not only how.</div>
+      </div>
+    </div>
+    <aside class="notes">Eine rote Fehlermeldung ist eine Auskunft, kein Urteil. Kopiert sie vollständig, nicht nur die letzte Zeile, und wenn es hilft, gebt ihm einen Screenshot; er kann Bilder lesen. Und lasst euch erklären, warum die Lösung funktioniert; in der Klausur fragt euch niemand, ob der Assistent es wusste.</aside>
+  </section>
+
+  <section class="slide">
+    <h2><!-- Bootstrap Icons "arrow-repeat" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/><path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/></svg>every week</h2>
+    <div class="content">
+      <div class="lines">
+        <div>type <span class="mono y">/update-semester</span>: new material arrives in your folder.</div>
+        <div>your own work lives in <span class="mono">my-code</span>. everything else gets replaced.</div>
+      </div>
+    </div>
+    <aside class="notes">Jede Woche kommt neues Material dazu, etwa die Vorlage zur nächsten Challenge und der Stand des Semesters, den euer Assistent kennt. Ein Befehl holt es. Alles, was ihr selbst schreibt, gehört in den Ordner my-code; der Rest des Kursordners wird beim Aktualisieren überschrieben, ohne Rückfrage.</aside>
+  </section>
+
+  <!-- ================= Schluss ================= -->
+
+  <section class="slide">
+    <img class="photo" src="img/green-led.jpg" alt="">
+    <div class="photo-text lines-normal">
+      <div>
+        <div class="y">until next monday:</div>
+        <div>finish the setup with <span class="mono">/onboarding</span>.</div>
+        <div>read “the project” and “challenge 0”.</div>
+      </div>
+    </div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Wer heute nicht fertig wird: kein Problem, der Assistent hilft zu Hause genauso. Lest bis nächste Woche die Seiten „The Project“ und „Challenge 0“ auf der Website. Nächste Woche schreibt ihr euer erstes eigenes Programm, und dafür muss das Licht an sein.</aside>
+  </section>
+
+</div>
+<!-- Reihenfolge ist Pflicht: deck.js VOR stagekit.js, sonst fehlen die
+     data-on-show-Funktionen beim ersten Anzeigen. -->
+<script src="../stagekit/draw.js?v=20260927a"></script>
+<script src="deck.js?v=20260927a"></script>
+<script src="../stagekit/stagekit.js?v=20260927a"></script>
+</body>
+</html>

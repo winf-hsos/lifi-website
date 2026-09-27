@@ -3,102 +3,195 @@
 <head>
   <meta charset="utf-8">
   <title>overview</title>
-  <link rel="stylesheet" href="theme.css?v=20260915a">
-  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260915a">
+  <link rel="stylesheet" href="theme.css?v=20260926b">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260926b">
+  <style>
+    /* Symbole neben der kleinen Ueberschrift: so gross wie ihre Schrift, in ihrem Grau. */
+    .slide h2 .icon { width: 1em; height: 1em; vertical-align: -0.12em; margin-right: 16px; color: var(--gray); }
+
+    /* Fototext in zwei Stufen: eine Aussage in der normalen Groesse, darunter leise in Grau */
+    .photo-text.quiet { font-size: var(--normal); line-height: 1.3; }
+    .photo-text.quiet .sub { font-size: var(--small); color: var(--gray); margin-top: 0.9em; }
+
+    /* --- „the device": das freigestellte echte Geraet links, die Zeichnung rechts ------- */
+    img.device-photo { position: absolute; left: 60px; top: 230px; width: 640px; }
+    .figure.device { left: 700px; }
+
+    /* --- Karten: drei nebeneinander, Symbol oben, Titel, leiser Text ------------------- */
+    .card { border: 1px solid var(--gray-dark); border-radius: 16px; padding: 48px 44px; height: 560px; }
+    /* Symbol und Titel mittig; jeder Titel hat die Hoehe von zwei Zeilen und sitzt unten darin,
+       damit die Texte darunter in allen Karten einer Folie auf gleicher Hoehe beginnen. */
+    .card { text-align: center; }
+    .card .icon { width: 64px; height: 64px; color: var(--gray-light); display: block; margin: 0 auto 28px; }
+    .card .ct { font-size: var(--normal); color: var(--white); line-height: 1.2; min-height: 2.4em; display: flex; align-items: flex-end; justify-content: center; }
+    .card .cx { font-size: var(--small); color: var(--gray-light); margin-top: 28px; line-height: 1.35; }
+    .card .five { justify-content: center; }
+    .cols3.cards { top: 190px; bottom: auto; }
+    /* fuenf Kaestchen fuer die fuenf Challenges im Bonus */
+    .five { display: flex; gap: 14px; margin-top: 40px; }
+    .five span { width: 56px; height: 56px; border: 3px solid var(--green); border-radius: 8px; display: flex;
+                 align-items: center; justify-content: center; font-family: var(--mono); font-size: var(--tiny); color: var(--green); }
+
+    /* --- Experiment: der Beamer ist die Lampe ---------------------------------------
+       Die Lampe ist eine grosse Flaeche, die deck.js in echten Farben aufleuchten
+       laesst. Darunter die gesendete Folge (erst im Schritt 1) und die Legende
+       des Alphabets. Feste Hoehen, damit beim Schritt nichts springt. */
+    .lamp { position: absolute; left: var(--margin); right: var(--margin); top: 150px; height: 560px;
+            border: 2px solid var(--gray-dark); border-radius: 16px; background: var(--bg);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--mono); font-size: var(--large); color: var(--gray); }
+    .sent { position: absolute; left: var(--margin); right: var(--margin); top: 750px; height: 70px;
+            display: flex; align-items: center; gap: 40px; font-family: var(--mono); font-size: var(--normal); color: var(--white); }
+    .sent .lbl { width: 200px; flex: none; font-family: var(--font); font-size: var(--small); color: var(--gray); }
+    .sent .noise { color: var(--gray-dark); }
+    .sent .mark { color: var(--yellow); }
+    .legend { position: absolute; left: var(--margin); right: var(--margin); top: 860px; height: 60px;
+              display: flex; align-items: center; gap: 48px; font-size: var(--small); color: var(--gray); }
+    .legend .lbl { width: 200px; flex: none; }
+    .legend .sw { display: inline-block; width: 40px; height: 40px; border-radius: 6px; vertical-align: middle; margin-right: 12px; }
+    .legend span.item { font-family: var(--mono); }
+    .startbtn { position: absolute; right: calc(var(--margin) + 24px); top: 646px; font-family: var(--mono); font-size: var(--tiny);
+                color: var(--gray); background: var(--bg); border: 1px solid var(--gray-dark); border-radius: 8px; padding: 6px 16px; cursor: pointer; }
+    body.print .startbtn { display: none; }
+
+    /* „what went wrong?": Eingabefelder statt contenteditable, denn stagekit
+       ueberhoert Tasten nur in INPUT und TEXTAREA; in einem beschreibbaren DIV
+       wuerde die Leertaste weiterblaettern und N das Notizfenster oeffnen. */
+    .said { position: absolute; left: var(--margin); right: var(--margin); top: 250px; }
+    .said .row { display: flex; align-items: center; gap: 60px; height: 120px; }
+    .said input { width: 960px; flex: none; background: transparent; border: none; border-bottom: 2px solid var(--gray-dark);
+                  color: var(--white); font-family: var(--font); font-size: var(--normal); text-transform: lowercase; padding: 4px 0; outline: none; }
+    .said input::placeholder { color: var(--gray-dark); }
+    .said input:focus { border-bottom-color: var(--blue); }
+    .said .ch { font-size: var(--small); color: var(--blue); }
+
+    /* --- „fourteen mondays": zwei Spalten mit je sieben Sitzungen ------------------ */
+    .weeks { position: absolute; left: var(--margin); right: var(--margin); top: 160px;
+             display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(7, 110px); column-gap: 80px; }
+    .weeks .w { display: flex; align-items: flex-start; gap: 32px; }
+    .weeks .no { width: 60px; flex: none; font-family: var(--mono); font-size: var(--small); color: var(--gray); text-align: right; }
+    .weeks .t { font-size: var(--small); color: var(--white); white-space: nowrap; line-height: 1.2; }
+    .weeks .n { font-size: var(--tiny); color: var(--gray); margin-top: 6px; white-space: nowrap; }
+    .weeks .n .icon { width: 1em; height: 1em; vertical-align: -0.12em; margin-right: 8px; color: var(--gray-light); }
+    .weeks .now .t { color: var(--yellow); }
+
+    /* --- „a typical monday" ------------------------------------------------------ */
+    table.day { border-collapse: collapse; font-size: var(--normal); }
+    table.day td { padding: 6px 0; color: var(--gray-light); }
+    table.day td.time { font-family: var(--mono); font-size: var(--small); color: var(--gray); padding-right: 80px; }
+    table.day tr.build td:not(.time) { color: var(--white); }
+
+    /* --- „where to find what": Symbol, Adresse, wofuer ----------------------------- */
+    .where { display: grid; grid-template-columns: 64px 820px 1fr; row-gap: 40px; column-gap: 40px; align-items: center; }
+    .where .icon { width: 44px; height: 44px; color: var(--gray-light); }
+    .where .addr { font-family: var(--mono); font-size: var(--small); color: var(--blue); text-transform: none; }
+    .where .addr.plain { font-family: var(--font); color: var(--white); text-transform: lowercase; }
+    .where .what { font-size: var(--small); color: var(--gray-light); }
+  </style>
 </head>
 <body>
 <div class="deck"
      data-title="overview"
      data-subtitle="the module, the project, and where everything belongs · prof. dr. nicolas meseth"
-     data-parts='["the goal", "one question, four questions", "five challenges", "how we work"]'>
+     data-parts='["why this module", "what you will learn", "the project", "experiment: you are the receiver", "1 + 4 challenges", "how we work", "this semester"]'>
 
   <section class="slide title">
-    <aside class="notes">Das Deck für den ersten Tag, und das Deck, auf das ich das ganze Semester zurückkomme: Was wir bauen, welche Frage dahintersteht, wie die Konzepte geordnet sind, wie die Challenges aufeinander aufbauen, und wie wir arbeiten. Keine Definitionen heute, nur die Karte.</aside>
+    <aside class="notes">Das Deck für den ersten Tag, und das Deck, auf das ich das ganze Semester zurückkomme: was wir bauen, wozu, welche Frage dahintersteht, wie die Konzepte geordnet sind, wie die Challenges aufeinander aufbauen, wie wir arbeiten und wie das Semester läuft.</aside>
   </section>
 
   <section class="slide agenda">
-    <aside class="notes">Vier Teile. Erst das Ziel und wofür der Trick mit der Lampe gut ist. Dann die Karte: eine Frage, vier Fragen, neunzehn Konzepte. Dann die fünf Challenges und wo sie auf der Karte sitzen. Zum Schluss, wie wir arbeiten: zu zweit, mit Gerät, mit KI, und was zählt.</aside>
+    <aside class="notes">Sieben Teile. Erst, warum es dieses Modul gibt, ganz ohne Projekt. Dann, was ihr lernt, auf einer Karte. Dann das Projekt, an dem ihr es lernt. Dann seid ihr selbst der Empfänger, zwanzig Minuten ohne Rechner. Danach die Challenges, wie wir arbeiten, und zum Schluss das Organisatorische.</aside>
   </section>
 
-  <!-- ================= Teil 1: the goal ================= -->
+  <!-- ================= Teil 1: why this module ================= -->
 
-  <section class="slide part" data-part="the goal">
-    <aside class="notes">Ein Foto, zwei Laptops, und dazwischen nichts als Licht.</aside>
+  <section class="slide part" data-part="why this module">
+    <aside class="notes">Bevor es um Geräte und Licht geht: warum es dieses Modul überhaupt gibt.</aside>
   </section>
 
   <section class="slide">
-    <img class="photo" src="img/goal.jpg" alt="">
-    <div class="photo-text">there is a photo<br>on this laptop.<br>how does it get<br>to the other one?</div>
-    <div class="footnote">image: ai-generated (gpt-image-2)</div>
-    <aside class="notes">Kein Kabel, kein WLAN, kein Stick. Nur eine Lampe und ein Auge. Das ist das Semester in einem Satz: Am Ende geht dieses Foto über diesen Spalt, eine Handbreit, von einem Rechner zum anderen. Und gleich der zweite Satz, weil er der wichtigere ist: Dieses Modul handelt nicht davon, Fotos mit Licht zu verschicken. Das braucht niemand. Die Lampe ist ein Trick, und die nächsten Minuten erklären, wofür.</aside>
+    <img class="photo" src="img/calculator.jpg" alt="">
+    <div class="photo-text">everyone has<br>a calculator.<br>everyone still<br>learns maths.</div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Jede und jeder von euch hat einen Taschenrechner, spätestens im Handy. Und trotzdem hat niemand gesagt: Dann lassen wir Mathe in der Schule weg. Warum eigentlich nicht? Der Rechner rechnet schneller und fehlerfreier als ihr. Die Antwort auf diese Frage ist die Antwort darauf, warum es dieses Modul gibt.</aside>
   </section>
 
-  <section class="slide has-punch">
-    <h2>the device</h2>
-    <div class="figure" id="fig-device"></div>
-    <div class="punch">a lamp, an eye, and a wall between them. two of them face each other, so each can send and receive.</div>
-    <aside class="notes">Die Lampe ist eine RGB-LED, drei Lämpchen in einem, jedem sagt ihr, wie hell es leuchten soll. Das Auge ist ein Farbsensor, der vier Zahlen meldet: Rot, Grün, Blau und Licht insgesamt. Der Steg dazwischen verhindert, dass das Gerät seine eigene Lampe sieht. Weil das Gegenüber umgedreht steht, schaut sein Auge auf meine Lampe und meine auf seine. Den Rückweg gibt es also von Anfang an, wir benutzen ihn aber erst in der letzten Challenge. Alles andere am Gerät, Gehäuse, Platine, USB, steht auf der Hardware-Seite.</aside>
-  </section>
-
-  <section class="slide has-punch">
-    <h2>why a lamp</h2>
-    <div class="content" style="top: 150px">
-      <div class="statement">everything interesting in a computer is invisible.</div>
+  <section class="slide">
+    <h2>why maths, if you have a calculator?</h2>
+    <div class="content">
       <div class="lines">
-        <div>it happens inside chips, in millionths of a second, behind software somebody else wrote.</div>
-        <div>this device does the same thing a few times a second, on your desk.</div>
-        <div>you can put your hand in the way and watch what goes wrong.</div>
+        <div>to write the problem down so that the calculator can solve it.</div>
+        <div data-step="1">to notice when 4,000 comes out and 40 would be right.</div>
+        <div data-step="2">to know what it cannot calculate at all.</div>
       </div>
     </div>
-    <div class="punch">everything this module wants to teach you can be seen on that table.</div>
-    <aside class="notes">Man kann einen Computer ein Leben lang benutzen, ohne je zu sehen, was er mit einem Foto wirklich macht. Das Gerät holt ein kleines Stück davon ins Sichtbare: Es steht vor euch und blinkt. Was im Rechner millionenfach pro Sekunde passiert, passiert hier ein paarmal pro Sekunde, und ihr habt es selbst gebaut. Wie ein Foto zu Zahlen wird, wie Zahlen zu Licht werden, was unterwegs schiefgeht und wie man es merkt: alles auf diesem Tisch.</aside>
+    <aside class="notes">Drei Dinge kann der Taschenrechner nicht, und dafür lernt ihr Mathe. Erstens: das Problem so aufschreiben, dass er es lösen kann. Er rechnet, was ihr eintippt, nicht, was ihr meint. Zweitens: merken, dass das Ergebnis nicht stimmen kann. Wer eine Vorstellung von der Größenordnung hat, sieht sofort, dass 4000 falsch ist, wenn 40 herauskommen müsste; wer keine hat, schreibt 4000 hin. Drittens: wissen, was er gar nicht kann. Merkt euch diese drei, sie kommen gleich wieder.</aside>
   </section>
 
   <section class="slide">
-    <h2>what this module is about</h2>
-    <div class="content">
-      <div class="statement">how can we solve<br>complex problems with computers?</div>
-      <div class="sidenote">one question. every week is a piece of the answer.</div>
+    <img class="photo" src="img/datacenter.jpg" alt="">
+    <div class="photo-text quiet">
+      <div>
+        <div>a computer is just a bigger calculator.</div>
+        <div class="sub">it turns numbers into numbers, billions of times a second. to judge what comes out, you have to understand what it does.</div>
+      </div>
     </div>
-    <aside class="notes">Das ist die Frage, die über allem steht, und ihr findet sie auf jeder Konzeptseite wieder. Der Rest dieses Decks ist eine Karte: wie sich diese Frage in Teilfragen zerlegt, und wo das Projekt darin sitzt.</aside>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Ein Computer ist im Grunde ein größerer Taschenrechner: Er macht aus Zahlen Zahlen, milliardenfach pro Sekunde. Ein Foto ist für ihn eine Liste von Zahlen, ein Text auch, ein Lied auch. Und dieselben drei Fragen gelten: Wie schreibe ich das Problem so auf, dass er es lösen kann? Woran merke ich, dass das Ergebnis nicht stimmt? Was kann er gar nicht? Um das beurteilen zu können, muss man verstehen, was er eigentlich tut. Nicht jede Schaltung, aber das Prinzip. Das ist dieses Modul.</aside>
   </section>
 
-  <!-- ================= Teil 2: one question, four questions ================= -->
+  <section class="slide">
+    <img class="photo" src="img/cockpit.jpg" alt="">
+    <div class="photo-text quiet">
+      <div>
+        <div>pilots still learn how a plane flies.</div>
+        <div class="sub">the better the autopilot, the rarer the moment a human takes over, and the more that moment depends on understanding.</div>
+      </div>
+    </div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Ein zweites Bild dafür. Moderne Flugzeuge fliegen die meiste Zeit mit dem Autopiloten, und trotzdem lernen Piloten, wie ein Flugzeug fliegt. In der Forschung heißt das Automatisierungsparadox: Je besser die Automatik, desto seltener greift der Mensch ein, und desto mehr hängt in genau diesen seltenen Momenten an seinem Verständnis. Dann muss er schnell begreifen, was die Maschine gerade tut und warum. Mit Computern und mit KI ist es genauso.</aside>
+  </section>
 
-  <section class="slide part" data-part="one question, four questions">
-    <aside class="notes">Die Karte. Sie kommt heute einmal Stück für Stück, und danach im Semester immer wieder.</aside>
+  <section class="slide">
+    <img class="photo" src="img/robot.jpg" alt="">
+    <h2>the most powerful calculator humans built so far</h2>
+    <div class="photo-text" style="font-size: var(--normal); line-height: 1.35; width: 40%;">
+      <div>
+        <div>it writes code in seconds.</div>
+        <div data-step="1">it cannot see your sensor.</div>
+        <div data-step="2">it cannot tell if your link works.</div>
+        <div data-step="3" class="y" style="margin-top: 0.8em;">you learn to work with it: cut, check, measure.</div>
+      </div>
+    </div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Und jetzt habt ihr den mächtigsten Taschenrechner, den Menschen bisher gebaut haben: einen Assistenten, der euch in Sekunden Code schreibt. Ihr programmiert in diesem Modul von der ersten Zeile an mit ihm, und das ist gewollt. Aber schaut auf das Bild: Er tippt fleißig und hat eine Augenbinde auf. Das Gerät neben ihm sieht er nicht. Er weiß nicht, was euer Sensor misst, und er kann nicht sagen, ob eure Strecke funktioniert. Genau die drei Dinge vom Taschenrechner bleiben bei euch: das Problem so zerlegen, dass er es lösen kann, das Ergebnis prüfen, nachmessen. Das lernt ihr hier, jede Woche, und die Lampe entscheidet, wer recht hat.</aside>
+  </section>
+
+  <section class="slide" data-on-show="stackSteps" data-on-step="stackSteps">
+    <h2>and to understand ai</h2>
+    <div class="figure" id="fig-stack"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span>
+    <aside class="notes">Und das Zweite, was dieses Modul leistet: Es ist der erste Schritt, um KI zu verstehen, nicht nur zu benutzen. Die Kette ist kurz. KI ist Software, ein Programm wie jedes andere. Software läuft auf einem Computer. Und ein Computer macht aus Zahlen Zahlen, milliardenfach pro Sekunde. Wer KI verstehen will, muss also zuerst verstehen, was ein Computer tut und was Software ist. Genau da fangen wir an, ganz unten.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>what comes next</h2>
+    <div class="figure" id="fig-next"></div>
+    <div class="punch">this module is the foundation. the next one builds on it.</div>
+    <aside class="notes">Und es geht weiter. Hier geht es um den Computer und seine Software, das Fundament. Im Folgemodul Problem Solving with AI steigt ihr dann in die KI selbst ein: wie sie arbeitet und wie man mit ihr echte Probleme löst. Dafür ist dieses Modul die Voraussetzung.</aside>
+  </section>
+
+  <!-- ================= Teil 2: what you will learn ================= -->
+
+  <section class="slide part" data-part="what you will learn">
+    <aside class="notes">Was ihr in diesem Modul lernt, auf einer Karte. Sie kommt heute einmal Stück für Stück und danach im Semester immer wieder.</aside>
   </section>
 
   <section class="slide" data-on-show="mapSteps" data-on-step="mapSteps">
-    <h2>the map</h2>
+    <h2>what you will learn</h2>
     <div class="figure" id="fig-map-steps"></div>
     <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
-    <aside class="notes">Schritt für Schritt. Ein Computer macht vier Dinge mit Information: Er stellt sie dar, er speichert sie, er überträgt sie, er verarbeitet sie. Das sind die vier Fragen. Unter jeder steht, was der Computer dabei mit Bits tut: Bits machen, Bits ablegen, Bits schicken, Bits verrechnen. Und darunter die Konzepte, achtzehn Stück, jedes gehört zu genau einer Frage. Die Farbe bleibt das ganze Semester dieselbe: Wo eine Folie orange ist, geht es ums Darstellen, wo sie magenta ist, ums Übertragen. Ganz oben, in Grau, fünf Arbeitsweisen, die ihr überall braucht: Probleme zerlegen, das Modell Eingabe, Verarbeitung, Ausgabe, Algorithmen, Messen, Schichten. Keine Sorge: Heute müsst ihr keines dieser Konzepte verstehen. Ihr sollt nur sehen, dass es sie gibt und wo sie hingehören.</aside>
-  </section>
-
-  <section class="slide has-punch">
-    <h2>the project on the map</h2>
-    <div class="figure" id="fig-map"></div>
-    <div class="punch">your device touches all four questions. that is why it is the project.</div>
-    <aside class="notes">Warum ausgerechnet dieses Projekt? Das Foto liegt als Datei auf der Platte: speichern. Seine Bytes stellen ein Bild dar: darstellen. Eine Prüfsumme rechnet über sie, damit der Empfänger weiß, ob alles angekommen ist: verarbeiten. Und das Licht trägt sie hinüber: übertragen. Ein einziges Gerät, und alle vier Fragen stecken darin. Deshalb ist das Gerät das Mittel und nicht der Zweck.</aside>
-  </section>
-
-  <section class="slide">
-    <h2>the four questions, in one line each</h2>
-    <div class="figure" id="fig-four"></div>
-    <aside class="notes">Je Frage ein Satz, den ihr heute schon versteht. Darstellen: Für den Rechner ist das Foto eine Liste von Zahlen, und die Zahlen sind Zustände von etwas Physischem, eine Spannung, ein Lichtblitz. Speichern: Das Foto muss irgendwo liegen, vorher und nachher. Übertragen: Der Empfänger weiß nicht, wann ein Buchstabe anfängt, und das Licht, das er sieht, ist nie genau das, was gesendet wurde. Verarbeiten: Jemand muss aus den Zahlen wieder ein Bild machen und prüfen, ob sie heil sind. Der Rest ist das Semester.</aside>
-  </section>
-
-  <section class="slide">
-    <h2>what the exam is about</h2>
-    <div class="content" style="top: 150px">
-      <div class="statement">the concepts.</div>
-      <div class="lines">
-        <div>the project is the material on which you explain them.</div>
-        <div>whoever passes every challenge and cannot say why digital transmission tolerates noise does not pass the exam.</div>
-      </div>
-    </div>
-    <aside class="notes">Das gehört in die erste Stunde, nicht in die letzte. Die Platzierung im Wettbewerb zählt nicht zur Note. Alle Challenges zu bestehen ist die Zulassung. Geprüft werden die Konzepte, einzeln, im Gespräch, und ihr werdet jedes davon am eigenen Gerät erlebt haben, bevor es geprüft wird. Vorbereiten müsst ihr euch trotzdem; ihr fangt nur nicht bei null an.</aside>
+    <aside class="notes">Das sind die Lernziele, auf einer Karte. Oben die große Frage: Wie lösen wir komplexe Probleme mit Computern? Darunter vier kleinere, denn ein Computer macht vier Dinge mit Information: Er stellt sie dar, er speichert sie, er überträgt sie, er verarbeitet sie. Unter jeder steht, was er dabei mit Bits tut, und darunter die Konzepte, achtzehn Stück, jedes in der Farbe seiner Frage; die Farbe bleibt das ganze Semester dieselbe. Ganz oben, in Grau, die Arbeitsweisen, die ihr überall braucht: Probleme zerlegen, das Modell Eingabe, Verarbeitung, Ausgabe, Algorithmen und Programme, Messen, Schichten. Heute müsst ihr keines dieser Konzepte verstehen. Ihr sollt nur sehen, dass es sie gibt und wo sie hingehören. Und dazu, das ganze Semester über: die Arbeit mit der KI.</aside>
   </section>
 
   <section class="slide">
@@ -107,110 +200,273 @@
     <aside class="notes">Jedes Konzept hat eine Seite: Zusammenfassung mit Leitfragen, die Erklärung, die Folien aus der Sitzung, Übungsfragen im Klausurformat, Literatur. Diese Übersichtsseite ist der Einstieg. Sie trägt dieselbe Karte, und sie sagt bei jedem Konzept, in welcher Challenge ihr es braucht.</aside>
   </section>
 
-  <!-- ================= Teil 3: five challenges ================= -->
+  <!-- ================= Teil 3: the project ================= -->
 
-  <section class="slide part" data-part="five challenges">
-    <aside class="notes">Fünf Challenges, und jede hebt genau eine Schwierigkeit an.</aside>
+  <section class="slide part" data-part="the project">
+    <aside class="notes">Und woran ihr das lernt: das Projekt. Was jetzt kommt, ist das Ziel des Projekts, nicht das des Moduls.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/hands.jpg" alt="">
+    <div class="photo-text">why a project,<br>and not just<br>lectures?</div>
+    <div class="footnote">image: ai-generated from photos of the real device (gpt-image-2.5-sunburst)</div>
+    <aside class="notes">Die Lernziele stehen. Man könnte sie jetzt einfach vortragen, vierzehn Wochen lang. Wir machen etwas anderes: Ihr baut etwas. Warum?</aside>
+  </section>
+
+  <section class="slide">
+    <h2>why a project?</h2>
+    <div class="cols3 cards">
+      <div class="card"><!-- Bootstrap Icons "tools" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/></svg><div class="ct"><span class="t">learn by doing</span></div><div class="cx">concepts stick when you have built them, broken them and fixed them yourself.</div></div>
+      <div class="card" data-step="1"><!-- Bootstrap Icons "puzzle" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.5.5 0 0 0-.115.118l-.012.025L6.5 4.5v.003l.003.01q.005.015.036.053a.9.9 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.9.9 0 0 0 .271-.194.2.2 0 0 0 .039-.063v-.009l-.012-.025a.5.5 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.5.5 0 0 0 .115-.118l.012-.025.001-.006v-.003a.2.2 0 0 0-.039-.064.9.9 0 0 0-.27-.193C8.91 11.1 8.49 11 8 11s-.912.1-1.19.24a.9.9 0 0 0-.271.194.2.2 0 0 0-.039.063v.003l.001.006.012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238zM4.605 3a.5.5 0 0 0-.498.55l.001.007.29 3.4A.5.5 0 0 1 3.9 7.5h-.782c-.696 0-1.182-.497-1.469-.872a.5.5 0 0 0-.118-.115l-.025-.012L1.5 6.5h-.003a.2.2 0 0 0-.064.039.9.9 0 0 0-.193.27C1.1 7.09 1 7.51 1 8s.1.912.24 1.19c.07.14.14.225.194.271a.2.2 0 0 0 .063.039H1.5l.006-.001.025-.012a.5.5 0 0 0 .118-.115c.287-.375.773-.872 1.469-.872H3.9a.5.5 0 0 1 .498.542l-.29 3.408a.5.5 0 0 0 .497.55h1.878c-.048-.166-.195-.352-.463-.557-.274-.21-.52-.528-.52-.943 0-.568.447-.947.862-1.154C6.807 10.123 7.387 10 8 10s1.193.123 1.638.346c.415.207.862.586.862 1.154 0 .415-.246.733-.52.943-.268.205-.415.39-.463.557h1.878a.5.5 0 0 0 .498-.55l-.001-.007-.29-3.4A.5.5 0 0 1 12.1 8.5h.782c.696 0 1.182.497 1.469.872.05.065.091.099.118.115l.025.012.006.001h.003a.2.2 0 0 0 .064-.039.9.9 0 0 0 .193-.27c.14-.28.24-.7.24-1.191s-.1-.912-.24-1.19a.9.9 0 0 0-.194-.271.2.2 0 0 0-.063-.039H14.5l-.006.001-.025.012a.5.5 0 0 0-.118.115c-.287.375-.773.872-1.469.872H12.1a.5.5 0 0 1-.498-.543l.29-3.407a.5.5 0 0 0-.497-.55H9.517c.048.166.195.352.463.557.274.21.52.528.52.943 0 .568-.447.947-.862 1.154C9.193 5.877 8.613 6 8 6s-1.193-.123-1.638-.346C5.947 5.447 5.5 5.068 5.5 4.5c0-.415.246-.733.52-.943.268-.205.415-.39.463-.557z"/></svg><div class="ct"><span class="t">problems first</span></div><div class="cx">every problem meets you on your own device before it gets a name in class.</div></div>
+      <div class="card" data-step="2"><!-- Bootstrap Icons "rulers" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1z"/></svg><div class="ct"><span class="t">reality answers</span></div><div class="cx">a device does not care how good an answer sounds. it works, or it does not.</div></div>
+    </div>
+    <aside class="notes">Drei Gründe. Erstens: Schwimmen lernt man nicht aus einem Buch. Konzepte bleiben hängen, wenn man sie selbst gebaut, kaputtgemacht und wieder repariert hat. Zweitens: Jedes Problem trifft euch zuerst am eigenen Gerät, und erst danach bekommt es im Hörsaal seinen Namen. Das ist Absicht: Wer zuerst selbst an einem Problem scheitert, versteht die Erklärung hinterher besser als jemand, der sie gleich bekommt; in der Lernforschung heißt das Productive Failure (Kapur). Drittens, und das ist der Bogen zum Taschenrechner und zur KI: Ein echtes Gerät interessiert nicht, wie überzeugend eine Antwort klingt, ob sie von euch kommt, vom Nachbarn oder vom Assistenten. Es funktioniert, oder es funktioniert nicht. Genau hier übt ihr das Prüfen.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/goal.jpg" alt="">
+    <h2>the goal of the lifi project</h2>
+    <div class="photo-text">there is a photo<br>on this laptop.<br>how does it get<br>to the other one?</div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Kein Kabel, kein WLAN, kein Stick. Nur eine Lampe und ein Auge. Das ist das Ziel des LiFi-Projekts: Am Ende geht dieses Foto über diesen Spalt, eine Handbreit, von einem Rechner zum anderen. Und gleich der zweite Satz, weil er der wichtigere ist: Das ist das Ziel des Projekts, nicht das des Moduls. Fotos mit Licht zu verschicken braucht niemand. Das Projekt ist der Weg, auf dem ihr die Inhalte des Moduls mit den eigenen Händen erfahrt.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the device</h2>
+    <img class="device-photo" src="img/device.png" alt="">
+    <div class="figure device" id="fig-device"></div>
+    <div class="punch">a lamp and an eye on the front of each device. two devices face each other, so light travels both ways.</div>
+    <aside class="notes">Links das echte Gerät, freigestellt: ein kleiner Kasten, auf seiner Vorderseite zwei Platinen. Rechts dasselbe von oben, zweimal. Die Lampe ist eine RGB-LED, drei Lämpchen in einem, jedem sagt ihr, wie hell es leuchten soll. Das Auge ist ein Farbsensor, der vier Zahlen meldet: Rot, Grün, Blau und Licht insgesamt. Beide sitzen außen an der Wand des Geräts. Weil das Gegenüber umgedreht steht, schaut sein Auge auf meine Lampe und meines auf seine. Das Licht läuft als kleine farbige Pakete hinüber, in beide Richtungen; den Rückweg benutzen wir allerdings erst in Challenge 4.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/chip.jpg" alt="">
+    <h2>why a lamp</h2>
+    <div class="photo-text quiet">
+      <div>
+        <div>everything interesting in a computer is invisible.</div>
+        <div class="sub">this project makes it visible: a few times a second, on your desk, where you can explore it with your own hands.</div>
+      </div>
+    </div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Was ein Rechner mit einem Foto macht, passiert in Chips, in Millionstelsekunden, hinter Software, die jemand anderes geschrieben hat. Man kann einen Computer ein Leben lang benutzen, ohne das je zu sehen. Das Gerät holt ein kleines Stück davon ins Sichtbare: Es passiert hier ein paarmal pro Sekunde, vor euch, und ihr könnt die Hand dazwischenhalten und zusehen, was schiefgeht. Dafür ist das Projekt da: damit ihr die Inhalte des Moduls anfassen und erkunden könnt, statt sie nur zu hören.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="journeySteps" data-on-step="journeySteps">
+    <h2>the journey of one photo</h2>
+    <div class="figure" id="fig-journey"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span><span data-step="5"></span>
+    <div class="punch" data-step="5">every stop on the way is a concept of this module.</div>
+    <aside class="notes">Und so hängt das Projekt an den Lernzielen: Folgt dem Foto auf seinem Weg. Es liegt als Datei auf eurem Laptop: Speicher. Es wird zu Bytes: Zahlensysteme und Codesysteme. Die Bytes werden in einen Rahmen gepackt, mit einer Prüfsumme, vielleicht vorher komprimiert oder verschlüsselt: Protokolle, Fehler und Redundanz, Kompression, Verschlüsselung. Aus Bytes werden Farben: Symbole und Information, analog und digital. Die Farben reisen als Licht über den Spalt: Signal und Rauschen, Takt, Durchsatz. Und drüben kommt es an, wird geprüft und wieder zum Foto: Logik und Arithmetik. Jede Station ist ein Konzept, und meistens begegnet es euch zuerst als Problem, bevor es einen Namen bekommt.</aside>
+  </section>
+
+  <!-- ================= Teil 4: experiment ================= -->
+
+  <section class="slide part" data-part="experiment: you are the receiver">
+    <aside class="notes">Zwanzig Minuten, kein Rechner, kein Gerät. Ihr seid heute der Empfänger, bevor ihr einen baut.</aside>
+  </section>
+
+  <section class="slide">
+    <h2><!-- Bootstrap Icons "pencil" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/></svg>the rules</h2>
+    <div class="content">
+      <div class="lines">
+        <div>take a pen and a piece of paper.</div>
+        <div>the screen is the lamp. you are the sensor.</div>
+        <div>write down every symbol you see, using the alphabet at the bottom.</div>
+      </div>
+    </div>
+    <aside class="notes">Stift und Zettel, sonst nichts. Der Beamer ist heute die Lampe, ihr seid der Sensor. Jedes Zeichen, das ihr seht, schreibt ihr auf, mit dem Buchstaben oder der Zahl aus der Legende unten auf der Folie. Fünf Runden; ab der zweiten nimmt jede euch eine Selbstverständlichkeit weg. Gestartet wird eine Runde mit dem Knopf unten rechts in der Lampe oder mit der Taste S; weiter zur Auflösung wie immer mit der Pfeiltaste.</aside>
+  </section>
+
+  <section class="slide" data-round="1" data-on-show="flashShow">
+    <h2>round 1: four colours, slowly</h2>
+    <div class="lamp"></div>
+    <button class="startbtn" data-no-advance>start (s)</button>
+    <div class="sent" data-step="1"><span class="lbl">sent</span><span id="sent-1"></span></div>
+    <div class="legend" data-alphabet="rgby"></div>
+    <aside class="notes">Mit Ansage: Die Lampe zählt 3, 2, 1, dann acht Farben, je anderthalb Sekunden, dazwischen kurz Schwarz. Danach zur Auflösung. Das schaffen fast alle. Merkt euch das Gefühl: Ist doch einfach. Ab jetzt wird es schwerer, jede Runde auf eine andere Weise.</aside>
+  </section>
+
+  <section class="slide" data-round="2" data-on-show="flashShow">
+    <h2>round 2: eight blues</h2>
+    <div class="lamp"></div>
+    <button class="startbtn" data-no-advance>start (s)</button>
+    <div class="sent" data-step="1"><span class="lbl">sent</span><span id="sent-2"></span></div>
+    <div class="legend" data-alphabet="blues"></div>
+    <aside class="notes">Langsam, mit Ansage, aber acht Blautöne statt vier klarer Farben; aufschreiben mit der Nummer aus der Legende. Danach die Auflösung. Langsam, mit Countdown, und trotzdem falsch: nicht weil ihr zu langsam wart, sondern weil man acht Blautöne nicht sicher auseinanderhält. Wie viele Zustände unterscheidbar sind, kann man nur messen. Das ist Challenge 1.</aside>
+  </section>
+
+  <section class="slide" data-round="3" data-on-show="flashShow">
+    <h2>round 3: faster</h2>
+    <div class="lamp"></div>
+    <button class="startbtn" data-no-advance>start (s)</button>
+    <div class="sent" data-step="1"><span class="lbl">sent</span><span id="sent-3"></span></div>
+    <div class="legend" data-alphabet="rgby"></div>
+    <aside class="notes">Wieder die vier klaren Farben, aber zwölf Stück, je knapp eine halbe Sekunde, und kein Schwarz dazwischen. An einer Stelle kommt zweimal dieselbe Farbe hintereinander; in der Auflösung ist sie gelb markiert. Wer hat an der Stelle eins geschrieben statt zwei? Ohne Pause dazwischen verrät nur die Zeit, dass es zwei waren. Das ist das Problem von Challenge 2.</aside>
+  </section>
+
+  <section class="slide" data-round="4" data-on-show="flashShow">
+    <h2>round 4: where is the message?</h2>
+    <div class="lamp"></div>
+    <button class="startbtn" data-no-advance>start (s)</button>
+    <div class="sent" data-step="1"><span class="lbl">sent</span><span id="sent-4"></span></div>
+    <div class="legend" data-alphabet="rgby"></div>
+    <aside class="notes">Nichts ansagen, einfach starten, kein Countdown. Die Lampe zeigt erst ein paar Farben, die nicht zum Alphabet gehören: Weiß, Türkis, Magenta, Orange. Dann kommt ohne Ankündigung eine Nachricht aus sechs Farben des Alphabets, dann wieder fremde Farben. Fragen: Was war die Nachricht, und woran habt ihr gemerkt, dass sie anfängt? Nur daran, dass ihr die Farben des Alphabets kanntet und die anderen nicht. Ein Empfänger braucht genau so etwas: eine Vereinbarung, woran er den Anfang erkennt. Das ist Challenge 3.</aside>
+  </section>
+
+  <section class="slide" data-round="5" data-on-show="flashShow">
+    <h2>round 5: did everything arrive?</h2>
+    <div class="lamp"></div>
+    <button class="startbtn" data-no-advance>start (s)</button>
+    <div class="sent" data-step="1"><span class="lbl">sent</span><span id="sent-5"></span></div>
+    <div class="legend" data-alphabet="rgby"></div>
+    <aside class="notes">Mit Ansage und langsam, acht Farben. Eine davon blitzt nur einen Wimpernschlag lang auf, die meisten sehen sie nicht. Erst fragen: Wer hat acht? Wer sieben? Dann die Auflösung, die verschluckte Farbe ist gelb markiert. Das Unangenehme: Wer sieben hatte, wusste nicht, dass etwas fehlt. Ein Empfänger muss merken können, ob alles angekommen ist. Das ist Challenge 4.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>what went wrong?</h2>
+    <div class="said">
+      <div class="row"><input type="text" spellcheck="false" placeholder="too many colours to tell apart"><div class="ch" data-step="1">→ challenge 1: the alphabet</div></div>
+      <div class="row"><input type="text" spellcheck="false" placeholder="too fast. was that one or two?"><div class="ch" data-step="1">→ challenge 2: the word</div></div>
+      <div class="row"><input type="text" spellcheck="false" placeholder="where does the message start?"><div class="ch" data-step="1">→ challenge 3: the listener</div></div>
+      <div class="row"><input type="text" spellcheck="false" placeholder="did everything arrive?"><div class="ch" data-step="1">→ challenge 4: the packet</div></div>
+    </div>
+    <aside class="notes">Je Runde ab der zweiten eine Beschwerde, in der Reihenfolge der Runden: die Blautöne, das Tempo, der Anfang, die verschluckte Farbe. Was der Saal sagt, direkt in die Zeilen tippen; die grauen Vorschläge stehen da, falls niemand etwas sagt. Dann weiterschalten: Jede Beschwerde ist eine Challenge. Ihr habt in zwanzig Minuten die Aufgabenliste des Semesters geschrieben, als Beschwerde. Genau diese Probleme hat euer Gerät auch, nur dass es sich nicht beschwert. Eine Runde fehlt heute, die mit dem Licht im Raum: Euer Auge rechnet eine andere Beleuchtung laufend heraus, der Sensor nicht. Sie kommt in Sitzung 3 mit dem Sensor wieder.</aside>
+  </section>
+
+  <!-- ================= Teil 5: 1 + 4 challenges ================= -->
+
+  <section class="slide part" data-part="1 + 4 challenges">
+    <aside class="notes">Eine Challenge zum Ankommen, dann vier, und jede hebt genau eine Schwierigkeit an: genau die, über die ihr euch eben beschwert habt.</aside>
   </section>
 
   <section class="slide has-punch">
     <h2>one new difficulty at a time</h2>
     <div class="figure" id="fig-challenges"></div>
     <div class="punch">each challenge adds exactly one new difficulty. everything else stays as you know it.</div>
-    <aside class="notes">Challenge 0 ist kein Wettbewerb; sie endet, wenn die LED leuchtet, weil ihr es gesagt habt, und der Sensor gegenüber es merkt. Ab Challenge 1 treten alle Teams unter denselben Bedingungen an, und jede Challenge baut auf dem Ergebnis der vorigen auf: Das Alphabet, das ihr in 1 ausmesst, schickt die Wörter in 2. Der Takt, der in 2 funktioniert, ist das, was der Horcher in 3 ohne Hilfe wiederfinden muss. Und 4 setzt alles zusammen und gibt den Rückweg frei, damit der Empfänger endlich mit dem Sender reden kann. Weil immer nur eines neu ist, wisst ihr, wenn etwas bricht, meistens, wo ihr suchen müsst.</aside>
-  </section>
-
-  <section class="slide" data-on-show="mapChallenges" data-on-step="mapChallenges">
-    <h2>where each challenge sits on the map</h2>
-    <div class="figure" id="fig-map-challenges"></div>
-    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
-    <aside class="notes">Dieselbe Karte, jetzt mit der Reihenfolge darin. Challenge 0: die Arbeitsweisen, erste eigene Zeilen. Challenge 1: analog und digital, Symbole, Signal und Rauschen, und zum ersten Mal richtig messen. Challenge 2: Codes, Zahlensysteme, Takt, die erste Vereinbarung. Challenge 3: Protokolle, ganz. Challenge 4: alles, was Speichern und Verarbeiten heißt, geballt am Ende, wenn zum ersten Mal eine ganze Datei durch die Luft geht. Man sieht: Erst orange und magenta, dann grün und blau. Genau dieses Bild zeige ich im Semester wieder, jedes Mal mit dem, was gerade dran ist.</aside>
-  </section>
-
-  <section class="slide">
-    <h2>what every challenge produces</h2>
-    <div class="figure" id="fig-produces"></div>
-    <aside class="notes">Drei Dinge kommen aus jeder Challenge, und sie sind es wert, vom ersten Tag an aufgehoben zu werden. Messprotokolle, die euer Partner eine Woche später noch versteht. Eine Beschreibung eurer Lösung, ab Challenge 3 eine vollständige Spezifikation eures Protokolls. Und das Irrtumsprotokoll: zwei, drei Stellen, an denen der Assistent etwas vorgeschlagen hat und eine Messung es widerlegt hat. Das ist kein Geständnis. Es ist das nützlichste Dokument, das ihr schreibt, weil es zeigt, wo das Wissen des Assistenten aufhört und eures anfängt.</aside>
-  </section>
-
-  <section class="slide">
-    <h2>what counts</h2>
-    <div class="content">
-      <div class="lines">
-        <div>the ranking in the competition does not count towards your grade.</div>
-        <div>passing every challenge is what admits you to the exam.</div>
-        <div>the exam is about the concepts, one person at a time.</div>
-      </div>
-    </div>
-    <aside class="notes">Die Wiederholung ist Absicht. Das ist der Satz, den man am Ende des Semesters noch wissen soll: Der Wettbewerb ist der Weg, die Konzepte sind das Ziel, und geprüft wird, ob ihr sie erklären könnt.</aside>
-  </section>
-
-  <!-- ================= Teil 4: how we work ================= -->
-
-  <section class="slide part" data-part="how we work">
-    <aside class="notes">Zu zweit, mit je einem Gerät, mit KI, und mit der Lampe als Schiedsrichter.</aside>
-  </section>
-
-  <section class="slide">
-    <h2>two people, two devices, one link</h2>
-    <div class="content">
-      <div class="lines">
-        <div>one device each, so between the two of you, you own both ends.</div>
-        <div>whoever builds only the sender has to guess what the receiver sees. you can look.</div>
-        <div>python, vs code, and an ai assistant at your side from day one.</div>
-      </div>
-    </div>
-    <aside class="notes">Das Projekt ist für zwei Leute gebaut. Die beiden Enden haben verschiedene Aufgaben; teilt euch die Arbeit und tauscht ab und zu, damit beide beide Seiten gesehen haben. Wenn eine Seite nicht geht, liegt die Antwort meist auf der anderen, und genau dieses Gespräch ist das, worum das Projekt gebaut ist. Programmiert wird in Python, in VS Code, mit einem kleinen Modul, das mit dem Gerät redet, und mit einem KI-Assistenten von der ersten Zeile an. Was zu installieren ist, steht auf der Website.</aside>
+    <aside class="notes">Die Beschwerden von eben, in eine Reihenfolge gebracht. Challenge 0 ist die eine zum Ankommen und kein Wettbewerb; sie endet, wenn die LED leuchtet, weil ihr es gesagt habt, und der Sensor gegenüber es merkt. Dann vier: Zu viele Farben ist Challenge 1, wie viele Zustände könnt ihr sicher unterscheiden? Zu schnell, eins oder zwei, ist Challenge 2, ein ganzes Wort, und wie schnell. Wo fängt es an ist Challenge 3, der Empfänger findet den Anfang allein. Ist alles angekommen ist Challenge 4, eine echte Datei, richtig und schnell, und dafür gibt es endlich den Rückweg. Ab Challenge 1 treten alle Teams unter denselben Bedingungen an, und jede baut auf dem Ergebnis der vorigen auf.</aside>
   </section>
 
   <section class="slide has-punch">
-    <h2>the lamp has the last word</h2>
-    <div class="content" style="top: 150px">
-      <div class="statement">your assistant knows nothing<br>about your device.</div>
-      <div class="lines">
-        <div>it will tell you that eight colours are a good alphabet. is that right?</div>
-        <div>there is one honest way to find out.</div>
-      </div>
+    <h2>what every challenge produces</h2>
+    <div class="cols3 cards">
+      <div class="card"><!-- Bootstrap Icons "journal-text" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/></svg><div class="ct"><span class="t">measurement logs</span></div><div class="cx">what did you change, what did you keep the same, and what came out?</div></div>
+      <div class="card"><!-- Bootstrap Icons "file-earmark-text" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/></svg><div class="ct"><span class="t">a description of your solution</span></div><div class="cx">enough for another team to rebuild it. from challenge 3 on, a full protocol specification.</div></div>
+      <div class="card"><!-- Bootstrap Icons "bug" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A5 5 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A5 5 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623M4 7v4a4 4 0 0 0 3.5 3.97V7zm4.5 0v7.97A4 4 0 0 0 12 11V7zM12 6a4 4 0 0 0-1.334-2.982A3.98 3.98 0 0 0 8 2a3.98 3.98 0 0 0-2.667 1.018A4 4 0 0 0 4 6z"/></svg><div class="ct"><span class="t">a log of mistakes</span></div><div class="cx">where the assistant suggested something, and a measurement proved it wrong.</div></div>
     </div>
-    <div class="punch">measure before, measure after, and write down what the assistant got wrong.</div>
-    <aside class="notes">KI ist erlaubt und erwünscht: zum Programmieren, zum Erklären dessen, was ihr im Saal nicht verstanden habt, zum Nachschlagen eurer Bauteile. Das Interessante ist, wo sie aufhört. Wie weit eure Strecke reicht und wie schnell sie geht, kann sie nur raten. Ihr könnt messen. Einen Vorschlag, der wirklich hilft, von einem zu unterscheiden, der nur plausibel klingt, ist eine Fähigkeit, die ihr ab jetzt in jedem Fach braucht, und hier übt ihr sie, weil die Lampe immer das letzte Wort hat.</aside>
+    <div class="punch">nothing of this is handed in or graded. it is for your team.</div>
+    <aside class="notes">Drei Dinge kommen aus jeder Challenge, und sie sind es wert, vom ersten Tag an aufgehoben zu werden. Messprotokolle, die euer Partner eine Woche später noch versteht. Eine Beschreibung eurer Lösung, ab Challenge 3 eine vollständige Spezifikation eures Protokolls; die braucht im Interop-Test ein anderes Team, sie ist die eine Ausnahme. Und das Irrtumsprotokoll: zwei, drei Stellen, an denen der Assistent etwas vorgeschlagen hat und eine Messung es widerlegt hat. Nichts davon gebt ihr ab, nichts wird bewertet. Ihr macht es trotzdem, weil jede Challenge auf der vorigen aufbaut.</aside>
+  </section>
+
+  <!-- ================= Teil 6: how we work ================= -->
+
+  <section class="slide part" data-part="how we work">
+    <aside class="notes">Zu zweit, mit der Lampe als Schiedsrichter, und mit Spielzeug zum Ausprobieren.</aside>
   </section>
 
   <section class="slide">
-    <h2>try things: the demonstrators</h2>
-    <div class="embed"><iframe src="https://winf-hsos.github.io/lifi-concept-demos/" title="the demonstrators"></iframe></div>
-    <aside class="notes">Zu fast jedem Konzept gibt es ein kleines Spielzeug im Browser: ein Byte schalten, eine Datei kaputtmachen, eine Übertragung mit Rauschen ansehen, einen Text verschlüsseln. Sie sind auf den Konzeptseiten eingebettet und stehen hier alle nebeneinander, mit dem Konzept als Etikett. Probiert sie aus, sie sind dafür da.</aside>
+    <h2>how we work</h2>
+    <div class="cols3 cards">
+      <div class="card"><!-- Bootstrap Icons "people" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/></svg><div class="ct"><span class="t">two people, two devices</span></div><div class="cx">one device each, so you own both ends of the link. split the work, and swap now and then.</div></div>
+      <div class="card" data-step="1"><!-- Bootstrap Icons "lightbulb" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1"/></svg><div class="ct"><span class="t">the lamp has the last word</span></div><div class="cx">your assistant knows nothing about your device. measure before, measure after, and note where it was wrong.</div></div>
+      <div class="card" data-step="2"><!-- Bootstrap Icons "joystick" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2"/><path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23"/></svg><div class="ct"><span class="t">try the demonstrators</span></div><div class="cx">a small toy in the browser for almost every concept: switch a byte, break a file, add noise.</div></div>
+    </div>
+    <aside class="notes">Erstens: Das Projekt ist für zwei gebaut. Jede Person hat ein Gerät, zusammen habt ihr beide Enden der Strecke. Wer nur den Sender baut, muss raten, was der Empfänger sieht; ihr könnt nachsehen. Teilt euch die Arbeit und tauscht ab und zu. Zweitens: Die Lampe hat das letzte Wort. KI ist erlaubt und erwünscht, aber euer Assistent weiß nichts über euer Gerät. Er wird euch sagen, acht Farben seien ein gutes Alphabet; denkt an die acht Blautöne. Messt vorher, messt nachher, und schreibt auf, wo er danebenlag. Drittens: Zu fast jedem Konzept gibt es einen kleinen Demonstrator im Browser, auf den Konzeptseiten eingebettet. Probiert sie aus, sie sind dafür da.</aside>
+  </section>
+
+  <!-- ================= Teil 7: this semester ================= -->
+
+  <section class="slide part" data-part="this semester">
+    <aside class="notes">Das Organisatorische.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>fourteen mondays</h2>
+    <div class="weeks">
+      <div class="w now"><div class="no">1</div><div><div class="t">kick-off: overview &amp; setup</div><div class="n">devices, setup, challenge 0 starts</div></div></div>
+      <div class="w"><div class="no">2</div><div><div class="t">cutting problems, algorithms and programs</div><div class="n">challenge 0: your first program</div></div></div>
+      <div class="w"><div class="no">3</div><div><div class="t">measuring and experimenting</div><div class="n">challenge 0 check</div></div></div>
+      <div class="w"><div class="no">4</div><div><div class="t">analog and digital, symbols and information</div><div class="n">challenge 1 starts</div></div></div>
+      <div class="w"><div class="no">5</div><div><div class="t">signal and noise</div><div class="n"><!-- Bootstrap Icons "trophy" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z"/></svg>competition: challenge 1</div></div></div>
+      <div class="w"><div class="no">6</div><div><div class="t">number systems and code systems</div><div class="n">challenge 2 starts</div></div></div>
+      <div class="w"><div class="no">7</div><div><div class="t">sampling and synchronization</div><div class="n">challenge 2: faster</div></div></div>
+      <div class="w"><div class="no">8</div><div><div class="t">throughput and limits</div><div class="n"><!-- Bootstrap Icons "trophy" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z"/></svg>competition: challenge 2</div></div></div>
+      <div class="w"><div class="no">9</div><div><div class="t">protocols</div><div class="n">challenge 3 starts</div></div></div>
+      <div class="w"><div class="no">10</div><div><div class="t">logic and arithmetic</div><div class="n">interop test</div></div></div>
+      <div class="w"><div class="no">11</div><div><div class="t">memory and storage</div><div class="n"><!-- Bootstrap Icons "trophy" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z"/></svg>competition: challenge 3</div></div></div>
+      <div class="w"><div class="no">12</div><div><div class="t">errors and redundancy</div><div class="n">standardisation session, challenge 4 starts</div></div></div>
+      <div class="w"><div class="no">13</div><div><div class="t">compression</div><div class="n">challenge 4: faster and shorter</div></div></div>
+      <div class="w"><div class="no">14</div><div><div class="t">abstraction and layers</div><div class="n"><!-- Bootstrap Icons "trophy" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z"/></svg>final: challenge 4</div></div></div>
+    </div>
+    <aside class="notes">Vierzehn Montage, vier davon Wettbewerbe, mit dem Pokal markiert. Jede Sitzung trägt ein Konzept als Titel, darunter steht, was im Projekt passiert. Heute ist die gelbe. Die Daten stehen im Ablaufplan im Lernraum, Änderungen kündige ich dort an.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>a typical monday, 15:00 to 18:15</h2>
+    <div class="content">
+      <table class="day">
+        <tr><td class="time">15:00</td><td>look back: where are you stuck?</td></tr>
+        <tr><td class="time">15:10</td><td>input: one concept</td></tr>
+        <tr><td class="time">15:35</td><td>experiment, all together</td></tr>
+        <tr class="build"><td class="time">16:05</td><td>workshop</td></tr>
+        <tr><td class="time">16:55</td><td>break</td></tr>
+        <tr class="build"><td class="time">17:10</td><td>workshop</td></tr>
+        <tr><td class="time">18:00</td><td>your task for the week</td></tr>
+      </table>
+    </div>
+    <div class="punch">more than half of every monday, you build.</div>
+    <aside class="notes">Jeder Montag läuft gleich, damit ihr immer wisst, wann ihr zuhört und wann ihr baut. Zu Beginn sagen drei, vier Teams, woran sie hängen. Dann ein Konzept, dann ein Experiment, bei dem alle dasselbe sehen, und danach baut ihr, zweimal fünfzig Minuten. Am Ende gibt es den Auftrag für die Woche, schriftlich. Die Wettbewerbstage laufen anders, das sage ich jeweils eine Woche vorher. Heute auch.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>every monday</h2>
+    <div class="cols3 cards">
+      <div class="card"><!-- Bootstrap Icons "geo-alt" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/><path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg><div class="ct"><span class="t">room <span class="keep-case">HD0001</span></span></div><div class="cx">mondays, 15:00 to 18:15.</div></div>
+      <div class="card"><!-- Bootstrap Icons "laptop" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/></svg><div class="ct"><span class="t">laptop and device</span></div><div class="cx">bring both, every time. charge the laptop before you come.</div></div>
+      <div class="card"><!-- Bootstrap Icons "pencil-square" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg><div class="ct"><span class="t">attendance list</span></div><div class="cx">sign it every week. it is for statistics, not for grades.</div></div>
+    </div>
+    <aside class="notes">Das Gerät bleibt bis Januar bei euch, und ohne Gerät ist die Werkstatt verloren. Die Anwesenheitsliste geht jede Woche herum; sie ist für die Statistik, nicht für die Note. Die Abnahmen und Wettbewerbe finden hier statt, montags.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the exam</h2>
+    <div class="cols3 cards">
+      <div class="card"><!-- Bootstrap Icons "clock" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></svg><div class="ct"><span class="t">60 minutes</span></div><div class="cx">multiple choice on the concepts, everyone on their own. the project is where you meet them.</div></div>
+      <div class="card" data-step="1"><!-- Bootstrap Icons "award" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z"/><path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"/></svg><div class="ct"><span class="t">+5 % bonus</span></div><div class="cx">if all five of your challenges are accepted. all or nothing.</div><div class="five"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+      <div class="card" data-step="2"><!-- Bootstrap Icons "question-circle" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/></svg><div class="ct"><span class="t">practise</span></div><div class="cx">with the questions on every concept page. same format as the exam.</div></div>
+    </div>
+    <div class="punch">the ranking in the competition does not count towards your grade.</div>
+    <aside class="notes">Geprüft werden die Konzepte, nicht das Projekt, jede Person für sich, eine Stunde, Multiple Choice. Das Projekt ist der Ort, an dem ihr ihnen begegnet; es ersetzt nicht, sie zu verstehen. Wer jede Challenge besteht und trotzdem nicht sagen kann, warum digitale Übertragung Rauschen verträgt, besteht die Klausur nicht. Wer alle fünf Challenges abgenommen bekommt, erhält fünf Prozent Bonus auf die Klausur, alles oder nichts; dafür zählt die bestandene Abnahme samt Live-Änderung, nicht die Dokumentation. Die Platzierung im Wettbewerb zählt nicht. Die Übungsfragen auf den Konzeptseiten haben dasselbe Format wie die Klausur. Den Termin legt die Hochschule fest, ich gebe ihn im Lernraum bekannt.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>where to find what</h2>
+    <div class="content">
+      <div class="where">
+        <!-- Bootstrap Icons "book" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/></svg><div class="addr">docs.lifi-project.de</div><div class="what">everything to read: concepts, challenges, setup</div>
+        <!-- Bootstrap Icons "megaphone" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 75 75 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233q.27.015.537.036c2.568.189 5.093.744 7.463 1.993zm-9 6.215v-4.13a95 95 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A61 61 0 0 1 4 10.065m-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68 68 0 0 0-1.722-.082z"/></svg><div class="addr">lms.hs-osnabrueck.de</div><div class="what">announcements, changes, the schedule</div>
+        <!-- Bootstrap Icons "folder2-open" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7z"/></svg><div class="addr plain">your course folder</div><div class="what">your assistant and your code</div>
+        <!-- Bootstrap Icons "speedometer2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"/><path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/></svg><div class="addr">lifi.uber.space/cockpit</div><div class="what">your link, live</div>
+        <!-- Bootstrap Icons "joystick" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2"/><path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23"/></svg><div class="addr">winf-hsos.github.io/lifi-concept-demos</div><div class="what">the demonstrators</div>
+      </div>
+    </div>
+    <aside class="notes">Die Website ist das Lehrbuch: Konzepte, Challenges, Einrichtung. Der Lernraum auf lms.hs-osnabrueck.de ist das schwarze Brett: Ankündigungen, Änderungen, der Ablaufplan. Der Kursordner auf eurem Laptop hat den Assistenten und euren Code, das richten wir gleich ein. Das Cockpit zeigt live, was eure Lampe sendet und euer Sensor misst. Und die Demonstratoren stehen alle auf einer Seite. Wer nicht weiterkommt, fragt zuerst den Assistenten, dann das Nachbarteam, dann mich; das kommt gleich noch einmal.</aside>
   </section>
 
   <!-- ================= Schluss ================= -->
 
   <section class="slide">
-    <h2>today</h2>
-    <div class="content">
-      <div class="lines">
-        <div>1  one question, four questions: represent, store, transfer, process.</div>
-        <div>2  eighteen concepts, five colours, one map. you will see it again.</div>
-        <div>3  five challenges, one new difficulty each.</div>
-        <div>4  the exam is about the concepts. the project is where you meet them.</div>
-        <div>5  the lamp has the last word.</div>
-      </div>
-      <div class="sidenote">next: install the software, read the hardware page, start challenge 0.</div>
-    </div>
-    <aside class="notes">Fünf Sätze zum Mitnehmen, und der nächste Schritt: Software installieren, die Hardware-Seite einmal lesen, damit die Teile Namen haben, wenn ihr sie einsteckt, und Challenge 0 anfangen.</aside>
-  </section>
-
-  <section class="slide">
     <img class="photo" src="img/arrived.jpg" alt="">
-    <div class="photo-text">by the end of term,<br>a picture crosses<br>that gap.</div>
-    <div class="footnote">image: ai-generated (gpt-image-2)</div>
-    <aside class="notes">Wenn ihr am Ende des Semesters sagt, das war ein Modul über Licht, dann habe ich etwas falsch gemacht.</aside>
+    <div class="photo-text" style="font-size: var(--normal); line-height: 1.3;"><div>by the end of term,<br>a picture crosses that gap.<div class="y" style="margin-top: 0.8em;">and along the way,<br>more than one light will go on.</div></div></div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Am Ende des Semesters geht ein Bild über diesen Spalt. Und auf dem Weg dahin wird euch mehr als ein Licht aufgehen: wie Computer Information darstellen, speichern, übertragen und verarbeiten, und wie der mächtigste Taschenrechner, den Menschen bisher gebaut haben, im Inneren arbeitet. Wenn ihr dann sagt, das war ein Modul über Licht, habe ich etwas falsch gemacht. Weiter mit dem zweiten Teil: first light, eure LED leuchtet heute noch.</aside>
   </section>
 
 </div>
 <!-- Reihenfolge ist Pflicht: deck.js VOR stagekit.js, sonst fehlen die
      data-on-show-Funktionen beim ersten Anzeigen. -->
-<script src="../stagekit/draw.js?v=20260915a"></script>
-<script src="deck.js?v=20260916a"></script>
-<script src="../stagekit/stagekit.js?v=20260915a"></script>
+<script src="../stagekit/draw.js?v=20260926b"></script>
+<script src="deck.js?v=20260926b"></script>
+<script src="../stagekit/stagekit.js?v=20260926b"></script>
 </body>
 </html>

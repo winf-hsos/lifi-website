@@ -1072,7 +1072,7 @@
     "href": "challenges/challenge-4.html#what-is-measured",
     "title": "Challenge 4: The Packet",
     "section": "What is measured",
-    "text": "What is measured\nThe precision run. If the hash does not match, the run does not count. If it matches, the duration counts.\nThe robustness round. The same run under harder conditions, see below.\nDocumentation. Protocol specification, measurement data, log of mistakes.",
+    "text": "What is measured\nThe precision run. If the hash does not match, the run does not count. If it matches, the duration counts.\nThe robustness round. The same run under harder conditions, see below.",
     "crumbs": [
       "LiFi Project",
       "Challenge 4: The Packet"
@@ -1101,11 +1101,11 @@
     ]
   },
   {
-    "objectID": "challenges/challenge-4.html#what-you-hand-in",
-    "href": "challenges/challenge-4.html#what-you-hand-in",
+    "objectID": "challenges/challenge-4.html#what-to-keep",
+    "href": "challenges/challenge-4.html#what-to-keep",
     "title": "Challenge 4: The Packet",
-    "section": "What you hand in",
-    "text": "What you hand in\n\nThe complete protocol specification, as it stands at the final\nAll measurement data from the project, in particular on the choice of your symbol rate and alphabet size\nDocumentation and a photo of your optical setup\nYour log of mistakes",
+    "section": "What to keep",
+    "text": "What to keep\nDocumentation is optional and only for your team: nobody grades it, and the bonus depends only on passing the challenges. Keeping it pays off anyway, because it is the story of how you solved the problem:\n\nThe complete protocol specification, as it stands at the final\nAll measurement data from the project, in particular on the choice of your symbol rate and alphabet size\nDocumentation and a photo of your optical setup\nYour log of mistakes",
     "crumbs": [
       "LiFi Project",
       "Challenge 4: The Packet"
@@ -1211,11 +1211,11 @@
     ]
   },
   {
-    "objectID": "challenges/challenge-2.html#what-you-hand-in",
-    "href": "challenges/challenge-2.html#what-you-hand-in",
+    "objectID": "challenges/challenge-2.html#what-to-keep",
+    "href": "challenges/challenge-2.html#what-to-keep",
     "title": "Challenge 2: The Word",
-    "section": "What you hand in",
-    "text": "What you hand in\n\nYour coding table, meaning which sequence of symbols stands for which letter\nA measurement log: at which symbol rates did it work, from which one on did it not?\nYour log of mistakes",
+    "section": "What to keep",
+    "text": "What to keep\nDocumentation is optional and only for your team: nobody grades it, and the bonus depends only on passing the challenges. Keeping it pays off anyway, because every later challenge builds on it:\n\nYour coding table, meaning which sequence of symbols stands for which letter\nA measurement log: at which symbol rates did it work, from which one on did it not?\nYour log of mistakes",
     "crumbs": [
       "LiFi Project",
       "Challenge 2: The Word"
@@ -1310,11 +1310,11 @@
     ]
   },
   {
-    "objectID": "challenges/challenge-0.html#what-you-hand-in",
-    "href": "challenges/challenge-0.html#what-you-hand-in",
+    "objectID": "challenges/challenge-0.html#what-to-keep",
+    "href": "challenges/challenge-0.html#what-to-keep",
     "title": "Challenge 0: The Spark",
-    "section": "What you hand in",
-    "text": "What you hand in\nOnly the running program. No documentation yet.",
+    "section": "What to keep",
+    "text": "What to keep\nNothing to hand in: your running program is all that counts.",
     "crumbs": [
       "LiFi Project",
       "Challenge 0: The Spark"
@@ -1452,11 +1452,11 @@
     ]
   },
   {
-    "objectID": "ai/index.html#two-conditions",
-    "href": "ai/index.html#two-conditions",
+    "objectID": "ai/index.html#one-condition-one-habit",
+    "href": "ai/index.html#one-condition-one-habit",
     "title": "Working with your AI assistant",
-    "section": "Two conditions",
-    "text": "Two conditions\n\nYou must be able to explain your code\nEvery time you show your work, you will be asked to make a small change to your running program on the spot. Whoever has only copied notices there, and early enough to change that.\nThis is not a trick. It is the test that matters: not whether you can produce a program, which the assistant can do, but whether you can tell what it does and why, which only you can.\n\n\nThe log of mistakes\nFor every challenge you document two or three places where the assistant suggested something and a measurement proved it wrong, and what actually turned out to be true.\nThis is the most useful document you will write, and it is not a confession. It marks exactly where the assistant’s knowledge ends and yours begins. A team with a good log of mistakes has learned to tell a plausible answer from a true one, and that is a skill you will need in every subject from now on.\n\n\n\nWhy this matters\nNo language model knows how your setup behaves in your room. It can help you with code very well, but every statement about range, speed or reliability you have to measure yourselves. That is exactly what the real work in this project consists of.",
+    "section": "One condition, one habit",
+    "text": "One condition, one habit\n\nYou must be able to explain your code\nEvery time you show your work, you will be asked to make a small change to your running program on the spot. Whoever has only copied notices there, and early enough to change that.\nThis is not a trick. It is the test that matters: not whether you can produce a program, which the assistant can do, but whether you can tell what it does and why, which only you can.\n\n\nThe log of mistakes\nFor every challenge, write down two or three places where the assistant suggested something and a measurement proved it wrong, and what actually turned out to be true. Nobody grades this log and you do not hand it in; it is for your team.\nThis is the most useful document you will write, and it is not a confession. It marks exactly where the assistant’s knowledge ends and yours begins. A team with a good log of mistakes has learned to tell a plausible answer from a true one, and that is a skill you will need in every subject from now on.\n\n\n\nWhy this matters\nNo language model knows how your setup behaves in your room. It can help you with code very well, but every statement about range, speed or reliability you have to measure yourselves. That is exactly what the real work in this project consists of.",
     "crumbs": [
       "LiFi Project",
       "Software",
@@ -1553,11 +1553,11 @@
     ]
   },
   {
-    "objectID": "challenges/challenge-1.html#what-you-hand-in",
-    "href": "challenges/challenge-1.html#what-you-hand-in",
+    "objectID": "challenges/challenge-1.html#what-to-keep",
+    "href": "challenges/challenge-1.html#what-to-keep",
     "title": "Challenge 1: The Alphabet",
-    "section": "What you hand in",
-    "text": "What you hand in\n\nThe measurement log of the control measurement without aids\nThe measurement log with your setup\nA photo of your optical setup with a short explanation of why you built it that way\nYour log of mistakes (see Working with your AI assistant)",
+    "section": "What to keep",
+    "text": "What to keep\nDocumentation is optional and only for your team: nobody grades it, and the bonus depends only on passing the challenges. Keeping it pays off anyway, because every later challenge builds on it:\n\nThe measurement log of the control measurement without aids\nThe measurement log with your setup\nA photo of your optical setup with a short explanation of why you built it that way\nYour log of mistakes (see Working with your AI assistant)",
     "crumbs": [
       "LiFi Project",
       "Challenge 1: The Alphabet"
@@ -1674,11 +1674,11 @@
     ]
   },
   {
-    "objectID": "challenges/challenge-3.html#what-you-hand-in",
-    "href": "challenges/challenge-3.html#what-you-hand-in",
+    "objectID": "challenges/challenge-3.html#what-to-keep",
+    "href": "challenges/challenge-3.html#what-to-keep",
     "title": "Challenge 3: The Listener",
-    "section": "What you hand in",
-    "text": "What you hand in\n\nYour protocol specification. Complete enough that another team can build a receiver from it. It is also what you pass on in the interop test.\nA short report on the interop test: what was missing in the other protocol, what was missing in yours?\nYour log of mistakes",
+    "section": "What to keep",
+    "text": "What to keep\nDocumentation is optional and only for your team, with one exception: your protocol specification, because another team builds a receiver from it in the interop test. Nobody grades any of it.\n\nYour protocol specification. Complete enough that another team can build a receiver from it. It is also what you pass on in the interop test.\nA short report on the interop test: what was missing in the other protocol, what was missing in yours?\nYour log of mistakes",
     "crumbs": [
       "LiFi Project",
       "Challenge 3: The Listener"
@@ -1777,7 +1777,7 @@
     "href": "challenges/index.html#the-five-challenges",
     "title": "The Project",
     "section": "The five challenges",
-    "text": "The five challenges\nThe project is cut into five challenges. Each one adds exactly one new difficulty, and everything else stays as you already know it. That is deliberate: when something breaks, you will usually know where to look.\n\n\n\n\nChallenge\nThe question it asks\n\n\n\n\n0\nThe Spark\nCan you bring your device to life?\n\n\n1\nThe Alphabet\nHow many different signals can your receiver tell apart reliably?\n\n\n2\nThe Word\nCan you send a whole word, and how fast?\n\n\n3\nThe Listener\nCan the receiver find the start of a message on its own?\n\n\n4\nThe Packet\nCan you send a real file, and get it there correct and fast?\n\n\n\nChallenge 0 is not a competition. It ends when your LED lights up because you told it to and the sensor across the table notices. From Challenge 1 on, every team competes under the same conditions, and each challenge builds on the result of the one before. The alphabet you measure in Challenge 1 is what you send words with in Challenge 2. The timing that works in Challenge 2 is what the listener in Challenge 3 has to recover without help. Challenge 4 puts all of it together and adds the way back, so the receiver can finally talk to the sender.\nEvery challenge page has the same shape: the task, what is new about it, what is measured, what you hand in, the concepts you need for it, the traps we know about, and something extra for teams that finish early.",
+    "text": "The five challenges\nThe project is cut into five challenges. Each one adds exactly one new difficulty, and everything else stays as you already know it. That is deliberate: when something breaks, you will usually know where to look.\n\n\n\n\nChallenge\nThe question it asks\n\n\n\n\n0\nThe Spark\nCan you bring your device to life?\n\n\n1\nThe Alphabet\nHow many different signals can your receiver tell apart reliably?\n\n\n2\nThe Word\nCan you send a whole word, and how fast?\n\n\n3\nThe Listener\nCan the receiver find the start of a message on its own?\n\n\n4\nThe Packet\nCan you send a real file, and get it there correct and fast?\n\n\n\nChallenge 0 is not a competition. It ends when your LED lights up because you told it to and the sensor across the table notices. From Challenge 1 on, every team competes under the same conditions, and each challenge builds on the result of the one before. The alphabet you measure in Challenge 1 is what you send words with in Challenge 2. The timing that works in Challenge 2 is what the listener in Challenge 3 has to recover without help. Challenge 4 puts all of it together and adds the way back, so the receiver can finally talk to the sender.\nEvery challenge page has the same shape: the task, what is new about it, what is measured, what is worth keeping, the concepts you need for it, the traps we know about, and something extra for teams that finish early.",
     "crumbs": [
       "LiFi Project",
       "The Project"
@@ -1788,7 +1788,7 @@
     "href": "challenges/index.html#what-every-challenge-produces",
     "title": "The Project",
     "section": "What every challenge produces",
-    "text": "What every challenge produces\nThree kinds of things come out of every challenge, and they are worth keeping from the first day.\nMeasurement logs. What did you change, what did you keep the same, and what came out? A good log is one your partner can read a week later and still understand.\nA description of your solution. How does your link work, in enough detail that another team could rebuild it? From Challenge 3 on this grows into a full specification of your protocol.\nA log of mistakes. Two or three places where the AI assistant suggested something and a measurement proved it wrong. This is not a confession. It is the most useful document you will write, because it shows exactly where the assistant’s knowledge ends and yours begins. More about it under Working with your AI assistant.\nTaken together, these documents are the story of how you solved the problem. They are also the best preparation for anyone who wants to explain, later, why their device works the way it does.",
+    "text": "What every challenge produces\nThree kinds of things come out of every challenge. None of them is handed in or graded: they are for your team, and they are worth keeping from the first day.\nMeasurement logs. What did you change, what did you keep the same, and what came out? A good log is one your partner can read a week later and still understand.\nA description of your solution. How does your link work, in enough detail that another team could rebuild it? From Challenge 3 on this grows into a full specification of your protocol.\nA log of mistakes. Two or three places where the AI assistant suggested something and a measurement proved it wrong. This is not a confession. It is the most useful document you will write, because it shows exactly where the assistant’s knowledge ends and yours begins. More about it under Working with your AI assistant.\nTaken together, these documents are the story of how you solved the problem. They are also the best preparation for anyone who wants to explain, later, why their device works the way it does.",
     "crumbs": [
       "LiFi Project",
       "The Project"
@@ -2037,7 +2037,7 @@
     "href": "concepts/index.html#one-question-four-questions",
     "title": "Overview",
     "section": "One question, four questions",
-    "text": "One question, four questions\nThe module has one big question: how can we solve complex problems with computers? To answer it you need to understand what a computer does with information, and there are four things it does. It represents information, it stores it, it transfers it, and it processes it.\n\n\n\n\n\n\nFigure 1: The map of the module. One big question, four questions about information, five ways of working above them, and the project at the bottom: the file is stored, its bytes represent a picture, a checksum processes them, and the light transfers them.\n\n\n\nEach of the four questions has a colour, and the colour stays the same everywhere: on this page, on every slide, on every concept page. Whenever a session is orange, it is about representing information; whenever it is magenta, it is about transferring it. In one line each:\n\nRepresenting (orange, making bits). To a computer your photo is a list of numbers, and the numbers are states of something physical: a voltage, a magnetised spot, a flash of light.\nStoring (green, storing bits). The photo has to sit somewhere before it is sent and somewhere after it arrives.\nTransferring (magenta, sending bits). The receiver does not know when a letter begins. The light it sees is never quite the light that was sent.\nProcessing (blue, processing bits). Somebody has to turn the numbers back into a picture and check whether they arrived correctly.\n\nAbove the four questions sit five ways of working, in grey, because you need them everywhere and not just for one of the questions: cutting problems into pieces you can test, the model of input, processing and output, algorithms and programs, measuring and experimenting, and thinking in layers.\nAt the bottom of the map is the project, and this is why it is the project: your device touches all four questions. The photo is stored as a file. Its bytes represent a picture. A checksum processes them so the receiver can tell whether they arrived intact. And the light transfers them across the gap.\n\n\n\n\n\n\nFigure 2: Two devices facing each other. Each has a lamp and an eye on its front with a wall between them; because the second device is turned around, its eye looks at the first device’s lamp. The way back is there from the start but is used only in the last challenge.",
+    "text": "One question, four questions\nThe module has one big question: how can we solve complex problems with computers? To answer it you need to understand what a computer does with information, and there are four things it does. It represents information, it stores it, it transfers it, and it processes it.\n\n\n\n\n\n\nFigure 1: The map of the module. One big question, four questions about information, five ways of working above them, and the project at the bottom: the file is stored, its bytes represent a picture, a checksum processes them, and the light transfers them.\n\n\n\nEach of the four questions has a colour, and the colour stays the same everywhere: on this page, on every slide, on every concept page. Whenever a session is orange, it is about representing information; whenever it is magenta, it is about transferring it. In one line each:\n\nRepresenting (orange, making bits). To a computer your photo is a list of numbers, and the numbers are states of something physical: a voltage, a magnetised spot, a flash of light.\nStoring (green, storing bits). The photo has to sit somewhere before it is sent and somewhere after it arrives.\nTransferring (magenta, transferring bits). The receiver does not know when a letter begins. The light it sees is never quite the light that was sent.\nProcessing (blue, processing bits). Somebody has to turn the numbers back into a picture and check whether they arrived correctly.\n\nAbove the four questions sit five ways of working, in grey, because you need them everywhere and not just for one of the questions: cutting problems into pieces you can test, the model of input, processing and output, algorithms and programs, measuring and experimenting, and thinking in layers.\nAt the bottom of the map is the project, and this is why it is the project: your device touches all four questions. The photo is stored as a file. Its bytes represent a picture. A checksum processes them so the receiver can tell whether they arrived intact. And the light transfers them across the gap.\n\n\n\n\n\n\nFigure 2: Two devices facing each other. Each has a lamp and an eye on the outside of its front wall; because the second device is turned around, its eye looks at the first device’s lamp. The light travels as small coloured packets, in both directions.",
     "crumbs": [
       "Concepts",
       "Overview"
@@ -2048,7 +2048,7 @@
     "href": "concepts/index.html#the-concepts",
     "title": "Overview",
     "section": "The concepts",
-    "text": "The concepts\nEighteen concepts, in five families. The order inside each family is the order in which you meet them during the semester; the last column says where in the project you need them. Every concept has its own page with a summary, the explanation, the slides, practice questions in the exam format, and further reading.\nSolving problems (grey: how you think and work, needed everywhere)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nCutting Problems\nC0 to C4\n\n\nInput, Processing, Output\nC0 to C4\n\n\nAlgorithms and Programs\nfrom C0, central in C1 and C2\n\n\nMeasuring and Experimenting\nfrom C1\n\n\nAbstraction and Layers\nfrom C2\n\n\n\nRepresenting information (orange: making bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nAnalog and Digital\nC1\n\n\nSymbols and Information\nC1\n\n\nNumber Systems\nC2\n\n\nCode Systems\nC2\n\n\n\nStoring information (green: storing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nMemory and Storage\nC4\n\n\n\nTransferring information (magenta: sending bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nSignal and Noise\nC1\n\n\nSampling and Synchronization\nC2\n\n\nProtocols\nC2 and C3\n\n\nErrors and Redundancy\nC4\n\n\nThroughput and Limits\nC4\n\n\n\nProcessing information (blue: processing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nLogic and Arithmetic\nC4, first contact in C2\n\n\nCompression\nC4\n\n\nEncryption\nC4, optional",
+    "text": "The concepts\nEighteen concepts, in five families. The order inside each family is the order in which you meet them during the semester; the last column says where in the project you need them. Every concept has its own page with a summary, the explanation, the slides, practice questions in the exam format, and further reading.\nSolving problems (grey: how you think and work, needed everywhere)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nCutting Problems\nC0 to C4\n\n\nInput, Processing, Output\nC0 to C4\n\n\nAlgorithms and Programs\nfrom C0, central in C1 and C2\n\n\nMeasuring and Experimenting\nfrom C1\n\n\nAbstraction and Layers\nfrom C2\n\n\n\nRepresenting information (orange: making bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nAnalog and Digital\nC1\n\n\nSymbols and Information\nC1\n\n\nNumber Systems\nC2\n\n\nCode Systems\nC2\n\n\n\nStoring information (green: storing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nMemory and Storage\nC4\n\n\n\nTransferring information (magenta: transferring bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nSignal and Noise\nC1\n\n\nSampling and Synchronization\nC2\n\n\nProtocols\nC2 and C3\n\n\nErrors and Redundancy\nC4\n\n\nThroughput and Limits\nC4\n\n\n\nProcessing information (blue: processing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nLogic and Arithmetic\nC4, first contact in C2\n\n\nCompression\nC4\n\n\nEncryption\nC4, optional",
     "crumbs": [
       "Concepts",
       "Overview"
@@ -2070,7 +2070,7 @@
     "href": "concepts/index.html#what-the-exam-is-about",
     "title": "Overview",
     "section": "What the exam is about",
-    "text": "What the exam is about\nThe concepts. Your project is the material on which you explain them, but it does not replace understanding them. Whoever has passed every challenge and still cannot say why digital transmission tolerates noise does not pass the exam. The ranking in the competition does not count towards your grade; passing every challenge is what admits you to the exam, and the exam is about the concepts, one person at a time. You will have to prepare for it, but you will not start from zero: by then you will have met every one of these concepts at your own device.",
+    "text": "What the exam is about\nThe concepts. Your project is the material on which you explain them, but it does not replace understanding them. Whoever has passed every challenge and still cannot say why digital transmission tolerates noise does not pass the exam. The ranking in the competition does not count towards your grade. The exam is a one-hour multiple-choice exam on the concepts, and if all five of your challenges are accepted, you get a 5 % bonus on it. You will have to prepare for it, but you will not start from zero: by then you will have met every one of these concepts at your own device.",
     "crumbs": [
       "Concepts",
       "Overview"
@@ -2580,6 +2580,18 @@
     "title": "Required Software",
     "section": "What each program does",
     "text": "What each program does\nOpenCode is the AI assistant. It reads and changes the files in your course folder, runs commands for you when you allow it, and knows this course. How to work with it is on its own page.\nPython is the language you write your sender and receiver in. It reads almost like English, which makes it a good first language, but it is not a toy. Python is one of the most widely used languages there are: data analysis, artificial intelligence, automation, scientific computing and a large part of the web run on it. What you learn here you can use straight away elsewhere.\nVisual Studio Code is the editor. This is where you write your code, where you see your files, and where the terminal lives in which you start your programs.\nBrick Daemon is a background program. It runs invisibly and translates between the hardware on the USB port and your Python programs. Without it your program cannot find the device. When one day nothing works at all, “is the Brick Daemon even running?” is one of the first questions to ask.\nBrick Viewer is a window onto your hardware. It shows you which parts are recognised, lets you switch the LED by hand and watch the sensor values run, all without a line of your own code. For finding faults it is worth gold: if it works in the Brick Viewer, the fault is in your program. If it does not, the fault is somewhere before your program.\nGit you do not need. It is a tool for keeping track of versions of files, and if you already know it, you can use it to fetch the course folder instead of the ZIP. That way is described at the end of this page.",
+    "crumbs": [
+      "LiFi Project",
+      "Software",
+      "Required Software"
+    ]
+  },
+  {
+    "objectID": "software/index.html#slides",
+    "href": "software/index.html#slides",
+    "title": "Required Software",
+    "section": "The slides",
+    "text": "The slides\nThese are the slides we go through together in the first session, “first light”. They show the whole setup at a glance, from your device to the green LED. The details for every step follow below.",
     "crumbs": [
       "LiFi Project",
       "Software",
