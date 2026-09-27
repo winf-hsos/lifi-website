@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>overview</title>
-  <link rel="stylesheet" href="theme.css?v=20260926b">
-  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260926b">
+  <link rel="stylesheet" href="theme.css?v=20260928a">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260928a">
   <style>
     /* Symbole neben der kleinen Ueberschrift: so gross wie ihre Schrift, in ihrem Grau. */
     .slide h2 .icon { width: 1em; height: 1em; vertical-align: -0.12em; margin-right: 16px; color: var(--gray); }
@@ -110,10 +110,22 @@
   </section>
 
   <section class="slide">
+    <h2>why this module</h2>
+    <div class="content">
+      <div class="lines">
+        <div>ai writes code in seconds.</div>
+        <div data-step="1">it explains anything you ask, and solves most exercises you give it.</div>
+      </div>
+      <div class="statement y" data-step="2" style="margin-top: 0.4em;">so why learn anything at all?</div>
+    </div>
+    <aside class="notes">Fangen wir mit der Frage an, die ihr euch vermutlich schon gestellt habt. Eine KI schreibt euch in Sekunden Code. Sie erklärt euch jedes Thema, das ihr fragt, und löst die meisten Übungsaufgaben, die man ihr gibt. Wozu also überhaupt noch etwas lernen? Die Frage ist berechtigt, und ich will sie ernst nehmen. Die Antwort beginnt mit einer Frage, die Menschen vor fünfzig Jahren gestellt haben.</aside>
+  </section>
+
+  <section class="slide">
     <img class="photo" src="img/calculator.jpg" alt="">
-    <div class="photo-text">everyone has<br>a calculator.<br>everyone still<br>learns maths.</div>
+    <div class="photo-text quiet"><div><div class="sub" style="margin-top: 0; margin-bottom: 0.6em;">the same question, fifty years ago:</div><div style="font-size: var(--large); line-height: 1.15;">everyone has<br>a calculator.<br>why still<br>learn maths?</div></div></div>
     <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
-    <aside class="notes">Jede und jeder von euch hat einen Taschenrechner, spätestens im Handy. Und trotzdem hat niemand gesagt: Dann lassen wir Mathe in der Schule weg. Warum eigentlich nicht? Der Rechner rechnet schneller und fehlerfreier als ihr. Die Antwort auf diese Frage ist die Antwort darauf, warum es dieses Modul gibt.</aside>
+    <aside class="notes">Dieselbe Frage gab es schon einmal, als der Taschenrechner kam. Jede und jeder von euch hat heute einen, spätestens im Handy. Und trotzdem hat niemand gesagt: Dann lassen wir Mathe in der Schule weg. Warum eigentlich nicht? Der Rechner rechnet schneller und fehlerfreier als ihr. Die Antwort auf diese Frage ist die Antwort darauf, warum es dieses Modul gibt.</aside>
   </section>
 
   <section class="slide">
@@ -155,16 +167,16 @@
   <section class="slide">
     <img class="photo" src="img/robot.jpg" alt="">
     <h2>the most powerful calculator humans built so far</h2>
-    <div class="photo-text" style="font-size: var(--normal); line-height: 1.35; width: 40%;">
+    <div class="photo-text" style="font-size: var(--normal); line-height: 1.35; width: 46%;">
       <div>
         <div>it writes code in seconds.</div>
-        <div data-step="1">it cannot see your sensor.</div>
-        <div data-step="2">it cannot tell if your link works.</div>
+        <div data-step="1">it sounds right, even when it is wrong.</div>
+        <div data-step="2">it cannot check its answer against the real world.</div>
         <div data-step="3" class="y" style="margin-top: 0.8em;">you learn to work with it: cut, check, measure.</div>
       </div>
     </div>
-    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
-    <aside class="notes">Und jetzt habt ihr den mächtigsten Taschenrechner, den Menschen bisher gebaut haben: einen Assistenten, der euch in Sekunden Code schreibt. Ihr programmiert in diesem Modul von der ersten Zeile an mit ihm, und das ist gewollt. Aber schaut auf das Bild: Er tippt fleißig und hat eine Augenbinde auf. Das Gerät neben ihm sieht er nicht. Er weiß nicht, was euer Sensor misst, und er kann nicht sagen, ob eure Strecke funktioniert. Genau die drei Dinge vom Taschenrechner bleiben bei euch: das Problem so zerlegen, dass er es lösen kann, das Ergebnis prüfen, nachmessen. Das lernt ihr hier, jede Woche, und die Lampe entscheidet, wer recht hat.</aside>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare, edited with gpt-image-2.5-sunburst)</div>
+    <aside class="notes">Und jetzt habt ihr den mächtigsten Taschenrechner, den Menschen bisher gebaut haben: einen Assistenten, der euch in Sekunden Code schreibt. Ihr programmiert in diesem Modul von der ersten Zeile an mit ihm, und das ist gewollt. Aber schaut auf das Bild: Er tippt fleißig und hat eine Augenbinde auf. Seine Antworten klingen immer überzeugend, auch wenn sie falsch sind, und er kann sie nicht an der Wirklichkeit prüfen: Er sieht nicht, was sein Code dort draußen tut. Genau die drei Dinge vom Taschenrechner bleiben bei euch: das Problem so zerlegen, dass er es lösen kann, das Ergebnis prüfen, nachmessen. Das lernt ihr hier, jede Woche.</aside>
   </section>
 
   <section class="slide" data-on-show="stackSteps" data-on-step="stackSteps">
@@ -465,8 +477,8 @@
 </div>
 <!-- Reihenfolge ist Pflicht: deck.js VOR stagekit.js, sonst fehlen die
      data-on-show-Funktionen beim ersten Anzeigen. -->
-<script src="../stagekit/draw.js?v=20260926b"></script>
-<script src="deck.js?v=20260926b"></script>
-<script src="../stagekit/stagekit.js?v=20260926b"></script>
+<script src="../stagekit/draw.js?v=20260928a"></script>
+<script src="deck.js?v=20260928a"></script>
+<script src="../stagekit/stagekit.js?v=20260928a"></script>
 </body>
 </html>
