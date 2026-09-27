@@ -447,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#opencode" id="toc-opencode" class="nav-link" data-scroll-target="#opencode">1. OpenCode</a></li>
   <li><a href="#course-folder" id="toc-course-folder" class="nav-link" data-scroll-target="#course-folder">2. The course folder</a></li>
-  <li><a href="#open-the-folder-and-enter-your-key" id="toc-open-the-folder-and-enter-your-key" class="nav-link" data-scroll-target="#open-the-folder-and-enter-your-key">3. Open the folder and enter your key</a></li>
+  <li><a href="#open-the-folder-and-start" id="toc-open-the-folder-and-start" class="nav-link" data-scroll-target="#open-the-folder-and-start">3. Open the folder and start</a></li>
   </ul></li>
   <li><a href="#part-2-your-assistant-takes-over" id="toc-part-2-your-assistant-takes-over" class="nav-link" data-scroll-target="#part-2-your-assistant-takes-over">Part 2: your assistant takes over</a>
   <ul class="collapse">
@@ -582,15 +582,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>a few more files for OpenCode, which you can ignore.</li>
 </ul>
 </section>
-<section id="open-the-folder-and-enter-your-key" class="level3">
-<h3 class="anchored" data-anchor-id="open-the-folder-and-enter-your-key">3. Open the folder and enter your key</h3>
+<section id="open-the-folder-and-start" class="level3">
+<h3 class="anchored" data-anchor-id="open-the-folder-and-start">3. Open the folder and start</h3>
 <p>Start OpenCode. On its start page you see a list <strong>Projects</strong> on the left.</p>
 <ol type="1">
 <li><strong>Add your course folder.</strong> Click the small folder icon with the plus next to <em>Projects</em> (its tooltip says <em>Add project</em>). A window opens: select your course folder, <code>lifi-project-main</code> or <code>lifi-project</code>, and click <em>Select Folder</em>. It now appears in the list of projects.</li>
-<li><strong>Enter your key.</strong> At the start of the course you receive a personal key for the language model by e-mail, a long line of characters beginning with <code>sk-</code>. Click <strong>Settings</strong> below the list of projects, then <strong>Providers</strong> on the left. At <strong>OpenAI</strong> click <strong>+ Connect</strong> (if OpenAI is not in the list, click <em>Show more providers</em> first). Choose <strong>API key</strong>, not the two <em>ChatGPT Pro/Plus</em> options. Paste your key into the field <em>OpenAI API key</em> and click <strong>Continue</strong>.</li>
-<li><strong>Start a session.</strong> Close the settings and click <strong>New session</strong>. Below the input field you should see the model <em>GPT-6 Luna (course model)</em>: your course folder has selected it for you.</li>
+<li><strong>Start a session.</strong> Click <strong>New session</strong>. Below the input field you see the model your course folder has selected for you: one of the free models that come with OpenCode. You need no key for it.</li>
 </ol>
-<p>The key is yours and it costs money every time the assistant answers, so treat it like a password: do not send it to anyone and do not paste it into a chat, not even the one with your assistant. If you are working through this course on your own, without a key from us, create a key of your own at <a href="https://platform.openai.com/api-keys">platform.openai.com</a>. It works the same way.</p>
+<p>Free models come and go. If the preset one stops working, pick another free model in the model selection below the input field.</p>
+<p><strong>A key, if you get one.</strong> Later in the course you may get a key for a stronger model, a long line of characters. You enter it in OpenCode: click <strong>Settings</strong> below the list of projects, then <strong>Providers</strong> on the left. At the provider the key is for, click <strong>+ Connect</strong> (if it is not in the list, click <em>Show more providers</em> first), choose <strong>API key</strong> and paste it. A key costs money every time the assistant answers, so treat it like a password: do not send it to anyone and do not paste it into a chat, not even the one with your assistant.</p>
 </section>
 </section>
 <section id="part-2-your-assistant-takes-over" class="level2">
@@ -695,7 +695,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>To check, open a new terminal and type <code>opencode --version</code>. A version number should appear.</p>
-<p>Then change into your course folder in the terminal, start OpenCode with <code>opencode</code>, and enter your key with the command <code>/connect</code>.</p>
+<p>Then change into your course folder in the terminal and start OpenCode with <code>opencode</code>. If you have a key, you enter it with the command <code>/connect</code>.</p>
 </section>
 </section>
 <section id="when-something-does-not-work" class="level2">
