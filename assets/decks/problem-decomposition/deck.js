@@ -89,7 +89,7 @@ function drawMap() {
   const c = d.colors();
   const parts = [];
   const qy = 70;
-  parts.push(d.label(W / 2, qy, "how can we solve complex problems\nwith computers?",
+  parts.push(d.label(W / 2, qy, "how do computers solve\ncomplex problems?",
     { size: 48, color: c.white, anchor: "middle", lineHeight: 1.25 }));
   parts.push(d.label(W / 2, qy + 120, "the skills for it:  cutting problems · input, processing, output\nalgorithms and programs · measuring · thinking in layers",
     { size: 32, color: c.gray, anchor: "middle", lineHeight: 1.35 }));

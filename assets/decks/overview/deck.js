@@ -93,7 +93,7 @@ window.drawMap = function (o = {}) {
   const W = 1680, mid = W / 2;
 
   // Die grosse Frage, immer an derselben Stelle
-  parts.push(d.label(mid, 0, "how can we solve complex problems with computers?", { size: 48, color: c.white, anchor: "middle", centerY: 130 }));
+  parts.push(d.label(mid, 0, "how do computers solve complex problems?", { size: 48, color: c.white, anchor: "middle", centerY: 130 }));
 
   // Schritt 4: die Arbeitsweisen darueber, grau, eine Reihe
   if (step >= 4) {
