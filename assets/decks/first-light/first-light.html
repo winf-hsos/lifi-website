@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>first light</title>
-  <link rel="stylesheet" href="theme.css?v=20260927b">
-  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260927b">
+  <link rel="stylesheet" href="theme.css?v=20260928a">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260928a">
   <style>
     /* Symbole neben der kleinen Ueberschrift: so gross wie ihre Schrift, in ihrem Grau. */
     .slide h2 .icon { width: 1em; height: 1em; vertical-align: -0.12em; margin-right: 16px; color: var(--gray); }
 
     /* Fototext in der normalen Stufe, wenn mehrere Zeilen links neben einem Foto stehen */
+    /* Abschnittsfolie mit Foto: der Teiltitel liegt ueber dem Bild */
+    .slide.part .content { z-index: 1; }
+
     .photo-text.lines-normal { font-size: var(--normal); line-height: 1.35; }
     /* neben der Illustration von /onboarding: sie beginnt bei etwa 43 Prozent der Breite */
     .photo-text.narrow { width: 640px; font-size: var(--small); line-height: 1.4; }
     .photo-text.narrow > div > div + div { margin-top: 0.5em; }
+    /* „the task": Aufgabentext neben dem Kuechenwecker */
+    .photo-text.task { width: 900px; font-size: var(--normal); line-height: 1.35; }
+    .photo-text.task .header { margin-bottom: 0.6em; }
 
     /* „your device": das echte Foto rechts, die Teile links */
     img.device { position: absolute; right: var(--margin); top: 150px; height: 780px; border-radius: 12px; }
@@ -21,10 +27,19 @@
                     display: flex; flex-direction: column; justify-content: center; gap: 0.9em; font-size: var(--normal); }
     .device-lines .sub { display: block; font-size: var(--small); color: var(--gray); }
 
-    /* „part 1, by hand" und „where are you?": nummerierte Zeilen mit fester Hoehe */
+    /* nummerierte Zeilen mit fester Hoehe */
     .steps { font-size: var(--normal); }
     .steps > div { height: 96px; display: flex; align-items: center; gap: 40px; }
     .steps .n { width: 60px; font-family: var(--mono); color: var(--gray); }
+    /* „cut it into steps": rechts das Python-Werkzeug zum Schritt, erst im letzten Aufbauschritt */
+    .steps.wide { align-self: stretch; }
+    .steps .tool { margin-left: auto; font-family: var(--mono); color: var(--blue); text-transform: none; }
+    /* „where we are": erledigte Schritte grau mit Haken (gruen), der naechste gelb (aktuell), der Rest dunkel */
+    .progress .steps > .done { color: var(--gray); }
+    .progress .steps > .done .tool { color: var(--gray); }
+    .progress .steps .icon.done { width: 48px; height: 48px; color: var(--green); }
+    .progress .steps > .now, .progress .steps > .now .n, .progress .steps > .now .tool { color: var(--yellow); }
+    .progress .steps > .todo, .progress .steps > .todo .tool { color: var(--gray-dark); }
     .checks > div { height: 100px; display: flex; align-items: center; gap: 40px; font-size: var(--normal); }
     .checks .box { width: 48px; height: 48px; border: 3px solid var(--gray); border-radius: 6px; flex: none; }
 
@@ -40,13 +55,12 @@
 
     /* Karten: Symbol oben, Titel, leiser Text */
     .card { border: 1px solid var(--gray-dark); border-radius: 16px; padding: 44px 40px; height: 560px; }
-    /* Symbol und Titel mittig; Titel (auch die grosse Zahl) in fester Hoehe, unten ausgerichtet,
+    /* Symbol und Titel mittig; Titel in fester Hoehe, unten ausgerichtet,
        damit die Texte darunter auf gleicher Hoehe beginnen. */
     .card { text-align: center; }
     .card .icon { width: 64px; height: 64px; color: var(--gray-light); display: block; margin: 0 auto 28px; }
-    .card .ct, .card .big { color: var(--white); line-height: 1.2; min-height: 116px; display: flex; align-items: flex-end; justify-content: center; }
+    .card .ct { color: var(--white); line-height: 1.2; min-height: 116px; display: flex; align-items: flex-end; justify-content: center; }
     .card .ct { font-size: var(--normal); }
-    .card .big { font-size: var(--large); line-height: 1.1; }
     .card .cx { font-size: var(--small); color: var(--gray-light); margin-top: 28px; line-height: 1.35; }
     .card.warn { border-color: var(--red); }
     .card.warn .icon { color: var(--red); }
@@ -65,33 +79,84 @@
     .tile .cx { font-size: var(--small); color: var(--gray-light); margin-top: 14px; line-height: 1.35; }
     .tile.note { border-color: var(--yellow); }
     .tile.note .icon, .tile.note .ct { color: var(--yellow); }
+    .tile.warn { border-color: var(--red); }
+    .tile.warn .icon { color: var(--red); }
+    /* „careful, not scared": vier Kacheln ueber die ganze Breite, Symbol links neben dem Text */
+    .grid4 { position: absolute; left: var(--margin); right: var(--margin); top: 170px; display: grid;
+             grid-template-columns: 1fr 1fr; gap: 20px 36px; }
+    .grid4 .tile { height: 214px; padding: 26px 36px; display: grid; grid-template-columns: 48px 1fr; column-gap: 32px; align-content: start; }
+    .grid4 .tile .icon { margin: 6px 0 0; grid-row: span 2; }
+
+    /* „do you know who these are?": Frage oben, drei Zeichen gleicher Hoehe, darunter Name und Hersteller */
+    .who { position: absolute; left: var(--margin); right: var(--margin); top: 170px; text-align: center; }
+    .who .logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; margin-top: 110px; }
+    .who .mark { height: 220px; width: auto; color: var(--white); display: block; margin: 0 auto 40px; }
+    .who .name { font-size: var(--normal); color: var(--white); }
+    .who .maker { font-size: var(--small); color: var(--gray); margin-top: 8px; }
+    /* „you know this already": Chat links, Agent rechts, Zeile fuer Zeile */
+    .vs { position: absolute; left: var(--margin); right: var(--margin); top: 200px; display: grid;
+          grid-template-columns: 1fr 1fr; column-gap: 80px; }
+    .vs > div { height: 104px; display: flex; align-items: center; font-size: var(--normal); color: var(--gray-light);
+                border-top: 1px solid var(--gray-dark); }
+    .vs > div.r { color: var(--white); }
+    .vs > div.head { height: 80px; font-size: var(--small); color: var(--gray); border-top: none; }
+
+    /* Code: neue Zeilen gelb (gelb heisst „aktuell"), Kommentare grau; Code in der kleinen Stufe
+       fuer das ganze Programm auf einer Folie */
+    .code > div.new { color: var(--yellow); }
+    .code .c { color: var(--gray); }
+    .code.small { font-size: var(--small); }
+    /* „the whole program": der Block zeigt nur, was passt, und laeuft unten ins Schwarze aus;
+       der Kopierknopf rechts bleibt sichtbar (clip-path schneidet nur unten), und er kopiert
+       den ganzen Text, auch den verdeckten. */
+    .content.whole { justify-content: flex-start; top: 170px; }
+    .code.clip { height: 640px; clip-path: inset(-20px -120px 0 -20px); }
+    .code.clip::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 220px;
+                        background: linear-gradient(to bottom, transparent, var(--bg)); pointer-events: none; }
+    /* was im Terminal erscheint: Codeschrift, grau, ohne Kopierknopf (es ist Ausgabe, kein Code) */
+    .out { font-family: var(--mono); font-size: var(--normal); color: var(--gray-light); white-space: pre; text-transform: none; }
+    .out.small { font-size: var(--small); }
+    .out > div { min-height: 1.35em; }
+    .out > div.hl { color: var(--yellow); }
+    /* Fehlermeldung: die eigene Eingabe weiss, die Meldung von Python grau, mit Abstand dazwischen */
+    #traceback { color: var(--gray); }
+    #traceback > div.in { color: var(--white); }
+    .content .sidenote { max-width: 1500px; }
+    /* Links auf Folien: blau wie der Verweis, ohne Unterstrich */
+    .slide a { color: var(--blue); text-decoration: none; }
+    .slide a:hover { text-decoration: underline; }
+
+    /* „its memory": Zeichnung oben, Zeilen darunter */
+    #fig-context { top: 170px; bottom: auto; height: 380px; }
+    .under { position: absolute; left: var(--margin); right: var(--margin); top: 600px; }
+    /* „the program and the model": Schema oben, darunter zwei Zeilen */
+    #fig-model { top: 150px; bottom: auto; height: 560px; }
+    .under.model { top: 750px; text-align: center; }
+    .under.model .lines { font-size: var(--small); color: var(--gray-light); }
+    .under.model .statement { font-size: var(--normal); }
   </style>
 </head>
 <body>
 <div class="deck"
      data-title="first light"
      data-subtitle="digitization and programming · setup and first steps · prof. dr. nicolas meseth"
-     data-parts='["your device", "your tools", "getting ready", "how the workshop works"]'>
+     data-parts='["your device", "your assistant", "getting ready", "your first program", "how our workshops work"]'>
 
   <section class="slide title">
-    <aside class="notes">Der zweite Teil des ersten Tages, und der Titel ist ein Wort aus der Astronomie: First Light heißt das erste Bild, das ein neues Teleskop aufnimmt. Hier ist es der Moment, in dem eure LED zum ersten Mal leuchtet. Kurz, fünfzehn Minuten, danach arbeitet ihr.</aside>
+    <aside class="notes">Der zweite Teil des ersten Tages, und der Titel ist ein Wort aus der Astronomie: First Light heißt das erste Bild, das ein neues Teleskop aufnimmt. Heute ist es ein Licht in eurem Terminal: euer erstes Programm zeigt eine farbige Lampe. Nächste Woche leuchtet dieselbe Lampe auf eurem Gerät.</aside>
   </section>
 
   <section class="slide agenda">
-    <aside class="notes">Vier Teile: euer Gerät, welche Werkzeuge ihr braucht und wie sie zusammenhängen, wie ihr sie einrichtet, und wie die Werkstatt läuft, wenn ich allein für 24 Teams da bin.</aside>
-  </section>
-
-  <section class="slide">
-    <img class="photo" src="img/device-waiting.jpg" alt="">
-    <div class="photo-text">meet<br>your device.</div>
-    <div class="footnote">image: ai-generated from photos of the real device (gpt-image-2.5-sunburst)</div>
-    <aside class="notes">Gleich bekommt jede und jeder von euch so ein Gerät, fertig gebaut, und in anderthalb Stunden soll daraus Licht kommen, weil ihr es ihm gesagt habt. Der Weg dahin geht über ein paar Werkzeuge, die zusammen eine Kette bilden. Die zeige ich euch jetzt, dann richtet ihr sie ein.</aside>
+    <aside class="notes">Fünf Teile: euer Gerät, das ihr heute seht und nächste Woche bekommt; euer Assistent, was er ist und was er kann; die Einrichtung; euer erstes Programm, gemeinsam; und wie unsere Werkstätten laufen, wenn ich allein für 24 Teams da bin.</aside>
   </section>
 
   <!-- ================= Teil 1: your device ================= -->
 
+  <!-- Abschnittsfolie mit Eroeffnungsfoto: stagekit setzt „part 1 / your device" links auf den schwarzen Grund. -->
   <section class="slide part" data-part="your device">
-    <aside class="notes">Was ihr gleich in der Hand habt.</aside>
+    <img class="photo" src="img/device-waiting.jpg" alt="">
+    <div class="footnote">image: ai-generated from photos of the real device (gpt-image-2.5-sunburst)</div>
+    <aside class="notes">Das ist euer Gerät. Heute seht ihr es nur, hier auf dem Bild und gleich bei mir unter dem Visualizer; in euren Händen ist es ab nächster Woche. Heute sorgen wir dafür, dass euer Laptop bereit ist, wenn es kommt, und ihr schreibt schon euer erstes Programm. Ich lege mein Gerät jetzt unter den Visualizer.</aside>
   </section>
 
   <section class="slide" data-on-show="deviceMarks" data-on-step="deviceMarks">
@@ -108,47 +173,105 @@
       <div data-step="2">the wall<span class="sub">so the device does not see its own lamp</span></div>
       <div data-step="3">inside<span class="sub">a <span class="keep-case">Master Brick</span>, connected to your laptop by <span class="keep-case">USB</span></span></div>
     </div>
-    <aside class="notes">Das ist das echte Gerät, von vorn. Links das Auge, der Farbsensor; er meldet vier Zahlen. Rechts die Lampe, eine RGB-LED, drei Lämpchen in einem. Dazwischen die Wand, damit das Gerät seine eigene Lampe nicht sieht. Und innen eine dritte Platine, der Master Brick, der beide mit eurem Laptop verbindet, über USB auf der Rückseite. Mehr braucht es nicht, und mehr kommt auch nicht dazu. Die Namen der Teile stehen auf der Hardware-Seite.</aside>
+    <aside class="notes">Das ist das echte Gerät, von vorn; dasselbe liegt gerade unter dem Visualizer. Links das Auge, der Farbsensor; er meldet vier Zahlen. Rechts die Lampe, eine RGB-LED, drei Lämpchen in einem. Dazwischen die Wand, damit das Gerät seine eigene Lampe nicht sieht. Und innen eine dritte Platine, der Master Brick, der beide mit eurem Laptop verbindet, über USB auf der Rückseite. Mehr braucht es nicht, und mehr kommt auch nicht dazu. Die Namen der Teile stehen auf der Hardware-Seite.</aside>
   </section>
 
   <section class="slide">
-    <h2><!-- Bootstrap Icons "box-seam" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/></svg>it's yours until january</h2>
+    <h2><!-- Bootstrap Icons "box-seam" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/></svg>yours from next monday</h2>
     <div class="content">
       <div class="lines">
         <div>two devices per team, one for each of you.</div>
-        <div>sign for it when you pick it up.</div>
-        <div>bring it every monday. keep it in one piece.</div>
+        <div>you get them next monday, and keep them until january.</div>
+        <div>find your partner by then. today, your laptop gets ready.</div>
       </div>
     </div>
-    <aside class="notes">Ihr habt beide Enden der Strecke, also könnt ihr alles selbst ausprobieren. Das Gerät bleibt bis zum Finale bei euch; wenn etwas kaputtgeht, sagt es sofort, dafür gibt es Ersatzteile. Nicht an den Platinen ziehen; das USB-Kabel ist die empfindlichste Stelle. Die Ausgabe läuft gleich zu Beginn der Werkstatt, gegen Unterschrift.</aside>
-  </section>
-
-  <!-- ================= Teil 2: your tools ================= -->
-
-  <section class="slide part" data-part="your tools">
-    <aside class="notes">Sechs Glieder einer Kette, von eurer Idee bis zum Licht.</aside>
+    <aside class="notes">Jedes Team bekommt zwei Geräte, eines pro Person. Damit habt ihr beide Enden der Strecke und könnt alles selbst ausprobieren. Ausgegeben werden sie nächste Woche, gegen Unterschrift, und sie bleiben bis zum Finale im Januar bei euch. Heute bereiten wir den Laptop vor, damit ihr nächste Woche sofort loslegen könnt.</aside>
   </section>
 
   <section class="slide" data-on-show="chainSteps" data-on-step="chainSteps">
     <h2>from your idea to the light</h2>
     <div class="figure" id="fig-chain"></div>
     <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span><span data-step="5"></span>
-    <aside class="notes">Von oben nach unten. Ihr entscheidet, was passieren soll. Ihr sagt es eurem Assistenten in OpenCode, und er schreibt ein Python-Programm, das ihr lesen und verstehen sollt; es liegt in eurem Ordner my-code. Das Programm benutzt ein kleines Modul, lifi_hardware, das die Sprache des Geräts spricht. Darunter läuft ein Dienst, der Brick Daemon, der die USB-Verbindung hält. Und ganz unten das Gerät. Jedes Glied weiß nur von seinen Nachbarn; das wird im Semester noch wichtig, unter dem Namen Schichten. Heute installiert ihr alles davon.</aside>
+    <aside class="notes">Von oben nach unten. Ihr entscheidet, was passieren soll. Ihr sagt es eurem Assistenten in OpenCode, und er schreibt mit euch ein Python-Programm, das ihr lesen und verstehen sollt; es liegt in eurem Ordner my-code. Das Programm benutzt ein kleines Modul, lifi_hardware, das die Sprache des Geräts spricht. Darunter läuft ein Dienst, der Brick Daemon, der die USB-Verbindung hält. Und ganz unten das Gerät. Jedes Glied weiß nur von seinen Nachbarn; das wird im Semester noch wichtig, unter dem Namen Schichten. Heute installiert ihr alles bis auf das letzte Glied, und das zweite schauen wir uns jetzt genauer an.</aside>
+  </section>
+
+  <!-- ================= Teil 2: your assistant ================= -->
+
+  <section class="slide part" data-part="your assistant">
+    <aside class="notes">Ihr kennt vermutlich schon ChatGPT. Euer Assistent ist verwandt damit, kann aber deutlich mehr. Was genau, und worauf ihr achten müsst.</aside>
+  </section>
+
+  <!-- Logos der Produkte, nicht der Firmen: Claude Code und Codex aus LobeHub Icons 1.95.1 (MIT,
+       cdn.jsdelivr.net/npm/@lobehub/icons-static-svg, Claude Code in Farbe, Codex einfarbig weiss,
+       das >_ ausgestanzt), das Zeichen von OpenCode aus dessen Repository.
+       Die Marken gehoeren ihren Inhabern. -->
+  <section class="slide">
+    <div class="who">
+      <div class="statement">do you know who these are?</div>
+      <div class="logos">
+        <div><img class="mark" src="img/brand/claude-code.svg" alt="Claude Code"><div class="name" data-step="1"><span class="keep-case">Claude Code</span></div><div class="maker" data-step="1"><span class="keep-case">Anthropic</span></div></div>
+        <div><img class="mark" src="img/brand/codex.svg" alt="Codex"><div class="name" data-step="1"><span class="keep-case">Codex</span></div><div class="maker" data-step="1"><span class="keep-case">OpenAI</span></div></div>
+        <div><img class="mark" src="img/brand/opencode-logo-dark.svg" alt="OpenCode"><div class="name" data-step="1"><span class="keep-case">OpenCode</span></div><div class="maker" data-step="1">open source</div></div>
+      </div>
+    </div>
+    <div class="footnote">logos are trademarks of their owners.</div>
+    <aside class="notes">Kennt ihr die? Drei Logos, die ihr vielleicht schon gesehen habt, vielleicht auch nicht. Kurz raten lassen. Schritt 1: Links Claude Code von Anthropic, das orange Pixelwesen ist sein Zeichen; in der Mitte Codex von OpenAI, der Firma hinter ChatGPT, die Wolke mit der Eingabeaufforderung; rechts OpenCode, frei und quelloffen, das benutzen wir. Alle drei sind KI-Agenten zum Programmieren, und mit ihnen arbeiten heute viele Entwicklerinnen und Entwickler jeden Tag. Aber was unterscheidet so einen Agenten von ChatGPT, das die meisten von euch kennen? Das zeigt die nächste Folie.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>you know this already</h2>
+    <div class="vs">
+      <div class="head">a chat, like <span class="keep-case">&nbsp;ChatGPT</span></div>
+      <div class="head r">an agent, like <span class="keep-case">&nbsp;OpenCode</span></div>
+      <div>one question, one answer</div>
+      <div class="r">one task, until it is done</div>
+      <div data-step="1">you paste in what it needs</div>
+      <div class="r" data-step="1">it reads your files itself</div>
+      <div data-step="2">you copy its code into a file</div>
+      <div class="r" data-step="2">it writes the file itself</div>
+      <div data-step="3">you run it and report back</div>
+      <div class="r" data-step="3">it runs it and reads the result</div>
+      <div data-step="4">you decide the next step</div>
+      <div class="r" data-step="4">it tries again, until it works</div>
+    </div>
+    <div class="punch" data-step="5">the difference: it works in a loop, right where the work is.</div>
+    <aside class="notes">Die meisten von euch haben schon mit ChatGPT, Gemini oder Copilot gearbeitet: Ihr stellt eine Frage, es antwortet, und dann seid ihr wieder dran. Ein Agent bekommt stattdessen eine Aufgabe und arbeitet daran, bis sie erledigt ist. Schritt 1: Der Chat bekommt, was ihr hineinkopiert; der Agent liest die Dateien in eurem Ordner selbst. Schritt 2: Aus dem Chat kopiert ihr den Code in eine Datei; der Agent schreibt die Datei selbst. Schritt 3: Nach dem Chat führt ihr das Programm aus und berichtet zurück; der Agent führt es selbst aus und liest das Ergebnis, auch die Fehlermeldung. Schritt 4: Im Chat entscheidet ihr, wie es weitergeht; der Agent versucht es erneut, bis es läuft. Schritt 5: Werkzeuge haben Chats inzwischen auch, sie können im Netz suchen oder Code in ihrer eigenen Umgebung ausführen. Der eigentliche Unterschied ist die Schleife: Der Agent löst eine Aufgabe selbstständig in vielen Schritten, und zwar direkt dort, wo die Arbeit liegt, in eurem Ordner, mit euren Werkzeugen, ohne dass ihr zwischen Fenstern hin und her kopiert.</aside>
+  </section>
+
+  <section class="slide has-punch" data-on-show="loopSteps" data-on-step="loopSteps">
+    <h2>the agent loop</h2>
+    <div class="figure" id="fig-loop"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
+    <div class="punch" data-step="5">you give the task. you check the result.</div>
+    <aside class="notes">So sieht die Schleife aus. Ihr gebt eine Aufgabe, etwa: Mein Timer stürzt ab, wenn ich five eintippe, finde heraus warum. Schritt 1: Der Agent überlegt, was als Nächstes zu tun ist. Schritt 2: Er handelt mit einem Werkzeug: eine Datei lesen, eine Datei ändern, das Programm ausführen. Bei Änderungen und Befehlen fragt er euch vorher. Schritt 3: Er schaut sich das Ergebnis an, etwa die Ausgabe im Terminal. Schritt 4: Ist die Aufgabe noch nicht erledigt, geht es wieder von vorn los, so oft wie nötig; ist sie erledigt, meldet er sich bei euch. Schritt 5: Am Anfang und am Ende steht ihr. Ihr formuliert die Aufgabe, und ihr prüft, ob das Ergebnis stimmt.</aside>
   </section>
 
   <section class="slide">
     <!-- Logo: offizieller Schriftzug von OpenCode (github.com/sst/opencode, packages/console/app/src/asset/brand), Fassung fuer dunklen Grund -->
     <div class="brand">
       <img src="img/brand/opencode-wordmark-dark.svg" alt="OpenCode">
-      <div class="sub">your assistant, with a model already set up for this course.</div>
+      <div class="sub">your assistant, set up for this course.</div>
     </div>
     <div class="grid2">
+      <div class="tile"><!-- Bootstrap Icons "laptop" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/></svg><div class="ct"><span class="t">works on your laptop</span></div><div class="cx">in your course folder, with your files.</div></div>
+      <div class="tile"><!-- Bootstrap Icons "terminal" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9M3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708z"/><path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/></svg><div class="ct"><span class="t">uses tools</span></div><div class="cx">reads and writes files, runs programs and commands.</div></div>
       <div class="tile"><!-- Bootstrap Icons "book" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/></svg><div class="ct"><span class="t">knows the course</span></div><div class="cx">the website, the lecture notes, the module <span class="mono keep-case">lifi_hardware</span>.</div></div>
-      <div class="tile"><!-- Bootstrap Icons "chat-dots" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/><path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"/></svg><div class="ct"><span class="t">ask anything</span></div><div class="cx">as often as you like. it explains, installs and writes code.</div></div>
-      <div class="tile"><!-- Bootstrap Icons "gear-wide-connected" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z"/></svg><div class="ct"><span class="t">ready to go</span></div><div class="cx">the model is set up, the course is loaded. just start asking.</div></div>
       <div class="tile note"><!-- Bootstrap Icons "eye-slash" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/><path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/><path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/></svg><div class="ct"><span class="t">it cannot see your device</span></div><div class="cx">the lamp has the last word.</div></div>
     </div>
-    <aside class="notes">Das ist OpenCode, euer Assistent. Ein Modell ist für diesen Kurs schon eingestellt, eins der freien, die OpenCode mitbringt. Er kennt den Kursstoff, weil er im Kursordner nachliest: die Seiten der Website, die Skripte zu den Folien, den Quelltext des Moduls. Fragt ihn alles, so oft ihr wollt; er erklärt, installiert und schreibt Code, und er nennt mich übrigens beim Namen. In der Werkstatt ist er die erste Anlaufstelle. Was er nicht kann: sehen, was euer Gerät tut. Das müsst ihr messen.</aside>
+    <aside class="notes">Das ist OpenCode, euer Assistent. Er läuft auf eurem Laptop, in eurem Kursordner. Er benutzt Werkzeuge: Dateien lesen und schreiben, Programme und Befehle ausführen. Er kennt den Kursstoff, weil er im Kursordner nachliest: die Seiten der Website, die Skripte zu den Folien, den Quelltext des Moduls; und er nennt mich übrigens beim Namen. In der Werkstatt ist er die erste Anlaufstelle. Was er nicht kann: sehen, was euer Gerät tut. Das müsst ihr messen, ab nächster Woche.</aside>
+  </section>
+
+  <section class="slide" data-on-show="modelSteps" data-on-step="modelSteps">
+    <h2>the program and the model</h2>
+    <div class="figure" id="fig-model"></div>
+    <span data-step="1"></span><span data-step="2"></span><span data-step="3"></span><span data-step="4"></span>
+    <div class="under model">
+      <div class="lines">
+        <div data-step="5">models differ: free or paid, faster, or better at code.</div>
+      </div>
+      <div class="statement y" data-step="6" style="margin-top: 0.3em;">what you type travels to that server.</div>
+    </div>
+    <aside class="notes">Zwei Dinge, die man leicht verwechselt. OpenCode ist das Programm auf eurem Laptop: Es zeigt euch den Chat und kommt an eure Dateien und das Terminal heran, unten im Bild. Schritt 1: Das Denken übernimmt ein Sprachmodell, und das läuft nicht auf eurem Laptop, sondern auf einem Server irgendwo anders; deshalb oben, in der Wolke. Schritt 2: OpenCode schickt ihm eure Aufgabe, dazu, was es aus euren Dateien gelesen hat, und die Ergebnisse der letzten Schritte. Schritt 3: Das Modell antwortet mit dem nächsten Schritt: lies diese Datei, ändere jene, führe dieses Programm aus. Das Modell entscheidet, was auf eurem Rechner passieren soll. Schritt 4: OpenCode führt es aus, auf eurem Laptop, und fragt euch vorher. Das ist die Schleife von eben, auf zwei Rechner verteilt. Schritt 5: Es gibt viele Modelle, freie und bezahlte, schnelle und solche, die besonders gut programmieren; in OpenCode wählt ihr eines unter dem Eingabefeld aus. Schritt 6: Und daraus folgt das Wichtigste: Alles, was ihr eintippt, und alles, was der Assistent aus euren Dateien liest, geht an diesen Server. Das merken wir uns für gleich.</aside>
   </section>
 
   <section class="slide">
@@ -161,10 +284,39 @@
     <aside class="notes">Ihr startet mit den freien Modellen, die OpenCode mitbringt. Die funktionieren sofort, ohne Schlüssel, und euer Kursordner hat eins davon schon eingestellt. Freie Modelle kommen und gehen: Hört das voreingestellte auf zu antworten, wählt ihr unter dem Eingabefeld ein anderes freies. Wenn wir später ein stärkeres Modell brauchen, bekommt ihr einen Schlüssel dafür; wann, sage ich rechtzeitig. Und für jeden Schlüssel gilt, deshalb in Rot: Er gehört in das Einstellungsfenster von OpenCode und nirgendwohin sonst, auch nicht in den Chat mit dem Assistenten. Wer ihn hat, arbeitet auf fremde Kosten.</aside>
   </section>
 
+  <section class="slide" data-on-show="contextSteps" data-on-step="contextSteps">
+    <h2>its memory: the context window</h2>
+    <div class="figure" id="fig-context"></div>
+    <div class="under">
+      <div class="lines">
+        <div>it remembers only this session.</div>
+        <div data-step="1">the window has a size, counted in tokens.</div>
+        <div data-step="2">when it is full, it compacts: old parts shrink to a summary.</div>
+      </div>
+      <div class="statement y" data-step="3" style="margin-top: 0.3em;">new task, new session.</div>
+      <div class="sidenote" data-step="4" style="margin-top: 0.4em;">what should last goes into a file it reads at every start, like its course instructions.</div>
+    </div>
+    <aside class="notes">Das Modell selbst merkt sich nichts. Was es weiß, steht in seinem Kontextfenster: eure Nachrichten, seine Antworten, die Dateien, die es gelesen hat, die Ausgaben der Befehle, dazu die Anweisungen für diesen Kurs. Alles, was in dieser Sitzung passiert ist, und nichts sonst; eine neue Sitzung beginnt bei null. Schritt 1: Das Fenster hat eine feste Größe. Gezählt wird in Tokens, das sind grob Wortstücke; ein Token ist etwa drei Viertel eines englischen Worts. Neues kommt immer von rechts herein, das Neueste steht am Eingang. Schritt 2: Wird das Fenster voll, verdichtet OpenCode die älteren Teile zu einer Zusammenfassung; das heißt compact, und so steht es auch in OpenCode, wenn es passiert. Ihr könnt es mit dem Befehl /compact auch selbst auslösen. Dabei gehen Einzelheiten verloren, und der Assistent wirkt plötzlich vergesslich. Schritt 3: Deshalb die Faustregel: Für eine neue Aufgabe eine neue Sitzung, mit einem Satz dazu, worum es geht. Schritt 4: Ein Gedächtnis über Sitzungen hinweg, wie ChatGPT es inzwischen hat, bringt OpenCode nicht mit. Was bleiben soll, steht in Dateien, die er bei jedem Start liest; bei euch sind das die Anweisungen für diesen Kurs, sonst meist eine Datei namens AGENTS.md. Alte Sitzungen könnt ihr in OpenCode wieder öffnen und fortsetzen, aber das ist ein Archiv, kein Gedächtnis.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2><!-- Bootstrap Icons "shield-check" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/><path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg>careful, not scared</h2>
+    <div class="grid4">
+      <div class="tile"><!-- Bootstrap Icons "hand-index" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.75 1a.75.75 0 0 1 .75.75V8a.5.5 0 0 0 1 0V5.467l.086-.004c.317-.012.637-.008.816.027.134.027.294.096.448.182.077.042.15.147.15.314V8a.5.5 0 1 0 1 0V6.435l.106-.01c.316-.024.584-.01.708.04.118.046.3.207.486.43.081.096.15.19.2.259V8.5a.5.5 0 0 0 1 0v-1h.342a1 1 0 0 1 .995 1.1l-.271 2.715a2.5 2.5 0 0 1-.317.991l-1.395 2.442a.5.5 0 0 1-.434.252H6.035a.5.5 0 0 1-.416-.223l-1.433-2.15a1.5 1.5 0 0 1-.243-.666l-.345-3.105a.5.5 0 0 1 .399-.546L5 8.11V9a.5.5 0 0 0 1 0V1.75A.75.75 0 0 1 6.75 1M8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v5.34l-1.2.24a1.5 1.5 0 0 0-1.196 1.636l.345 3.106a2.5 2.5 0 0 0 .405 1.11l1.433 2.15A1.5 1.5 0 0 0 6.035 16h6.385a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.271-2.715a2 2 0 0 0-1.99-2.199h-.581a5 5 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.6 2.6 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046zm2.094 2.025"/></svg><div class="ct">it asks first</div><div class="cx">changes and commands wait for your OK. read, then allow.</div></div>
+      <div class="tile" data-step="1"><!-- Bootstrap Icons "folder2-open" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7z"/></svg><div class="ct">it works in your course folder</div><div class="cx">keep private files out of it.</div></div>
+      <div class="tile" data-step="2"><!-- Bootstrap Icons "exclamation-circle" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></svg><div class="ct">it can be wrong</div><div class="cx">and it sounds just as sure. run it, measure it, check it.</div></div>
+      <div class="tile" data-step="3"><!-- Bootstrap Icons "file-earmark-x" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.854 7.146a.5.5 0 1 0-.708.708L7.293 9l-1.147 1.146a.5.5 0 0 0 .708.708L8 9.707l1.146 1.147a.5.5 0 0 0 .708-.708L8.707 9l1.147-1.146a.5.5 0 0 0-.708-.708L8 8.293z"/><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/></svg><div class="ct">it can make mistakes</div><div class="cx">one OK too quick, and a file is gone. keep a backup of what matters.</div></div>
+      <div class="tile" data-step="4"><!-- Bootstrap Icons "stop-circle" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5z"/></svg><div class="ct">you can stop it</div><div class="cx">any time, with the stop button.</div></div>
+      <div class="tile warn" data-step="5"><!-- Bootstrap Icons "cloud-arrow-up" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z"/><path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/></svg><div class="ct">your chat leaves your laptop</div><div class="cx">no passwords, no keys, no personal data in the chat.</div></div>
+    </div>
+    <div class="punch" data-step="6">you decide what it may do.</div>
+    <aside class="notes">Ein Programm, das auf eurem Rechner Dateien ändert und Befehle ausführt, verdient Aufmerksamkeit, keine Angst. Wir haben es so eingerichtet, dass nichts ohne euch passiert. Erstens: Bevor er eine Datei ändert oder einen Befehl ausführt, fragt er. Lest, was er tun will, und erlaubt es dann; wer blind auf Erlauben klickt, gibt die Kontrolle ab. Schritt 1: Er arbeitet in eurem Kursordner. Private Dateien gehören da nicht hinein. Schritt 2: Er kann sich irren, und er klingt dabei genauso sicher wie sonst. Deshalb ausführen, messen, nachprüfen; das ist das Prinzip des ganzen Kurses. Schritt 3: Er kann auch beim Handeln Fehler machen, etwa eine Datei überschreiben oder löschen, die er nicht anfassen sollte. Meist passiert das, wenn jemand zu schnell auf Erlauben klickt. Legt von allem, was euch wichtig ist, eine Kopie an; euren Ordner my-code zum Beispiel ab und zu als ZIP an einen anderen Ort. OpenCode kann mit /undo die letzten Änderungen des Assistenten zurücknehmen, aber verlasst euch nicht allein darauf. Schritt 4: Ihr könnt ihn jederzeit anhalten, mit dem Stoppknopf, wenn er in die falsche Richtung läuft. Schritt 5, in Rot: Was ihr in den Chat schreibt, geht an den Server des Modells. Keine Passwörter, keine Schlüssel, keine persönlichen Daten, weder eure noch fremde. Schritt 6: Ihr entscheidet, was er darf. Genau darum geht es.</aside>
+  </section>
+
   <!-- ================= Teil 3: getting ready ================= -->
 
   <section class="slide part" data-part="getting ready">
-    <aside class="notes">Zwei Teile: vier Schritte von Hand, dann übernimmt der Assistent.</aside>
+    <aside class="notes">Zwei Teile: drei Schritte von Hand, dann übernimmt der Assistent.</aside>
   </section>
 
   <section class="slide has-punch">
@@ -176,7 +328,7 @@
         <div data-step="2"><span class="n">3</span><span>open the folder in <span class="keep-case">OpenCode</span> and start a session.</span></div>
       </div>
     </div>
-    <div class="punch keep-case" style="color: var(--blue);">step by step: docs.lifi-project.de/software</div>
+    <div class="punch keep-case" style="color: var(--blue);">step by step: <a href="https://docs.lifi-project.de/software/" target="_blank" rel="noopener">docs.lifi-project.de/software</a></div>
     <aside class="notes">Diese drei Schritte macht ihr selbst, weil es vorher noch keinen Assistenten gibt, der helfen könnte. Die Website zeigt jeden Schritt für Windows und Mac. Den Ordner nach dem Entpacken nicht in einen Cloud-Ordner legen, sondern zum Beispiel unter Dokumente. Einen Schlüssel braucht ihr dafür nicht: Der Kursordner startet mit einem freien Modell.</aside>
   </section>
 
@@ -189,11 +341,11 @@
         <div data-step="1">it asks you three questions.</div>
         <div data-step="2">it installs <span class="keep-case">Python</span>, <span class="mono keep-case">lifi_hardware</span>, <span class="keep-case">VS Code</span>, <span class="keep-case">Brick Daemon</span> and <span class="keep-case">Brick Viewer</span>.</div>
         <div data-step="3">it checks every step before the next one.</div>
-        <div data-step="4">when it asks, plug in your device.</div>
+        <div data-step="4">no device yet? it skips the device test.</div>
       </div>
     </div>
     <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
-    <aside class="notes">Im Kursordner tippt ihr /onboarding. Ab hier arbeitet der Assistent, und ihr lest mit und bestätigt. Er fragt euch drei Dinge, dann installiert er, was fehlt, Paket für Paket wie im Bild, und prüft jeden Schritt, bevor er den nächsten macht. Fragt nach, wenn ihr etwas nicht versteht; dafür ist er da. Wenn er fragt, ob er etwas ausführen darf: lesen, dann erlauben. Und wenn er darum bittet, steckt ihr das Gerät ein.</aside>
+    <aside class="notes">Im Kursordner tippt ihr /onboarding. Ab hier arbeitet der Assistent, und ihr lest mit und bestätigt. Er fragt euch drei Dinge, dann installiert er, was fehlt, Paket für Paket wie im Bild, und prüft jeden Schritt, bevor er den nächsten macht. Fragt nach, wenn ihr etwas nicht versteht; dafür ist er da. Wenn er fragt, ob er etwas ausführen darf: lesen, dann erlauben. Den Gerätetest am Ende überspringt er heute, weil noch niemand ein Gerät hat; der kommt nächste Woche.</aside>
   </section>
 
   <section class="slide">
@@ -201,33 +353,311 @@
     <h2><!-- Bootstrap Icons "flag" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21 21 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21 21 0 0 0 14 7.655V1.222z"/></svg>the finish line</h2>
     <div class="photo-text lines-normal">
       <div>
-        <div class="statement">your <span class="keep-case">LED</span> lights up green.</div>
-        <div class="sidenote" data-step="1" style="margin-top: 0.6em;">and your device appears in the cockpit.</div>
+        <div class="statement">your laptop is ready for your device.</div>
+        <div class="sidenote" data-step="1" style="margin-top: 0.6em;">next monday, this <span class="keep-case">LED</span> lights up green.</div>
       </div>
     </div>
     <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
-    <aside class="notes">Das ist das Ziel für heute. Am Ende von /onboarding leuchtet eure LED grün, weil euer Programm es ihr gesagt hat, und der Sensor liefert drei Messwerte. Im selben Moment meldet sich euer Gerät beim Kursserver. Live-Moment: Das Cockpit läuft vorn am Beamer; im Lauf der Werkstatt tauchen die Geräte dort auf, und ich ordne sie euren Teams zu. Ab dann zeigt das Cockpit, was eure Lampe sendet und euer Sensor misst.</aside>
+    <aside class="notes">Das ist das Ziel für heute: Am Ende von /onboarding ist alles installiert, was euer Gerät braucht. Die Zeilen zum Gerät im letzten Test melden noch einen Fehler, das ist heute richtig so. Nächste Woche steckt ihr das Gerät ein, und dann leuchtet eure LED grün, weil euer Programm es ihr gesagt hat.</aside>
+  </section>
+
+  <!-- ================= Teil 4: your first program ================= -->
+
+  <section class="slide part" data-part="your first program">
+    <aside class="notes">Jetzt schreiben wir gemeinsam euer erstes Programm. Ich zeige es vorn, ihr macht es mit. Jeder Codeblock auf den Folien hat oben rechts einen Knopf zum Kopieren; die Folien liegen auf der Website unter Software.</aside>
   </section>
 
   <section class="slide">
-    <h2>where are you?</h2>
+    <h2>a program is a file</h2>
     <div class="content">
-      <div class="checks">
-        <div><span class="box"></span><span><span class="keep-case">OpenCode</span> installed</span></div>
-        <div><span class="box"></span><span>course folder open</span></div>
-        <div><span class="box"></span><span>assistant answers</span></div>
-        <div><span class="box"></span><span><span class="mono">/onboarding</span> started</span></div>
-        <div><span class="box"></span><span><span class="keep-case">LED</span> green</span></div>
-        <div><span class="box"></span><span>device in the cockpit</span></div>
+      <div class="lines">
+        <div>in <span class="keep-case">VS Code</span>, create a new file in <span class="mono keep-case">my-code</span>: <span class="mono keep-case">hello.py</span></div>
+        <div data-step="1">the ending <span class="mono keep-case">.py</span> says: this text is <span class="keep-case">Python</span>.</div>
       </div>
+      <div class="statement y" data-step="2" style="margin-top: 0.4em;">a program is plain text,<br>until <span class="keep-case">Python</span> runs it.</div>
     </div>
-    <aside class="notes">Diese Folie bleibt während der Werkstatt an der Wand. Wenn ich frage, wo ihr seid, antwortet mit der Zeile. Wer die letzte Zeile hat, ist fertig und hilft dem Nachbartisch.</aside>
+    <aside class="notes">Öffnet euren Kursordner in VS Code, über File, Open Folder. Links seht ihr den Ordner my-code. Rechtsklick darauf, New File, und nennt die Datei hello.py. Schritt 1: Die Endung .py sagt dem Rechner und VS Code: In dieser Datei steht Python. VS Code bietet euch daraufhin die Python-Erweiterung an; installieren. Schritt 2: Ein Programm ist zunächst nichts als Text in einer Datei. Ihr könntet es auch im Editor schreiben. Zum Programm wird es erst, wenn Python den Text liest und Zeile für Zeile ausführt.</aside>
   </section>
 
-  <!-- ================= Teil 4: how the workshop works ================= -->
+  <section class="slide">
+    <h2>your first line</h2>
+    <div class="content">
+      <div class="code">print("Hello, world!")</div>
+      <div class="header" data-step="1" style="margin-top: 0.8em;">save it. then open a terminal (terminal › new terminal) and type:</div>
+      <div class="code" data-step="1">cd my-code
+python hello.py</div>
+      <div class="out" data-step="2">Hello, world!</div>
+      <div class="sidenote" data-step="1" style="margin-top: 0.8em;">on a mac: <span class="mono keep-case">python3</span> instead of <span class="mono keep-case">python</span>.</div>
+    </div>
+    <aside class="notes">Eure erste Zeile. print heißt: zeig das an. Was in den Anführungszeichen steht, ist Text, und der erscheint genau so. Schritt 1: Speichern, Strg+S. Dann öffnet ihr in VS Code ein Terminal, über das Menü Terminal, New Terminal. Das Terminal ist die Kommandozeile: Ihr tippt einen Befehl, der Rechner antwortet. Es startet im Kursordner; cd my-code wechselt in euren Ordner, und python hello.py sagt Python: Lies diese Datei und führe sie aus. Auf dem Mac heißt der Befehl python3. Schritt 2: Die Antwort erscheint darunter. Das ist euer erstes Programm. Den Play-Knopf oben rechts in VS Code gibt es auch; er tut dasselbe, aber ich will, dass ihr einmal seht, was dahinter passiert.</aside>
+  </section>
 
-  <section class="slide part" data-part="how the workshop works">
-    <aside class="notes">Einer für 24 Teams: Das geht nur mit einer Regel.</aside>
+  <section class="slide">
+    <h2>asking and answering</h2>
+    <div class="content">
+      <div class="code">name = input("What is your name? ")
+print("Hello, " + name + "!")</div>
+      <div class="out" data-step="1" style="margin-top: 0.4em;"><div>What is your name? Ada</div><div>Hello, Ada!</div></div>
+      <div class="sidenote" data-step="2" style="margin-top: 0.8em;"><span class="mono keep-case">input()</span> waits until you press enter, and hands back what you typed.</div>
+      <div class="sidenote" data-step="3"><span class="mono keep-case">name</span> is a variable: a name for that value, so you can use it again.</div>
+    </div>
+    <aside class="notes">Zwei Zeilen, und das Programm redet mit euch. Ersetzt die Zeile in hello.py durch diese beiden, speichert, und startet es wieder mit python hello.py; mit der Pfeiltaste nach oben holt ihr den letzten Befehl zurück. Schritt 1: Das Programm fragt, wartet, und grüßt euch mit eurem Namen. Schritt 2: input zeigt die Frage an, wartet, bis ihr Enter drückt, und gibt zurück, was ihr getippt habt. Schritt 3: Das Gleichheitszeichen heißt hier nicht „ist gleich“, sondern „merk dir das unter diesem Namen“. name ist eine Variable. Und das Plus hängt Texte aneinander.</aside>
+  </section>
+
+  <section class="slide">
+    <img class="photo" src="img/kitchen-timer.jpg" alt="">
+    <div class="photo-text task">
+      <div>
+        <div class="header">the task</div>
+        <div>write a timer for the terminal. it asks how many seconds, then counts down, one line per second.</div>
+        <div style="margin-top: 0.6em;">a coloured lamp shows how it stands: green while it runs, yellow in the last five seconds, red when time is up.</div>
+      </div>
+    </div>
+    <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
+    <aside class="notes">Die Aufgabe für heute ist ein Küchenwecker, im Terminal. Er fragt, wie viele Sekunden, und zählt dann herunter, eine Zeile pro Sekunde. Eine farbige Lampe zeigt den Zustand: grün, solange er läuft, gelb in den letzten fünf Sekunden, rot, wenn die Zeit um ist. Die Lampe ist heute ein farbiges Kästchen im Terminal. Nächste Woche ist es die LED auf eurem Gerät, und der Timer bleibt fast unverändert.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>cut it into steps</h2>
+    <div class="content">
+      <div class="steps wide">
+        <div><span class="n">1</span><span>get the number of seconds from the user</span><span class="tool" data-step="5">input()</span></div>
+        <div data-step="1"><span class="n">2</span><span>check if the input is valid</span><span class="tool" data-step="5">while</span></div>
+        <div data-step="2"><span class="n">3</span><span>count down each second</span><span class="tool" data-step="5">for</span></div>
+        <div data-step="3"><span class="n">4</span><span>show a coloured lamp</span><span class="tool" data-step="5">def</span></div>
+        <div data-step="4"><span class="n">5</span><span>decide which colour</span><span class="tool" data-step="5">if / else</span></div>
+      </div>
+    </div>
+    <div class="punch" data-step="6">one step at a time, and run it after each one.</div>
+    <aside class="notes">Wer das ganze Programm auf einmal schreiben will, verliert sich. Also zerlegen wir: Was muss passieren, in welcher Reihenfolge? Erst die Zahl holen. Schritt 1: prüfen, ob es wirklich eine Zahl ist. Schritt 2: herunterzählen, eine Zeile pro Sekunde. Schritt 3: eine farbige Lampe zeigen. Schritt 4: die Farbe wählen. Schritt 5: Rechts steht, welches Python-Werkzeug zu welchem Schritt gehört; alle fünf seht ihr heute zum ersten Mal, und alle fünf kommen im Semester wieder. Schritt 6: Nach jedem Schritt ausführen. Dann wisst ihr, dass der Fehler im letzten Schritt steckt, wenn etwas nicht geht. Übrigens: Diese Zerlegung ist schon Stoff der nächsten Sitzung, Cutting Problems.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2><!-- Bootstrap Icons "chat-left-text" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/></svg>and your assistant?</h2>
+    <div class="content">
+      <div class="header">ask it like this:</div>
+      <div class="lines">
+        <div>“explain what <span class="mono keep-case">input()</span> hands back.”</div>
+        <div data-step="1">“read my <span class="mono keep-case">timer.py</span>. is step 2 right?”</div>
+        <div data-step="2">“run it with five as input. what goes wrong?”</div>
+        <div data-step="3">“give me a hint for step 3, not the code.”</div>
+      </div>
+    </div>
+    <div class="punch" data-step="4">let it explain, not only write.</div>
+    <aside class="notes">Euer Assistent könnte den Timer in zehn Sekunden schreiben. Dann hättet ihr ein Programm und nichts gelernt, und in der Klausur sitzt er nicht neben euch. Nutzt ihn als Lehrer. Lasst euch erklären, was eine Zeile tut. Schritt 1: Lasst ihn eure Datei lesen; das kann er, weil er in eurem Ordner arbeitet, und ihr müsst nichts hineinkopieren. Schritt 2: Lasst ihn das Programm selbst ausführen, auch mit einer falschen Eingabe, und die Fehlermeldung lesen; das ist die Schleife von vorhin. Schritt 3: Bittet um einen Hinweis statt um die Lösung. Er ist für diesen Kurs so eingestellt, dass er euch Schritt für Schritt begleitet.</aside>
+  </section>
+
+  <section class="slide progress">
+    <h2>where we are · next: step 1</h2>
+    <div class="content">
+      <div class="steps wide">
+        <div class="now"><span class="n">1</span><span>get the number of seconds from the user</span><span class="tool">input()</span></div>
+        <div class="todo"><span class="n">2</span><span>check if the input is valid</span><span class="tool">while</span></div>
+        <div class="todo"><span class="n">3</span><span>count down each second</span><span class="tool">for</span></div>
+        <div class="todo"><span class="n">4</span><span>show a coloured lamp</span><span class="tool">def</span></div>
+        <div class="todo"><span class="n">5</span><span>decide which colour</span><span class="tool">if / else</span></div>
+      </div>
+    </div>
+    <aside class="notes">Die Übersicht vor jedem Schritt: Wo stehen wir? Wir fangen oben an, mit der Zahl der Sekunden.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>step 1 · get the number of seconds</h2>
+    <div class="content">
+      <div class="code">text = input("How many seconds? ")
+seconds = int(text)
+print("Timer:", seconds, "seconds")</div>
+      <div class="sidenote" data-step="1" style="margin-top: 0.8em;"><span class="mono keep-case">input()</span> always hands back text, even if you type 20.</div>
+      <div class="sidenote" data-step="2"><span class="mono keep-case">int()</span> turns the text into a whole number, so you can count with it.</div>
+    </div>
+    <aside class="notes">Neue Datei in my-code: timer.py. Die erste Zeile kennt ihr: input fragt und gibt zurück, was getippt wurde. Schritt 1: Und zwar immer als Text, auch wenn ihr 20 tippt; für Python ist das dann die Zeichenfolge Zwei, Null, keine Zahl. Probiert es aus: Schreibt text + 1, und Python beschwert sich, dass es Text und Zahl nicht addieren kann. Schritt 2: int macht aus dem Text eine ganze Zahl. Die dritte Zeile ist nur ein Test, ob das geklappt hat. Ausführen mit python timer.py.</aside>
+  </section>
+
+  <section class="slide" data-on-show="errorSteps" data-on-step="errorSteps">
+    <h2>what if someone types five?</h2>
+    <div class="content">
+      <div class="out small" id="traceback"><div class="in">How many seconds? five</div><div></div><div>Traceback (most recent call last):</div><div data-hl="2">  File "…\my-code\timer.py", line 2, in &lt;module&gt;</div><div data-hl="2">    seconds = int(text)</div><div data-hl="1">ValueError: invalid literal for int() with base 10: 'five'</div></div>
+      <div class="lines" style="margin-top: 0.6em;">
+        <div data-step="1">read it from the bottom: the last line says what went wrong.</div>
+        <div data-step="2">above it: where. the file, line 2, and the line itself.</div>
+      </div>
+      <div class="statement y" data-step="3" style="margin-top: 0.3em;">stuck? ask your assistant.</div>
+      <div class="sidenote" data-step="3">it can run your program itself and read the error.</div>
+    </div>
+    <aside class="notes">Probiert es: Startet den Timer und tippt five statt einer Zahl. Das Programm bricht ab und zeigt eine Fehlermeldung. Die sieht erschreckend aus, ist aber eine Auskunft, kein Urteil. Schritt 1: Von unten lesen. Die letzte Zeile sagt, was schiefging: ein ValueError, int kann aus „five“ keine Zahl machen. Schritt 2: Darüber steht, wo: in welcher Datei, in Zeile 2, und die Zeile selbst. Den Rest oben könnt ihr meist überspringen. Die Meldung steht in Grau, eure eigene Eingabe darüber in Weiß: Das eine habt ihr getippt, das andere sagt Python. Schritt 3: Und wenn ihr nicht weiterkommt, fragt euren Assistenten. Ihr müsst ihm die Meldung nicht einmal hineinkopieren: Er kann das Programm selbst starten, mit five als Eingabe, und die Fehlermeldung lesen. Lasst euch dann erklären, was sie bedeutet. Wie verhindern wir den Absturz? Das ist Schritt 2.</aside>
+  </section>
+
+  <section class="slide progress">
+    <h2>where we are · next: step 2</h2>
+    <div class="content">
+      <div class="steps wide">
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>get the number of seconds from the user</span><span class="tool">input()</span></div>
+        <div class="now"><span class="n">2</span><span>check if the input is valid</span><span class="tool">while</span></div>
+        <div class="todo"><span class="n">3</span><span>count down each second</span><span class="tool">for</span></div>
+        <div class="todo"><span class="n">4</span><span>show a coloured lamp</span><span class="tool">def</span></div>
+        <div class="todo"><span class="n">5</span><span>decide which colour</span><span class="tool">if / else</span></div>
+      </div>
+    </div>
+    <aside class="notes">Wo stehen wir? 1 von 5 Schritten sind abgehakt, und jeder davon läuft. Als Nächstes Schritt 2: check if the input is valid.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>step 2 · check if the input is valid</h2>
+    <div class="content">
+      <div class="code"><div>text = input("How many seconds? ")</div><div class="new">while not text.isdigit():</div><div class="new">    text = input("Digits only, please: ")</div><div>seconds = int(text)</div></div>
+      <div class="sidenote" data-step="1" style="margin-top: 0.8em;"><span class="mono keep-case">text.isdigit()</span> is true if the text has only digits.</div>
+      <div class="sidenote" data-step="2"><span class="mono keep-case">while</span> asks again, as long as the answer is not a number.</div>
+    </div>
+    <aside class="notes">Zwei neue Zeilen, in Gelb, zwischen input und int. text.isdigit() fragt den Text: Bestehst du nur aus Ziffern? Die Antwort ist wahr oder falsch. Schritt 1: Bei „20“ wahr, bei „five“ falsch, übrigens auch bei „-3“ und „2.5“. Schritt 2: while heißt: solange. Solange der Text keine Zahl ist, fragt das Programm noch einmal. Die eingerückte Zeile gehört zur Schleife; die Einrückung ist in Python kein Schmuck, sie bestimmt, was wiederholt wird. Probiert five, dann 20. Und fragt euren Assistenten, was passiert, wenn jemand 0 eingibt.</aside>
+  </section>
+
+  <section class="slide progress">
+    <h2>where we are · next: step 3</h2>
+    <div class="content">
+      <div class="steps wide">
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>get the number of seconds from the user</span><span class="tool">input()</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>check if the input is valid</span><span class="tool">while</span></div>
+        <div class="now"><span class="n">3</span><span>count down each second</span><span class="tool">for</span></div>
+        <div class="todo"><span class="n">4</span><span>show a coloured lamp</span><span class="tool">def</span></div>
+        <div class="todo"><span class="n">5</span><span>decide which colour</span><span class="tool">if / else</span></div>
+      </div>
+    </div>
+    <aside class="notes">Wo stehen wir? 2 von 5 Schritten sind abgehakt, und jeder davon läuft. Als Nächstes Schritt 3: count down each second.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>step 3 · count down each second</h2>
+    <div class="content">
+      <div class="code">import time
+
+for remaining in range(seconds, 0, -1):
+    print(remaining, "s")
+    time.sleep(1)
+
+print("time is up!")</div>
+      <div class="sidenote" data-step="1" style="margin-top: 0.8em;"><span class="mono keep-case">range(seconds, 0, -1)</span> counts down from <span class="mono keep-case">seconds</span> to 1.</div>
+      <div class="sidenote" data-step="2">the indented lines repeat, once for every number. <span class="mono keep-case">time.sleep(1)</span> waits one second.</div>
+    </div>
+    <aside class="notes">Jetzt die Schleife. import time holt ein Werkzeug von Python dazu, das mit Zeit umgehen kann; die Zeile gehört ganz nach oben in die Datei. Schritt 1: range(seconds, 0, -1) liefert die Zahlen von seconds rückwärts bis 1; die 0 ist die Grenze und gehört selbst nicht mehr dazu, das ist in Python überall so. for heißt: für jede dieser Zahlen, und remaining ist der Name, unter dem die aktuelle Zahl gerade steht. Schritt 2: Die beiden eingerückten Zeilen laufen einmal pro Zahl: anzeigen, eine Sekunde warten. Die letzte Zeile ist nicht eingerückt, sie läuft einmal, nach der Schleife. Probiert es: Schreibt time.sleep(1) ohne Einrückung, und schaut, was passiert.</aside>
+  </section>
+
+  <section class="slide progress">
+    <h2>where we are · next: step 4</h2>
+    <div class="content">
+      <div class="steps wide">
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>get the number of seconds from the user</span><span class="tool">input()</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>check if the input is valid</span><span class="tool">while</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>count down each second</span><span class="tool">for</span></div>
+        <div class="now"><span class="n">4</span><span>show a coloured lamp</span><span class="tool">def</span></div>
+        <div class="todo"><span class="n">5</span><span>decide which colour</span><span class="tool">if / else</span></div>
+      </div>
+    </div>
+    <aside class="notes">Wo stehen wir? 3 von 5 Schritten sind abgehakt, und jeder davon läuft. Als Nächstes Schritt 4: show a coloured lamp.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>step 4 · show a coloured lamp</h2>
+    <div class="content">
+      <div class="code">def lamp(r, g, b):
+    on = f"\033[48;2;{r};{g};{b}m"
+    off = "\033[0m"
+    print(on + " " * 12 + off, end=" ")
+
+lamp(0, 200, 0)
+print("running")</div>
+      <div class="sidenote" data-step="1" style="margin-top: 0.8em;"><span class="mono keep-case">def</span> gives a piece of code a name. <span class="mono keep-case">r</span>, <span class="mono keep-case">g</span> and <span class="mono keep-case">b</span> are its parameters.</div>
+      <div class="sidenote" data-step="2">you fill in the values when you call it: red, green, blue, each 0 to 255.</div>
+      <div class="remark" data-step="3">the strange codes inside? you do not have to understand them.</div>
+    </div>
+    <aside class="notes">Die Lampe brauchen wir dreimal, in drei Farben. Statt die Zeilen dreimal zu schreiben, geben wir ihnen einen Namen: Das ist eine Funktion. Die seltsamen Zeichen mit dem Backslash sind Anweisungen an das Terminal: Hintergrundfarbe an, und am Ende wieder aus. Dazwischen zwölf Leerzeichen, die dadurch farbig werden. Ihr müsst die Codes nicht lernen, das ist gerade der Sinn der Funktion: Wer sie benutzt, muss nur wissen, was sie tut. Schritt 1: def heißt definiere. r, g und b sind Parameter, Platzhalter für Werte. Schritt 2: Beim Aufruf setzt ihr die Werte ein; lamp(0, 200, 0) ist grün. Die Funktion gehört oben in die Datei, unter import time; die zwei Zeilen darunter sind nur zum Ausprobieren. Wenn statt einer Farbe seltsame Zeichen erscheinen, lauft ihr im alten Windows-Terminal: fragt euren Assistenten. Schritt 3: Und jetzt die erleichternde Nachricht: Die seltsamen Codes in der Funktion müsst ihr nicht verstehen. Ihr dürft, aber ihr müsst nicht. Warum, zeigt die nächste Folie.</aside>
+  </section>
+
+  <section class="slide">
+    <h2><!-- Bootstrap Icons "box" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/></svg>why functions help</h2>
+    <div class="content">
+      <div class="statement">a function hides the details.</div>
+      <div class="lines" style="margin-top: 0.5em;">
+        <div data-step="1">you need to know <span class="y">what</span> <span class="mono keep-case">lamp()</span> does, not <span class="y">how</span>.</div>
+        <div data-step="2"><span class="mono keep-case">print()</span> and <span class="mono keep-case">input()</span> are functions too. did you miss their insides?</div>
+        <div data-step="3">next week, <span class="mono keep-case">led.set_color()</span> hides a whole device.</div>
+      </div>
+      <div class="statement y" data-step="4" style="margin-top: 0.4em;">curious? open it up with your assistant.</div>
+    </div>
+    <aside class="notes">Das ist eine der wichtigsten Ideen des Programmierens, und ihr habt sie gerade benutzt. Eine Funktion versteckt Einzelheiten hinter einem Namen. Schritt 1: Um lamp zu benutzen, müsst ihr wissen, was sie tut: eine Lampe in der Farbe r, g, b zeigen. Wie sie das macht, müsst ihr nicht wissen. Schritt 2: Das habt ihr heute schon zweimal erlebt, ohne es zu merken. print und input sind auch Funktionen, und in ihnen steckt viel mehr als in lamp: Zeichen kodieren, mit dem Terminal reden, auf die Tastatur warten. Hat euch das gefehlt? Schritt 3: Nächste Woche tauscht ihr lamp gegen led.set_color, und dahinter steckt ein ganzes Gerät mit USB, Brick Daemon und Platinen. Ihr benutzt es trotzdem mit einer Zeile. So beherrscht man Komplexität: nicht indem man alles versteht, sondern indem man sie in Teile packt, deren Inneres man nicht jedes Mal kennen muss. Das begegnet uns im Semester wieder, unter Abstraktion und Schichten. Schritt 4: Wer trotzdem wissen will, was in lamp steckt: Fragt euren Assistenten. Er erklärt euch jedes Zeichen.</aside>
+  </section>
+
+  <section class="slide progress">
+    <h2>where we are · next: step 5</h2>
+    <div class="content">
+      <div class="steps wide">
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>get the number of seconds from the user</span><span class="tool">input()</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>check if the input is valid</span><span class="tool">while</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>count down each second</span><span class="tool">for</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>show a coloured lamp</span><span class="tool">def</span></div>
+        <div class="now"><span class="n">5</span><span>decide which colour</span><span class="tool">if / else</span></div>
+      </div>
+    </div>
+    <aside class="notes">Wo stehen wir? 4 von 5 Schritten sind abgehakt, und jeder davon läuft. Als Nächstes Schritt 5: decide which colour.</aside>
+  </section>
+
+  <section class="slide">
+    <h2>step 5 · decide which colour</h2>
+    <div class="content">
+      <div class="code"><div>for remaining in range(seconds, 0, -1):</div><div class="new">    if remaining &lt;= 5:</div><div class="new">        lamp(255, 200, 0)   <span class="c"># yellow</span></div><div class="new">    else:</div><div class="new">        lamp(0, 200, 0)     <span class="c"># green</span></div><div>    print(remaining, "s")</div><div>    time.sleep(1)</div><div></div><div class="new">lamp(255, 0, 0)             <span class="c"># red</span></div><div>print("time is up!")</div></div>
+      <div class="sidenote" data-step="1" style="margin-top: 0.6em;"><span class="mono keep-case">if</span> the condition is true, the first block runs. otherwise, the <span class="mono keep-case">else</span> block.</div>
+    </div>
+    <aside class="notes">Die letzte Zutat: eine Entscheidung. Neu sind die gelben Zeilen. In jeder Runde der Schleife fragt das Programm: Sind es noch fünf Sekunden oder weniger? Dann gelb, sonst grün. Nach der Schleife einmal rot. Schritt 1: if prüft eine Bedingung, die wahr oder falsch ist. Ist sie wahr, läuft der eingerückte Block darunter, sonst der Block unter else. Genau einer von beiden, nie beide. Was hinter dem Rautezeichen steht, ist ein Kommentar: für Menschen, Python überliest ihn. Probiert es mit 8 Sekunden.</aside>
+  </section>
+
+  <section class="slide progress">
+    <h2>where we are · all five done</h2>
+    <div class="content">
+      <div class="steps wide">
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>get the number of seconds from the user</span><span class="tool">input()</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>check if the input is valid</span><span class="tool">while</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>count down each second</span><span class="tool">for</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>show a coloured lamp</span><span class="tool">def</span></div>
+        <div class="done"><span class="n"><!-- Bootstrap Icons "check2" 1.11.3 (MIT, (c) The Bootstrap Authors) --><svg class="icon done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg></span><span>decide which colour</span><span class="tool">if / else</span></div>
+      </div>
+    </div>
+    <aside class="notes">Alle fünf Schritte sind abgehakt. Jetzt sehen wir uns das Programm einmal als Ganzes an.</aside>
+  </section>
+
+  <section class="slide has-punch">
+    <h2>the whole program</h2>
+    <div class="content whole">
+      <div class="code clip">import time
+
+def lamp(r, g, b):
+    on = f"\033[48;2;{r};{g};{b}m"
+    off = "\033[0m"
+    print(on + " " * 12 + off, end=" ")
+
+text = input("How many seconds? ")
+while not text.isdigit():
+    text = input("Digits only, please: ")
+seconds = int(text)
+print("Timer:", seconds, "seconds")
+
+for remaining in range(seconds, 0, -1):
+    if remaining &lt;= 5:
+        lamp(255, 200, 0)   <span class="c"># yellow</span>
+    else:
+        lamp(0, 200, 0)     <span class="c"># green</span>
+    print(remaining, "s")
+    time.sleep(1)
+
+lamp(255, 0, 0)             <span class="c"># red</span>
+print("time is up!")</div>
+    </div>
+    <div class="punch">the button copies all 23 lines. paste them into <span class="mono keep-case">timer.py</span> and read them there.</div>
+    <aside class="notes">Das ganze Programm hat 23 Zeilen, auf die Folie passt nur der Anfang. Der Knopf kopiert trotzdem alles. Wer heute nicht fertig wird, fügt es in timer.py ein und liest es dort in VS Code, von oben nach unten. Python liest genauso: Deshalb steht import time ganz oben, dann die Funktion, und erst danach der Teil, der sie benutzt; eine Funktion muss definiert sein, bevor sie aufgerufen wird. Versteht jede Zeile, und fragt euren Assistenten nach jeder, die ihr nicht erklären könnt.</aside>
+  </section>
+
+  <!-- ================= Teil 5: how our workshops work ================= -->
+
+  <section class="slide part" data-part="how our workshops work">
+    <aside class="notes">So laufen unsere Werkstätten, heute und an jedem Montag danach. Einer für 24 Teams: Das geht nur mit ein paar Regeln.</aside>
   </section>
 
   <section class="slide">
@@ -240,7 +670,7 @@
         <div data-step="3"><span class="n">4</span><span>nicolas</span></div>
       </div>
     </div>
-    <aside class="notes">Ich bin einer, ihr seid 24 Teams. Wenn alle auf mich warten, kommt niemand voran. Also: erst der Assistent, mit der vollständigen Fehlermeldung. Dann euer Partner. Dann das Nachbarteam, das vielleicht gerade dasselbe gelöst hat. Erst dann ich. Das ist keine Abwehr, sondern die Art, wie man auch später im Beruf arbeitet.</aside>
+    <aside class="notes">Ich bin einer, ihr seid 24 Teams. Wenn alle auf mich warten, kommt niemand voran. Also: erst der Assistent; lasst ihn das Programm ausführen und die Fehlermeldung lesen. Dann euer Partner. Dann das Nachbarteam, das vielleicht gerade dasselbe gelöst hat. Erst dann ich. Das ist keine Abwehr, sondern die Art, wie man auch später im Beruf arbeitet.</aside>
   </section>
 
   <section class="slide">
@@ -248,11 +678,11 @@
     <div class="content">
       <div class="lines">
         <div>say what you wanted to happen.</div>
-        <div>paste what happened instead: the whole error, even screenshots.</div>
+        <div>let it run the program, or send it a screenshot.</div>
         <div>ask why, not only how.</div>
       </div>
     </div>
-    <aside class="notes">Eine rote Fehlermeldung ist eine Auskunft, kein Urteil. Kopiert sie vollständig, nicht nur die letzte Zeile, und wenn es hilft, gebt ihm einen Screenshot; er kann Bilder lesen. Und lasst euch erklären, warum die Lösung funktioniert; in der Klausur fragt euch niemand, ob der Assistent es wusste.</aside>
+    <aside class="notes">Eine Fehlermeldung ist eine Auskunft, kein Urteil. Am einfachsten lasst ihr den Assistenten das Programm selbst ausführen, dann sieht er die Meldung vollständig. Wo er es nicht kann, etwa weil etwas nur auf eurem Bildschirm passiert, gebt ihm einen Screenshot; er kann Bilder lesen. Und lasst euch erklären, warum die Lösung funktioniert; in der Klausur fragt euch niemand, ob der Assistent es wusste.</aside>
   </section>
 
   <section class="slide">
@@ -266,6 +696,21 @@
     <aside class="notes">Jede Woche kommt neues Material dazu, etwa die Vorlage zur nächsten Challenge und der Stand des Semesters, den euer Assistent kennt. Ein Befehl holt es. Alles, was ihr selbst schreibt, gehört in den Ordner my-code; der Rest des Kursordners wird beim Aktualisieren überschrieben, ohne Rückfrage.</aside>
   </section>
 
+  <section class="slide">
+    <h2>where are you?</h2>
+    <div class="content">
+      <div class="checks">
+        <div><span class="box"></span><span><span class="keep-case">OpenCode</span> installed, course folder open</span></div>
+        <div><span class="box"></span><span>assistant answers</span></div>
+        <div><span class="box"></span><span><span class="mono">/onboarding</span> done</span></div>
+        <div><span class="box"></span><span><span class="mono keep-case">hello.py</span> runs</span></div>
+        <div><span class="box"></span><span>timer counts down</span></div>
+        <div><span class="box"></span><span>timer shows its colours</span></div>
+      </div>
+    </div>
+    <aside class="notes">Diese Folie bleibt während der Werkstatt an der Wand. Wenn ich frage, wo ihr seid, antwortet mit der Zeile. Wer die letzte Zeile hat, ist fertig und hilft dem Nachbartisch; oder baut den Timer aus, zum Beispiel mit einer Anzeige in Minuten und Sekunden.</aside>
+  </section>
+
   <!-- ================= Schluss ================= -->
 
   <section class="slide">
@@ -273,19 +718,21 @@
     <div class="photo-text lines-normal">
       <div>
         <div class="y">until next monday:</div>
-        <div>finish the setup with <span class="mono">/onboarding</span>.</div>
+        <div>form a team of two.</div>
+        <div>finish the setup and your timer.</div>
         <div>read “the project” and “challenge 0”.</div>
+        <div style="margin-top: 0.6em;" class="gr">next week, your device. <span class="mono keep-case">lamp()</span> becomes <span class="mono keep-case">led.set_color()</span>.</div>
       </div>
     </div>
     <div class="footnote">image: ai-generated (gpt-image-2.5-flare)</div>
-    <aside class="notes">Wer heute nicht fertig wird: kein Problem, der Assistent hilft zu Hause genauso. Lest bis nächste Woche die Seiten „The Project“ und „Challenge 0“ auf der Website. Nächste Woche schreibt ihr euer erstes eigenes Programm, und dafür muss das Licht an sein.</aside>
+    <aside class="notes">Bis nächsten Montag findet ihr euch zu Zweierteams zusammen; wer noch niemanden hat, sagt es mir, dann finden wir jemanden. Nächste Woche bekommt jedes Team seine zwei Geräte. Wer heute nicht fertig wird: kein Problem, der Assistent hilft zu Hause genauso, und die Folien mit dem Code liegen auf der Website. Lest bis nächste Woche die Seiten „The Project“ und „Challenge 0“. Nächste Woche bekommt ihr eure Geräte, und aus der Lampe im Terminal wird die LED: Ihr tauscht lamp gegen led.set_color, und euer Timer leuchtet auf dem Tisch.</aside>
   </section>
 
 </div>
 <!-- Reihenfolge ist Pflicht: deck.js VOR stagekit.js, sonst fehlen die
      data-on-show-Funktionen beim ersten Anzeigen. -->
-<script src="../stagekit/draw.js?v=20260927b"></script>
-<script src="deck.js?v=20260927b"></script>
-<script src="../stagekit/stagekit.js?v=20260927b"></script>
+<script src="../stagekit/draw.js?v=20260928a"></script>
+<script src="deck.js?v=20260928a"></script>
+<script src="../stagekit/stagekit.js?v=20260928a"></script>
 </body>
 </html>
