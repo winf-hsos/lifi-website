@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>overview</title>
-  <link rel="stylesheet" href="theme.css?v=20260928a">
-  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260928a">
+  <link rel="stylesheet" href="theme.css?v=20260928b">
+  <link rel="stylesheet" href="../stagekit/stagekit.css?v=20260928b">
   <style>
     /* Symbole neben der kleinen Ueberschrift: so gross wie ihre Schrift, in ihrem Grau. */
     .slide h2 .icon { width: 1em; height: 1em; vertical-align: -0.12em; margin-right: 16px; color: var(--gray); }
@@ -90,7 +90,7 @@
   </style>
 </head>
 <body>
-<div class="deck"
+<div class="deck" data-live-url="https://lifi.uber.space" data-live-series="overview"
      data-title="overview"
      data-subtitle="the module, the project, and where everything belongs · prof. dr. nicolas meseth"
      data-parts='["why this module", "what you will learn", "the project", "experiment: you are the receiver", "1 + 4 challenges", "how we work", "this semester"]'>
@@ -103,10 +103,66 @@
     <aside class="notes">Sieben Teile. Erst, warum es dieses Modul gibt, ganz ohne Projekt. Dann, was ihr lernt, auf einer Karte. Dann das Projekt, an dem ihr es lernt. Dann seid ihr selbst der Empfänger, zwanzig Minuten ohne Rechner. Danach die Challenges, wie wir arbeiten, und zum Schluss das Organisatorische.</aside>
   </section>
 
+  <!-- ================= Vorab: Live-Abfragen (stagekit, Server data-live-url) ================= -->
+
+  <section class="slide poll" data-poll="programmed">
+    <div class="poll-q">have you ever written a program?</div>
+    <ol class="poll-opts"><li>yes, quite a lot</li><li>a little, at school or for fun</li><li>never</li></ol>
+    <aside class="notes">Bevor ich irgendetwas erzähle, will ich wissen, wer vor mir sitzt. Handys raus, QR-Code scannen, oder lifi.uber.space/q aufrufen und den Code rechts eintippen. Es ist anonym: kein Name, keine Anmeldung. Lasst die Seite offen, die nächsten Fragen erscheinen dort von selbst. Erste Frage: Habt ihr schon einmal ein Programm geschrieben? Egal, wie es ausgeht: Dieses Modul setzt nichts voraus. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="ai-chats">
+    <div class="poll-q">how often do you use AI chats like <span class="keep-case">ChatGPT</span>?</div>
+    <ol class="poll-opts"><li>every day</li><li>every week</li><li>now and then</li><li>never</li></ol>
+    <aside class="notes">Wie oft nutzt ihr KI-Chats wie ChatGPT? Das Ergebnis brauche ich gleich im ersten Teil, wenn es um die Frage geht, warum man noch etwas lernen soll, wenn eine KI alles beantwortet. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="ai-agents">
+    <div class="poll-q">have you ever worked with an <span class="keep-case">AI</span> agent, like <span class="keep-case">Claude Code</span>, <span class="keep-case">Codex</span> or <span class="keep-case">OpenCode</span>?</div>
+    <ol class="poll-opts"><li>yes</li><li>I have heard of them</li><li>no, never heard of them</li></ol>
+    <aside class="notes">Und mit einem KI-Agenten, der selbst Dateien schreibt und Programme ausführt? Vermutlich deutlich weniger als eben. Im zweiten Teil heute arbeitet ihr zum ersten Mal mit einem, OpenCode. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="self-assessment">
+    <div class="poll-q">how well do you know what happens inside a computer?</div>
+    <ol class="poll-opts"><li>very well</li><li>roughly</li><li>hardly</li><li>not at all</li></ol>
+    <aside class="notes">Jetzt eine Selbsteinschätzung: Wie gut wisst ihr, was in einem Computer passiert? Merkt euch eure Antwort. Die nächsten vier Fragen prüfen das ein bisschen, und danach vergleichen wir. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="byte-values">
+    <div class="poll-q">how many different values can one byte hold?</div>
+    <ol class="poll-opts"><li>8</li><li>16</li><li data-correct>256</li><li>no idea</li></ol>
+    <aside class="notes">Erste Prüffrage. Wer es nicht weiß: no idea ist eine ehrliche Antwort, und niemand sieht, wer was gewählt hat. Richtig ist 256: Ein Byte sind acht Bits, jedes hat zwei Zustände, zwei hoch acht. Warum das so ist, klären wir bei den Zahlensystemen, und dann erinnere ich euch an dieses Ergebnis. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf. Ein weiterer Schritt zeigt die richtige Antwort in Grün.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="photo-numbers">
+    <div class="poll-q">a photo on your phone: roughly how many numbers are stored for it?</div>
+    <ol class="poll-opts"><li>a few hundred</li><li>a few thousand</li><li data-correct>tens of millions</li><li>no idea</li></ol>
+    <aside class="notes">Ein Foto auf eurem Handy: Wie viele Zahlen stecken darin? Richtig sind zig Millionen: zwölf Millionen Bildpunkte, je drei Zahlen für Rot, Grün und Blau. Genau so ein Foto begleitet uns das ganze Semester, bei Digitalisierung, Kompression und am Ende in Challenge 4. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf. Ein weiterer Schritt zeigt die richtige Antwort in Grün.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="lowest-level">
+    <div class="poll-q">at the lowest level, what does a computer work with?</div>
+    <ol class="poll-opts"><li>words</li><li>pictures and sounds</li><li data-correct>numbers: zeros and ones</li><li>no idea</li></ol>
+    <aside class="notes">Womit arbeitet ein Computer auf der untersten Ebene? Mit Zahlen, am Ende mit Nullen und Einsen. Wörter, Bilder und Töne sind darüber gebaut. Wie, sehen wir bei Analog and Digital und bei den Code-Systemen. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf. Ein weiterer Schritt zeigt die richtige Antwort in Grün.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="ram-off">
+    <div class="poll-q">you switch off your computer. what happens to what is in its RAM?</div>
+    <ol class="poll-opts"><li>it stays there</li><li data-correct>it is lost</li><li>no idea</li></ol>
+    <aside class="notes">Letzte Prüffrage: Was passiert mit dem Inhalt des Arbeitsspeichers, wenn ihr ausschaltet? Er ist weg; der Arbeitsspeicher braucht Strom. Was bleiben soll, muss auf die Festplatte oder SSD. Mehr in der Sitzung Memory and Storage. Und jetzt der Vergleich mit eurer Selbsteinschätzung von vorhin: Wie gut kanntet ihr euch aus? Das ist kein Vorwurf. Genau diese Lücke schließt das Modul, und am Semesterende fragen wir noch einmal. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf. Ein weiterer Schritt zeigt die richtige Antwort in Grün.</aside>
+  </section>
+
   <!-- ================= Teil 1: why this module ================= -->
 
   <section class="slide part" data-part="why this module">
     <aside class="notes">Bevor es um Geräte und Licht geht: warum es dieses Modul überhaupt gibt.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="ai-importance">
+    <div class="poll-q">how important will it be for your career to understand <span class="keep-case">AI</span> and to work well with it?</div>
+    <ol class="poll-opts"><li>essential</li><li>very important</li><li>somewhat important</li><li>not important</li></ol>
+    <aside class="notes">Bevor wir über KI reden: Wie wichtig wird es für euren Beruf sein, KI zu verstehen und gut mit ihr zu arbeiten? Ich tippe auf ein deutliches Ergebnis. Darauf baut dieser Teil auf, und es ist einer der Gründe, warum es dieses Modul gibt. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf.</aside>
   </section>
 
   <section class="slide">
@@ -197,6 +253,12 @@
 
   <section class="slide part" data-part="what you will learn">
     <aside class="notes">Was ihr in diesem Modul lernt, auf einer Karte. Sie kommt heute einmal Stück für Stück und danach im Semester immer wieder.</aside>
+  </section>
+
+  <section class="slide poll" data-poll="understand-computers">
+    <div class="poll-q">would you like to have a better understanding of computers?</div>
+    <ol class="poll-opts"><li>yes, definitely</li><li>a little</li><li>not really</li></ol>
+    <aside class="notes">Bevor ich euch zeige, was ihr lernt: Würdet ihr Computer gern besser verstehen? Denkt an die Prüffragen vom Anfang. Die Karte auf der nächsten Folie zeigt, wie wir dahin kommen. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf.</aside>
   </section>
 
   <section class="slide" data-on-show="mapSteps" data-on-step="mapSteps">
@@ -467,6 +529,12 @@
 
   <!-- ================= Schluss ================= -->
 
+  <section class="slide poll" data-poll="module-feeling">
+    <div class="poll-q">how do you feel about this module?</div>
+    <ol class="poll-opts"><li>looking forward to it</li><li>curious</li><li>a bit worried</li><li>worried</li></ol>
+    <aside class="notes">Zum Schluss: Wie geht es euch mit diesem Modul? Wenn viele ein bisschen besorgt sind: Das ist normal im ersten Semester, und genau dafür gibt es die Werkstatt, den Assistenten und die Reihenfolge der Challenges. Am Semesterende frage ich noch einmal. Bedienung: Beim Betreten öffnet sich die Frage (rotes live, schimmernde Balken), der nächste Schritt schließt sie und deckt die Balken auf.</aside>
+  </section>
+
   <section class="slide">
     <img class="photo" src="img/arrived.jpg" alt="">
     <div class="photo-text" style="font-size: var(--normal); line-height: 1.3;"><div>by the end of term,<br>a picture crosses that gap.<div class="y" style="margin-top: 0.8em;">and along the way,<br>more than one light will go on.</div></div></div>
@@ -477,8 +545,8 @@
 </div>
 <!-- Reihenfolge ist Pflicht: deck.js VOR stagekit.js, sonst fehlen die
      data-on-show-Funktionen beim ersten Anzeigen. -->
-<script src="../stagekit/draw.js?v=20260928a"></script>
-<script src="deck.js?v=20260928a"></script>
-<script src="../stagekit/stagekit.js?v=20260928a"></script>
+<script src="../stagekit/draw.js?v=20260928b"></script>
+<script src="deck.js?v=20260928b"></script>
+<script src="../stagekit/stagekit.js?v=20260928b"></script>
 </body>
 </html>
