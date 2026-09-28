@@ -336,12 +336,12 @@ document.addEventListener("keydown", (ev) => {
 
 
 /* --- KI verstehen: ein Stapel ------------------------------------------------------
- * Drei Schichten von oben nach unten: ai, software, computer. Aufbau in vier Schritten:
+ * Drei Schichten von oben nach unten: AI, software, computer (AI in Originalschreibung). Aufbau in vier Schritten:
  * erst ai, dann darunter die Software, dann der Computer, zuletzt die Folgerung. Die
  * jeweils neue Schicht hat einen gelben Rahmen (aktuell), rechts steht in einem Satz,
  * was sie ist. Kaesten 520 x 130 bei x = 200, Abstand 40; Saetze mittig zum Kasten. */
 const STACK = [
-  ["ai", "is software: a program, like any other."],
+  ["AI", "is software: a program, like any other."],
   ["software", "runs on a computer."],
   ["computer", "turns numbers into numbers, billions of times a second."],
 ];
@@ -353,12 +353,12 @@ window.drawStack = function (step = 3) {
   STACK.forEach(([name, text], i) => {
     if (i > step) return;
     const y = TOP + i * (H + GAP), now = i === step;
-    parts.push(d.box(X, y, W, H, name, { border: now ? c.yellow : c.white, color: now ? c.yellow : c.white, size: 48, rx: 14 }));
+    parts.push(d.box(X, y, W, H, name, { border: now ? c.yellow : c.white, color: now ? c.yellow : c.white, size: 48, rx: 14, keepCase: name === "AI" }));
     parts.push(d.label(X + W + 60, 0, text, { size: 32, color: now ? c.white : c.light, centerY: y + H / 2 }));
   });
   if (step >= 3) {
     const y = TOP + 3 * (H + GAP) + 20;
-    parts.push(d.label(X, 0, "to understand ai, you first understand the computer and its software.", { size: 32, color: c.yellow, centerY: y + 20 }));
+    parts.push(d.label(X, 0, "to understand AI, you first understand the computer and its software.", { size: 32, color: c.yellow, centerY: y + 20, keepCase: true }));
   }
   return d.svg(1680, 580, ...parts);
 };
@@ -376,13 +376,13 @@ window.drawNext = function () {
   const parts = [];
   const kasten = (x, titel, zeit, text, farbe) => {
     parts.push(d.box(x, 40, 700, 280, "", { border: farbe, rx: 16 }));
-    parts.push(d.label(x + 350, 0, titel, { size: 32, color: farbe, anchor: "middle", centerY: 110 }));
+    parts.push(d.label(x + 350, 0, titel, { size: 32, color: farbe, anchor: "middle", centerY: 110, keepCase: /AI/.test(titel) }));
     parts.push(d.label(x + 350, 0, zeit, { size: 20, color: c.gray, anchor: "middle", centerY: 155 }));
-    parts.push(d.label(x + 350, 0, text, { size: 32, color: c.light, anchor: "middle", centerY: 240 }));
+    parts.push(d.label(x + 350, 0, text, { size: 32, color: c.light, anchor: "middle", centerY: 240, keepCase: /AI/.test(text) }));
   };
   kasten(40, "digitization and programming", "this module", "the computer and its software", c.yellow);
   parts.push(d.arrow(760, 180, 920, 180, { color: c.white, width: 3 }));
-  kasten(940, "problem solving with ai", "the follow-up module", "ai itself, built on top", c.white);
+  kasten(940, "problem solving with AI", "the follow-up module", "AI itself, built on top", c.white);
   return put("fig-next", d.svg(1680, 360, ...parts));
 };
 
