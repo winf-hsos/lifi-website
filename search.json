@@ -254,7 +254,7 @@
     "href": "index.html#what-stays-with-you",
     "title": "The Goal",
     "section": "What stays with you",
-    "text": "What stays with you\nYou will probably never touch the device again after the semester. The questions behind it, though, will keep coming back: how is something represented digitally? Why does information get lost on the way? How do I cut a problem so that I can solve it? And when can I trust an answer I did not check myself?\nIf at the end of the semester you say this was a module about sending light, then I have done something wrong.\nReady? Here is where to go next:\n\nOverview: the map of the module, the concepts, the challenges and what they need\nThe Project: the device, your partner, the tools, what every challenge produces\nRequired Software: what to install, step by step\nHardware: the parts and the case\nWorking with your AI assistant",
+    "text": "What stays with you\nYou will probably never touch the device again after the semester. The questions behind it, though, will keep coming back: how is something represented digitally? Why does information get lost on the way? How do I cut a problem so that I can solve it? And when can I trust an answer I did not check myself?\nIf at the end of the semester you say this was a module about sending light, then I have done something wrong.\nReady? Here is where to go next:\n\nOverview: the map of the module, the concepts, the challenges and what they need\nThe Project: the device, your partner, the tools, what every challenge produces\nRequired Software: what to install, step by step\nHardware: the parts and the case\nWorking with your AI assistant\nAnonymous feedback: a question, something that was unclear, criticism; no name, no login, and I answer there and at the start of the next session",
     "crumbs": [
       "The Goal"
     ]
@@ -1390,7 +1390,7 @@
     "href": "about.html#contact",
     "title": "About",
     "section": "Contact",
-    "text": "Contact\nThe module and this website are run by Nicolas Meseth. Mistakes on the site, broken links or explanations that do not make sense: please send a mail. Telling us which explanation you were missing helps just as much.",
+    "text": "Contact\nThe module and this website are run by Nicolas Meseth. Mistakes on the site, broken links or explanations that do not make sense: please send a mail. Telling us which explanation you were missing helps just as much.\nIf you would rather not give your name, use the anonymous feedback. Every post is visible to the whole course, without a name, and others can give it a thumbs up if it matters to them too. I read everything, answer there, and go through the posts at the start of each session.",
     "crumbs": [
       "About"
     ]
@@ -2517,7 +2517,7 @@
     "href": "links.html#course",
     "title": "Links",
     "section": "Course",
-    "text": "Course\n\nThis website: the course companion, also the knowledge base your AI assistant reads.\nTeam cockpit: your light link live in the browser; how to use it is explained under Software.\nlifi-project: your course folder with the AI assistant: its instructions, the knowledge base it reads, and the challenge templates. You download it as a ZIP, see Required Software.",
+    "text": "Course\n\nThis website: the course companion, also the knowledge base your AI assistant reads.\nAnonymous feedback: questions, criticism, ideas, without your name; answered there and at the start of each session.\nTeam cockpit: your light link live in the browser; how to use it is explained under Software.\nlifi-project: your course folder with the AI assistant: its instructions, the knowledge base it reads, and the challenge templates. You download it as a ZIP, see Required Software.",
     "crumbs": [
       "Links"
     ]
