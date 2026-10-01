@@ -1,0 +1,9 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LiFi Project">
+  <!-- Logo der LiFi-Seite: zwei Geraete, dazwischen zwei Lichtpakete, das Projekt in einem Bild.
+       Gewaehlt von Nicolas am 2026-10-01 (Entwurf B), Skill lehrmaterial-webseite, referenz/logo.md. -->
+  <circle cx="32" cy="32" r="32" fill="#009ee3"/>
+  <rect x="9" y="21" width="9" height="22" rx="3" fill="#ffffff"/>
+  <rect x="46" y="21" width="9" height="22" rx="3" fill="#ffffff"/>
+  <circle cx="26" cy="32" r="3.5" fill="#ffffff"/>
+  <circle cx="38" cy="32" r="3.5" fill="#ffffff"/>
+</svg>
