@@ -523,6 +523,17 @@
       "de": "Das ist Kompression, ein späteres Konzept. Digitalisieren kann die Datenmenge sogar riesig machen, man denke an unkomprimiertes Video.",
       "en": "That is compression, a later concept. Digitising can even make the data huge; think of uncompressed video."
      }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Es mit einem elektronischen Gerät aufnehmen statt mit einem mechanischen.",
+      "en": "To record it with an electronic device rather than a mechanical one."
+     },
+     "begruendung": {
+      "de": "Auch ein Kassettenrekorder ist elektronisch und zeichnet trotzdem analog auf: die Spannung stufenlos als Magnetisierung. Digital wird ein Signal erst, wenn es in endlich viele Zahlen übersetzt ist.",
+      "en": "A cassette recorder is electronic too and still records in analogue form: the voltage as a continuous magnetisation. A signal only becomes digital once it is turned into finitely many numbers."
+     }
     }
    ]
   },

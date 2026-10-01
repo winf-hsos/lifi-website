@@ -161,6 +161,17 @@
       "de": "XOR ist keine Addition, es gibt keinen Übertrag und nichts wird größer; nur einzelne Bits kippen. Abziehen ergibt irgendein Byte. Wer die Tafel von XOR aus der Werkzeugkiste vor Augen hat, sieht es: 1 XOR 1 ist 0, nicht 2.",
       "en": "XOR is not addition, there is no carry and nothing gets bigger; only single bits flip. Subtracting gives some arbitrary byte. Whoever has the XOR table from the toolbox in mind sees it: 1 XOR 1 is 0, not 2."
      }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Nichts weiter: Die Partnergruppe hat die Bytes schon, und ohne Schlüssel lassen sie sich nicht lesen, mit ihm sind sie schon lesbar.",
+      "en": "Nothing more: the partner team already has the bytes; without the key they cannot be read, and with it they already can."
+     },
+     "begruendung": {
+      "de": "Der Schlüssel liest nichts von selbst. Die empfangenen Bytes sind die verschlüsselten, und erst ein Rechenschritt mit dem Schlüssel macht sie wieder zur Nachricht: noch einmal XOR mit demselben Schlüssel.",
+      "en": "A key does not read anything by itself. The received bytes are the encrypted ones, and only a computation with the key turns them back into the message: XOR with the same key once more."
+     }
     }
    ]
   },
@@ -556,6 +567,17 @@
       "de": "Bei XOR mit einem Schlüssel steht jedes Bit für sich: Ein gekipptes Bit ergibt genau ein falsches Bit, der Rest bleibt richtig. Und selbst bei Verfahren, in denen Bytes voneinander abhängen, wäre Unsinn kein Fehlersignal, sondern nur Unsinn. Was Fehler meldet, ist die Prüfsumme.",
       "en": "With XOR and a key every bit stands on its own: one flipped bit gives exactly one wrong bit, the rest stays right. And even with methods in which bytes depend on each other, nonsense would be no error signal, just nonsense. What reports errors is the checksum."
      }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Nichts: Die Verschlüsselung schützt die Bits auf dem Weg, gekippte Bits werden beim Entschlüsseln von selbst korrigiert.",
+      "en": "Nothing: encryption protects the bits on the way, and flipped bits are corrected automatically during decryption."
+     },
+     "begruendung": {
+      "de": "Verschlüsselung fügt keine Redundanz hinzu, aus der sich ein Fehler finden oder beheben ließe. XOR gibt ein gekipptes Bit unverändert weiter. Fehler erkennen ist Aufgabe einer Prüfsumme, nicht des Schlüssels.",
+      "en": "Encryption adds no redundancy that could find or fix an error. XOR passes a flipped bit through unchanged. Detecting errors is the job of a checksum, not of the key."
+     }
     }
    ]
   },
@@ -720,6 +742,17 @@
      "begruendung": {
       "de": "Genau. Das heißt Steganographie: nicht den Inhalt unlesbar machen, sondern verbergen, dass es ihn gibt. Das niedrigste Bit eines Farbwerts ändert die Farbe um ein 256stel, das sieht kein Auge; aber ein Programm liest es in einem Augenblick aus. Verstecken und Verschlüsseln lassen sich verbinden: erst verschlüsseln, dann verstecken. Dann liest der Finder nur Rauschen.",
       "en": "Exactly. That is called steganography: not making the content unreadable, but concealing that it exists. The lowest bit of a colour value changes the colour by one part in 256, no eye sees that; but a program reads it out in a moment. Hiding and encrypting can be combined: encrypt first, then hide. Then the finder reads only noise."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Eine Prüfsumme angehängt, denn die untersten Bits jedes Farbwerts dienen der Fehlererkennung.",
+      "en": "Added a checksum, because the lowest bit of every colour value is used for error detection."
+     },
+     "begruendung": {
+      "de": "Eine Prüfsumme wird aus den Daten berechnet, um Fehler zu erkennen. Hier steht im untersten Bit aber eine fremde Nachricht, die mit dem Bild nichts zu tun hat. Sie ist dort nur versteckt, im Klartext.",
+      "en": "A checksum is computed from the data to detect errors. Here, though, the lowest bit carries an unrelated message that has nothing to do with the picture. It is merely hidden there, in plain text."
      }
     }
    ]

@@ -162,6 +162,17 @@
       "de": "Übersprungen wird nichts: Rot leuchtet wirklich, und dank wait(1) lange genug, um es zu sehen.",
       "en": "Nothing is skipped: red really shows, and thanks to wait(1) long enough to see it."
      }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Nur Rot: Die LED behält die erste Farbe, die sie bekommt, bis das Programm endet.",
+      "en": "Only red: the LED keeps the first colour it receives until the program ends."
+     },
+     "begruendung": {
+      "de": "Eine Farbe ist kein Zustand für immer. Jede Zeile setzt die Farbe neu, also überschreibt die dritte Zeile das Rot nach der Sekunde mit Blau.",
+      "en": "A colour is not set for good. Every line sets the colour anew, so after the second the third line overwrites red with blue."
+     }
     }
    ]
   },
@@ -268,6 +279,17 @@
      "begruendung": {
       "de": "Notizen für Menschen sehen anders aus (Kommentare mit #). Diese Werte werden ausgeführt und bestimmen unmittelbar, was die LED zeigt; ohne sie wüsste set_color nicht, welche Farbe gemeint ist.",
       "en": "Notes for humans look different (comments with #). These values are executed and directly determine what the LED shows; without them set_color would not know which colour is meant."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Sie sagt, wie lange die Anweisung läuft: 255 Millisekunden lang, dann ist die LED wieder aus.",
+      "en": "It says how long the instruction runs: for 255 milliseconds, then the LED is off again."
+     },
+     "begruendung": {
+      "de": "Eine Dauer steht in dieser Zeile nirgends; dafür gibt es eine eigene Anweisung wie wait(1). Die drei Zahlen sind die Anteile von Rot, Grün und Blau, und die Farbe bleibt, bis eine andere Zeile sie ändert.",
+      "en": "There is no duration anywhere in this line; that takes an instruction of its own, such as wait(1). The three numbers are the shares of red, green and blue, and the colour stays until another line changes it."
      }
     }
    ]

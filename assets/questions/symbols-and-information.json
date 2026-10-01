@@ -103,6 +103,17 @@
       "de": "Die Reihenfolge ist die Nachricht selbst. Das Alphabet ist der Vorrat, aus dem sie zusammengesetzt wird.",
       "en": "The order is the message itself. The alphabet is the stock from which it is assembled."
      }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Zuordnung von Symbolen zu Bitfolgen, etwa welches Symbol 01 bedeutet.",
+      "en": "The mapping of symbols to bit sequences, such as which symbol 01 stands for."
+     },
+     "begruendung": {
+      "de": "Das ist der Code, der auf dem Alphabet aufbaut. Das Alphabet ist nur die verabredete Menge der Symbole selbst; wie man sie in Bits schreibt, ist ein zweiter Schritt.",
+      "en": "That is the code, which builds on the alphabet. The alphabet is only the agreed set of symbols themselves; how to write them in bits is a second step."
+     }
     }
    ]
   },

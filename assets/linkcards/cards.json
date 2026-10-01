@@ -117,5 +117,110 @@
     "description": "Go to http://brilliant.org/BranchEducation/ to sign up for free, and expand your knowledge.  The first 200 people will get 20% off their annual premium membe...",
     "site": "YouTube",
     "image": "67539fadce32.jpg"
+  },
+  "https://demos.lifi-project.de/copier/": {
+    "url": "https://demos.lifi-project.de/copier/",
+    "title": "the copier",
+    "description": "press copy and hang each generation on the wall: watch the analog picture fade copy by copy, then ask what a file would have done.",
+    "site": "LiFi Project · concept demos",
+    "image": "29cc98e1a436.png"
+  },
+  "https://demos.lifi-project.de/photo-digitiser/": {
+    "url": "https://demos.lifi-project.de/photo-digitiser/",
+    "title": "the photo digitiser",
+    "description": "turn an analog photo into numbers: pick resolution and colour depth (down to the game boy's four greys), see the picture change, and watch the byte count grow.",
+    "site": "LiFi Project · concept demos",
+    "image": "71c35efb5ed9.png"
+  },
+  "https://demos.lifi-project.de/audio-digitiser/": {
+    "url": "https://demos.lifi-project.de/audio-digitiser/",
+    "title": "the audio digitiser",
+    "description": "the same two cuts for sound: choose sampling rate and bit depth, see the staircase on the wave — and hear what gets thrown away.",
+    "site": "LiFi Project · concept demos",
+    "image": "31a9aa51f891.png"
+  },
+  "https://demos.lifi-project.de/prefix-trap/": {
+    "url": "https://demos.lifi-project.de/prefix-trap/",
+    "title": "the prefix trap",
+    "description": "write your own code words, send a word, and watch the receiver hesitate: every reading it could pick, side by side. get the list down to one and you have built a code that works.",
+    "site": "LiFi Project · concept demos",
+    "image": "21b202640ec2.png"
+  },
+  "https://demos.lifi-project.de/pixel-painter/": {
+    "url": "https://demos.lifi-project.de/pixel-painter/",
+    "title": "pixel painter",
+    "description": "an 8×8 picture, one bit per pixel: paint and watch the bytes write themselves, edit the hex and paint with numbers, then break a byte and see the damage.",
+    "site": "LiFi Project · concept demos",
+    "image": "bffa85e547b5.png"
+  },
+  "https://demos.lifi-project.de/text-squeezer/": {
+    "url": "https://demos.lifi-project.de/text-squeezer/",
+    "title": "the text squeezer",
+    "description": "paste any text and watch it get packed as you type: point back to repeats, give the frequent letters short codes, and see what is left. one letter over and over squeezes to almost nothing; random letters do not squeeze at all.",
+    "site": "LiFi Project · concept demos",
+    "image": "d4cf05eec528.png"
+  },
+  "https://demos.lifi-project.de/ipo-test-lab/": {
+    "url": "https://demos.lifi-project.de/ipo-test-lab/",
+    "title": "the ipo test lab",
+    "description": "change sensor values and the classification rule, compare actual with expected output, and watch the test pass or fail.",
+    "site": "LiFi Project · concept demos",
+    "image": "987e421f32b9.png"
+  },
+  "https://demos.lifi-project.de/gate-lab/": {
+    "url": "https://demos.lifi-project.de/gate-lab/",
+    "title": "the gate lab",
+    "description": "switches in, lamps out: flip the inputs of a single gate, watch a half adder carry, chain eight full adders into a byte adder, and make two gates remember a bit.",
+    "site": "LiFi Project · concept demos",
+    "image": "fb702c2f278a.png"
+  },
+  "https://demos.lifi-project.de/pixel-filter/": {
+    "url": "https://demos.lifi-project.de/pixel-filter/",
+    "title": "the pixel filter",
+    "description": "make a photo brighter one addition at a time: step through a single pixel with its bits and carries, then let the machine do the other sixteen thousand in a blink.",
+    "site": "LiFi Project · concept demos",
+    "image": "101f7c8e00a7.png"
+  },
+  "https://demos.lifi-project.de/noisy-sensor/": {
+    "url": "https://demos.lifi-project.de/noisy-sensor/",
+    "title": "the noisy sensor",
+    "description": "Send a symbol over a noisy link and let the same readings decide it three times: alone, averaged over five, averaged over ten. Fewer wrong decisions, less speed.",
+    "site": "LiFi Project · concept demos",
+    "image": "95b7a9f46b2d.png"
+  },
+  "https://demos.lifi-project.de/inside-a-file/": {
+    "url": "https://demos.lifi-project.de/inside-a-file/",
+    "title": "inside a file",
+    "description": "a real bitmap in a hex editor: header fields underlined, click a pixel to find its three bytes, then change a byte — and watch the picture obey, or the viewer refuse.",
+    "site": "LiFi Project · concept demos",
+    "image": "516cc86ed5c5.png"
+  },
+  "https://demos.lifi-project.de/byte-switchboard/": {
+    "url": "https://demos.lifi-project.de/byte-switchboard/",
+    "title": "byte switchboard",
+    "description": "flip eight bits and watch the number appear: binary, decimal, hex, and the ascii character behind it.",
+    "site": "LiFi Project · concept demos",
+    "image": "6901e315b18e.png"
+  },
+  "https://demos.lifi-project.de/drift-simulator/": {
+    "url": "https://demos.lifi-project.de/drift-simulator/",
+    "title": "drift simulator",
+    "description": "two clocks, slightly apart: watch the receiver’s sampling points wander out of the time slots until the message turns to garbage, then let a sync marker save it.",
+    "site": "LiFi Project · concept demos",
+    "image": "121b564018d9.png"
+  },
+  "https://demos.lifi-project.de/distinguishability-lab/": {
+    "url": "https://demos.lifi-project.de/distinguishability-lab/",
+    "title": "distinguishability lab",
+    "description": "send symbols over a noisy channel, oscilloscope style: grow the alphabet, tune the window, inject a disturbance, and watch the error rate fight the throughput.",
+    "site": "LiFi Project · concept demos",
+    "image": "1eeae78626cc.png"
+  },
+  "https://demos.lifi-project.de/question-game/": {
+    "url": "https://demos.lifi-project.de/question-game/",
+    "title": "question game",
+    "description": "find the secret face among sixteen: every answer shrinks the crowd, the shrinking is measured in bits, and the halving strategy shows why four questions are enough.",
+    "site": "LiFi Project · concept demos",
+    "image": "ee3c1d751625.png"
   }
 }

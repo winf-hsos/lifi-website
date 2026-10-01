@@ -364,7 +364,7 @@
     const lines = Array.from(block.children).filter((c) => c.tagName === "DIV");
     if (lines.length) return lines.map((l) => l.textContent).join("\n");
     const clone = block.cloneNode(true);
-    clone.querySelectorAll(".copy").forEach((b) => b.remove());
+    clone.querySelectorAll(".copy, .show").forEach((b) => b.remove());
     return clone.textContent.replace(/^\n+|\s+$/g, "");
   }
   function copyText(text) {
@@ -387,6 +387,38 @@
         setTimeout(() => { b.innerHTML = ICON_COPY; b.classList.remove("done"); }, 1500);
       });
       b.blur();
+    });
+    block.appendChild(b);
+  });
+
+  /* --- show-code button on figures ----------------------------------------------
+   * A figure made from code carries that code as an invisible .code.figcode block
+   * (stagekit.css). Next to its copy button sits a second button with an eye: it
+   * lays the code over the slide in a slightly transparent window with a close
+   * button. Escape, the close button, the eye again or moving to another frame
+   * closes it. Hidden in the print view. Icons: Bootstrap Icons "eye" and "x-lg"
+   * 1.11.3 (MIT, (c) The Bootstrap Authors). */
+  const ICON_EYE = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/><path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/></svg>';
+  const ICON_CLOSE = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg>';
+  const closeOverlays = () => document.querySelectorAll(".code-overlay").forEach((o) => o.remove());
+  document.querySelectorAll(".slide .code.figcode").forEach((block) => {
+    const b = document.createElement("button");
+    b.className = "show"; b.title = "show code"; b.setAttribute("aria-label", "show code");
+    b.dataset.noAdvance = "1"; b.innerHTML = ICON_EYE;
+    b.addEventListener("click", (ev) => {
+      ev.stopPropagation(); b.blur();
+      const slide = block.closest(".slide");
+      if (slide.querySelector(".code-overlay")) { closeOverlays(); return; }
+      const box = document.createElement("div");
+      box.className = "code-overlay"; box.dataset.noAdvance = "1";
+      const code = document.createElement("div");
+      code.className = "overlay-code"; code.textContent = codeText(block);
+      const x = document.createElement("button");
+      x.className = "close"; x.title = "close"; x.setAttribute("aria-label", "close");
+      x.dataset.noAdvance = "1"; x.innerHTML = ICON_CLOSE;
+      x.addEventListener("click", (e) => { e.stopPropagation(); closeOverlays(); });
+      box.append(code, x);
+      slide.appendChild(box);
     });
     block.appendChild(b);
   });
@@ -439,10 +471,119 @@
     if (target >= 0) show(target, 0);
   });
 
+  /* --- cursor modes (key M) -------------------------------------------------------
+   * M cycles: cursor -> laser pointer -> cursor hidden -> cursor. "laser" hides the
+   * mouse cursor and lets a red, softly glowing dot follow the mouse; "hidden"
+   * shows no cursor at all, for a presenter with its own digital laser pointer.
+   * A short note names the new mode. The mode is remembered per deck in this
+   * browser (localStorage, a convenience only). Over an embedded iframe the
+   * browser shows the iframe's own cursor; a page cannot change that. The print
+   * view and the export never show either.
+   * In laser mode, holding the mouse button draws a red trail instead of
+   * selecting text; it stays for a moment and then fades slowly, to highlight
+   * something for a short while. Changing the slide clears it, and a drag never
+   * counts as a click (no slide change at the edges). */
+  const cursor = (() => {
+    const off = { cycle() {}, clear() {} };
+    if (new URLSearchParams(location.search).has("print")) return off;
+    const modes = ["normal", "laser", "hidden"];
+    const names = { normal: "cursor", laser: "laser pointer", hidden: "cursor hidden" };
+    const store = "stagekit-cursor:" + location.pathname;
+    const dot = document.createElement("div"); dot.className = "laser"; dot.setAttribute("aria-hidden", "true");
+    const note = document.createElement("div"); note.className = "mode-note";
+    document.body.append(dot, note);
+    let mode = "normal", timer;
+    function set(m, quiet) {
+      mode = m;
+      document.documentElement.dataset.cursor = m;
+      try { localStorage.setItem(store, m); } catch (e) { /* private window: not remembered */ }
+      if (quiet) return;
+      note.textContent = names[m];
+      note.classList.add("on");
+      clearTimeout(timer);
+      timer = setTimeout(() => note.classList.remove("on"), 1400);
+    }
+    document.addEventListener("mousemove", (ev) => {
+      dot.style.transform = `translate(${ev.clientX}px, ${ev.clientY}px)`;
+      dot.classList.add("seen");
+    });
+    document.documentElement.addEventListener("mouseleave", () => dot.classList.remove("seen"));
+
+    // --- the trail: drawn while the button is held, fades after HOLD ms over FADE ms
+    const HOLD = 1500, FADE = 2000;
+    const canvas = document.createElement("canvas"); canvas.className = "laser-trail"; canvas.setAttribute("aria-hidden", "true");
+    document.body.append(canvas);
+    const ctx = canvas.getContext("2d");
+    let strokes = [], drawing = null, dragged = false, raf = 0;
+    function fit() {
+      const r = window.devicePixelRatio || 1;
+      canvas.width = Math.round(innerWidth * r); canvas.height = Math.round(innerHeight * r);
+      ctx.setTransform(r, 0, 0, r, 0, 0);
+    }
+    fit(); window.addEventListener("resize", fit);
+    const red = () => getComputedStyle(document.documentElement).getPropertyValue("--red").trim() || "red";
+    function paint() {
+      const now = performance.now();
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      // a stroke lives from its last point on; while held, it never fades
+      strokes = strokes.filter((s) => s === drawing || now - s.end < HOLD + FADE);
+      const col = red();
+      ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.strokeStyle = col;
+      ctx.shadowColor = col; ctx.shadowBlur = 14;
+      for (const s of strokes) {
+        const age = s === drawing ? 0 : now - s.end;
+        ctx.globalAlpha = age < HOLD ? 1 : Math.max(0, 1 - (age - HOLD) / FADE);
+        ctx.lineWidth = 6;
+        ctx.beginPath();
+        s.pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+        if (s.pts.length === 1) ctx.lineTo(s.pts[0][0] + 0.1, s.pts[0][1]);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      raf = strokes.length ? requestAnimationFrame(paint) : 0;
+    }
+    const kick = () => { if (!raf) raf = requestAnimationFrame(paint); };
+    document.addEventListener("mousedown", (ev) => {
+      if (mode !== "laser" || ev.button !== 0) return;
+      if (ev.target.closest("a, button, input, textarea, select")) return;
+      ev.preventDefault();                                // no text selection
+      drawing = { pts: [[ev.clientX, ev.clientY]], end: performance.now() };
+      strokes.push(drawing); dragged = false; kick();
+    });
+    document.addEventListener("mousemove", (ev) => {
+      if (!drawing) return;
+      drawing.pts.push([ev.clientX, ev.clientY]);
+      drawing.end = performance.now();
+      // more than a few pixels from the start: a drag, not a click
+      const [x0, y0] = drawing.pts[0];
+      if (Math.hypot(ev.clientX - x0, ev.clientY - y0) > 6) dragged = true;
+      kick();
+    });
+    document.addEventListener("mouseup", () => {
+      if (!drawing) return;
+      drawing.end = performance.now(); drawing = null; kick();
+    });
+    // a drag is not a click: keep it from turning the slide
+    document.addEventListener("click", (ev) => {
+      if (dragged) { dragged = false; ev.stopImmediatePropagation(); ev.preventDefault(); }
+    }, true);
+
+    let saved = "normal";
+    try { saved = localStorage.getItem(store) || "normal"; } catch (e) { /* ignore */ }
+    set(modes.includes(saved) ? saved : "normal", true);
+    return {
+      cycle() { set(modes[(modes.indexOf(mode) + 1) % modes.length]); },
+      clear() { strokes = []; drawing = null; ctx.clearRect(0, 0, innerWidth, innerHeight); },
+    };
+  })();
+
   // --- keys ----------------------------------------------------------------------
   document.addEventListener("keydown", (ev) => {
     const tag = document.activeElement && document.activeElement.tagName;
     if (tag === "INPUT" || tag === "TEXTAREA" || tag === "IFRAME") return;
+    // a code window closes with Escape and whenever the frame changes
+    if (ev.key === "Escape") { closeOverlays(); return; }
+    if (["ArrowRight", "ArrowDown", " ", "PageDown", "ArrowLeft", "ArrowUp", "PageUp", "Home", "End"].includes(ev.key)) { closeOverlays(); cursor.clear(); }
     switch (ev.key) {
       case "ArrowRight": case "ArrowDown": case " ": case "PageDown": ev.preventDefault(); next(); break;
       case "ArrowLeft": case "ArrowUp": case "PageUp": ev.preventDefault(); prev(); break;
@@ -453,10 +594,13 @@
       case "p": case "P": location.search = "?print"; break;
       case "l": case "L": live.askKey(); break;           // live polls: the server's admin key
       case "c": case "C": live.newSession(); break;       // live polls: a new session code
+      case "m": case "M": cursor.cycle(); break;          // cursor, laser pointer, cursor hidden
     }
   });
   document.addEventListener("click", (ev) => {
     if (ev.target.closest("a, button, input, iframe, [data-no-advance]")) return;
+    closeOverlays();
+    if (ev.clientX > window.innerWidth * 0.8 || ev.clientX < window.innerWidth * 0.2) cursor.clear();
     if (ev.clientX > window.innerWidth * 0.8) next();
     else if (ev.clientX < window.innerWidth * 0.2) prev();
   });

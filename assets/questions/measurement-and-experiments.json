@@ -630,6 +630,17 @@
       "de": "Viel messen allein ergibt einen Datenhaufen. Wenn sich zwischen zwei Werten mehrere Größen zugleich geändert haben, lässt sich hinterher kein Zusammenhang mehr sauber zuordnen; deshalb je Reihe nur eine Größe.",
       "en": "Measuring a lot by itself yields a data pile. If several variables changed between two values at once, no relationship can be attributed cleanly afterwards; hence one variable per series."
      }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Dieselbe Messung zu verschiedenen Tageszeiten, damit sich zufällige Schwankungen im Mittel aufheben.",
+      "en": "The same measurement at different times of day, so that random fluctuations cancel out on average."
+     },
+     "begruendung": {
+      "de": "Wiederholen ist richtig, aber zu verschiedenen Tageszeiten ändert sich ungeplant das Umgebungslicht. Dann wandern die Bedingungen mit, und keiner weiß, ob ein Unterschied vom Zufall oder vom Licht kommt.",
+      "en": "Repeating is right, but at different times of day the ambient light changes without plan. The conditions then shift along, and nobody knows whether a difference comes from chance or from the light."
+     }
     }
    ]
   },

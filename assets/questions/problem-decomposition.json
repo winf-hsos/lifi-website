@@ -698,6 +698,17 @@
       "de": "Der Assistent hat keinen Zugang zum echten Sensor. Er kann den Code erklären, aber nicht an der Wirklichkeit prüfen; das könnt nur ihr.",
       "en": "The assistant has no access to the real sensor. It can explain the code but cannot check it against reality; only you can."
      }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Funktion behalten, wenn sie ohne Fehlermeldung durchläuft.",
+      "en": "Keep the function if it runs without an error message."
+     },
+     "begruendung": {
+      "de": "Ohne Fehlermeldung heißt nur, dass Python die Zeilen ausführen konnte. Ob der Wert stimmt, zeigt erst ein Test am echten Sensor: einmal mit LED an, einmal aus.",
+      "en": "No error message only means Python could run the lines. Whether the value is right only a test on the real sensor shows: once with the LED on, once off."
+     }
     }
    ]
   }

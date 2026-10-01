@@ -293,6 +293,17 @@
       "de": "Das beschreibt den Sensor, einen ganz anderen Kasten der Strecke. Diese Funktion arbeitet nur mit Text und Farben.",
       "en": "That describes the sensor, a different box of the chain. This function only works with text and colours."
      }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Die Eingabe ist ein einzelner Buchstabe, die Ausgabe eine einzelne Farbe.",
+      "en": "The input is a single letter, the output is a single colour."
+     },
+     "begruendung": {
+      "de": "Das beschreibt colour_for, den kleinen Kasten im Inneren. Die Funktion encode bekommt einen ganzen Text und läuft mit der Schleife über jeden Buchstaben; heraus kommt die Liste aller Farben.",
+      "en": "That describes colour_for, the small box inside. The function encode receives a whole text and loops over every letter; what comes out is the list of all colours."
+     }
     }
    ]
   },
@@ -643,6 +654,17 @@
      "begruendung": {
       "de": "Genau: 'the box is not yours. the test is.' Die Verarbeitung ist unzugänglich, aber Ein- und Ausgabe gehören euch, und am Ausgang wird geprüft.",
       "en": "Exactly: 'the box is not yours. the test is.' The processing is inaccessible, but input and output are yours, and checking happens at the output."
+     }
+    },
+    {
+     "kennung": "d",
+     "text": {
+      "de": "Der Kasten arbeitet am schnellsten; deshalb sollte möglichst viel Arbeit dorthin.",
+      "en": "The box works fastest; therefore as much work as possible should go there."
+     },
+     "begruendung": {
+      "de": "Die Füllung sagt nichts über Tempo. Sie steht dafür, dass man nicht hineinsehen kann. Daraus folgt nicht mehr Arbeit für den Kasten, sondern mehr Prüfung seiner Ausgabe.",
+      "en": "The fill says nothing about speed. It stands for the fact that you cannot look inside. What follows is not more work for the box but more checking of its output."
      }
     }
    ]
