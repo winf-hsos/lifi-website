@@ -722,7 +722,7 @@ Figure&nbsp;14: Two states in six positions, four bases in three positions, four
 </section>
 <section id="practice-questions" class="level2">
 <h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
-<p>Try questions in the exam format here, with the answer and its reasoning shown right away.</p>
+<p>The practice questions have the same format as the exam, so they are also a good way to prepare for it.</p>
 <div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/code-systems.json"></div>
 </section>
 <section id="further-reading" class="level2">
@@ -737,255 +737,22 @@ Figure&nbsp;14: Two states in six positions, four bases in three positions, four
 </section>
 
 </main> <!-- /main -->
-<!-- Das Übungsquiz der Website: Single- und Multiple-Choice-Fragen aus dem
-     Fragenpool, mit sofortigem Feedback samt Begründung je Option, freiem
-     Vor- und Zurückblättern und Vollbild für die Nutzung im Plenum. Fragen
-     können ein Bild (aus assets/diagrams) und einen Codeblock zeigen.
-     Eingebunden auf jeder Seite über include-after-body in _quarto.yml;
-     aktiv nur, wo ein <div class="fragen-quiz" data-quelle="..."> steht.
+<!-- Übungsfragen: Seit Oktober 2026 ist die Übungsplattform classroom-live
+     die zentrale Stelle für die Übungsfragen (Nicolas, 2026-10-05). Die
+     Webseite zeigt kein eigenes Quiz mehr; das Skript ersetzt jeden Kasten
+     <div class="fragen-quiz" data-quelle="../assets/questions/<konzept>.json">
+     durch einen Link nach https://lifi.uber.space/practice/<pool>/<konzept>,
+     mit der Zahl der Fragen. Die Konzeptseiten bleiben unverändert.
 
-     Sprache: Die JSON-Dateien enthalten beide Sprachen. Welche angezeigt
-     wird, sagt data-sprache am Kasten ("de" oder "en", Standard seit 25.09.2026 "en"); die
-     Seite entscheidet also, passend zu ihrem eigenen Text. Fehlt eine
-     Übersetzung, wird die deutsche Fassung gezeigt.
+     Den Pool erkennt die Plattform an der site-url dieser Webseite; in der
+     lokalen Vorschau (localhost) erscheint deshalb kein Kasten, außer mit
+     data-pool am Skript. Fragen ändern sich weiter im Pool (Skill
+     multiple-choice-pruefung, pruefen.py exportiert wie bisher); der Agent
+     classroom-live spielt sie auf der Plattform ein.
 
-     Die JSON-Dateien erzeugt tools/build_questions.py. Es wird nichts
-     erhoben und nichts gespeichert; das Quiz läuft komplett im Browser. -->
-<script>
-(function () {
-  var TEXTE = {
-    de: {
-      frageVon: function (i, n) { return "frage " + i + " von " + n; },
-      mehrfach: " · mehrere richtige antworten möglich",
-      pruefen: "antwort prüfen",
-      neustart: "von vorn",
-      stand: function (a, r) { return a + " beantwortet, " + r + " richtig"; },
-      zurueck: "vorherige frage",
-      weiter: "nächste frage",
-      vollbild: "vollbild",
-      bildAlt: "abbildung zur frage",
-      fehler: "fragen konnten nicht geladen werden.",
-      niveau: {erinnern: "erinnern", verstehen: "verstehen", anwenden: "anwenden"}
-    },
-    en: {
-      frageVon: function (i, n) { return "question " + i + " of " + n; },
-      mehrfach: " · several answers may be correct",
-      pruefen: "check answer",
-      neustart: "start over",
-      stand: function (a, r) { return a + " answered, " + r + " correct"; },
-      zurueck: "previous question",
-      weiter: "next question",
-      vollbild: "fullscreen",
-      bildAlt: "figure for the question",
-      fehler: "the questions could not be loaded.",
-      niveau: {erinnern: "remember", verstehen: "understand", anwenden: "apply"}
-    }
-  };
-
-  function mischen(liste) {
-    for (var i = liste.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var merk = liste[i]; liste[i] = liste[j]; liste[j] = merk;
-    }
-    return liste;
-  }
-
-  function gleicheMenge(a, b) {
-    if (a.length !== b.length) { return false; }
-    return a.slice().sort().join(",") === b.slice().sort().join(",");
-  }
-
-  function bauen(kasten, daten, sprache) {
-    var fragen, reihenfolgen, antworten, auswahl, index;
-    var t = TEXTE[sprache] || TEXTE.de;
-
-    // ein zweisprachiges Feld in der gewählten Sprache; fehlt sie, deutsch
-    function s(feld) {
-      if (typeof feld === "string") { return feld; }
-      return (feld && (feld[sprache] || feld.de)) || "";
-    }
-
-    // Text in ein Element schreiben und dabei `so markierte` Stellen in
-    // Codeschrift setzen. Sonst stehen die Backticks wörtlich auf der Seite;
-    // aufgefallen am 10.09.2026 an der Bytefolge in cs-007.
-    function schreiben(el, text) {
-      el.textContent = "";
-      String(text).split(/`([^`]+)`/).forEach(function (stueck, i) {
-        if (!stueck) { return; }
-        if (i % 2) {
-          var code = document.createElement("code");
-          code.textContent = stueck;
-          el.appendChild(code);
-        } else {
-          el.appendChild(document.createTextNode(stueck));
-        }
-      });
-    }
-
-    function neustart() {
-      fragen = mischen(daten.fragen.slice());
-      // Optionsreihenfolge einmal je Frage festlegen, damit sie beim
-      // Zurückblättern stabil bleibt
-      reihenfolgen = fragen.map(function (frage) {
-        return mischen(frage.optionen.slice());
-      });
-      antworten = fragen.map(function () { return null; });
-      auswahl = fragen.map(function () { return []; });
-      index = 0;
-      zeigen();
-    }
-
-    function zeigen() {
-      var frage = fragen[index];
-      var mehrfach = frage.typ === "mc";
-      var beantwortet = antworten.filter(function (a) { return a !== null; });
-      var richtig = fragen.filter(function (frage, i) {
-        return antworten[i] !== null &&
-               gleicheMenge(antworten[i], frage.richtig);
-      }).length;
-
-      kasten.innerHTML =
-        '<div class="fq-kopf">' +
-        "<span>" + t.frageVon(index + 1, fragen.length) +
-        '</span><span class="fq-niveau">' +
-        (t.niveau[frage.niveau] || frage.niveau) +
-        (mehrfach ? t.mehrfach : "") + "</span>" +
-        '<span class="fq-platz"></span>' +
-        '<button class="fq-nav fq-zurueck" title="' + t.zurueck + '">&#8249;</button>' +
-        '<button class="fq-nav fq-weiter-pfeil" title="' + t.weiter + '">&#8250;</button>' +
-        '<button class="fq-nav fq-vollbild" title="' + t.vollbild + '">&#x26F6;</button>' +
-        "</div>" +
-        '<div class="fq-frage"></div>' +
-        '<div class="fq-medien"></div>' +
-        '<div class="fq-optionen"></div>' +
-        '<div class="fq-fuss"><button class="fq-neustart">' + t.neustart + "</button>" +
-        '<span class="fq-stand"></span></div>';
-
-      schreiben(kasten.querySelector(".fq-frage"), s(frage.frage));
-      kasten.querySelector(".fq-stand").textContent =
-        t.stand(beantwortet.length, richtig);
-
-      var medien = kasten.querySelector(".fq-medien");
-      if (frage.bild) {
-        var bild = document.createElement("img");
-        bild.className = "fq-bild";
-        bild.src = "../assets/diagrams/" + frage.bild + ".svg";
-        bild.alt = t.bildAlt;
-        medien.appendChild(bild);
-      }
-      if (frage.code) {
-        var code = document.createElement("pre");
-        code.className = "fq-code";
-        code.textContent = frage.code;
-        medien.appendChild(code);
-      }
-
-      var liste = kasten.querySelector(".fq-optionen");
-      reihenfolgen[index].forEach(function (option) {
-        var knopf = document.createElement("button");
-        // Radio-Symbol bei einer richtigen Antwort, Checkbox bei mehreren
-        // möglichen: Der Fragetyp ist so auf einen Blick erkennbar
-        knopf.className = "fq-option " + (mehrfach ? "fq-mc" : "fq-sc");
-        var marker = document.createElement("span");
-        marker.className = "fq-marker";
-        knopf.appendChild(marker);
-        var inhalt = document.createElement("span");
-        inhalt.className = "fq-text";
-        schreiben(inhalt, s(option.text));
-        knopf.appendChild(inhalt);
-        knopf.dataset.kennung = option.kennung;
-        knopf.addEventListener("click", function () {
-          if (antworten[index] !== null) { return; }
-          if (mehrfach) {
-            var stelle = auswahl[index].indexOf(option.kennung);
-            if (stelle >= 0) { auswahl[index].splice(stelle, 1); }
-            else { auswahl[index].push(option.kennung); }
-            knopf.classList.toggle("fq-gewaehlt");
-            kasten.querySelector(".fq-pruefen").disabled =
-              auswahl[index].length === 0;
-          } else {
-            antworten[index] = [option.kennung];
-            zeigen();
-          }
-        });
-        liste.appendChild(knopf);
-        if (auswahl[index].indexOf(option.kennung) >= 0) {
-          knopf.classList.add("fq-gewaehlt");
-        }
-      });
-
-      if (mehrfach && antworten[index] === null) {
-        var pruefen = document.createElement("button");
-        pruefen.className = "fq-pruefen";
-        pruefen.textContent = t.pruefen;
-        pruefen.disabled = auswahl[index].length === 0;
-        pruefen.addEventListener("click", function () {
-          antworten[index] = auswahl[index].slice();
-          zeigen();
-        });
-        liste.appendChild(pruefen);
-      }
-      if (antworten[index] !== null) { aufloesen(frage); }
-
-      kasten.querySelector(".fq-zurueck").addEventListener("click", function () {
-        blaettern(-1);
-      });
-      kasten.querySelector(".fq-weiter-pfeil").addEventListener("click", function () {
-        blaettern(1);
-      });
-      kasten.querySelector(".fq-vollbild").addEventListener("click", function () {
-        if (document.fullscreenElement === kasten) { document.exitFullscreen(); }
-        else { kasten.requestFullscreen(); kasten.focus(); }
-      });
-      kasten.querySelector(".fq-neustart").addEventListener("click", neustart);
-    }
-
-    function aufloesen(frage) {
-      var gewaehlt = antworten[index];
-      kasten.querySelectorAll(".fq-option").forEach(function (knopf) {
-        knopf.disabled = true;
-        knopf.classList.remove("fq-gewaehlt");
-        var kennung = knopf.dataset.kennung;
-        var korrekt = frage.richtig.indexOf(kennung) >= 0;
-        var angekreuzt = gewaehlt.indexOf(kennung) >= 0;
-        if (korrekt) { knopf.classList.add("fq-korrekt"); }
-        if (angekreuzt && !korrekt) { knopf.classList.add("fq-falsch"); }
-        if (angekreuzt) { knopf.classList.add("fq-angekreuzt"); }
-        var option = frage.optionen.find(function (o) {
-          return o.kennung === kennung;
-        });
-        var erklaerung = document.createElement("div");
-        erklaerung.className = "fq-begruendung";
-        schreiben(erklaerung, s(option.begruendung));
-        knopf.insertAdjacentElement("afterend", erklaerung);
-      });
-    }
-
-    function blaettern(richtung) {
-      index = (index + richtung + fragen.length) % fragen.length;
-      zeigen();
-    }
-
-    kasten.setAttribute("tabindex", "0");
-    kasten.addEventListener("keydown", function (ereignis) {
-      if (ereignis.key === "ArrowRight") { blaettern(1); ereignis.preventDefault(); }
-      if (ereignis.key === "ArrowLeft") { blaettern(-1); ereignis.preventDefault(); }
-    });
-
-    neustart();
-  }
-
-  document.querySelectorAll(".fragen-quiz[data-quelle]").forEach(function (kasten) {
-    var sprache = kasten.dataset.sprache === "de" ? "de" : "en";
-    fetch(kasten.dataset.quelle)
-      .then(function (antwort) { return antwort.json(); })
-      .then(function (daten) { bauen(kasten, daten, sprache); })
-      .catch(function () {
-        kasten.textContent = (TEXTE[sprache] || TEXTE.de).fehler;
-      });
-  });
-})();
-</script>
+     Gemeinsame Datei des Skills lehrmaterial-webseite: nicht je Seite
+     ändern, sondern in der Urfassung; abgleich.py prüft sie. -->
+<script src="https://lifi.uber.space/practice/embed.js" defer=""></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

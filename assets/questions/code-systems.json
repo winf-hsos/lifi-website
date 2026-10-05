@@ -535,7 +535,7 @@
    "richtig": [
     "a"
    ],
-   "code": "CODE = {\"a\": \"00\", \"b\": \"01\", \"c\": \"10\", \"d\": \"11\"}\n\ndef encode(text):\n    return \"\".join(CODE[zeichen] for zeichen in text)",
+   "code": "CODE = {\"a\": \"00\", \"b\": \"01\", \"c\": \"10\", \"d\": \"11\"}\n\ndef encode(text):\n    return \"\".join(CODE[char] for char in text)",
    "optionen": [
     {
      "kennung": "a",

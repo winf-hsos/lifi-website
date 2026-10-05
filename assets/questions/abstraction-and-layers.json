@@ -535,7 +535,7 @@
    "richtig": [
     "c"
    ],
-   "code": "def send_text(text):     # Zeichen -> Bits\n    ...\ndef send_frame(bits):    # Bits -> gerahmte Bits\n    ...\ndef send_symbols(bits):  # Bits -> Farben auf der LED\n    ...",
+   "code": "def send_text(text):     # characters -> bits\n    ...\ndef send_frame(bits):    # bits -> framed bits\n    ...\ndef send_symbols(bits):  # bits -> colours on the LED\n    ...",
    "optionen": [
     {
      "kennung": "a",
