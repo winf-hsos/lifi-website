@@ -78,22 +78,28 @@ function colourSequence(x, y, radius = 34) {
   return colors.map((col, i) => `<circle cx="${x + i * (radius * 2 + 22)}" cy="${y}" r="${radius}" fill="${col}" opacity="0.9"/>`).join("");
 }
 
+// Sender und Empfaenger (Folien 14 und 15) stehen hintereinander und teilen
+// deshalb dieselbe Geometrie: Kasten, Pfeile und Beschriftungen auf denselben
+// Hoehen, damit beim Weiterschalten nichts springt.
+const IO = { mono: true, y: 165, h: 210, right: 1180 };
+
 function drawSender() {
   const c = d.colors();
-  const p = ipoBase({ inside: "encode()", mono: true, right: 1180 });
-  p.parts.push(d.label(300, 350, '"hi"', { size: 48, color: c.white, anchor: "middle", mono: true }));
-  p.parts.push(colourSequence(1240, 350, 28));
-  p.parts.push(d.label(300, 520, "text", { size: 32, color: c.gray, anchor: "middle" }));
-  p.parts.push(d.label(840, 520, "program", { size: 32, color: c.gray, anchor: "middle" }));
-  p.parts.push(d.label(1380, 520, "colours", { size: 32, color: c.gray, anchor: "middle" }));
-  const svg = d.svg(W, H, ...p.parts);
+  const p = ipoBase({ ...IO, inside: "encode()" });
+  const mid = p.y + p.h / 2;
+  p.parts.push(d.label(300, mid + 16, '"hi"', { size: 48, color: c.white, anchor: "middle", mono: true }));
+  p.parts.push(colourSequence(1380 - 2 * (28 * 2 + 22), mid, 28));
+  p.parts.push(d.label(300, 430, "text", { size: 32, color: c.gray, anchor: "middle" }));
+  p.parts.push(d.label(840, 465, "program", { size: 32, color: c.gray, anchor: "middle" }));
+  p.parts.push(d.label(1380, 430, "colours", { size: 32, color: c.gray, anchor: "middle" }));
+  const svg = d.svg(W, HP, ...p.parts);
   if ($("fig-sender")) $("fig-sender").innerHTML = svg;
   return svg;
 }
 
 window.drawReceiver = function (slide, step) {
   const c = d.colors();
-  const p = ipoBase({ inside: "classify()", mono: true, y: 165, h: 210 });
+  const p = ipoBase({ ...IO, inside: "classify()" });
   p.parts.push(`<circle cx="300" cy="270" r="76" fill="${c.red}" opacity="0.9"/>`);
   p.parts.push(d.label(300, 430, step >= 1 ? "r=203  g=41" : "red?", { size: 32, color: step >= 1 ? c.white : c.gray, anchor: "middle", mono: step >= 1 }));
   if (step >= 1) p.parts.push(d.label(300, 475, "b=57  c=310", { size: 32, color: c.white, anchor: "middle", mono: true }));
