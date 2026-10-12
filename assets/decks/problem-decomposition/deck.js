@@ -82,8 +82,7 @@ window.drawCut = function (slide, step) {
 };
 
 // --- die karte des moduls ----------------------------------------------------
-/* Oben die grosse Frage des Moduls, darunter die Faehigkeiten, mit denen wir sie
- * angehen, und darunter die vier Fragen ueber Information. Alle vier stehen
+/* Oben die grosse Frage des Moduls, darunter die vier Fragen ueber Information. Alle vier stehen
  * gleichrangig: Das Projekt beruehrt jede von ihnen, wenn auch nicht gleich stark. */
 function drawMap() {
   const c = d.colors();
@@ -91,8 +90,6 @@ function drawMap() {
   const qy = 70;
   parts.push(d.label(W / 2, qy, "how do computers solve\ncomplex problems?",
     { size: 48, color: c.white, anchor: "middle", lineHeight: 1.25 }));
-  parts.push(d.label(W / 2, qy + 120, "the skills for it:  cutting problems · input, processing, output\nalgorithms and programs · measuring · thinking in layers",
-    { size: 32, color: c.gray, anchor: "middle", lineHeight: 1.35 }));
 
   const cols = [
     { q: "how do computers\nrepresent information?", ex: "colours into symbols,\nletters into bits" },
@@ -103,7 +100,7 @@ function drawMap() {
   const boxW = 370, gap = (W - 80 - 4 * boxW) / 3, boxY = 350, boxH = 160;
   const midY = 280;                      // Sammelhoehe, deutlich unter dem Text
   const first = 40 + boxW / 2, last = 40 + 3 * (boxW + gap) + boxW / 2;
-  parts.push(d.line(W / 2, qy + 165, W / 2, midY, { color: c.dark, width: 2 }));
+  parts.push(d.line(W / 2, qy + 110, W / 2, midY, { color: c.dark, width: 2 }));
   parts.push(d.line(first, midY, last, midY, { color: c.dark, width: 2 }));
   cols.forEach((col, i) => {
     const x = 40 + i * (boxW + gap), cx = x + boxW / 2;
@@ -246,7 +243,7 @@ window.drawExam = function (slide, step) {
   return svg;
 };
 window.drawProject = function (slide, step) {
-  const svg = twoBoxes("the led works.", "red or blue?\nright 50 times in a row.", step);
+  const svg = twoBoxes("the receiver works.", "red or blue?\nright 50 times in a row.", step);
   if ($("fig-project")) $("fig-project").innerHTML = svg;
   return svg;
 };
