@@ -194,14 +194,14 @@ function drawRelations() {
   parts.push(card(450, 285, 240, 150, "b"));
   parts.push(d.label(390, 550, "data flow", { size: 32, color: c.blue, anchor: "middle" }));
 
-  parts.push(d.line(820, 40, 820, 640, { color: c.dark, width: 2 }));
+  parts.push(d.line(820, 40, 820, 600, { color: c.dark, width: 2 }));
   parts.push(d.label(1240, 70, "boxes inside boxes", { size: 48, color: c.white, anchor: "middle" }));
   parts.push(d.label(1240, 130, "what smaller work happens inside?", { size: 32, color: c.gray, anchor: "middle" }));
   parts.push(d.box(930, 220, 620, 300, "", { border: c.light, width: 4, rx: 12 }));
   parts.push(card(990, 300, 220, 140, "a"));
   parts.push(card(1270, 300, 220, 140, "b"));
   parts.push(d.label(1240, 590, "hierarchy", { size: 32, color: c.blue, anchor: "middle" }));
-  const svg = d.svg(W, H, ...parts);
+  const svg = d.svg(W, HP, ...parts);
   if ($("fig-relations")) $("fig-relations").innerHTML = svg;
   return svg;
 }
