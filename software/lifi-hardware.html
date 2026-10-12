@@ -459,6 +459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#the-led-the-sender" id="toc-the-led-the-sender" class="nav-link" data-scroll-target="#the-led-the-sender">The LED (the sender)</a></li>
   <li><a href="#the-sensor-the-receiver" id="toc-the-sensor-the-receiver" class="nav-link" data-scroll-target="#the-sensor-the-receiver">The sensor (the receiver)</a></li>
   <li><a href="#more-control-when-you-need-it" id="toc-more-control-when-you-need-it" class="nav-link" data-scroll-target="#more-control-when-you-need-it">More control when you need it</a></li>
+  <li><a href="#two-devices-on-one-laptop" id="toc-two-devices-on-one-laptop" class="nav-link" data-scroll-target="#two-devices-on-one-laptop">Two devices on one laptop</a></li>
   </ul></li>
   <li><a href="#the-measurement-log-and-the-cockpit" id="toc-the-measurement-log-and-the-cockpit" class="nav-link" data-scroll-target="#the-measurement-log-and-the-cockpit">The measurement log and the cockpit</a></li>
   <li><a href="#look-inside" id="toc-look-inside" class="nav-link" data-scroll-target="#look-inside">Look inside</a></li>
@@ -574,6 +575,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    lifi.led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(lifi.sensor.read())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>connect()</code> also knows a few options, for example <code>log_file=None</code> (no measurement log) and <code>server=None</code> (no upload, more on that in a moment).</p>
+</section>
+<section id="two-devices-on-one-laptop" class="level3">
+<h3 class="anchored" data-anchor-id="two-devices-on-one-laptop">Two devices on one laptop</h3>
+<p>Your team has two devices, and sometimes it is handy to plug both into the same laptop, one as the sender and one as the receiver. Then the module cannot know which one you mean, so each script tells it, by the UID of the master brick. That is the short code of the main board, shown in the Brick Viewer next to “Master Brick”. Call <code>use_device()</code> before you use <code>led</code> or <code>sensor</code> for the first time; after that everything works as usual:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> led, sensor, use_device</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>use_device(<span class="st">"64SK5w"</span>)     <span class="co"># the UID of the master brick of this device</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Your second script names the other UID. If two devices are plugged in and a script does not choose, you get an error message that lists both UIDs, so you can copy the right one. The same choice works without changing the code through the environment variable <code>LIFI_MASTER</code>, and with <code>LifiDevice.connect(master="64SK5w")</code>. You need version 0.4.0 of the module or newer; <code>/update-semester</code> installs it.</p>
 </section>
 </section>
 <section id="the-measurement-log-and-the-cockpit" class="level2">
