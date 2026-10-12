@@ -129,7 +129,9 @@
   <section class="slide has-punch">
     <h2>same instruction, different values</h2>
     <div class="content">
-      <div class="code">led.set_color(255, 0, 0)
+      <div class="code">from lifi_hardware import led
+
+led.set_color(255, 0, 0)
 led.set_color(0, 0, 255)</div>
     </div>
     <div class="punch">same instruction, different values, different result.</div>
@@ -144,8 +146,11 @@ led.set_color(0, 0, 255)</div>
   <section class="slide">
     <h2>1 · one after another</h2>
     <div class="content">
-      <div class="code">led.set_color(255, 0, 0)
-wait(1)
+      <div class="code">import time
+from lifi_hardware import led
+
+led.set_color(255, 0, 0)
+time.sleep(1)
 led.set_color(0, 0, 255)</div>
       <div class="sidenote">two lines swapped is a different program.</div>
     </div>
@@ -156,23 +161,28 @@ led.set_color(0, 0, 255)</div>
     <h2>with a pause, and without</h2>
     <div class="figure" id="fig-pause"></div>
     <div class="punch">the program is not broken. it is too fast for your eyes.</div>
-    <aside class="notes">Beide Programme sind richtig. Mit „wait(1)“ bleibt Rot eine Sekunde sichtbar. Ohne Pause lebt Rot etwa eine Millisekunde, viel zu kurz für ein Auge, und ihr seht nur Blau. Eure Augen sind langsam, die Maschine ist es nicht.</aside>
+    <aside class="notes">Beide Programme sind richtig. Mit „time.sleep(1)“ bleibt Rot eine Sekunde sichtbar. Ohne Pause lebt Rot etwa eine Millisekunde, viel zu kurz für ein Auge, und ihr seht nur Blau. Eure Augen sind langsam, die Maschine ist es nicht.</aside>
   </section>
 
   <section class="slide has-punch">
     <h2>pause in the middle, or at the end</h2>
     <div class="figure" id="fig-order"></div>
     <div class="punch">no line is missing. it is still a different program.</div>
-    <aside class="notes">Dieselben drei Zeilen, nur das „wait(1)“ ans Ende gerückt: Die Maschine schaltet Rot, schaltet sofort Blau und wartet dann eine Sekunde, mit blauer LED. Die Maschine ordnet nicht um, was gemeint war, sie führt aus, was wo steht.</aside>
+    <aside class="notes">Dieselben drei Zeilen, nur das „time.sleep(1)“ ans Ende gerückt: Die Maschine schaltet Rot, schaltet sofort Blau und wartet dann eine Sekunde, mit blauer LED. Die Maschine ordnet nicht um, was gemeint war, sie führt aus, was wo steht.</aside>
   </section>
 
   <section class="slide has-punch">
     <h2>2 · a value with a name</h2>
     <div class="content">
-      <div class="code">bright = 255
+      <div class="code">import time
+from lifi_hardware import led
+
+bright = 120
 led.set_color(bright, 0, 0)
-wait(1)
-led.set_color(bright, 0, 0)</div>
+time.sleep(1)
+led.set_color(0, bright, 0)
+time.sleep(1)
+led.set_color(0, 0, bright)</div>
     </div>
     <div class="punch">one place to change instead of three.</div>
     <aside class="notes">Der zweite Baustein gibt einem Wert einen Namen, den man danach überall benutzt. Der Gewinn ist nicht die Kürze, sondern die eine Stelle zum Ändern.</aside>
@@ -181,13 +191,17 @@ led.set_color(bright, 0, 0)</div>
   <section class="slide">
     <h2>3 · again</h2>
     <div class="content">
-      <div class="code">colours = [red, green, blue, yellow]
+      <div class="code">import time
+from lifi_hardware import led
 
-for colour in colours:
-    led.set_color(colour)
-    wait(1)</div>
+colours = [(255, 0, 0), (0, 255, 0),
+           (0, 0, 255), (255, 255, 0)]
+
+for r, g, b in colours:
+    led.set_color(r, g, b)
+    time.sleep(1)</div>
     </div>
-    <aside class="notes">Der dritte Baustein ist die Wiederholung. Eine Schleife ist keine Magie, sondern eine Schreibweise: Dieselben zwei Zeilen laufen viermal, mit jeweils dem nächsten Wert aus der Liste.</aside>
+    <aside class="notes">Der dritte Baustein ist die Wiederholung. Eine Schleife ist keine Magie, sondern eine Schreibweise: Dieselben zwei Zeilen laufen viermal, mit jeweils dem nächsten Wert aus der Liste. Jeder Wert ist ein Zahlentripel, und `for r, g, b in colours` packt es in seine drei Teile aus, genau die drei Zahlen, die set_color erwartet.</aside>
   </section>
 
   <section class="slide has-punch">
@@ -195,12 +209,15 @@ for colour in colours:
     <div class="two">
       <div>
         <div class="header">the loop you write</div>
-        <div class="code">colours = [red, green,
-           blue, yellow]
-
-for colour in colours:
-    led.set_color(colour)
-    wait(1)</div>
+        <div class="code">import time
+from lifi_hardware import led
+colours = [(255, 0, 0),
+           (0, 255, 0),
+           (0, 0, 255),
+           (255, 255, 0)]
+for r, g, b in colours:
+    led.set_color(r, g, b)
+    time.sleep(1)</div>
       </div>
       <div>
         <div class="header">what actually happens</div>
@@ -214,12 +231,18 @@ for colour in colours:
   <section class="slide">
     <h2>4 · only if</h2>
     <div class="content">
-      <div class="code">for colour in colours:
-    led.set_color(colour)
-    if colour == yellow:
-        wait(3)
+      <div class="code">import time
+from lifi_hardware import led
+
+colours = [(255, 0, 0), (0, 255, 0),
+           (0, 0, 255), (255, 255, 0)]
+
+for r, g, b in colours:
+    led.set_color(r, g, b)
+    if (r, g, b) == (255, 255, 0):
+        time.sleep(3)
     else:
-        wait(1)</div>
+        time.sleep(1)</div>
       <div class="sidenote">now the run depends on something that changes along the way.</div>
     </div>
     <aside class="notes">Der vierte Baustein führt eine Zeile nur aus, wenn eine Bedingung zutrifft, und „else“ sagt, was sonst passiert. Damit kann ein Programm auf etwas reagieren, statt stur abzuspulen.</aside>
@@ -228,11 +251,14 @@ for colour in colours:
   <section class="slide has-punch">
     <h2>when does this end?</h2>
     <div class="content">
-      <div class="code">while True:
-    led.set_color(red)
-    wait(1)
-    led.set_color(blue)
-    wait(1)</div>
+      <div class="code">import time
+from lifi_hardware import led
+
+while True:
+    led.set_color(255, 0, 0)
+    time.sleep(1)
+    led.set_color(0, 0, 255)
+    time.sleep(1)</div>
       <div class="sidenote">never: the condition is always true, and the body has no way out.</div>
     </div>
     <div class="punch">"my program hangs" almost always means "my loop has no way out".</div>

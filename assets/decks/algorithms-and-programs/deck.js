@@ -45,7 +45,7 @@ function drawList() {
   const wires = [], boxes = [], labels = [];
   const rows = [
     { code: "led.set_color(255, 0, 0)", effect: "turns red", lamp: "#e8384f" },
-    { code: "wait(1)", effect: "stays red,\none second passes", lamp: null },
+    { code: "time.sleep(1)", effect: "stays red,\none second passes", lamp: null },
     { code: "led.set_color(0, 0, 255)", effect: "turns blue", lamp: "#1e9be9" },
   ];
   const x = 120, boxW = 700, boxH = 110, gap = 60;
@@ -109,7 +109,7 @@ function drawPause() {
   const boxW = 700, boxH = 190, left = 100, right = 880, y = 70;
   parts.push(d.label(left, y - 24, "with a pause", { size: 32, color: c.gray }));
   parts.push(d.label(right, y - 24, "without a pause", { size: 32, color: c.gray }));
-  parts.push(...codeBox(left, y, boxW, boxH, "led.set_color(255, 0, 0)\nwait(1)\nled.set_color(0, 0, 255)"));
+  parts.push(...codeBox(left, y, boxW, boxH, "led.set_color(255, 0, 0)\ntime.sleep(1)\nled.set_color(0, 0, 255)"));
   parts.push(...codeBox(right, y, boxW, boxH, "led.set_color(255, 0, 0)\nled.set_color(0, 0, 255)"));
   zeitleiste(parts, left, y + boxH + 60, boxW, [{ anteil: 0.5, farbe: "#e8384f" }, { anteil: 0.5, farbe: "#1e9be9" }]);
   zeitleiste(parts, right, y + boxH + 60, boxW, [{ anteil: 0.004, farbe: "#e8384f" }, { anteil: 0.996, farbe: "#1e9be9" }]);
@@ -127,8 +127,8 @@ function drawOrder() {
   const boxW = 700, boxH = 190, left = 100, right = 880, y = 70;
   parts.push(d.label(left, y - 24, "pause in the middle", { size: 32, color: c.gray }));
   parts.push(d.label(right, y - 24, "pause at the end", { size: 32, color: c.gray }));
-  parts.push(...codeBox(left, y, boxW, boxH, "led.set_color(255, 0, 0)\nwait(1)\nled.set_color(0, 0, 255)"));
-  parts.push(...codeBox(right, y, boxW, boxH, "led.set_color(255, 0, 0)\nled.set_color(0, 0, 255)\nwait(1)"));
+  parts.push(...codeBox(left, y, boxW, boxH, "led.set_color(255, 0, 0)\ntime.sleep(1)\nled.set_color(0, 0, 255)"));
+  parts.push(...codeBox(right, y, boxW, boxH, "led.set_color(255, 0, 0)\nled.set_color(0, 0, 255)\ntime.sleep(1)"));
   zeitleiste(parts, left, y + boxH + 60, boxW, [{ anteil: 0.5, farbe: "#e8384f" }, { anteil: 0.5, farbe: "#1e9be9" }]);
   zeitleiste(parts, right, y + boxH + 60, boxW, [{ anteil: 0.004, farbe: "#e8384f" }, { anteil: 0.996, farbe: "#1e9be9" }]);
   parts.push(d.label(left, y + boxH + 160, "one second of red, then blue.", { size: 32, color: c.gray }));
