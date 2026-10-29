@@ -222,5 +222,12 @@
     "description": "find the secret face among sixteen: every answer shrinks the crowd, the shrinking is measured in bits, and the halving strategy shows why four questions are enough.",
     "site": "LiFi Project · concept demos",
     "image": "ee3c1d751625.png"
+  },
+  "https://lifi.hsos.uber.space/cockpit": {
+    "url": "https://lifi.hsos.uber.space/cockpit",
+    "title": "Team Cockpit",
+    "description": "Your link, live: what your LED sends and what your sensor measures, on one shared timeline. If the two do not match, you are looking at your bug.",
+    "site": "LiFi Project",
+    "image": "52eb322dc8e3.png"
   }
 }

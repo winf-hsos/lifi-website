@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://docs.lifi-project.de/software/lifi-hardware.html</loc>
-    <lastmod>2026-10-12T11:32:03.390Z</lastmod>
+    <lastmod>2026-10-29T11:48:11.104Z</lastmod>
   </url>
   <url>
     <loc>https://docs.lifi-project.de/software/cockpit.html</loc>
-    <lastmod>2026-09-25T11:36:44.815Z</lastmod>
+    <lastmod>2026-10-29T11:48:11.100Z</lastmod>
   </url>
   <url>
     <loc>https://docs.lifi-project.de/index.html</loc>
-    <lastmod>2026-09-29T14:15:39.729Z</lastmod>
+    <lastmod>2026-10-29T11:48:11.089Z</lastmod>
   </url>
   <url>
     <loc>https://docs.lifi-project.de/concepts/throughput-and-limits.html</loc>
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://docs.lifi-project.de/challenges/challenge-4.html</loc>
-    <lastmod>2026-09-25T12:13:25.664Z</lastmod>
+    <lastmod>2026-10-29T11:52:57.249Z</lastmod>
   </url>
   <url>
     <loc>https://docs.lifi-project.de/challenges/challenge-2.html</loc>
@@ -66,11 +66,11 @@
   </url>
   <url>
     <loc>https://docs.lifi-project.de/about.html</loc>
-    <lastmod>2026-09-29T14:15:39.729Z</lastmod>
+    <lastmod>2026-10-29T11:48:11.084Z</lastmod>
   </url>
   <url>
     <loc>https://docs.lifi-project.de/ai/index.html</loc>
-    <lastmod>2026-09-27T19:19:46.949Z</lastmod>
+    <lastmod>2026-10-29T12:00:39.714Z</lastmod>
   </url>
   <url>
     <loc>https://docs.lifi-project.de/challenges/challenge-1.html</loc>
@@ -126,10 +126,10 @@
   </url>
   <url>
     <loc>https://docs.lifi-project.de/links.html</loc>
-    <lastmod>2026-10-05T12:09:30.082Z</lastmod>
+    <lastmod>2026-10-29T11:48:11.093Z</lastmod>
   </url>
   <url>
     <loc>https://docs.lifi-project.de/software/index.html</loc>
-    <lastmod>2026-09-27T19:19:46.949Z</lastmod>
+    <lastmod>2026-10-29T12:00:39.715Z</lastmod>
   </url>
 </urlset>

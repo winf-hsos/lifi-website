@@ -437,7 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://lifi.uber.space/feedback/dup-ws2026" class="sidebar-item-text sidebar-link">
+  <a href="https://live.hsos.uber.space/feedback/dup-ws2026" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anonymous Feedback</span></a>
   </div>
 </li>
@@ -589,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-measurement-log-and-the-cockpit" class="level2">
 <h2 class="anchored" data-anchor-id="the-measurement-log-and-the-cockpit">The measurement log and the cockpit</h2>
 <p>Everything your device does, the module writes to a file called <code>lifi_log.jsonl</code> in the folder your program runs in: every colour you set, every reading, every change of a setting, one plain-text line per event. This is the memory of your measurement series. It belongs to you, and it always works, even without any internet.</p>
-<p>In addition, the module sends the same events to the course server. That lets you see your own link live in the browser, in the <a href="https://lifi.uber.space/cockpit">team cockpit</a>: at the top what your LED sends, below it what your sensor measures, on a shared time axis. When the two do not fit together, you are looking at your fault. The cockpit is your most important tool for finding faults on the link. How to work with it is on its own page, <a href="../software/cockpit.html">The team cockpit</a>.</p>
+<p>In addition, the module sends the same events to the course server. That lets you see your own link live in the browser, in the <a href="https://lifi.hsos.uber.space/cockpit">team cockpit</a>: at the top what your LED sends, below it what your sensor measures, on a shared time axis. When the two do not fit together, you are looking at your fault. The cockpit is your most important tool for finding faults on the link. How to work with it is on its own page, <a href="../software/cockpit.html">The team cockpit</a>.</p>
 <p>Full transparency applies. What is uploaded is exactly what is in your local file, not a line more. If your program crashes, the type of error goes along too, with a cleaned message (file paths are removed beforehand, and your source code never goes along); the error then appears as a red mark in your cockpit. If you do not want the upload, you switch it off at any time and without any disadvantage, with <code>LifiDevice.connect(server=None)</code> or the environment variable <code>LIFI_SERVER=off</code>. The local log keeps running regardless.</p>
 </section>
 <section id="look-inside" class="level2">
@@ -606,7 +606,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
      die zentrale Stelle für die Übungsfragen (Nicolas, 2026-10-05). Die
      Webseite zeigt kein eigenes Quiz mehr; das Skript ersetzt jeden Kasten
      <div class="fragen-quiz" data-quelle="../assets/questions/<konzept>.json">
-     durch einen Link nach https://lifi.uber.space/practice/<pool>/<konzept>,
+     durch einen Link nach https://live.hsos.uber.space/practice/<pool>/<konzept>,
      mit der Zahl der Fragen. Die Konzeptseiten bleiben unverändert.
 
      Den Pool erkennt die Plattform an der site-url dieser Webseite; in der
@@ -617,7 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
      Gemeinsame Datei des Skills lehrmaterial-webseite: nicht je Seite
      ändern, sondern in der Urfassung; abgleich.py prüft sie. -->
-<script src="https://lifi.uber.space/practice/embed.js" defer=""></script>
+<script src="https://live.hsos.uber.space/practice/embed.js" defer=""></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
