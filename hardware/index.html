@@ -45,10 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-a2f5b924ffa09ff7c0990f6c2511833d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-55c7872dae1d40d6a9c82e50dac169a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-04f6296883490d005f4dbf6309390a62.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -414,35 +411,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#the-led" id="toc-the-led" class="nav-link active" data-scroll-target="#the-led">The LED</a></li>
-  <li><a href="#the-colour-sensor" id="toc-the-colour-sensor" class="nav-link" data-scroll-target="#the-colour-sensor">The colour sensor</a>
-  <ul class="collapse">
-  <li><a href="#what-the-sensor-actually-measures" id="toc-what-the-sensor-actually-measures" class="nav-link" data-scroll-target="#what-the-sensor-actually-measures">What the sensor actually measures</a></li>
-  <li><a href="#four-channels-not-three" id="toc-four-channels-not-three" class="nav-link" data-scroll-target="#four-channels-not-three">Four channels, not three</a></li>
-  <li><a href="#the-lamp-on-the-sensor-board" id="toc-the-lamp-on-the-sensor-board" class="nav-link" data-scroll-target="#the-lamp-on-the-sensor-board">The lamp on the sensor board</a></li>
-  <li><a href="#integration-time-and-gain" id="toc-integration-time-and-gain" class="nav-link" data-scroll-target="#integration-time-and-gain">Integration time and gain</a></li>
-  <li><a href="#the-numbers-do-not-come-back-the-way-you-sent-them" id="toc-the-numbers-do-not-come-back-the-way-you-sent-them" class="nav-link" data-scroll-target="#the-numbers-do-not-come-back-the-way-you-sent-them">The numbers do not come back the way you sent them</a></li>
-  </ul></li>
-  <li><a href="#optical-setup" id="toc-optical-setup" class="nav-link" data-scroll-target="#optical-setup">Optical setup</a>
-  <ul class="collapse">
-  <li><a href="#rules" id="toc-rules" class="nav-link" data-scroll-target="#rules">Rules</a></li>
-  <li><a href="#the-fixed-distance" id="toc-the-fixed-distance" class="nav-link" data-scroll-target="#the-fixed-distance">The fixed distance</a></li>
-  <li><a href="#before-you-buy-anything" id="toc-before-you-buy-anything" class="nav-link" data-scroll-target="#before-you-buy-anything">Before you buy anything</a></li>
-  </ul></li>
-  <li><a href="#the-case" id="toc-the-case" class="nav-link" data-scroll-target="#the-case">The case</a>
-  <ul class="collapse">
-  <li><a href="#parts-list" id="toc-parts-list" class="nav-link" data-scroll-target="#parts-list">Parts list</a></li>
-  <li><a href="#the-3d-model" id="toc-the-3d-model" class="nav-link" data-scroll-target="#the-3d-model">The 3D model</a></li>
-  <li><a href="#printing" id="toc-printing" class="nav-link" data-scroll-target="#printing">Printing</a></li>
-  <li><a href="#assembly" id="toc-assembly" class="nav-link" data-scroll-target="#assembly">Assembly</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -466,160 +436,121 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Your device is three parts in a 3D-printed case:</p>
-<ul>
-<li>an <strong><a href="#the-led">RGB LED Bricklet 2.0</a></strong>, the lamp that sends,</li>
-<li>a <strong><a href="#the-colour-sensor">Color Bricklet 2.0</a></strong>, the eye that receives,</li>
-<li>a <strong><a href="https://www.tinkerforge.com/en/doc/Hardware/Bricks/Master_Brick.html">Master Brick</a></strong>, the small controller board that connects both to your laptop over USB.</li>
-</ul>
-<p>All three come from Tinkerforge, a German maker of modular electronics. The two small boards, the Bricklets, sit on the front of the case, the Master Brick inside.</p>
-<p>You and your partner get two of these devices, one each. Between you, you hold both ends of the link.</p>
-<p>The two devices stand on the table facing each other. Because lamp and eye sit symmetrically to the middle of the front, turning one device around puts its lamp in front of the other’s eye, and its eye in front of the other’s lamp. A short wall between the two, the septum, keeps your own lamp out of your own eye.</p>
-<div id="fig-device-front" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A black 3D-printed box on a wooden table. On its front two small black circuit boards are screwed on side by side, the left one labelled Color, the right one RGB LED. A thin black wall sticks out of the front between them.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-device-front-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/hardware/device-front.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Your device from the front. On the left the colour sensor, on the right the LED, and between them the septum, sticking out towards the other device. The small white square on the sensor board is the sensor’s own lamp, more on that below. The blue dots are status lights of the two boards."><img src="../assets/hardware/device-front.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%" alt="A black 3D-printed box on a wooden table. On its front two small black circuit boards are screwed on side by side, the left one labelled Color, the right one RGB LED. A thin black wall sticks out of the front between them."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-device-front-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Your device from the front. On the left the colour sensor, on the right the LED, and between them the septum, sticking out towards the other device. The small white square on the sensor board is the sensor’s own lamp, more on that <a href="#the-lamp-on-the-sensor-board">below</a>. The blue dots are status lights of the two boards.
-</figcaption>
-</figure>
-</div>
-<p>Something follows from this that you will only need late in the project: since every device can send <strong>and</strong> receive, the link works in both directions. Up to and including <a href="../challenges/challenge-3.html">Challenge 3</a> you use only one direction all the same. The way back is opened in <a href="../challenges/challenge-4.html">Challenge 4</a>.</p>
-<section id="the-led" class="level2">
-<h2 class="anchored" data-anchor-id="the-led">The LED</h2>
-<p>What looks like one lamp is really three: a red one, a green one and a blue one, packed so closely together that your eye cannot separate them. You tell each of the three how brightly to shine, as a number from 0 (off) to 255 (full brightness). Because they sit so close, you do not see three lights but one mixed colour.</p>
-<p>Three numbers, then, and every combination you can reliably recognise on the other side is a sign you can send. Red at full brightness with the other two off gives you red. All three at full gives you white. All three at zero is dark. Red at full with a little blue mixed in is a colour that has no everyday name, and it is just as good a sign as the others, provided the eye across the table can tell it from its neighbours.</p>
-<p>How fast the LED can switch from one colour to the next, and what the sensor sees during the switch, is not written in any datasheet you should trust. It is one of the first things worth measuring.</p>
-</section>
-<section id="the-colour-sensor" class="level2">
-<h2 class="anchored" data-anchor-id="the-colour-sensor">The colour sensor</h2>
-<section id="what-the-sensor-actually-measures" class="level3">
-<h3 class="anchored" data-anchor-id="what-the-sensor-actually-measures">What the sensor actually measures</h3>
-<p>In front of the sensor sit tiny colour filters. One lets through mostly red light, one mostly green, one mostly blue. Behind each filter the light that gets through is counted. So you get three numbers that say how much red, green and blue is falling on the sensor right now.</p>
-<p>The word “mostly” matters. The filters do not separate cleanly. Some green light gets through the red filter too. That is why red light does not give you one high number and two zeros. All three values are above zero, just in different proportions.</p>
-</section>
-<section id="four-channels-not-three" class="level3">
-<h3 class="anchored" data-anchor-id="four-channels-not-three">Four channels, not three</h3>
-<p>Next to the three colour values there is a fourth, the <strong>clear channel</strong>. It sits behind no filter and simply counts all the light. That makes it more sensitive than the other three, and often the most useful of the four when all you want to tell apart is brightness.</p>
-<p>So every reading is four numbers: red, green, blue, clear. Keep the fourth one in view. Many teams ignore it and give away signal for nothing.</p>
-</section>
-<section id="the-lamp-on-the-sensor-board" class="level3">
-<h3 class="anchored" data-anchor-id="the-lamp-on-the-sensor-board">The lamp on the sensor board</h3>
-<p>The sensor board carries a small white lamp of its own. It is meant for measuring the colour of surfaces, where you have to light the object first. For your device it is a source of stray light and nothing else. Leave it off.</p>
-</section>
-<section id="integration-time-and-gain" class="level3">
-<h3 class="anchored" data-anchor-id="integration-time-and-gain">Integration time and gain</h3>
-<p>The sensor has two settings, and they are the central trade-off of the whole project.</p>
-<p>The <strong>integration time</strong> is how long the sensor collects light before it reports a number. You can choose between five values, from about 2 milliseconds to 700 milliseconds. A long time gives calm, steady numbers, because random flicker averages out. It also means fewer readings per second: at 700 milliseconds you get little more than one reading a second, and your symbols cannot come faster than that. A short time gives many readings per second, but each one is noisier.</p>
-<p>The <strong>gain</strong> is how strongly the sensor amplifies what it collects. You can choose between four steps, from 1 to 60. A high gain makes a weak signal visible, but it also makes the numbers hit the top of their range sooner, at which point bright and very bright look the same.</p>
-<p>Out of the box the module <code>lifi_hardware</code> sets a medium-long integration time and a gain of 16, which is a safe place to start and almost certainly not where you will end up. The two settings are deliberately easy to change, and you should change them and measure what happens. The page on <a href="../software/lifi-hardware.html">the module</a> shows where.</p>
-</section>
-<section id="the-numbers-do-not-come-back-the-way-you-sent-them" class="level3">
-<h3 class="anchored" data-anchor-id="the-numbers-do-not-come-back-the-way-you-sent-them">The numbers do not come back the way you sent them</h3>
-<p>When you give the LED the values (255, 0, 60), the sensor reports something completely different. That is not a bug. Its numbers depend not only on the light that was sent but also on how far away it is, how bright the room is, and how you have set gain and integration time. There is no way to calculate backwards. How you transmit reliably all the same is the subject of <a href="../challenges/challenge-1.html">Challenge 1</a>.</p>
-</section>
-</section>
-<section id="optical-setup" class="level2">
-<h2 class="anchored" data-anchor-id="optical-setup">Optical setup</h2>
-<p>Between the two devices you may build things yourself, and you should: tubes, apertures, reflectors, lenses. A good light channel is one of the most effective levers in the whole project.</p>
-<section id="rules" class="level3">
-<h3 class="anchored" data-anchor-id="rules">Rules</h3>
-<p><strong>Allowed</strong> is anything passive: pipes, cardboard, paint, aluminium foil, mirrors, lenses, acrylic rods, clamps, stands, 3D-printed parts.</p>
-<p><strong>Not allowed</strong> are additional sensors, additional light sources, lasers, or swapping out the LED or the colour sensor.</p>
-<p><strong>Budget:</strong> building is optional, and if your team builds, the material may be worth at most 10 euros, which you pay yourselves because there is no reimbursement. Document what you built with a photo and a short explanation of why you built it that way.</p>
-</section>
-<section id="the-fixed-distance" class="level3">
-<h3 class="anchored" data-anchor-id="the-fixed-distance">The fixed distance</h3>
-<p>The distance between the front of the lamp and the front of the eye is fixed and the same for everyone. It is chosen so that a bare device just about works and a good light channel makes a real difference.</p>
+<div class="moved-notice" role="note"><p class="moved-head">This page has moved</p><p class="moved-text">The LiFi device now lives on Hands-on Computer Science, where it is kept up to date. This page is no longer maintained, so please use the new one, in English or in German.</p><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/lifi-device/" lang="en"><span class="moved-lang">English</span>The LiFi device on Hands-on Computer Science</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/lifi-device/" lang="de"><span class="moved-lang">Deutsch</span>The LiFi device auf Hands-on Computer Science</a></div></div>
+<!-- Moved to Hands-on Computer Science on 2026-11-02; the previous content is kept below, commented out.
+
+Your device is three parts in a 3D-printed case:
+
+- an **[RGB LED Bricklet 2.0](#the-led)**, the lamp that sends,
+- a **[Color Bricklet 2.0](#the-colour-sensor)**, the eye that receives,
+- a **[Master Brick](https://www.tinkerforge.com/en/doc/Hardware/Bricks/Master_Brick.html)**, the small controller board that connects both to your laptop over USB.
+
+All three come from Tinkerforge, a German maker of modular electronics. The two small boards, the Bricklets, sit on the front of the case, the Master Brick inside.
+
+You and your partner get two of these devices, one each. Between you, you hold both ends of the link.
+
+The two devices stand on the table facing each other. Because lamp and eye sit symmetrically to the middle of the front, turning one device around puts its lamp in front of the other's eye, and its eye in front of the other's lamp. A short wall between the two, the septum, keeps your own lamp out of your own eye.
+
+![Your device from the front. On the left the colour sensor, on the right the LED, and between them the septum, sticking out towards the other device. The small white square on the sensor board is the sensor's own lamp, more on that [below](#the-lamp-on-the-sensor-board). The blue dots are status lights of the two boards.](../assets/hardware/device-front.jpg){#fig-device-front width="75%" fig-align="center" fig-alt="A black 3D-printed box on a wooden table. On its front two small black circuit boards are screwed on side by side, the left one labelled Color, the right one RGB LED. A thin black wall sticks out of the front between them."}
+
+Something follows from this that you will only need late in the project: since every device can send **and** receive, the link works in both directions. Up to and including [Challenge 3](../challenges/challenge-3.qmd) you use only one direction all the same. The way back is opened in [Challenge 4](../challenges/challenge-4.qmd).
+
+## The LED {#the-led}
+
+What looks like one lamp is really three: a red one, a green one and a blue one, packed so closely together that your eye cannot separate them. You tell each of the three how brightly to shine, as a number from 0 (off) to 255 (full brightness). Because they sit so close, you do not see three lights but one mixed colour.
+
+Three numbers, then, and every combination you can reliably recognise on the other side is a sign you can send. Red at full brightness with the other two off gives you red. All three at full gives you white. All three at zero is dark. Red at full with a little blue mixed in is a colour that has no everyday name, and it is just as good a sign as the others, provided the eye across the table can tell it from its neighbours.
+
+How fast the LED can switch from one colour to the next, and what the sensor sees during the switch, is not written in any datasheet you should trust. It is one of the first things worth measuring.
+
+## The colour sensor {#the-colour-sensor}
+
+### What the sensor actually measures
+
+In front of the sensor sit tiny colour filters. One lets through mostly red light, one mostly green, one mostly blue. Behind each filter the light that gets through is counted. So you get three numbers that say how much red, green and blue is falling on the sensor right now.
+
+The word "mostly" matters. The filters do not separate cleanly. Some green light gets through the red filter too. That is why red light does not give you one high number and two zeros. All three values are above zero, just in different proportions.
+
+### Four channels, not three
+
+Next to the three colour values there is a fourth, the **clear channel**. It sits behind no filter and simply counts all the light. That makes it more sensitive than the other three, and often the most useful of the four when all you want to tell apart is brightness.
+
+So every reading is four numbers: red, green, blue, clear. Keep the fourth one in view. Many teams ignore it and give away signal for nothing.
+
+### The lamp on the sensor board
+
+The sensor board carries a small white lamp of its own. It is meant for measuring the colour of surfaces, where you have to light the object first. For your device it is a source of stray light and nothing else. Leave it off.
+
+### Integration time and gain
+
+The sensor has two settings, and they are the central trade-off of the whole project.
+
+The **integration time** is how long the sensor collects light before it reports a number. You can choose between five values, from about 2 milliseconds to 700 milliseconds. A long time gives calm, steady numbers, because random flicker averages out. It also means fewer readings per second: at 700 milliseconds you get little more than one reading a second, and your symbols cannot come faster than that. A short time gives many readings per second, but each one is noisier.
+
+The **gain** is how strongly the sensor amplifies what it collects. You can choose between four steps, from 1 to 60. A high gain makes a weak signal visible, but it also makes the numbers hit the top of their range sooner, at which point bright and very bright look the same.
+
+Out of the box the module `lifi_hardware` sets a medium-long integration time and a gain of 16, which is a safe place to start and almost certainly not where you will end up. The two settings are deliberately easy to change, and you should change them and measure what happens. The page on [the module](../software/lifi-hardware.qmd) shows where.
+
+### The numbers do not come back the way you sent them
+
+When you give the LED the values (255, 0, 60), the sensor reports something completely different. That is not a bug. Its numbers depend not only on the light that was sent but also on how far away it is, how bright the room is, and how you have set gain and integration time. There is no way to calculate backwards. How you transmit reliably all the same is the subject of [Challenge 1](../challenges/challenge-1.qmd).
+
+## Optical setup {#optical-setup}
+
+Between the two devices you may build things yourself, and you should: tubes, apertures, reflectors, lenses. A good light channel is one of the most effective levers in the whole project.
+
+### Rules
+
+**Allowed** is anything passive: pipes, cardboard, paint, aluminium foil, mirrors, lenses, acrylic rods, clamps, stands, 3D-printed parts.
+
+**Not allowed** are additional sensors, additional light sources, lasers, or swapping out the LED or the colour sensor.
+
+**Budget:** building is optional, and if your team builds, the material may be worth at most 10 euros, which you pay yourselves because there is no reimbursement. Document what you built with a photo and a short explanation of why you built it that way.
+
+### The fixed distance
+
+The distance between the front of the lamp and the front of the eye is fixed and the same for everyone. It is chosen so that a bare device just about works and a good light channel makes a real difference.
+
 <!-- TODO: Wert eintragen, sobald die Pilotmessung erfolgt ist -->
-</section>
-<section id="before-you-buy-anything" class="level3">
-<h3 class="anchored" data-anchor-id="before-you-buy-anything">Before you buy anything</h3>
-<p>First measure what your setup manages without any aids. In our experience an inside wall painted matt black does more than a bought lens.</p>
-</section>
-</section>
-<section id="the-case" class="level2">
-<h2 class="anchored" data-anchor-id="the-case">The case</h2>
-<p>The case is 3D-printed in two parts: the tray, with the front wall built in, and the lid. The source is a parametric OpenSCAD file: <a href="../assets/hardware/lifi-device-case.scad">lifi-device-case.scad</a>. It is released under CC0, so you may use and change it without any conditions.</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="../assets/cc-zero-88x31.png" class="img-fluid figure-img"></p>
-<figcaption>CC0 1.0</figcaption>
-</figure>
-</div>
-<section id="parts-list" class="level3">
-<h3 class="anchored" data-anchor-id="parts-list">Parts list</h3>
-<p>Everything that goes into one device. The kits come assembled. You need the list when something has to be replaced or you want to build a device of your own.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Qty</th>
-<th>Part</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td><a href="https://www.tinkerforge.com/en/shop/master-brick.html">Master Brick</a> (Tinkerforge)</td>
-<td>connects the Bricklets to the laptop over USB-C; <a href="https://www.tinkerforge.com/en/doc/Hardware/Bricks/Master_Brick.html">documentation</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1</td>
-<td><a href="https://www.tinkerforge.com/en/shop/rgb-led-v2-bricklet.html">RGB LED Bricklet 2.0</a></td>
-<td>the sender; <a href="https://www.tinkerforge.com/en/doc/Hardware/Bricklets/RGB_LED_V2.html">documentation</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td><a href="https://www.tinkerforge.com/en/shop/color-v2-bricklet.html">Color Bricklet 2.0</a></td>
-<td>the receiver, measures red, green, blue and clear; <a href="https://www.tinkerforge.com/en/doc/Hardware/Bricklets/Color_V2.html">documentation</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td><a href="https://www.tinkerforge.com/en/shop/accessories/cable/bricklet-cable-15cm-7p-7p.html">Bricklet cable, 7-pin, 15 cm</a></td>
-<td>Bricklets to the Master Brick</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td><a href="https://shop.tinkerforge.com/en/accessories/cable/usb-a-to-usb-c-cable-100cm.html">USB-A to USB-C cable, 100 cm</a> (Tinkerforge)</td>
-<td>device to laptop; any other USB-C data cable works too</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1</td>
-<td><a href="https://www.tinkerforge.com/en/shop/accessories/mounting/mounting-kit-12mm.html">Mounting kit 12 mm</a> (Tinkerforge)</td>
-<td>all the small parts for Brick and Bricklets: the four 10 mm spacers (threaded inside at both ends) for the Master Brick, eight M3 screws (four for the Bricklets at the front, four for the Brick on the spacers), eight nuts and washers</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4</td>
-<td>Screw M3 × 8, countersunk, DIN 965 (<a href="https://www.amazon.de/s?k=M3x8+Senkkopf+DIN+965">search</a>)</td>
-<td>from below through the floor into the spacers; countersunk so the heads sit flush in the recesses (the pan-head screws from the kit would stick out)</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td>Thread-forming screw EJOT Delta PT WN 5454, countersunk 3.0 × 8, Torx (<a href="https://dw-bendler.de/shop/public/FE-Schraube-EJOT-Delta-PT-WN5454-Senkkopf-3-0x8-Innensechsrund-Antrieb-verzinkt/SW34172">DW Bendler, SW34172</a>)</td>
-<td>for the lid; made to form their thread in plastic, not sheet-metal screws</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4</td>
-<td>Self-adhesive rubber foot, Ø 10 × 3 mm, black (<a href="https://www.reichelt.com/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081">Delock 18309 at Reichelt</a>, pack of 50)</td>
-<td>into the recesses on the underside</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td>Printed parts, tray and lid</td>
-<td>STL files below, black matt filament</td>
-</tr>
-</tbody>
-</table>
-<p>The Tinkerforge links go straight to the maker’s shop. The search links for the standard parts are examples; any hardware or electronics shop carries them.</p>
-</section>
-<section id="the-3d-model" class="level3">
-<h3 class="anchored" data-anchor-id="the-3d-model">The 3D model</h3>
-<p>Both printed parts, to look at: drag to turn, scroll to zoom.</p>
+<!--
+
+### Before you buy anything
+
+First measure what your setup manages without any aids. In our experience an inside wall painted matt black does more than a bought lens.
+
+## The case {#the-case}
+
+The case is 3D-printed in two parts: the tray, with the front wall built in, and the lid. The source is a parametric OpenSCAD file: [lifi-device-case.scad](../assets/hardware/lifi-device-case.scad). It is released under CC0, so you may use and change it without any conditions.
+
+[![CC0 1.0](../assets/cc-zero-88x31.png){fig-align="left"}](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
+
+### Parts list
+
+Everything that goes into one device. The kits come assembled. You need the list when something has to be replaced or you want to build a device of your own.
+
+| Qty | Part | Note |
+|---:|----|--------|
+| 1 | [Master Brick](https://www.tinkerforge.com/en/shop/master-brick.html) (Tinkerforge) | connects the Bricklets to the laptop over USB-C; [documentation](https://www.tinkerforge.com/en/doc/Hardware/Bricks/Master_Brick.html) |
+| 1 | [RGB LED Bricklet 2.0](https://www.tinkerforge.com/en/shop/rgb-led-v2-bricklet.html) | the sender; [documentation](https://www.tinkerforge.com/en/doc/Hardware/Bricklets/RGB_LED_V2.html) |
+| 1 | [Color Bricklet 2.0](https://www.tinkerforge.com/en/shop/color-v2-bricklet.html) | the receiver, measures red, green, blue and clear; [documentation](https://www.tinkerforge.com/en/doc/Hardware/Bricklets/Color_V2.html) |
+| 2 | [Bricklet cable, 7-pin, 15 cm](https://www.tinkerforge.com/en/shop/accessories/cable/bricklet-cable-15cm-7p-7p.html) | Bricklets to the Master Brick |
+| 1 | [USB-A to USB-C cable, 100 cm](https://shop.tinkerforge.com/en/accessories/cable/usb-a-to-usb-c-cable-100cm.html) (Tinkerforge) | device to laptop; any other USB-C data cable works too |
+| 1 | [Mounting kit 12 mm](https://www.tinkerforge.com/en/shop/accessories/mounting/mounting-kit-12mm.html) (Tinkerforge) | all the small parts for Brick and Bricklets: the four 10 mm spacers (threaded inside at both ends) for the Master Brick, eight M3 screws (four for the Bricklets at the front, four for the Brick on the spacers), eight nuts and washers |
+| 4 | Screw M3 × 8, countersunk, DIN 965 ([search](https://www.amazon.de/s?k=M3x8+Senkkopf+DIN+965)) | from below through the floor into the spacers; countersunk so the heads sit flush in the recesses (the pan-head screws from the kit would stick out) |
+| 4 | Thread-forming screw EJOT Delta PT WN 5454, countersunk 3.0 × 8, Torx ([DW Bendler, SW34172](https://dw-bendler.de/shop/public/FE-Schraube-EJOT-Delta-PT-WN5454-Senkkopf-3-0x8-Innensechsrund-Antrieb-verzinkt/SW34172)) | for the lid; made to form their thread in plastic, not sheet-metal screws |
+| 4 | Self-adhesive rubber foot, Ø 10 × 3 mm, black ([Delock 18309 at Reichelt](https://www.reichelt.com/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081), pack of 50) | into the recesses on the underside |
+| 2 | Printed parts, tray and lid | STL files below, black matt filament |
+
+The Tinkerforge links go straight to the maker's shop. The search links for the standard parts are examples; any hardware or electronics shop carries them.
+
+### The 3D model
+
+Both printed parts, to look at: drag to turn, scroll to zoom.
+
+```{=html}
 <div class="stl-zeile">
-  <figure class="figure"><div id="stl-wanne" class="stl-viewer"></div><figcaption>Tray with front wall and septum</figcaption></figure>
-  <figure class="figure"><div id="stl-deckel" class="stl-viewer"></div><figcaption>Lid</figcaption></figure>
+  <figure><div id="stl-wanne" class="stl-viewer"></div><figcaption>Tray with front wall and septum</figcaption></figure>
+  <figure><div id="stl-deckel" class="stl-viewer"></div><figcaption>Lid</figcaption></figure>
 </div>
 <style>
   .stl-zeile { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -693,57 +624,34 @@ Figure&nbsp;1: Your device from the front. On the left the colour sensor, on the
   zeige("stl-wanne", "../assets/hardware/lifi-device-case-wanne.stl");
   zeige("stl-deckel", "../assets/hardware/lifi-device-case-deckel.stl");
 </script>
-<p>To download and print yourself:</p>
-<ul>
-<li><a href="../assets/hardware/lifi-device-case-wanne.stl">Tray (STL)</a></li>
-<li><a href="../assets/hardware/lifi-device-case-deckel.stl">Lid (STL)</a></li>
-</ul>
-</section>
-<section id="printing" class="level3">
-<h3 class="anchored" data-anchor-id="printing">Printing</h3>
-<p>Print the tray with the open side up, the lid flat. Recommended: black, matt filament (PETG or PLA), 0.2 mm layer height, at least 4 perimeters so the screw bosses are solid. Only the septum protruding from the front needs support. Inside there are deliberately no cavities the slicer would have to support.</p>
-</section>
-<section id="assembly" class="level3">
-<h3 class="anchored" data-anchor-id="assembly">Assembly</h3>
-<ol type="1">
-<li>Screw the four 10 mm spacers from the mounting kit in from below through the floor (M3 × 8 countersunk, the heads disappear into the recesses), then screw the Master Brick onto the spacers from above with four kit screws.</li>
-<li>Set the LED and colour sensor Bricklets into their mounts from the front and fasten each with two kit screws. Hold the kit nuts against them from inside, with your fingers or a small spanner. The inside is still open at this point.</li>
-<li>Run the Bricklet cables through the slots below the mounts to the Master Brick, and plug the USB-C cable in through the slot in the back wall.</li>
-<li>Put the lid on and fasten it with the four thread-forming screws. The very first time, turn them in by hand, not with a power screwdriver: they cut their own thread into the bosses as they go.</li>
-<li>Stick the rubber feet into the four recesses on the underside.</li>
-</ol>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-device-from-above" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The box held in a hand, tilted so that the front wall with the two circuit boards faces up. White connectors with black cables sit below each board, the septum rises between them, and two flat screw heads are set into the floor.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-device-from-above-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/hardware/device-from-above.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Front wall up, floor towards you. The two Bricklets sit in their mounts, their cables run down through the slots below them, and the countersunk screws in the floor hold the spacers that carry the Master Brick inside."><img src="../assets/hardware/device-from-above.jpg" class="img-fluid figure-img" alt="The box held in a hand, tilted so that the front wall with the two circuit boards faces up. White connectors with black cables sit below each board, the septum rises between them, and two flat screw heads are set into the floor."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-device-from-above-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Front wall up, floor towards you. The two Bricklets sit in their mounts, their cables run down through the slots below them, and the countersunk screws in the floor hold the spacers that carry the Master Brick inside.
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-device-back" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The back of the black box on a wooden table. A wide slot near the bottom shows a circuit board with a blue light; a black USB cable is plugged in through the slot.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-device-back-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/hardware/device-back.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: The back wall. The USB-C cable goes in through the slot, and through the same slot you can see the Master Brick inside."><img src="../assets/hardware/device-back.jpg" class="img-fluid figure-img" alt="The back of the black box on a wooden table. A wide slot near the bottom shows a circuit board with a blue light; a black USB cable is plugged in through the slot."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-device-back-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: The back wall. The USB-C cable goes in through the slot, and through the same slot you can see the Master Brick inside.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
+```
+
+To download and print yourself:
+
+- [Tray (STL)](../assets/hardware/lifi-device-case-wanne.stl)
+- [Lid (STL)](../assets/hardware/lifi-device-case-deckel.stl)
+
+### Printing
+
+Print the tray with the open side up, the lid flat. Recommended: black, matt filament (PETG or PLA), 0.2 mm layer height, at least 4 perimeters so the screw bosses are solid. Only the septum protruding from the front needs support. Inside there are deliberately no cavities the slicer would have to support.
+
+### Assembly
+
+1. Screw the four 10 mm spacers from the mounting kit in from below through the floor (M3 × 8 countersunk, the heads disappear into the recesses), then screw the Master Brick onto the spacers from above with four kit screws.
+2. Set the LED and colour sensor Bricklets into their mounts from the front and fasten each with two kit screws. Hold the kit nuts against them from inside, with your fingers or a small spanner. The inside is still open at this point.
+3. Run the Bricklet cables through the slots below the mounts to the Master Brick, and plug the USB-C cable in through the slot in the back wall.
+4. Put the lid on and fasten it with the four thread-forming screws. The very first time, turn them in by hand, not with a power screwdriver: they cut their own thread into the bosses as they go.
+5. Stick the rubber feet into the four recesses on the underside.
+
+::: {layout-ncol=2}
+![Front wall up, floor towards you. The two Bricklets sit in their mounts, their cables run down through the slots below them, and the countersunk screws in the floor hold the spacers that carry the Master Brick inside.](../assets/hardware/device-from-above.jpg){#fig-device-from-above fig-alt="The box held in a hand, tilted so that the front wall with the two circuit boards faces up. White connectors with black cables sit below each board, the septum rises between them, and two flat screw heads are set into the floor."}
+
+![The back wall. The USB-C cable goes in through the slot, and through the same slot you can see the Master Brick inside.](../assets/hardware/device-back.jpg){#fig-device-back fig-alt="The back of the black box on a wooden table. A wide slot near the bottom shows a circuit board with a blue light; a black USB cable is plugged in through the slot."}
+:::
+
+-->
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <!-- Übungsfragen: Seit Oktober 2026 ist die Übungsplattform classroom-live
@@ -1193,38 +1101,6 @@ Figure&nbsp;3: The back wall. The USB-C cable goes in through the slot, and thro
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
