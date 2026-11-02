@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -446,37 +411,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#what-each-program-does" id="toc-what-each-program-does" class="nav-link active" data-scroll-target="#what-each-program-does">What each program does</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">The slides</a></li>
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation step by step</a></li>
-  <li><a href="#part-1-until-your-assistant-runs" id="toc-part-1-until-your-assistant-runs" class="nav-link" data-scroll-target="#part-1-until-your-assistant-runs">Part 1: until your assistant runs</a>
-  <ul class="collapse">
-  <li><a href="#opencode" id="toc-opencode" class="nav-link" data-scroll-target="#opencode">1. OpenCode</a></li>
-  <li><a href="#course-folder" id="toc-course-folder" class="nav-link" data-scroll-target="#course-folder">2. The course folder</a></li>
-  <li><a href="#open-the-folder-and-start" id="toc-open-the-folder-and-start" class="nav-link" data-scroll-target="#open-the-folder-and-start">3. Open the folder and start</a></li>
-  </ul></li>
-  <li><a href="#part-2-your-assistant-takes-over" id="toc-part-2-your-assistant-takes-over" class="nav-link" data-scroll-target="#part-2-your-assistant-takes-over">Part 2: your assistant takes over</a>
-  <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code">Visual Studio Code</a></li>
-  <li><a href="#brick-daemon-and-brick-viewer" id="toc-brick-daemon-and-brick-viewer" class="nav-link" data-scroll-target="#brick-daemon-and-brick-viewer">Brick Daemon and Brick Viewer</a></li>
-  <li><a href="#the-module-lifi_hardware" id="toc-the-module-lifi_hardware" class="nav-link" data-scroll-target="#the-module-lifi_hardware">The module <code>lifi_hardware</code></a></li>
-  <li><a href="#check-that-everything-works-together" id="toc-check-that-everything-works-together" class="nav-link" data-scroll-target="#check-that-everything-works-together">Check that everything works together</a></li>
-  </ul></li>
-  <li><a href="#getting-updates" id="toc-getting-updates" class="nav-link" data-scroll-target="#getting-updates">Getting updates</a></li>
-  <li><a href="#alternatives" id="toc-alternatives" class="nav-link" data-scroll-target="#alternatives">Alternatives</a>
-  <ul class="collapse">
-  <li><a href="#with-git" id="toc-with-git" class="nav-link" data-scroll-target="#with-git">The course folder with Git</a></li>
-  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">OpenCode in the terminal</a></li>
-  </ul></li>
-  <li><a href="#when-something-does-not-work" id="toc-when-something-does-not-work" class="nav-link" data-scroll-target="#when-something-does-not-work">When something does not work</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -500,226 +436,264 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Five programs have to be on your laptop before your first line of code. All of them are free, and all of them run on Windows and on macOS. You install only the first one by hand. Your assistant helps you with the other four.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Program</th>
-<th>What you need it for</th>
-<th>Where to get it</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>OpenCode</strong></td>
-<td>your AI assistant</td>
-<td><a href="https://opencode.ai/download">opencode.ai/download</a></td>
-</tr>
-<tr class="even">
-<td><strong>Python</strong></td>
-<td>the language you program in</td>
-<td><a href="https://www.python.org/downloads/">python.org</a></td>
-</tr>
-<tr class="odd">
-<td><strong>Visual Studio Code</strong></td>
-<td>the editor you write in</td>
-<td><a href="https://code.visualstudio.com/">code.visualstudio.com</a></td>
-</tr>
-<tr class="even">
-<td><strong>Brick Daemon</strong></td>
-<td>connects your hardware to the laptop</td>
-<td><a href="https://www.tinkerforge.com/en/doc/Downloads.html">Tinkerforge downloads</a></td>
-</tr>
-<tr class="odd">
-<td><strong>Brick Viewer</strong></td>
-<td>shows whether the hardware is recognised, and helps you find faults</td>
-<td><a href="https://www.tinkerforge.com/en/doc/Downloads.html">Tinkerforge downloads</a></td>
-</tr>
-</tbody>
-</table>
-<p>On top of these comes the module <code>lifi_hardware</code>, which is how your programs talk to your device. It is installed with a single command and brings the Tinkerforge library with it.</p>
-<section id="what-each-program-does" class="level2">
-<h2 class="anchored" data-anchor-id="what-each-program-does">What each program does</h2>
-<p><strong>OpenCode</strong> is the AI assistant. It reads and changes the files in your course folder, runs commands for you when you allow it, and knows this course. How to work with it is on <a href="../ai/index.html">its own page</a>.</p>
-<p><strong>Python</strong> is the language you write your sender and receiver in. It reads almost like English, which makes it a good first language, but it is not a toy. Python is one of the most widely used languages there are: data analysis, artificial intelligence, automation, scientific computing and a large part of the web run on it. What you learn here you can use straight away elsewhere.</p>
-<p><strong>Visual Studio Code</strong> is the editor. This is where you write your code, where you see your files, and where the terminal lives in which you start your programs.</p>
-<p><strong>Brick Daemon</strong> is a background program. It runs invisibly and translates between the hardware on the USB port and your Python programs. Without it your program cannot find the device. When one day nothing works at all, “is the Brick Daemon even running?” is one of the first questions to ask.</p>
-<p><strong>Brick Viewer</strong> is a window onto your hardware. It shows you which parts are recognised, lets you switch the LED by hand and watch the sensor values run, all without a line of your own code. For finding faults it is worth gold: if it works in the Brick Viewer, the fault is in your program. If it does not, the fault is somewhere before your program.</p>
-<p><strong>Git</strong> you do not need. It is a tool for keeping track of versions of files, and if you already know it, you can use it to fetch the course folder instead of the ZIP. That way is described <a href="#with-git">at the end of this page</a>.</p>
-</section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">The slides</h2>
-<p>These are the slides we go through together in the first session, “first light”. They show the whole setup at a glance, from your device to the green LED. The details for every step follow below.</p>
+<div class="moved-notice" role="note"><p class="moved-head">This page has moved</p><p class="moved-text">Required Software now lives on Hands-on Computer Science, where it is kept up to date. This page is no longer maintained, so please use the new one, in English or in German.</p><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/lifi-software/" lang="en"><span class="moved-lang">English</span>Required Software on Hands-on Computer Science</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/lifi-software/" lang="de"><span class="moved-lang">Deutsch</span>Required Software auf Hands-on Computer Science</a></div></div>
+<!-- Moved to Hands-on Computer Science on 2026-11-02; the previous content is kept below, commented out.
+
+Five programs have to be on your laptop before your first line of code. All of them are free, and all of them run on Windows and on macOS. You install only the first one by hand. Your assistant helps you with the other four.
+
+| Program | What you need it for | Where to get it |
+|---|---|---|
+| **OpenCode** | your AI assistant | [opencode.ai/download](https://opencode.ai/download) |
+| **Python** | the language you program in | [python.org](https://www.python.org/downloads/) |
+| **Visual Studio Code** | the editor you write in | [code.visualstudio.com](https://code.visualstudio.com/) |
+| **Brick Daemon** | connects your hardware to the laptop | [Tinkerforge downloads](https://www.tinkerforge.com/en/doc/Downloads.html) |
+| **Brick Viewer** | shows whether the hardware is recognised, and helps you find faults | [Tinkerforge downloads](https://www.tinkerforge.com/en/doc/Downloads.html) |
+
+On top of these comes the module `lifi_hardware`, which is how your programs talk to your device. It is installed with a single command and brings the Tinkerforge library with it.
+
+## What each program does
+
+**OpenCode** is the AI assistant. It reads and changes the files in your course folder, runs commands for you when you allow it, and knows this course. How to work with it is on [its own page](../ai/index.qmd).
+
+**Python** is the language you write your sender and receiver in. It reads almost like English, which makes it a good first language, but it is not a toy. Python is one of the most widely used languages there are: data analysis, artificial intelligence, automation, scientific computing and a large part of the web run on it. What you learn here you can use straight away elsewhere.
+
+**Visual Studio Code** is the editor. This is where you write your code, where you see your files, and where the terminal lives in which you start your programs.
+
+**Brick Daemon** is a background program. It runs invisibly and translates between the hardware on the USB port and your Python programs. Without it your program cannot find the device. When one day nothing works at all, "is the Brick Daemon even running?" is one of the first questions to ask.
+
+**Brick Viewer** is a window onto your hardware. It shows you which parts are recognised, lets you switch the LED by hand and watch the sensor values run, all without a line of your own code. For finding faults it is worth gold: if it works in the Brick Viewer, the fault is in your program. If it does not, the fault is somewhere before your program.
+
+**Git** you do not need. It is a tool for keeping track of versions of files, and if you already know it, you can use it to fetch the course folder instead of the ZIP. That way is described [at the end of this page](#with-git).
+
+## The slides {#slides}
+
+These are the slides we go through together in the first session, "first light". They show the whole setup at a glance, from your device to the green LED. The details for every step follow below.
+
+```{=html}
 <div class="deck-embed">
-  <iframe src="../assets/decks/first-light/first-light.html?bar=1&amp;pdf=../first-light.pdf" title="first light" allowfullscreen="" loading="lazy"></iframe>
+  <iframe src="../assets/decks/first-light/first-light.html?bar=1&pdf=../first-light.pdf"
+          title="first light" allowfullscreen loading="lazy"></iframe>
 </div>
-</section>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation step by step</h2>
-<p>The installation has two parts. In the first part you do three things by hand. That is the minimum your assistant needs to run. In the second part your assistant takes over: with the command <code>/onboarding</code> it installs the rest together with you and checks every step on your laptop.</p>
-<p>Every step of the second part is also described here by hand, so you can look something up or do it yourself.</p>
-</section>
-<section id="part-1-until-your-assistant-runs" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-until-your-assistant-runs">Part 1: until your assistant runs</h2>
-<section id="opencode" class="level3">
-<h3 class="anchored" data-anchor-id="opencode">1. OpenCode</h3>
-<p>Download the desktop app from <a href="https://opencode.ai/download">opencode.ai/download</a> and install it like any other program.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Download the Windows installer, run it and follow the steps.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Download the version for your Mac: <em>Apple Silicon</em> if your Mac has an M chip, <em>Intel</em> otherwise. You find out under Apple menu &gt; <em>About This Mac</em>: the line <em>Chip</em> says Apple M1, M2 and so on. Open the downloaded file and drag OpenCode into the Applications folder.</p>
-</div>
-</div>
-</div>
-<p>If you prefer working in a terminal, there is also a terminal version. It is described <a href="#terminal">at the end of this page</a>.</p>
-</section>
-<section id="course-folder" class="level3">
-<h3 class="anchored" data-anchor-id="course-folder">2. The course folder</h3>
-<p>The course folder holds everything your assistant needs to know about this module, and it is the folder you work in for the rest of the semester.</p>
-<ol type="1">
-<li>Open <a href="https://github.com/winf-hsos/lifi-project">github.com/winf-hsos/lifi-project</a>, click the green button <strong>Code</strong> and then <strong>Download ZIP</strong>. Or download it directly: <a href="https://github.com/winf-hsos/lifi-project/archive/refs/heads/main.zip">lifi-project-main.zip</a>.</li>
-<li>Unpack the ZIP file. On <strong>Windows</strong>: right-click it, choose <em>Extract All</em>, confirm. On <strong>macOS</strong>: double-click it.</li>
-<li>You now have a folder <code>lifi-project-main</code>. Move it to a place where you will find it again, for example your <em>Documents</em> folder. You may rename it to <code>lifi-project</code>.</li>
-</ol>
-<p>On Windows, watch out for one trap: if you only double-click the ZIP file, Windows shows you its contents as if it were a folder, but nothing is unpacked. Your assistant cannot work in there. Always use <em>Extract All</em>.</p>
-<p>Inside the folder you will see:</p>
-<ul>
-<li><code>my-code</code>: <strong>your folder.</strong> Everything you write goes here, and your copy of each challenge lands here.</li>
-<li><code>course</code>: the course material. Your assistant reads it; you do not change it.</li>
-<li>a few more files for OpenCode, which you can ignore.</li>
-</ul>
-</section>
-<section id="open-the-folder-and-start" class="level3">
-<h3 class="anchored" data-anchor-id="open-the-folder-and-start">3. Open the folder and start</h3>
-<p>Start OpenCode. On its start page you see a list <strong>Projects</strong> on the left.</p>
-<ol type="1">
-<li><strong>Add your course folder.</strong> Click the small folder icon with the plus next to <em>Projects</em> (its tooltip says <em>Add project</em>). A window opens: select your course folder, <code>lifi-project-main</code> or <code>lifi-project</code>, and click <em>Select Folder</em>. It now appears in the list of projects.</li>
-<li><strong>Start a session.</strong> Click <strong>New session</strong>. Below the input field you see the model your course folder has selected for you: the course model from OpenAI. It needs the course key, which comes next.</li>
-</ol>
-<p><strong>The course key.</strong> You find it in ILIAS, a long line of characters. You enter it in OpenCode: click <strong>Settings</strong> below the list of projects, then <strong>Providers</strong> on the left. At the provider the key is for, click <strong>+ Connect</strong> (if it is not in the list, click <em>Show more providers</em> first), choose <strong>API key</strong> and paste it. A key costs money every time the assistant answers, so treat it like a password: do not send it to anyone and do not paste it into a chat, not even the one with your assistant.</p>
-</section>
-</section>
-<section id="part-2-your-assistant-takes-over" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-your-assistant-takes-over">Part 2: your assistant takes over</h2>
-<p>In the new session, type</p>
-<pre><code>/onboarding</code></pre>
-<p>and press Enter. In the first session everyone does this together. Your assistant asks you three short questions and then installs the rest with you, one step at a time: Python, Visual Studio Code, the Brick Daemon and Brick Viewer, and the module <code>lifi_hardware</code>. Before it installs anything, it tells you what it is about to do and waits for your OK. At the end it tests your device: your LED lights up green, and the sensor reports its first readings.</p>
-<p>You do not need the instructions below for that. They describe the same steps by hand.</p>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">macOS</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Download the installer from <a href="https://www.python.org/downloads/">python.org/downloads</a> and run it.</p>
-<p><strong>Important:</strong> in the first window, tick <strong>“Add python.exe to PATH”</strong> before you click “Install Now”. Without that tick the command line will not find Python later, and this is by far the most common stumbling block.</p>
-<p>To check, open the <strong>Command Prompt</strong> and type</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A version number should appear, something like <code>Python 3.13.1</code>.</p>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>A Mac comes with an older Python preinstalled, but you should not use that one. Download the installer from <a href="https://www.python.org/downloads/">python.org/downloads</a> and run it.</p>
-<p>To check, open the <strong>Terminal</strong> and type</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A version number should appear, something like <code>Python 3.13.1</code>.</p>
-<p>Remember: on a Mac the command is <code>python3</code>, not <code>python</code>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="visual-studio-code" class="level3">
-<h3 class="anchored" data-anchor-id="visual-studio-code">Visual Studio Code</h3>
-<p>Download the editor from <a href="https://code.visualstudio.com/">code.visualstudio.com</a> and install it. On Windows you can also type <code>winget install --id Microsoft.VisualStudioCode -e</code> in a terminal; that is what your assistant does. Later, when you open your first Python file, it offers to install the Python extension. Accept.</p>
-<p>Two things to try right away:</p>
-<ul>
-<li><strong>Open a folder</strong> via <em>File &gt; Open Folder</em>. VS Code always works with a folder, not with single files.</li>
-<li><strong>Open a terminal</strong> via <em>Terminal &gt; New Terminal</em>. This window at the bottom of the editor is the command line where you start your programs.</li>
-</ul>
-<p>Then open your course folder in VS Code via <em>File &gt; Open Folder</em>. You write your programs in <code>my-code</code>.</p>
-</section>
-<section id="brick-daemon-and-brick-viewer" class="level3">
-<h3 class="anchored" data-anchor-id="brick-daemon-and-brick-viewer">Brick Daemon and Brick Viewer</h3>
-<p>You get both from the <a href="https://www.tinkerforge.com/en/doc/Downloads.html">Tinkerforge download page</a>. Download the version for your operating system and install it.</p>
-<p>On <strong>Windows</strong> these are two <code>.exe</code> installers, on <strong>macOS</strong> two <code>.dmg</code> packages that you open and drag into the Applications folder.</p>
-<p>The Brick Daemon starts by itself afterwards and keeps running as a background service. You do not see it, and that is normal.</p>
-</section>
-<section id="the-module-lifi_hardware" class="level3">
-<h3 class="anchored" data-anchor-id="the-module-lifi_hardware">The module <code>lifi_hardware</code></h3>
-<p>This is how your Python programs talk to the hardware. <code>/onboarding</code> installs it for you, and <code>/update-semester</code> updates it when a new version appears. By hand, in a terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install https://github.com/winf-hsos/lifi-hardware/archive/refs/heads/main.zip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>On a Mac, <code>pip3</code> instead of <code>pip</code> if needed. The package brings the Tinkerforge library along, so you do not install that separately.</p>
-</section>
-<section id="check-that-everything-works-together" class="level3">
-<h3 class="anchored" data-anchor-id="check-that-everything-works-together">Check that everything works together</h3>
-<p>Connect a device over USB and start the Brick Viewer. If your Master Brick shows up there with the LED and the colour sensor, the installation is complete. Click around and switch the LED on by hand. That is not programming yet, but it is proof that everything is talking to everything else.</p>
-</section>
-</section>
-<section id="getting-updates" class="level2">
-<h2 class="anchored" data-anchor-id="getting-updates">Getting updates</h2>
-<p>During the semester new material is added: new templates, new pages, sometimes a new version of <code>lifi_hardware</code>. When your lecturer says so, type <code>/update-semester</code> in OpenCode. Your assistant fetches the newest version of the course folder. Your folder <code>my-code</code> is never touched; everything else is replaced by the course version, so do not change it.</p>
-</section>
-<section id="alternatives" class="level2">
-<h2 class="anchored" data-anchor-id="alternatives">Alternatives</h2>
-<section id="with-git" class="level3">
-<h3 class="anchored" data-anchor-id="with-git">The course folder with Git</h3>
-<p>If you know Git, you can clone the course folder instead of downloading the ZIP. First install Git:</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">macOS</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p>Download Git from <a href="https://git-scm.com/downloads">git-scm.com/downloads</a> and install it. You can accept the installer’s defaults throughout.</p>
-<p>This also installs <strong>Git Bash</strong>, a terminal you need if you want the terminal version of OpenCode.</p>
-<p>To check, close VS Code completely and open it again (a program you just installed only becomes visible to VS Code after a restart), then open a terminal and type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>In the Terminal, simply type</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If Git is missing, macOS offers to install the Command Line Tools by itself. Accept and wait until it is done. Alternatively via <a href="https://brew.sh">Homebrew</a>: <code>brew install git</code>.</p>
-</div>
-</div>
-</div>
-<p>Then, in a terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/winf-hsos/lifi-project.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Everything else works the same way, and <code>/update-semester</code> notices that your folder is a Git clone. One rule: do not commit in this folder. The update resets it to the course version and removes commits made there. Your own work in <code>my-code</code> is not tracked by Git and stays untouched.</p>
-</section>
-<section id="terminal" class="level3">
-<h3 class="anchored" data-anchor-id="terminal">OpenCode in the terminal</h3>
-<p>Instead of the desktop app you can use OpenCode in a terminal, for example the one in VS Code.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">macOS</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<p>First make <strong>Git Bash</strong> the standard terminal of VS Code, once: press Ctrl+Shift+P, type <code>Terminal: Select Default Profile</code>, press Enter and choose <strong>Git Bash</strong>. OpenCode only works in this terminal, and this way every new terminal is a Git Bash. Then open a new terminal (<em>Terminal &gt; New Terminal</em>) and type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://opencode.ai/install <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<p>In the terminal in VS Code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://opencode.ai/install <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Alternatively via <a href="https://brew.sh">Homebrew</a>: <code>brew install sst/tap/opencode</code>.</p>
-</div>
-</div>
-</div>
-<p>To check, open a new terminal and type <code>opencode --version</code>. A version number should appear.</p>
-<p>Then change into your course folder in the terminal and start OpenCode with <code>opencode</code>. If you have a key, you enter it with the command <code>/connect</code>.</p>
-</section>
-</section>
-<section id="when-something-does-not-work" class="level2">
-<h2 class="anchored" data-anchor-id="when-something-does-not-work">When something does not work</h2>
-<p>The questions that help most often:</p>
-<ol type="1">
-<li>Is the Brick Daemon running? Without it no program finds the hardware.</li>
-<li>Does the Brick Viewer show your device? If not, the fault is before your code. Unplug the USB cable and plug it in again: that cures a surprising number of cases.</li>
-<li>Are you using <code>python</code> or <code>python3</code>, <code>pip</code> or <code>pip3</code>? On a Mac it is almost always the one with the 3.</li>
-</ol>
-<p>Or ask your assistant to check your setup. It runs the same test as in <code>/onboarding</code> and tells you what is missing.</p>
+```
+
+## Installation step by step {#installation}
+
+The installation has two parts. In the first part you do three things by hand. That is the minimum your assistant needs to run. In the second part your assistant takes over: with the command `/onboarding` it installs the rest together with you and checks every step on your laptop.
+
+Every step of the second part is also described here by hand, so you can look something up or do it yourself.
+
+## Part 1: until your assistant runs
+
+### 1. OpenCode
+
+Download the desktop app from [opencode.ai/download](https://opencode.ai/download) and install it like any other program.
+
+::: {.panel-tabset}
+
+#### Windows
+
+Download the Windows installer, run it and follow the steps.
+
+#### macOS
+
+Download the version for your Mac: *Apple Silicon* if your Mac has an M chip, *Intel* otherwise. You find out under Apple menu > *About This Mac*: the line *Chip* says Apple M1, M2 and so on. Open the downloaded file and drag OpenCode into the Applications folder.
+
+:::
+
+If you prefer working in a terminal, there is also a terminal version. It is described [at the end of this page](#terminal).
+
+### 2. The course folder {#course-folder}
+
+The course folder holds everything your assistant needs to know about this module, and it is the folder you work in for the rest of the semester.
+
+1. Open [github.com/winf-hsos/lifi-project](https://github.com/winf-hsos/lifi-project), click the green button **Code** and then **Download ZIP**. Or download it directly: [lifi-project-main.zip](https://github.com/winf-hsos/lifi-project/archive/refs/heads/main.zip).
+2. Unpack the ZIP file. On **Windows**: right-click it, choose *Extract All*, confirm. On **macOS**: double-click it.
+3. You now have a folder `lifi-project-main`. Move it to a place where you will find it again, for example your *Documents* folder. You may rename it to `lifi-project`.
+
+On Windows, watch out for one trap: if you only double-click the ZIP file, Windows shows you its contents as if it were a folder, but nothing is unpacked. Your assistant cannot work in there. Always use *Extract All*.
+
+Inside the folder you will see:
+
+- `my-code`: **your folder.** Everything you write goes here, and your copy of each challenge lands here.
+- `course`: the course material. Your assistant reads it; you do not change it.
+- a few more files for OpenCode, which you can ignore.
+
+### 3. Open the folder and start
+
+Start OpenCode. On its start page you see a list **Projects** on the left.
+
+1. **Add your course folder.** Click the small folder icon with the plus next to *Projects* (its tooltip says *Add project*). A window opens: select your course folder, `lifi-project-main` or `lifi-project`, and click *Select Folder*. It now appears in the list of projects.
+2. **Start a session.** Click **New session**. Below the input field you see the model your course folder has selected for you: the course model from OpenAI. It needs the course key, which comes next.
+
+**The course key.** You find it in ILIAS, a long line of characters. You enter it in OpenCode: click **Settings** below the list of projects, then **Providers** on the left. At the provider the key is for, click **+ Connect** (if it is not in the list, click *Show more providers* first), choose **API key** and paste it. A key costs money every time the assistant answers, so treat it like a password: do not send it to anyone and do not paste it into a chat, not even the one with your assistant.
+
+## Part 2: your assistant takes over
+
+In the new session, type
+
+```
+/onboarding
+```
+
+and press Enter. In the first session everyone does this together. Your assistant asks you three short questions and then installs the rest with you, one step at a time: Python, Visual Studio Code, the Brick Daemon and Brick Viewer, and the module `lifi_hardware`. Before it installs anything, it tells you what it is about to do and waits for your OK. At the end it tests your device: your LED lights up green, and the sensor reports its first readings.
+
+You do not need the instructions below for that. They describe the same steps by hand.
+
+### Python
+
+::: {.panel-tabset}
+
+#### Windows
+
+Download the installer from [python.org/downloads](https://www.python.org/downloads/) and run it.
+
+**Important:** in the first window, tick **"Add python.exe to PATH"** before you click "Install Now". Without that tick the command line will not find Python later, and this is by far the most common stumbling block.
+
+To check, open the **Command Prompt** and type
+
+```powershell
+python --version
+```
+
+A version number should appear, something like `Python 3.13.1`.
+
+#### macOS
+
+A Mac comes with an older Python preinstalled, but you should not use that one. Download the installer from [python.org/downloads](https://www.python.org/downloads/) and run it.
+
+To check, open the **Terminal** and type
+
+```bash
+python3 --version
+```
+
+A version number should appear, something like `Python 3.13.1`.
+
+Remember: on a Mac the command is `python3`, not `python`.
+
+:::
+
+### Visual Studio Code
+
+Download the editor from [code.visualstudio.com](https://code.visualstudio.com/) and install it. On Windows you can also type `winget install --id Microsoft.VisualStudioCode -e` in a terminal; that is what your assistant does. Later, when you open your first Python file, it offers to install the Python extension. Accept.
+
+Two things to try right away:
+
+- **Open a folder** via *File > Open Folder*. VS Code always works with a folder, not with single files.
+- **Open a terminal** via *Terminal > New Terminal*. This window at the bottom of the editor is the command line where you start your programs.
+
+Then open your course folder in VS Code via *File > Open Folder*. You write your programs in `my-code`.
+
+### Brick Daemon and Brick Viewer
+
+You get both from the [Tinkerforge download page](https://www.tinkerforge.com/en/doc/Downloads.html). Download the version for your operating system and install it.
+
+On **Windows** these are two `.exe` installers, on **macOS** two `.dmg` packages that you open and drag into the Applications folder.
+
+The Brick Daemon starts by itself afterwards and keeps running as a background service. You do not see it, and that is normal.
+
+### The module `lifi_hardware`
+
+This is how your Python programs talk to the hardware. `/onboarding` installs it for you, and `/update-semester` updates it when a new version appears. By hand, in a terminal:
+
+```bash
+pip install https://github.com/winf-hsos/lifi-hardware/archive/refs/heads/main.zip
+```
+
+On a Mac, `pip3` instead of `pip` if needed. The package brings the Tinkerforge library along, so you do not install that separately.
+
+### Check that everything works together
+
+Connect a device over USB and start the Brick Viewer. If your Master Brick shows up there with the LED and the colour sensor, the installation is complete. Click around and switch the LED on by hand. That is not programming yet, but it is proof that everything is talking to everything else.
+
+## Getting updates
+
+During the semester new material is added: new templates, new pages, sometimes a new version of `lifi_hardware`. When your lecturer says so, type `/update-semester` in OpenCode. Your assistant fetches the newest version of the course folder. Your folder `my-code` is never touched; everything else is replaced by the course version, so do not change it.
+
+## Alternatives
+
+### The course folder with Git {#with-git}
+
+If you know Git, you can clone the course folder instead of downloading the ZIP. First install Git:
+
+::: {.panel-tabset}
+
+#### Windows
+
+Download Git from [git-scm.com/downloads](https://git-scm.com/downloads) and install it. You can accept the installer's defaults throughout.
+
+This also installs **Git Bash**, a terminal you need if you want the terminal version of OpenCode.
+
+To check, close VS Code completely and open it again (a program you just installed only becomes visible to VS Code after a restart), then open a terminal and type:
+
+```powershell
+git --version
+```
+
+#### macOS
+
+In the Terminal, simply type
+
+```bash
+git --version
+```
+
+If Git is missing, macOS offers to install the Command Line Tools by itself. Accept and wait until it is done. Alternatively via [Homebrew](https://brew.sh): `brew install git`.
+
+:::
+
+Then, in a terminal:
+
+```bash
+git clone https://github.com/winf-hsos/lifi-project.git
+```
+
+Everything else works the same way, and `/update-semester` notices that your folder is a Git clone. One rule: do not commit in this folder. The update resets it to the course version and removes commits made there. Your own work in `my-code` is not tracked by Git and stays untouched.
+
+### OpenCode in the terminal {#terminal}
+
+Instead of the desktop app you can use OpenCode in a terminal, for example the one in VS Code.
+
+::: {.panel-tabset}
+
+#### Windows
+
+First make **Git Bash** the standard terminal of VS Code, once: press Ctrl+Shift+P, type `Terminal: Select Default Profile`, press Enter and choose **Git Bash**. OpenCode only works in this terminal, and this way every new terminal is a Git Bash. Then open a new terminal (*Terminal > New Terminal*) and type:
+
+```bash
+curl -fsSL https://opencode.ai/install | bash
+```
+
+#### macOS
+
+In the terminal in VS Code:
+
+```bash
+curl -fsSL https://opencode.ai/install | bash
+```
+
+Alternatively via [Homebrew](https://brew.sh): `brew install sst/tap/opencode`.
+
+:::
+
+To check, open a new terminal and type `opencode --version`. A version number should appear.
 
 
-</section>
+Then change into your course folder in the terminal and start OpenCode with `opencode`. If you have a key, you enter it with the command `/connect`.
+
+## When something does not work
+
+The questions that help most often:
+
+1. Is the Brick Daemon running? Without it no program finds the hardware.
+2. Does the Brick Viewer show your device? If not, the fault is before your code. Unplug the USB cable and plug it in again: that cures a surprising number of cases.
+3. Are you using `python` or `python3`, `pip` or `pip3`? On a Mac it is almost always the one with the 3.
+
+Or ask your assistant to check your setup. It runs the same test as in `/onboarding` and tells you what is missing.
+
+-->
+
+
 
 </main> <!-- /main -->
 <!-- Übungsfragen: Seit Oktober 2026 ist die Übungsplattform classroom-live
