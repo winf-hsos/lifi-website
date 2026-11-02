@@ -417,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#the-task" id="toc-the-task" class="nav-link active" data-scroll-target="#the-task">The task</a></li>
-  <li><a href="#why-only-2-kb" id="toc-why-only-2-kb" class="nav-link" data-scroll-target="#why-only-2-kb">Why only 2 KB</a></li>
+  <li><a href="#why-only-2-kib" id="toc-why-only-2-kib" class="nav-link" data-scroll-target="#why-only-2-kib">Why only 2 KiB</a></li>
   <li><a href="#the-shared-frame-and-what-is-yours" id="toc-the-shared-frame-and-what-is-yours" class="nav-link" data-scroll-target="#the-shared-frame-and-what-is-yours">The shared frame, and what is yours</a></li>
   <li><a href="#the-type-field-data-alone-means-nothing" id="toc-the-type-field-data-alone-means-nothing" class="nav-link" data-scroll-target="#the-type-field-data-alone-means-nothing">The type field: data alone means nothing</a></li>
   <li><a href="#nothing-in-the-frame-says-anything-about-time" id="toc-nothing-in-the-frame-says-anything-about-time" class="nav-link" data-scroll-target="#nothing-in-the-frame-says-anything-about-time">Nothing in the frame says anything about time</a></li>
@@ -463,14 +463,14 @@ ul.task-list li input[type="checkbox"] {
 <p>For the first time you transmit something whose content you do not know in advance, and for the first time every second counts.</p>
 <section id="the-task" class="level2">
 <h2 class="anchored" data-anchor-id="the-task">The task</h2>
-<p>You get a file of at most 2 KB. You do not know what is in it, and you do not know what kind of file it is. It may be a small picture, a text, or something else from the set of types your class has agreed on.</p>
+<p>You get a file of at most 2 KiB, that is 2048 bytes. You do not know what is in it, and you do not know what kind of file it is. It may be a small picture, a text, or something else from the set of types your class has agreed on.</p>
 <p>So your program has to recognise the type from the file, send it along in the header of the transmission, and the receiver has to open the file accordingly at the end.</p>
 <p>The file has to arrive <strong>byte for byte</strong>, exactly as it was sent, without a single changed character. The comparison is made with a hash, a checksum over the whole file. Almost right does not count.</p>
 <p>That you do not know the content is deliberate. It forces you to transmit truly arbitrary data instead of relying on letters.</p>
 </section>
-<section id="why-only-2-kb" class="level2">
-<h2 class="anchored" data-anchor-id="why-only-2-kb">Why only 2 KB</h2>
-<p>Your channel manages roughly between 10 and 50 bits per second. A kilobyte therefore takes a few minutes, and a real photo would take hours. The limit keeps a run short enough to sit through.</p>
+<section id="why-only-2-kib" class="level2">
+<h2 class="anchored" data-anchor-id="why-only-2-kib">Why only 2 KiB</h2>
+<p>Your channel manages roughly between 10 and 50 bits per second. A kilobyte therefore takes a few minutes, and a real photo would take hours. The limit keeps a run short enough to sit through. It says 2 KiB and not 2 KB on purpose: a kibibyte is 1024 bytes, so the file has at most 2048 bytes or 16,384 bits. Why there are two kinds of kilobyte is explained under <a href="../concepts/number-systems.html">Number Systems</a>.</p>
 </section>
 <section id="the-shared-frame-and-what-is-yours" class="level2">
 <h2 class="anchored" data-anchor-id="the-shared-frame-and-what-is-yours">The shared frame, and what is yours</h2>
@@ -482,7 +482,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-type-field-data-alone-means-nothing" class="level2">
 <h2 class="anchored" data-anchor-id="the-type-field-data-alone-means-nothing">The type field: data alone means nothing</h2>
-<p>The same 2000 bytes can be a picture, a text, or noise. What they are is not written in the data itself. It has to be said alongside.</p>
+<p>The same 2048 bytes can be a picture, a text, or noise. What they are is not written in the data itself. It has to be said alongside.</p>
 <p>That is what the type field in the header is for. The sender writes there what kind of file it is, and the receiver knows from it what to do with the bytes. Which types exist is decided together at the standards meeting, like the rest of the frame.</p>
 <p>The same principle is behind file extensions such as <code>.png</code> and <code>.txt</code>. They are not in the file either. They stand next to it.</p>
 <p><strong>And then the receiver shows it.</strong> When the transmission is through, your receiver program opens the file the way its type demands: text appears on the screen, a picture is displayed. This is the moment the whole project has been heading for. Light has become numbers, numbers have become bytes, and bytes have become something a human understands again.</p>
@@ -497,7 +497,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="your-decision-how-you-keep-the-beat" class="level2">
 <h2 class="anchored" data-anchor-id="your-decision-how-you-keep-the-beat">Your decision: how you keep the beat</h2>
 <p>That leaves the whole question of time with you. How fast you send, how the receiver learns that, and how you prevent the two sides from drifting apart over a long transmission.</p>
-<p>The last part is the unpleasant one. Two computers run neither at exactly the same speed nor evenly: wait commands are imprecise, USB sometimes takes longer, the operating system does something else in between. With ten characters you do not notice. With a 2 KB file that is under way for many minutes, it is the most common reason a run fails.</p>
+<p>The last part is the unpleasant one. Two computers run neither at exactly the same speed nor evenly: wait commands are imprecise, USB sometimes takes longer, the operating system does something else in between. With ten characters you do not notice. With a 2 KiB file that is under way for many minutes, it is the most common reason a run fails.</p>
 <p>How you deal with it we do <strong>not</strong> prescribe. There are several defensible solutions, they differ in effort and reliability, and which one works best for you depends on your hardware. This is one of the most important design decisions of the whole project, and it is yours.</p>
 <p>A tip on how to approach it: first measure how far your two devices drift apart over a thousand symbols. Then you know how big your problem actually is, and you can decide how much effort is worth it.</p>
 </section>

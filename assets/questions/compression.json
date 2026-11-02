@@ -295,8 +295,8 @@
    "id": "cp-006",
    "niveau": "anwenden",
    "frage": {
-    "de": "Ihr sendet 16.000 Bit mit 4 Farben bei 5 Symbolen pro Sekunde, also mit\n10 bit/s; das dauert rund 27 Minuten. Zwei Vorschläge liegen auf dem Tisch:\ndie Datei auf 60 Prozent komprimieren, oder das Alphabet von 4 auf 8 Farben\nvergrößern. Was bringt mehr?",
-    "en": "You send 16,000 bits with 4 colours at 5 symbols per second, so 10 bit/s;\nthat takes about 27 minutes. Two proposals are on the table: compress the\nfile to 60 per cent, or grow the alphabet from 4 to 8 colours. Which gains\nmore?"
+    "de": "Ihr sendet 16.384 Bit mit 4 Farben bei 5 Symbolen pro Sekunde, also mit\n10 bit/s; das dauert rund 27 Minuten. Zwei Vorschläge liegen auf dem Tisch:\ndie Datei auf 60 Prozent komprimieren, oder das Alphabet von 4 auf 8 Farben\nvergrößern. Was bringt mehr?",
+    "en": "You send 16,384 bits with 4 colours at 5 symbols per second, so 10 bit/s;\nthat takes about 27 minutes. Two proposals are on the table: compress the\nfile to 60 per cent, or grow the alphabet from 4 to 8 colours. Which gains\nmore?"
    },
    "typ": "sc",
    "richtig": [
@@ -643,8 +643,8 @@
    "id": "cp-012",
    "niveau": "anwenden",
    "frage": {
-    "de": "Ein Foto von 256 mal 256 Punkten hat roh 192 KB; als PNG, also verlustfrei\ngepackt, noch 91 KB. Die Nutzlast im Finale sind 2 KB. Welcher Weg bringt\ndas Foto dahin?",
-    "en": "A photo of 256 by 256 points takes 192 KB raw; as a PNG, packed losslessly,\nstill 91 KB. The payload in the final is 2 KB. Which way gets the photo\nthere?"
+    "de": "Ein Foto von 256 mal 256 Punkten hat roh 192 KiB; als PNG, also verlustfrei\ngepackt, noch 91 KiB. Die Nutzlast im Finale sind 2 KiB. Welcher Weg bringt\ndas Foto dahin?",
+    "en": "A photo of 256 by 256 points takes 192 KiB raw; as a PNG, packed losslessly,\nstill 91 KiB. The payload in the final is 2 KiB. Which way gets the photo\nthere?"
    },
    "typ": "sc",
    "richtig": [
@@ -687,12 +687,12 @@
     {
      "kennung": "d",
      "text": {
-      "de": "Gar nicht. 2 KB reichen für kein Bild; die Nutzlast im Finale muss deshalb Text sein.",
-      "en": "Not at all. 2 KB is not enough for any picture; the payload in the final therefore has to be text."
+      "de": "Gar nicht. 2 KiB reichen für kein Bild; die Nutzlast im Finale muss deshalb Text sein.",
+      "en": "Not at all. 2 KiB is not enough for any picture; the payload in the final therefore has to be text."
      },
      "begruendung": {
-      "de": "2 KB sind 16 000 Bit, und das reicht für ein Bild, wenn man bereit ist, Einzelheiten aufzugeben: Mit 128 mal 128 Punkten und grober JPG-Stufe passt der Papagei hinein. Es ist kein Foto für den Druck, aber ein Bild, das man erkennt, und genau dieser Kompromiss ist der Stoff dieser Sitzung.",
-      "en": "2 KB is 16,000 bits, and that is enough for a picture if you are willing to give up detail: with 128 by 128 points and a coarse JPG setting the parrot fits. It is no photo for print, but a picture you recognise, and exactly that trade-off is what this session is about."
+      "de": "2 KiB sind 16.384 Bit, und das reicht für ein Bild, wenn man bereit ist, Einzelheiten aufzugeben: Mit 128 mal 128 Punkten und grober JPG-Stufe passt der Papagei hinein. Es ist kein Foto für den Druck, aber ein Bild, das man erkennt, und genau dieser Kompromiss ist der Stoff dieser Sitzung.",
+      "en": "2 KiB is 16,384 bits, and that is enough for a picture if you are willing to give up detail: with 128 by 128 points and a coarse JPG setting the parrot fits. It is no photo for print, but a picture you recognise, and exactly that trade-off is what this session is about."
      }
     }
    ]
@@ -701,8 +701,8 @@
    "id": "cp-013",
    "niveau": "verstehen",
    "frage": {
-    "de": "Ihr habt das Foto auf 2 KB gebracht, als grobes JPG, und geschickt. Das\nPartnerteam hätte gern das Original in voller Qualität. Lässt sich das aus\nden empfangenen 2 KB wiederherstellen?",
-    "en": "You brought the photo down to 2 KB as a coarse JPG and sent it. The partner\nteam would like the original in full quality. Can it be restored from the\n2 KB received?"
+    "de": "Ihr habt das Foto auf 2 KiB gebracht, als grobes JPG, und geschickt. Das\nPartnerteam hätte gern das Original in voller Qualität. Lässt sich das aus\nden empfangenen 2 KiB wiederherstellen?",
+    "en": "You brought the photo down to 2 KiB as a coarse JPG and sent it. The partner\nteam would like the original in full quality. Can it be restored from the\n2 KiB received?"
    },
    "typ": "sc",
    "richtig": [
@@ -723,12 +723,12 @@
     {
      "kennung": "b",
      "text": {
-      "de": "Nein. Was beim verlustbehafteten Packen weggelassen wurde, steht in den 2 KB nicht mehr. Der Empfänger bekommt ein Bild, das dem Original ähnlich sieht, nie das Original.",
-      "en": "No. What lossy packing dropped is no longer in the 2 KB. The receiver gets a picture that looks like the original, never the original."
+      "de": "Nein. Was beim verlustbehafteten Packen weggelassen wurde, steht in den 2 KiB nicht mehr. Der Empfänger bekommt ein Bild, das dem Original ähnlich sieht, nie das Original.",
+      "en": "No. What lossy packing dropped is no longer in the 2 KiB. The receiver gets a picture that looks like the original, never the original."
      },
      "begruendung": {
-      "de": "Genau. Verlustbehaftet ist eine Einbahnstraße. Die 2 KB enthalten alles, was der Empfänger je über dieses Bild erfahren wird; die anderen 89 KB des PNG sind beim Packen verschwunden, nicht versteckt. Wer das Original braucht, muss das Original schicken, und dann eben länger warten.",
-      "en": "Exactly. Lossy is a one-way street. The 2 KB hold everything the receiver will ever learn about this picture; the other 89 KB of the PNG vanished when packing, they are not hidden. Whoever needs the original has to send the original, and wait longer."
+      "de": "Genau. Verlustbehaftet ist eine Einbahnstraße. Die 2 KiB enthalten alles, was der Empfänger je über dieses Bild erfahren wird; die anderen 89 KiB des PNG sind beim Packen verschwunden, nicht versteckt. Wer das Original braucht, muss das Original schicken, und dann eben länger warten.",
+      "en": "Exactly. Lossy is a one-way street. The 2 KiB hold everything the receiver will ever learn about this picture; the other 89 KiB of the PNG vanished when packing, they are not hidden. Whoever needs the original has to send the original, and wait longer."
      }
     },
     {

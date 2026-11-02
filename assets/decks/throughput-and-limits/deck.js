@@ -180,7 +180,7 @@ window.drawThreeOnOne = function (_slide, step = 0) {
   if (step >= 1) zeile(1, "8 colours instead of 4", 18, c.yellow);
   if (step >= 2) zeile(2, "compressed to 60 %", 16, c.yellow);
   if (step >= 3) zeile(3, "both", 11, c.green);
-  parts.push(d.label(x0 - 40, 0, "16 000 bits, 5 symbols per second", { size: 20, color: c.gray, anchor: "end", centerY: 660 }));
+  parts.push(d.label(x0 - 40, 0, "16 384 bits, 5 symbols per second", { size: 20, color: c.gray, anchor: "end", centerY: 660 }));
   return put("fig-three-on-one", d.svg(1680, 700, ...parts));
 };
 

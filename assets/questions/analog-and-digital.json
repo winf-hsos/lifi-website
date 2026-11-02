@@ -959,8 +959,8 @@
    "id": "ad-017",
    "niveau": "anwenden",
    "frage": {
-    "de": "In Challenge 4 darf die Nutzlast höchstens 2 KB groß sein, also 16.384 Bit.\nWelche dieser Einstellungen für ein quadratisches Bild passt gerade noch\nhinein?",
-    "en": "In Challenge 4 the payload may be at most 2 KB, that is 16,384 bits. Which\nof these settings for a square picture still fits?"
+    "de": "In Challenge 4 darf die Nutzlast höchstens 2 KiB groß sein, also 16.384 Bit.\nWelche dieser Einstellungen für ein quadratisches Bild passt gerade noch\nhinein?",
+    "en": "In Challenge 4 the payload may be at most 2 KiB, that is 16,384 bits. Which\nof these settings for a square picture still fits?"
    },
    "typ": "sc",
    "richtig": [

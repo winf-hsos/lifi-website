@@ -623,7 +623,7 @@
      },
      "begruendung": {
       "de": "Genau: Kilo, Mega, Giga sind dezimal je Faktor 1000; Speicher wird aber binär organisiert, in Zweierpotenzen, und 2 hoch 10 gleich 1024 liegt nahe genug an 1000, um beide zu verwechseln. Über vier Stufen summiert sich der Unterschied auf rund sieben Prozent. Die sauberen Namen für die 1024er-Schritte sind Kibi, Mebi, Gibi.",
-      "en": "Exactly: kilo, mega, giga are decimal, factor 1000 each; storage is organised in powers of two, and 2 to the power of 10, which is 1024, is close enough to 1000 to confuse the two. Over four steps the difference adds up to about seven percent. The clean names for the 1024 steps are kibi, mebi, gibi."
+      "en": "Exactly: kilo, mega, giga are decimal, factor 1000 each; storage is organised in powers of two, and 2 to the power of 10, which is 1024, is close enough to 1000 to confuse the two. Each step loses 2.4 percent, and over the three steps from bytes to gigabytes that adds up to about seven percent. The clean names for the 1024 steps are kibi, mebi, gibi."
      }
     },
     {

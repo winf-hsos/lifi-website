@@ -5,8 +5,8 @@
    "id": "er-001",
    "niveau": "verstehen",
    "frage": {
-    "de": "Eure Strecke überträgt zehn Zeichen fehlerfrei, hundertmal hintereinander.\nBei einer Datei von 2 KB kippt trotzdem ein Bit. Warum ist das kein\nWiderspruch?",
-    "en": "Your link transmits ten characters without error, a hundred times in a\nrow. With a 2 KB file a bit still flips. Why is that no contradiction?"
+    "de": "Eure Strecke überträgt zehn Zeichen fehlerfrei, hundertmal hintereinander.\nBei einer Datei von 2 KiB kippt trotzdem ein Bit. Warum ist das kein\nWiderspruch?",
+    "en": "Your link transmits ten characters without error, a hundred times in a\nrow. With a 2 KiB file a bit still flips. Why is that no contradiction?"
    },
    "typ": "sc",
    "richtig": [
@@ -295,8 +295,8 @@
    "id": "er-006",
    "niveau": "anwenden",
    "frage": {
-    "de": "Eine Datei von 2 KB hat 16.000 Bit. Ein Team hängt an jedes Byte ein\nParitätsbit. Wie viele Bits gehen über die Strecke?",
-    "en": "A 2 KB file has 16,000 bits. A team appends a parity bit to every byte.\nHow many bits cross the link?"
+    "de": "Eine Datei von 2 KiB hat 16.384 Bit. Ein Team hängt an jedes Byte ein\nParitätsbit. Wie viele Bits gehen über die Strecke?",
+    "en": "A 2 KiB file has 16,384 bits. A team appends a parity bit to every byte.\nHow many bits cross the link?"
    },
    "typ": "sc",
    "richtig": [
@@ -306,30 +306,30 @@
     {
      "kennung": "a",
      "text": {
-      "de": "16.001, denn die Parität ist ein einzelnes Bit, das hinten an die Datei kommt.",
-      "en": "16,001, because parity is a single bit appended at the end of the file."
+      "de": "16.385, denn die Parität ist ein einzelnes Bit, das hinten an die Datei kommt.",
+      "en": "16,385, because parity is a single bit appended at the end of the file."
      },
      "begruendung": {
-      "de": "Ein einziges Prüfbit über die ganze Datei gäbe es auch, aber vereinbart ist eins je Byte. 2.000 Bytes bekommen 2.000 Prüfbits.",
-      "en": "A single check bit over the whole file would exist too, but what was agreed is one per byte. 2,000 bytes get 2,000 check bits."
+      "de": "Ein einziges Prüfbit über die ganze Datei gäbe es auch, aber vereinbart ist eins je Byte. 2.048 Bytes bekommen 2.048 Prüfbits.",
+      "en": "A single check bit over the whole file would exist too, but what was agreed is one per byte. 2,048 bytes get 2,048 check bits."
      }
     },
     {
      "kennung": "b",
      "text": {
-      "de": "18.000, denn 2.000 Bytes bekommen je ein Bit dazu, also ein Achtel mehr.",
-      "en": "18,000, because 2,000 bytes each get one extra bit, that is one eighth more."
+      "de": "18.432, denn 2.048 Bytes bekommen je ein Bit dazu, also ein Achtel mehr.",
+      "en": "18,432, because 2,048 bytes each get one extra bit, that is one eighth more."
      },
      "begruendung": {
-      "de": "Genau: 16.000 geteilt durch 8 sind 2.000 Bytes, jedes wird 9 Bit lang, also 18.000 Bit. Das ist das Preisschild der Parität: zwölfeinhalb Prozent mehr Übertragungszeit, und dafür wird jeder einzelne Kipp bemerkt.",
-      "en": "Exactly: 16,000 divided by 8 is 2,000 bytes, each becomes 9 bits long, so 18,000 bits. That is the price tag of parity: twelve and a half percent more transmission time, and for that every single flip is noticed."
+      "de": "Genau: 16.384 geteilt durch 8 sind 2.048 Bytes, jedes wird 9 Bit lang, also 18.432 Bit. Das ist das Preisschild der Parität: zwölfeinhalb Prozent mehr Übertragungszeit, und dafür wird jeder einzelne Kipp bemerkt.",
+      "en": "Exactly: 16,384 divided by 8 is 2,048 bytes, each becomes 9 bits long, so 18,432 bits. That is the price tag of parity: twelve and a half percent more transmission time, and for that every single flip is noticed."
      }
     },
     {
      "kennung": "c",
      "text": {
-      "de": "32.000, denn zum Prüfen muss der Empfänger jedes Byte doppelt bekommen, einmal zum Lesen und einmal zum Vergleichen.",
-      "en": "32,000, because to check, the receiver must get every byte twice, once to read and once to compare."
+      "de": "32.768, denn zum Prüfen muss der Empfänger jedes Byte doppelt bekommen, einmal zum Lesen und einmal zum Vergleichen.",
+      "en": "32,768, because to check, the receiver must get every byte twice, once to read and once to compare."
      },
      "begruendung": {
       "de": "Doppelt senden wäre ein anderes Verfahren und ein sehr teures. Die Parität fasst die acht Bits zu einem einzigen Prüfbit zusammen; darin liegt ihre Sparsamkeit.",
@@ -339,12 +339,12 @@
     {
      "kennung": "d",
      "text": {
-      "de": "17.000, denn ein Bit je Byte sind bei 16.000 Bit ein Sechzehntel mehr.",
-      "en": "17,000, because one bit per byte is a sixteenth more on 16,000 bits."
+      "de": "17.408, denn ein Bit je Byte sind bei 16.384 Bit ein Sechzehntel mehr.",
+      "en": "17,408, because one bit per byte is a sixteenth more on 16,384 bits."
      },
      "begruendung": {
-      "de": "Ein Byte hat acht Bit, nicht sechzehn. Ein Zusatzbit je Byte ist ein Achtel mehr, also 2.000 Bit, nicht 1.000.",
-      "en": "A byte has eight bits, not sixteen. One extra bit per byte is one eighth more, so 2,000 bits, not 1,000."
+      "de": "Ein Byte hat acht Bit, nicht sechzehn. Ein Zusatzbit je Byte ist ein Achtel mehr, also 2.048 Bit, nicht 1.024.",
+      "en": "A byte has eight bits, not sixteen. One extra bit per byte is one eighth more, so 2,048 bits, not 1,024."
      }
     }
    ]
@@ -657,7 +657,7 @@
    "niveau": "verstehen",
    "frage": {
     "de": "Nach der Übertragung rechnen beide Seiten den Hash ihrer 2-KB-Datei aus.\nBeide Hashes sind 64 Zeichen lang und stimmen im ersten Zeichen überein,\ndanach in keinem mehr. Was wisst ihr jetzt?",
-    "en": "After the transmission both sides compute the hash of their 2 KB file.\nBoth hashes are 64 characters long and agree in the first character,\nafter that in none. What do you know now?"
+    "en": "After the transmission both sides compute the hash of their 2 KiB file.\nBoth hashes are 64 characters long and agree in the first character,\nafter that in none. What do you know now?"
    },
    "typ": "sc",
    "richtig": [

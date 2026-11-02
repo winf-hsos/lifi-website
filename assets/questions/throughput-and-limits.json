@@ -541,8 +541,8 @@
    "id": "tl-010",
    "niveau": "anwenden",
    "frage": {
-    "de": "Im Finale überträgt ihr eine Nutzlast von 2 KB, also 2000 Byte. Ihr habt an\neurem Aufbau gemessen: netto 12 bit/s, Rahmen und Wiederholungen schon\nabgezogen. Wie lange dauert die Übertragung ungefähr?",
-    "en": "In the final you transmit a payload of 2 KB, that is 2000 bytes. You have\nmeasured on your own setup: 12 bit/s net, frame and repeats already\ndeducted. Roughly how long does the transmission take?"
+    "de": "Im Finale überträgt ihr eine Nutzlast von 2 KiB, also 2048 Byte. Ihr habt an\neurem Aufbau gemessen: netto 12 bit/s, Rahmen und Wiederholungen schon\nabgezogen. Wie lange dauert die Übertragung ungefähr?",
+    "en": "In the final you transmit a payload of 2 KiB, that is 2048 bytes. You have\nmeasured on your own setup: 12 bit/s net, frame and repeats already\ndeducted. Roughly how long does the transmission take?"
    },
    "typ": "sc",
    "richtig": [
@@ -552,23 +552,23 @@
     {
      "kennung": "a",
      "text": {
-      "de": "Knapp 3 Minuten: 2000 geteilt durch 12 sind rund 167 Sekunden.",
-      "en": "Just under 3 minutes: 2000 divided by 12 is about 167 seconds."
+      "de": "Knapp 3 Minuten: 2048 geteilt durch 12 sind rund 171 Sekunden.",
+      "en": "Just under 3 minutes: 2048 divided by 12 is about 171 seconds."
      },
      "begruendung": {
-      "de": "Hier sind Byte und Bit verwechselt worden, der häufigste Rechenfehler des ganzen Projekts. 2000 Byte sind 16.000 Bit, und der Unterschied ist nicht klein: Faktor acht, also aus drei Minuten werden zweiundzwanzig.",
-      "en": "Bytes and bits have been mixed up here, the most common arithmetic slip in the whole project. 2000 bytes are 16,000 bits, and the difference is not small: a factor of eight, so three minutes become twenty-two."
+      "de": "Hier sind Byte und Bit verwechselt worden, der häufigste Rechenfehler des ganzen Projekts. 2048 Byte sind 16.384 Bit, und der Unterschied ist nicht klein: Faktor acht, also aus drei Minuten werden dreiundzwanzig.",
+      "en": "Bytes and bits have been mixed up here, the most common arithmetic slip in the whole project. 2048 bytes are 16,384 bits, and the difference is not small: a factor of eight, so three minutes become twenty-three."
      }
     },
     {
      "kennung": "b",
      "text": {
-      "de": "Rund 22 Minuten: 2000 Byte sind 16.000 Bit, geteilt durch 12 sind rund 1330 Sekunden.",
-      "en": "About 22 minutes: 2000 bytes are 16,000 bits, divided by 12 is about 1330 seconds."
+      "de": "Rund 23 Minuten: 2048 Byte sind 16.384 Bit, geteilt durch 12 sind rund 1365 Sekunden.",
+      "en": "About 23 minutes: 2048 bytes are 16,384 bits, divided by 12 is about 1365 seconds."
      },
      "begruendung": {
-      "de": "Genau. Und jetzt der Grund, warum in dieser Sitzung Kompression vorkommt: Schrumpft ihr die Datei auf 60 Prozent, sind es noch gut 13 Minuten, ohne dass ihr an Rate oder Alphabet auch nur gedreht habt. Der dritte Hebel ist auf einer so langsamen Strecke oft der billigste.",
-      "en": "Exactly. And now the reason compression appears in this session: shrink the file to 60 per cent and it is a good 13 minutes, without touching the rate or the alphabet at all. On a link this slow, the third lever is often the cheapest."
+      "de": "Genau. Und jetzt der Grund, warum in dieser Sitzung Kompression vorkommt: Schrumpft ihr die Datei auf 60 Prozent, sind es noch knapp 14 Minuten, ohne dass ihr an Rate oder Alphabet auch nur gedreht habt. Der dritte Hebel ist auf einer so langsamen Strecke oft der billigste.",
+      "en": "Exactly. And now the reason compression appears in this session: shrink the file to 60 per cent and it is just under 14 minutes, without touching the rate or the alphabet at all. On a link this slow, the third lever is often the cheapest."
      }
     },
     {

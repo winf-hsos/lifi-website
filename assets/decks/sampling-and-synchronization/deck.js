@@ -355,7 +355,7 @@ window.drawTime = function (_slide, step = 0) {
       ["clocked", "b = log2(k) = 2.00", "about 27 minutes"],
       ["clock-free", "b = log2(k-1) = 1.58", "about 34 minutes"],
     ];
-    parts.push(d.label(840, 0, "16 000 bits, 4 colours, 5 symbols per second",
+    parts.push(d.label(840, 0, "16 384 bits, 4 colours, 5 symbols per second",
                        { size: 20, color: c.gray, anchor: "middle", centerY: 440 }));
     zeilen.forEach(([weg, formel, zeit], i) => {
       const y = 500 + i * 80;

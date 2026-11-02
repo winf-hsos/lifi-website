@@ -498,10 +498,10 @@ Figure&nbsp;1: A real QR code pointing at docs.lifi-project.de, with 172 of its 
 <div id="fig-inevitable" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inevitable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/errors-inevitable.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The chance that everything arrives untouched, at an error rate of 0.1 percent per bit: 92.3 percent for ten characters, 0.03 percent for the same ten characters a hundred times, 0.0000076 percent for the 2 KB payload of the final."><img src="../assets/diagrams/errors-inevitable.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/errors-inevitable.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The chance that everything arrives untouched, at an error rate of 0.1 percent per bit: 92.3 percent for ten characters, 0.03 percent for the same ten characters a hundred times, 0.0000076 percent for the 2 KiB payload of the final."><img src="../assets/diagrams/errors-inevitable.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inevitable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The chance that everything arrives untouched, at an error rate of 0.1 percent per bit: 92.3 percent for ten characters, 0.03 percent for the same ten characters a hundred times, 0.0000076 percent for the 2 KB payload of the final.
+Figure&nbsp;2: The chance that everything arrives untouched, at an error rate of 0.1 percent per bit: 92.3 percent for ten characters, 0.03 percent for the same ten characters a hundred times, 0.0000076 percent for the 2 KiB payload of the final.
 </figcaption>
 </figure>
 </div>
@@ -631,10 +631,10 @@ Figure&nbsp;10: The raw file opens with one wrong point; the packed file does no
 <div id="fig-cost" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/errors-cost.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: Four ways to send 2 KB at 10 bit/s: nothing added takes 27.3 minutes, a checksum per frame 27.7, a parity bit per byte 30.7, every bit three times 81.9."><img src="../assets/diagrams/errors-cost.svg" class="img-fluid figure-img"></a>
+<a href="../assets/diagrams/errors-cost.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;11: Four ways to send 2 KiB at 10 bit/s: nothing added takes 27.3 minutes, a checksum per frame 27.7, a parity bit per byte 30.7, every bit three times 81.9."><img src="../assets/diagrams/errors-cost.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Four ways to send 2 KB at 10 bit/s: nothing added takes 27.3 minutes, a checksum per frame 27.7, a parity bit per byte 30.7, every bit three times 81.9.
+Figure&nbsp;11: Four ways to send 2 KiB at 10 bit/s: nothing added takes 27.3 minutes, a checksum per frame 27.7, a parity bit per byte 30.7, every bit three times 81.9.
 </figcaption>
 </figure>
 </div>
@@ -671,7 +671,7 @@ Figure&nbsp;13: Four frames, the third one fails its checksum, the return channe
 </section>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys.</p>
+<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
 <div class="deck-embed">
   <iframe src="../assets/decks/errors-and-redundancy/index.html?bar=1&amp;pdf=../errors-and-redundancy.pdf" title="one bit went wrong" allowfullscreen="" loading="lazy"></iframe>
 </div>
@@ -687,7 +687,7 @@ Figure&nbsp;13: Four frames, the third one fails its checksum, the return channe
 <li>Richard W. Hamming: Error Detecting and Error Correcting Codes. Bell System Technical Journal 29 (2), 1950. <a href="https://doi.org/10.1002/j.1538-7305.1950.tb00463.x" class="uri">https://doi.org/10.1002/j.1538-7305.1950.tb00463.x</a>. The paper that started error correction, written because Hamming’s weekend computer runs kept dying on a single bad bit and nobody was there on Monday to restart them. The first two pages are readable without any mathematics.</li>
 <li>Claude E. Shannon: A Mathematical Theory of Communication. Bell System Technical Journal 27 (3), 1948. <a href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x" class="uri">https://doi.org/10.1002/j.1538-7305.1948.tb01338.x</a>. The same paper that gave us the measure of information also proves the surprising part: on a noisy channel you can get the error rate as close to zero as you like, as long as you send slower than the channel’s capacity.</li>
 <li>Ross N. Williams: A Painless Guide to CRC Error Detection Algorithms, 1993. <a href="https://www.zlib.net/crc_v3.txt" class="uri">https://www.zlib.net/crc_v3.txt</a>. How a real checksum works, written for people who kept finding CRC code they could not understand. Long, informal, and the only text on the subject that reads like a conversation.</li>
-<li>Andrew S. Tanenbaum and David J. Wetherall: Computer Networks. Pearson, 5th edition 2011, chapter 3. The textbook treatment of detection against correction and of the retransmission protocols this page sketches, including what happens when the acknowledgement itself gets lost.</li>
+<li>Andrew S. Tanenbaum, Nick Feamster, David Wetherall: Computer Networks. Pearson, 6th edition 2021, chapter 3. The textbook treatment of detection against correction and of the retransmission protocols this page sketches, including what happens when the acknowledgement itself gets lost.</li>
 </ul>
 
 

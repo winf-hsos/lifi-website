@@ -10,7 +10,7 @@
  *   dasselbe Bit im PNG            -> die Datei laesst sich nicht mehr oeffnen
  *   sha-256 des rohen Papageis und desselben mit einem gekippten Bit
  *   wahrscheinlichkeiten bei 0,1 % fehlerrate je bit
- *   sendezeiten bei 10 bit/s fuer 2 kb */
+ *   sendezeiten bei 10 bit/s fuer 2 KiB */
 
 "use strict";
 
@@ -301,7 +301,7 @@ window.drawCost = function () {
   const c = d.colors();
   const parts = [];
   const x0 = 620, breite = 620, h = 64, max = 49152;
-  parts.push(d.label(100, 0, "2 kb over your link at 10 bit/s", { size: 20, color: c.gray, centerY: 60 }));
+  parts.push(d.label(100, 0, "2 KiB over your link at 10 bit/s", { size: 20, keepCase: true, color: c.gray, centerY: 60 }));
   KOSTEN.forEach(([was, bit, zeit, plus, farbe], i) => {
     const y = 130 + i * 110;
     const col = { light: c.light, yellow: c.yellow, red: c.red }[farbe];
