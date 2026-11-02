@@ -411,23 +411,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#the-task" id="toc-the-task" class="nav-link active" data-scroll-target="#the-task">The task</a></li>
-  <li><a href="#what-is-new" id="toc-what-is-new" class="nav-link" data-scroll-target="#what-is-new">What is new</a></li>
-  <li><a href="#start-with-the-human" id="toc-start-with-the-human" class="nav-link" data-scroll-target="#start-with-the-human">Start with the human</a></li>
-  <li><a href="#required-the-control-measurement" id="toc-required-the-control-measurement" class="nav-link" data-scroll-target="#required-the-control-measurement">Required: the control measurement</a></li>
-  <li><a href="#what-is-measured" id="toc-what-is-measured" class="nav-link" data-scroll-target="#what-is-measured">What is measured</a></li>
-  <li><a href="#showing-it-works" id="toc-showing-it-works" class="nav-link" data-scroll-target="#showing-it-works">Showing it works</a></li>
-  <li><a href="#what-to-keep" id="toc-what-to-keep" class="nav-link" data-scroll-target="#what-to-keep">What to keep</a></li>
-  <li><a href="#concepts-you-need" id="toc-concepts-you-need" class="nav-link" data-scroll-target="#concepts-you-need">Concepts you need</a></li>
-  <li><a href="#traps-we-know-about" id="toc-traps-we-know-about" class="nav-link" data-scroll-target="#traps-we-know-about">Traps we know about</a></li>
-  <li><a href="#if-you-finish-early" id="toc-if-you-finish-early" class="nav-link" data-scroll-target="#if-you-finish-early">If you finish early</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -452,81 +437,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This challenge looks harmless, and it decides your whole project anyway. It asks a single question:</p>
-<blockquote class="blockquote">
-<p><strong>How many different states can you tell apart, without a single mistake, over 50 attempts?</strong></p>
-</blockquote>
-<p>Here is why it matters. Whoever can reliably distinguish four states will later send two bits per symbol. Whoever manages sixteen sends four. At the same speed that is twice the throughput, and twice the throughput is what wins the final.</p>
-<section id="the-task" class="level2">
-<h2 class="anchored" data-anchor-id="the-task">The task</h2>
-<p>The sender shows a colour from a set that you define yourselves. The receiver says which one it was.</p>
-<p>No timing, no message, nothing automatic. A human presses Enter, the program measures, and the name of the recognised state appears on the receiver’s screen.</p>
-<p>The distance between the devices is fixed and the same for everyone.</p>
+<div class="moved-notice" role="note"><p class="moved-head">This page has moved</p><p class="moved-text">Challenge 1 now lives on Hands-on Computer Science, where it is kept up to date. This page is no longer maintained, so please use the new one, in English or in German.</p><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/lifi-challenge-1/" lang="en"><span class="moved-lang">English</span>Challenge 1 on Hands-on Computer Science</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/lifi-challenge-1/" lang="de"><span class="moved-lang">Deutsch</span>Challenge 1 auf Hands-on Computer Science</a></div></div>
+<!-- Moved to Hands-on Computer Science on 2026-11-02; the previous content is kept below, commented out.
+
+This challenge looks harmless, and it decides your whole project anyway. It asks a single question:
+
+> **How many different states can you tell apart, without a single mistake, over 50 attempts?**
+
+Here is why it matters. Whoever can reliably distinguish four states will later send two bits per symbol. Whoever manages sixteen sends four. At the same speed that is twice the throughput, and twice the throughput is what wins the final.
+
+## The task
+
+The sender shows a colour from a set that you define yourselves. The receiver says which one it was.
+
+No timing, no message, nothing automatic. A human presses Enter, the program measures, and the name of the recognised state appears on the receiver's screen.
+
+The distance between the devices is fixed and the same for everyone.
+
 <!-- TODO: konkreten Abstandswert eintragen, sobald die Pilotmessung erfolgt ist -->
-</section>
-<section id="what-is-new" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-new">What is new</h2>
-<p>For the first time you have to <strong>find something out</strong> about your setup instead of thinking it up. How many states can be told apart, nobody knows in advance, and neither does the AI assistant. It depends on your sensor, your distance, your room, and whatever you build in between.</p>
-</section>
-<section id="start-with-the-human" class="level2">
-<h2 class="anchored" data-anchor-id="start-with-the-human">Start with the human</h2>
-<p>Before you write a line of code, do the measurement once with your eyes. How many colours can <strong>you</strong> reliably tell apart when you see them one at a time, not side by side?</p>
-<p>Write that number down. It is a useful reference, and it will surprise you. In some respects your eye beats the sensor by a wide margin, in others it loses clearly.</p>
-<p>One of the reasons matters for the rest of this challenge: your visual system recalibrates itself all the time. When the light in the room changes, you hardly notice, because your brain corrects for it. The sensor does not. It simply reports different numbers.</p>
-</section>
-<section id="required-the-control-measurement" class="level2">
-<h2 class="anchored" data-anchor-id="required-the-control-measurement">Required: the control measurement</h2>
-<p>You measure <strong>twice</strong>:</p>
-<ol type="1">
-<li><strong>Without any aids.</strong> Bare LED, bare sensor, the fixed distance. How many states can you manage like this?</li>
-<li><strong>With your setup.</strong> Build your light channel, a tube, a shade, whatever you come up with, and measure again.</li>
-</ol>
-<p>Only the second, better value counts. Both measurements belong in your documentation, though. Without the first one you cannot know whether your setup made any difference at all, and that is exactly the point.</p>
-<p>What you may build is described under <a href="../hardware/index.html#optical-setup">optical setup</a>.</p>
-</section>
-<section id="what-is-measured" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-measured">What is measured</h2>
-<p>The size of your alphabet, meaning the number of states you can tell apart over <strong>50 attempts without error</strong>. A single mistake counts as a fail for that alphabet size.</p>
-<p>So it does not pay to gamble. Eight states recognised reliably are worth more than sixteen with an occasional mix-up.</p>
-</section>
-<section id="showing-it-works" class="level2">
-<h2 class="anchored" data-anchor-id="showing-it-works">Showing it works</h2>
-<p>At the test table, with your own setup, which you carry there.</p>
-<p>Twenty random transmissions run. Then one live change, for example: “Add one more state. Does the hit rate hold?”</p>
-</section>
-<section id="what-to-keep" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-keep">What to keep</h2>
-<p>Documentation is optional and only for your team: nobody grades it, and the bonus depends only on passing the challenges. Keeping it pays off anyway, because every later challenge builds on it:</p>
-<ul>
-<li>The measurement log of the control measurement without aids</li>
-<li>The measurement log with your setup</li>
-<li>A photo of your optical setup with a short explanation of why you built it that way</li>
-<li>Your log of mistakes (see <a href="../ai/index.html">Working with your AI assistant</a>)</li>
-</ul>
-</section>
-<section id="concepts-you-need" class="level2">
-<h2 class="anchored" data-anchor-id="concepts-you-need">Concepts you need</h2>
-<ul>
-<li><a href="../concepts/analog-and-digital.html">Analog and digital</a></li>
-<li><a href="../concepts/symbols-and-information.html">Symbols and information</a></li>
-<li><a href="../concepts/signal-and-noise.html">Signal and noise</a></li>
-<li><a href="../concepts/measurement-and-experiments.html">Measuring and Experimenting</a></li>
-<li><a href="../concepts/algorithms-and-programs.html">Algorithms and programs</a></li>
-</ul>
-</section>
-<section id="traps-we-know-about" class="level2">
-<h2 class="anchored" data-anchor-id="traps-we-know-about">Traps we know about</h2>
-<p><strong>Fixed thresholds.</strong> The obvious first attempt is “if the red value is above 500, it was red”. That works on Tuesday and fails on Thursday, because the ambient light has changed. Whoever notices this arrives at calibration, and that is the strongest result this challenge has to offer.</p>
-<p><strong>Looking only at R, G and B.</strong> The sensor delivers four values. The fourth, the clear channel, is more sensitive than the other three. Ignoring it throws away signal.</p>
-<p><strong>Too few repetitions.</strong> If you test each state three times and see no error, you know nothing yet. Only over many attempts does it show whether two states are really cleanly separated.</p>
-<p><strong>Pretty colours instead of distinguishable colours.</strong> Sixteen colours that look different to your eye are not necessarily different to the sensor.</p>
-</section>
-<section id="if-you-finish-early" class="level2">
-<h2 class="anchored" data-anchor-id="if-you-finish-early">If you finish early</h2>
-<p>Change the integration time of the sensor and measure what happens to your numbers. You will find that longer measurements are calmer but allow fewer measurements per second. This trade-off will decide your throughput in Challenge 4.</p>
+<!--
+
+## What is new
+
+For the first time you have to **find something out** about your setup instead of thinking it up. How many states can be told apart, nobody knows in advance, and neither does the AI assistant. It depends on your sensor, your distance, your room, and whatever you build in between.
+
+## Start with the human
+
+Before you write a line of code, do the measurement once with your eyes. How many colours can **you** reliably tell apart when you see them one at a time, not side by side?
+
+Write that number down. It is a useful reference, and it will surprise you. In some respects your eye beats the sensor by a wide margin, in others it loses clearly.
+
+One of the reasons matters for the rest of this challenge: your visual system recalibrates itself all the time. When the light in the room changes, you hardly notice, because your brain corrects for it. The sensor does not. It simply reports different numbers.
+
+## Required: the control measurement
+
+You measure **twice**:
+
+1. **Without any aids.** Bare LED, bare sensor, the fixed distance. How many states can you manage like this?
+2. **With your setup.** Build your light channel, a tube, a shade, whatever you come up with, and measure again.
+
+Only the second, better value counts. Both measurements belong in your documentation, though. Without the first one you cannot know whether your setup made any difference at all, and that is exactly the point.
+
+What you may build is described under [optical setup](../hardware/index.qmd#optical-setup).
+
+## What is measured
+
+The size of your alphabet, meaning the number of states you can tell apart over **50 attempts without error**. A single mistake counts as a fail for that alphabet size.
+
+So it does not pay to gamble. Eight states recognised reliably are worth more than sixteen with an occasional mix-up.
+
+## Showing it works
+
+At the test table, with your own setup, which you carry there.
+
+Twenty random transmissions run. Then one live change, for example: "Add one more state. Does the hit rate hold?"
+
+## What to keep
+
+Documentation is optional and only for your team: nobody grades it, and the bonus depends only on passing the challenges. Keeping it pays off anyway, because every later challenge builds on it:
+
+- The measurement log of the control measurement without aids
+- The measurement log with your setup
+- A photo of your optical setup with a short explanation of why you built it that way
+- Your log of mistakes (see [Working with your AI assistant](../ai/index.qmd))
+
+## Concepts you need
+
+- [Analog and digital](../concepts/analog-and-digital.qmd)
+- [Symbols and information](../concepts/symbols-and-information.qmd)
+- [Signal and noise](../concepts/signal-and-noise.qmd)
+- [Measuring and Experimenting](../concepts/measurement-and-experiments.qmd)
+- [Algorithms and programs](../concepts/algorithms-and-programs.qmd)
+
+## Traps we know about
+
+**Fixed thresholds.** The obvious first attempt is "if the red value is above 500, it was red". That works on Tuesday and fails on Thursday, because the ambient light has changed. Whoever notices this arrives at calibration, and that is the strongest result this challenge has to offer.
+
+**Looking only at R, G and B.** The sensor delivers four values. The fourth, the clear channel, is more sensitive than the other three. Ignoring it throws away signal.
+
+**Too few repetitions.** If you test each state three times and see no error, you know nothing yet. Only over many attempts does it show whether two states are really cleanly separated.
+
+**Pretty colours instead of distinguishable colours.** Sixteen colours that look different to your eye are not necessarily different to the sensor.
+
+## If you finish early
+
+Change the integration time of the sensor and measure what happens to your numbers. You will find that longer measurements are calmer but allow fewer measurements per second. This trade-off will decide your throughput in Challenge 4.
+
+-->
 
 
-</section>
 
 </main> <!-- /main -->
 <!-- Übungsfragen: Seit Oktober 2026 ist die Übungsplattform classroom-live
