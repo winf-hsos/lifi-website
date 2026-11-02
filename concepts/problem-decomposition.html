@@ -46,9 +46,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-04f6296883490d005f4dbf6309390a62.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -414,23 +411,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
-  <ul class="collapse">
-  <li><a href="#three-cutting-patterns" id="toc-three-cutting-patterns" class="nav-link" data-scroll-target="#three-cutting-patterns">Three cutting patterns</a></li>
-  <li><a href="#a-good-cut-is-testable" id="toc-a-good-cut-is-testable" class="nav-link" data-scroll-target="#a-good-cut-is-testable">A good cut is testable</a></li>
-  <li><a href="#cuts-are-agreements" id="toc-cuts-are-agreements" class="nav-link" data-scroll-target="#cuts-are-agreements">Cuts are agreements</a></li>
-  </ul></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -454,86 +436,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>A big problem becomes solvable when you cut it into small pieces you can check one by one. There are cutting patterns that come back again and again. A good cut also settles two things at once: how you will know that a piece is done, and what has to be agreed at its borders.</p>
-<p>In this chapter, we address the following questions:</p>
-<ul>
-<li>How do I cut a big task into pieces I can check on their own?</li>
-<li>How do I know that a piece is small enough?</li>
-<li>Which cutting patterns are there, and when does which one help?</li>
-<li>What happens when I cut too coarsely?</li>
-<li>What has to be agreed at the border between two pieces?</li>
-</ul>
-<p>You need this concept from <a href="../challenges/challenge-0.html">Challenge 0</a> onwards, in every single challenge. What a cut piece looks like once a computer is supposed to solve it is the subject of <a href="../concepts/input-processing-output.html">Problem solving with computers</a>.</p>
-</section>
-<section id="explanation" class="level2">
-<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
-<p>“Transfer a file using light” cannot be solved in one piece, by anyone. That is not a statement about you, it is the normal state of an interesting problem. Big problems are not solved in one go. They are cut, again and again, until the pieces are small enough to be solved and checked.</p>
-<p>You can already do this, by the way. Somebody’s birthday is on Saturday, thirty guests are coming, and nobody plans “the party” as one thing. You cut it immediately into drinks, food, music, invitations and cleaning up, and then you hand the pieces out. What is new here is only doing it on purpose, and knowing what makes one cut better than another.</p>
-<div id="fig-decomposition-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-decomposition-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/decomposition-tree.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: The big problem of this semester, cut into four solvable pieces. Each piece is something you can manage in two or three weeks, and your semester plan is exactly this cut: the four pieces are Challenge 1 to 4."><img src="../assets/diagrams/decomposition-tree.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decomposition-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The big problem of this semester, cut into four solvable pieces. Each piece is something you can manage in two or three weeks, and your semester plan is exactly this cut: the four pieces are Challenge 1 to 4.
-</figcaption>
-</figure>
-</div>
-<section id="three-cutting-patterns" class="level3">
-<h3 class="anchored" data-anchor-id="three-cutting-patterns">Three cutting patterns</h3>
-<p>There are tried and tested ways to cut, and you will use three of them all the time this semester.</p>
-<p><strong>Halve it until it is easy.</strong> Computer science calls this divide and conquer. Think of a number between 1 and 100. With yes-or-no questions that cut the range in half every time, you find any number in at most seven questions: a hundred candidates, then fifty, twenty-five, twelve, six, three, two, done. The strategy works wherever you can rule out one half after every cut.</p>
-<div id="fig-halving-search" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-halving-search-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/halving-search.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The range from 1 to 100, halved with every question. The bar is the range the number can still be in, and the red line is the 73 we are looking for. It stays inside the bar until exactly one number is left."><img src="../assets/diagrams/halving-search.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-halving-search-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The range from 1 to 100, halved with every question. The bar is the range the number can still be in, and the red line is the 73 we are looking for. It stays inside the bar until exactly one number is left.
-</figcaption>
-</figure>
-</div>
-<p><strong>The same trick when something is broken.</strong> You know this one too. When the wifi is dead, you test in the middle of the chain without thinking about it: if the phone hotspot works, it is not the laptop, and half the suspects are gone. Every test halves the chain. In this project your chain is sender, LED, air, sensor, receiver, and you will walk along it often: is the LED lit at all? Does the sensor see a torch? Whoever cuts well knows not only <strong>that</strong> something is broken, but <strong>where</strong>.</p>
-<div id="fig-debug-chain" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-debug-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/debug-chain.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Finding a fault by halving: one test in the middle rules out half the chain. Above the everyday case, below the same figure of thought in the project."><img src="../assets/diagrams/debug-chain.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-debug-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Finding a fault by halving: one test in the middle rules out half the chain. Above the everyday case, below the same figure of thought in the project.
-</figcaption>
-</figure>
-</div>
-<p><strong>Solve a smaller version first.</strong> When a problem is too big, solve a smaller version of it that you really can do, and grow from there. That is exactly how the semester is built: light on and off, then as many colours as you can tell apart, then a single character, then a word, and a whole file at the end.</p>
-<div id="fig-challenge-staircase" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-challenge-staircase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/challenge-staircase.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The staircase of the challenges: every step is a slightly bigger version of the same problem. On the first day you are standing on the bottom one."><img src="../assets/diagrams/challenge-staircase.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-challenge-staircase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: The staircase of the challenges: every step is a slightly bigger version of the same problem. On the first day you are standing on the bottom one.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="a-good-cut-is-testable" class="level3">
-<h3 class="anchored" data-anchor-id="a-good-cut-is-testable">A good cut is testable</h3>
-<p>Cutting alone is not enough, because not every cut is equally good. Compare two sentences: “I need to learn maths” and “I can pass the 2023 exam in 90 minutes”. Both sound like exam preparation. With the first one you never know whether you are done. The second one you can try out tonight, and you get a yes or a no. A good piece is one with a test built into it.</p>
-<p>In the project that reads: “the receiver works” is a feeling. “Red or blue, recognised correctly 50 times in a row” is a measurement. Every challenge is written that way, and every acceptance test runs that way. From this follows the workshop rule of this module: <strong>done means the test passes</strong>, not “it looks good”.</p>
-</section>
-<section id="cuts-are-agreements" class="level3">
-<h3 class="anchored" data-anchor-id="cuts-are-agreements">Cuts are agreements</h3>
-<p>Where you cut decides how much you have to talk. “You do the starters, I do the dessert” works. “We both kind of do the food” turns into chaos, because nobody knows who buys the bread. Pieces work when the border between them is clear.</p>
-<p>The same holds in your team: one person at each end of the link, and whatever crosses the border, for instance which colour means which symbol, gets written down. You will find out how serious that is in <a href="../challenges/challenge-3.html">Challenge 3</a>, when another team has to read your agreement and build against it.</p>
-<p>And with an AI assistant, cutting is the key skill of all. “Build me the file transfer” is one big wish: the assistant cannot do it well, and you could not check the result if it did. A small piece with its test is a different thing: “read the sensor ten times and return the average. test: covered, it stays under 10; red LED on, it goes over 100.” You cut, the assistant solves pieces, you check.</p>
-</section>
-</section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<div class="moved-notice" role="note"><p class="moved-head">The slides have moved</p><p class="moved-text">The slides for this concept now live on Hands-on Computer Science, where they are kept up to date. Open them there, in English or in German.</p><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/problem-decomposition/" lang="en"><span class="moved-lang">English</span>Cutting problems</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/problem-decomposition/" lang="de"><span class="moved-lang">Deutsch</span>Probleme zerlegen</a></div><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/cutting-the-lifi-project/" lang="en"><span class="moved-lang">English</span>Cutting the LiFi project</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/cutting-the-lifi-project/" lang="de"><span class="moved-lang">Deutsch</span>Das LiFi-Projekt zerlegen</a></div></div>
-<!-- Moved to Hands-on Computer Science on 2026-11-02; the previous slides section is kept below, commented out.
+<div class="moved-notice" role="note"><p class="moved-head">This page has moved</p><p class="moved-text">Cutting problems now lives on Hands-on Computer Science, where it is kept up to date. This page is no longer maintained, so please use the new one, in English or in German.</p><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/problem-decomposition/" lang="en"><span class="moved-lang">English</span>Cutting problems</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/problem-decomposition/" lang="de"><span class="moved-lang">Deutsch</span>Probleme zerlegen</a></div><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/cutting-the-lifi-project/" lang="en"><span class="moved-lang">English</span>Cutting the LiFi project</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/cutting-the-lifi-project/" lang="de"><span class="moved-lang">Deutsch</span>Das LiFi-Projekt zerlegen</a></div></div>
+<!-- Moved to Hands-on Computer Science on 2026-11-02; the previous content is kept below, commented out.
+
+## Summary
+
+A big problem becomes solvable when you cut it into small pieces you can check one by one. There are cutting patterns that come back again and again. A good cut also settles two things at once: how you will know that a piece is done, and what has to be agreed at its borders.
+
+In this chapter, we address the following questions:
+
+- How do I cut a big task into pieces I can check on their own?
+- How do I know that a piece is small enough?
+- Which cutting patterns are there, and when does which one help?
+- What happens when I cut too coarsely?
+- What has to be agreed at the border between two pieces?
+
+You need this concept from [Challenge 0](../challenges/challenge-0.qmd) onwards, in every single challenge. What a cut piece looks like once a computer is supposed to solve it is the subject of [Problem solving with computers](input-processing-output.qmd).
+
+## Explanation
+
+"Transfer a file using light" cannot be solved in one piece, by anyone. That is not a statement about you, it is the normal state of an interesting problem. Big problems are not solved in one go. They are cut, again and again, until the pieces are small enough to be solved and checked.
+
+You can already do this, by the way. Somebody's birthday is on Saturday, thirty guests are coming, and nobody plans "the party" as one thing. You cut it immediately into drinks, food, music, invitations and cleaning up, and then you hand the pieces out. What is new here is only doing it on purpose, and knowing what makes one cut better than another.
+
+![The big problem of this semester, cut into four solvable pieces. Each piece is something you can manage in two or three weeks, and your semester plan is exactly this cut: the four pieces are Challenge 1 to 4.](../assets/diagrams/decomposition-tree.svg){#fig-decomposition-tree}
+
+### Three cutting patterns
+
+There are tried and tested ways to cut, and you will use three of them all the time this semester.
+
+**Halve it until it is easy.** Computer science calls this divide and conquer. Think of a number between 1 and 100. With yes-or-no questions that cut the range in half every time, you find any number in at most seven questions: a hundred candidates, then fifty, twenty-five, twelve, six, three, two, done. The strategy works wherever you can rule out one half after every cut.
+
+![The range from 1 to 100, halved with every question. The bar is the range the number can still be in, and the red line is the 73 we are looking for. It stays inside the bar until exactly one number is left.](../assets/diagrams/halving-search.svg){#fig-halving-search}
+
+**The same trick when something is broken.** You know this one too. When the wifi is dead, you test in the middle of the chain without thinking about it: if the phone hotspot works, it is not the laptop, and half the suspects are gone. Every test halves the chain. In this project your chain is sender, LED, air, sensor, receiver, and you will walk along it often: is the LED lit at all? Does the sensor see a torch? Whoever cuts well knows not only **that** something is broken, but **where**.
+
+![Finding a fault by halving: one test in the middle rules out half the chain. Above the everyday case, below the same figure of thought in the project.](../assets/diagrams/debug-chain.svg){#fig-debug-chain}
+
+**Solve a smaller version first.** When a problem is too big, solve a smaller version of it that you really can do, and grow from there. That is exactly how the semester is built: light on and off, then as many colours as you can tell apart, then a single character, then a word, and a whole file at the end.
+
+![The staircase of the challenges: every step is a slightly bigger version of the same problem. On the first day you are standing on the bottom one.](../assets/diagrams/challenge-staircase.svg){#fig-challenge-staircase}
+
+### A good cut is testable
+
+Cutting alone is not enough, because not every cut is equally good. Compare two sentences: "I need to learn maths" and "I can pass the 2023 exam in 90 minutes". Both sound like exam preparation. With the first one you never know whether you are done. The second one you can try out tonight, and you get a yes or a no. A good piece is one with a test built into it.
+
+In the project that reads: "the receiver works" is a feeling. "Red or blue, recognised correctly 50 times in a row" is a measurement. Every challenge is written that way, and every acceptance test runs that way. From this follows the workshop rule of this module: **done means the test passes**, not "it looks good".
+
+### Cuts are agreements
+
+Where you cut decides how much you have to talk. "You do the starters, I do the dessert" works. "We both kind of do the food" turns into chaos, because nobody knows who buys the bread. Pieces work when the border between them is clear.
+
+The same holds in your team: one person at each end of the link, and whatever crosses the border, for instance which colour means which symbol, gets written down. You will find out how serious that is in [Challenge 3](../challenges/challenge-3.qmd), when another team has to read your agreement and build against it.
+
+And with an AI assistant, cutting is the key skill of all. "Build me the file transfer" is one big wish: the assistant cannot do it well, and you could not check the result if it did. A small piece with its test is a different thing: "read the sensor ten times and return the average. test: covered, it stays under 10; red LED on, it goes over 100." You cut, the assistant solves pieces, you check.
+
+## Slides
 
 The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.
 
@@ -544,21 +502,21 @@ The slides for this concept, right here. Page through them with the buttons in t
 </div>
 ```
 
--->
-</section>
-<section id="practice-questions" class="level2">
-<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
-<p>The practice questions have the same format as the exam, so they are also a good way to prepare for it.</p>
+## Practice questions
+
+The practice questions have the same format as the exam, so they are also a good way to prepare for it.
+
+```{=html}
 <div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/problem-decomposition.json"></div>
-</section>
-<section id="further-reading" class="level2">
-<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
-<ul>
-<li>George Pólya: How to Solve It. Princeton University Press, 1945. The classic on cutting problems, written for mathematics and readable far beyond it: understand the problem, make a plan, carry it out, look back. His questions (“Do you know a related problem?”, “Can you solve a part of it?”) are the long version of this page.</li>
-</ul>
+```
+
+## Further reading
+
+- George Pólya: How to Solve It. Princeton University Press, 1945. The classic on cutting problems, written for mathematics and readable far beyond it: understand the problem, make a plan, carry it out, look back. His questions ("Do you know a related problem?", "Can you solve a part of it?") are the long version of this page.
+
+-->
 
 
-</section>
 
 </main> <!-- /main -->
 <!-- Übungsfragen: Seit Oktober 2026 ist die Übungsplattform classroom-live
@@ -1008,38 +966,6 @@ The slides for this concept, right here. Page through them with the buttons in t
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
