@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -446,25 +411,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#why-the-module-exists" id="toc-why-the-module-exists" class="nav-link active" data-scroll-target="#why-the-module-exists">Why the module exists</a></li>
-  <li><a href="#what-the-module-does-not-take-off-your-hands" id="toc-what-the-module-does-not-take-off-your-hands" class="nav-link" data-scroll-target="#what-the-module-does-not-take-off-your-hands">What the module does not take off your hands</a></li>
-  <li><a href="#installing-and-updating" id="toc-installing-and-updating" class="nav-link" data-scroll-target="#installing-and-updating">Installing and updating</a></li>
-  <li><a href="#the-interface" id="toc-the-interface" class="nav-link" data-scroll-target="#the-interface">The interface</a>
-  <ul class="collapse">
-  <li><a href="#the-led-the-sender" id="toc-the-led-the-sender" class="nav-link" data-scroll-target="#the-led-the-sender">The LED (the sender)</a></li>
-  <li><a href="#the-sensor-the-receiver" id="toc-the-sensor-the-receiver" class="nav-link" data-scroll-target="#the-sensor-the-receiver">The sensor (the receiver)</a></li>
-  <li><a href="#more-control-when-you-need-it" id="toc-more-control-when-you-need-it" class="nav-link" data-scroll-target="#more-control-when-you-need-it">More control when you need it</a></li>
-  <li><a href="#two-devices-on-one-laptop" id="toc-two-devices-on-one-laptop" class="nav-link" data-scroll-target="#two-devices-on-one-laptop">Two devices on one laptop</a></li>
-  </ul></li>
-  <li><a href="#the-measurement-log-and-the-cockpit" id="toc-the-measurement-log-and-the-cockpit" class="nav-link" data-scroll-target="#the-measurement-log-and-the-cockpit">The measurement log and the cockpit</a></li>
-  <li><a href="#look-inside" id="toc-look-inside" class="nav-link" data-scroll-target="#look-inside">Look inside</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -488,118 +436,170 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In Python, a module is a piece of finished program code that you pull into your own program with a single <code>import</code> line and then use. Practically every Python program works this way: for maths, random numbers or timing nobody writes the code themselves, they import the module that does it. The word has nothing to do with the “module” in your study programme, by the way. It is unfortunately used for both.</p>
-<p><code>lifi_hardware</code> is such a Python module. I wrote it for this course. It holds the code that talks to your LiFi device, and you work with it for the whole project.</p>
-<p>The hardware itself comes from Tinkerforge, and Tinkerforge ships its own programming interface. You could work with that directly. You will not, at least not at the start, and here is why.</p>
-<section id="why-the-module-exists" class="level2">
-<h2 class="anchored" data-anchor-id="why-the-module-exists">Why the module exists</h2>
-<p>This is what a program looks like that sets a colour and fetches one reading through the Tinkerforge interface:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tinkerforge.ip_connection <span class="im">import</span> IPConnection</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tinkerforge.bricklet_rgb_led_v2 <span class="im">import</span> BrickletRGBLEDV2</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tinkerforge.bricklet_color_v2 <span class="im">import</span> BrickletColorV2</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>HOST <span class="op">=</span> <span class="st">"localhost"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>PORT <span class="op">=</span> <span class="dv">4223</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>UID_LED <span class="op">=</span> <span class="st">"ABC"</span>       <span class="co"># printed on the part, or shown in the Brick Viewer</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>UID_SENSOR <span class="op">=</span> <span class="st">"XYZ"</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ipcon <span class="op">=</span> IPConnection()</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>led <span class="op">=</span> BrickletRGBLEDV2(UID_LED, ipcon)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> BrickletColorV2(UID_SENSOR, ipcon)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ipcon.<span class="ex">connect</span>(HOST, PORT)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>led.set_rgb_value(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>r, g, b, c <span class="op">=</span> sensor.get_color()</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r, g, b, c)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ipcon.disconnect()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The same with the module:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> led, sensor</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sensor.read())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The difference is not just a few lines. The upper version contains at least five things you cannot possibly understand in your first days: what an IP connection is, why a program on your own laptop needs a network address, what a port is, what a UID is and where you get one, and why you have to disconnect at the end.</p>
-<p>None of that is the subject of this course. It would be ballast you carry along without learning anything from it. The module takes that part off your hands and leaves exactly what this is actually about: making light, measuring light, and the two settings with which you influence the measurement.</p>
-</section>
-<section id="what-the-module-does-not-take-off-your-hands" class="level2">
-<h2 class="anchored" data-anchor-id="what-the-module-does-not-take-off-your-hands">What the module does not take off your hands</h2>
-<p>It does not hide everything, and that is deliberate. The two settings of the sensor stay visible, because the most important trade-off of the project hangs on them. Whoever never sees them cannot tune their throughput.</p>
-</section>
-<section id="installing-and-updating" class="level2">
-<h2 class="anchored" data-anchor-id="installing-and-updating">Installing and updating</h2>
-<p>You do not have to do anything yourself: <code>/onboarding</code> installs the module in your first session, and <code>/update-semester</code> installs a new version whenever the course needs one, for instance when a function is added or a bug is fixed.</p>
-<p>By hand, it is one command in a terminal (on a Mac <code>pip3</code> if <code>pip</code> is not found):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install https://github.com/winf-hsos/lifi-hardware/archive/refs/heads/main.zip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The Tinkerforge library comes along automatically as a dependency. The code itself lives in a public GitHub repository: <a href="https://github.com/winf-hsos/lifi-hardware">github.com/winf-hsos/lifi-hardware</a>.</p>
-</section>
-<section id="the-interface" class="level2">
-<h2 class="anchored" data-anchor-id="the-interface">The interface</h2>
-<p>To begin with, one line that brings in two objects is enough:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> led, sensor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Both connect to your device by themselves the first time you use them. You need no addresses, no identifiers, no configuration. When your program ends, the LED goes off automatically and the connection is closed cleanly.</p>
-<section id="the-led-the-sender" class="level3">
-<h3 class="anchored" data-anchor-id="the-led-the-sender">The LED (the sender)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>led.set_color(r, g, b)   <span class="co"># each value 0 to 255</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>led.off()                <span class="co"># the same as led.set_color(0, 0, 0)</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>led.color                <span class="co"># the current colour as (r, g, b), read from the hardware</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The hardware keeps a colour you have set until another command arrives. It knows nothing about your program. If you use <code>led</code> and <code>sensor</code> as shown above, the module switches the LED off for you when your program ends, and that includes an end by Ctrl+C or by an error. If you take the <code>LifiDevice</code> route described further down, the LED stays on unless you close the device yourself. <code>led.color</code> asks the hardware itself, not a remembered value. That helps when you are hunting a fault and want to know what is really shining right now.</p>
-</section>
-<section id="the-sensor-the-receiver" class="level3">
-<h3 class="anchored" data-anchor-id="the-sensor-the-receiver">The sensor (the receiver)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>reading <span class="op">=</span> sensor.read()          <span class="co"># Reading(r, g, b, c), each value 0 to 65535</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>r, g, b, c <span class="op">=</span> sensor.read()       <span class="co"># unpacks straight into four variables</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sensor.set_integration_time(ms)  <span class="co"># allowed: 2.4, 24, 101, 154 or 700</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>sensor.set_gain(factor)          <span class="co"># allowed: 1, 4, 16 or 60</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>sensor.integration_time          <span class="co"># look up the current setting</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>sensor.gain                      <span class="co"># look up the current setting</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>sensor.set_light(<span class="va">True</span>)           <span class="co"># the sensor's white illumination LED</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Four things you have to know about the sensor.</p>
-<p>First, it measures four channels, not three. Red, green and blue are filtered; the fourth channel <code>c</code>, the clear channel, measures unfiltered and is therefore the most sensitive.</p>
-<p>Second, the readings do not correspond to the RGB values you sent. In between lie overlapping filters, the distance and the ambient light, and that is exactly why you calibrate.</p>
-<p>Third, the sensor measures at its own pace, one measurement per integration time. <code>read()</code> fetches the most recent finished measurement and does not wait. If you read more often than the sensor measures, you get the same value several times; new information arrives at most once per integration time. That is precisely why the integration time is a setting: calmer values against fewer measurements per second.</p>
-<p>Fourth, the sensor always starts in a known state: gain 16, integration time 154 ms, illumination LED off, so that measurement series are comparable. Which settings suit your link, only your own measurements can tell you.</p>
-<p>The small white illumination LED on the sensor, by the way, is meant for lighting objects whose surface colour you want to measure. For your light link it only gets in the way, so it is off at the start, and you leave it off.</p>
-</section>
-<section id="more-control-when-you-need-it" class="level3">
-<h3 class="anchored" data-anchor-id="more-control-when-you-need-it">More control when you need it</h3>
-<p>If you want to decide yourself when to connect and disconnect, take the class behind the two convenient objects:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> LifiDevice</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>lifi <span class="op">=</span> LifiDevice.<span class="ex">connect</span>()      <span class="co"># finds LED and sensor by itself</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>lifi.led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lifi.sensor.read())</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>lifi.close()                     <span class="co"># LED off, connection closed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The same with the clean-up built in: the <code>with</code> form closes the device for you at the end of the block, even if your code inside it fails.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> LifiDevice.<span class="ex">connect</span>() <span class="im">as</span> lifi:</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    lifi.led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(lifi.sensor.read())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>connect()</code> also knows a few options, for example <code>log_file=None</code> (no measurement log) and <code>server=None</code> (no upload, more on that in a moment).</p>
-</section>
-<section id="two-devices-on-one-laptop" class="level3">
-<h3 class="anchored" data-anchor-id="two-devices-on-one-laptop">Two devices on one laptop</h3>
-<p>Your team has two devices, and sometimes it is handy to plug both into the same laptop, one as the sender and one as the receiver. Then the module cannot know which one you mean, so each script tells it, by the UID of the master brick. That is the short code of the main board, shown in the Brick Viewer next to “Master Brick”. Call <code>use_device()</code> before you use <code>led</code> or <code>sensor</code> for the first time; after that everything works as usual:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lifi_hardware <span class="im">import</span> led, sensor, use_device</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>use_device(<span class="st">"64SK5w"</span>)     <span class="co"># the UID of the master brick of this device</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>led.set_color(<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Your second script names the other UID. If two devices are plugged in and a script does not choose, you get an error message that lists both UIDs, so you can copy the right one. The same choice works without changing the code through the environment variable <code>LIFI_MASTER</code>, and with <code>LifiDevice.connect(master="64SK5w")</code>. You need version 0.4.0 of the module or newer; <code>/update-semester</code> installs it.</p>
-</section>
-</section>
-<section id="the-measurement-log-and-the-cockpit" class="level2">
-<h2 class="anchored" data-anchor-id="the-measurement-log-and-the-cockpit">The measurement log and the cockpit</h2>
-<p>Everything your device does, the module writes to a file called <code>lifi_log.jsonl</code> in the folder your program runs in: every colour you set, every reading, every change of a setting, one plain-text line per event. This is the memory of your measurement series. It belongs to you, and it always works, even without any internet.</p>
-<p>In addition, the module sends the same events to the course server. That lets you see your own link live in the browser, in the <a href="https://lifi.hsos.uber.space/cockpit">team cockpit</a>: at the top what your LED sends, below it what your sensor measures, on a shared time axis. When the two do not fit together, you are looking at your fault. The cockpit is your most important tool for finding faults on the link. How to work with it is on its own page, <a href="../software/cockpit.html">The team cockpit</a>.</p>
-<p>Full transparency applies. What is uploaded is exactly what is in your local file, not a line more. If your program crashes, the type of error goes along too, with a cleaned message (file paths are removed beforehand, and your source code never goes along); the error then appears as a red mark in your cockpit. If you do not want the upload, you switch it off at any time and without any disadvantage, with <code>LifiDevice.connect(server=None)</code> or the environment variable <code>LIFI_SERVER=off</code>. The local log keeps running regardless.</p>
-</section>
-<section id="look-inside" class="level2">
-<h2 class="anchored" data-anchor-id="look-inside">Look inside</h2>
-<p>The module is not a magic trick. It is a manageable amount of Python code that you can open and read, and from Challenge 2 at the latest you should do that once. The source lies open in its <a href="https://github.com/winf-hsos/lifi-hardware">GitHub repository</a>, and your assistant has a copy of it too. In it you will find the same Tinkerforge calls as in the first example above, plus a few lines that look up your device’s identifiers by themselves, so that you never have to type a UID, unless two devices hang on the same laptop (see <a href="#two-devices-on-one-laptop">above</a>).</p>
-<p>This is a pattern you will meet constantly in your studies: under every convenient interface lies a less convenient one, and under that another. The Tinkerforge interface in turn hides how the data actually travels over the USB cable. And below that it goes on, down to single voltage levels on a wire.</p>
-<p>If you ever need something the module cannot do, you may reach one level down at any time and use the Tinkerforge interface directly. The module leaves the door open on purpose: <code>led.raw</code> and <code>sensor.raw</code> are the Tinkerforge objects underneath, with everything they can do. It is not forbidden. You just do not have to do it on the first day.</p>
+<div class="moved-notice" role="note"><p class="moved-head">This page has moved</p><p class="moved-text">The course module lifi_hardware now lives on Hands-on Computer Science, where it is kept up to date. This page is no longer maintained, so please use the new one, in English or in German.</p><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/lifi-hardware/" lang="en"><span class="moved-lang">English</span>The course module lifi_hardware on Hands-on Computer Science</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/lifi-hardware/" lang="de"><span class="moved-lang">Deutsch</span>The course module lifi_hardware auf Hands-on Computer Science</a></div></div>
+<!-- Moved to Hands-on Computer Science on 2026-11-02; the previous content is kept below, commented out.
+
+In Python, a module is a piece of finished program code that you pull into your own program with a single `import` line and then use. Practically every Python program works this way: for maths, random numbers or timing nobody writes the code themselves, they import the module that does it. The word has nothing to do with the "module" in your study programme, by the way. It is unfortunately used for both.
+
+`lifi_hardware` is such a Python module. I wrote it for this course. It holds the code that talks to your LiFi device, and you work with it for the whole project.
+
+The hardware itself comes from Tinkerforge, and Tinkerforge ships its own programming interface. You could work with that directly. You will not, at least not at the start, and here is why.
+
+## Why the module exists
+
+This is what a program looks like that sets a colour and fetches one reading through the Tinkerforge interface:
+
+```python
+from tinkerforge.ip_connection import IPConnection
+from tinkerforge.bricklet_rgb_led_v2 import BrickletRGBLEDV2
+from tinkerforge.bricklet_color_v2 import BrickletColorV2
+
+HOST = "localhost"
+PORT = 4223
+UID_LED = "ABC"       # printed on the part, or shown in the Brick Viewer
+UID_SENSOR = "XYZ"
+
+ipcon = IPConnection()
+led = BrickletRGBLEDV2(UID_LED, ipcon)
+sensor = BrickletColorV2(UID_SENSOR, ipcon)
+ipcon.connect(HOST, PORT)
+
+led.set_rgb_value(255, 0, 0)
+r, g, b, c = sensor.get_color()
+print(r, g, b, c)
+
+ipcon.disconnect()
+```
+
+The same with the module:
+
+```python
+from lifi_hardware import led, sensor
+
+led.set_color(255, 0, 0)
+print(sensor.read())
+```
+
+The difference is not just a few lines. The upper version contains at least five things you cannot possibly understand in your first days: what an IP connection is, why a program on your own laptop needs a network address, what a port is, what a UID is and where you get one, and why you have to disconnect at the end.
+
+None of that is the subject of this course. It would be ballast you carry along without learning anything from it. The module takes that part off your hands and leaves exactly what this is actually about: making light, measuring light, and the two settings with which you influence the measurement.
+
+## What the module does not take off your hands
+
+It does not hide everything, and that is deliberate. The two settings of the sensor stay visible, because the most important trade-off of the project hangs on them. Whoever never sees them cannot tune their throughput.
+
+## Installing and updating
+
+You do not have to do anything yourself: `/onboarding` installs the module in your first session, and `/update-semester` installs a new version whenever the course needs one, for instance when a function is added or a bug is fixed.
+
+By hand, it is one command in a terminal (on a Mac `pip3` if `pip` is not found):
+
+```bash
+pip install https://github.com/winf-hsos/lifi-hardware/archive/refs/heads/main.zip
+```
+
+The Tinkerforge library comes along automatically as a dependency. The code itself lives in a public GitHub repository: [github.com/winf-hsos/lifi-hardware](https://github.com/winf-hsos/lifi-hardware).
+
+## The interface
+
+To begin with, one line that brings in two objects is enough:
+
+```python
+from lifi_hardware import led, sensor
+```
+
+Both connect to your device by themselves the first time you use them. You need no addresses, no identifiers, no configuration. When your program ends, the LED goes off automatically and the connection is closed cleanly.
+
+### The LED (the sender)
+
+```python
+led.set_color(r, g, b)   # each value 0 to 255
+led.off()                # the same as led.set_color(0, 0, 0)
+led.color                # the current colour as (r, g, b), read from the hardware
+```
+
+The hardware keeps a colour you have set until another command arrives. It knows nothing about your program. If you use `led` and `sensor` as shown above, the module switches the LED off for you when your program ends, and that includes an end by Ctrl+C or by an error. If you take the `LifiDevice` route described further down, the LED stays on unless you close the device yourself. `led.color` asks the hardware itself, not a remembered value. That helps when you are hunting a fault and want to know what is really shining right now.
+
+### The sensor (the receiver)
+
+```python
+reading = sensor.read()          # Reading(r, g, b, c), each value 0 to 65535
+r, g, b, c = sensor.read()       # unpacks straight into four variables
+
+sensor.set_integration_time(ms)  # allowed: 2.4, 24, 101, 154 or 700
+sensor.set_gain(factor)          # allowed: 1, 4, 16 or 60
+sensor.integration_time          # look up the current setting
+sensor.gain                      # look up the current setting
+sensor.set_light(True)           # the sensor's white illumination LED
+```
+
+Four things you have to know about the sensor.
+
+First, it measures four channels, not three. Red, green and blue are filtered; the fourth channel `c`, the clear channel, measures unfiltered and is therefore the most sensitive.
+
+Second, the readings do not correspond to the RGB values you sent. In between lie overlapping filters, the distance and the ambient light, and that is exactly why you calibrate.
+
+Third, the sensor measures at its own pace, one measurement per integration time. `read()` fetches the most recent finished measurement and does not wait. If you read more often than the sensor measures, you get the same value several times; new information arrives at most once per integration time. That is precisely why the integration time is a setting: calmer values against fewer measurements per second.
+
+Fourth, the sensor always starts in a known state: gain 16, integration time 154 ms, illumination LED off, so that measurement series are comparable. Which settings suit your link, only your own measurements can tell you.
+
+The small white illumination LED on the sensor, by the way, is meant for lighting objects whose surface colour you want to measure. For your light link it only gets in the way, so it is off at the start, and you leave it off.
+
+### More control when you need it
+
+If you want to decide yourself when to connect and disconnect, take the class behind the two convenient objects:
+
+```python
+from lifi_hardware import LifiDevice
+
+lifi = LifiDevice.connect()      # finds LED and sensor by itself
+lifi.led.set_color(255, 0, 0)
+print(lifi.sensor.read())
+lifi.close()                     # LED off, connection closed
+```
+
+The same with the clean-up built in: the `with` form closes the device for you at the end of the block, even if your code inside it fails.
+
+```python
+with LifiDevice.connect() as lifi:
+    lifi.led.set_color(255, 0, 0)
+    print(lifi.sensor.read())
+```
+
+`connect()` also knows a few options, for example `log_file=None` (no measurement log) and `server=None` (no upload, more on that in a moment).
+
+### Two devices on one laptop
+
+Your team has two devices, and sometimes it is handy to plug both into the same laptop, one as the sender and one as the receiver. Then the module cannot know which one you mean, so each script tells it, by the UID of the master brick. That is the short code of the main board, shown in the Brick Viewer next to "Master Brick". Call `use_device()` before you use `led` or `sensor` for the first time; after that everything works as usual:
+
+```python
+from lifi_hardware import led, sensor, use_device
+
+use_device("64SK5w")     # the UID of the master brick of this device
+led.set_color(255, 0, 0)
+```
+
+Your second script names the other UID. If two devices are plugged in and a script does not choose, you get an error message that lists both UIDs, so you can copy the right one. The same choice works without changing the code through the environment variable `LIFI_MASTER`, and with `LifiDevice.connect(master="64SK5w")`. You need version 0.4.0 of the module or newer; `/update-semester` installs it.
+
+## The measurement log and the cockpit
+
+Everything your device does, the module writes to a file called `lifi_log.jsonl` in the folder your program runs in: every colour you set, every reading, every change of a setting, one plain-text line per event. This is the memory of your measurement series. It belongs to you, and it always works, even without any internet.
+
+In addition, the module sends the same events to the course server. That lets you see your own link live in the browser, in the [team cockpit](https://lifi.hsos.uber.space/cockpit): at the top what your LED sends, below it what your sensor measures, on a shared time axis. When the two do not fit together, you are looking at your fault. The cockpit is your most important tool for finding faults on the link. How to work with it is on its own page, [The team cockpit](cockpit.qmd).
+
+Full transparency applies. What is uploaded is exactly what is in your local file, not a line more. If your program crashes, the type of error goes along too, with a cleaned message (file paths are removed beforehand, and your source code never goes along); the error then appears as a red mark in your cockpit. If you do not want the upload, you switch it off at any time and without any disadvantage, with `LifiDevice.connect(server=None)` or the environment variable `LIFI_SERVER=off`. The local log keeps running regardless.
+
+## Look inside
+
+The module is not a magic trick. It is a manageable amount of Python code that you can open and read, and from Challenge 2 at the latest you should do that once. The source lies open in its [GitHub repository](https://github.com/winf-hsos/lifi-hardware), and your assistant has a copy of it too. In it you will find the same Tinkerforge calls as in the first example above, plus a few lines that look up your device's identifiers by themselves, so that you never have to type a UID, unless two devices hang on the same laptop (see [above](#two-devices-on-one-laptop)).
+
+This is a pattern you will meet constantly in your studies: under every convenient interface lies a less convenient one, and under that another. The Tinkerforge interface in turn hides how the data actually travels over the USB cable. And below that it goes on, down to single voltage levels on a wire.
+
+If you ever need something the module cannot do, you may reach one level down at any time and use the Tinkerforge interface directly. The module leaves the door open on purpose: `led.raw` and `sensor.raw` are the Tinkerforge objects underneath, with everything they can do. It is not forbidden. You just do not have to do it on the first day.
+
+-->
 
 
-</section>
 
 </main> <!-- /main -->
 <!-- Übungsfragen: Seit Oktober 2026 ist die Übungsplattform classroom-live
