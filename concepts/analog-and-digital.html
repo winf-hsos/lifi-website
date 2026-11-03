@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -81,9 +46,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-04f6296883490d005f4dbf6309390a62.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -233,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../software/lifi-hardware.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The module <code>lifi_hardware</code></span></a>
+ <span class="menu-text">The module `lifi_hardware`</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -449,26 +411,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
-  <ul class="collapse">
-  <li><a href="#the-part-no-program-controls" id="toc-the-part-no-program-controls" class="nav-link" data-scroll-target="#the-part-no-program-controls">The part no program controls</a></li>
-  <li><a href="#the-margin-not-the-noise" id="toc-the-margin-not-the-noise" class="nav-link" data-scroll-target="#the-margin-not-the-noise">The margin, not the noise</a></li>
-  <li><a href="#what-the-thrown-away-precision-buys" id="toc-what-the-thrown-away-precision-buys" class="nav-link" data-scroll-target="#what-the-thrown-away-precision-buys">What the thrown-away precision buys</a></li>
-  <li><a href="#two-cuts" id="toc-two-cuts" class="nav-link" data-scroll-target="#two-cuts">Two cuts</a></li>
-  <li><a href="#what-a-picture-costs" id="toc-what-a-picture-costs" class="nav-link" data-scroll-target="#what-a-picture-costs">What a picture costs</a></li>
-  <li><a href="#where-your-own-alphabet-is-born" id="toc-where-your-own-alphabet-is-born" class="nav-link" data-scroll-target="#where-your-own-alphabet-is-born">Where your own alphabet is born</a></li>
-  </ul></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -492,168 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>Analog quantities take on any value at all: between any two of them lies another. Digital systems assign those values to finitely many, clearly separated states. That throws precision away on purpose, and what you get in return is a decision that survives small disturbances. Turning something analog into something digital takes two cuts, and both of them have a price you can measure in bytes and, on your own link, in minutes.</p>
-<p>In this chapter, we address the following questions:</p>
-<ul>
-<li>What does “digital” actually mean, and what does it have to do with electricity?</li>
-<li>Why does a world without steps have to be cut into steps at all?</li>
-<li>What is lost in the process, and what does that loss buy you?</li>
-<li>What are sampling and quantization, and what does each kept detail cost?</li>
-<li>Where on your own link does analog end and digital begin?</li>
-</ul>
-<p>You need this concept for <a href="../challenges/challenge-1.html">Challenge 1</a>, and it comes back in <a href="../challenges/challenge-4.html">Challenge 4</a>, when a file has to fit into 2 KiB.</p>
-</section>
-<section id="explanation" class="level2">
-<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
-<p>A railway station before the age of chips. The split-flap board clatters, letter by letter falling into place. There is no computer anywhere near it, and the thing is nonetheless perfectly digital: every flap knows exactly two positions, and while it turns there is no valid state in between. That is also why you can read it from twenty metres away.</p>
-<div id="fig-digital-or-analog" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-digital-or-analog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/digital-or-analog.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Not one of them contains a chip. Electronics is only today’s usual carrier, not the defining feature, and the reverse holds as well: an amplifier is electronic and still stepless."><img src="../assets/diagrams/digital-or-analog.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-digital-or-analog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Not one of them contains a chip. Electronics is only today’s usual carrier, not the defining feature, and the reverse holds as well: an amplifier is electronic and still stepless.
-</figcaption>
-</figure>
-</div>
-<p>So here is the definition, and it mentions no electricity at all: <strong>digital means finitely many states, and nothing in between counts.</strong> Both halves carry weight. The first is the harmless one. The second is where all the engineering hangs, because if nothing between the states counts, then nothing between the states can go wrong either.</p>
-<section id="the-part-no-program-controls" class="level3">
-<h3 class="anchored" data-anchor-id="the-part-no-program-controls">The part no program controls</h3>
-<p>Your own link runs through all three zones. The sender turns numbers into light, the sensor turns light back into numbers: digital, analog, digital.</p>
-<div id="fig-the-analog-middle" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-the-analog-middle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/the-analog-middle.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: The middle is physics. It is stepless and disturbed by ambient light, distance and noise, and no program in the world controls it."><img src="../assets/diagrams/the-analog-middle.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-the-analog-middle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The middle is physics. It is stepless and disturbed by ambient light, distance and noise, and no program in the world controls it.
-</figcaption>
-</figure>
-</div>
-<p>Light is analog: between any two brightnesses lies another, there is no smallest step. Your program needs the opposite, finitely many states that are clearly apart. Digitising a signal means nothing more than representing it by a finite sequence of numbers.</p>
-</section>
-<section id="the-margin-not-the-noise" class="level3">
-<h3 class="anchored" data-anchor-id="the-margin-not-the-noise">The margin, not the noise</h3>
-<p>How many states can you afford? That question has a picture, and it is the one to remember from this page.</p>
-<div id="fig-decision-levels" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-decision-levels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/decision-levels.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Three times the same measurement with the same wobble, and only the number of regions grows. With two regions the band sits comfortably inside its own region, with four it gets tight, with eight the same band crosses the boundary."><img src="../assets/diagrams/decision-levels.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decision-levels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Three times the same measurement with the same wobble, and only the number of regions grows. With two regions the band sits comfortably inside its own region, with four it gets tight, with eight the same band crosses the boundary.
-</figcaption>
-</figure>
-</div>
-<p>The noise did not grow. The margin shrank. The distance between regions is your safety reserve, and more regions spread the same reserve over more boundaries. The other half of that problem is on <a href="../concepts/signal-and-noise.html">Signal and Noise</a>: there the number of symbols stays put and the measuring gets faster instead. Both roads end at the same wall.</p>
-</section>
-<section id="what-the-thrown-away-precision-buys" class="level3">
-<h3 class="anchored" data-anchor-id="what-the-thrown-away-precision-buys">What the thrown-away precision buys</h3>
-<p>Digitising is a one-way street. Which of the infinitely many values inside a region it really was cannot be recovered afterwards. That is not an accident, it is the purchase price, and here is what you buy:</p>
-<div id="fig-copy-chain" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-copy-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/copy-chain.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: The tape copies its stepless wave along with all the noise and adds its own with every generation. The file is born again from clean states at every copy: read, set afresh, done."><img src="../assets/diagrams/copy-chain.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-copy-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: The tape copies its stepless wave along with all the noise and adds its own with every generation. The file is born again from clean states at every copy: read, set afresh, done.
-</figcaption>
-</figure>
-</div>
-<p>Every disturbance smaller than the distance between states disappears completely in the process. That is why digital technology is reliable, not although it throws information away but <strong>because</strong> it does, and why the thousandth copy of a file is still the original. You can run that experiment yourself in <a href="https://demos.lifi-project.de/copier/">The Copier</a>: each press of “copy” hangs the next analog generation on the wall until the original has disappeared, and one button hangs the identical file copy next to it.</p>
-<a class="linkcard" href="https://demos.lifi-project.de/copier/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the copier</span><span class="linkcard-desc">press copy and hang each generation on the wall: watch the analog picture fade copy by copy, then ask what a file would have done.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/29cc98e1a436.png" alt=""></a>
-</section>
-<section id="two-cuts" class="level3">
-<h3 class="anchored" data-anchor-id="two-cuts">Two cuts</h3>
-<p>Digitising always takes two cuts, and a photo shows both of them.</p>
-<div id="fig-two-cuts" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-two-cuts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/two-cuts.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: The first cut goes through the area, the second through the value."><img src="../assets/diagrams/two-cuts.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-two-cuts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: The first cut goes through the area, the second through the value.
-</figcaption>
-</figure>
-</div>
-<p>The <strong>first cut</strong> turns the stepless picture into measuring points, sixteen by sixteen in the figure. That is <strong>sampling</strong>, and how fine it is is the <strong>resolution</strong>. The <strong>second cut</strong> rounds the brightness of every point to one of the agreed steps, four grey levels in the figure. That is <strong>quantization</strong>, and the number of steps is the <strong>colour depth</strong>. Those steps are exactly the regions from the section above, now applied to a picture.</p>
-<p>Both cuts leave different traces, and that is how you tell which knob to turn:</p>
-<div id="fig-cut-artefacts" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-cut-artefacts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/cut-artefacts.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Blocks mean too few points. Hard patches in what should be soft shading mean too few levels."><img src="../assets/diagrams/cut-artefacts.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cut-artefacts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Blocks mean too few points. Hard patches in what should be soft shading mean too few levels.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="what-a-picture-costs" class="level3">
-<h3 class="anchored" data-anchor-id="what-a-picture-costs">What a picture costs</h3>
-<p>One piece of arithmetic carries every file size: <strong>points × bits per point</strong>.</p>
-<div id="fig-picture-cost" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-picture-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/picture-cost.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: The same picture, one decision, fifty-three minutes of difference."><img src="../assets/diagrams/picture-cost.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-picture-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: The same picture, one decision, fifty-three minutes of difference.
-</figcaption>
-</figure>
-</div>
-<p>On your light link, size turns into time straight away. Which is why digitising is not a diligence exercise with “as fine as possible”, but a trade-off about which detail is worth the transmission time.</p>
-<div id="fig-how-far-can-you-go" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-how-far-can-you-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/how-far-can-you-go.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: The same photo, ever coarser. Somewhere between the third and the fourth picture it stops being a parrot, and where exactly, people will disagree."><img src="../assets/diagrams/how-far-can-you-go.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-how-far-can-you-go-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: The same photo, ever coarser. Somewhere between the third and the fourth picture it stops being a parrot, and where exactly, people will disagree.
-</figcaption>
-</figure>
-</div>
-<p>That disagreement is the point. There is no correct amount, there is only a trade-off, and in <a href="../challenges/challenge-4.html">Challenge 4</a> you have 2 KiB to make it in. You can play the whole thing through in <a href="https://demos.lifi-project.de/photo-digitiser/">The Photo Digitiser</a>, from 256 by 256 points down to a single pixel, with colour depths from today’s standard through the sixteen colours of an early pc down to the four greys of the first Game Boy, and with the file size and the transmission time running along underneath.</p>
-<a class="linkcard" href="https://demos.lifi-project.de/photo-digitiser/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the photo digitiser</span><span class="linkcard-desc">turn an analog photo into numbers: pick resolution and colour depth (down to the game boy's four greys), see the picture change, and watch the byte count grow.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/71c35efb5ed9.png" alt=""></a>
-<p>The same two cuts apply to sound. There, sampling slices time instead of area and the bit depth slices loudness instead of brightness; 44,100 samples per second at 16 bit is a CD. In <a href="https://demos.lifi-project.de/audio-digitiser/">The Audio Digitiser</a> you can hear what each cut throws away.</p>
-<a class="linkcard" href="https://demos.lifi-project.de/audio-digitiser/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">the audio digitiser</span><span class="linkcard-desc">the same two cuts for sound: choose sampling rate and bit depth, see the staircase on the wave — and hear what gets thrown away.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/31a9aa51f891.png" alt=""></a>
-</section>
-<section id="where-your-own-alphabet-is-born" class="level3">
-<h3 class="anchored" data-anchor-id="where-your-own-alphabet-is-born">Where your own alphabet is born</h3>
-<p>At the end of all of this sits one line of your own code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> sensor.get_clear()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> value <span class="op">&gt;</span> <span class="dv">250</span>:</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    symbol <span class="op">=</span> <span class="st">"bright"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    symbol <span class="op">=</span> <span class="st">"dark"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>That threshold is the place where hundreds of possible readings turn into two symbols. It is not a constant of nature, it is your decision, and from there on it is your decision that holds, not the physics. Where it belongs does not come from your gut but from your measurement series: calibrate first, then compare (see <a href="../concepts/measurement-and-experiments.html">Measuring and Experimenting</a>).</p>
-<p>Two colours are safe, eight are fast, and somewhere in between sits your alphabet. Only your own measurements know where, because the width of a region has to match the wobble of your readings.</p>
-</section>
-</section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
-<div class="deck-embed">
-  <iframe src="../assets/decks/analog-and-digital/index.html?bar=1&amp;pdf=../analog-and-digital.pdf" title="drawing the line" allowfullscreen="" loading="lazy"></iframe>
-</div>
-</section>
-<section id="practice-questions" class="level2">
-<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
-<p>The practice questions have the same format as the exam, so they are also a good way to prepare for it.</p>
-<div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/analog-and-digital.json"></div>
-</section>
-<section id="further-reading" class="level2">
-<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
-<ul>
-<li>Claude Shannon: Communication in the Presence of Noise. Proceedings of the IRE, 1949. The paper that put the sampling cut on a firm footing: how often you have to measure a signal to be able to reconstruct it. The first two pages are readable without the mathematics behind them.</li>
-<li>Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. 2nd edition, Microsoft Press, 2022. Chapters 1 to 10 build the same idea from the other end, from a torch signalling through a window to states and codes, and without a single formula.</li>
-</ul>
 
-
-</section>
 
 </main> <!-- /main -->
 <!-- Übungsfragen: Seit Oktober 2026 ist die Übungsplattform classroom-live
@@ -1093,48 +876,16 @@ Figure&nbsp;8: The same photo, ever coarser. Somewhere between the third and the
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Prof.&nbsp;Dr.&nbsp;Nicolas Meseth · Hochschule Osnabrück · Digitization and Programming</p>
-</div>   
+      <div class="footer-contents">Prof. Dr. Nicolas Meseth · Hochschule Osnabrück · Digitization and Programming</div>  
+    </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Content CC BY-SA 4.0</p>
-</div>
+      <div class="footer-contents">Content CC BY-SA 4.0</div>  
+    </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
