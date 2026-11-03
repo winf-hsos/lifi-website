@@ -1,11 +1,4 @@
 {
-  "https://lifi.uber.space/cockpit": {
-    "url": "https://lifi.uber.space/cockpit",
-    "title": "Team Cockpit",
-    "description": "Your link, live: what your LED sends and what your sensor measures, on one shared timeline. If the two do not match, you are looking at your bug.",
-    "site": "LiFi Project",
-    "image": "6f3db8aa698a.png"
-  },
   "https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/": {
     "url": "https://winf-hsos.github.io/lifi-concept-demos/photo-digitiser/",
     "title": "the photo digitiser",

@@ -442,7 +442,7 @@ ul.task-list li input[type="checkbox"] {
 
 This challenge looks harmless, and it decides your whole project anyway. It asks a single question:
 
-> **How many different states can you tell apart, without a single mistake, over 50 attempts?**
+> **How many different states can you tell apart, without a single mistake, over 20 attempts?**
 
 Here is why it matters. Whoever can reliably distinguish four states will later send two bits per symbol. Whoever manages sixteen sends four. At the same speed that is twice the throughput, and twice the throughput is what wins the final.
 
@@ -450,12 +450,10 @@ Here is why it matters. Whoever can reliably distinguish four states will later 
 
 The sender shows a colour from a set that you define yourselves. The receiver says which one it was.
 
-No timing, no message, nothing automatic. A human presses Enter, the program measures, and the name of the recognised state appears on the receiver's screen.
+No timing and no message: the test (`run_test` in `lifi_hardware`) shows one colour at a time, waits until the receiver has measured, and only then shows the next. Everything goes into one file, `alphabet.py`, with your colours, `calibrate`, `send_symbol` and `receive_symbol`. It works with both devices on one laptop and with one device on each of two laptops; the details are in the README of the template.
 
-The distance between the devices is fixed and the same for everyone.
+The two boxes of sender and receiver touch wall to wall, the same for everyone.
 
-<!-- TODO: konkreten Abstandswert eintragen, sobald die Pilotmessung erfolgt ist -->
-<!--
 
 ## What is new
 
@@ -482,15 +480,13 @@ What you may build is described under [optical setup](../hardware/index.qmd#opti
 
 ## What is measured
 
-The size of your alphabet, meaning the number of states you can tell apart over **50 attempts without error**. A single mistake counts as a fail for that alphabet size.
+The size of your alphabet, meaning the number of states you can tell apart over **20 attempts without error**. A single mistake counts as a fail for that alphabet size. The sequence of the 20 attempts comes fresh from the course server for every run, and every run appears in your team cockpit.
 
 So it does not pay to gamble. Eight states recognised reliably are worth more than sixteen with an occasional mix-up.
 
 ## Showing it works
 
-At the test table, with your own setup, which you carry there.
-
-Twenty random transmissions run. Then one live change, for example: "Add one more state. Does the hit rate hold?"
+At your own place. You run the test yourselves; Nicolas comes round, looks at your setup and checks the result. Then one live change, for example: "Add one more state. Does the hit rate hold?"
 
 ## What to keep
 
