@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -81,9 +46,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-04f6296883490d005f4dbf6309390a62.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -112,35 +74,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -478,24 +411,8 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#explanation" id="toc-explanation" class="nav-link" data-scroll-target="#explanation">Explanation</a>
-  <ul class="collapse">
-  <li><a href="#information-is-uncertainty-removed" id="toc-information-is-uncertainty-removed" class="nav-link" data-scroll-target="#information-is-uncertainty-removed">Information is uncertainty removed</a></li>
-  <li><a href="#not-every-answer-is-worth-a-bit" id="toc-not-every-answer-is-worth-a-bit" class="nav-link" data-scroll-target="#not-every-answer-is-worth-a-bit">Not every answer is worth a bit</a></li>
-  <li><a href="#what-that-means-for-your-alphabet" id="toc-what-that-means-for-your-alphabet" class="nav-link" data-scroll-target="#what-that-means-for-your-alphabet">What that means for your alphabet</a></li>
-  <li><a href="#when-symbols-are-not-equally-likely" id="toc-when-symbols-are-not-equally-likely" class="nav-link" data-scroll-target="#when-symbols-are-not-equally-likely">When symbols are not equally likely</a></li>
-  </ul></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#practice-questions" id="toc-practice-questions" class="nav-link" data-scroll-target="#practice-questions">Practice questions</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -519,141 +436,121 @@ window.Quarto = {
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>A symbol is an agreed, distinguishable state. Distinguishable is a question for physics and your sensor; agreed is a question for the two of you, and no measurement can answer it. The set of all agreed symbols is your alphabet, and how much a single symbol carries can be counted: with <span class="math inline">\(N\)</span> equally likely possibilities it is <span class="math inline">\(\log_2(N)\)</span> bits. A bigger alphabet therefore carries more per symbol and finishes the same file sooner, which is exactly why the physics has to be asked how big it may be.</p>
-<p>In this chapter, we address the following questions:</p>
-<ul>
-<li>What is a symbol, and who decides what it means?</li>
-<li>How much information does a single symbol carry?</li>
-<li>What is a bit?</li>
-<li>Why does a transmission get faster when the alphabet grows?</li>
-<li>Why is a question that halves the field better than one that might solve everything?</li>
-</ul>
-<p>You need this concept for <a href="../challenges/challenge-1.html">Challenge 1</a>, where you agree on your own alphabet and have to defend its size.</p>
-</section>
-<section id="explanation" class="level2">
-<h2 class="anchored" data-anchor-id="explanation">Explanation</h2>
-<p>North Atlantic, 1942. Radio silence, because radio traffic draws the enemy. Two ships talk to each other anyway: a lamp, a shutter in front of it, short short short long. The light itself knows nothing. It means something only because both sides carry the same table in their heads.</p>
-<p>A <strong>symbol</strong> is an agreed, distinguishable state, and both words carry weight. Distinguishable was the subject of <a href="../concepts/analog-and-digital.html">Analog and Digital</a>: can the receiver tell this state apart from all the others? Agreed is a different kind of question entirely, and here is what happens when it goes unanswered:</p>
-<div id="fig-agreement-broken" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-agreement-broken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/agreement-broken.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Both tables map colours to letters, but not the same way. Four colours arrive without a single error, and the receiver still reads a different word."><img src="../assets/diagrams/agreement-broken.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-agreement-broken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Both tables map colours to letters, but not the same way. Four colours arrive without a single error, and the receiver still reads a different word.
-</figcaption>
-</figure>
-</div>
-<p>No transmission error, no interference, no bad measurement, and the message is worthless all the same. In code, that agreement is a dictionary:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ALPHABET <span class="op">=</span> {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"red"</span>:    <span class="st">"00"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"green"</span>:  <span class="st">"01"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"blue"</span>:   <span class="st">"10"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"yellow"</span>: <span class="st">"11"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This table is never transmitted. It has to sit on both sides beforehand, which makes it not data but a promise.</p>
-<section id="information-is-uncertainty-removed" class="level3">
-<h3 class="anchored" data-anchor-id="information-is-uncertainty-removed">Information is uncertainty removed</h3>
-<p>What a message is worth does not depend on its length but on how much uncertainty it removes. One card is drawn from 32, and you may only ask yes/no questions. Ask well and you are done in five:</p>
-<div id="fig-halving-chain" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-halving-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/halving-chain.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Every question halves what is left: 32, 16, 8, 4, 2, 1. Five questions, and not by luck."><img src="../assets/diagrams/halving-chain.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-halving-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Every question halves what is left: 32, 16, 8, 4, 2, 1. Five questions, and not by luck.
-</figcaption>
-</figure>
-</div>
-<p>That number of halvings is the measure. Its unit is the <strong>bit</strong>, and with <span class="math inline">\(N\)</span> equally likely possibilities the uncertainty is <span class="math inline">\(H = \log_2(N)\)</span> bits. The 32 cards are not the uncertainty; they are the space of possibilities. The uncertainty is the 5.</p>
-<p><strong>Information</strong> is then a difference: <span class="math inline">\(I = H_1 - H_2\)</span>, uncertainty before minus uncertainty after. A halving question lowers <span class="math inline">\(H\)</span> by exactly 1, so its answer is worth one bit.</p>
-</section>
-<section id="not-every-answer-is-worth-a-bit" class="level3">
-<h3 class="anchored" data-anchor-id="not-every-answer-is-worth-a-bit">Not every answer is worth a bit</h3>
-<p>A lopsided question buys less. Ask “is it the ace of spades?” and you almost always get a no, and that no removes almost nothing.</p>
-<div id="fig-question-worth" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-question-worth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/question-worth.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: A rare answer tells you a lot, an expected answer tells you little. You cannot choose which one you get, so what counts is the average."><img src="../assets/diagrams/question-worth.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-question-worth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: A rare answer tells you a lot, an expected answer tells you little. You cannot choose which one you get, so what counts is the average.
-</figcaption>
-</figure>
-</div>
-<p>Written in general, the <strong>expected value</strong> of a question adds up, over all its possible answers, how likely each answer is times what it would be worth:</p>
-<p><span class="math display">\[E = \sum_i p_i \cdot \log_2\!\left(\frac{1}{p_i}\right)\]</span></p>
-<p>For a yes/no question that is two terms. Put the numbers in and you get the two rows above: <span class="math inline">\(0.5 \cdot 1 + 0.5 \cdot 1 = 1\)</span> bit for the halving question, and <span class="math inline">\(0.03 \cdot 5 + 0.97 \cdot 0.05 = 0.2\)</span> bits for the lopsided one. A whole bit goes only to whoever really splits the field in half.</p>
-<p>That is why halving wins on average: it takes the largest guaranteed gain out of every answer. The lopsided question only becomes sensible right at the end, when two possibilities are left. And it is worth noticing what the second row implies: a question whose outcome is nearly certain carries almost no information, however long its answer. Compression later rests on exactly that observation.</p>
-<p>You can play this in <a href="https://demos.lifi-project.de/question-game/">The Question Game</a>: one of sixteen faces is the secret, you ask about features like glasses, beard or hair colour, and after every answer the demo works out what it was worth, expected value included. Count the faces before you ask. Whoever splits near the half is done in four questions, since <span class="math inline">\(\log_2(16) = 4\)</span>; whoever guesses early asks the most lopsided question there is and can watch the bit yield say so.</p>
-<a class="linkcard" href="https://demos.lifi-project.de/question-game/" target="_blank" rel="noopener"><span class="linkcard-text"><span class="linkcard-title">question game</span><span class="linkcard-desc">find the secret face among sixteen: every answer shrinks the crowd, the shrinking is measured in bits, and the halving strategy shows why four questions are enough.</span><span class="linkcard-url">LiFi Project · concept demos</span></span><img class="linkcard-image" src="../assets/linkcards/ee3c1d751625.png" alt=""></a>
-</section>
-<section id="what-that-means-for-your-alphabet" class="level3">
-<h3 class="anchored" data-anchor-id="what-that-means-for-your-alphabet">What that means for your alphabet</h3>
-<p>The same tool, now applied to your own link:</p>
-<div id="fig-alphabet-in-bits" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-alphabet-in-bits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/alphabet-in-bits.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Each symbol from an alphabet of N equally likely possibilities carries log₂(N) bits. The same file at the same symbol rate is through in a third of the time with eight colours instead of two."><img src="../assets/diagrams/alphabet-in-bits.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alphabet-in-bits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Each symbol from an alphabet of N equally likely possibilities carries log₂(N) bits. The same file at the same symbol rate is through in a third of the time with eight colours instead of two.
-</figcaption>
-</figure>
-</div>
-<p>So why not use 256 colours? Because physics has a say: more symbols means smaller distances between the colours, and past some point the noise eats the gain again. That is the bridge to <a href="../concepts/signal-and-noise.html">Signal and Noise</a>, and it makes the size of your alphabet a measurement rather than a matter of taste.</p>
-<p>At the other end the opposite holds. Two symbols are enough for any message at all, you just need more of them:</p>
-<div id="fig-two-symbols-grouped" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-two-symbols-grouped-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/two-symbols-grouped.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Five flashes with two possibilities each make 2⁵ = 32 combinations, room for a whole alphabet."><img src="../assets/diagrams/two-symbols-grouped.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-two-symbols-grouped-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Five flashes with two possibilities each make 2⁵ = 32 combinations, room for a whole alphabet.
-</figcaption>
-</figure>
-</div>
-<p>What a large alphabet does per symbol, two symbols do in a group. That is why every computer gets by with nought and one, and why a small alphabet is not a dead end but merely slower.</p>
-</section>
-<section id="when-symbols-are-not-equally-likely" class="level3">
-<h3 class="anchored" data-anchor-id="when-symbols-are-not-equally-likely">When symbols are not equally likely</h3>
-<p>Everything above treated all symbols as equally likely. In real text they are not, and Morse code exploits that:</p>
-<div id="fig-morse-lengths" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-morse-lengths-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../assets/diagrams/morse-lengths.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: The most common letter gets the shortest code, a single dot. Rare letters are long."><img src="../assets/diagrams/morse-lengths.svg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-morse-lengths-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: The most common letter gets the shortest code, a single dot. Rare letters are long.
-</figcaption>
-</figure>
-</div>
-<p>The unequal treatment pays because it shortens the average message: what occurs often should cost little. A rare symbol carries more information than a common one, so it may also take up more room. Every compression scheme rests on that.</p>
-</section>
-</section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p>The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.</p>
+<div class="moved-notice" role="note"><p class="moved-head">This page has moved</p><p class="moved-text">Symbols and information now lives on Hands-on Computer Science, where it is kept up to date. This page is no longer maintained, so please use the new one, in English or in German.</p><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/symbols-and-information/" lang="en"><span class="moved-lang">English</span>Symbols and information</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/symbols-and-information/" lang="de"><span class="moved-lang">Deutsch</span>Symbole und Information</a></div><div class="moved-links"><a class="moved-link" href="https://hands-on-computer-science.de/cs/en/items/symbols-and-information-quiz/" lang="en"><span class="moved-lang">English</span>Quiz: Symbols and information</a><a class="moved-link" href="https://hands-on-computer-science.de/cs/de/items/symbols-and-information-quiz/" lang="de"><span class="moved-lang">Deutsch</span>Quiz: Symbole und Information</a></div></div>
+<!-- Moved to Hands-on Computer Science on 2026-11-03; the previous content is kept below, commented out.
+
+## Summary
+
+A symbol is an agreed, distinguishable state. Distinguishable is a question for physics and your sensor; agreed is a question for the two of you, and no measurement can answer it. The set of all agreed symbols is your alphabet, and how much a single symbol carries can be counted: with $N$ equally likely possibilities it is $\log_2(N)$ bits. A bigger alphabet therefore carries more per symbol and finishes the same file sooner, which is exactly why the physics has to be asked how big it may be.
+
+In this chapter, we address the following questions:
+
+- What is a symbol, and who decides what it means?
+- How much information does a single symbol carry?
+- What is a bit?
+- Why does a transmission get faster when the alphabet grows?
+- Why is a question that halves the field better than one that might solve everything?
+
+You need this concept for [Challenge 1](../challenges/challenge-1.qmd), where you agree on your own alphabet and have to defend its size.
+
+## Explanation
+
+North Atlantic, 1942. Radio silence, because radio traffic draws the enemy. Two ships talk to each other anyway: a lamp, a shutter in front of it, short short short long. The light itself knows nothing. It means something only because both sides carry the same table in their heads.
+
+A **symbol** is an agreed, distinguishable state, and both words carry weight. Distinguishable was the subject of [Analog and Digital](analog-and-digital.qmd): can the receiver tell this state apart from all the others? Agreed is a different kind of question entirely, and here is what happens when it goes unanswered:
+
+![Both tables map colours to letters, but not the same way. Four colours arrive without a single error, and the receiver still reads a different word.](../assets/diagrams/agreement-broken.svg){#fig-agreement-broken}
+
+No transmission error, no interference, no bad measurement, and the message is worthless all the same. In code, that agreement is a dictionary:
+
+```python
+ALPHABET = {
+    "red":    "00",
+    "green":  "01",
+    "blue":   "10",
+    "yellow": "11",
+}
+```
+
+This table is never transmitted. It has to sit on both sides beforehand, which makes it not data but a promise.
+
+### Information is uncertainty removed
+
+What a message is worth does not depend on its length but on how much uncertainty it removes. One card is drawn from 32, and you may only ask yes/no questions. Ask well and you are done in five:
+
+![Every question halves what is left: 32, 16, 8, 4, 2, 1. Five questions, and not by luck.](../assets/diagrams/halving-chain.svg){#fig-halving-chain}
+
+That number of halvings is the measure. Its unit is the **bit**, and with $N$ equally likely possibilities the uncertainty is $H = \log_2(N)$ bits. The 32 cards are not the uncertainty; they are the space of possibilities. The uncertainty is the 5.
+
+**Information** is then a difference: $I = H_1 - H_2$, uncertainty before minus uncertainty after. A halving question lowers $H$ by exactly 1, so its answer is worth one bit.
+
+### Not every answer is worth a bit
+
+A lopsided question buys less. Ask "is it the ace of spades?" and you almost always get a no, and that no removes almost nothing.
+
+![A rare answer tells you a lot, an expected answer tells you little. You cannot choose which one you get, so what counts is the average.](../assets/diagrams/question-worth.svg){#fig-question-worth}
+
+Written in general, the **expected value** of a question adds up, over all its possible answers, how likely each answer is times what it would be worth:
+
+$$E = \sum_i p_i \cdot \log_2\!\left(\frac{1}{p_i}\right)$$
+
+For a yes/no question that is two terms. Put the numbers in and you get the two rows above: $0.5 \cdot 1 + 0.5 \cdot 1 = 1$ bit for the halving question, and $0.03 \cdot 5 + 0.97 \cdot 0.05 = 0.2$ bits for the lopsided one. A whole bit goes only to whoever really splits the field in half.
+
+That is why halving wins on average: it takes the largest guaranteed gain out of every answer. The lopsided question only becomes sensible right at the end, when two possibilities are left. And it is worth noticing what the second row implies: a question whose outcome is nearly certain carries almost no information, however long its answer. Compression later rests on exactly that observation.
+
+You can play this in [The Question Game](https://demos.lifi-project.de/question-game/): one of sixteen faces is the secret, you ask about features like glasses, beard or hair colour, and after every answer the demo works out what it was worth, expected value included. Count the faces before you ask. Whoever splits near the half is done in four questions, since $\log_2(16) = 4$; whoever guesses early asks the most lopsided question there is and can watch the bit yield say so.
+
+
+
+### What that means for your alphabet
+
+The same tool, now applied to your own link:
+
+![Each symbol from an alphabet of N equally likely possibilities carries log₂(N) bits. The same file at the same symbol rate is through in a third of the time with eight colours instead of two.](../assets/diagrams/alphabet-in-bits.svg){#fig-alphabet-in-bits}
+
+So why not use 256 colours? Because physics has a say: more symbols means smaller distances between the colours, and past some point the noise eats the gain again. That is the bridge to [Signal and Noise](signal-and-noise.qmd), and it makes the size of your alphabet a measurement rather than a matter of taste.
+
+At the other end the opposite holds. Two symbols are enough for any message at all, you just need more of them:
+
+![Five flashes with two possibilities each make 2⁵ = 32 combinations, room for a whole alphabet.](../assets/diagrams/two-symbols-grouped.svg){#fig-two-symbols-grouped}
+
+What a large alphabet does per symbol, two symbols do in a group. That is why every computer gets by with nought and one, and why a small alphabet is not a dead end but merely slower.
+
+### When symbols are not equally likely
+
+Everything above treated all symbols as equally likely. In real text they are not, and Morse code exploits that:
+
+![The most common letter gets the shortest code, a single dot. Rare letters are long.](../assets/diagrams/morse-lengths.svg){#fig-morse-lengths}
+
+The unequal treatment pays because it shortens the average message: what occurs often should cost little. A rare symbol carries more information than a common one, so it may also take up more room. Every compression scheme rests on that.
+
+## Slides
+
+The slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.
+
+```{=html}
 <div class="deck-embed">
-  <iframe src="../assets/decks/symbols-and-information/index.html?bar=1&amp;pdf=../symbols-and-information.pdf" title="what light means" allowfullscreen="" loading="lazy"></iframe>
+  <iframe src="../assets/decks/symbols-and-information/index.html?bar=1&pdf=../symbols-and-information.pdf"
+          title="what light means" allowfullscreen loading="lazy"></iframe>
 </div>
-</section>
-<section id="practice-questions" class="level2">
-<h2 class="anchored" data-anchor-id="practice-questions">Practice questions</h2>
-<p>The practice questions have the same format as the exam, so they are also a good way to prepare for it.</p>
+```
+
+## Practice questions
+
+The practice questions have the same format as the exam, so they are also a good way to prepare for it.
+
+```{=html}
 <div class="fragen-quiz" data-sprache="en" data-quelle="../assets/questions/symbols-and-information.json"></div>
-</section>
-<section id="further-reading" class="level2">
-<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
-<ul>
-<li>Claude Shannon: A Mathematical Theory of Communication. Bell System Technical Journal, 1948, freely available online. The paper that founded all of this. The first six pages need no mathematics and contain the diagram of sender, channel, noise and receiver that your own link is built from.</li>
-<li>James Gleick: The Information. A History, a Theory, a Flood. Pantheon, 2011. The long story around it: talking drums, the telegraph, Morse’s letter frequencies and how the idea of measurable information came about. Chapters 1 and 7 fit this page exactly.</li>
-</ul>
+```
+
+## Further reading
+
+- Claude Shannon: A Mathematical Theory of Communication. Bell System Technical Journal, 1948, freely available online. The paper that founded all of this. The first six pages need no mathematics and contain the diagram of sender, channel, noise and receiver that your own link is built from.
+- James Gleick: The Information. A History, a Theory, a Flood. Pantheon, 2011. The long story around it: talking drums, the telegraph, Morse's letter frequencies and how the idea of measurable information came about. Chapters 1 and 7 fit this page exactly.
+
+-->
 
 
-</section>
 
 </main> <!-- /main -->
 <!-- Übungsfragen: Seit Oktober 2026 ist die Übungsplattform classroom-live
@@ -1103,38 +1000,6 @@ Figure&nbsp;6: The most common letter gets the shortest code, a single dot. Rare
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
