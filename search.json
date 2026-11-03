@@ -644,6 +644,18 @@
     ]
   },
   {
+    "objectID": "concepts/analog-and-digital.html",
+    "href": "concepts/analog-and-digital.html",
+    "title": "Analog and Digital",
+    "section": "",
+    "text": "This page has movedAnalog and digital now lives on Hands-on Computer Science, where it is kept up to date. This page is no longer maintained, so please use the new one, in English or in German.EnglishAnalog and digitalDeutschAnalog und digitalEnglishQuiz: Analog and digitalDeutschQuiz: Analog und digital",
+    "crumbs": [
+      "Concepts",
+      "Representing Information",
+      "Analog and Digital"
+    ]
+  },
+  {
     "objectID": "concepts/abstraction-and-layers.html",
     "href": "concepts/abstraction-and-layers.html",
     "title": "Abstraction and Layers",
