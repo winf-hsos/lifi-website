@@ -236,18 +236,6 @@
     ]
   },
   {
-    "objectID": "concepts/throughput-and-limits.html#practice-questions",
-    "href": "concepts/throughput-and-limits.html#practice-questions",
-    "title": "Throughput and Limits",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
-    "crumbs": [
-      "Concepts",
-      "Transferring Information",
-      "Throughput and Limits"
-    ]
-  },
-  {
     "objectID": "concepts/throughput-and-limits.html#further-reading",
     "href": "concepts/throughput-and-limits.html#further-reading",
     "title": "Throughput and Limits",
@@ -301,18 +289,6 @@
     "title": "Signal and Noise",
     "section": "Slides",
     "text": "Slides\nThe slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.",
-    "crumbs": [
-      "Concepts",
-      "Transferring Information",
-      "Signal and Noise"
-    ]
-  },
-  {
-    "objectID": "concepts/signal-and-noise.html#practice-questions",
-    "href": "concepts/signal-and-noise.html#practice-questions",
-    "title": "Signal and Noise",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
     "crumbs": [
       "Concepts",
       "Transferring Information",
@@ -380,18 +356,6 @@
     ]
   },
   {
-    "objectID": "concepts/protocols.html#practice-questions",
-    "href": "concepts/protocols.html#practice-questions",
-    "title": "Protocols",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
-    "crumbs": [
-      "Concepts",
-      "Transferring Information",
-      "Protocols"
-    ]
-  },
-  {
     "objectID": "concepts/protocols.html#further-reading",
     "href": "concepts/protocols.html#further-reading",
     "title": "Protocols",
@@ -445,18 +409,6 @@
     "title": "Number Systems",
     "section": "Slides",
     "text": "Slides\nThe slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.",
-    "crumbs": [
-      "Concepts",
-      "Representing Information",
-      "Number Systems"
-    ]
-  },
-  {
-    "objectID": "concepts/number-systems.html#practice-questions",
-    "href": "concepts/number-systems.html#practice-questions",
-    "title": "Number Systems",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
     "crumbs": [
       "Concepts",
       "Representing Information",
@@ -548,18 +500,6 @@
     ]
   },
   {
-    "objectID": "concepts/errors-and-redundancy.html#practice-questions",
-    "href": "concepts/errors-and-redundancy.html#practice-questions",
-    "title": "Errors and Redundancy",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
-    "crumbs": [
-      "Concepts",
-      "Transferring Information",
-      "Errors and Redundancy"
-    ]
-  },
-  {
     "objectID": "concepts/errors-and-redundancy.html#further-reading",
     "href": "concepts/errors-and-redundancy.html#further-reading",
     "title": "Errors and Redundancy",
@@ -613,18 +553,6 @@
     "title": "Compression",
     "section": "Slides",
     "text": "Slides\nThe slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.",
-    "crumbs": [
-      "Concepts",
-      "Processing Information",
-      "Compression"
-    ]
-  },
-  {
-    "objectID": "concepts/compression.html#practice-questions",
-    "href": "concepts/compression.html#practice-questions",
-    "title": "Compression",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
     "crumbs": [
       "Concepts",
       "Processing Information",
@@ -697,18 +625,6 @@
     "title": "Abstraction and Layers",
     "section": "Slides",
     "text": "Slides\nThe slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.",
-    "crumbs": [
-      "Concepts",
-      "Solving Problems",
-      "Abstraction and Layers"
-    ]
-  },
-  {
-    "objectID": "concepts/abstraction-and-layers.html#practice-questions",
-    "href": "concepts/abstraction-and-layers.html#practice-questions",
-    "title": "Abstraction and Layers",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
     "crumbs": [
       "Concepts",
       "Solving Problems",
@@ -1317,18 +1233,6 @@
     ]
   },
   {
-    "objectID": "concepts/code-systems.html#practice-questions",
-    "href": "concepts/code-systems.html#practice-questions",
-    "title": "Code Systems",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
-    "crumbs": [
-      "Concepts",
-      "Representing Information",
-      "Code Systems"
-    ]
-  },
-  {
     "objectID": "concepts/code-systems.html#further-reading",
     "href": "concepts/code-systems.html#further-reading",
     "title": "Code Systems",
@@ -1389,18 +1293,6 @@
     ]
   },
   {
-    "objectID": "concepts/encryption.html#practice-questions",
-    "href": "concepts/encryption.html#practice-questions",
-    "title": "Encryption",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
-    "crumbs": [
-      "Concepts",
-      "Processing Information",
-      "Encryption"
-    ]
-  },
-  {
     "objectID": "concepts/encryption.html#further-reading",
     "href": "concepts/encryption.html#further-reading",
     "title": "Encryption",
@@ -1439,7 +1331,7 @@
     "href": "concepts/index.html#the-concepts",
     "title": "Overview",
     "section": "The concepts",
-    "text": "The concepts\nEighteen concepts, in five families. The order inside each family is the order in which you meet them during the semester; the last column says where in the project you need them. Every concept has its own page with a summary, the explanation, the slides, practice questions in the exam format, and further reading.\nSolving problems (grey: how you think and work, needed everywhere)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nCutting Problems\nC0 to C4\n\n\nInput, Processing, Output\nC0 to C4\n\n\nAlgorithms and Programs\nfrom C0, central in C1 and C2\n\n\nMeasuring and Experimenting\nfrom C1\n\n\nAbstraction and Layers\nfrom C2\n\n\n\nRepresenting information (orange: making bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nAnalog and Digital\nC1\n\n\nSymbols and Information\nC1\n\n\nNumber Systems\nC2\n\n\nCode Systems\nC2\n\n\n\nStoring information (green: storing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nMemory and Storage\nC4\n\n\n\nTransferring information (magenta: transferring bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nSignal and Noise\nC1\n\n\nSampling and Synchronization\nC2\n\n\nProtocols\nC2 and C3\n\n\nErrors and Redundancy\nC4\n\n\nThroughput and Limits\nC4\n\n\n\nProcessing information (blue: processing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nLogic and Arithmetic\nC4, first contact in C2\n\n\nCompression\nC4\n\n\nEncryption\nC4, optional",
+    "text": "The concepts\nEighteen concepts, in five families. The order inside each family is the order in which you meet them during the semester; the last column says where in the project you need them. Every concept has its own page with a summary, the explanation, the slides and further reading.\nSolving problems (grey: how you think and work, needed everywhere)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nCutting Problems\nC0 to C4\n\n\nInput, Processing, Output\nC0 to C4\n\n\nAlgorithms and Programs\nfrom C0, central in C1 and C2\n\n\nMeasuring and Experimenting\nfrom C1\n\n\nAbstraction and Layers\nfrom C2\n\n\n\nRepresenting information (orange: making bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nAnalog and Digital\nC1\n\n\nSymbols and Information\nC1\n\n\nNumber Systems\nC2\n\n\nCode Systems\nC2\n\n\n\nStoring information (green: storing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nMemory and Storage\nC4\n\n\n\nTransferring information (magenta: transferring bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nSignal and Noise\nC1\n\n\nSampling and Synchronization\nC2\n\n\nProtocols\nC2 and C3\n\n\nErrors and Redundancy\nC4\n\n\nThroughput and Limits\nC4\n\n\n\nProcessing information (blue: processing bits)\n\n\n\nConcept\nWhere you need it\n\n\n\n\nLogic and Arithmetic\nC4, first contact in C2\n\n\nCompression\nC4\n\n\nEncryption\nC4, optional",
     "crumbs": [
       "Concepts",
       "Overview"
@@ -1527,18 +1419,6 @@
     ]
   },
   {
-    "objectID": "concepts/logic-and-arithmetic.html#practice-questions",
-    "href": "concepts/logic-and-arithmetic.html#practice-questions",
-    "title": "Logic and Arithmetic",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
-    "crumbs": [
-      "Concepts",
-      "Processing Information",
-      "Logic and Arithmetic"
-    ]
-  },
-  {
     "objectID": "concepts/logic-and-arithmetic.html#further-reading",
     "href": "concepts/logic-and-arithmetic.html#further-reading",
     "title": "Logic and Arithmetic",
@@ -1592,18 +1472,6 @@
     "title": "Memory and Storage",
     "section": "Slides",
     "text": "Slides\nThe slides for this concept, right here. Page through them with the buttons in the top right corner, or click into the slides and use the arrow keys. The other buttons give you full screen, the slides in a new tab, and the deck as a PDF.",
-    "crumbs": [
-      "Concepts",
-      "Storing Information",
-      "Memory and Storage"
-    ]
-  },
-  {
-    "objectID": "concepts/memory-and-storage.html#practice-questions",
-    "href": "concepts/memory-and-storage.html#practice-questions",
-    "title": "Memory and Storage",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
     "crumbs": [
       "Concepts",
       "Storing Information",
@@ -1683,18 +1551,6 @@
     ]
   },
   {
-    "objectID": "concepts/sampling-and-synchronization.html#practice-questions",
-    "href": "concepts/sampling-and-synchronization.html#practice-questions",
-    "title": "Sampling and Synchronization",
-    "section": "Practice questions",
-    "text": "Practice questions\nThe practice questions have the same format as the exam, so they are also a good way to prepare for it.",
-    "crumbs": [
-      "Concepts",
-      "Transferring Information",
-      "Sampling and Synchronization"
-    ]
-  },
-  {
     "objectID": "concepts/sampling-and-synchronization.html#further-reading",
     "href": "concepts/sampling-and-synchronization.html#further-reading",
     "title": "Sampling and Synchronization",
@@ -1744,7 +1600,7 @@
     "href": "links.html#course",
     "title": "Links",
     "section": "Course",
-    "text": "Course\n\nThis website: the course companion, also the knowledge base your AI assistant reads.\nPractice questions: the multiple-choice questions of this module in the format of the exam, with an explanation for every answer; a topic opens once it has been covered in class. No login, your progress stays in your browser.\nAnonymous feedback: questions, criticism, ideas, without your name; answered there and at the start of each session.\nTeam cockpit: your light link live in the browser; how to use it is explained under Software.\nlifi-project: your course folder with the AI assistant: its instructions, the knowledge base it reads, and the challenge templates. You download it as a ZIP, see Required Software.",
+    "text": "Course\n\nThis website: the course companion, also the knowledge base your AI assistant reads.\nHands-on Computer Science: the lessons of this module, and where you practise for the exam: every lesson there has its quiz with multiple-choice questions in the format of the exam and an explanation for every answer.\nAnonymous feedback: questions, criticism, ideas, without your name; answered there and at the start of each session.\nTeam cockpit: your light link live in the browser; how to use it is explained under Software.\nlifi-project: your course folder with the AI assistant: its instructions, the knowledge base it reads, and the challenge templates. You download it as a ZIP, see Required Software.",
     "crumbs": [
       "Links"
     ]
